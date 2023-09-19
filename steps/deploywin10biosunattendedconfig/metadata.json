@@ -4,23 +4,18 @@
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "251b7f7d-064d-46e6-8449-d2bfb12172a7", 
-    "key": "deploywin10unattendedconfig", 
+    "key": "deploywin10biosunattendedconfig", 
     "makoFileNames": [
         "autounattend.xml"
     ], 
     "makoParameters": [
         {
-            "name": "targetServer", 
+            "name": "newOsNode", 
             "parameterKey": "newosnode", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "subnet", 
-            "parameterKey": "newosnodesubnet", 
-            "parameterType": "c.s.s.b.phv.Ip4Subnet"
-        }, 
-        {
-            "name": "adminUser", 
+            "name": "newOsWindowsUser", 
             "parameterKey": "newoswindowsuseradministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
@@ -33,9 +28,14 @@
             "name": "ksWindowsInterfaceAlias", 
             "parameterKey": "newosinterfacealias", 
             "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "driversAndScriptsDrive", 
+            "parameterKey": "driversandscriptsdrive", 
+            "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-    "name": "Deploy Win10 Unattended Config", 
+    "name": "Deploy Win10 BIOS Unattended Config", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
