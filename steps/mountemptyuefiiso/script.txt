@@ -1,7 +1,7 @@
 cd "{automationWorkerBaseDirectory}"
 
-MOUNT_PATH="build-{newOsNode.fqn}-uefi-mount"
+MOUNT_FOLDER="build-{newOsNode.fqn}-uefi-mount"
 
 mkdir --verbose "${MOUNT_PATH}"
 
-mount "./kickstart_{newOsNode.fqn}.iso" "${MOUNT_PATH}"
+mount "./kickstart_{newOsNode.fqn}.iso" "${MOUNT_FOLDE}"

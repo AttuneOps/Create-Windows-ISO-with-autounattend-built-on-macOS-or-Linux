@@ -13,6 +13,14 @@
         {
             "order": 50, 
             "stepKey": "mountemptyuefiiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "movefilestouefimount"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "unmountuefimount"
         }
     ], 
     "name": "Perform Create UEFI ISO", 

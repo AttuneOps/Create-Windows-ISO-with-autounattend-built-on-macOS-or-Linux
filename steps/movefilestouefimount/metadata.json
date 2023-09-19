@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "23c3cbd6-5706-4508-9657-7509c9c945b0", 
+    "externalUuid4": "5d9f7a06-cb2d-4795-9cb0-50c9e8b528e0", 
     "interpreter": 1, 
-    "key": "mountemptyuefiiso", 
-    "name": "Mount Empty UEFI ISO", 
+    "key": "movefilestouefimount", 
+    "name": "Move Files to UEFI Mount", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

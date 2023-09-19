@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "23c3cbd6-5706-4508-9657-7509c9c945b0", 
+    "externalUuid4": "5f9e6e19-6dbe-45f4-9823-e599a0864f0e", 
     "interpreter": 1, 
-    "key": "mountemptyuefiiso", 
-    "name": "Mount Empty UEFI ISO", 
+    "key": "unmountuefimount", 
+    "name": "Unmount UEFI Mount", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

@@ -1,0 +1,14 @@
+MOUNT_FOLDER="build-{newOsNode.fqn}-uefi-mount"
+MOUNT_PATH="{automationWorkerBaseDirectory}/${MOUNT_FOLDER}"
+
+if df -h | grep --ignore-case \
+    --quiet \
+    "${MOUNT_PATH}"
+then
+
+    cd "{automationWorkerBaseDirectory}"
+    
+    umount --verbose "${MOUNT_FOLDER}"
+else
+    echo "${MOUNT_PATH} is not mounted. Skipping."
+fi
