@@ -1,0 +1,1 @@
+Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".
