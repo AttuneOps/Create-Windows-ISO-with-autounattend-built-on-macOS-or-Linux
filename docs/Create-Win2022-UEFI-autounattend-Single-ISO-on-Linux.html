@@ -267,6 +267,22 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movefilestouefimount">
+                            <strong>Step 6.3 -</strong> Move Files to UEFI Mount
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#unmountuefimount">
+                            <strong>Step 6.4 -</strong> Unmount UEFI Mount
+                        </a>
+                    </p>
+
 
         
 
@@ -771,6 +787,70 @@ mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
 
 
 
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}&quot;
+
+MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+
+mkdir --verbose &quot;${MOUNT_PATH}&quot;
+
+mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDE}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movefilestouefimount">
+                            <a href="#movefilestouefimount">
+                                <strong>Step 6.3 -</strong> Move Files to UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -789,11 +869,69 @@ mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerBaseDirectory}&quot;
 
-MOUNT_PATH=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+# Move Files from &quot;build-{newOsNode.fqn}&quot; to 
+# &quot;build-{newOsNode.fqn}-uefi-mount&quot;
+mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
 
-mkdir --verbose &quot;${MOUNT_PATH}&quot;
 
-mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_PATH}&quot;
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="unmountuefimount">
+                            <a href="#unmountuefimount">
+                                <strong>Step 6.4 -</strong> Unmount UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
+
+if df -h | grep --ignore-case \
+    --quiet \
+    &quot;${MOUNT_PATH}&quot;
+then
+
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    umount --verbose &quot;${MOUNT_FOLDER}&quot;
+else
+    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -832,7 +970,18 @@ mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_PATH}&quot;
 
 
 
-    
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
 
 
     

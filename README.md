@@ -98,6 +98,7 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
 | Drivers Path | Text | `driverspath` |  |
 | Kickstarted Windows TimeZone | Text | `kickstartedwindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
+| Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 
 
 
