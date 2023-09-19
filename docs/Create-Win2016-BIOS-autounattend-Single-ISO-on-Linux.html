@@ -214,8 +214,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2016dvdiso">
-                            <strong>Step 2 -</strong> Deploy Win2016 DVD ISO
+                        <a href="#deploywindowsserver2016iso">
+                            <strong>Step 2 -</strong> Deploy Windows Server 2016 ISO
                         </a>
                     </p>
 
@@ -246,8 +246,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 6 -</strong> Deploy Windows Unattended Config
+                        <a href="#deploywindowsserverbiosunattendedconfig">
+                            <strong>Step 6 -</strong> Deploy Windows Server BIOS Unattended Config
                         </a>
                     </p>
 
@@ -427,9 +427,9 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2016dvdiso">
-                            <a href="#deploywin2016dvdiso">
-                                <strong>Step 2 -</strong> Deploy Win2016 DVD ISO
+                        <h3 id="deploywindowsserver2016iso">
+                            <a href="#deploywindowsserver2016iso">
+                                <strong>Step 2 -</strong> Deploy Windows Server 2016 ISO
                             </a>
                         </h3>
                     </div>
@@ -437,7 +437,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2016 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Server 2016 ISO to <code>{ksAttuneBaseDir}/build-{kickstartedNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -450,7 +450,18 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
 
-    
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
+                            </code>
+                        </div>
+
 
     
 
@@ -458,7 +469,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016.</p>
+            <p>https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016</p>
         </p>
         <p>
             Copy the File(s)
@@ -471,7 +482,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{ksAttuneBaseDir}/build-{kickstartedNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -507,7 +518,18 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
 
-    
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
 
 
     
@@ -523,28 +545,21 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
-then
+# Extract the boot.img out of the WinPE ISO
 
-    # Extract the boot.img out of the WinPE ISO
-    
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
-    # Case insensitve globbing
-    shopt -s nocaseglob
-    
-    # Set the filename of the ISO
-    F=$(ls *.iso)
-    
-    # Get the Boot image offset
-    OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
-    
-    # Extract the boot.img.
-    dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
-    
-else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+# Set the filename of the ISO
+F=$(ls *.iso)
+
+# Get the Boot image offset
+OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
+
+# Extract the boot.img.
+dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
                 </code>
             </pre>
         </div>
@@ -639,7 +654,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
+                                <p>Deploys the custom run once PowerShell scripts.</p>
                             </p>
                         </div>
                     </div>
@@ -660,8 +675,7 @@ fi
 
     <div class="row">
         <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
+            
         </p>
         <p>
             Copy the File(s)
@@ -686,9 +700,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywindowsunattendedconfig">
-                            <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 6 -</strong> Deploy Windows Unattended Config
+                        <h3 id="deploywindowsserverbiosunattendedconfig">
+                            <a href="#deploywindowsserverbiosunattendedconfig">
+                                <strong>Step 6 -</strong> Deploy Windows Server BIOS Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -696,7 +710,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deploys a Windows 2019 autounattend.xml file. This works with Windows Server 2016, 2019 and 2022.</p>
                             </p>
                         </div>
                     </div>
@@ -717,18 +731,11 @@ fi
 
     <div class="row">
         <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
+            
         </p>
         <p>
             Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
+            <strong>Widows_Server_BIOS_Unattended_Config.tar</strong>
             to the target node.
         </p>
         <p>
@@ -759,7 +766,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Creates a bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -788,19 +795,12 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
-then
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
-    mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-        -b boot.img -no-emul-boot -c BOOT.CAT \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;KS_WIN&quot; .
-        
-else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
+mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+    -b boot.img -no-emul-boot -c BOOT.CAT \
+    -iso-level 3 -udf -joliet-long -relaxed-filenames \
+    -J -l -D -N -V &quot;KS_WIN&quot; .
                 </code>
             </pre>
         </div>
@@ -825,7 +825,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the build directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".</p>
                             </p>
                         </div>
                     </div>

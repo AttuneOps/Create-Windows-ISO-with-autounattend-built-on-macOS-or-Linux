@@ -24,14 +24,18 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywindowsserverbiosunattendedconfig"
+            "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
             "order": 250, 
-            "stepKey": "createbiosbootiso"
+            "stepKey": "deploywindowsserverbiosunattendedconfig"
         }, 
         {
             "order": 300, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 350, 
             "stepKey": "deletebuilddirectory"
         }
     ], 
