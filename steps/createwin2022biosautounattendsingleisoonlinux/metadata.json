@@ -1,0 +1,40 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "71e7f18d-c860-407a-aa44-b2cfeaf598e5", 
+    "isBlueprint": true, 
+    "key": "createwin2022biosautounattendsingleisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "deploywindowsserver2022iso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "extractwindowsbootimg"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywindowsserverbiosunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "deletebuilddirectory"
+        }
+    ], 
+    "name": "Create Win2022 BIOS autounattend Single ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

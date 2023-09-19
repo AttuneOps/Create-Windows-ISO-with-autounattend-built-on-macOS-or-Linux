@@ -1,0 +1,11 @@
+{
+    "externalUuid4": "1627cee6-5271-4436-b21a-4d53fe63a25c", 
+    "fileName": "SW_DVD9_Win_Server_STD_CORE_2022_2108.9_64Bit_English_DC_STD_MLF_X23-14506.ISO", 
+    "formatKey": "tar", 
+    "key": "winrawwin2022iso", 
+    "md5": "018d99615216d723279fb75a158bc884", 
+    "name": "WIN Raw Win2022 ISO", 
+    "remoteUri": null, 
+    "size": 5076148224, 
+    "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
+}

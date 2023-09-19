@@ -63,6 +63,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2019 BIOS autounattend Single ISO on Linux
 
 
+### Create Win2022 BIOS autounattend Single ISO on Linux
+
+
 
 
 
@@ -71,22 +74,16 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 
 | Name | Type | Script Reference | Comment |
 | ---- | ---- | ---------------- | ------- |
-| Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | non privilege user on the Automation Worker node. |
-| Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | The device used to perform tasks to create the ISO. |
-| New OS Node | Basic Node | `newosnode` | The New OS to be built. |
-| New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
 | Automation Worker Base Directory | Text | `automationworkerbasedirectory` | Base directory for deploying temporary files to build the kickstart ISO. |
-| New OS Interface Alias | Text | `newosinterfacealias` | This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine.<br><br>oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0" |
-| New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
-| New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
+| Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | The device used to perform tasks to create the ISO. |
+| Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | non privilege user on the Automation Worker node. |
 | Drivers and Scripts Drive | Text | `driversandscriptsdrive` | The Windows drive letter containing the attune_drivers and post_install_setup.ps1 as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
-| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user credentials for the node building the kickstart ISO.<br>Only for Kickstart Worker Linux Node. |
-| Kickstarted Windows TimeZone | Text | `kickstartedwindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
-| Kickstart Organisation Name | Text | `kickstartorganisationname` |  |
-| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` |  |
-| Kickstarted Windows User: Administrator | Windows Credential | `kickstartedwindowsuseradministrator` | The windows administrator user |
-| Kickstarted Node | Basic Node | `kickstartednode` |  |
-| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | Linux refers to both Linux and MacOS. |
+| New OS Interface Alias | Text | `newosinterfacealias` | This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine.<br><br>oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0" |
+| New OS Node | Basic Node | `newosnode` | The New OS to be built. |
+| New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
+| New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
+| New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
+| New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
 
 
 
@@ -95,10 +92,11 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 
 | Name | Type | Comment |
 | ---- | ---- | ------- |
-| Win10 Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file with "Drivers" in the "D:\" drive for single ISO kickstarts. |
-| Win10 Desktop ISO | Large Archives | A plain unaltered ISO |
 | Widows Server BIOS Unattended Config | Version Controlled Files |  |
+| Win10 Desktop ISO | Large Archives | A plain unaltered ISO |
+| Win10 Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file with "Drivers" in the "D:\" drive for single ISO kickstarts. |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
+| WIN Raw Win2022 ISO | Large Archives |  |
 
 
 
