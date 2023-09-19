@@ -72,6 +72,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2022 UEFI autounattend Single ISO on Linux
 
 
+### Create Win2019 UEFI autounattend Single ISO on Linux
+
+
 
 
 
