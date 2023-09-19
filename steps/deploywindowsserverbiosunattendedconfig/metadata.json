@@ -10,17 +10,17 @@
     ], 
     "makoParameters": [
         {
-            "name": "timeZone", 
+            "name": "newOsWindowsTimeZone", 
             "parameterKey": "newoswindowstimezone", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "kickstartOrganisationName", 
+            "name": "newOsOrganisationName", 
             "parameterKey": "newosorganisationname", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "adminUser", 
+            "name": "newOsWindowsUser", 
             "parameterKey": "newoswindowsuseradministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 

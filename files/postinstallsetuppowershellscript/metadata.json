@@ -1,0 +1,6 @@
+{
+    "externalUuid4": "0415dae2-012f-4c4a-9804-b905df6ae901", 
+    "key": "postinstallsetuppowershellscript", 
+    "name": "Post Install Setup PowerShell Script", 
+    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
+}

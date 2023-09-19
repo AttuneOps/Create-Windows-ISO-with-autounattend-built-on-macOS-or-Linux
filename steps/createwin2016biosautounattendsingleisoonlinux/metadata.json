@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "71e7f18d-c860-407a-aa44-b2cfeaf598e5", 
+    "externalUuid4": "8a407614-f7cc-43f2-87b3-b1d4a9e902b6", 
     "isBlueprint": true, 
-    "key": "createwin2022biosautounattendsingleisoonlinux", 
+    "key": "createwin2016biosautounattendsingleisoonlinux", 
     "links": [
         {
             "order": 0, 
@@ -12,7 +12,7 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywindowsserver2022iso"
+            "stepKey": "deploywindowsserver2016iso"
         }, 
         {
             "order": 100, 
@@ -39,6 +39,6 @@
             "stepKey": "deletebuilddirectory"
         }
     ], 
-    "name": "Create Win2022 BIOS autounattend Single ISO on Linux", 
+    "name": "Create Win2016 BIOS autounattend Single ISO on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

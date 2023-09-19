@@ -1,0 +1,11 @@
+{
+    "externalUuid4": "0a023b68-28de-46a2-bf2e-0e43f17e4b45", 
+    "fileName": "WindowsServer2016_Standard_May2021.iso", 
+    "formatKey": "tar", 
+    "key": "winrawwin2016iso", 
+    "md5": "5d139f6e2932fbeb1896b6d541cb6b18", 
+    "name": "WIN Raw Win2016 ISO", 
+    "remoteUri": null, 
+    "size": 7840858112, 
+    "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
+}

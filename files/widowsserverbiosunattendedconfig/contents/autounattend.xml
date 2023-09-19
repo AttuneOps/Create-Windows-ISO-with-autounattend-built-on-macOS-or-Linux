@@ -42,7 +42,7 @@
 			</ImageInstall>
 			<UserData>
 				<AcceptEula>true</AcceptEula>
-				<Organization>${kickstartOrganisationName}</Organization>
+				<Organization>${newOsOrganisationName}</Organization>
 			</UserData>
 			<DiskConfiguration>
 				<WillShowUI>OnError</WillShowUI>
@@ -86,13 +86,13 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<UserAccounts>
 				<AdministratorPassword>
-					<Value>${adminUser.password}</Value>
+					<Value>${newOsWindowsUser.password}</Value>
 					<PlainText>true</PlainText>
 				</AdministratorPassword>
 			</UserAccounts>
 			<AutoLogon>
 				<Password>
-					<Value>${adminUser.password}</Value>
+					<Value>${newOsWindowsUser.password}</Value>
 					<PlainText>true</PlainText>
 				</Password>
 				<LogonCount>1</LogonCount>
@@ -110,7 +110,7 @@
 				</SynchronousCommand>
 
 			</FirstLogonCommands>
-			<TimeZone>${timeZone}</TimeZone>
+			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
 		</component>
 	</settings>
 	<cpi:offlineImage cpi:source="wim:c:/users/documents/win_images/win2016/sources/install.wim#Windows Server 2016 SERVERSTANDARD"

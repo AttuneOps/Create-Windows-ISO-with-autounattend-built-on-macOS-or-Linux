@@ -66,6 +66,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2022 BIOS autounattend Single ISO on Linux
 
 
+### Create Win2016 BIOS autounattend Single ISO on Linux
+
+
 
 
 
@@ -84,6 +87,11 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
+| Kickstarted Node | Basic Node | `kickstartednode` |  |
+| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user credentials for the node building the kickstart ISO.<br>Only for Kickstart Worker Linux Node. |
+| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | Linux refers to both Linux and MacOS. |
+| Kickstarted Node Subnet | Network IPv4 Subnet | `kickstartednodesubnet` |  |
+| Kickstarted Windows User: Administrator | Windows Credential | `kickstartedwindowsuseradministrator` | The windows administrator user |
 
 
 
@@ -97,6 +105,8 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Win10 Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file with "Drivers" in the "D:\" drive for single ISO kickstarts. |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | WIN Raw Win2022 ISO | Large Archives |  |
+| WIN Raw Win2016 ISO | Large Archives | https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016 |
+| Post Install Setup PowerShell Script | Version Controlled Files |  |
 
 
 
