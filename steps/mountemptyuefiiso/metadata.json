@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "23c3cbd6-5706-4508-9657-7509c9c945b0", 
+    "interpreter": 1, 
+    "key": "mountemptyuefiiso", 
+    "name": "Mount Empty UEFI ISO", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

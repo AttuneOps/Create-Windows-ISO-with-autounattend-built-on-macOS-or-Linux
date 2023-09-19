@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "4fb1e0dd-9684-4421-8f7e-6d722c0069b3", 
+    "isBlueprint": false, 
+    "key": "performcreateuefiiso", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "createemptyuefiiso"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "mountemptyuefiiso"
+        }
+    ], 
+    "name": "Perform Create UEFI ISO", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

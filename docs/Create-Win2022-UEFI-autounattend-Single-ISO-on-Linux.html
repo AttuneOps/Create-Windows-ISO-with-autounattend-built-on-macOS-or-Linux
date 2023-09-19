@@ -243,6 +243,39 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#performcreateuefiiso">
+                            <strong>Step 6 -</strong> Perform Create UEFI ISO
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createemptyuefiiso">
+                            <strong>Step 6.1 -</strong> Create Empty UEFI ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#mountemptyuefiiso">
+                            <strong>Step 6.2 -</strong> Mount Empty UEFI ISO
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deletebuilddirectory">
+                            <strong>Step 7 -</strong> Delete Build Directory
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -637,6 +670,194 @@ fi
         <code class="language-bash">
 {automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="performcreateuefiiso">
+                            <a href="#performcreateuefiiso">
+                                <strong>Step 6 -</strong> Perform Create UEFI ISO
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createemptyuefiiso">
+                            <a href="#createemptyuefiiso">
+                                <strong>Step 6.1 -</strong> Create Empty UEFI ISO
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}&quot;
+
+bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
+((bytes=bytes+10000))
+
+mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="mountemptyuefiiso">
+                            <a href="#mountemptyuefiiso">
+                                <strong>Step 6.2 -</strong> Mount Empty UEFI ISO
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}&quot;
+
+MOUNT_PATH=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+
+mkdir --verbose &quot;${MOUNT_PATH}&quot;
+
+mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_PATH}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deletebuilddirectory">
+                            <a href="#deletebuilddirectory">
+                                <strong>Step 7 -</strong> Delete Build Directory
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+if [ -d &quot;${DIR}&quot; ]
+then
+    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+else
+    echo &quot;No directory to remove.&quot;
+fi
+                </code>
+            </pre>
+        </div>
     </div>
 
 
