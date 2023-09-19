@@ -78,6 +78,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2016 UEFI autounattend Single ISO on Linux
 
 
+### Create Win10 UEFI autounattend Single ISO on Linux
+
+
 
 
 
@@ -121,6 +124,7 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | WIN Raw Win2022 ISO | Large Archives |  |
 | Win10 Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file. |
 | Win2019 UEFI Unattended Config | Version Controlled Files |  |
+| Win10 UEFI Unattended Config | Version Controlled Files |  |
 
 
 
