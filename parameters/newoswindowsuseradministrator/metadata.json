@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "7eb32af4-eca4-473e-bc40-aceffabfaad3", 
+    "key": "newoswindowsuseradministrator", 
+    "name": "New OS Windows User: Administrator", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.WinOsCred"
+}

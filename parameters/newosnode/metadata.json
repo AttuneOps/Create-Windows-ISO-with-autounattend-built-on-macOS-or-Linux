@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "7116171b-6cab-412b-b2c3-cdbf063a7ace", 
+    "key": "newosnode", 
+    "name": "New OS Node", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Server"
+}

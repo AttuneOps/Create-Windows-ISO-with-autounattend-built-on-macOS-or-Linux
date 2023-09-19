@@ -1,0 +1,40 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "f714d8e3-b7aa-415f-a0ff-97620b5234dc", 
+    "isBlueprint": true, 
+    "key": "createwin10biosautounattendsingleisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "deploywin10dvdiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "extractwindowsbootimg"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywin10unattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "deletebuilddirectory"
+        }
+    ], 
+    "name": "Create Win10 BIOS autounattend Single ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
