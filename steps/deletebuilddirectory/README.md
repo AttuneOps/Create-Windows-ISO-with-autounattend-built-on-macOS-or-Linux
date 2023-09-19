@@ -1,1 +1,1 @@
-Deletes the build directory "{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}".
+Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".

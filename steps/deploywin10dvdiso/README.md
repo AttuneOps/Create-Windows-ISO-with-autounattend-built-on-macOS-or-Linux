@@ -1,1 +1,1 @@
-Deploys Windows Desktop 10 ISO to `{ksAttuneBaseDir}/build-{kickstartedNode.fqn}`.
+Deploys Windows Desktop 10 ISO to `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}`.

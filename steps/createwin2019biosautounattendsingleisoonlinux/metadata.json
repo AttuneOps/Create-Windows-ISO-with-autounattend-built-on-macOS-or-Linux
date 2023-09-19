@@ -1,0 +1,40 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "c91c1e0a-7b78-4f67-8046-1557324c69a0", 
+    "isBlueprint": true, 
+    "key": "createwin2019biosautounattendsingleisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "deploywin2019dvdiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "extractwindowsbootimg"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywindowsserverbiosunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "deletebuilddirectory"
+        }
+    ], 
+    "name": "Create Win2019 BIOS autounattend Single ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

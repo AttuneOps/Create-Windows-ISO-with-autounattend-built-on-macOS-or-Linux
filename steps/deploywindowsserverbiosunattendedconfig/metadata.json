@@ -1,0 +1,37 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "widowsserverbiosunattendedconfig", 
+    "deployPath": "{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "9fe34708-8f69-4927-bb93-c6e658055d77", 
+    "key": "deploywindowsserverbiosunattendedconfig", 
+    "makoFileNames": [
+        "autounattend.xml"
+    ], 
+    "makoParameters": [
+        {
+            "name": "timeZone", 
+            "parameterKey": "kickstartedwindowstimezone", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "kickstartOrganisationName", 
+            "parameterKey": "kickstartorganisationname", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "adminUser", 
+            "parameterKey": "kickstartedwindowsuseradministrator", 
+            "parameterType": "c.s.s.b.phv.WinOsCred"
+        }, 
+        {
+            "name": "driversAndScriptsDrive", 
+            "parameterKey": "driversandscriptsdrive", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }
+    ], 
+    "name": "Deploy Windows Server BIOS Unattended Config", 
+    "osCredKey": "kickstartworkerlinuxuser", 
+    "serverKey": "kickstartworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
+}
