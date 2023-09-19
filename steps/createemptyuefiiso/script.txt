@@ -1,0 +1,6 @@
+cd "{automationWorkerBaseDirectory}"
+
+bytes=$(du --summarize "build-{newOsNode.fqn}" | awk '{print $1}')
+((bytes=bytes+10000))
+
+mkfs.msdos -C "./kickstart_{newOsNode.fqn}.iso" "${bytes}"

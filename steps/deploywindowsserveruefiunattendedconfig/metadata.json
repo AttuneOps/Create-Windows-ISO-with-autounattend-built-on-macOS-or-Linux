@@ -6,21 +6,21 @@
     "externalUuid4": "973eb6a4-81e6-4d3d-81bd-892bfe01f568", 
     "key": "deploywindowsserveruefiunattendedconfig", 
     "makoFileNames": [
-        "Autounattend.xml"
+        "autounattend.xml"
     ], 
     "makoParameters": [
         {
-            "name": "kickstartOrganisationName", 
-            "parameterKey": "kickstartorganisationname", 
+            "name": "newOsOrganisationName", 
+            "parameterKey": "newosorganisationname", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "targetServer", 
-            "parameterKey": "kickstartednode", 
+            "name": "newOsNode", 
+            "parameterKey": "newosnode", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "adminUser", 
+            "name": "newOsWindowsUser", 
             "parameterKey": "kickstartedwindowsuseradministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
@@ -30,8 +30,8 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "driversPath", 
-            "parameterKey": "driverspath", 
+            "name": "driversAndScriptsDrive", 
+            "parameterKey": "driversandscriptsdrive", 
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 

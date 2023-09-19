@@ -25,6 +25,14 @@
         {
             "order": 200, 
             "stepKey": "deploywindowsserveruefiunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "performcreateuefiiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "deletebuilddirectory"
         }
     ], 
     "name": "Create Win2022 UEFI autounattend Single ISO on Linux", 
