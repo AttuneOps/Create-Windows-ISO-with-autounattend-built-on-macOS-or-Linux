@@ -1,0 +1,42 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win10uefiunattendedconfig", 
+    "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "45d66b5f-30a8-4957-a440-e9e4c41946ea", 
+    "key": "ksdeploywin10unattendedconfigforuefistep", 
+    "makoFileNames": [
+        "Autounattend.xml"
+    ], 
+    "makoParameters": [
+        {
+            "name": "kickstartOrganisationName", 
+            "parameterKey": "kickstartorganisationname", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "targetServer", 
+            "parameterKey": "kickstartednode", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "adminUser", 
+            "parameterKey": "kickstartedwindowsuseradministrator", 
+            "parameterType": "c.s.s.b.phv.WinOsCred"
+        }, 
+        {
+            "name": "targetServerWindowsTimezone", 
+            "parameterKey": "kickstartedwindowstimezone", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "driversPath", 
+            "parameterKey": "driverspath", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }
+    ], 
+    "name": "KS Deploy Win10 Unattended Config for UEFI (step)", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
+}

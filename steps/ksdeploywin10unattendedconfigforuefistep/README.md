@@ -1,0 +1,1 @@
+Deploys the Windows Desktop 10 unattended config for Parallels Desktop.
