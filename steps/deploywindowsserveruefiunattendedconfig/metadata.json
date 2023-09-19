@@ -1,0 +1,42 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win2019uefiunattendedconfig", 
+    "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "973eb6a4-81e6-4d3d-81bd-892bfe01f568", 
+    "key": "deploywindowsserveruefiunattendedconfig", 
+    "makoFileNames": [
+        "Autounattend.xml"
+    ], 
+    "makoParameters": [
+        {
+            "name": "kickstartOrganisationName", 
+            "parameterKey": "kickstartorganisationname", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "targetServer", 
+            "parameterKey": "kickstartednode", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "adminUser", 
+            "parameterKey": "kickstartedwindowsuseradministrator", 
+            "parameterType": "c.s.s.b.phv.WinOsCred"
+        }, 
+        {
+            "name": "timeZone", 
+            "parameterKey": "kickstartedwindowstimezone", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "driversPath", 
+            "parameterKey": "driverspath", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }
+    ], 
+    "name": "Deploy Windows Server  UEFI Unattended Config", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
+}

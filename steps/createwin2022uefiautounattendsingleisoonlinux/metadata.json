@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "8f74b867-14ca-4a26-94f1-6335cee3549f", 
+    "isBlueprint": true, 
+    "key": "createwin2022uefiautounattendsingleisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "deploywindowsserver2022iso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywindowsserveruefiunattendedconfig"
+        }
+    ], 
+    "name": "Create Win2022 UEFI autounattend Single ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
