@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "3f0ba963-c243-402c-8fee-07c422ad17f7", 
     "isBlueprint": true, 
-    "key": "createwin2016biosautounattenddualisoonmacos", 
+    "key": "createwin2016biosautounattenddualisoonmacosorlinux", 
     "links": [
         {
             "order": 0, 
@@ -28,9 +28,9 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "createanswerfileisoonmacos"
+            "stepKey": "createanswerfileisoonmacosorlinux"
         }
     ], 
-    "name": "Create Win2016 BIOS autounattend Dual ISO on macOS", 
+    "name": "Create Win2016 BIOS autounattend Dual ISO on macOS or Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
