@@ -1,0 +1,8 @@
+export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+echo "Using $(which xorriso)"
+
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+xorriso -as mkisofs -o Drivers.iso \
+    -iso-level 2  -joliet-long -relaxed-filenames \
+    -J -l -D -N -V "DRIVERS" Drivers autounattend.xml post_install_setup.ps1
