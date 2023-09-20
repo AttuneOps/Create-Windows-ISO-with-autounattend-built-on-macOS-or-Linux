@@ -1,0 +1,36 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "f79f8329-887e-4bee-954b-ff418c9edb00", 
+    "isBlueprint": true, 
+    "key": "createwin2022biosautounattenddualisoonmacos", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "deploywin2022dvdiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "renameinstalliso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywindowsserverbiosunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "createanswerfileisoonmacos"
+        }
+    ], 
+    "name": "Create Win2022 BIOS autounattend Dual ISO on macOS", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

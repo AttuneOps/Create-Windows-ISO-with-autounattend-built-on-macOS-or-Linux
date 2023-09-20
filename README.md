@@ -102,6 +102,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2019 BIOS autounattend Dual ISO on macOS
 
 
+### Create Win2022 BIOS autounattend Dual ISO on macOS
+
+
 
 
 
