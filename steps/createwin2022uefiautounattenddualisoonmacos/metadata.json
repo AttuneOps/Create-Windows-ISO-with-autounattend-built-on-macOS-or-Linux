@@ -12,7 +12,7 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywindowsserver2022iso"
+            "stepKey": "deploywin2022dvdiso"
         }, 
         {
             "order": 100, 
@@ -28,7 +28,7 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "kscreateanswerfileisoonmacos"
+            "stepKey": "createanswerfileisoonmacos"
         }
     ], 
     "name": "Create Win2022 UEFI autounattend Dual ISO on macOS", 

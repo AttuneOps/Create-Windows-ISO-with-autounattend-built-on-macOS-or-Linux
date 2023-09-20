@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Create Win2016 UEFI autounattend Single ISO on Linux - Attune Automation</title>
+    <title>How to Create Win2016 UEFI autounattend Dual ISO on macOS - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win2016 UEFI autounattend Single ISO on Linux - Attune Automation">
+          content="How to Create Win2016 UEFI autounattend Dual ISO on macOS - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win2016 UEFI autounattend Single ISO on Linux - Attune Automation" />
+          content="HowTo Create Win2016 UEFI autounattend Dual ISO on macOS - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win2016 UEFI autounattend Single ISO on Linux - Attune Automation" />
+          content="How to Create Win2016 UEFI autounattend Dual ISO on macOS - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win2016 UEFI autounattend Single ISO on Linux</strong>
+                    <strong>Create Win2016 UEFI autounattend Dual ISO on macOS</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win2016 UEFI autounattend Single ISO on Linux
+                How to Create Win2016 UEFI autounattend Dual ISO on macOS
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win2016 UEFI autounattend Single ISO on Linux</strong>
+                            <strong>Create Win2016 UEFI autounattend Dual ISO on macOS</strong>
                         </a>
                     </p>
 
@@ -222,8 +222,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsiso">
-                            <strong>Step 3 -</strong> Extract Windows ISO
+                        <a href="#renameinstalliso">
+                            <strong>Step 3 -</strong> Rename Install ISO
                         </a>
                     </p>
 
@@ -246,49 +246,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#performcreateuefiiso">
-                            <strong>Step 6 -</strong> Perform Create UEFI ISO
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createemptyuefiiso">
-                            <strong>Step 6.1 -</strong> Create Empty UEFI ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountemptyuefiiso">
-                            <strong>Step 6.2 -</strong> Mount Empty UEFI ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movefilestouefimount">
-                            <strong>Step 6.3 -</strong> Move Files to UEFI Mount
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountuefimount">
-                            <strong>Step 6.4 -</strong> Unmount UEFI Mount
-                        </a>
-                    </p>
-
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deletebuilddirectory">
-                            <strong>Step 7 -</strong> Delete Build Directory
+                        <a href="#createanswerfileisoonmacos">
+                            <strong>Step 6 -</strong> Create Answer File ISO on macOS
                         </a>
                     </p>
 
@@ -351,7 +310,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win2016 UEFI autounattend Single ISO on Linux</strong>
+                You've automated: <strong>Create Win2016 UEFI autounattend Dual ISO on macOS</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -520,20 +479,13 @@ ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsiso">
-                            <a href="#extractwindowsiso">
-                                <strong>Step 3 -</strong> Extract Windows ISO
+                        <h3 id="renameinstalliso">
+                            <a href="#renameinstalliso">
+                                <strong>Step 3 -</strong> Rename Install ISO
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Extracts the Windows ISO.</p>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -572,21 +524,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
-# Case insensitve globbing
-shopt -s nocaseglob
-
-if ls | grep -q *iso
-then
-    
-    ISO=&quot;$(echo *iso)&quot;
-    echo &quot;ISO is $ISO&quot;
-    
-    7z x &quot;${ISO}&quot;
-    
-    rm -v &quot;${ISO}&quot;
-else
-    echo &quot;ISO is already extracted.&quot;
-fi
+mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
                 </code>
             </pre>
         </div>
@@ -719,9 +657,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="performcreateuefiiso">
-                            <a href="#performcreateuefiiso">
-                                <strong>Step 6 -</strong> Perform Create UEFI ISO
+                        <h3 id="createanswerfileisoonmacos">
+                            <a href="#createanswerfileisoonmacos">
+                                <strong>Step 6 -</strong> Create Answer File ISO on macOS
                             </a>
                         </h3>
                     </div>
@@ -729,36 +667,16 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createemptyuefiiso">
-                            <a href="#createemptyuefiiso">
-                                <strong>Step 6.1 -</strong> Create Empty UEFI ISO
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
+                                <p>Creates an ISO called <code>Drivers.iso</code> containing:</p>
+<ol>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install_setup.ps1</code></li>
+</ol>
+<p>This works for kickstarts on macOS with:
+1. Windows Desktop 10
+2. Windows Server 2016
+2. Windows Server 2019
+3. Windows Server 2022</p>
                             </p>
                         </div>
                     </div>
@@ -787,280 +705,14 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
+export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+echo &quot;Using $(which xorriso)&quot;
 
-bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
-((bytes=bytes+10000))
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
-mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountemptyuefiiso">
-                            <a href="#mountemptyuefiiso">
-                                <strong>Step 6.2 -</strong> Mount Empty UEFI ISO
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
-
-MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-
-mkdir --verbose &quot;${MOUNT_PATH}&quot;
-
-mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDE}&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="movefilestouefimount">
-                            <a href="#movefilestouefimount">
-                                <strong>Step 6.3 -</strong> Move Files to UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
-
-# Move Files from &quot;build-{newOsNode.fqn}&quot; to 
-# &quot;build-{newOsNode.fqn}-uefi-mount&quot;
-mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="unmountuefimount">
-                            <a href="#unmountuefimount">
-                                <strong>Step 6.4 -</strong> Unmount UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
-
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
-then
-
-    cd &quot;{automationWorkerBaseDirectory}&quot;
-    
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
-else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deletebuilddirectory">
-                            <a href="#deletebuilddirectory">
-                                <strong>Step 7 -</strong> Delete Build Directory
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-if [ -d &quot;${DIR}&quot; ]
-then
-    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
-else
-    echo &quot;No directory to remove.&quot;
-fi
+xorriso -as mkisofs -o Drivers.iso \
+    -iso-level 2  -joliet-long -relaxed-filenames \
+    -J -l -D -N -V &quot;DRIVERS&quot; autounattend.xml post_install_setup.ps1
                 </code>
             </pre>
         </div>

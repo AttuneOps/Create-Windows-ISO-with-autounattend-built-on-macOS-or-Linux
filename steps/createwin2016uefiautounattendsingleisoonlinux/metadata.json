@@ -12,7 +12,7 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywindowsserver2016iso"
+            "stepKey": "deploywin2016dvdiso"
         }, 
         {
             "order": 100, 
