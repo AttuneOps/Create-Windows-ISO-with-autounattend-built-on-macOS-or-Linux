@@ -6,32 +6,32 @@
     "externalUuid4": "45d66b5f-30a8-4957-a440-e9e4c41946ea", 
     "key": "ksdeploywin10unattendedconfigforuefistep", 
     "makoFileNames": [
-        "Autounattend.xml"
+        "autounattend.xml"
     ], 
     "makoParameters": [
         {
-            "name": "kickstartOrganisationName", 
-            "parameterKey": "kickstartorganisationname", 
+            "name": "newOsOrganisationName", 
+            "parameterKey": "newosorganisationname", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "targetServer", 
-            "parameterKey": "kickstartednode", 
+            "name": "newOsNode", 
+            "parameterKey": "newosnode", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "adminUser", 
-            "parameterKey": "kickstartedwindowsuseradministrator", 
+            "name": "newOsWindowsUser", 
+            "parameterKey": "newoswindowsuseradministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
         {
             "name": "targetServerWindowsTimezone", 
-            "parameterKey": "kickstartedwindowstimezone", 
+            "parameterKey": "newoswindowstimezone", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "driversPath", 
-            "parameterKey": "driverspath", 
+            "name": "driversAndScriptsDrive", 
+            "parameterKey": "driversandscriptsdrive", 
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 

@@ -1,22 +1,27 @@
-<!--*************************************************
-Windows 10 Answer File Generator
-Created using Windows AFG found at:
-;http://www.windowsafg.com
-
-Installation Notes
-Location: 
-Notes: Enter your comments here...
-**************************************************-->
 <?xml version="1.0" encoding="utf-8"?>
 <unattend
 	xmlns="urn:schemas-microsoft-com:unattend">
 	<settings pass="windowsPE">
+%if isWinServerUefi == 'true':
+		
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
+			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<ComputerName>{newOsNode.hostname}</ComputerName>
+			<ProductKey>N2KJX-J94YW-TQVFB-DG9YT-724CC</ProductKey>
+		</component>
+%endif
+		
 		<component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<DriverPaths>
 				<PathAndCredentials wcm:keyValue="1" wcm:action="add">
-					<Path>${driversPath}</Path>
+<<<<<<<< HEAD:files/windowsunattendedconfig/contents/autounattend.xml
+					<Path>${driversAndAutounattendDriveLetter}:\drivers</Path>
+========
+					<Path>${driversAndScriptsDrive}:\attune_drivers</Path>
+>>>>>>>> efdf2b9 (NZOREG-152: Cleaned up autounattend.xml Mako parameters.):files/win10biosunattendedconfig/contents/autounattend.xml
 					<Credentials></Credentials>
 				</PathAndCredentials>
 			</DriverPaths>
@@ -27,15 +32,121 @@ Notes: Enter your comments here...
 			<SetupUILanguage>
 				<UILanguage>en-US</UILanguage>
 			</SetupUILanguage>
-			<InputLocale>1409:00000409</InputLocale>
+			<InputLocale>en-US</InputLocale>
 			<SystemLocale>en-US</SystemLocale>
 			<UILanguage>en-US</UILanguage>
 			<UILanguageFallback>en-US</UILanguageFallback>
-			<UserLocale>en-NZ</UserLocale>
+			<UserLocale>en-US</UserLocale>
 		</component>
 		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<ImageInstall>
+				<OSImage>
+%if isWinServerBios == 'true' or isWinServerUefi == 'true':
+					
+					<InstallFrom>
+						<MetaData wcm:action="add">
+							<Key>/IMAGE/INDEX</Key>
+							<Value>2</Value>
+						</MetaData>
+					</InstallFrom>
+%endif
+					
+					<InstallTo>
+						<DiskID>0</DiskID>
+%if isWin10Bios == 'true' or isWinServerBios == 'true':
+						
+						<PartitionID>2</PartitionID>
+%elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
+						
+						<PartitionID>4</PartitionID>
+%endif
+					
+					</InstallTo>
+					<InstallToAvailablePartition>false</InstallToAvailablePartition>
+				</OSImage>
+
+%if isWinPEKickstart == 'true':
+				
+				<!-- Custom WIM file -->
+				<DataImage wcm:action="add">
+					<InstallFrom>
+						<Path>X:\post_install.wim</Path>
+					</InstallFrom>
+					<InstallTo>
+						<DiskID>0</DiskID>
+  %if isWin10Bios == 'true' or isWinServerBios == 'true':
+						
+						<PartitionID>2</PartitionID>
+  %elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
+						
+						<PartitionID>4</PartitionID>
+  %endif
+					
+					</InstallTo>
+					<Order>1</Order>
+				</DataImage>
+%endif
+
+			
+			</ImageInstall>
+			<UserData>
+				<AcceptEula>true</AcceptEula>
+				<FullName>${newOsWindowsUser.user}</FullName>
+				<Organization>${newOsOrganisationName}</Organization>
+				<ProductKey>
+%if isWin10Bios == 'true':
+					
+					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
+%elif isWin10Uefi == 'true':
+          
+					<Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
+%endif
+				
+				</ProductKey>
+			</UserData>
+
+%if isWin10Bios == 'true' or isWinServerBios == 'true':
+			
+			<DiskConfiguration>
+				<Disk wcm:action="add">
+					<DiskID>0</DiskID>
+					<WillWipeDisk>true</WillWipeDisk>
+					<CreatePartitions>
+						<CreatePartition wcm:action="add">
+							<Order>1</Order>
+							<Type>Primary</Type>
+							<Size>500</Size>
+						</CreatePartition>
+						<CreatePartition wcm:action="add">
+							<Extend>true</Extend>
+							<Order>2</Order>
+							<Type>Primary</Type>
+						</CreatePartition>
+					</CreatePartitions>
+					<ModifyPartitions>
+						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
+							<Format>NTFS</Format>
+							<Label>System Reserved</Label>
+							<Order>1</Order>
+							<PartitionID>1</PartitionID>
+							<TypeID>0x27</TypeID>
+						</ModifyPartition>
+						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
+							<Format>NTFS</Format>
+							<Label>OS</Label>
+							<Letter>C</Letter>
+							<Order>2</Order>
+							<PartitionID>2</PartitionID>
+						</ModifyPartition>
+					</ModifyPartitions>
+				</Disk>
+			</DiskConfiguration>
+%elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
+			
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
@@ -98,25 +209,14 @@ Notes: Enter your comments here...
 					</ModifyPartitions>
 				</Disk>
 			</DiskConfiguration>
-			<ImageInstall>
-				<OSImage>
-					<InstallTo>
-						<DiskID>0</DiskID>
-						<PartitionID>4</PartitionID>
-					</InstallTo>
-					<InstallToAvailablePartition>false</InstallToAvailablePartition>
-				</OSImage>
-			</ImageInstall>
-			<UserData>
-				<AcceptEula>true</AcceptEula>
-				<FullName>poweron</FullName>
-				<Organization>${kickstartOrganisationName}</Organization>
-				<ProductKey>
-					<Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
-				</ProductKey>
-			</UserData>
+%endif
+
+		
 		</component>
 	</settings>
+
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
+	
 	<settings pass="offlineServicing">
 		<component name="Microsoft-Windows-LUA-Settings" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
@@ -135,11 +235,11 @@ Notes: Enter your comments here...
 		<component name="Microsoft-Windows-International-Core" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<InputLocale>1409:00000409</InputLocale>
-			<SystemLocale>en-NZ</SystemLocale>
-			<UILanguage>en-NZ</UILanguage>
-			<UILanguageFallback>en-NZ</UILanguageFallback>
-			<UserLocale>en-NZ</UserLocale>
+			<InputLocale>en-US</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UILanguageFallback>en-US</UILanguageFallback>
+			<UserLocale>en-US</UserLocale>
 		</component>
 		<component name="Microsoft-Windows-Security-SPP-UX" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
@@ -155,23 +255,58 @@ Notes: Enter your comments here...
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<ComputerName>${targetServer.hostname}</ComputerName>
+			<ComputerName>${newOsNode.hostname}</ComputerName>
 			<ProductKey>W269N-WFGWX-YVC9B-4J6C9-T83GX</ProductKey>
 		</component>
 	</settings>
+%endif
+
+	
 	<settings pass="oobeSystem">
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
+			
+			<UserAccounts>
+				<LocalAccounts>
+					<LocalAccount wcm:action="add">
+						<Password>
+							<Value>${newOsWindowsUser.password}</Value>
+							<PlainText>true</PlainText>
+						</Password>
+						<Description></Description>
+						<DisplayName>${newOsWindowsUser.user}</DisplayName>
+						<Group>Administrators</Group>
+						<Name>${newOsWindowsUser.user}</Name>
+					</LocalAccount>
+				</LocalAccounts>
+			</UserAccounts>
+%elif isWinServerBios == 'true' or isWinServerUefi == 'true':
+			
+			<UserAccounts>
+				<AdministratorPassword>
+					<Value>${newOsWindowsUser.password}</Value>
+					<PlainText>true</PlainText>
+				</AdministratorPassword>
+			</UserAccounts>
+%endif
+			
 			<AutoLogon>
 				<Password>
-					<Value>${adminUser.password}</Value>
+					<Value>${newOsWindowsUser.password}</Value>
 					<PlainText>true</PlainText>
 				</Password>
+				<LogonCount>88</LogonCount>
 				<Enabled>true</Enabled>
-				<Username>${adminUser.user}</Username>
-				<LogonCount>9999</LogonCount>
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
+				<Username>${newOsWindowsUser.user}</Username>
+%elif isWinServerBios == 'true' or isWinServerUefi == 'true':
+				<Username>Administrator</Username>
+%endif
 			</AutoLogon>
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
+			
 			<OOBE>
 				<HideEULAPage>true</HideEULAPage>
 				<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
@@ -182,40 +317,46 @@ Notes: Enter your comments here...
 				<SkipMachineOOBE>true</SkipMachineOOBE>
 				<ProtectYourPC>3</ProtectYourPC>
 			</OOBE>
-			<UserAccounts>
-				<LocalAccounts>
-					<LocalAccount wcm:action="add">
-						<Password>
-							<Value>${adminUser.password}</Value>
-							<PlainText>true</PlainText>
-						</Password>
-						<Description></Description>
-						<DisplayName>${adminUser.user}</DisplayName>
-						<Group>Administrators</Group>
-						<Name>${adminUser.user}</Name>
-					</LocalAccount>
-				</LocalAccounts>
-			</UserAccounts>
-			<RegisteredOrganization>${kickstartOrganisationName}</RegisteredOrganization>
-			<RegisteredOwner>${adminUser.user}</RegisteredOwner>
+%endif
+			
+			<RegisteredOrganization>${newOsOrganisationName}</RegisteredOrganization>
+			<RegisteredOwner>${newOsWindowsUser.user}</RegisteredOwner>
 			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
 			<FirstLogonCommands>
-                <!-- Enable running PowerShell scripts from file -->
+				<!-- Enable running PowerShell scripts from file -->
 				<SynchronousCommand wcm:action="add">
 					<Order>1</Order>
 					<RequiresUserInput>false</RequiresUserInput>
 					<CommandLine>PowerShell -Command "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force"</CommandLine>
 					<Description>Set PowerShell Execution Policy to Unrestricted</Description>
 				</SynchronousCommand>
-                <!-- Run ps1 file -->
+				<!-- Run ps1 file -->
 				<SynchronousCommand wcm:action="add">
 					<Order>2</Order>
 					<RequiresUserInput>false</RequiresUserInput>
-					<CommandLine>PowerShell -File "E:\custom_setup.ps1"</CommandLine>
+					<CommandLine>PowerShell -File "${postInstallSetupScriptDriveLetter}:\post_install_setup.ps1"</CommandLine>
 					<Description>Run Script</Description>
 				</SynchronousCommand>
+
+%if isWinPEKickstart == 'true':
+				
+				<SynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<RequiresUserInput>false</RequiresUserInput>
+					<CommandLine>PowerShell -Command "Remove-Item ${postInstallSetupScriptDriveLetter}:\post_install_setup.ps1"</CommandLine>
+					<Description>Setup WinRM</Description>
+				</SynchronousCommand>
+%endif
+
+			
 			</FirstLogonCommands>
-			<TimeZone>${targetServerWindowsTimezone}</TimeZone>
+			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
 		</component>
 	</settings>
-</unattend>
+%if isWinServerBios == 'true' or isWinServerUefi == 'true':
+	
+	<cpi:offlineImage cpi:source="wim:c:/users/documents/win_images/win2016/sources/install.wim#Windows Server 2016 SERVERSTANDARD"
+		xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+%endif
+
+	</unattend>

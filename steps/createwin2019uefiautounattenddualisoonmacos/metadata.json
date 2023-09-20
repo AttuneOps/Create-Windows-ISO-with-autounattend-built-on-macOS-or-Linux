@@ -8,23 +8,27 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "deploywin2019dvdiso"
+            "stepKey": "cleanbuildfiles"
         }, 
         {
             "order": 50, 
-            "stepKey": "renameinstalliso"
+            "stepKey": "deploywin2019dvdiso"
         }, 
         {
             "order": 100, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "renameinstalliso"
         }, 
         {
             "order": 150, 
-            "stepKey": "deploywindowsserveruefiunattendedconfig"
+            "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
             "order": 200, 
-            "stepKey": "kscreatedriversandanswerfileisoonmacos"
+            "stepKey": "deploywindowsserveruefiunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "kscreateanswerfileisoonmacos"
         }
     ], 
     "name": "Create Win2019 UEFI autounattend Dual ISO on macOS", 
