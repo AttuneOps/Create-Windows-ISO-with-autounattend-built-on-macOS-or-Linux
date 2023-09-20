@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "274fe79b-e873-4e30-8d9c-2c885b1ec722", 
+    "externalUuid4": "df8ac958-af6d-4a2b-9a5a-2500e44a2e79", 
     "isBlueprint": true, 
-    "key": "createwin10uefiautounattendsingleisoonlinux", 
+    "key": "createwin10biosautounattenddualisoonmacos", 
     "links": [
         {
             "order": 0, 
@@ -16,7 +16,7 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "renameinstalliso"
         }, 
         {
             "order": 150, 
@@ -24,17 +24,13 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin10uefiunattendedconfig"
+            "stepKey": "deploywin10biosunattendedconfig"
         }, 
         {
             "order": 250, 
-            "stepKey": "performcreateuefiiso"
-        }, 
-        {
-            "order": 300, 
-            "stepKey": "deletebuilddirectory"
+            "stepKey": "createanswerfileisoonmacos"
         }
     ], 
-    "name": "Create Win10 UEFI autounattend Single ISO on Linux", 
+    "name": "Create Win10 BIOS autounattend Dual ISO on macOS", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

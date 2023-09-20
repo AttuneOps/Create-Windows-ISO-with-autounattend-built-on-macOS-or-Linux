@@ -4,7 +4,7 @@
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "45d66b5f-30a8-4957-a440-e9e4c41946ea", 
-    "key": "deploywin10unattendedconfigforuefi", 
+    "key": "deploywin10uefiunattendedconfig", 
     "makoFileNames": [
         "autounattend.xml"
     ], 
@@ -35,7 +35,7 @@
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-    "name": "Deploy Win10 Unattended Config for UEFI", 
+    "name": "Deploy Win10 UEFI Unattended Config", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
