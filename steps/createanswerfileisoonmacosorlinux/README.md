@@ -1,5 +1,3 @@
-Creates an ISO at `{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso` containing:
-
 1. `drivers` folder
 2. `autounattend.xml`
 2. `post_install_setup.ps1`

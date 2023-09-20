@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "84b894ce-377c-434f-a662-c71e70a2b3a0", 
+    "externalUuid4": "7fc29673-1711-4f32-89a8-b0441d6199bf", 
     "isBlueprint": true, 
-    "key": "createwin10uefiautounattenddualisoonmacos", 
+    "key": "createwin2016uefiautounattenddualisoonmacosorlinux", 
     "links": [
         {
             "order": 0, 
@@ -12,7 +12,7 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "deploywin2016dvdiso"
         }, 
         {
             "order": 100, 
@@ -24,13 +24,13 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin10uefiunattendedconfig"
+            "stepKey": "deploywindowsserveruefiunattendedconfig"
         }, 
         {
             "order": 250, 
-            "stepKey": "createanswerfileisoonmacos"
+            "stepKey": "createanswerfileisoonmacosorlinux"
         }
     ], 
-    "name": "Create Win10 UEFI autounattend Dual ISO on macOS", 
+    "name": "Create Win2016 UEFI autounattend Dual ISO on macOS or Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
