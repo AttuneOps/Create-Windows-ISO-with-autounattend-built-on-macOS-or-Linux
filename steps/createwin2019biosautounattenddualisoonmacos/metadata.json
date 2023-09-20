@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "3f0ba963-c243-402c-8fee-07c422ad17f7", 
+    "externalUuid4": "28dba38b-0367-405f-885b-d2891662e4de", 
     "isBlueprint": true, 
-    "key": "createwin2016biosautounattenddualisoonmacos", 
+    "key": "createwin2019biosautounattenddualisoonmacos", 
     "links": [
         {
             "order": 0, 
@@ -12,7 +12,7 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywin2016dvdiso"
+            "stepKey": "deploywin2019dvdiso"
         }, 
         {
             "order": 100, 
@@ -31,6 +31,6 @@
             "stepKey": "createanswerfileisoonmacos"
         }
     ], 
-    "name": "Create Win2016 BIOS autounattend Dual ISO on macOS", 
+    "name": "Create Win2019 BIOS autounattend Dual ISO on macOS", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
