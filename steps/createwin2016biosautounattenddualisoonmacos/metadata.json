@@ -1,0 +1,36 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "3f0ba963-c243-402c-8fee-07c422ad17f7", 
+    "isBlueprint": true, 
+    "key": "createwin2016biosautounattenddualisoonmacos", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "deploywin2016dvdiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "renameinstalliso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywindowsserverbiosunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "createanswerfileisoonmacos"
+        }
+    ], 
+    "name": " Create Win2016 BIOS autounattend Dual ISO on macOS", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

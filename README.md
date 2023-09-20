@@ -96,6 +96,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win10 BIOS autounattend Dual ISO on macOS
 
 
+###  Create Win2016 BIOS autounattend Dual ISO on macOS
+
+
 
 
 
