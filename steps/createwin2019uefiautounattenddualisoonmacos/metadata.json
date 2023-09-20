@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "62f5185c-2421-413b-b4c3-7d16e6763268", 
+    "isBlueprint": true, 
+    "key": "createwin2019uefiautounattenddualisoonmacos", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deploywin2019dvdiso"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "renameinstalliso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "deploywindowsserveruefiunattendedconfig"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "kscreatedriversandanswerfileisoonmacos"
+        }
+    ], 
+    "name": "Create Win2019 UEFI autounattend Dual ISO on macOS", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
