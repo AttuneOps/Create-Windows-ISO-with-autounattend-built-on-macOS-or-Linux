@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "c834bfed-c438-4006-8851-4684836e1b11", 
+    "isBlueprint": true, 
+    "key": "createwin2022uefiautounattenddualisoonmacos", 
+    "links": [
+        {
+            "order": 50, 
+            "stepKey": "deploywindowsserver2022iso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "renameinstalliso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywindowsserveruefiunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "kscreatedriversandanswerfileisoonmacos"
+        }
+    ], 
+    "name": "Create Win2022 UEFI autounattend Dual ISO on macOS", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
