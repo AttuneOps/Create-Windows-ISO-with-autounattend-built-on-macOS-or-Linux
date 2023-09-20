@@ -12,7 +12,7 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywindowsserver2022iso"
+            "stepKey": "deploywin2022dvdiso"
         }, 
         {
             "order": 100, 

@@ -28,7 +28,7 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "kscreateanswerfileisoonmacos"
+            "stepKey": "createanswerfileisoonmacos"
         }
     ], 
     "name": "Create Win2019 UEFI autounattend Dual ISO on macOS", 
