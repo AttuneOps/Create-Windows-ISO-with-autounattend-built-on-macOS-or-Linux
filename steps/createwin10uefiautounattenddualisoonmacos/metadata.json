@@ -24,7 +24,7 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin10unattendedconfigforuefi"
+            "stepKey": "deploywin10uefiunattendedconfig"
         }, 
         {
             "order": 250, 
