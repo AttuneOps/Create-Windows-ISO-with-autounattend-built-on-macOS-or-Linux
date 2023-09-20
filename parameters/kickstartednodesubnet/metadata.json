@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "415eb7bb-45b1-44a0-9754-b8970be17056", 
-    "key": "kickstartednodesubnet", 
-    "name": "Kickstarted Node Subnet", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.Ip4Subnet"
-}

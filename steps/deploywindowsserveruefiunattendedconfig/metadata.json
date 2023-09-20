@@ -21,12 +21,12 @@
         }, 
         {
             "name": "newOsWindowsUser", 
-            "parameterKey": "kickstartedwindowsuseradministrator", 
+            "parameterKey": "newoswindowsuseradministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
         {
             "name": "timeZone", 
-            "parameterKey": "kickstartedwindowstimezone", 
+            "parameterKey": "newoswindowstimezone", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {

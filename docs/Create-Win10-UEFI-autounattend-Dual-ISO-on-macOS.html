@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Create Win2016 BIOS autounattend Single ISO on Linux - Attune Automation</title>
+    <title>How to Create Win10 UEFI autounattend Dual ISO on macOS - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win2016 BIOS autounattend Single ISO on Linux - Attune Automation">
+          content="How to Create Win10 UEFI autounattend Dual ISO on macOS - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win2016 BIOS autounattend Single ISO on Linux - Attune Automation" />
+          content="HowTo Create Win10 UEFI autounattend Dual ISO on macOS - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win2016 BIOS autounattend Single ISO on Linux - Attune Automation" />
+          content="How to Create Win10 UEFI autounattend Dual ISO on macOS - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win2016 BIOS autounattend Single ISO on Linux</strong>
+                    <strong>Create Win10 UEFI autounattend Dual ISO on macOS</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win2016 BIOS autounattend Single ISO on Linux
+                How to Create Win10 UEFI autounattend Dual ISO on macOS
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win2016 BIOS autounattend Single ISO on Linux</strong>
+                            <strong>Create Win10 UEFI autounattend Dual ISO on macOS</strong>
                         </a>
                     </p>
 
@@ -214,24 +214,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2016dvdiso">
-                            <strong>Step 2 -</strong> Deploy Win2016 DVD ISO
+                        <a href="#deploywin10dvdiso">
+                            <strong>Step 2 -</strong> Deploy Win10 DVD ISO
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsbootimg">
-                            <strong>Step 3 -</strong> Extract Windows boot.img
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#extractwindowsiso">
-                            <strong>Step 4 -</strong> Extract Windows ISO
+                        <a href="#renameinstalliso">
+                            <strong>Step 3 -</strong> Rename Install ISO
                         </a>
                     </p>
 
@@ -239,31 +231,23 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 5 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywindowsserverbiosunattendedconfig">
-                            <strong>Step 6 -</strong> Deploy Windows Server BIOS Unattended Config
+                        <a href="#deploywin10unattendedconfigforuefi">
+                            <strong>Step 5 -</strong> Deploy Win10 Unattended Config for UEFI
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createbiosbootiso">
-                            <strong>Step 7 -</strong> Create BIOS Boot ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deletebuilddirectory">
-                            <strong>Step 8 -</strong> Delete Build Directory
+                        <a href="#createanswerfileisoonmacos">
+                            <strong>Step 6 -</strong> Create Answer File ISO on macOS
                         </a>
                     </p>
 
@@ -326,7 +310,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win2016 BIOS autounattend Single ISO on Linux</strong>
+                You've automated: <strong>Create Win10 UEFI autounattend Dual ISO on macOS</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -427,9 +411,9 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2016dvdiso">
-                            <a href="#deploywin2016dvdiso">
-                                <strong>Step 2 -</strong> Deploy Win2016 DVD ISO
+                        <h3 id="deploywin10dvdiso">
+                            <a href="#deploywin10dvdiso">
+                                <strong>Step 2 -</strong> Deploy Win10 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -437,7 +421,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2016 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Desktop 10 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -458,11 +442,11 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
     <div class="row">
         <p>
-            <p>https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016</p>
+            <p>A plain unaltered ISO</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>WIN_Raw_Win2016_ISO.tar</strong>
+            <strong>Win10_Desktop_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -484,88 +468,13 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsbootimg">
-                            <a href="#extractwindowsbootimg">
-                                <strong>Step 3 -</strong> Extract Windows boot.img
+                        <h3 id="renameinstalliso">
+                            <a href="#renameinstalliso">
+                                <strong>Step 3 -</strong> Rename Install ISO
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-# Extract the boot.img out of the WinPE ISO
-
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-# Case insensitve globbing
-shopt -s nocaseglob
-
-# Set the filename of the ISO
-F=$(ls *.iso)
-
-# Get the Boot image offset
-OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
-
-# Extract the boot.img.
-dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="extractwindowsiso">
-                            <a href="#extractwindowsiso">
-                                <strong>Step 4 -</strong> Extract Windows ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Extracts the Windows ISO.</p>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -593,21 +502,7 @@ dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
                 <code class="language-sql py-0">
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
-# Case insensitve globbing
-shopt -s nocaseglob
-
-if ls | grep -q *iso
-then
-    
-    ISO=&quot;$(echo *iso)&quot;
-    echo &quot;ISO is $ISO&quot;
-    
-    7z x &quot;${ISO}&quot;
-    
-    rm -v &quot;${ISO}&quot;
-else
-    echo &quot;ISO is already extracted.&quot;
-fi
+mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
                 </code>
             </pre>
         </div>
@@ -624,7 +519,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 5 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -678,9 +573,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywindowsserverbiosunattendedconfig">
-                            <a href="#deploywindowsserverbiosunattendedconfig">
-                                <strong>Step 6 -</strong> Deploy Windows Server BIOS Unattended Config
+                        <h3 id="deploywin10unattendedconfigforuefi">
+                            <a href="#deploywin10unattendedconfigforuefi">
+                                <strong>Step 5 -</strong> Deploy Win10 Unattended Config for UEFI
                             </a>
                         </h3>
                     </div>
@@ -688,7 +583,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys a Windows 2019 autounattend.xml file. This works with Windows Server 2016, 2019 and 2022.</p>
+                                <p>Deploys the Windows Desktop 10 unattended config for UEFI boot.</p>
                             </p>
                         </div>
                     </div>
@@ -713,7 +608,7 @@ fi
         </p>
         <p>
             Copy the File(s)
-            <strong>Widows_Server_BIOS_Unattended_Config.tar</strong>
+            <strong>Win10_UEFI_Unattended_Config.tar</strong>
             to the target node.
         </p>
         <p>
@@ -734,9 +629,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createbiosbootiso">
-                            <a href="#createbiosbootiso">
-                                <strong>Step 7 -</strong> Create BIOS Boot ISO
+                        <h3 id="createanswerfileisoonmacos">
+                            <a href="#createanswerfileisoonmacos">
+                                <strong>Step 6 -</strong> Create Answer File ISO on macOS
                             </a>
                         </h3>
                     </div>
@@ -744,7 +639,16 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Creates an ISO called <code>Drivers.iso</code> containing:</p>
+<ol>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install_setup.ps1</code></li>
+</ol>
+<p>This works for kickstarts on macOS with:
+1. Windows Desktop 10
+2. Windows Server 2016
+2. Windows Server 2019
+3. Windows Server 2022</p>
                             </p>
                         </div>
                     </div>
@@ -773,72 +677,14 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
+export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+echo &quot;Using $(which xorriso)&quot;
+
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
-mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-    -b boot.img -no-emul-boot -c BOOT.CAT \
-    -iso-level 3 -udf -joliet-long -relaxed-filenames \
-    -J -l -D -N -V &quot;KS_WIN&quot; .
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deletebuilddirectory">
-                            <a href="#deletebuilddirectory">
-                                <strong>Step 8 -</strong> Delete Build Directory
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-if [ -d &quot;${DIR}&quot; ]
-then
-    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
-else
-    echo &quot;No directory to remove.&quot;
-fi
+xorriso -as mkisofs -o Drivers.iso \
+    -iso-level 2  -joliet-long -relaxed-filenames \
+    -J -l -D -N -V &quot;DRIVERS&quot; autounattend.xml post_install_setup.ps1
                 </code>
             </pre>
         </div>

@@ -421,7 +421,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2016 ISO to <code>{ksAttuneBaseDir}/build-{kickstartedNode.fqn}</code>.</p>
+                                <p>Deploys Windows Server 2016 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -434,18 +434,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
     
 
@@ -466,7 +455,7 @@ ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{ksAttuneBaseDir}/build-{kickstartedNode.fqn}, relative to the home directory
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -495,18 +484,7 @@ ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     

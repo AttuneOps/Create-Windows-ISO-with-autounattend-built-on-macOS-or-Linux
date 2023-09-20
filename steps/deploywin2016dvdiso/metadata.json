@@ -1,13 +1,13 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "winrawwin2016iso", 
-    "deployPath": "{ksAttuneBaseDir}/build-{kickstartedNode.fqn}", 
+    "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "1cccbbe2-6649-4161-b020-b2626f881797", 
     "key": "deploywin2016dvdiso", 
     "name": "Deploy Win2016 DVD ISO", 
-    "osCredKey": "kickstartworkerlinuxuser", 
-    "serverKey": "kickstartworkerlinuxnode", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }
