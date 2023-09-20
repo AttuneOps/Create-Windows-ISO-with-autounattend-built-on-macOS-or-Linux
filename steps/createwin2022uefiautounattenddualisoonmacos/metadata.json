@@ -7,6 +7,10 @@
     "key": "createwin2022uefiautounattenddualisoonmacos", 
     "links": [
         {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
             "order": 50, 
             "stepKey": "deploywindowsserver2022iso"
         }, 
@@ -24,7 +28,7 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "kscreatedriversandanswerfileisoonmacos"
+            "stepKey": "kscreateanswerfileisoonmacos"
         }
     ], 
     "name": "Create Win2022 UEFI autounattend Dual ISO on macOS", 

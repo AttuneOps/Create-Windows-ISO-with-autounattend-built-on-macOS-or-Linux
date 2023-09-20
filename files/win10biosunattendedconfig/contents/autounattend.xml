@@ -1,3 +1,4 @@
+
 <!--*************************************************
 Windows 10 Answer File Generator
 Created using Windows AFG found at:
@@ -16,7 +17,7 @@ Notes: Enter your comments here...
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<DriverPaths>
 				<PathAndCredentials wcm:keyValue="1" wcm:action="add">
-					<Path>${driversPath}</Path>
+					<Path>${driversAndScriptsDrive}:\attune_drivers</Path>
 					<Credentials></Credentials>
 				</PathAndCredentials>
 			</DriverPaths>
@@ -38,71 +39,45 @@ Notes: Enter your comments here...
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<DiskConfiguration>
 				<Disk wcm:action="add">
-					<DiskID>0</DiskID>
-					<WillWipeDisk>true</WillWipeDisk>
 					<CreatePartitions>
-						<!-- Windows RE Tools partition -->
 						<CreatePartition wcm:action="add">
 							<Order>1</Order>
 							<Type>Primary</Type>
-							<Size>300</Size>
-						</CreatePartition>
-						<!-- System partition (ESP) -->
-						<CreatePartition wcm:action="add">
-							<Order>2</Order>
-							<Type>EFI</Type>
 							<Size>100</Size>
 						</CreatePartition>
-						<!-- Microsoft reserved partition (MSR) -->
 						<CreatePartition wcm:action="add">
-							<Order>3</Order>
-							<Type>MSR</Type>
-							<Size>128</Size>
-						</CreatePartition>
-						<!-- Windows partition -->
-						<CreatePartition wcm:action="add">
-							<Order>4</Order>
-							<Type>Primary</Type>
 							<Extend>true</Extend>
+							<Order>2</Order>
+							<Type>Primary</Type>
 						</CreatePartition>
 					</CreatePartitions>
 					<ModifyPartitions>
-						<!-- Windows RE Tools partition -->
 						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
+							<Format>NTFS</Format>
+							<Label>System Reserved</Label>
 							<Order>1</Order>
 							<PartitionID>1</PartitionID>
-							<Label>WINRE</Label>
+							<TypeID>0x27</TypeID>
+						</ModifyPartition>
+						<ModifyPartition wcm:action="add">
+							<Active>true</Active>
 							<Format>NTFS</Format>
-							<TypeID>DE94BBA4-06D1-4D40-A16A-BFD50179D6AC</TypeID>
-						</ModifyPartition>
-						<!-- System partition (ESP) -->
-						<ModifyPartition wcm:action="add">
-							<Order>2</Order>
-							<PartitionID>2</PartitionID>
-							<Label>System</Label>
-							<Format>FAT32</Format>
-						</ModifyPartition>
-						<!-- MSR partition does not need to be modified -->
-						<ModifyPartition wcm:action="add">
-							<Order>3</Order>
-							<PartitionID>3</PartitionID>
-						</ModifyPartition>
-						<!-- Windows partition -->
-						<ModifyPartition wcm:action="add">
-							<Order>4</Order>
-							<PartitionID>4</PartitionID>
 							<Label>OS</Label>
 							<Letter>C</Letter>
-							<Format>NTFS</Format>
+							<Order>2</Order>
+							<PartitionID>2</PartitionID>
 						</ModifyPartition>
 					</ModifyPartitions>
+					<DiskID>0</DiskID>
+					<WillWipeDisk>true</WillWipeDisk>
 				</Disk>
 			</DiskConfiguration>
 			<ImageInstall>
 				<OSImage>
 					<InstallTo>
 						<DiskID>0</DiskID>
-						<PartitionID>4</PartitionID>
+						<PartitionID>2</PartitionID>
 					</InstallTo>
 					<InstallToAvailablePartition>false</InstallToAvailablePartition>
 				</OSImage>
@@ -110,9 +85,9 @@ Notes: Enter your comments here...
 			<UserData>
 				<AcceptEula>true</AcceptEula>
 				<FullName>poweron</FullName>
-				<Organization>${kickstartOrganisationName}</Organization>
+				<Organization>${newOsOrganisationName}</Organization>
 				<ProductKey>
-					<Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
+					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
 				</ProductKey>
 			</UserData>
 		</component>
@@ -155,7 +130,7 @@ Notes: Enter your comments here...
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<ComputerName>${targetServer.hostname}</ComputerName>
+			<ComputerName>${newOsNode.hostname}</ComputerName>
 			<ProductKey>W269N-WFGWX-YVC9B-4J6C9-T83GX</ProductKey>
 		</component>
 	</settings>
@@ -165,12 +140,12 @@ Notes: Enter your comments here...
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<AutoLogon>
 				<Password>
-					<Value>${adminUser.password}</Value>
+					<Value>${newOsWindowsUser.password}</Value>
 					<PlainText>true</PlainText>
 				</Password>
 				<Enabled>true</Enabled>
-				<Username>${adminUser.user}</Username>
-				<LogonCount>9999</LogonCount>
+				<Username>${newOsWindowsUser.user}</Username>
+				<LogonCount>88</LogonCount>
 			</AutoLogon>
 			<OOBE>
 				<HideEULAPage>true</HideEULAPage>
@@ -186,18 +161,18 @@ Notes: Enter your comments here...
 				<LocalAccounts>
 					<LocalAccount wcm:action="add">
 						<Password>
-							<Value>${adminUser.password}</Value>
+							<Value>${newOsWindowsUser.password}</Value>
 							<PlainText>true</PlainText>
 						</Password>
 						<Description></Description>
-						<DisplayName>${adminUser.user}</DisplayName>
+						<DisplayName>${newOsWindowsUser.user}</DisplayName>
 						<Group>Administrators</Group>
-						<Name>${adminUser.user}</Name>
+						<Name>${newOsWindowsUser.user}</Name>
 					</LocalAccount>
 				</LocalAccounts>
 			</UserAccounts>
-			<RegisteredOrganization>${kickstartOrganisationName}</RegisteredOrganization>
-			<RegisteredOwner>${adminUser.user}</RegisteredOwner>
+			<RegisteredOrganization>${newOsOrganisationName}</RegisteredOrganization>
+			<RegisteredOwner>poweron</RegisteredOwner>
 			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
 			<FirstLogonCommands>
                 <!-- Enable running PowerShell scripts from file -->
@@ -209,13 +184,13 @@ Notes: Enter your comments here...
 				</SynchronousCommand>
                 <!-- Run ps1 file -->
 				<SynchronousCommand wcm:action="add">
-					<Order>2</Order>
+					<Order>10</Order>
 					<RequiresUserInput>false</RequiresUserInput>
-					<CommandLine>PowerShell -File "E:\custom_setup.ps1"</CommandLine>
-					<Description>Run Script</Description>
+					<CommandLine>PowerShell -File "${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
+					<Description>Setup WinRM</Description>
 				</SynchronousCommand>
 			</FirstLogonCommands>
-			<TimeZone>${targetServerWindowsTimezone}</TimeZone>
+			<TimeZone>New Zealand Standard Time</TimeZone>
 		</component>
 	</settings>
 </unattend>

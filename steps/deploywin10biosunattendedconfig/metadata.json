@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "win10unattendedconfig", 
+    "archiveKey": "win10biosunattendedconfig", 
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "251b7f7d-064d-46e6-8449-d2bfb12172a7", 
@@ -20,7 +20,7 @@
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
         {
-            "name": "kickstartOrganisationName", 
+            "name": "newOsOrganisationName", 
             "parameterKey": "newosorganisationname", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 

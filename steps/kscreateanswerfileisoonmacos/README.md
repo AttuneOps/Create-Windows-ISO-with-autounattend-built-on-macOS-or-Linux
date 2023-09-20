@@ -1,7 +1,6 @@
 Creates an ISO called `Drivers.iso` containing:
 
-1. Drivers folder.
-2. `autounattend.xml`
+1. `autounattend.xml`
 2. `post_install_setup.ps1`
 
 This works for kickstarts on macOS with:

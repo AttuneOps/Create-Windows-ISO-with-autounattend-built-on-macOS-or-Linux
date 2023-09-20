@@ -125,12 +125,12 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Post Install Setup PowerShell Script | Version Controlled Files |  |
 | Widows Server BIOS Unattended Config | Version Controlled Files |  |
 | Win10 Desktop ISO | Large Archives | A plain unaltered ISO |
-| Win10 UEFI Unattended Config | Version Controlled Files |  |
-| Win10 Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file. |
 | Win2019 UEFI Unattended Config | Version Controlled Files |  |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | WIN Raw Win2016 ISO | Large Archives | https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016 |
 | WIN Raw Win2022 ISO | Large Archives |  |
+| Win10 BIOS Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file. |
+| Win10 UEFI Unattended Config | Version Controlled Files |  |
 
 
 
