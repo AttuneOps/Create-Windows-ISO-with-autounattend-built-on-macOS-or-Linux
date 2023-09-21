@@ -31,7 +31,7 @@
         }
     ], 
     "name": "LIN Deploy startnet.cmd for WinPE for Win2019", 
-    "osCredKey": "kickstartworkerlinuxuser", 
-    "serverKey": "kickstartworkerlinuxnode", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

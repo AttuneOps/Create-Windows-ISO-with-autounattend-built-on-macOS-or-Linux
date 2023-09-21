@@ -268,6 +268,14 @@
                     </p>
 
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploywindowsserveruefiunattendedconfig">
+                            <strong>Step 6 -</strong> Deploy Windows Server  UEFI Unattended Config
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -435,13 +443,6 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -451,18 +452,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -478,8 +468,9 @@ ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-mkdir --parents &quot;{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}&quot;
-cd &quot;{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}&quot;
+PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+mkdir --parents &quot;${PATH}&quot;
+cd &quot;${PATH}&quot;
 cp --verbose &quot;../winpe_win2019_plain_uefi.iso&quot; &quot;winpe.iso&quot;
                 </code>
             </pre>
@@ -535,13 +526,12 @@ cp --verbose &quot;../winpe_win2019_plain_uefi.iso&quot; &quot;winpe.iso&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
 FOLDER=winpe_staging
 mkdir -p &quot;${FOLDER}&quot;
 
-cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
-7z x winpe.iso -owinpe_staging
+7z x winpe.iso -o&quot;${FOLDER}&quot;
                 </code>
             </pre>
         </div>
@@ -650,18 +640,7 @@ cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
     
 
@@ -791,6 +770,68 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
         </div>
     </div>
 
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploywindowsserveruefiunattendedconfig">
+                            <a href="#deploywindowsserveruefiunattendedconfig">
+                                <strong>Step 6 -</strong> Deploy Windows Server  UEFI Unattended Config
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the Windows Server 2019 unattended config for Parallels Desktop.</p>
+<p>This works for:</p>
+<ol>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Win201_UEFI_Unattended_Config.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
 
 
 

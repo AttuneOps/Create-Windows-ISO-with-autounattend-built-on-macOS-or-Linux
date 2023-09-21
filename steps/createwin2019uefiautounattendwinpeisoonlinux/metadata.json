@@ -25,6 +25,10 @@
         {
             "order": 200, 
             "stepKey": "createpostsetupwim"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "deploywindowsserveruefiunattendedconfig"
         }
     ], 
     "name": "Create Win2019 UEFI autounattend WinPE ISO on Linux", 

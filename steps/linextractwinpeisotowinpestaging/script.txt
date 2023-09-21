@@ -1,7 +1,6 @@
-cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
 FOLDER=winpe_staging
 mkdir -p "${FOLDER}"
 
-cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
-7z x winpe.iso -owinpe_staging
+7z x winpe.iso -o"${FOLDER}"

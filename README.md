@@ -124,12 +124,6 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
 | Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 | Drivers and Scripts Drive | Text | `driversandscriptsdrive` | The Windows drive letter containing the attune_drivers and post_install_setup.ps1 as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
-| Kickstarted Node | Basic Node | `kickstartednode` |  |
-| Kickstarted Node Subnet | Network IPv4 Subnet | `kickstartednodesubnet` |  |
-| Kickstarted Windows Interface Alias | Text | `kickstartedwindowsinterfacealias` | oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
-| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` |  |
-| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | Linux refers to both Linux and MacOS. |
-| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user credentials for the node building the kickstart ISO.<br>Only for Kickstart Worker Linux Node. |
 | New OS Interface Alias | Text | `newosinterfacealias` | This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine.<br><br>oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0" |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
