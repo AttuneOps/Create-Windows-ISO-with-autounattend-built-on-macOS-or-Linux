@@ -45,10 +45,25 @@
 						<PartitionID>3</PartitionID>
 					</InstallTo>
 				</OSImage>
+				
+%if ${isWinPEKickstart}
+				<!-- Custom WIM file -->
+				<DataImage wcm:action="add">
+					<InstallFrom>
+						<Path>X:\custom.wim</Path>
+					</InstallFrom>
+					<InstallTo>
+						<DiskID>0</DiskID>
+						<PartitionID>3</PartitionID>
+					</InstallTo>
+					<Order>1</Order>
+				</DataImage>
+%endif
+
 			</ImageInstall>
 			<UserData>
 				<AcceptEula>true</AcceptEula>
-        <Organization>${newOsOrganisationName}</Organization>
+                <Organization>${newOsOrganisationName}</Organization>
 			</UserData>
 			<DiskConfiguration>
 				<Disk wcm:action="add">
@@ -123,9 +138,19 @@
 				<SynchronousCommand wcm:action="add">
 					<Order>2</Order>
 					<RequiresUserInput>false</RequiresUserInput>
-					<CommandLine>PowerShell -File "${driversAndScriptsDrive}:\custom_setup.ps1"</CommandLine>
+					<CommandLine>PowerShell -File "${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
 					<Description>Run Script</Description>
 				</SynchronousCommand>
+				
+%if ${isWinPEKickstart}
+				<SynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<RequiresUserInput>false</RequiresUserInput>
+					<CommandLine>PowerShell -Command "Remove-Item ${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
+					<Description>Setup WinRM</Description>
+				</SynchronousCommand>
+%endif				
+				
 			</FirstLogonCommands>
 			<TimeZone>${timeZone}</TimeZone>
 		</component>
