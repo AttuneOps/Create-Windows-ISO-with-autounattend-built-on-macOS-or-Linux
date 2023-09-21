@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "winpestartnetcmdforwin2019onesxi", 
-    "deployPath": "{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}", 
+    "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
     "key": "lindeploystartnetcmdforwinpeforwin2019", 
@@ -11,7 +11,7 @@
     "makoParameters": [
         {
             "name": "ksWindowsInterfaceAlias", 
-            "parameterKey": "kickstartedwindowsinterfacealias", 
+            "parameterKey": "newosinterfacealias", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -21,12 +21,12 @@
         }, 
         {
             "name": "targetServer", 
-            "parameterKey": "kickstartednode", 
+            "parameterKey": "newosnode", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
             "name": "targetSubnet", 
-            "parameterKey": "kickstartednodesubnet", 
+            "parameterKey": "newosnodesubnet", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }
     ], 
