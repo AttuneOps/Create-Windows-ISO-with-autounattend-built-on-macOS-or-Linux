@@ -1,0 +1,1 @@
+Relative to the `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}` directory, this step moves the contents of `winpe_staging` to `uefi_mount`.

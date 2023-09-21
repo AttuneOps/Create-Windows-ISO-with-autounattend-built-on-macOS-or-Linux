@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "23c3cbd6-5706-4508-9657-7509c9c945b0", 
+    "externalUuid4": "effd8b66-13f6-485f-a823-4d0750285343", 
     "interpreter": 1, 
-    "key": "mountemptyuefiiso", 
-    "name": "Mount Empty UEFI ISO", 
+    "key": "mountemptyuefiforwinpeiso", 
+    "name": "Mount Empty UEFI for WinPE ISO", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

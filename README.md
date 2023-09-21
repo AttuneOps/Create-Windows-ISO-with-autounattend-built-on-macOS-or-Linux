@@ -111,6 +111,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### kooi tmp 1
 
 
+### Perform Recreate UEFI for WinPE ISO
+
+
 
 
 
