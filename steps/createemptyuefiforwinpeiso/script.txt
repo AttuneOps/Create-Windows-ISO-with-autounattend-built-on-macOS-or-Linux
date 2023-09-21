@@ -1,6 +1,8 @@
 cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
 
 bytes=$(du --summarize winpe_staging | awk '{print $1}')
+
+# Add some buffer
 ((bytes=bytes+10000))
 
 mkfs.msdos -C "../kickstart_{newOsNode.fqn}.iso" "${bytes}"
