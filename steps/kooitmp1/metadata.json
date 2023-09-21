@@ -1,0 +1,24 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "8c332b4c-cfee-44f1-9570-bbb2b680f13c", 
+    "isBlueprint": true, 
+    "key": "kooitmp1", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "lindeploystartnetcmdforwinpeforwin2019"
+        }
+    ], 
+    "name": "kooi tmp 1", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
