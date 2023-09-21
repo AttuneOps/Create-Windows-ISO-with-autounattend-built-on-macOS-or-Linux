@@ -1,1 +1,1 @@
-Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the `winpe_staging` directory as `{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso`.
+Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the `winpe_staging` directory at `{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso`.

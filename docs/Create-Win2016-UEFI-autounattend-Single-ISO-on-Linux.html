@@ -736,7 +736,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the <code>build-{newOsNode.fqn}</code> directory at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -795,7 +795,7 @@ mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Mounts the UEFI ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -841,7 +841,7 @@ MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
 
 mkdir --verbose &quot;${MOUNT_PATH}&quot;
 
-mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDE}&quot;
+mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
                 </code>
             </pre>
         </div>
@@ -866,7 +866,7 @@ mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDE}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Move contents of <code>build-{newOsNode.fqn}</code> to <code>build-{newOsNode.fqn}-uefi-mount</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -924,7 +924,8 @@ mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uef
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>. </p>
+<p>This writes the contents of <code>build-{newOsNode.fqn}-uefi-mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for Single ISO</code>. </p>
                             </p>
                         </div>
                     </div>
@@ -992,7 +993,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".</p>
+                                <p>Deletes the build directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>

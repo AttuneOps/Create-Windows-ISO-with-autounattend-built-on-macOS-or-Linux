@@ -1,1 +1,1 @@
-Deletes the build directory "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}".
+Deletes the build directory `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}`.
