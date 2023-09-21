@@ -21,6 +21,10 @@
         {
             "order": 150, 
             "stepKey": "lindeploystartnetcmdforwinpeforwin2019"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "createpostsetupwim"
         }
     ], 
     "name": "Create Win2019 UEFI autounattend WinPE ISO on Linux", 
