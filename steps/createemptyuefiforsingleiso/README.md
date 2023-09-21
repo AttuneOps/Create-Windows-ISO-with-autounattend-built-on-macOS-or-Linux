@@ -1,0 +1,1 @@
+Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the `build-{newOsNode.fqn}` directory at `{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso`.
