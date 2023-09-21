@@ -1,1 +1,1 @@
-Deploys the custom run once PowerShell scripts.
+Deploys the post install setup PowerShell script `post_install_setup.ps1`.

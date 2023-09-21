@@ -1,0 +1,1 @@
+Moves `startnet.cmd` to the folder `WinPE_BootImageDir/Windows/System32`.

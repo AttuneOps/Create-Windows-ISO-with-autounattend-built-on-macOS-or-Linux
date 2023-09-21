@@ -1,4 +1,4 @@
-Deploys the Windows Server 2019 unattended config for Parallels Desktop.
+Deploys the Windows Server 2019 unattended config for UEFI kickstarts.
 
 This works for:
 

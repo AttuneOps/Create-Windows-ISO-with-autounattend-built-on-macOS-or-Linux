@@ -327,8 +327,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmovecustomwimtobootwim">
-                            <strong>Step 7.3.3 -</strong> LIN Move custom.wim to boot.wim
+                        <a href="#linmovepostinstallwimtobootwim">
+                            <strong>Step 7.3.3 -</strong> LIN Move post_install.wim to boot.wim
                         </a>
                     </p>
 
@@ -561,7 +561,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Makes a copy of the <code>winpe_win2019_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn</code>. </p>
                             </p>
                         </div>
                     </div>
@@ -618,8 +618,7 @@ cp --verbose &quot;../winpe_win2019_plain_uefi.iso&quot; &quot;winpe.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder to remove <code>setup.exe</code>.</p>
-<p>This will make the WinPE not find <code>setup.exe</code> and instead run <code>startnet.cmd</code>.</p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
                             </p>
                         </div>
                     </div>
@@ -678,7 +677,8 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deploys <code>startnet.cmd</code>.</p>
+<p>This script is run by WinPE.</p>
                             </p>
                         </div>
                     </div>
@@ -734,7 +734,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the Windows Server 2019 unattended config for Parallels Desktop.</p>
+                                <p>Deploys the Windows Server 2019 unattended config for UEFI kickstarts.</p>
 <p>This works for:</p>
 <ol>
 <li>Windows Server 2016</li>
@@ -796,7 +796,9 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Creates a <code>post_install.wim</code> Windows Imaging Format file.</p>
+<p>The purpose of this file is to overlay onto the <code>C</code> drive any files we want for the Windows Installer to use.</p>
+<p>in this case we want to deploy a post install setup PowerShell script at <code>C:\post_install_setup.ps1</code> that is called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'s section.</p>
                             </p>
                         </div>
                     </div>
@@ -825,7 +827,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the custom run once PowerShell scripts.</p>
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -937,7 +939,8 @@ mv --verbose post_install_setup.ps1 post_install_wim
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Moves <code>post_install_setup.ps1</code> into the folder <code>post_install_wim</code>.</p>
+<p>The folder <code>post_install_wim</code> is the staging folder for creating the <code>post_install.wim</code> Windows Imaging Format file.</p>
                             </p>
                         </div>
                     </div>
@@ -1002,7 +1005,12 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code></p>
+<ol>
+<li><code>startnet.cmd</code></li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install.wim</code></li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -1031,7 +1039,7 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a directory <code>WinPE_BootImageDir</code> for use with mounting <code>winpe_staging</code>'s <code>SOURCES/BOOT.WIM</code>.</p>
+                                <p>Creates a directory <code>WinPE_BootImageDir</code> for mounting <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1146,7 +1154,12 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Moves these files to the <code>winpe_staging/SOURCES/BOOT.WIM</code> mounted folder <code>WinPE_BootImageDir</code>:</p>
+<ol>
+<li><code>startnet.cmd</code></li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install.wim</code></li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -1175,7 +1188,7 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Moves <code>startnet.cmd</code> to the folder <code>WinPE_BootImageDir/Windows/System32</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1232,7 +1245,7 @@ mv --verbose startnet.cmd \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Moves <code>autounattend.xml</code> to the folder <code>WinPE_BootImageDir</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1277,9 +1290,9 @@ mv --verbose autounattend.xml WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h5 id="linmovecustomwimtobootwim">
-                            <a href="#linmovecustomwimtobootwim">
-                                <strong>Step 7.3.3 -</strong> LIN Move custom.wim to boot.wim
+                        <h5 id="linmovepostinstallwimtobootwim">
+                            <a href="#linmovepostinstallwimtobootwim">
+                                <strong>Step 7.3.3 -</strong> LIN Move post_install.wim to boot.wim
                             </a>
                         </h5>
                     </div>
@@ -1287,7 +1300,7 @@ mv --verbose autounattend.xml WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Moves <code>post_install.wim</code> to the folder <code>WinPE_BootImageDir</code>.</p>
                             </p>
                         </div>
                     </div>
