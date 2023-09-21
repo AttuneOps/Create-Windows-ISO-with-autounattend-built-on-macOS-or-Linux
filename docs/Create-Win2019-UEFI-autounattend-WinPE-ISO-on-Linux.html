@@ -238,8 +238,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#deploywindowsserveruefiunattendedconfig">
+                            <strong>Step 5 -</strong> Deploy Windows Server  UEFI Unattended Config
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#createpostsetupwim">
-                            <strong>Step 5 -</strong> Create Post Setup WIM
+                            <strong>Step 6 -</strong> Create Post Setup WIM
                         </a>
                     </p>
     
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 5.1 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 6.1 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -255,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
-                            <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                            <strong>Step 6.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
                         </a>
                     </p>
 
@@ -263,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createpostinstallwimwindowsimage">
-                            <strong>Step 5.3 -</strong> Create post_install.wim Windows Image
+                            <strong>Step 6.3 -</strong> Create post_install.wim Windows Image
                         </a>
                     </p>
 
@@ -271,10 +279,68 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywindowsserveruefiunattendedconfig">
-                            <strong>Step 6 -</strong> Deploy Windows Server  UEFI Unattended Config
+                        <a href="#modifywinpebootwimfor2019">
+                            <strong>Step 7 -</strong> Modify WinPE boot.wim for 2019
                         </a>
                     </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincreatebootwimmountfolder">
+                            <strong>Step 7.1 -</strong> LIN Create boot.wim Mount Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
+                            <strong>Step 7.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovefilestobootwim">
+                            <strong>Step 7.3 -</strong> LIN Move Files to boot.wim
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovestartnetcmdtobootwim">
+                            <strong>Step 7.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmoveautounattendxmltobootwim">
+                            <strong>Step 7.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovecustomwimtobootwim">
+                            <strong>Step 7.3.3 -</strong> LIN Move custom.wim to boot.wim
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linwimlibunmountbootwim">
+                            <strong>Step 7.4 -</strong> LIN wimlib Unmount boot.wim
+                        </a>
+                    </p>
+
 
 
                 </div>
@@ -595,9 +661,71 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
+                        <h3 id="deploywindowsserveruefiunattendedconfig">
+                            <a href="#deploywindowsserveruefiunattendedconfig">
+                                <strong>Step 5 -</strong> Deploy Windows Server  UEFI Unattended Config
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the Windows Server 2019 unattended config for Parallels Desktop.</p>
+<p>This works for:</p>
+<ol>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Win201_UEFI_Unattended_Config.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="createpostsetupwim">
                             <a href="#createpostsetupwim">
-                                <strong>Step 5 -</strong> Create Post Setup WIM
+                                <strong>Step 6 -</strong> Create Post Setup WIM
                             </a>
                         </h3>
                     </div>
@@ -619,7 +747,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row pt-5">
                         <h4 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 5.1 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 6.1 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h4>
                     </div>
@@ -675,7 +803,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row pt-5">
                         <h4 id="movepostsetuppowershellscripttopostinstallwimfolder">
                             <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
-                                <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                                <strong>Step 6.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
                             </a>
                         </h4>
                     </div>
@@ -724,7 +852,7 @@ mv --verbose post_install_setup.ps1 post_install_wim
                     <div class="row pt-5">
                         <h4 id="createpostinstallwimwindowsimage">
                             <a href="#createpostinstallwimwindowsimage">
-                                <strong>Step 5.3 -</strong> Create post_install.wim Windows Image
+                                <strong>Step 6.3 -</strong> Create post_install.wim Windows Image
                             </a>
                         </h4>
                     </div>
@@ -780,9 +908,9 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywindowsserveruefiunattendedconfig">
-                            <a href="#deploywindowsserveruefiunattendedconfig">
-                                <strong>Step 6 -</strong> Deploy Windows Server  UEFI Unattended Config
+                        <h3 id="modifywinpebootwimfor2019">
+                            <a href="#modifywinpebootwimfor2019">
+                                <strong>Step 7 -</strong> Modify WinPE boot.wim for 2019
                             </a>
                         </h3>
                     </div>
@@ -790,13 +918,36 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the Windows Server 2019 unattended config for Parallels Desktop.</p>
-<p>This works for:</p>
-<ol>
-<li>Windows Server 2016</li>
-<li>Windows Server 2019</li>
-<li>Windows Server 2022</li>
-</ol>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="lincreatebootwimmountfolder">
+                            <a href="#lincreatebootwimmountfolder">
+                                <strong>Step 7.1 -</strong> LIN Create boot.wim Mount Folder
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a directory <code>WinPE_BootImageDir</code> for use with mounting <code>winpe_staging</code>'s <code>SOURCES/BOOT.WIM</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -811,27 +962,341 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
 
     
 
+
     
 
 
 
     <div class="row">
         <p>
-            
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Win201_UEFI_Unattended_Config.tar</strong>
-            to the target node.
-        </p>
-        <p>
+            Execute the following script:
         </p>
     </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
+if [ ! -d WinPE_BootImageDir ]
+then
+    mkdir $WinPE_BootImageDir
+fi
+                </code>
+            </pre>
+        </div>
     </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linwimlibmountbootwimtowinpebootimagedirfolder">
+                            <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
+                                <strong>Step 7.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linmovefilestobootwim">
+                            <a href="#linmovefilestobootwim">
+                                <strong>Step 7.3 -</strong> LIN Move Files to boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="linmovestartnetcmdtobootwim">
+                            <a href="#linmovestartnetcmdtobootwim">
+                                <strong>Step 7.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+mv --verbose startnet.cmd \
+    &quot;WinPE_BootImageDir/Windows/System32&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="linmoveautounattendxmltobootwim">
+                            <a href="#linmoveautounattendxmltobootwim">
+                                <strong>Step 7.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+mv --verbose autounattend.xml WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="linmovecustomwimtobootwim">
+                            <a href="#linmovecustomwimtobootwim">
+                                <strong>Step 7.3.3 -</strong> LIN Move custom.wim to boot.wim
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+mv --verbose post_install.wim WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linwimlibunmountbootwim">
+                            <a href="#linwimlibunmountbootwim">
+                                <strong>Step 7.4 -</strong> LIN wimlib Unmount boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+<p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+wimunmount WinPE_BootImageDir --commit --check --rebuild
+                </code>
+            </pre>
+        </div>
+    </div>
+
 
 
 

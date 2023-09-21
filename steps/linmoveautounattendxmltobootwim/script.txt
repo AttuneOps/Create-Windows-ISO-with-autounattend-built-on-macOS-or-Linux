@@ -1,0 +1,2 @@
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+mv --verbose autounattend.xml WinPE_BootImageDir

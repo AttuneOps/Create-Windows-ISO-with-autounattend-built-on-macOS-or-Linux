@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "773bfbb3-ea23-490d-9f06-e2665b00685b", 
+    "interpreter": 1, 
+    "key": "linmovecustomwimtobootwim", 
+    "name": "LIN Move custom.wim to boot.wim", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

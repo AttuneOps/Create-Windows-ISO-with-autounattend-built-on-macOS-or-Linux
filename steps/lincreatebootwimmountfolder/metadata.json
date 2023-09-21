@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "f5982038-a77d-409f-9792-e4526b704f17", 
+    "interpreter": 1, 
+    "key": "lincreatebootwimmountfolder", 
+    "name": "LIN Create boot.wim Mount Folder", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
