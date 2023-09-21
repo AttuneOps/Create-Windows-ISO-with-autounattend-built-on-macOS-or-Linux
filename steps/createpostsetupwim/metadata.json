@@ -9,6 +9,10 @@
         {
             "order": 0, 
             "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "movepostsetuppowershellscripttopostinstallwim"
         }
     ], 
     "name": "Create Post Setup WIM", 

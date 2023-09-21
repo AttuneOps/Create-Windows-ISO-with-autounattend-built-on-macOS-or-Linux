@@ -251,6 +251,14 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movepostsetuppowershellscripttopostinstallwim">
+                            <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim
+                        </a>
+                    </p>
+
 
 
                 </div>
@@ -674,6 +682,55 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <code class="language-bash">
 {automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movepostsetuppowershellscripttopostinstallwim">
+                            <a href="#movepostsetuppowershellscripttopostinstallwim">
+                                <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+mkdir --parents post_install_wim
+mv --verbose post_install_setup.ps1 post_install_wim
+                </code>
+            </pre>
+        </div>
     </div>
 
 

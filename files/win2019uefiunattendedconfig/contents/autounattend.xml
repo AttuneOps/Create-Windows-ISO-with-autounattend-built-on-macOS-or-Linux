@@ -50,7 +50,7 @@
 				<!-- Custom WIM file -->
 				<DataImage wcm:action="add">
 					<InstallFrom>
-						<Path>X:\custom.wim</Path>
+						<Path>X:\post_install.wim</Path>
 					</InstallFrom>
 					<InstallTo>
 						<DiskID>0</DiskID>
