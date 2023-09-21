@@ -3,7 +3,7 @@
     "concurrency": 1, 
     "enabled": true, 
     "externalUuid4": "b3acd6b5-9989-4063-8482-e9ce6c87524a", 
-    "isBlueprint": true, 
+    "isBlueprint": false, 
     "key": "performrecreateuefiforwinpeiso", 
     "links": [
         {
