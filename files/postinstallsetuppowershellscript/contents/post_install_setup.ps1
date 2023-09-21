@@ -1,6 +1,3 @@
-# This file replaces the original "<FirstLogonCommands>" section in the
-# autounattend.xml file.
-
 <%
 import struct, socket
 packedIP = socket.inet_aton(newOsNodeSubnet.netmask)

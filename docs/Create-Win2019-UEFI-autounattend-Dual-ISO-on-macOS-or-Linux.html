@@ -555,7 +555,8 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
 
     <div class="row">
         <p>
-            
+            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
+<p>This script is run once post installation of the WIndows operating system.</p>
         </p>
         <p>
             Copy the File(s)
@@ -617,7 +618,12 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
 
     <div class="row">
         <p>
-            
+            <p>This UEFI autounattend.xml works for kickstarting:</p>
+<ol>
+<li>UEFI Single ISO</li>
+<li>UEFI Dual ISO</li>
+<li>UEFI WinPE ISO</li>
+</ol>
         </p>
         <p>
             Copy the File(s)

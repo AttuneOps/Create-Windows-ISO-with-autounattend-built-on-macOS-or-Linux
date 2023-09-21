@@ -108,10 +108,6 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2022 UEFI autounattend Single ISO on Linux
 
 
-### Perform Recreate UEFI for WinPE ISO
-
-Creates the WinPE ISO again from the contents of the `winpe_staging` folder.
-
 
 
 
@@ -140,16 +136,16 @@ Creates the WinPE ISO again from the contents of the `winpe_staging` folder.
 
 | Name | Type | Comment |
 | ---- | ---- | ------- |
-| Post Install Setup PowerShell Script | Version Controlled Files |  |
 | Widows Server BIOS Unattended Config | Version Controlled Files |  |
 | Win10 BIOS Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file. |
-| Win10 Desktop ISO | Large Archives | A plain unaltered ISO |
 | Win10 UEFI Unattended Config | Version Controlled Files |  |
-| Win2019 UEFI Unattended Config | Version Controlled Files |  |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
-| WinPE startnet.cmd for Win2019 on ESXi | Version Controlled Files |  |
-| WIN Raw Win2016 ISO | Large Archives | https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016 |
-| WIN Raw Win2022 ISO | Large Archives |  |
+| WinPE startnet.cmd for Win2019 on ESXi | Version Controlled Files | The startnet.cmd is run by WinPE. This script:<br>1. Installs drivers from "attune_drivers".<br>2. Sets the IP address.<br>3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.<br>4. Runs Windows setup.exe. |
+| Win2019 UEFI Unattended Config | Version Controlled Files | This UEFI autounattend.xml works for kickstarting:<br><br>1. UEFI Single ISO<br>2. UEFI Dual ISO<br>3. UEFI WinPE ISO |
+| Post Install Setup PowerShell Script | Version Controlled Files | This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.<br><br>This script is run once post installation of the WIndows operating system. |
+| Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
+| WIN Raw Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
+| WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016. |
 
 
 
