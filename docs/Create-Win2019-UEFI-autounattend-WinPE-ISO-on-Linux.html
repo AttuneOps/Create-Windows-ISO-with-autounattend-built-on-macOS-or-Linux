@@ -243,6 +243,14 @@
                         </a>
                     </p>
     
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploypostsetuppowershellscript">
+                            <strong>Step 5.1 -</strong> Deploy Post Setup PowerShell Script
+                        </a>
+                    </p>
+
 
 
                 </div>
@@ -601,6 +609,73 @@ cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
 
 
     
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="deploypostsetuppowershellscript">
+                            <a href="#deploypostsetuppowershellscript">
+                                <strong>Step 5.1 -</strong> Deploy Post Setup PowerShell Script
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the custom run once PowerShell scripts.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
 
 
 
