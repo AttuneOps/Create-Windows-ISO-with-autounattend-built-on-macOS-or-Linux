@@ -701,7 +701,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Creates the Windows ISO again from the contents of the <code>build-{newOsNode.fqn}</code> folder.</p>
                             </p>
                         </div>
                     </div>
@@ -891,8 +891,6 @@ mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerBaseDirectory}&quot;
 
-# Move Files from &quot;build-{newOsNode.fqn}&quot; to 
-# &quot;build-{newOsNode.fqn}-uefi-mount&quot;
 mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
                 </code>
             </pre>

@@ -108,9 +108,6 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2022 UEFI autounattend Single ISO on Linux
 
 
-### kooi tmp 1
-
-
 ### Perform Recreate UEFI for WinPE ISO
 
 Creates the WinPE ISO again from the contents of the `winpe_staging` folder.
