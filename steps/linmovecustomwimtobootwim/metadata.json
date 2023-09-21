@@ -1,10 +1,10 @@
-3{
+{
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "ab60b0b8-7aab-4615-8acf-654b8ed497f6", 
+    "externalUuid4": "773bfbb3-ea23-490d-9f06-e2665b00685b", 
     "interpreter": 1, 
-    "key": "linwimlibunmountbootwim", 
-    "name": "LIN wimlib Unmount boot.wim", 
+    "key": "linmovecustomwimtobootwim", 
+    "name": "LIN Move custom.wim to boot.wim", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
