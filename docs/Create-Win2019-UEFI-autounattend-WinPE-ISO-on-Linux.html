@@ -254,8 +254,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movepostsetuppowershellscripttopostinstallwim">
-                            <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim
+                        <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
+                            <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createpostinstallwimwindowsimage">
+                            <strong>Step 5.3 -</strong> Create post_install.wim Windows Image
                         </a>
                     </p>
 
@@ -555,13 +563,6 @@ cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -591,7 +592,7 @@ cd {kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}, relative to the home directory
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -693,9 +694,9 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
 
 
                     <div class="row pt-5">
-                        <h4 id="movepostsetuppowershellscripttopostinstallwim">
-                            <a href="#movepostsetuppowershellscripttopostinstallwim">
-                                <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim
+                        <h4 id="movepostsetuppowershellscripttopostinstallwimfolder">
+                            <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
+                                <strong>Step 5.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
                             </a>
                         </h4>
                     </div>
@@ -728,6 +729,63 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 mkdir --parents post_install_wim
 mv --verbose post_install_setup.ps1 post_install_wim
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createpostinstallwimwindowsimage">
+                            <a href="#createpostinstallwimwindowsimage">
+                                <strong>Step 5.3 -</strong> Create post_install.wim Windows Image
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+cd &quot;${DIR}&quot;
+
+echo &quot;We are in ${DIR}&quot;
+
+SOURCE=&quot;post_install_wim&quot;
+WIMFILE=&quot;post_install.wim&quot;
+
+echo &quot;Creating ${WIMFILE} from directory ${SOURCE}.&quot;
+
+wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                 </code>
             </pre>
         </div>

@@ -12,7 +12,11 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "movepostsetuppowershellscripttopostinstallwim"
+            "stepKey": "movepostsetuppowershellscripttopostinstallwimfolder"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "createpostinstallwimwindowsimage"
         }
     ], 
     "name": "Create Post Setup WIM", 
