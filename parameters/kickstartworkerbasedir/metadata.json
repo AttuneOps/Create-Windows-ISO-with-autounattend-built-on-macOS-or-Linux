@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "8695945b-493b-4772-b253-6a9b5da8c827", 
-    "key": "kickstartworkerbasedir", 
-    "name": "Kickstart Worker Base Dir", 
-    "showInPlan": false, 
-    "type": "c.s.s.b.phv.Text"
-}
