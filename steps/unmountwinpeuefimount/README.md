@@ -1,0 +1,1 @@
+Unmounts `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/uefi_mount`. This writes back contents of `uefi_mount` to the MSDOS ISO `{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso` created in step `Create Empty UEFI for WinPE ISO`. 

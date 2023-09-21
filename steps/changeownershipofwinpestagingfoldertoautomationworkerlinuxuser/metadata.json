@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "55e0ca8f-8cba-44d6-97ca-f9ca3346a165", 
+    "interpreter": 1, 
+    "key": "changeownershipofwinpestagingfoldertoautomationworkerlinuxuser", 
+    "name": "Change Ownership of winpe_staging Folder to automationWorkerLinuxUser", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

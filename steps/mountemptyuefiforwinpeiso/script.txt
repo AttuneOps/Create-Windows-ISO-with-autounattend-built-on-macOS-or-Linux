@@ -1,0 +1,5 @@
+cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+
+mkdir --parents --verbose uefi_mount
+
+mount "../kickstart_{newOsNode.fqn}.iso" uefi_mount

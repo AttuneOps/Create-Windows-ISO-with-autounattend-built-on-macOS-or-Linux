@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "9201ba41-e218-43af-9efa-bf3cd94ed3ca", 
+    "interpreter": 1, 
+    "key": "createemptyuefiforwinpeiso", 
+    "name": "Create Empty UEFI for WinPE ISO", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
