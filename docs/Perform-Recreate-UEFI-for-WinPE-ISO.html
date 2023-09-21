@@ -343,7 +343,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Change the ownership of <code>winpe_staging</code>to <code>automationWorkerLinuxUser.user</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -456,6 +456,8 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
 cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 
 bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
+
+# Add some buffer
 ((bytes=bytes+10000))
 
 mkfs.msdos -C &quot;../kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
