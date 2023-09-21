@@ -157,6 +157,7 @@ Performs basic tests for the built node.
 
 ### Perform Recreate UEFI for WinPE ISO
 
+Creates the WinPE ISO again from the contents of the `winpe_staging` folder.
 
 
 

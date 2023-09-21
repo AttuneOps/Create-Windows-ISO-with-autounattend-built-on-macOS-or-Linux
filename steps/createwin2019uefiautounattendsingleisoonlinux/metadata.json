@@ -15,23 +15,23 @@
             "stepKey": "deploywin2016dvdiso"
         }, 
         {
-            "order": 100, 
+            "order": 150, 
             "stepKey": "extractwindowsiso"
         }, 
         {
-            "order": 150, 
+            "order": 200, 
             "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
-            "order": 200, 
+            "order": 250, 
             "stepKey": "deploywindowsserveruefiunattendedconfig"
         }, 
         {
-            "order": 250, 
+            "order": 300, 
             "stepKey": "performcreateuefiforsingleiso"
         }, 
         {
-            "order": 300, 
+            "order": 350, 
             "stepKey": "deletebuilddirectory"
         }
     ], 
