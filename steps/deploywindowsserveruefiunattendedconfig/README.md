@@ -1,4 +1,4 @@
-Deploys the Windows Server 2019 unattended config for UEFI kickstarts.
+Deploys the Windows Server 2019 `autounattend.xml` configuration for UEFI kickstarts.
 
 This works for:
 

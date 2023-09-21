@@ -1,1 +1,1 @@
-Creates a bootable Windows ISO called `kickstart_{newOsNode.fqn}.iso` from the contents in folder `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}`.
+Creates a BIOS bootable Windows ISO called `kickstart_{newOsNode.fqn}.iso` from the contents in folder `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}`.
