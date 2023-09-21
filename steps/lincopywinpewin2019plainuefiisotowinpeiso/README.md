@@ -1,0 +1,1 @@
+Makes a copy of the `winpe_win2019_plain_uefi.iso` as `winpe.iso` in the folder `{automationWorkerBaseDirectory}/build-{newOsNode.fqn`. 

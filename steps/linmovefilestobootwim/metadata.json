@@ -16,7 +16,7 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "linmovecustomwimtobootwim"
+            "stepKey": "linmovepostinstallwimtobootwim"
         }
     ], 
     "name": "LIN Move Files to boot.wim", 
