@@ -1,0 +1,28 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "0d2c9fa7-94db-4e95-b52e-b51b23fda6be", 
+    "isBlueprint": true, 
+    "key": "createwin2019uefiautounattendwinpeisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "lindeploystartnetcmdforwinpeforwin2019"
+        }
+    ], 
+    "name": "Create Win2019 UEFI autounattend WinPE ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

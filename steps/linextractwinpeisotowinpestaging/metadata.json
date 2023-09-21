@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "78773d77-13e1-4100-bd10-0222e5154665", 
+    "interpreter": 1, 
+    "key": "linextractwinpeisotowinpestaging", 
+    "name": "LIN Extract winpe.iso to winpe_staging", 
+    "osCredKey": "kickstartworkerlinuxuser", 
+    "serverKey": "kickstartworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,3 @@
+mkdir --parents "{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}"
+cd "{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}"
+cp --verbose "../winpe_win2019_plain_uefi.iso" "winpe.iso"

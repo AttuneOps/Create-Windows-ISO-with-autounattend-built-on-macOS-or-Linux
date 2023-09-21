@@ -54,55 +54,61 @@ This Project contains the following Blueprints.
 
 
 
+### Create Win10 BIOS autounattend Dual ISO on macOS or Linux
+
+
 ### Create Win10 BIOS autounattend Single ISO on Linux
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
 
 The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
 
-### Create Win10 UEFI autounattend Single ISO on Linux
-
-
-### Create Win2016 BIOS autounattend Single ISO on Linux
-
-
-### Create Win2016 UEFI autounattend Single ISO on Linux
-
-
-### Create Win2019 BIOS autounattend Single ISO on Linux
-
-
-### Create Win2019 UEFI autounattend Single ISO on Linux
-
-
-### Create Win2022 BIOS autounattend Single ISO on Linux
-
-
-### Create Win2022 UEFI autounattend Single ISO on Linux
-
-
-### Create Win10 BIOS autounattend Dual ISO on macOS or Linux
-
-
 ### Create Win10 UEFI autounattend Dual ISO on macOS or Linux
+
+
+### Create Win10 UEFI autounattend Single ISO on Linux
 
 
 ### Create Win2016 BIOS autounattend Dual ISO on macOS or Linux
 
 
+### Create Win2016 BIOS autounattend Single ISO on Linux
+
+
 ### Create Win2016 UEFI autounattend Dual ISO on macOS or Linux
+
+
+### Create Win2016 UEFI autounattend Single ISO on Linux
 
 
 ### Create Win2019 BIOS autounattend Dual ISO on macOS or Linux
 
 
+### Create Win2019 BIOS autounattend Single ISO on Linux
+
+
 ### Create Win2019 UEFI autounattend Dual ISO on macOS or Linux
+
+
+### Create Win2019 UEFI autounattend Single ISO on Linux
 
 
 ### Create Win2022 BIOS autounattend Dual ISO on macOS or Linux
 
 
+### Create Win2022 BIOS autounattend Single ISO on Linux
+
+
 ### Create Win2022 UEFI autounattend Dual ISO on macOS or Linux
+
+
+### Create Win2022 UEFI autounattend Single ISO on Linux
+
+
+### Create Win2019 UEFI autounattend WinPE ISO on Linux
+
+
+### kooi tmp 1
 
 
 
@@ -124,6 +130,13 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
 | New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
+| Kickstarted Node | Basic Node | `kickstartednode` |  |
+| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` |  |
+| Kickstarted Node Subnet | Network IPv4 Subnet | `kickstartednodesubnet` |  |
+| Kickstarted Windows Interface Alias | Text | `kickstartedwindowsinterfacealias` | oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
+| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user credentials for the node building the kickstart ISO.<br>Only for Kickstart Worker Linux Node. |
+| Samba Server IP Address | Text | `sambaserveripaddress` |  |
+| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | Linux refers to both Linux and MacOS. |
 
 
 
@@ -137,10 +150,11 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Win10 BIOS Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file. |
 | Win10 Desktop ISO | Large Archives | A plain unaltered ISO |
 | Win10 UEFI Unattended Config | Version Controlled Files |  |
+| Win2019 UEFI Unattended Config | Version Controlled Files |  |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | WIN Raw Win2016 ISO | Large Archives | https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016 |
 | WIN Raw Win2022 ISO | Large Archives |  |
-| Win2019 UEFI Unattended Config | Version Controlled Files |  |
+| WinPE startnet.cmd for Win2019 on ESXi | Version Controlled Files |  |
 
 
 
