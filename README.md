@@ -93,6 +93,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2019 UEFI autounattend Single ISO on Linux
 
 
+### Create Win2019 UEFI autounattend WinPE ISO on Linux
+
+
 ### Create Win2022 BIOS autounattend Dual ISO on macOS or Linux
 
 
@@ -103,9 +106,6 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 
 
 ### Create Win2022 UEFI autounattend Single ISO on Linux
-
-
-### Create Win2019 UEFI autounattend WinPE ISO on Linux
 
 
 ### kooi tmp 1
@@ -124,19 +124,19 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
 | Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 | Drivers and Scripts Drive | Text | `driversandscriptsdrive` | The Windows drive letter containing the attune_drivers and post_install_setup.ps1 as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
+| Kickstarted Node | Basic Node | `kickstartednode` |  |
+| Kickstarted Node Subnet | Network IPv4 Subnet | `kickstartednodesubnet` |  |
+| Kickstarted Windows Interface Alias | Text | `kickstartedwindowsinterfacealias` | oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
+| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` |  |
+| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | Linux refers to both Linux and MacOS. |
+| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user credentials for the node building the kickstart ISO.<br>Only for Kickstart Worker Linux Node. |
 | New OS Interface Alias | Text | `newosinterfacealias` | This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine.<br><br>oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0" |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
 | New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
-| Kickstarted Node | Basic Node | `kickstartednode` |  |
-| Kickstart Worker Base Dir | Text | `kickstartworkerbasedir` |  |
-| Kickstarted Node Subnet | Network IPv4 Subnet | `kickstartednodesubnet` |  |
-| Kickstarted Windows Interface Alias | Text | `kickstartedwindowsinterfacealias` | oVirt Deployments = "Ethernet Instance 0"<br>ESXi Deployments = "Ethernet0"<br><br>This is the "InternetAlias" of the interface shown when you run "get-netipaddress" from powershell on the machine. |
-| Kickstart Worker Linux User | Linux/Unix Credential | `kickstartworkerlinuxuser` | The user credentials for the node building the kickstart ISO.<br>Only for Kickstart Worker Linux Node. |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
-| Kickstart Worker Linux Node | Linux/Unix Node | `kickstartworkerlinuxnode` | Linux refers to both Linux and MacOS. |
 
 
 
@@ -152,9 +152,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Win10 UEFI Unattended Config | Version Controlled Files |  |
 | Win2019 UEFI Unattended Config | Version Controlled Files |  |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
+| WinPE startnet.cmd for Win2019 on ESXi | Version Controlled Files |  |
 | WIN Raw Win2016 ISO | Large Archives | https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016 |
 | WIN Raw Win2022 ISO | Large Archives |  |
-| WinPE startnet.cmd for Win2019 on ESXi | Version Controlled Files |  |
 
 
 
