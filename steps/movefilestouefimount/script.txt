@@ -1,5 +1,3 @@
 cd "{automationWorkerBaseDirectory}"
 
-# Move Files from "build-{newOsNode.fqn}" to 
-# "build-{newOsNode.fqn}-uefi-mount"
 mv --verbose "build-{newOsNode.fqn}/*" "build-{newOsNode.fqn}-uefi-mount"
