@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "winpestartnetcmdforwin2019onesxi", 
+    "archiveKey": "winpestartnetcmd", 
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
@@ -9,11 +9,6 @@
         "startnet.cmd"
     ], 
     "makoParameters": [
-        {
-            "name": "ksWindowsInterfaceAlias", 
-            "parameterKey": "newosinterfacealias", 
-            "parameterType": "c.s.s.b.phv.Text"
-        }, 
         {
             "name": "sambaServerIpAddress", 
             "parameterKey": "sambaserveripaddress", 
@@ -28,6 +23,11 @@
             "name": "targetSubnet", 
             "parameterKey": "newosnodesubnet", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
+        }, 
+        {
+            "name": "windowsFolderOnSamba", 
+            "parameterKey": "windowsfolderonsamba", 
+            "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
     "name": "LIN Deploy startnet.cmd for WinPE for Win2019", 

@@ -1,17 +1,26 @@
+REM Change into the drivers directory
 cd X:\attune_drivers
 
-for /R %%f in (*.inf) do drvload "%%f"
+REM Recursively install all drivers
+FOR /R %%f in (*.inf) DO drvload "%%f"
 
 wpeutil InitializeNetwork
 
+REM Get the "Interface Name" value and store in windowsInterfaceAlias
+FOR /F "skip=3 tokens=3*" %G IN ('netsh interface show interface') DO (
+	echo %%H
+	SET windowsInterfaceAlias=%H
+)
+echo Found network interface name = %windowsInterfaceAlias%
+
 netsh.exe interface ipv4 set address ^
-    name="${ksWindowsInterfaceAlias}" ^
+    name="%windowsInterfaceAlias%" ^
     static ${targetServer.ip} ^
     ${targetSubnet.netmask} ^
     ${targetSubnet.gateway}
     
 netsh.exe interface ipv4 add dnsservers ^
-    name="${ksWindowsInterfaceAlias}" ^
+    name="%windowsInterfaceAlias%" ^
     address=${targetSubnet.dns1} ^
     index=1
 
@@ -49,7 +58,6 @@ if errorlevel 1 (
 
 Z:
 
-rem Hard coded to match "Deploy Win 2019 ISO For WinPE"
-cd .\windows2019\
+cd ${windowsFolderOnSamba}
 
 setup

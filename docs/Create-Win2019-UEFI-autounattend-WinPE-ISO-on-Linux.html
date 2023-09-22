@@ -561,7 +561,14 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Makes a copy of the <code>winpe_win2019_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn</code>. </p>
+                                <p>Makes a copy of the <code>winpe_win2019_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn</code>.</p>
+<p>This ISO is UEFI bootable and works for:</p>
+<ol>
+<li>Windows Desktop 10</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -704,10 +711,17 @@ mkdir -p &quot;${FOLDER}&quot;
 2. Sets the IP address.
 3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.
 4. Runs Windows setup.exe.</p>
+<p>The Mako parameter "windowsFolderOnSamba" can have these values:</p>
+<ul>
+<li>windows10</li>
+<li>windows2016</li>
+<li>windows2019</li>
+<li>windows2022</li>
+</ul>
         </p>
         <p>
             Copy the File(s)
-            <strong>WinPE_startnetcmd_for_Win201_on_ESXi.tar</strong>
+            <strong>WinPE_startnetcmd.tar</strong>
             to the target node.
         </p>
         <p>
