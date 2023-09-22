@@ -7,6 +7,10 @@
     "key": "createwinpeplainwin2019biosiso", 
     "links": [
         {
+            "order": 0, 
+            "stepKey": "confirmwinpewin2019plainbiosisodoesnotexist"
+        }, 
+        {
             "order": 50, 
             "stepKey": "createwinpecleanbuildfiles"
         }, 
