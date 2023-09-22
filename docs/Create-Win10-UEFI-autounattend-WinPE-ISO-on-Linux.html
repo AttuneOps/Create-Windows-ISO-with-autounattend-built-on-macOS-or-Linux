@@ -227,6 +227,14 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lindeploystartnetcmdforwinpe">
+                            <strong>Step 4 -</strong> LIN Deploy startnet.cmd for WinPE
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -499,6 +507,74 @@ mkdir -p &quot;${FOLDER}&quot;
                 </code>
             </pre>
         </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lindeploystartnetcmdforwinpe">
+                            <a href="#lindeploystartnetcmdforwinpe">
+                                <strong>Step 4 -</strong> LIN Deploy startnet.cmd for WinPE
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys <code>startnet.cmd</code>.</p>
+<p>This script is run by WinPE.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>The startnet.cmd is run by WinPE. This script:
+1. Installs drivers from "attune_drivers".
+2. Sets the IP address.
+3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.
+4. Runs Windows setup.exe.</p>
+<p>The Mako parameter "windowsFolderOnSamba" can have these values:</p>
+<ul>
+<li>windows10</li>
+<li>windows2016</li>
+<li>windows2019</li>
+<li>windows2022</li>
+</ul>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>WinPE_startnetcmd.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
     </div>
 
 
