@@ -243,6 +243,39 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createpostsetupwim">
+                            <strong>Step 6 -</strong> Create Post Setup WIM
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploypostsetuppowershellscript">
+                            <strong>Step 6.1 -</strong> Deploy Post Setup PowerShell Script
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
+                            <strong>Step 6.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createpostinstallwimwindowsimage">
+                            <strong>Step 6.3 -</strong> Create post_install.wim Windows Image
+                        </a>
+                    </p>
+
+
 
                 </div>
             </div>
@@ -640,6 +673,216 @@ mkdir -p &quot;${FOLDER}&quot;
 {automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createpostsetupwim">
+                            <a href="#createpostsetupwim">
+                                <strong>Step 6 -</strong> Create Post Setup WIM
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a <code>post_install.wim</code> Windows Imaging Format file.</p>
+<p>The purpose of this file is to overlay onto the <code>C</code> drive any files we want for the Windows Installer to use.</p>
+<p>in this case we want to deploy a post install setup PowerShell script at <code>C:\post_install_setup.ps1</code> that is called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'s section.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="deploypostsetuppowershellscript">
+                            <a href="#deploypostsetuppowershellscript">
+                                <strong>Step 6.1 -</strong> Deploy Post Setup PowerShell Script
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
+<p>This script is run once post installation of the WIndows operating system.</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movepostsetuppowershellscripttopostinstallwimfolder">
+                            <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
+                                <strong>Step 6.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>post_install_setup.ps1</code> script to the <code>post_install_wim</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+mkdir --parents post_install_wim
+mv --verbose post_install_setup.ps1 post_install_wim
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createpostinstallwimwindowsimage">
+                            <a href="#createpostinstallwimwindowsimage">
+                                <strong>Step 6.3 -</strong> Create post_install.wim Windows Image
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>post_install_setup.ps1</code> into the folder <code>post_install_wim</code>.</p>
+<p>The folder <code>post_install_wim</code> is the staging folder for creating the <code>post_install.wim</code> Windows Imaging Format file.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+cd &quot;${DIR}&quot;
+
+echo &quot;We are in ${DIR}&quot;
+
+SOURCE=&quot;post_install_wim&quot;
+WIMFILE=&quot;post_install.wim&quot;
+
+echo &quot;Creating ${WIMFILE} from directory ${SOURCE}.&quot;
+
+wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
+                </code>
+            </pre>
+        </div>
+    </div>
+
 
 
 

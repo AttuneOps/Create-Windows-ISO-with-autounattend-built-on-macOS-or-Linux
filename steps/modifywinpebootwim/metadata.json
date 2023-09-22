@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "c5bac07e-5c39-466b-a4f1-47a1d24b9d95", 
     "isBlueprint": false, 
-    "key": "modifywinpebootwimfor2019", 
+    "key": "modifywinpebootwim", 
     "links": [
         {
             "order": 0, 
@@ -23,6 +23,6 @@
             "stepKey": "linwimlibunmountbootwim"
         }
     ], 
-    "name": "Modify WinPE boot.wim for 2019", 
+    "name": "Modify WinPE boot.wim", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
