@@ -1,0 +1,4 @@
+PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+mkdir --parents "${PATH}"
+cd "${PATH}"
+cp --verbose "../winpe_win2019_plain_bios.iso" "winpe.iso"

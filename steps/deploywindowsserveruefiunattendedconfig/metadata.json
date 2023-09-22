@@ -40,7 +40,7 @@
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-    "name": "Deploy Windows Server  UEFI Unattended Config", 
+    "name": "Deploy Windows Server UEFI Unattended Config", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"

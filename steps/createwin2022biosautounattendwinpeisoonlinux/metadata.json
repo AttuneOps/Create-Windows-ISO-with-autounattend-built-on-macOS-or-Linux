@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "e46ca35e-252d-4644-92f6-871ba4848ec4", 
+    "isBlueprint": true, 
+    "key": "createwin2022biosautounattendwinpeisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "createwindowsserverbiosautounattendwinpeisoonlinux"
+        }
+    ], 
+    "name": "Create Win2022 BIOS autounattend WinPE ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
