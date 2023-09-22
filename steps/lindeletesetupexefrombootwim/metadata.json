@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "4d1c3bef-23ab-4cde-9551-f80f80e2b748", 
+    "externalUuid4": "fb5a8768-96ac-46ec-8fbb-e8c326bb6cc5", 
     "interpreter": 1, 
-    "key": "linwimlibunmountbootwim", 
-    "name": "LIN wimlib Unmount boot.wim", 
+    "key": "lindeletesetupexefrombootwim", 
+    "name": "LIN Delete setup.exe from boot.wim", 
     "osCredKey": "kickstartworkerlinuxuser", 
     "serverKey": "kickstartworkerlinuxnode", 
     "successExitCode": 0, 

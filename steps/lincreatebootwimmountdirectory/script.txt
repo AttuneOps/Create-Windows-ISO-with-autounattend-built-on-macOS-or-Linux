@@ -1,0 +1,7 @@
+cd {ksAttuneBaseDir}/build-{kickstartedNode.fqn}
+
+WinPE_BootImageDir="WinPE_BootImageDir"
+if [ ! -d WinPE_BootImageDir ]
+then
+    mkdir $WinPE_BootImageDir
+fi

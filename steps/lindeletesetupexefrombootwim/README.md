@@ -1,0 +1,1 @@
+Deletes `setup.exe` from `{ksAttuneBaseDir}/build-{kickstartedNode.fqn}/WinPE_BootImageDir`.

@@ -1,0 +1,3 @@
+cd "{ksAttuneBaseDir}/build-{kickstartedNode.fqn}"
+
+mv --verbose boot.img winpe_staging

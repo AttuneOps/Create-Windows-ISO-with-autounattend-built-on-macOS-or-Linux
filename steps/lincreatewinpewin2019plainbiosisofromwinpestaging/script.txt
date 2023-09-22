@@ -1,0 +1,6 @@
+cd {ksAttuneBaseDir}/build-{kickstartedNode.fqn}
+
+mkisofs -o {ksAttuneBaseDir}/winpe_win2019_plain_bios.iso \
+    -b boot.img -no-emul-boot -c BOOT.CAT \
+    -iso-level 2 -udf -joliet-long -relaxed-filenames -allow-limited-size \
+    -J -l -D -N -V "KS_WIN" winpe_staging

@@ -1,0 +1,4 @@
+cd "{ksAttuneBaseDir}/build-{kickstartedNode.fqn}"
+    
+mkwinpeimg --iso --windows-dir=winimg \
+    "winpe.iso"

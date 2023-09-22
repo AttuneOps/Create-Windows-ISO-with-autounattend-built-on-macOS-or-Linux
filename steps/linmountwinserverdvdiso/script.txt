@@ -1,0 +1,11 @@
+cd "{ksAttuneBaseDir}/build-{kickstartedNode.fqn}"
+mkdir -p winimg
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+ISO=$(ls *SERVER*.iso)
+
+mount --options "uid={kickstartWorkerBuildLinuxUser.user}" \
+    --options "gid={kickstartWorkerBuildLinuxUser.user}" \
+    "${ISO}" winimg

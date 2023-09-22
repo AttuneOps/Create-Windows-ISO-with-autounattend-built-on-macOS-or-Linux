@@ -1,11 +1,11 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "4d1c3bef-23ab-4cde-9551-f80f80e2b748", 
+    "externalUuid4": "5259f737-831b-452c-b12c-1984d6cbfd04", 
     "interpreter": 1, 
-    "key": "linwimlibunmountbootwim", 
-    "name": "LIN wimlib Unmount boot.wim", 
-    "osCredKey": "kickstartworkerlinuxuser", 
+    "key": "linmountwinserverdvdiso", 
+    "name": "LIN Mount Win Server DVD ISO", 
+    "osCredKey": "kickstartworkerlinuxuserroot", 
     "serverKey": "kickstartworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"

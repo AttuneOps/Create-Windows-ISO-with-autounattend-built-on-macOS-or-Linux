@@ -1,0 +1,3 @@
+cd {ksAttuneBaseDir}/build-{kickstartedNode.fqn}/WinPE_BootImageDir
+
+rm --verbose setup.exe

@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "4d1c3bef-23ab-4cde-9551-f80f80e2b748", 
+    "externalUuid4": "64c7a8dc-dd12-4fe7-883d-db6ac3dfffcc", 
     "interpreter": 1, 
-    "key": "linwimlibunmountbootwim", 
-    "name": "LIN wimlib Unmount boot.wim", 
+    "key": "linextractwinpeisofromwinimgdirectory", 
+    "name": "LIN Extract WinPE ISO from winimg Directory", 
     "osCredKey": "kickstartworkerlinuxuser", 
     "serverKey": "kickstartworkerlinuxnode", 
     "successExitCode": 0, 

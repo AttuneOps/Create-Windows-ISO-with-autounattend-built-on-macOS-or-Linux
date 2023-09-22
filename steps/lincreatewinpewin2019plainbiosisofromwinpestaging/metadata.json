@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "4d1c3bef-23ab-4cde-9551-f80f80e2b748", 
+    "externalUuid4": "b796c2c5-7bc5-4c25-a38e-585f6481420c", 
     "interpreter": 1, 
-    "key": "linwimlibunmountbootwim", 
-    "name": "LIN wimlib Unmount boot.wim", 
+    "key": "lincreatewinpewin2019plainbiosisofromwinpestaging", 
+    "name": "LIN Create winpe_win2019_plain_bios.iso from winpe_staging", 
     "osCredKey": "kickstartworkerlinuxuser", 
     "serverKey": "kickstartworkerlinuxnode", 
     "successExitCode": 0, 

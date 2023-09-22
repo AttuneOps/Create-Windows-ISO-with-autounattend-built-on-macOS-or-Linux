@@ -1,0 +1,2 @@
+cd {ksAttuneBaseDir}/build-{kickstartedNode.fqn}
+wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
