@@ -5,7 +5,12 @@
     "externalUuid4": "1e621c5f-72c0-409f-8c11-9cf3d7cc465d", 
     "isBlueprint": true, 
     "key": "tmp", 
-    "links": [], 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "linrecreatebiosbootwinpeisofromwinpestaging"
+        }
+    ], 
     "name": "tmp", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

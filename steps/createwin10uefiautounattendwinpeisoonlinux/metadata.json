@@ -36,7 +36,7 @@
         }, 
         {
             "order": 350, 
-            "stepKey": "performrecreateuefiforwinpeiso"
+            "stepKey": "performrecreateuefibootwinpeiso"
         }
     ], 
     "name": "Create Win10 UEFI autounattend WinPE ISO on Linux", 
