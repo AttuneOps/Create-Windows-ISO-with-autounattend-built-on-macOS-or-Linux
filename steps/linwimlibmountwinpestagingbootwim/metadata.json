@@ -1,10 +1,10 @@
-3{
+{
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "ab60b0b8-7aab-4615-8acf-654b8ed497f6", 
+    "externalUuid4": "d18d8793-ad73-4979-b813-bdd8cd954211", 
     "interpreter": 1, 
-    "key": "linwimlibunmountbootwim", 
-    "name": "LIN wimlib Unmount boot.wim", 
+    "key": "linwimlibmountwinpestagingbootwim", 
+    "name": "LIN wimlib Mount winpe_staging BOOT.WIM", 
     "osCredKey": "kickstartworkerlinuxuser", 
     "serverKey": "kickstartworkerlinuxnode", 
     "successExitCode": 0, 

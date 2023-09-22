@@ -1,10 +1,10 @@
-3{
+{
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "ab60b0b8-7aab-4615-8acf-654b8ed497f6", 
+    "externalUuid4": "b44eb705-33bc-4db2-99b6-3800c4506e3d", 
     "interpreter": 1, 
-    "key": "linwimlibunmountbootwim", 
-    "name": "LIN wimlib Unmount boot.wim", 
+    "key": "lincreatebootwimmountdirectory", 
+    "name": "LIN Create boot.wim Mount Directory", 
     "osCredKey": "kickstartworkerlinuxuser", 
     "serverKey": "kickstartworkerlinuxnode", 
     "successExitCode": 0, 
