@@ -6,3 +6,4 @@ Only applies to BIOS kickstarts so if any of these parameters are set the string
 
 1. isWin10Bios
 2. isWinServerBios
+
