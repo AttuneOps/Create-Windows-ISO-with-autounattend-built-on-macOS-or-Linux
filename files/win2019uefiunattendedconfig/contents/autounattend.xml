@@ -46,7 +46,7 @@
 					</InstallTo>
 				</OSImage>
 				
-%if ${isWinPEKickstart}
+%if bool(isWinPEKickstart):
 				<!-- Custom WIM file -->
 				<DataImage wcm:action="add">
 					<InstallFrom>
@@ -142,7 +142,7 @@
 					<Description>Run Script</Description>
 				</SynchronousCommand>
 				
-%if ${isWinPEKickstart}
+%if bool(isWinPEKickstart):
 				<SynchronousCommand wcm:action="add">
 					<Order>3</Order>
 					<RequiresUserInput>false</RequiresUserInput>
