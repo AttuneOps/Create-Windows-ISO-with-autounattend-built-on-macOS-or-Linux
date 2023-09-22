@@ -5,7 +5,24 @@
     "externalUuid4": "0ce9b57b-8b47-4f41-af08-98e53d3ada50", 
     "isBlueprint": true, 
     "key": "createwin10biosautounattendwinpeisoonlinux", 
-    "links": [], 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "lindeploystartnetcmdforwinpe"
+        }
+    ], 
     "name": "Create Win10 BIOS autounattend WinPE ISO on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
