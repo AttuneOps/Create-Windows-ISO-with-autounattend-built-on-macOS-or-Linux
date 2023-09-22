@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "b3acd6b5-9989-4063-8482-e9ce6c87524a", 
     "isBlueprint": false, 
-    "key": "performrecreateuefiforwinpeiso", 
+    "key": "performrecreateuefibootwinpeiso", 
     "links": [
         {
             "order": 0, 
@@ -27,6 +27,6 @@
             "stepKey": "unmountwinpeuefimount"
         }
     ], 
-    "name": "Perform Recreate UEFI for WinPE ISO", 
+    "name": "Perform Recreate UEFI Boot WinPE ISO", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

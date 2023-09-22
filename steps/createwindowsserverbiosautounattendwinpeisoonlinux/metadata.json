@@ -3,7 +3,7 @@
     "concurrency": 1, 
     "enabled": true, 
     "externalUuid4": "1dfe0d5a-e6c7-4b81-b975-dff7c32f9464", 
-    "isBlueprint": true, 
+    "isBlueprint": false, 
     "key": "createwindowsserverbiosautounattendwinpeisoonlinux", 
     "links": [
         {
@@ -33,6 +33,10 @@
         {
             "order": 300, 
             "stepKey": "modifywinpebootwim"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "linrecreatebiosbootwinpeisofromwinpestaging"
         }
     ], 
     "name": "Create Windows Server BIOS autounattend WinPE ISO on Linux", 

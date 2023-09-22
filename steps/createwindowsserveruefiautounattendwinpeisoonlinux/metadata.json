@@ -36,7 +36,7 @@
         }, 
         {
             "order": 400, 
-            "stepKey": "performrecreateuefiforwinpeiso"
+            "stepKey": "performrecreateuefibootwinpeiso"
         }
     ], 
     "name": "Create Windows Server UEFI autounattend WinPE ISO on Linux", 

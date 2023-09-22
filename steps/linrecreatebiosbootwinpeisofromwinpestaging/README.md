@@ -1,0 +1,1 @@
+Creates a BIOS bootable ISO at `{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso` from the WinPE staging directory `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging`. 
