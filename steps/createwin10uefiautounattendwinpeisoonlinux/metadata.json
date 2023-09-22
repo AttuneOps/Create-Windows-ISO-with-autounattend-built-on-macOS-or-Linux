@@ -21,6 +21,10 @@
         {
             "order": 150, 
             "stepKey": "lindeploystartnetcmdforwinpe"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywin10uefiunattendedconfig"
         }
     ], 
     "name": "Create Win10 UEFI autounattend WinPE ISO on Linux", 
