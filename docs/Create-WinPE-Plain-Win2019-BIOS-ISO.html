@@ -207,7 +207,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#confirmwinpewin2019plainbiosisodoesnotexist">
-                            <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso  Does Not Exist
+                            <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Does Not Exist
                         </a>
                     </p>
 
@@ -474,7 +474,7 @@
                     <div class="row pt-5">
                         <h3 id="confirmwinpewin2019plainbiosisodoesnotexist">
                             <a href="#confirmwinpewin2019plainbiosisodoesnotexist">
-                                <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso  Does Not Exist
+                                <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Does Not Exist
                             </a>
                         </h3>
                     </div>
@@ -515,7 +515,15 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-#
+DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
+cd &quot;${DIRECTORY}&quot;
+
+ISO=&quot;winpe_win2019_plain_bios.iso&quot;
+if [[ -f ${ISO} ]]
+then
+    echo &quot;Please delete ${DIRECTORY|/${ISO} to confirm you want to try again.&quot;
+    exit 1
+fi
                 </code>
             </pre>
         </div>
