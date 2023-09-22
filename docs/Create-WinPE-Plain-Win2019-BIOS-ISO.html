@@ -324,6 +324,14 @@
                     </p>
 
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincreatewinpewin2019plainbiosisofromwinpestaging">
+                            <strong>Step 12 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -1323,18 +1331,7 @@ rm --verbose setup.exe
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -1357,6 +1354,65 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
         </div>
     </div>
 
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lincreatewinpewin2019plainbiosisofromwinpestaging">
+                            <a href="#lincreatewinpewin2019plainbiosisofromwinpestaging">
+                                <strong>Step 12 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a WinPE BIOS bootable ISO at <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> from the WinPE staging directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+mkisofs -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+    -b boot.img -no-emul-boot -c BOOT.CAT \
+    -iso-level 2 -udf -joliet-long -relaxed-filenames -allow-limited-size \
+    -J -l -D -N -V &quot;KS_WIN&quot; winpe_staging
+                </code>
+            </pre>
+        </div>
+    </div>
 
 
 

@@ -49,6 +49,10 @@
         {
             "order": 500, 
             "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "lincreatewinpewin2019plainbiosisofromwinpestaging"
         }
     ], 
     "name": "Create WinPE Plain Win2019 BIOS ISO", 
