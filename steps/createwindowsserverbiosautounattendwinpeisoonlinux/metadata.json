@@ -25,6 +25,14 @@
         {
             "order": 200, 
             "stepKey": "deploywindowsserverbiosunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "createpostsetupwim"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "modifywinpebootwim"
         }
     ], 
     "name": "Create Windows Server BIOS autounattend WinPE ISO on Linux", 
