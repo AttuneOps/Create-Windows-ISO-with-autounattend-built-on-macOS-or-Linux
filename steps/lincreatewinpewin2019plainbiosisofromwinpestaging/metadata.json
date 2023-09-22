@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "lincreatewinpewin2019plainbiosisofromwinpestaging", 
     "name": "LIN Create winpe_win2019_plain_bios.iso from winpe_staging", 
-    "osCredKey": "kickstartworkerlinuxuser", 
-    "serverKey": "kickstartworkerlinuxnode", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

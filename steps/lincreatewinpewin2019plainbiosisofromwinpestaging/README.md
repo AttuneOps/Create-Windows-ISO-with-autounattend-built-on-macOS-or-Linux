@@ -1,0 +1,1 @@
+Creates a WinPE BIOS bootable ISO at `{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso` from the WinPE staging directory `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging`. 
