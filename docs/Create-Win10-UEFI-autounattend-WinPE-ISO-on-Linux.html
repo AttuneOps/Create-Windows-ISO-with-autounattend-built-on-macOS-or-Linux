@@ -276,6 +276,72 @@
                     </p>
 
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#modifywinpebootwim">
+                            <strong>Step 7 -</strong> Modify WinPE boot.wim
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincreatebootwimmountfolder">
+                            <strong>Step 7.1 -</strong> LIN Create boot.wim Mount Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
+                            <strong>Step 7.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovefilestobootwim">
+                            <strong>Step 7.3 -</strong> LIN Move Files to boot.wim
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovestartnetcmdtobootwim">
+                            <strong>Step 7.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmoveautounattendxmltobootwim">
+                            <strong>Step 7.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovepostinstallwimtobootwim">
+                            <strong>Step 7.3.3 -</strong> LIN Move post_install.wim to boot.wim
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linwimlibunmountbootwim">
+                            <strong>Step 7.4 -</strong> LIN wimlib Unmount boot.wim
+                        </a>
+                    </p>
+
+
 
                 </div>
             </div>
@@ -878,6 +944,415 @@ WIMFILE=&quot;post_install.wim&quot;
 echo &quot;Creating ${WIMFILE} from directory ${SOURCE}.&quot;
 
 wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="modifywinpebootwim">
+                            <a href="#modifywinpebootwim">
+                                <strong>Step 7 -</strong> Modify WinPE boot.wim
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code></p>
+<ol>
+<li><code>startnet.cmd</code></li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install.wim</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="lincreatebootwimmountfolder">
+                            <a href="#lincreatebootwimmountfolder">
+                                <strong>Step 7.1 -</strong> LIN Create boot.wim Mount Folder
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a directory <code>WinPE_BootImageDir</code> for mounting <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
+if [ ! -d WinPE_BootImageDir ]
+then
+    mkdir $WinPE_BootImageDir
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linwimlibmountbootwimtowinpebootimagedirfolder">
+                            <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
+                                <strong>Step 7.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linmovefilestobootwim">
+                            <a href="#linmovefilestobootwim">
+                                <strong>Step 7.3 -</strong> LIN Move Files to boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves these files to the <code>winpe_staging/SOURCES/BOOT.WIM</code> mounted folder <code>WinPE_BootImageDir</code>:</p>
+<ol>
+<li><code>startnet.cmd</code></li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install.wim</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="linmovestartnetcmdtobootwim">
+                            <a href="#linmovestartnetcmdtobootwim">
+                                <strong>Step 7.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>startnet.cmd</code> to the folder <code>WinPE_BootImageDir/Windows/System32</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+mv --verbose startnet.cmd \
+    &quot;WinPE_BootImageDir/Windows/System32&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="linmoveautounattendxmltobootwim">
+                            <a href="#linmoveautounattendxmltobootwim">
+                                <strong>Step 7.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>autounattend.xml</code> to the folder <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+mv --verbose autounattend.xml WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="linmovepostinstallwimtobootwim">
+                            <a href="#linmovepostinstallwimtobootwim">
+                                <strong>Step 7.3.3 -</strong> LIN Move post_install.wim to boot.wim
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>post_install.wim</code> to the folder <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+mv --verbose post_install.wim WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linwimlibunmountbootwim">
+                            <a href="#linwimlibunmountbootwim">
+                                <strong>Step 7.4 -</strong> LIN wimlib Unmount boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+<p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+wimunmount WinPE_BootImageDir --commit --check --rebuild
                 </code>
             </pre>
         </div>
