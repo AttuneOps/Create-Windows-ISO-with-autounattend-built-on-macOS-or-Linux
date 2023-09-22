@@ -17,6 +17,10 @@
         {
             "order": 100, 
             "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "lindeploystartnetcmdforwinpe"
         }
     ], 
     "name": "Create Win10 UEFI autounattend WinPE ISO on Linux", 
