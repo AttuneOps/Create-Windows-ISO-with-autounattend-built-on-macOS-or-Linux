@@ -203,6 +203,38 @@
 
 
     
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#cleanbuildfiles">
+                            <strong>Step 1 -</strong> Clean Build Files
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincopywinpewin2019plainuefiisotowinpeiso">
+                            <strong>Step 2 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linextractwinpeisotowinpestaging">
+                            <strong>Step 3 -</strong> LIN Extract winpe.iso to winpe_staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lindeploystartnetcmdforwinpe">
+                            <strong>Step 4 -</strong> LIN Deploy startnet.cmd for WinPE
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -286,6 +318,267 @@
         </div>
 
 <!-- Blueprint Steps -->
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="cleanbuildfiles">
+                            <a href="#cleanbuildfiles">
+                                <strong>Step 1 -</strong> Clean Build Files
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the build files and kickstart ISO.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+[[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
+    echo &quot;No directory to remove.&quot;
+
+ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+[[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lincopywinpewin2019plainuefiisotowinpeiso">
+                            <a href="#lincopywinpewin2019plainuefiisotowinpeiso">
+                                <strong>Step 2 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Makes a copy of the <code>winpe_win2019_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn</code>.</p>
+<p>This ISO is UEFI bootable and works for:</p>
+<ol>
+<li>Windows Desktop 10</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+mkdir --parents &quot;${PATH}&quot;
+cd &quot;${PATH}&quot;
+cp --verbose &quot;../winpe_win2019_plain_uefi.iso&quot; &quot;winpe.iso&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linextractwinpeisotowinpestaging">
+                            <a href="#linextractwinpeisotowinpestaging">
+                                <strong>Step 3 -</strong> LIN Extract winpe.iso to winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+FOLDER=winpe_staging
+mkdir -p &quot;${FOLDER}&quot;
+
+7z x winpe.iso -o&quot;${FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lindeploystartnetcmdforwinpe">
+                            <a href="#lindeploystartnetcmdforwinpe">
+                                <strong>Step 4 -</strong> LIN Deploy startnet.cmd for WinPE
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys <code>startnet.cmd</code>.</p>
+<p>This script is run by WinPE.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>The startnet.cmd is run by WinPE. This script:
+1. Installs drivers from "attune_drivers".
+2. Sets the IP address.
+3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.
+4. Runs Windows setup.exe.</p>
+<p>The Mako parameter "windowsFolderOnSamba" can have these values:</p>
+<ul>
+<li>windows10</li>
+<li>windows2016</li>
+<li>windows2019</li>
+<li>windows2022</li>
+</ul>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>WinPE_startnetcmd.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
 
 
 

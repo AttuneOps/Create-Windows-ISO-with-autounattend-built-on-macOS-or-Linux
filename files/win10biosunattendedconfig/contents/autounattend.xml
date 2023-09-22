@@ -37,8 +37,42 @@ Notes: Enter your comments here...
 		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ImageInstall>
+				<OSImage>
+					<InstallTo>
+						<DiskID>0</DiskID>
+						<PartitionID>2</PartitionID>
+					</InstallTo>
+					<InstallToAvailablePartition>false</InstallToAvailablePartition>
+				</OSImage>
+
+%if bool(isWinPEKickstart):
+				<!-- Custom WIM file -->
+				<DataImage wcm:action="add">
+					<InstallFrom>
+						<Path>X:\post_install.wim</Path>
+					</InstallFrom>
+					<InstallTo>
+						<DiskID>0</DiskID>
+						<PartitionID>2</PartitionID>
+					</InstallTo>
+					<Order>1</Order>
+				</DataImage>
+%endif
+
+			</ImageInstall>
+			<UserData>
+				<AcceptEula>true</AcceptEula>
+				<FullName>poweron</FullName>
+				<Organization>${newOsOrganisationName}</Organization>
+				<ProductKey>
+					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
+				</ProductKey>
+			</UserData>
 			<DiskConfiguration>
 				<Disk wcm:action="add">
+					<DiskID>0</DiskID>
+					<WillWipeDisk>true</WillWipeDisk>
 					<CreatePartitions>
 						<CreatePartition wcm:action="add">
 							<Order>1</Order>
@@ -69,27 +103,8 @@ Notes: Enter your comments here...
 							<PartitionID>2</PartitionID>
 						</ModifyPartition>
 					</ModifyPartitions>
-					<DiskID>0</DiskID>
-					<WillWipeDisk>true</WillWipeDisk>
 				</Disk>
 			</DiskConfiguration>
-			<ImageInstall>
-				<OSImage>
-					<InstallTo>
-						<DiskID>0</DiskID>
-						<PartitionID>2</PartitionID>
-					</InstallTo>
-					<InstallToAvailablePartition>false</InstallToAvailablePartition>
-				</OSImage>
-			</ImageInstall>
-			<UserData>
-				<AcceptEula>true</AcceptEula>
-				<FullName>poweron</FullName>
-				<Organization>${newOsOrganisationName}</Organization>
-				<ProductKey>
-					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
-				</ProductKey>
-			</UserData>
 		</component>
 	</settings>
 	<settings pass="offlineServicing">
@@ -138,25 +153,6 @@ Notes: Enter your comments here...
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<AutoLogon>
-				<Password>
-					<Value>${newOsWindowsUser.password}</Value>
-					<PlainText>true</PlainText>
-				</Password>
-				<Enabled>true</Enabled>
-				<Username>${newOsWindowsUser.user}</Username>
-				<LogonCount>88</LogonCount>
-			</AutoLogon>
-			<OOBE>
-				<HideEULAPage>true</HideEULAPage>
-				<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
-				<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
-				<HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
-				<NetworkLocation>Home</NetworkLocation>
-				<SkipUserOOBE>true</SkipUserOOBE>
-				<SkipMachineOOBE>true</SkipMachineOOBE>
-				<ProtectYourPC>3</ProtectYourPC>
-			</OOBE>
 			<UserAccounts>
 				<LocalAccounts>
 					<LocalAccount wcm:action="add">
@@ -171,6 +167,25 @@ Notes: Enter your comments here...
 					</LocalAccount>
 				</LocalAccounts>
 			</UserAccounts>
+			<AutoLogon>
+				<Password>
+					<Value>${newOsWindowsUser.password}</Value>
+					<PlainText>true</PlainText>
+				</Password>
+				<LogonCount>88</LogonCount>
+				<Enabled>true</Enabled>
+				<Username>${newOsWindowsUser.user}</Username>
+			</AutoLogon>
+			<OOBE>
+				<HideEULAPage>true</HideEULAPage>
+				<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
+				<HideOnlineAccountScreens>true</HideOnlineAccountScreens>
+				<HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE>
+				<NetworkLocation>Home</NetworkLocation>
+				<SkipUserOOBE>true</SkipUserOOBE>
+				<SkipMachineOOBE>true</SkipMachineOOBE>
+				<ProtectYourPC>3</ProtectYourPC>
+			</OOBE>
 			<RegisteredOrganization>${newOsOrganisationName}</RegisteredOrganization>
 			<RegisteredOwner>poweron</RegisteredOwner>
 			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
@@ -184,13 +199,23 @@ Notes: Enter your comments here...
 				</SynchronousCommand>
                 <!-- Run ps1 file -->
 				<SynchronousCommand wcm:action="add">
-					<Order>10</Order>
+					<Order>2</Order>
 					<RequiresUserInput>false</RequiresUserInput>
 					<CommandLine>PowerShell -File "${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
+					<Description>Run Script</Description>
+				</SynchronousCommand>
+
+%if bool(isWinPEKickstart):
+				<SynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<RequiresUserInput>false</RequiresUserInput>
+					<CommandLine>PowerShell -Command "Remove-Item ${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
 					<Description>Setup WinRM</Description>
 				</SynchronousCommand>
+%endif
+
 			</FirstLogonCommands>
-			<TimeZone>New Zealand Standard Time</TimeZone>
+			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
 		</component>
 	</settings>
 </unattend>
