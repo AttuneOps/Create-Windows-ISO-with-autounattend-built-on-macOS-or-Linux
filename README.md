@@ -63,6 +63,9 @@ Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended i
 
 The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
 
+### Create Win10 BIOS autounattend WinPE ISO on Linux
+
+
 ### Create Win10 UEFI autounattend Dual ISO on macOS or Linux
 
 
@@ -108,6 +111,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2022 BIOS autounattend Single ISO on Linux
 
 
+### Create Win2022 BIOS autounattend WinPE ISO on Linux
+
+
 ### Create Win2022 UEFI autounattend Dual ISO on macOS or Linux
 
 
@@ -117,13 +123,10 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2022 UEFI autounattend WinPE ISO on Linux
 
 
-### Create Win10 BIOS autounattend WinPE ISO on Linux
+### Create Win2019 BIOS autounattend WinPE ISO on Linux
 
 
-### Create Win2022 BIOS autounattend WinPE ISO on Linux
-
-
-### tmp
+### Create Win2016 BIOS autounattend WinPE ISO on Linux
 
 
 
