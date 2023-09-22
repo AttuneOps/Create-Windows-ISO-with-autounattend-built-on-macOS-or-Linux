@@ -131,6 +131,7 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
+| Is WinPE Kickstart | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
 
 
 

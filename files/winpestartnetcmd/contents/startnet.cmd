@@ -8,7 +8,6 @@ wpeutil InitializeNetwork
 
 REM Get the "Interface Name" value and store in windowsInterfaceAlias
 FOR /F "skip=3 tokens=3*" %G IN ('netsh interface show interface') DO (
-	echo %%H
 	SET windowsInterfaceAlias=%H
 )
 echo Found network interface name = %windowsInterfaceAlias%
