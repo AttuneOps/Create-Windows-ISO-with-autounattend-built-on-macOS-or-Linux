@@ -21,6 +21,22 @@
         {
             "order": 150, 
             "stepKey": "lindeploystartnetcmdforwinpe"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywin10biosunattendedconfig"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "createpostsetupwim"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "modifywinpebootwim"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "linrecreatebiosbootwinpeisofromwinpestaging"
         }
     ], 
     "name": "Create Win10 BIOS autounattend WinPE ISO on Linux", 
