@@ -219,6 +219,14 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linextractwinpeisotowinpestaging">
+                            <strong>Step 3 -</strong> LIN Extract winpe.iso to winpe_staging
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -429,6 +437,65 @@ PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 mkdir --parents &quot;${PATH}&quot;
 cd &quot;${PATH}&quot;
 cp --verbose &quot;../winpe_win2019_plain_uefi.iso&quot; &quot;winpe.iso&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linextractwinpeisotowinpestaging">
+                            <a href="#linextractwinpeisotowinpestaging">
+                                <strong>Step 3 -</strong> LIN Extract winpe.iso to winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+FOLDER=winpe_staging
+mkdir -p &quot;${FOLDER}&quot;
+
+7z x winpe.iso -o&quot;${FOLDER}&quot;
                 </code>
             </pre>
         </div>

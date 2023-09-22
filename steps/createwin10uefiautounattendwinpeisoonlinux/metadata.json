@@ -13,6 +13,10 @@
         {
             "order": 50, 
             "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "linextractwinpeisotowinpestaging"
         }
     ], 
     "name": "Create Win10 UEFI autounattend WinPE ISO on Linux", 
