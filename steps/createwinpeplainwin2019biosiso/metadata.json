@@ -48,7 +48,7 @@
         }, 
         {
             "order": 500, 
-            "stepKey": "lindeletesetupexefromwinpestagingbootwimgroup"
+            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
         }
     ], 
     "name": "Create WinPE Plain Win2019 BIOS ISO", 

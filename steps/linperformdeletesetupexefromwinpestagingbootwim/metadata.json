@@ -4,25 +4,25 @@
     "enabled": true, 
     "externalUuid4": "0355573e-7772-4d71-8b1e-fe4f58a423dc", 
     "isBlueprint": false, 
-    "key": "lindeletesetupexefromwinpestagingbootwimgroup", 
+    "key": "linperformdeletesetupexefromwinpestagingbootwim", 
     "links": [
         {
             "order": 0, 
-            "stepKey": "lincreatebootwimmountdirectory"
-        }, 
-        {
-            "order": 50, 
-            "stepKey": "linwimlibmountwinpestagingbootwim"
-        }, 
-        {
-            "order": 100, 
-            "stepKey": "lindeletesetupexefrombootwim"
+            "stepKey": "lincreatebootwimmountfolder"
         }, 
         {
             "order": 150, 
+            "stepKey": "linwimlibmountbootwimtowinpebootimagedirfolder"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "lindeletesetupexefrombootwim"
+        }, 
+        {
+            "order": 250, 
             "stepKey": "linwimlibunmountbootwim"
         }
     ], 
-    "name": "LIN Delete setup.exe from winpe_staging boot.wim - Group", 
+    "name": "LIN Perform Delete setup.exe from winpe_staging boot.wim", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
