@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "linmovebootimgtowinpestaging", 
     "name": "LIN Move boot.img to winpe_staging", 
-    "osCredKey": "kickstartworkerlinuxuserroot", 
-    "serverKey": "kickstartworkerlinuxnode", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

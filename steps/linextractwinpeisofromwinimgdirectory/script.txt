@@ -1,4 +1,4 @@
-cd "{ksAttuneBaseDir}/build-{kickstartedNode.fqn}"
+cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
     
 mkwinpeimg --iso --windows-dir=winimg \
     "winpe.iso"

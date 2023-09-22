@@ -617,7 +617,8 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Mounts the Windows Server ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg</code>.</p>
+<p><code>winimg</code> stands for Windows Image.</p>
                             </p>
                         </div>
                     </div>
@@ -638,7 +639,7 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-ssh {kickstartworkerlinuxuserroot}@{kickstartworkerlinuxnode}
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
@@ -657,17 +658,18 @@ ssh {kickstartworkerlinuxuserroot}@{kickstartworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{ksAttuneBaseDir}/build-{kickstartedNode.fqn}&quot;
-mkdir -p winimg
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+FOLDER=&quot;winimg&quot;
+mkdir -p &quot;${FOLDER}&quot;
 
 # Case insensitve globbing
 shopt -s nocaseglob
 
 ISO=$(ls *SERVER*.iso)
 
-mount --options &quot;uid={kickstartWorkerBuildLinuxUser.user}&quot; \
-    --options &quot;gid={kickstartWorkerBuildLinuxUser.user}&quot; \
-    &quot;${ISO}&quot; winimg
+mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
+    --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
+    &quot;${ISO}&quot; &quot;${FOLDER}&quot;
                 </code>
             </pre>
         </div>
@@ -692,9 +694,9 @@ mount --options &quot;uid={kickstartWorkerBuildLinuxUser.user}&quot; \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Extracts the WinPE image from Windows Desktop 10 <code>boot.wim</code> by default at index 2.</p>
+                                <p>Extracts the WinPE image from Windows Server 2019 <code>boot.wim</code> by default at index 2.</p>
 <p>Writes this out to <code>winpe.iso</code>.</p>
-<p>This is the exact copy of Windows Desktop 10's WinPE image which by default will run <code>setup.exe</code> on the Windows Desktop ISO at a higher priority than running <code>startnet.cmd</code>.</p>
+<p>This is the exact copy of Windows Server 2019's WinPE image which by default will run <code>setup.exe</code> on the Windows Desktop ISO at a higher priority than running <code>startnet.cmd</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -715,7 +717,7 @@ mount --options &quot;uid={kickstartWorkerBuildLinuxUser.user}&quot; \
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
@@ -734,7 +736,7 @@ ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{ksAttuneBaseDir}/build-{kickstartedNode.fqn}&quot;
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
     
 mkwinpeimg --iso --windows-dir=winimg \
     &quot;winpe.iso&quot;
@@ -762,8 +764,8 @@ mkwinpeimg --iso --windows-dir=winimg \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>This copies <code>boot/etfsboot.com</code> from the Windows Desktop 10 ISO to WinPE's <code>BOOT</code> folder.</p>
-<p>This is needed if the WinPE ISO will work with future usages with <code>mkwinpeimg</code>.</p>
+                                <p>This copies <code>boot/etfsboot.com</code> from the Windows Server 2019 ISO to WinPE's <code>BOOT</code> folder.</p>
+<p>This is needed if the WinPE ISO needs to work with future usages with <code>mkwinpeimg</code>.</p>
 <p>Otherwise this step is not needed.</p>
                             </p>
                         </div>
@@ -785,7 +787,7 @@ mkwinpeimg --iso --windows-dir=winimg \
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-ssh {kickstartworkerlinuxuserroot}@{kickstartworkerlinuxnode}
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
@@ -804,7 +806,7 @@ ssh {kickstartworkerlinuxuserroot}@{kickstartworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{ksAttuneBaseDir}/build-{kickstartedNode.fqn}&quot;
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 
 cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
                 </code>
@@ -831,8 +833,8 @@ cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Moves <code>boot.wim</code> to the <code>winpe_staging</code> folder.</p>
-<p>This is required by <code>mkwinpeimg</code> to make a BIOS bootable ISO.</p>
+                                <p>Moves <code>boot.img</code> to the <code>winpe_staging</code> folder.</p>
+<p><code>mkisofs</code> requires <code>boot.img</code> to make a BIOS bootable ISO.</p>
                             </p>
                         </div>
                     </div>
@@ -861,7 +863,7 @@ cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{ksAttuneBaseDir}/build-{kickstartedNode.fqn}&quot;
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 
 mv --verbose boot.img winpe_staging
                 </code>

@@ -235,6 +235,95 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#extractwindowsbootimg">
+                            <strong>Step 5 -</strong> Extract Windows boot.img
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmountwinserverdvdiso">
+                            <strong>Step 6 -</strong> LIN Mount Win Server DVD ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linextractwinpeisofromwinimgdirectory">
+                            <strong>Step 7 -</strong> LIN Extract WinPE ISO from winimg Directory
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linextractwinpeisotowinpestaging">
+                            <strong>Step 8 -</strong> LIN Extract winpe.iso to winpe_staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
+                            <strong>Step 9 -</strong> LIN Copy Files for mkwinpeimg Compatibility to WinPE Staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovebootimgtowinpestaging">
+                            <strong>Step 10 -</strong> LIN Move boot.img to winpe_staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lindeletesetupexefromwinpestagingbootwimgroup">
+                            <strong>Step 11 -</strong> LIN Delete setup.exe from winpe_staging boot.wim - Group
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincreatebootwimmountdirectory">
+                            <strong>Step 11.1 -</strong> LIN Create boot.wim Mount Directory
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linwimlibmountwinpestagingbootwim">
+                            <strong>Step 11.2 -</strong> LIN wimlib Mount winpe_staging BOOT.WIM
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lindeletesetupexefrombootwim">
+                            <strong>Step 11.3 -</strong> LIN Delete setup.exe from boot.wim
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linwimlibunmountbootwim">
+                            <strong>Step 11.4 -</strong> LIN wimlib Unmount boot.wim
+                        </a>
+                    </p>
+
+
 
                 </div>
             </div>
@@ -581,6 +670,674 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 {automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="extractwindowsbootimg">
+                            <a href="#extractwindowsbootimg">
+                                <strong>Step 5 -</strong> Extract Windows boot.img
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+# Extract the boot.img out of the WinPE ISO
+
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+# Set the filename of the ISO
+F=$(ls *.iso)
+
+# Get the Boot image offset
+OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
+
+# Extract the boot.img.
+dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linmountwinserverdvdiso">
+                            <a href="#linmountwinserverdvdiso">
+                                <strong>Step 6 -</strong> LIN Mount Win Server DVD ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts the Windows Server ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg</code>.</p>
+<p><code>winimg</code> stands for Windows Image.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+FOLDER=&quot;winimg&quot;
+mkdir -p &quot;${FOLDER}&quot;
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+ISO=$(ls *SERVER*.iso)
+
+mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
+    --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
+    &quot;${ISO}&quot; &quot;${FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linextractwinpeisofromwinimgdirectory">
+                            <a href="#linextractwinpeisofromwinimgdirectory">
+                                <strong>Step 7 -</strong> LIN Extract WinPE ISO from winimg Directory
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extracts the WinPE image from Windows Server 2019 <code>boot.wim</code> by default at index 2.</p>
+<p>Writes this out to <code>winpe.iso</code>.</p>
+<p>This is the exact copy of Windows Server 2019's WinPE image which by default will run <code>setup.exe</code> on the Windows Desktop ISO at a higher priority than running <code>startnet.cmd</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+mkwinpeimg --iso --windows-dir=winimg \
+    &quot;winpe.iso&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linextractwinpeisotowinpestaging">
+                            <a href="#linextractwinpeisotowinpestaging">
+                                <strong>Step 8 -</strong> LIN Extract winpe.iso to winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+FOLDER=winpe_staging
+mkdir -p &quot;${FOLDER}&quot;
+
+7z x winpe.iso -o&quot;${FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
+                            <a href="#lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
+                                <strong>Step 9 -</strong> LIN Copy Files for mkwinpeimg Compatibility to WinPE Staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>This copies <code>boot/etfsboot.com</code> from the Windows Server 2019 ISO to WinPE's <code>BOOT</code> folder.</p>
+<p>This is needed if the WinPE ISO needs to work with future usages with <code>mkwinpeimg</code>.</p>
+<p>Otherwise this step is not needed.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linmovebootimgtowinpestaging">
+                            <a href="#linmovebootimgtowinpestaging">
+                                <strong>Step 10 -</strong> LIN Move boot.img to winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>boot.img</code> to the <code>winpe_staging</code> folder.</p>
+<p><code>mkisofs</code> requires <code>boot.img</code> to make a BIOS bootable ISO.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+mv --verbose boot.img winpe_staging
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lindeletesetupexefromwinpestagingbootwimgroup">
+                            <a href="#lindeletesetupexefromwinpestagingbootwimgroup">
+                                <strong>Step 11 -</strong> LIN Delete setup.exe from winpe_staging boot.wim - Group
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="lincreatebootwimmountdirectory">
+                            <a href="#lincreatebootwimmountdirectory">
+                                <strong>Step 11.1 -</strong> LIN Create boot.wim Mount Directory
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a directory <code>WinPE_BootImageDir</code> for use with mounting <code>winpe_staging</code>'s <code>SOURCES/BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {kickstartworkerlinuxuser}@{kickstartworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {ksAttuneBaseDir}/build-{kickstartedNode.fqn}
+
+WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
+if [ ! -d WinPE_BootImageDir ]
+then
+    mkdir $WinPE_BootImageDir
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linwimlibmountwinpestagingbootwim">
+                            <a href="#linwimlibmountwinpestagingbootwim">
+                                <strong>Step 11.2 -</strong> LIN wimlib Mount winpe_staging BOOT.WIM
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {ksAttuneBaseDir}/build-{kickstartedNode.fqn}
+wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="lindeletesetupexefrombootwim">
+                            <a href="#lindeletesetupexefrombootwim">
+                                <strong>Step 11.3 -</strong> LIN Delete setup.exe from boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes <code>setup.exe</code> from <code>{ksAttuneBaseDir}/build-{kickstartedNode.fqn}/WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {ksAttuneBaseDir}/build-{kickstartedNode.fqn}/WinPE_BootImageDir
+
+rm --verbose setup.exe
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linwimlibunmountbootwim">
+                            <a href="#linwimlibunmountbootwim">
+                                <strong>Step 11.4 -</strong> LIN wimlib Unmount boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+<p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+wimunmount WinPE_BootImageDir --commit --check --rebuild
+                </code>
+            </pre>
+        </div>
+    </div>
+
 
 
 

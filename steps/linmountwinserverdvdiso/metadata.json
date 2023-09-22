@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "linmountwinserverdvdiso", 
     "name": "LIN Mount Win Server DVD ISO", 
-    "osCredKey": "kickstartworkerlinuxuserroot", 
-    "serverKey": "kickstartworkerlinuxnode", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }
