@@ -21,6 +21,34 @@
         {
             "order": 150, 
             "stepKey": "deploywin2019dvdiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "extractwindowsbootimg"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "linmountwinserverdvdiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "linextractwinpeisofromwinimgdirectory"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "linmovebootimgtowinpestaging"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "lindeletesetupexefromwinpestagingbootwimgroup"
         }
     ], 
     "name": "Create WinPE Plain Win2019 BIOS ISO", 
