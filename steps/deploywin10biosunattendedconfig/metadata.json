@@ -25,11 +25,6 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "ksWindowsInterfaceAlias", 
-            "parameterKey": "newosinterfacealias", 
-            "parameterType": "c.s.s.b.phv.Text"
-        }, 
-        {
             "name": "driversAndScriptsDrive", 
             "parameterKey": "driversandscriptsdrive", 
             "parameterType": "c.s.s.b.phv.Text"
