@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Create Win2019 UEFI autounattend Dual ISO on macOS or Linux - Attune Automation</title>
+    <title>How to tmp - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win2019 UEFI autounattend Dual ISO on macOS or Linux - Attune Automation">
+          content="How to tmp - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win2019 UEFI autounattend Dual ISO on macOS or Linux - Attune Automation" />
+          content="HowTo tmp - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win2019 UEFI autounattend Dual ISO on macOS or Linux - Attune Automation" />
+          content="How to tmp - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win2019 UEFI autounattend Dual ISO on macOS or Linux</strong>
+                    <strong>tmp</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win2019 UEFI autounattend Dual ISO on macOS or Linux
+                How to tmp
             </h1>
         </div>
     </div>
@@ -197,60 +197,12 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win2019 UEFI autounattend Dual ISO on macOS or Linux</strong>
+                            <strong>tmp</strong>
                         </a>
                     </p>
 
 
     
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#cleanbuildfiles">
-                            <strong>Step 1 -</strong> Clean Build Files
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywin2019dvdiso">
-                            <strong>Step 2 -</strong> Deploy Win2019 DVD ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#renameinstalliso">
-                            <strong>Step 3 -</strong> Rename Install ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywindowsserveruefiunattendedconfig">
-                            <strong>Step 5 -</strong> Deploy Windows Server UEFI Unattended Config
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createanswerfileisoonmacosorlinux">
-                            <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
-                        </a>
-                    </p>
-
 
                 </div>
             </div>
@@ -310,7 +262,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win2019 UEFI autounattend Dual ISO on macOS or Linux</strong>
+                You've automated: <strong>tmp</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -334,395 +286,6 @@
         </div>
 
 <!-- Blueprint Steps -->
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="cleanbuildfiles">
-                            <a href="#cleanbuildfiles">
-                                <strong>Step 1 -</strong> Clean Build Files
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the build files and kickstart ISO.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-[[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
-    echo &quot;No directory to remove.&quot;
-
-ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-[[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywin2019dvdiso">
-                            <a href="#deploywin2019dvdiso">
-                                <strong>Step 2 -</strong> Deploy Win2019 DVD ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Windows_Server_201_ISO.tar</strong>
-            to the target node.
-        </p>
-        <p>
-            <strong>Deploy the File(s)</strong> here:
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="renameinstalliso">
-                            <a href="#renameinstalliso">
-                                <strong>Step 3 -</strong> Rename Install ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Renames the copied WinPE ISO to <code>kickstart_{newOsNode.fqn}.iso</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywindowsserveruefiunattendedconfig">
-                            <a href="#deploywindowsserveruefiunattendedconfig">
-                                <strong>Step 5 -</strong> Deploy Windows Server UEFI Unattended Config
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the Windows Server 2019 <code>autounattend.xml</code> configuration for UEFI kickstarts.</p>
-<p>This works for:</p>
-<ol>
-<li>Windows Server 2016</li>
-<li>Windows Server 2019</li>
-<li>Windows Server 2022</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This UEFI autounattend.xml works for kickstarting:</p>
-<ol>
-<li>UEFI Single ISO</li>
-<li>UEFI Dual ISO</li>
-<li>UEFI WinPE ISO</li>
-</ol>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Win201_UEFI_Unattended_Config.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createanswerfileisoonmacosorlinux">
-                            <a href="#createanswerfileisoonmacosorlinux">
-                                <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates an ISO called <code>Drivers.iso</code> containing:</p>
-<ol>
-<li><code>autounattend.xml</code></li>
-<li><code>post_install_setup.ps1</code></li>
-</ol>
-<p>This works for kickstarts on macOS with:
-1. Windows Desktop 10
-2. Windows Server 2016
-2. Windows Server 2019
-3. Windows Server 2022</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
-if uname | \
-    grep -iq &quot;darwin&quot;
-then
-    echo &quot;is macOS&quot;
-    
-    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-    echo &quot;Using $(which xorriso)&quot;
-    
-    xorriso -as mkisofs -o Drivers.iso \
-        -iso-level 2 -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;DRIVERS&quot; autounattend.xml post_install_setup.ps1
-else
-    echo &quot;not macOS&quot;
-    
-    mkisofs -o Drivers.iso \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;DRIVERS&quot; autounattend.xml post_install_setup.ps1
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
 
 
 

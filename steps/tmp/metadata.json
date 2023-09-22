@@ -1,0 +1,11 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "1e621c5f-72c0-409f-8c11-9cf3d7cc465d", 
+    "isBlueprint": true, 
+    "key": "tmp", 
+    "links": [], 
+    "name": "tmp", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

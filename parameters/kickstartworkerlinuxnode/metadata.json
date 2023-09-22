@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "7ea81c4e-1db5-4d32-9e3a-f992908e7a51", 
+    "key": "kickstartworkerlinuxnode", 
+    "name": "Kickstart Worker Linux Node", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinuxServer"
+}

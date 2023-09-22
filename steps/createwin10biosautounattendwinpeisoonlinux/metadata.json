@@ -1,0 +1,11 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "0ce9b57b-8b47-4f41-af08-98e53d3ada50", 
+    "isBlueprint": true, 
+    "key": "createwin10biosautounattendwinpeisoonlinux", 
+    "links": [], 
+    "name": "Create Win10 BIOS autounattend WinPE ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

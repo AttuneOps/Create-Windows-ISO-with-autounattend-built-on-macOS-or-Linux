@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Create Win2022 UEFI autounattend Single ISO on Linux - Attune Automation</title>
+    <title>How to Create Win2022 BIOS autounattend WinPE ISO on Linux - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win2022 UEFI autounattend Single ISO on Linux - Attune Automation">
+          content="How to Create Win2022 BIOS autounattend WinPE ISO on Linux - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win2022 UEFI autounattend Single ISO on Linux - Attune Automation" />
+          content="HowTo Create Win2022 BIOS autounattend WinPE ISO on Linux - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win2022 UEFI autounattend Single ISO on Linux - Attune Automation" />
+          content="How to Create Win2022 BIOS autounattend WinPE ISO on Linux - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win2022 UEFI autounattend Single ISO on Linux</strong>
+                    <strong>Create Win2022 BIOS autounattend WinPE ISO on Linux</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win2022 UEFI autounattend Single ISO on Linux
+                How to Create Win2022 BIOS autounattend WinPE ISO on Linux
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win2022 UEFI autounattend Single ISO on Linux</strong>
+                            <strong>Create Win2022 BIOS autounattend WinPE ISO on Linux</strong>
                         </a>
                     </p>
 
@@ -206,91 +206,51 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanbuildfiles">
-                            <strong>Step 1 -</strong> Clean Build Files
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywin2022dvdiso">
-                            <strong>Step 2 -</strong> Deploy Win2022 DVD ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#extractwindowsiso">
-                            <strong>Step 3 -</strong> Extract Windows ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywindowsserveruefiunattendedconfig">
-                            <strong>Step 5 -</strong> Deploy Windows Server UEFI Unattended Config
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#performcreateuefiforsingleiso">
-                            <strong>Step 6 -</strong> Perform Create UEFI for Single ISO
+                        <a href="#createwindowsserverbiosautounattendwinpeisoonlinux">
+                            <strong>Step 1 -</strong> Create Windows Server BIOS autounattend WinPE ISO on Linux
                         </a>
                     </p>
     
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createemptyuefiforsingleiso">
-                            <strong>Step 6.1 -</strong> Create Empty UEFI for Single ISO 
+                        <a href="#cleanbuildfiles">
+                            <strong>Step 1.1 -</strong> Clean Build Files
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#mountemptyuefiforsingleiso">
-                            <strong>Step 6.2 -</strong> Mount Empty UEFI for Single ISO
+                        <a href="#lincopywinpewin2019plainbiosisotowinpeiso">
+                            <strong>Step 1.2 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movefilestouefimount">
-                            <strong>Step 6.3 -</strong> Move Files to UEFI Mount
+                        <a href="#linextractwinpeisotowinpestaging">
+                            <strong>Step 1.3 -</strong> LIN Extract winpe.iso to winpe_staging
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#unmountsingleisouefimount">
-                            <strong>Step 6.4 -</strong> Unmount Single ISO UEFI Mount
+                        <a href="#lindeploystartnetcmdforwinpe">
+                            <strong>Step 1.4 -</strong> LIN Deploy startnet.cmd for WinPE
                         </a>
                     </p>
-
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deletebuilddirectory">
-                            <strong>Step 7 -</strong> Delete Build Directory
+                        <a href="#deploywindowsserverbiosunattendedconfig">
+                            <strong>Step 1.5 -</strong> Deploy Windows Server BIOS Unattended Config
                         </a>
                     </p>
+
 
 
                 </div>
@@ -351,7 +311,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win2022 UEFI autounattend Single ISO on Linux</strong>
+                You've automated: <strong>Create Win2022 BIOS autounattend WinPE ISO on Linux</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -382,11 +342,33 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanbuildfiles">
-                            <a href="#cleanbuildfiles">
-                                <strong>Step 1 -</strong> Clean Build Files
+                        <h3 id="createwindowsserverbiosautounattendwinpeisoonlinux">
+                            <a href="#createwindowsserverbiosautounattendwinpeisoonlinux">
+                                <strong>Step 1 -</strong> Create Windows Server BIOS autounattend WinPE ISO on Linux
                             </a>
                         </h3>
+                    </div>
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="cleanbuildfiles">
+                            <a href="#cleanbuildfiles">
+                                <strong>Step 1.1 -</strong> Clean Build Files
+                            </a>
+                        </h4>
                     </div>
 
                     <div class="row">
@@ -447,22 +429,29 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
 
-        
+    
 
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2022dvdiso">
-                            <a href="#deploywin2022dvdiso">
-                                <strong>Step 2 -</strong> Deploy Win2022 DVD ISO
+                        <h4 id="lincopywinpewin2019plainbiosisotowinpeiso">
+                            <a href="#lincopywinpewin2019plainbiosisotowinpeiso">
+                                <strong>Step 1.2 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
                             </a>
-                        </h3>
+                        </h4>
                     </div>
 
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2022 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Makes a copy of the <code>winpe_win2019_plain_bios.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn</code>.</p>
+<p>This ISO is BIOS bootable and works for:</p>
+<ol>
+<li>Windows Desktop 10</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -477,49 +466,49 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
     
 
+
     
 
 
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>WIN_Raw_Win2022_ISO.tar</strong>
-            to the target node.
-        </p>
-        <p>
-            <strong>Deploy the File(s)</strong> here:
+            Execute the following script:
         </p>
     </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+mkdir --parents &quot;${PATH}&quot;
+cd &quot;${PATH}&quot;
+cp --verbose &quot;../winpe_win2019_plain_bios.iso&quot; &quot;winpe.iso&quot;
+                </code>
+            </pre>
+        </div>
     </div>
 
 
 
 
 
-        
+    
 
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsiso">
-                            <a href="#extractwindowsiso">
-                                <strong>Step 3 -</strong> Extract Windows ISO
+                        <h4 id="linextractwinpeisotowinpestaging">
+                            <a href="#linextractwinpeisotowinpestaging">
+                                <strong>Step 1.3 -</strong> LIN Extract winpe.iso to winpe_staging
                             </a>
-                        </h3>
+                        </h4>
                     </div>
 
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Extracts the Windows ISO.</p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
                             </p>
                         </div>
                     </div>
@@ -550,21 +539,10 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                 <code class="language-sql py-0">
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
 
-# Case insensitve globbing
-shopt -s nocaseglob
+FOLDER=winpe_staging
+mkdir -p &quot;${FOLDER}&quot;
 
-if ls | grep -q *iso
-then
-    
-    ISO=&quot;$(echo *iso)&quot;
-    echo &quot;ISO is $ISO&quot;
-    
-    7z x &quot;${ISO}&quot;
-    
-    rm -v &quot;${ISO}&quot;
-else
-    echo &quot;ISO is already extracted.&quot;
-fi
+7z x winpe.iso -o&quot;${FOLDER}&quot;
                 </code>
             </pre>
         </div>
@@ -574,22 +552,23 @@ fi
 
 
 
-        
+    
 
 
 
                     <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
+                        <h4 id="lindeploystartnetcmdforwinpe">
+                            <a href="#lindeploystartnetcmdforwinpe">
+                                <strong>Step 1.4 -</strong> LIN Deploy startnet.cmd for WinPE
                             </a>
-                        </h3>
+                        </h4>
                     </div>
 
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
+                                <p>Deploys <code>startnet.cmd</code>.</p>
+<p>This script is run by WinPE.</p>
                             </p>
                         </div>
                     </div>
@@ -610,12 +589,22 @@ fi
 
     <div class="row">
         <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
+            <p>The startnet.cmd is run by WinPE. This script:
+1. Installs drivers from "attune_drivers".
+2. Sets the IP address.
+3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.
+4. Runs Windows setup.exe.</p>
+<p>The Mako parameter "windowsFolderOnSamba" can have these values:</p>
+<ul>
+<li>windows10</li>
+<li>windows2016</li>
+<li>windows2019</li>
+<li>windows2022</li>
+</ul>
         </p>
         <p>
             Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
+            <strong>WinPE_startnetcmd.tar</strong>
             to the target node.
         </p>
         <p>
@@ -631,22 +620,22 @@ fi
 
 
 
-        
+    
 
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywindowsserveruefiunattendedconfig">
-                            <a href="#deploywindowsserveruefiunattendedconfig">
-                                <strong>Step 5 -</strong> Deploy Windows Server UEFI Unattended Config
+                        <h4 id="deploywindowsserverbiosunattendedconfig">
+                            <a href="#deploywindowsserverbiosunattendedconfig">
+                                <strong>Step 1.5 -</strong> Deploy Windows Server BIOS Unattended Config
                             </a>
-                        </h3>
+                        </h4>
                     </div>
 
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the Windows Server 2019 <code>autounattend.xml</code> configuration for UEFI kickstarts.</p>
+                                <p>Deploys a Windows 2019 <code>autounattend.xml</code> configuration file for BIOS kickstarts.</p>
 <p>This works for:</p>
 <ol>
 <li>Windows Server 2016</li>
@@ -673,16 +662,11 @@ fi
 
     <div class="row">
         <p>
-            <p>This UEFI autounattend.xml works for kickstarting:</p>
-<ol>
-<li>UEFI Single ISO</li>
-<li>UEFI Dual ISO</li>
-<li>UEFI WinPE ISO</li>
-</ol>
+            
         </p>
         <p>
             Copy the File(s)
-            <strong>Win201_UEFI_Unattended_Config.tar</strong>
+            <strong>Widows_Server_BIOS_Unattended_Config.tar</strong>
             to the target node.
         </p>
         <p>
@@ -694,360 +678,6 @@ fi
         </code>
     </div>
 
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="performcreateuefiforsingleiso">
-                            <a href="#performcreateuefiforsingleiso">
-                                <strong>Step 6 -</strong> Perform Create UEFI for Single ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates the Windows ISO again from the contents of the <code>build-{newOsNode.fqn}</code> folder.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createemptyuefiforsingleiso">
-                            <a href="#createemptyuefiforsingleiso">
-                                <strong>Step 6.1 -</strong> Create Empty UEFI for Single ISO 
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the <code>build-{newOsNode.fqn}</code> directory at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
-
-bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
-((bytes=bytes+10000))
-
-mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountemptyuefiforsingleiso">
-                            <a href="#mountemptyuefiforsingleiso">
-                                <strong>Step 6.2 -</strong> Mount Empty UEFI for Single ISO
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Mounts the UEFI ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
-
-MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-
-mkdir --verbose &quot;${MOUNT_PATH}&quot;
-
-mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="movefilestouefimount">
-                            <a href="#movefilestouefimount">
-                                <strong>Step 6.3 -</strong> Move Files to UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Move contents of <code>build-{newOsNode.fqn}</code> to <code>build-{newOsNode.fqn}-uefi-mount</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
-
-mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="unmountsingleisouefimount">
-                            <a href="#unmountsingleisouefimount">
-                                <strong>Step 6.4 -</strong> Unmount Single ISO UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>. </p>
-<p>This writes the contents of <code>build-{newOsNode.fqn}-uefi-mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for Single ISO</code>. </p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
-
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
-then
-
-    cd &quot;{automationWorkerBaseDirectory}&quot;
-    
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
-else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deletebuilddirectory">
-                            <a href="#deletebuilddirectory">
-                                <strong>Step 7 -</strong> Delete Build Directory
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the build directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-if [ -d &quot;${DIR}&quot; ]
-then
-    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
-else
-    echo &quot;No directory to remove.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
 
 
 
