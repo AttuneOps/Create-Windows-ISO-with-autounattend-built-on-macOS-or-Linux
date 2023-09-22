@@ -1,0 +1,44 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "0d2c9fa7-94db-4e95-b52e-b51b23fda6be", 
+    "isBlueprint": false, 
+    "key": "createwindowsserveruefiautounattendwinpeisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "lindeploystartnetcmdforwinpeforwin2019"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywindowsserveruefiunattendedconfig"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "createpostsetupwim"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "modifywinpebootwimfor2019"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "performrecreateuefiforwinpeiso"
+        }
+    ], 
+    "name": "Create Windows Server UEFI autounattend WinPE ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
