@@ -1,0 +1,1 @@
+Relative to the `{ksAttuneBaseDir}/build-{kickstartedNode.fqn/winpe` directory, copies the EFI files in `winimg/efi`to `winpe_staging`.

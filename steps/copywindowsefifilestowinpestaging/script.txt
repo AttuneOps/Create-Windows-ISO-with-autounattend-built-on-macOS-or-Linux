@@ -1,0 +1,4 @@
+cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+
+# Copy EFI Files from Windows ISO
+cp -rv "winimg/efi" "winpe_staging"

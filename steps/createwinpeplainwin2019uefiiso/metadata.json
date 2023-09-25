@@ -40,11 +40,11 @@
         }, 
         {
             "order": 400, 
-            "stepKey": "createwinpewin2019plainuefiisofromwinpestaging"
+            "stepKey": "copywindowsefifilestowinpestaging"
         }, 
         {
             "order": 450, 
-            "stepKey": "changeownershipofwinpestagingfoldertoautomationworkerlinuxuser"
+            "stepKey": "performcreatewinpewin2019plainuefiisofromwinpestaging"
         }, 
         {
             "order": 500, 

@@ -1,0 +1,5 @@
+cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+
+mkdir --parents --verbose uefi_mount
+
+mount "../winpe_win2019_plain_uefi.iso" uefi_mount
