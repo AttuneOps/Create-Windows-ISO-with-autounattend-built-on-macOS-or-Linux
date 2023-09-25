@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "ef90b66d-73e0-40f0-a827-fa974fc8917f", 
+    "isBlueprint": false, 
+    "key": "createwinpewin2019plainuefiisofromwinpestaging", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "changeownershipofwinpestagingfoldertoautomationworkerlinuxuser"
+        }
+    ], 
+    "name": "Create winpe_win2019_plain_uefi.iso from winpe_staging", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
