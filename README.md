@@ -132,6 +132,9 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create WinPE Plain Win2019 BIOS ISO
 
 
+### Create WinPE Plain Win2019 UEFI ISO
+
+
 
 
 

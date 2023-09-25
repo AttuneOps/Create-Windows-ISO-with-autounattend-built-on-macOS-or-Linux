@@ -1,0 +1,28 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "e2a88d15-b523-44c2-9421-0a43ab19522f", 
+    "isBlueprint": true, 
+    "key": "createwinpeplainwin2019uefiiso", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "confirmwinpewin2019plainuefiisodoesnotexist"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "createwinpecleanbuildfiles"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "deploywin2019dvdiso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "linmountwinserverdvdiso"
+        }
+    ], 
+    "name": "Create WinPE Plain Win2019 UEFI ISO", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
