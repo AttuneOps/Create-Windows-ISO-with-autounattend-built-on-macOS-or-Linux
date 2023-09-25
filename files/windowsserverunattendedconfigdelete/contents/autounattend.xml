@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<unattend
+	xmlns="urn:schemas-microsoft-com:unattend">
+	<settings pass="windowsPE">
+%if bool(isWinServerUEFI)
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
+			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<ComputerName>{newOsNode.hostname}</ComputerName>
+			<ProductKey>N2KJX-J94YW-TQVFB-DG9YT-724CC</ProductKey>
+		</component>
+%endif
+		<component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
+			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<DriverPaths>
+				<PathAndCredentials wcm:keyValue="1" wcm:action="add">
+					<Path>${driversAndScriptsDrive}:\attune_drivers</Path>
+					<Credentials></Credentials>
+				</PathAndCredentials>
+			</DriverPaths>
+		</component>
+		<component name="Microsoft-Windows-International-Core-WinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
+			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<SetupUILanguage>
+				<UILanguage>en-US</UILanguage>
+			</SetupUILanguage>
+			<InputLocale>en-US</InputLocale>
+			<SystemLocale>en-US</SystemLocale>
+			<UILanguage>en-US</UILanguage>
+			<UserLocale>en-US</UserLocale>
+		</component>
+		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
+			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<ImageInstall>
+				<OSImage>
+					<InstallFrom>
+						<MetaData wcm:action="add">
+							<Key>/IMAGE/INDEX</Key>
+							<Value>2</Value>
+						</MetaData>
+					</InstallFrom>
+					<InstallTo>
+						<DiskID>0</DiskID>
+%if bool(isWinServerBios):
+						<PartitionID>2</PartitionID>
+%elif bool(isWinServerUEFI):
+						<PartitionID>4</PartitionID>
+%endif
+					</InstallTo>
+				</OSImage>
+
+%if bool(isWinPEKickstart):
+				<!-- Custom WIM file -->
+				<DataImage wcm:action="add">
+					<InstallFrom>
+						<Path>X:\post_install.wim</Path>
+					</InstallFrom>
+					<InstallTo>
+						<DiskID>0</DiskID>
+  %if bool(isWinServerBios):
+						<PartitionID>2</PartitionID>
+  %elif bool(isWinServerUEFI):
+            <PartitionID>4</PartitionID>
+  %endif
+					</InstallTo>
+					<Order>1</Order>
+				</DataImage>
+%endif
+
+			</ImageInstall>
+			<UserData>
+				<AcceptEula>true</AcceptEula>
+				<Organization>${newOsOrganisationName}</Organization>
+			</UserData>
+
+%if bool(isWinServerBios):
+			<DiskConfiguration>
+				<WillShowUI>OnError</WillShowUI>
+				<Disk wcm:action="add">
+					<DiskID>0</DiskID>
+					<WillWipeDisk>true</WillWipeDisk>
+					<CreatePartitions>
+						<CreatePartition wcm:action="add">
+							<Order>1</Order>
+							<Size>500</Size>
+							<Type>Primary</Type>
+						</CreatePartition>
+						<CreatePartition wcm:action="add">
+							<Order>2</Order>
+							<Extend>true</Extend>
+							<Type>Primary</Type>
+						</CreatePartition>
+					</CreatePartitions>
+					<ModifyPartitions>
+						<ModifyPartition wcm:action="add">
+							<Format>NTFS</Format>
+							<Label>System Reserved</Label>
+							<Order>1</Order>
+							<PartitionID>1</PartitionID>
+							<Active>true</Active>
+						</ModifyPartition>
+						<ModifyPartition wcm:action="add">
+							<Format>NTFS</Format>
+							<Label>OS</Label>
+							<Order>2</Order>
+							<PartitionID>2</PartitionID>
+						</ModifyPartition>
+					</ModifyPartitions>
+				</Disk>
+			</DiskConfiguration>
+%elif bool(isWinServerUEFI):
+      <DiskConfiguration>
+				<Disk wcm:action="add">
+					<DiskID>0</DiskID>
+					<WillWipeDisk>true</WillWipeDisk>
+					<CreatePartitions>
+						<!-- Windows RE Tools partition -->
+						<CreatePartition wcm:action="add">
+							<Order>1</Order>
+							<Type>Primary</Type>
+							<Size>300</Size>
+						</CreatePartition>
+						<!-- System partition (ESP) -->
+						<CreatePartition wcm:action="add">
+							<Order>2</Order>
+							<Type>EFI</Type>
+							<Size>100</Size>
+						</CreatePartition>
+						<!-- Microsoft reserved partition (MSR) -->
+						<CreatePartition wcm:action="add">
+							<Order>3</Order>
+							<Type>MSR</Type>
+							<Size>128</Size>
+						</CreatePartition>
+						<!-- Windows partition -->
+						<CreatePartition wcm:action="add">
+							<Order>4</Order>
+							<Type>Primary</Type>
+							<Extend>true</Extend>
+						</CreatePartition>
+					</CreatePartitions>
+					<ModifyPartitions>
+						<!-- Windows RE Tools partition -->
+						<ModifyPartition wcm:action="add">
+							<Order>1</Order>
+							<PartitionID>1</PartitionID>
+							<Label>WINRE</Label>
+							<Format>NTFS</Format>
+							<TypeID>DE94BBA4-06D1-4D40-A16A-BFD50179D6AC</TypeID>
+						</ModifyPartition>
+						<!-- System partition (ESP) -->
+						<ModifyPartition wcm:action="add">
+							<Order>2</Order>
+							<PartitionID>2</PartitionID>
+							<Label>System</Label>
+							<Format>FAT32</Format>
+						</ModifyPartition>
+						<!-- MSR partition does not need to be modified -->
+						<ModifyPartition wcm:action="add">
+							<Order>3</Order>
+							<PartitionID>3</PartitionID>
+						</ModifyPartition>
+						<!-- Windows partition -->
+						<ModifyPartition wcm:action="add">
+							<Order>4</Order>
+							<PartitionID>4</PartitionID>
+							<Label>Windows</Label>
+							<Letter>C</Letter>
+							<Format>NTFS</Format>
+						</ModifyPartition>
+					</ModifyPartitions>
+				</Disk>
+			</DiskConfiguration>
+%endif
+
+		</component>
+	</settings>
+	<settings pass="oobeSystem">
+		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
+			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<UserAccounts>
+				<AdministratorPassword>
+					<Value>${newOsWindowsUser.password}</Value>
+					<PlainText>true</PlainText>
+				</AdministratorPassword>
+			</UserAccounts>
+			<AutoLogon>
+				<Password>
+					<Value>${newOsWindowsUser.password}</Value>
+					<PlainText>true</PlainText>
+				</Password>
+				<LogonCount>1</LogonCount>
+				<Enabled>true</Enabled>
+				<Username>${newOsWindowsUser.user}</Username>
+			</AutoLogon>
+			<FirstLogonCommands>
+			    
+                <!-- Enable running PowerShell scripts from file -->
+				<SynchronousCommand wcm:action="add">
+					<Order>1</Order>
+					<RequiresUserInput>false</RequiresUserInput>
+					<CommandLine>PowerShell -Command "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force"</CommandLine>
+					<Description>Set PowerShell Execution Policy to Unrestricted</Description>
+				</SynchronousCommand>
+				<!-- Run ps1 file -->
+				<SynchronousCommand wcm:action="add">
+					<Order>2</Order>
+					<RequiresUserInput>false</RequiresUserInput>
+					<CommandLine>PowerShell -File "${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
+					<Description>Run Script</Description>
+				</SynchronousCommand>
+
+%if bool(isWinPEKickstart):
+				<SynchronousCommand wcm:action="add">
+					<Order>3</Order>
+					<RequiresUserInput>false</RequiresUserInput>
+					<CommandLine>PowerShell -Command "Remove-Item ${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
+					<Description>Setup WinRM</Description>
+				</SynchronousCommand>
+%endif
+
+			</FirstLogonCommands>
+			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
+		</component>
+	</settings>
+	<cpi:offlineImage cpi:source="wim:c:/users/documents/win_images/win2016/sources/install.wim#Windows Server 2016 SERVERSTANDARD"
+		xmlns:cpi="urn:schemas-microsoft-com:cpi" />
+	</unattend>
