@@ -1,0 +1,6 @@
+{
+    "externalUuid4": "bf583ec8-062c-4781-a0cb-30a36d2391e2", 
+    "key": "windowsunattendedconfig", 
+    "name": "Windows Unattended config", 
+    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
+}

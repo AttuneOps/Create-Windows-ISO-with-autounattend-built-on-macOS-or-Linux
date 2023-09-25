@@ -1,0 +1,1 @@
+For both BIOS / UEFI.
