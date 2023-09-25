@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "win2019uefiunattendedconfig", 
+    "archiveKey": "windowsserveruefiunattendedconfig", 
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "973eb6a4-81e6-4d3d-81bd-892bfe01f568", 

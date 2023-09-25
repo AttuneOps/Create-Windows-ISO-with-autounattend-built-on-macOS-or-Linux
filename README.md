@@ -169,11 +169,11 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Win10 BIOS Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file. |
 | Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
 | Win10 UEFI Unattended Config | Version Controlled Files |  |
-| Win2019 UEFI Unattended Config | Version Controlled Files | This UEFI autounattend.xml works for kickstarting:<br><br>1. UEFI Single ISO<br>2. UEFI Dual ISO<br>3. UEFI WinPE ISO |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | WinPE startnet.cmd | Version Controlled Files | The startnet.cmd is run by WinPE. This script:<br>1. Installs drivers from "attune_drivers".<br>2. Sets the IP address.<br>3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.<br>4. Runs Windows setup.exe.<br><br>The Mako parameter "windowsFolderOnSamba" can have these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
 | WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016. |
 | WIN Raw Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
+| Windows Server UEFI Unattended Config | Version Controlled Files | This UEFI autounattend.xml works for kickstarting:<br><br>1. UEFI Single ISO<br>2. UEFI Dual ISO<br>3. UEFI WinPE ISO |
 
 
 

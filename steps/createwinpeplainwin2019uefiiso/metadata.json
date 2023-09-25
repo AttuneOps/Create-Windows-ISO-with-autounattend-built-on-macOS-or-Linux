@@ -21,6 +21,34 @@
         {
             "order": 150, 
             "stepKey": "linmountwinserverdvdiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "linextractwinpeisofromwinimgdirectory"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "createwinpewin2019plainuefiisofromwinpestaging"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "changeownershipofwinpestagingfoldertoautomationworkerlinuxuser"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "createwinpecleanbuildfiles"
         }
     ], 
     "name": "Create WinPE Plain Win2019 UEFI ISO", 
