@@ -13,6 +13,30 @@
         {
             "order": 50, 
             "stepKey": "cleanbuildfiles"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "linextractwinpeisotowinpestaging"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "lindeploystartnetcmdforwinpe"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "deploywindowsunattendedconfig"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "createpostsetupwim"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "createpostsetupwim"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on Linux", 
