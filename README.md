@@ -58,19 +58,30 @@ This Project contains the following Blueprints.
 
 For Windows Desktop 10 BIOS or UEFI kickstarts.
 
+### Create Win10 autounattend Single ISO on Linux
+
+Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
+
+For both BIOS and UEFI.
+
 ### Create Win2016 autounattend Dual ISO on macOS or Linux
+
+
+### Create Win2016 autounattend Single ISO on Linux
 
 
 ### Create Win2019 autounattend Dual ISO on macOS or Linux
 
 
+### Create Win2019 autounattend Single ISO on Linux
+
+
 ### Create Win2022 autounattend Dual ISO on macOS or Linux
 
 
-### Create WinPE Plain Win2019 BIOS ISO
-
-
-### Create WinPE Plain Win2019 UEFI ISO
+### Create Win2022 autounattend Single ISO on Linux
 
 
 ### Create Windows autounattend WinPE ISO on Linux
@@ -87,22 +98,9 @@ in combination with one of thest boot methods:
 1. BIOS
 2. UEFI
 
-### Create Win10 autounattend Single ISO on Linux
+### Create WinPE Plain Win2019 ISO
 
-Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
-
-For both BIOS and UEFI.
-
-### Create Win2016 autounattend Single ISO on Linux
-
-
-### Create Win2019 autounattend Single ISO on Linux
-
-
-### Create Win2022 autounattend Single ISO on Linux
-
+Can be configured to build for BIOS or UEFI.
 
 
 
@@ -117,6 +115,7 @@ For both BIOS and UEFI.
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
 | Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 | Drivers and Scripts Drive | Text | `driversandscriptsdrive` | The Windows drive letter containing the attune_drivers and post_install_setup.ps1 as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
+| Is Win10 BIOS | Text | `iswin10bios` |  |
 | Is Win10 UEFI | Text | `iswin10uefi` |  |
 | Is WinPE Kickstart | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
 | Is Win Server BIOS | Text | `iswinserverbios` |  |
@@ -128,7 +127,6 @@ For both BIOS and UEFI.
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
-| Is Win10 BIOS | Text | `iswin10bios` |  |
 
 
 
