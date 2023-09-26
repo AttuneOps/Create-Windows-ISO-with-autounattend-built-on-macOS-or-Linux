@@ -1,16 +1,22 @@
-MOUNT_FOLDER="uefi_mount"
-BUILD_PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
-
-MOUNT_PATH="${BUILD_PATH}/${MOUNT_FOLDER}"
-
-if df -h | grep --ignore-case \
-    --quiet \
-    "${MOUNT_PATH}"
+if [ {isWin10Uefi} == "True" ] || [ {isWinServerUefi} == "True" ]
 then
-
-    cd "${BUILD_PATH}"
+    MOUNT_FOLDER="uefi_mount"
+    BUILD_PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
     
-    umount --verbose "${MOUNT_FOLDER}"
+    MOUNT_PATH="${BUILD_PATH}/${MOUNT_FOLDER}"
+    
+    if df -h | grep --ignore-case \
+        --quiet \
+        "${MOUNT_PATH}"
+    then
+    
+        cd "${BUILD_PATH}"
+        
+        umount --verbose "${MOUNT_FOLDER}"
+    else
+        echo "${MOUNT_PATH} is not mounted. Skipping."
+    fi
+    
 else
-    echo "${MOUNT_PATH} is not mounted. Skipping."
+    echo "Skipping for BIOS ISO creation."
 fi
