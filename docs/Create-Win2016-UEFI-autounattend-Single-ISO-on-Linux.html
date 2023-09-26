@@ -238,8 +238,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywindowsserveruefiunattendedconfig">
-                            <strong>Step 5 -</strong> Deploy Windows Server UEFI Unattended Config
+                        <a href="#deploywindowsunattendedconfig">
+                            <strong>Step 5 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -636,26 +636,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywindowsserveruefiunattendedconfig">
-                            <a href="#deploywindowsserveruefiunattendedconfig">
-                                <strong>Step 5 -</strong> Deploy Windows Server UEFI Unattended Config
+                        <h3 id="deploywindowsunattendedconfig">
+                            <a href="#deploywindowsunattendedconfig">
+                                <strong>Step 5 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the Windows Server 2019 <code>autounattend.xml</code> configuration for UEFI kickstarts.</p>
-<p>This works for:</p>
-<ol>
-<li>Windows Server 2016</li>
-<li>Windows Server 2019</li>
-<li>Windows Server 2022</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -673,16 +660,18 @@ fi
 
     <div class="row">
         <p>
-            <p>This UEFI autounattend.xml works for kickstarting:</p>
-<ol>
-<li>UEFI Single ISO</li>
-<li>UEFI Dual ISO</li>
-<li>UEFI WinPE ISO</li>
-</ol>
+            <p>For these Windows versions:
+* WIndows Desktop 10
+* WIndows Server 2016
+* WIndows Server 2019
+* WIndows Server 2022</p>
+<p>For these boot methods:
+* BIOS
+* UEFI</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>Windows_Server_UEFI_Unattended_Config.tar</strong>
+            <strong>Windows_Unattended_config.tar</strong>
             to the target node.
         </p>
         <p>

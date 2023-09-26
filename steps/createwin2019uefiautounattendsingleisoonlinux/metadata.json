@@ -23,15 +23,15 @@
             "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
-            "order": 250, 
-            "stepKey": "deploywindowsserveruefiunattendedconfig"
-        }, 
-        {
             "order": 300, 
-            "stepKey": "performcreateuefiforsingleiso"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 350, 
+            "stepKey": "performcreateuefiforsingleiso"
+        }, 
+        {
+            "order": 400, 
             "stepKey": "deletebuilddirectory"
         }
     ], 
