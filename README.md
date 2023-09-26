@@ -122,7 +122,6 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
 | Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 | Drivers and Scripts Drive | Text | `driversandscriptsdrive` | The Windows drive letter containing the attune_drivers and post_install_setup.ps1 as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
-| Is Win10 Bios | Text | `iswin10bios` |  |
 | Is Win10 UEFI | Text | `iswin10uefi` |  |
 | Is WinPE Kickstart | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
 | Is Win Server BIOS | Text | `iswinserverbios` |  |
@@ -134,6 +133,7 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
+| Is Win10 BIOS | Text | `iswin10bios` |  |
 
 
 
