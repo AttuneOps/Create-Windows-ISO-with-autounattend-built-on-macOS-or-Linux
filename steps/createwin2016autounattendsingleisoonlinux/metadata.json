@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "774cfdd3-416c-4800-833a-9f0e8a9f8565", 
+    "externalUuid4": "8a407614-f7cc-43f2-87b3-b1d4a9e902b6", 
     "isBlueprint": true, 
-    "key": "createwin2016uefiautounattendsingleisoonlinux", 
+    "key": "createwin2016autounattendsingleisoonlinux", 
     "links": [
         {
             "order": 0, 
@@ -16,25 +16,33 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 150, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 200, 
             "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
-            "order": 250, 
+            "order": 300, 
             "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
-            "order": 300, 
+            "order": 350, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 400, 
             "stepKey": "performcreateuefiforsingleiso"
         }, 
         {
-            "order": 350, 
+            "order": 450, 
             "stepKey": "deletebuilddirectory"
         }
     ], 
-    "name": "Create Win2016 UEFI autounattend Single ISO on Linux", 
+    "name": "Create Win2016 autounattend Single ISO on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

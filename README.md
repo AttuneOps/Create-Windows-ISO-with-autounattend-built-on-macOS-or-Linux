@@ -61,12 +61,6 @@ For Windows Desktop 10 BIOS or UEFI kickstarts.
 ### Create Win2016 autounattend Dual ISO on macOS or Linux
 
 
-### Create Win2016 BIOS autounattend Single ISO on Linux
-
-
-### Create Win2016 UEFI autounattend Single ISO on Linux
-
-
 ### Create Win2019 autounattend Dual ISO on macOS or Linux
 
 
@@ -112,6 +106,9 @@ Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended i
 The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
 
 For both BIOS and UEFI.
+
+### Create Win2016 autounattend Single ISO on Linux
+
 
 
 
