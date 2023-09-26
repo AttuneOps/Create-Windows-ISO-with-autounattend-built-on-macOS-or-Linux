@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "46da7a6c-2816-4194-bc77-c4a3975417db", 
+    "externalUuid4": "c91c1e0a-7b78-4f67-8046-1557324c69a0", 
     "isBlueprint": true, 
-    "key": "createwin2019uefiautounattendsingleisoonlinux", 
+    "key": "createwin2019autounattendsingleisoonlinux", 
     "links": [
         {
             "order": 0, 
@@ -12,7 +12,11 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywin2016dvdiso"
+            "stepKey": "deploywin2019dvdiso"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 150, 
@@ -28,13 +32,17 @@
         }, 
         {
             "order": 350, 
-            "stepKey": "performcreateuefiforsingleiso"
+            "stepKey": "createbiosbootiso"
         }, 
         {
             "order": 400, 
+            "stepKey": "performcreateuefiforsingleiso"
+        }, 
+        {
+            "order": 450, 
             "stepKey": "deletebuilddirectory"
         }
     ], 
-    "name": "Create Win2019 UEFI autounattend Single ISO on Linux", 
+    "name": "Create Win2019 autounattend Single ISO on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
