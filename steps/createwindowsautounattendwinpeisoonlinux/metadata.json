@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "f4706927-2150-4aa5-afb8-7415433bce89", 
+    "isBlueprint": true, 
+    "key": "createwindowsautounattendwinpeisoonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "confirmwinpewin2019uefibiosisoexists"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "cleanbuildfiles"
+        }
+    ], 
+    "name": "Create Windows autounattend WinPE ISO on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
