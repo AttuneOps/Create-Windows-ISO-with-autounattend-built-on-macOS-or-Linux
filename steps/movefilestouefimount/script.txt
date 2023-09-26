@@ -1,3 +1,10 @@
-cd "{automationWorkerBaseDirectory}"
+if [ {isWin10Uefi} == "true" ] || [ {isWinServerUefi} == "true" ]
+then
 
-mv --verbose "build-{newOsNode.fqn}/*" "build-{newOsNode.fqn}-uefi-mount"
+    cd "{automationWorkerBaseDirectory}"
+    
+    mv --verbose "build-{newOsNode.fqn}/*" "build-{newOsNode.fqn}-uefi-mount"
+    
+else
+    echo "Skipping for BIOS ISO creation."
+fi

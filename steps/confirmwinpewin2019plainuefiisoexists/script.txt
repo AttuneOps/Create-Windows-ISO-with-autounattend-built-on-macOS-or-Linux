@@ -1,4 +1,4 @@
-if [ {isWin10Uefi} == "True" ] || [ {isWinServerUefi} == "True" ]
+if [ {isWin10Uefi} == "true" ] || [ {isWinServerUefi} == "true" ]
 then
 
     DIRECTORY="{automationWorkerBaseDirectory}"

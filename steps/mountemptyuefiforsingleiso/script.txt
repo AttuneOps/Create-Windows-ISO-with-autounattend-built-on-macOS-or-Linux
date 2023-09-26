@@ -1,7 +1,14 @@
-cd "{automationWorkerBaseDirectory}"
+if [ {isWin10Uefi} == "true" ] || [ {isWinServerUefi} == "true" ]
+then
 
-MOUNT_FOLDER="build-{newOsNode.fqn}-uefi-mount"
-
-mkdir --verbose "${MOUNT_PATH}"
-
-mount "./kickstart_{newOsNode.fqn}.iso" "${MOUNT_FOLDER}"
+    cd "{automationWorkerBaseDirectory}"
+    
+    MOUNT_FOLDER="build-{newOsNode.fqn}-uefi-mount"
+    
+    mkdir --verbose "${MOUNT_PATH}"
+    
+    mount "./kickstart_{newOsNode.fqn}.iso" "${MOUNT_FOLDER}"
+    
+else
+    echo "Skipping for BIOS ISO creation."
+fi

@@ -1,6 +1,12 @@
-cd "{automationWorkerBaseDirectory}"
-
-bytes=$(du --summarize "build-{newOsNode.fqn}" | awk '{print $1}')
-((bytes=bytes+10000))
-
-mkfs.msdos -C "./kickstart_{newOsNode.fqn}.iso" "${bytes}"
+if [ {isWin10Uefi} == "true" ] || [ {isWinServerUefi} == "true" ]
+then
+    cd "{automationWorkerBaseDirectory}"
+    
+    bytes=$(du --summarize "build-{newOsNode.fqn}" | awk '{print $1}')
+    ((bytes=bytes+10000))
+    
+    mkfs.msdos -C "./kickstart_{newOsNode.fqn}.iso" "${bytes}"
+    
+else
+    echo "Skipping for BIOS ISO creation."
+fi
