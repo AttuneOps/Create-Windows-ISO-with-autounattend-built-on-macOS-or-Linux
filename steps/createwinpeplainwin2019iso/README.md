@@ -1,1 +1,0 @@
-Can be configured to build for BIOS or UEFI.
