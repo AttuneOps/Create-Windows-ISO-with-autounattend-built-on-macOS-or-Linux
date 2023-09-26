@@ -67,12 +67,6 @@ For Windows Desktop 10 BIOS or UEFI kickstarts.
 ### Create Win2022 autounattend Dual ISO on macOS or Linux
 
 
-### Create Win2022 BIOS autounattend Single ISO on Linux
-
-
-### Create Win2022 UEFI autounattend Single ISO on Linux
-
-
 ### Create WinPE Plain Win2019 BIOS ISO
 
 
@@ -105,6 +99,9 @@ For both BIOS and UEFI.
 
 
 ### Create Win2019 autounattend Single ISO on Linux
+
+
+### Create Win2022 autounattend Single ISO on Linux
 
 
 
