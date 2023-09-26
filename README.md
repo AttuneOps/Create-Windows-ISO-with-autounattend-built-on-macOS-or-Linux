@@ -94,20 +94,25 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2022 UEFI autounattend Single ISO on Linux
 
 
-### Create Windows autounattend WinPE ISO on Linux
-
-
-### Create Windows BIOS autounattend WinPE ISO on Linux
-
-
-### Create Windows UEFI autounattend WinPE ISO on Linux
-
-
 ### Create WinPE Plain Win2019 BIOS ISO
 
 
 ### Create WinPE Plain Win2019 UEFI ISO
 
+
+### Create Windows autounattend WinPE ISO on Linux
+
+Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
+
+1. Windows Desktop 10
+2. Windows Server 2016
+3. Windows Server 2019
+4. Windows Server 2022
+
+in combination with one of thest boot methods:
+
+1. BIOS
+2. UEFI
 
 
 

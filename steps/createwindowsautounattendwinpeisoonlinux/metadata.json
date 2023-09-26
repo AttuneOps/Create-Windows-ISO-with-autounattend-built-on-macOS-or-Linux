@@ -8,31 +8,31 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "confirmwinpewin2019uefibiosisoexists"
+            "stepKey": "confirmwinpewin2019plainbiosisoexists"
         }, 
         {
             "order": 50, 
-            "stepKey": "cleanbuildfiles"
+            "stepKey": "confirmwinpewin2019uefibiosisoexists"
         }, 
         {
             "order": 100, 
-            "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
+            "stepKey": "cleanbuildfiles"
         }, 
         {
             "order": 150, 
-            "stepKey": "linextractwinpeisotowinpestaging"
+            "stepKey": "lincopywinpewin2019plainuefiisotowinpeiso"
         }, 
         {
             "order": 200, 
-            "stepKey": "lindeploystartnetcmdforwinpe"
+            "stepKey": "linextractwinpeisotowinpestaging"
         }, 
         {
             "order": 250, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "lindeploystartnetcmdforwinpe"
         }, 
         {
             "order": 300, 
-            "stepKey": "createpostsetupwim"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 350, 
@@ -40,10 +40,14 @@
         }, 
         {
             "order": 400, 
-            "stepKey": "linrecreatebiosbootwinpeisofromwinpestaging"
+            "stepKey": "modifywinpebootwim"
         }, 
         {
             "order": 450, 
+            "stepKey": "linrecreatebiosbootwinpeisofromwinpestaging"
+        }, 
+        {
+            "order": 500, 
             "stepKey": "performrecreateuefibootwinpeiso"
         }
     ], 
