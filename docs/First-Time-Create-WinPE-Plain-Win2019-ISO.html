@@ -740,7 +740,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deletes the temporary build directory.</p>
                             </p>
                         </div>
                     </div>
@@ -1732,6 +1732,11 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                         <div class="description col px-0">
                             <p>
                                 <p>Relative to the <code>{ksAttuneBaseDir}/build-{kickstartedNode.fqn/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -1796,6 +1801,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Creates a WinPE BIOS bootable ISO at <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> from the WinPE staging directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -1861,7 +1871,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Creates a UEFI bootable WinPE ISO at <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> from the contents of the WinPE staging directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
                             </p>
                         </div>
                     </div>
@@ -1972,7 +1982,13 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Creates an empty ISO that is compatible with UEFI boot using <code>mkfs.msdos</code>.</p>
+<p>The size is set a bit larger than the size of <code>winpe_staging</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -2049,7 +2065,12 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Mounts the empty UEFI ISO at <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/uefi_mount</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -2275,7 +2296,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deletes the temporary build directory.</p>
                             </p>
                         </div>
                     </div>
