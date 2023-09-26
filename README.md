@@ -54,6 +54,10 @@ This Project contains the following Blueprints.
 
 
 
+### Create Win10 autounattend Dual ISO on macOS or Linux
+
+For Windows Desktop 10 BIOS or UEFI kickstarts.
+
 ### Create Win10 BIOS autounattend Single ISO on Linux
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
@@ -63,10 +67,16 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win10 UEFI autounattend Single ISO on Linux
 
 
+### Create Win2016 autounattend Dual ISO on macOS or Linux
+
+
 ### Create Win2016 BIOS autounattend Single ISO on Linux
 
 
 ### Create Win2016 UEFI autounattend Single ISO on Linux
+
+
+### Create Win2019 autounattend Dual ISO on macOS or Linux
 
 
 ### Create Win2019 BIOS autounattend Single ISO on Linux
@@ -75,29 +85,16 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2019 UEFI autounattend Single ISO on Linux
 
 
+### Create Win2022 autounattend Dual ISO on macOS or Linux
+
+
 ### Create Win2022 BIOS autounattend Single ISO on Linux
 
 
 ### Create Win2022 UEFI autounattend Single ISO on Linux
 
 
-### Create WinPE Plain Win2019 BIOS ISO
-
-
-### Create WinPE Plain Win2019 UEFI ISO
-
-
-### Create Win10 autounattend Dual ISO on macOS or Linux
-
-For Windows Desktop 10 BIOS or UEFI kickstarts.
-
-### Create Win2016 autounattend Dual ISO on macOS or Linux
-
-
-### Create Win2019 autounattend Dual ISO on macOS or Linux
-
-
-### Create Win2022 autounattend Dual ISO on macOS or Linux
+### Create Windows autounattend WinPE ISO on Linux
 
 
 ### Create Windows BIOS autounattend WinPE ISO on Linux
@@ -106,7 +103,10 @@ For Windows Desktop 10 BIOS or UEFI kickstarts.
 ### Create Windows UEFI autounattend WinPE ISO on Linux
 
 
-### Create Windows autounattend WinPE ISO on Linux
+### Create WinPE Plain Win2019 BIOS ISO
+
+
+### Create WinPE Plain Win2019 UEFI ISO
 
 
 
@@ -122,7 +122,11 @@ For Windows Desktop 10 BIOS or UEFI kickstarts.
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
 | Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 | Drivers and Scripts Drive | Text | `driversandscriptsdrive` | The Windows drive letter containing the attune_drivers and post_install_setup.ps1 as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
+| Is Win10 Bios | Text | `iswin10bios` |  |
+| Is Win10 UEFI | Text | `iswin10uefi` |  |
 | Is WinPE Kickstart | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
+| Is Win Server BIOS | Text | `iswinserverbios` |  |
+| Is Win Server UEFI | Text | `iswinserveruefi` |  |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
@@ -130,10 +134,6 @@ For Windows Desktop 10 BIOS or UEFI kickstarts.
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
-| Is Win10 Bios | Text | `iswin10bios` |  |
-| Is Win10 UEFI | Text | `iswin10uefi` |  |
-| Is Win Server BIOS | Text | `iswinserverbios` |  |
-| Is Win Server UEFI | Text | `iswinserveruefi` |  |
 
 
 
@@ -147,14 +147,14 @@ For Windows Desktop 10 BIOS or UEFI kickstarts.
 | Win10 BIOS Unattended Config | Version Controlled Files | Windows Desktop 10 unattended.xml file. |
 | Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
 | Win10 UEFI Unattended Config | Version Controlled Files |  |
+| Win10 Unattended config - DELETE | Version Controlled Files | For both BIOS / UEFI. |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | Windows Server UEFI Unattended Config | Version Controlled Files | This UEFI autounattend.xml works for kickstarting:<br><br>1. UEFI Single ISO<br>2. UEFI Dual ISO<br>3. UEFI WinPE ISO |
+| Windows Server Unattended Config - DELETE | Version Controlled Files | For both BIOS / UEFI Win10, Win2016, Win2019, Win2022 |
+| Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |
 | WinPE startnet.cmd | Version Controlled Files | The startnet.cmd is run by WinPE. This script:<br>1. Installs drivers from "attune_drivers".<br>2. Sets the IP address.<br>3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.<br>4. Runs Windows setup.exe.<br><br>The Mako parameter "windowsFolderOnSamba" can have these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
 | WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016. |
 | WIN Raw Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
-| Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |
-| Windows Server Unattended Config - DELETE | Version Controlled Files | For both BIOS / UEFI Win10, Win2016, Win2019, Win2022 |
-| Win10 Unattended config - DELETE | Version Controlled Files | For both BIOS / UEFI. |
 
 
 
