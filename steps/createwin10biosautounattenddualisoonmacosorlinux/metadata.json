@@ -23,11 +23,11 @@
             "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
-            "order": 200, 
-            "stepKey": "deploywin10biosunattendedconfig"
+            "order": 250, 
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
-            "order": 250, 
+            "order": 300, 
             "stepKey": "createanswerfileisoonmacosorlinux"
         }
     ], 

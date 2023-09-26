@@ -238,8 +238,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin10biosunattendedconfig">
-                            <strong>Step 5 -</strong> Deploy Win10 BIOS Unattended Config
+                        <a href="#deploywindowsunattendedconfig">
+                            <strong>Step 5 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -582,20 +582,13 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin10biosunattendedconfig">
-                            <a href="#deploywin10biosunattendedconfig">
-                                <strong>Step 5 -</strong> Deploy Win10 BIOS Unattended Config
+                        <h3 id="deploywindowsunattendedconfig">
+                            <a href="#deploywindowsunattendedconfig">
+                                <strong>Step 5 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys a Windows 10 <code>autounattend.xml</code> file. This works with Windows 10.</p>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -613,11 +606,18 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
 
     <div class="row">
         <p>
-            <p>Windows Desktop 10 unattended.xml file.</p>
+            <p>For these Windows versions:
+* WIndows Desktop 10
+* WIndows Server 2016
+* WIndows Server 2019
+* WIndows Server 2022</p>
+<p>For these boot methods:
+* BIOS
+* UEFI</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>Win10_BIOS_Unattended_Config.tar</strong>
+            <strong>Windows_Unattended_config.tar</strong>
             to the target node.
         </p>
         <p>
