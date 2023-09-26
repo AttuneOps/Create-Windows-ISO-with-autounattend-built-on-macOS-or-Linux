@@ -1,0 +1,1 @@
+For Windows Desktop 10 BIOS or UEFI kickstarts.

@@ -54,9 +54,6 @@ This Project contains the following Blueprints.
 
 
 
-### Create Win10 BIOS autounattend Dual ISO on macOS or Linux
-
-
 ### Create Win10 BIOS autounattend Single ISO on Linux
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
@@ -66,16 +63,10 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win10 BIOS autounattend WinPE ISO on Linux
 
 
-### Create Win10 UEFI autounattend Dual ISO on macOS or Linux
-
-
 ### Create Win10 UEFI autounattend Single ISO on Linux
 
 
 ### Create Win10 UEFI autounattend WinPE ISO on Linux
-
-
-### Create Win2016 BIOS autounattend Dual ISO on macOS or Linux
 
 
 ### Create Win2016 BIOS autounattend Single ISO on Linux
@@ -84,16 +75,10 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2016 BIOS autounattend WinPE ISO on Linux
 
 
-### Create Win2016 UEFI autounattend Dual ISO on macOS or Linux
-
-
 ### Create Win2016 UEFI autounattend Single ISO on Linux
 
 
 ### Create Win2016 UEFI autounattend WinPE ISO on Linux
-
-
-### Create Win2019 BIOS autounattend Dual ISO on macOS or Linux
 
 
 ### Create Win2019 BIOS autounattend Single ISO on Linux
@@ -102,25 +87,16 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 ### Create Win2019 BIOS autounattend WinPE ISO on Linux
 
 
-### Create Win2019 UEFI autounattend Dual ISO on macOS or Linux
-
-
 ### Create Win2019 UEFI autounattend Single ISO on Linux
 
 
 ### Create Win2019 UEFI autounattend WinPE ISO on Linux
 
 
-### Create Win2022 BIOS autounattend Dual ISO on macOS or Linux
-
-
 ### Create Win2022 BIOS autounattend Single ISO on Linux
 
 
 ### Create Win2022 BIOS autounattend WinPE ISO on Linux
-
-
-### Create Win2022 UEFI autounattend Dual ISO on macOS or Linux
 
 
 ### Create Win2022 UEFI autounattend Single ISO on Linux
@@ -133,6 +109,19 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 
 
 ### Create WinPE Plain Win2019 UEFI ISO
+
+
+### Create Win10 autounattend Dual ISO on macOS or Linux
+
+For Windows Desktop 10 BIOS or UEFI kickstarts.
+
+### Create Win2016 autounattend Dual ISO on macOS or Linux
+
+
+### Create Win2019 autounattend Dual ISO on macOS or Linux
+
+
+### Create Win2022 autounattend Dual ISO on macOS or Linux
 
 
 
