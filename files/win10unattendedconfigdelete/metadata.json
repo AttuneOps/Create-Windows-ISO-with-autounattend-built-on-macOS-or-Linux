@@ -1,6 +1,0 @@
-{
-    "externalUuid4": "39865f54-576f-43bf-9146-0aca913c3670", 
-    "key": "win10unattendedconfigdelete", 
-    "name": "Win10 Unattended config - DELETE", 
-    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
-}

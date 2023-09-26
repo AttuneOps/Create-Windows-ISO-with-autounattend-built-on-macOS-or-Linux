@@ -1,1 +1,0 @@
-Deploys the Windows Desktop 10 unattended config for UEFI boot.

@@ -1,6 +1,0 @@
-{
-    "externalUuid4": "11ee45c6-1ec2-4428-94c2-03156095c823", 
-    "key": "windowsserveruefiunattendedconfig", 
-    "name": "Windows Server UEFI Unattended Config", 
-    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
-}

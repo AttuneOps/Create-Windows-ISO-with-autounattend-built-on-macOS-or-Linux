@@ -1,6 +1,0 @@
-{
-    "externalUuid4": "d4045642-c264-43ff-b91b-ea2797daf9ad", 
-    "key": "windowsserverunattendedconfigdelete", 
-    "name": "Windows Server Unattended Config - DELETE", 
-    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
-}

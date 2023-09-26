@@ -2,7 +2,8 @@
 <unattend
 	xmlns="urn:schemas-microsoft-com:unattend">
 	<settings pass="windowsPE">
-%if bool(isWinServerUefi):
+%if isWinServerUefi == 'true':
+		
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -10,6 +11,7 @@
 			<ProductKey>N2KJX-J94YW-TQVFB-DG9YT-724CC</ProductKey>
 		</component>
 %endif
+		
 		<component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -35,9 +37,10 @@
 		<component name="Microsoft-Windows-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <ImageInstall>
+			<ImageInstall>
 				<OSImage>
-%if bool(isWinServerBios) or bool(isWinServerUefi):
+%if isWinServerBios == 'true' or isWinServerUefi == 'true':
+					
 					<InstallFrom>
 						<MetaData wcm:action="add">
 							<Key>/IMAGE/INDEX</Key>
@@ -45,18 +48,23 @@
 						</MetaData>
 					</InstallFrom>
 %endif
+					
 					<InstallTo>
 						<DiskID>0</DiskID>
-%if bool(isWin10Bios) or bool(isWinServerBIOS):
+%if isWin10Bios == 'true' or isWinServerBIOS == 'true':
+						
 						<PartitionID>2</PartitionID>
-%elif bool(isWin10Uefi) or bool(isWinServerUefi):
+%elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
+						
 						<PartitionID>4</PartitionID>
 %endif
+					
 					</InstallTo>
 					<InstallToAvailablePartition>false</InstallToAvailablePartition>
 				</OSImage>
 
 %if bool(isWinPEKickstart):
+				
 				<!-- Custom WIM file -->
 				<DataImage wcm:action="add">
 					<InstallFrom>
@@ -64,31 +72,39 @@
 					</InstallFrom>
 					<InstallTo>
 						<DiskID>0</DiskID>
-  %if bool(isWin10Bios) or bool(isWinServerBIOS):
+  %if isWin10Bios == 'true' or isWinServerBIOS == 'true':
+						
 						<PartitionID>2</PartitionID>
-  %elif bool(isWin10Uefi) or bool(isWinServerUefi):
+  %elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
+						
 						<PartitionID>4</PartitionID>
   %endif
+					
 					</InstallTo>
 					<Order>1</Order>
 				</DataImage>
 %endif
 
+			
 			</ImageInstall>
 			<UserData>
 				<AcceptEula>true</AcceptEula>
 				<FullName>${newOsWindowsUser.user}</FullName>
 				<Organization>${newOsOrganisationName}</Organization>
 				<ProductKey>
-%if bool(isWin10Bios):
+%if isWin10Bios == 'true':
+					
 					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
-%elif bool(isWin10Uefi):
-          <Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
+%elif isWin10Uefi == 'true':
+          
+					<Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
 %endif
+				
 				</ProductKey>
 			</UserData>
 
-%if bool(isWin10Bios) or bool(isWinServerBios):
+%if isWin10Bios == 'true' or isWinServerBios == 'true':
+			
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
@@ -125,7 +141,8 @@
 					</ModifyPartitions>
 				</Disk>
 			</DiskConfiguration>
-%elif bool(isWin10Uefi) or bool(isWinServerUefi):
+%elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
+			
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
@@ -190,10 +207,12 @@
 			</DiskConfiguration>
 %endif
 
+		
 		</component>
 	</settings>
 
-%if bool(isWin10Bios) or bool(isWin10Uefi):
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
+	
 	<settings pass="offlineServicing">
 		<component name="Microsoft-Windows-LUA-Settings" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
@@ -238,11 +257,13 @@
 	</settings>
 %endif
 
+	
 	<settings pass="oobeSystem">
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-%if bool(isWin10Bios) or bool(isWin10Uefi):
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
+			
 			<UserAccounts>
 				<LocalAccounts>
 					<LocalAccount wcm:action="add">
@@ -257,7 +278,8 @@
 					</LocalAccount>
 				</LocalAccounts>
 			</UserAccounts>
-%elif bool(isWinServerBIOS) or bool(isWinServerUefi):
+%elif isWinServerBIOS == 'true' or isWinServerUefi == 'true':
+			
 			<UserAccounts>
 				<AdministratorPassword>
 					<Value>${newOsWindowsUser.password}</Value>
@@ -265,6 +287,7 @@
 				</AdministratorPassword>
 			</UserAccounts>
 %endif
+			
 			<AutoLogon>
 				<Password>
 					<Value>${newOsWindowsUser.password}</Value>
@@ -274,7 +297,8 @@
 				<Enabled>true</Enabled>
 				<Username>${newOsWindowsUser.user}</Username>
 			</AutoLogon>
-%if bool(isWin10Bios) or bool(isWin10Uefi):
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
+			
 			<OOBE>
 				<HideEULAPage>true</HideEULAPage>
 				<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
@@ -286,18 +310,19 @@
 				<ProtectYourPC>3</ProtectYourPC>
 			</OOBE>
 %endif
+			
 			<RegisteredOrganization>${newOsOrganisationName}</RegisteredOrganization>
-      <RegisteredOwner>${newOsWindowsUser.user}</RegisteredOwner>
+			<RegisteredOwner>${newOsWindowsUser.user}</RegisteredOwner>
 			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
 			<FirstLogonCommands>
-                <!-- Enable running PowerShell scripts from file -->
+				<!-- Enable running PowerShell scripts from file -->
 				<SynchronousCommand wcm:action="add">
 					<Order>1</Order>
 					<RequiresUserInput>false</RequiresUserInput>
 					<CommandLine>PowerShell -Command "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force"</CommandLine>
 					<Description>Set PowerShell Execution Policy to Unrestricted</Description>
 				</SynchronousCommand>
-                <!-- Run ps1 file -->
+				<!-- Run ps1 file -->
 				<SynchronousCommand wcm:action="add">
 					<Order>2</Order>
 					<RequiresUserInput>false</RequiresUserInput>
@@ -306,6 +331,7 @@
 				</SynchronousCommand>
 
 %if bool(isWinPEKickstart):
+				
 				<SynchronousCommand wcm:action="add">
 					<Order>3</Order>
 					<RequiresUserInput>false</RequiresUserInput>
@@ -314,12 +340,15 @@
 				</SynchronousCommand>
 %endif
 
+			
 			</FirstLogonCommands>
 			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
 		</component>
 	</settings>
-%if bool(isWinServerBIOS) or bool(isWinServerUefi):
+%if isWinServerBIOS == 'true' or isWinServerUefi == 'true':
+	
 	<cpi:offlineImage cpi:source="wim:c:/users/documents/win_images/win2016/sources/install.wim#Windows Server 2016 SERVERSTANDARD"
 		xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 %endif
-</unattend>
+
+	</unattend>

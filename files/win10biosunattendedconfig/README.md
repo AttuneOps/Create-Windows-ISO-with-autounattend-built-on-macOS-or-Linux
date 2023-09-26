@@ -1,1 +1,0 @@
-Windows Desktop 10 unattended.xml file.

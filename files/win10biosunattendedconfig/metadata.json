@@ -1,6 +1,0 @@
-{
-    "externalUuid4": "d06afd46-5873-41df-ad31-ced9070405da", 
-    "key": "win10biosunattendedconfig", 
-    "name": "Win10 BIOS Unattended Config", 
-    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
-}

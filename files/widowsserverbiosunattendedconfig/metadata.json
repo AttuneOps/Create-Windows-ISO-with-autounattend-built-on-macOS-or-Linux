@@ -1,6 +1,0 @@
-{
-    "externalUuid4": "20ca7ade-f309-4419-982b-d9d9cc1926be", 
-    "key": "widowsserverbiosunattendedconfig", 
-    "name": "Widows Server BIOS Unattended Config", 
-    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
-}
