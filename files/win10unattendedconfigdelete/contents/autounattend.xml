@@ -43,7 +43,7 @@ Notes: Enter your comments here...
 						<DiskID>0</DiskID>
 %if bool(isWin10Bios):
 						<PartitionID>2</PartitionID>
-elif bool(isWin10UEFI)
+%elif bool(isWin10Uefi):
 						<PartitionID>4</PartitionID>
 %endif
 					</InstallTo>
@@ -60,7 +60,7 @@ elif bool(isWin10UEFI)
 						<DiskID>0</DiskID>
   %if bool(isWin10Bios):
 						<PartitionID>2</PartitionID>
-  elif bool(isWin10UEFI)
+  %elif bool(isWin10Uefi):
 						<PartitionID>4</PartitionID>
   %endif
 					</InstallTo>
@@ -76,7 +76,7 @@ elif bool(isWin10UEFI)
 				<ProductKey>
 %if bool(isWin10Bios):
 					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
-elif bool(isWin10UEFI)
+elif bool(isWin10Uefi)
           <Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
 %endif
 				</ProductKey>
@@ -119,7 +119,7 @@ elif bool(isWin10UEFI)
 					</ModifyPartitions>
 				</Disk>
 			</DiskConfiguration>
-elif bool(isWin10UEFI):
+%elif bool(isWin10Uefi):
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>

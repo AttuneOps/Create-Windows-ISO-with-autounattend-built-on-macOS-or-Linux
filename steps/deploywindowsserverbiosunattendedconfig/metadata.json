@@ -28,6 +28,11 @@
             "name": "driversAndScriptsDrive", 
             "parameterKey": "driversandscriptsdrive", 
             "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "isWinPEKickstart", 
+            "parameterKey": "iswinpekickstart", 
+            "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
     "name": "Deploy Windows Server BIOS Unattended Config", 

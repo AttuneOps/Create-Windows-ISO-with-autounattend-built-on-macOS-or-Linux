@@ -2,7 +2,7 @@
 <unattend
 	xmlns="urn:schemas-microsoft-com:unattend">
 	<settings pass="windowsPE">
-%if bool(isWinServerUEFI)
+%if bool(isWinServerUefi):
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -37,7 +37,7 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <ImageInstall>
 				<OSImage>
-%if bool(isWinServerBios) or bool(isWinServerUEFI):
+%if bool(isWinServerBios) or bool(isWinServerUefi):
 					<InstallFrom>
 						<MetaData wcm:action="add">
 							<Key>/IMAGE/INDEX</Key>
@@ -49,7 +49,7 @@
 						<DiskID>0</DiskID>
 %if bool(isWin10Bios) or bool(isWinServerBIOS):
 						<PartitionID>2</PartitionID>
-elif bool(isWin10UEFI) or bool(isWinServerUEFI):
+%elif bool(isWin10Uefi) or bool(isWinServerUefi):
 						<PartitionID>4</PartitionID>
 %endif
 					</InstallTo>
@@ -66,7 +66,7 @@ elif bool(isWin10UEFI) or bool(isWinServerUEFI):
 						<DiskID>0</DiskID>
   %if bool(isWin10Bios) or bool(isWinServerBIOS):
 						<PartitionID>2</PartitionID>
-  elif bool(isWin10UEFI) or bool(isWinServerUEFI):
+  %elif bool(isWin10Uefi) or bool(isWinServerUefi):
 						<PartitionID>4</PartitionID>
   %endif
 					</InstallTo>
@@ -82,7 +82,7 @@ elif bool(isWin10UEFI) or bool(isWinServerUEFI):
 				<ProductKey>
 %if bool(isWin10Bios):
 					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
-elif bool(isWin10UEFI)
+%elif bool(isWin10Uefi):
           <Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
 %endif
 				</ProductKey>
@@ -125,7 +125,7 @@ elif bool(isWin10UEFI)
 					</ModifyPartitions>
 				</Disk>
 			</DiskConfiguration>
-elif bool(isWin10UEFI) or bool(isWinServerUEFI):
+%elif bool(isWin10Uefi) or bool(isWinServerUefi):
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
@@ -193,7 +193,7 @@ elif bool(isWin10UEFI) or bool(isWinServerUEFI):
 		</component>
 	</settings>
 
-%if bool(isWin10Bios) or bool(isWin10UEFI):
+%if bool(isWin10Bios) or bool(isWin10Uefi):
 	<settings pass="offlineServicing">
 		<component name="Microsoft-Windows-LUA-Settings" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
@@ -242,7 +242,7 @@ elif bool(isWin10UEFI) or bool(isWinServerUEFI):
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-%if bool(isWin10Bios) or bool(isWin10UEFI):
+%if bool(isWin10Bios) or bool(isWin10Uefi):
 			<UserAccounts>
 				<LocalAccounts>
 					<LocalAccount wcm:action="add">
@@ -257,7 +257,7 @@ elif bool(isWin10UEFI) or bool(isWinServerUEFI):
 					</LocalAccount>
 				</LocalAccounts>
 			</UserAccounts>
-%elif bool(isWinServerBIOS) or bool(isWinServerUEFI):
+%elif bool(isWinServerBIOS) or bool(isWinServerUefi):
 			<UserAccounts>
 				<AdministratorPassword>
 					<Value>${newOsWindowsUser.password}</Value>
@@ -274,7 +274,7 @@ elif bool(isWin10UEFI) or bool(isWinServerUEFI):
 				<Enabled>true</Enabled>
 				<Username>${newOsWindowsUser.user}</Username>
 			</AutoLogon>
-%if bool(isWin10Bios) or bool(isWin10UEFI):
+%if bool(isWin10Bios) or bool(isWin10Uefi):
 			<OOBE>
 				<HideEULAPage>true</HideEULAPage>
 				<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
@@ -318,7 +318,7 @@ elif bool(isWin10UEFI) or bool(isWinServerUEFI):
 			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
 		</component>
 	</settings>
-%if bool(isWinServerBIOS) or bool(isWinServerUEFI):
+%if bool(isWinServerBIOS) or bool(isWinServerUefi):
 	<cpi:offlineImage cpi:source="wim:c:/users/documents/win_images/win2016/sources/install.wim#Windows Server 2016 SERVERSTANDARD"
 		xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 %endif

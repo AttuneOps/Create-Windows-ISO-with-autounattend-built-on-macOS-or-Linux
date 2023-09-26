@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "63988114-dfae-41ee-afc3-1f329fc54f31", 
+    "key": "iswinserveruefi", 
+    "name": "Is Win Server UEFI", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

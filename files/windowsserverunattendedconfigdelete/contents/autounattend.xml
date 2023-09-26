@@ -2,7 +2,7 @@
 <unattend
 	xmlns="urn:schemas-microsoft-com:unattend">
 	<settings pass="windowsPE">
-%if bool(isWinServerUEFI)
+%if bool(isWinServerUefi):
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -46,7 +46,7 @@
 						<DiskID>0</DiskID>
 %if bool(isWinServerBios):
 						<PartitionID>2</PartitionID>
-%elif bool(isWinServerUEFI):
+%elif bool(isWinServerUefi):
 						<PartitionID>4</PartitionID>
 %endif
 					</InstallTo>
@@ -62,7 +62,7 @@
 						<DiskID>0</DiskID>
   %if bool(isWinServerBios):
 						<PartitionID>2</PartitionID>
-  %elif bool(isWinServerUEFI):
+  %elif bool(isWinServerUefi):
             <PartitionID>4</PartitionID>
   %endif
 					</InstallTo>
@@ -111,7 +111,7 @@
 					</ModifyPartitions>
 				</Disk>
 			</DiskConfiguration>
-%elif bool(isWinServerUEFI):
+%elif bool(isWinServerUefi):
       <DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
