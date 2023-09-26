@@ -8,4 +8,3 @@ then
 else
     echo "Skipping for UEFI ISO creation."
 fi
-
