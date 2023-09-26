@@ -325,6 +325,55 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#performrecreateuefibootwinpeiso">
+                            <strong>Step 10 -</strong> Perform Recreate UEFI Boot WinPE ISO
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
+                            <strong>Step 10.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createemptyuefiforwinpeiso">
+                            <strong>Step 10.2 -</strong> Create Empty UEFI for WinPE ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#mountemptyuefiforwinpeiso">
+                            <strong>Step 10.3 -</strong> Mount Empty UEFI for WinPE ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movewinpestagingtouefimount">
+                            <strong>Step 10.4 -</strong> Move WinPE Staging to UEFI Mount
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#unmountwinpeuefimount">
+                            <strong>Step 10.5 -</strong> Unmount WinPE UEFI Mount
+                        </a>
+                    </p>
+
+
 
                 </div>
             </div>
@@ -1263,15 +1312,15 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWinServerBios} == &quot;True&quot; ] || [ {isWin10Bios} == &quot;True&quot; ]
+if [ {isWin10Bios} == &quot;True&quot; ] || [ {isWinServerBios} == &quot;True&quot; ]
 then
 
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-    -b boot.img -no-emul-boot -c BOOT.CAT \
-    -iso-level 2 -udf -joliet-long -relaxed-filenames -allow-limited-size \
-    -J -l -D -N -V &quot;KS_WIN&quot; winpe_staging
+    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    
+    mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        -b boot.img -no-emul-boot -c BOOT.CAT \
+        -iso-level 2 -udf -joliet-long -relaxed-filenames -allow-limited-size \
+        -J -l -D -N -V &quot;KS_WIN&quot; winpe_staging
 
 else
     echo &quot;Skipping for UEFI ISO creation.&quot;
@@ -1280,6 +1329,407 @@ fi
             </pre>
         </div>
     </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="performrecreateuefibootwinpeiso">
+                            <a href="#performrecreateuefibootwinpeiso">
+                                <strong>Step 10 -</strong> Perform Recreate UEFI Boot WinPE ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates the WinPE ISO again from the contents of the <code>winpe_staging</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
+                            <a href="#changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
+                                <strong>Step 10.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Change the ownership of <code>winpe_staging</code>to <code>automationWorkerLinuxUser.user</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    # Copy EFI Files from Windows ISO
+    chown --recursive \
+        &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
+        &quot;winpe_staging&quot;
+
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createemptyuefiforwinpeiso">
+                            <a href="#createemptyuefiforwinpeiso">
+                                <strong>Step 10.2 -</strong> Create Empty UEFI for WinPE ISO
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the <code>winpe_staging</code> directory at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
+    
+    # Add some buffer
+    ((bytes=bytes+10000))
+    
+    mkfs.msdos -C &quot;../kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="mountemptyuefiforwinpeiso">
+                            <a href="#mountemptyuefiforwinpeiso">
+                                <strong>Step 10.3 -</strong> Mount Empty UEFI for WinPE ISO
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts the UEFI ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/uefi_mount</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    mkdir --parents --verbose uefi_mount
+    
+    mount &quot;../kickstart_{newOsNode.fqn}.iso&quot; uefi_mount
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movewinpestagingtouefimount">
+                            <a href="#movewinpestagingtouefimount">
+                                <strong>Step 10.4 -</strong> Move WinPE Staging to UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Relative to the <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code> directory, this step moves the contents of <code>winpe_staging</code> to <code>uefi_mount</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    # Copy WinPE Files from WinPE ISO
+    mv --verbose winpe_staging/* &quot;uefi_mount&quot;   
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="unmountwinpeuefimount">
+                            <a href="#unmountwinpeuefimount">
+                                <strong>Step 10.5 -</strong> Unmount WinPE UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/uefi_mount</code>. This writes back contents of <code>uefi_mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for WinPE ISO</code>. </p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+then
+    MOUNT_FOLDER=&quot;uefi_mount&quot;
+    BUILD_PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    MOUNT_PATH=&quot;${BUILD_PATH}/${MOUNT_FOLDER}&quot;
+    
+    if df -h | grep --ignore-case \
+        --quiet \
+        &quot;${MOUNT_PATH}&quot;
+    then
+    
+        cd &quot;${BUILD_PATH}&quot;
+        
+        umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    else
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
 
 
 

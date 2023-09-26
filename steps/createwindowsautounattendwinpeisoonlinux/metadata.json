@@ -41,6 +41,10 @@
         {
             "order": 400, 
             "stepKey": "linrecreatebiosbootwinpeisofromwinpestaging"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "performrecreateuefibootwinpeiso"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on Linux", 
