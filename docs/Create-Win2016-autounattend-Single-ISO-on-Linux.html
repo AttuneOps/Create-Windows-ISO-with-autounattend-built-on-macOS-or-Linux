@@ -536,6 +536,11 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                         <div class="description col px-0">
                             <p>
                                 <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -737,7 +742,15 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deploys the generic autounattend.xml.</p>
+<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWin10Uefi</li>
+<li>isWinServerBios</li>
+<li>isWinServerUefi</li>
+</ol>
+<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
                             </p>
                         </div>
                     </div>
@@ -801,6 +814,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -896,6 +914,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the <code>build-{newOsNode.fqn}</code> directory at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code>.</p>
+<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -961,6 +984,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Mounts the UEFI ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>.</p>
+<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -1039,6 +1067,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Move contents of <code>build-{newOsNode.fqn}</code> to <code>build-{newOsNode.fqn}-uefi-mount</code>.</p>
+<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -1103,6 +1136,11 @@ fi
                             <p>
                                 <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>. </p>
 <p>This writes the contents of <code>build-{newOsNode.fqn}-uefi-mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for Single ISO</code>. </p>
+<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>

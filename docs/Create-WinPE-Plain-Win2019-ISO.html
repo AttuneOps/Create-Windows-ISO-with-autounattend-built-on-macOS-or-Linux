@@ -1001,6 +1001,11 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
                         <div class="description col px-0">
                             <p>
                                 <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -1850,6 +1855,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Change the ownership of <code>winpe_staging</code>to <code>automationWorkerLinuxUser.user</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -2069,6 +2079,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Relative to the <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code> directory, this step moves the contents of <code>winpe_staging</code> to <code>uefi_mount</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -2144,6 +2159,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/uefi_mount</code>. This writes back contents of <code>uefi_mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for WinPE ISO</code>. </p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>

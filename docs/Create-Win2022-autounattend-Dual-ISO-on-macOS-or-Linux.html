@@ -591,7 +591,15 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deploys the generic autounattend.xml.</p>
+<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWin10Uefi</li>
+<li>isWinServerBios</li>
+<li>isWinServerUefi</li>
+</ol>
+<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
                             </p>
                         </div>
                     </div>
@@ -659,7 +667,7 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
 <li><code>autounattend.xml</code></li>
 <li><code>post_install_setup.ps1</code></li>
 </ol>
-<p>This works for kickstarts on macOS with:
+<p>This works for kickstarts on Linux or macOS with:
 1. Windows Desktop 10
 2. Windows Server 2016
 2. Windows Server 2019
