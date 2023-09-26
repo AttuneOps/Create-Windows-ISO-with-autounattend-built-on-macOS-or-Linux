@@ -1,4 +1,10 @@
-PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
-mkdir --parents "${PATH}"
-cd "${PATH}"
-cp --verbose "../winpe_win2019_plain_bios.iso" "winpe.iso"
+if [ {isWin10Bios} == "true" ] || [ {isWinServerBios} == "true" ]
+then
+    PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+    mkdir --parents "${PATH}"
+    cd "${PATH}"
+    cp --verbose "../winpe_win2019_plain_bios.iso" "winpe.iso"
+    
+else
+    echo "Skipping for UEFI ISO creation."
+fi

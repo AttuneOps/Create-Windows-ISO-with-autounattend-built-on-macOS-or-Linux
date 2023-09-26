@@ -58,15 +58,6 @@ This Project contains the following Blueprints.
 
 For Windows Desktop 10 BIOS or UEFI kickstarts.
 
-### Create Win10 BIOS autounattend Single ISO on Linux
-
-Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
-
-### Create Win10 UEFI autounattend Single ISO on Linux
-
-
 ### Create Win2016 autounattend Dual ISO on macOS or Linux
 
 
@@ -113,6 +104,14 @@ in combination with one of thest boot methods:
 
 1. BIOS
 2. UEFI
+
+### Create Win10 autounattend Single ISO on Linux
+
+Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
+
+For both BIOS and UEFI.
 
 
 

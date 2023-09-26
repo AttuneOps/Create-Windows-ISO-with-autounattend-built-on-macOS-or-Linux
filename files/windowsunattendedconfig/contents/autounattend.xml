@@ -63,7 +63,7 @@
 					<InstallToAvailablePartition>false</InstallToAvailablePartition>
 				</OSImage>
 
-%if bool(isWinPEKickstart):
+%if isWinPEKickstart == 'true':
 				
 				<!-- Custom WIM file -->
 				<DataImage wcm:action="add">
@@ -330,7 +330,7 @@
 					<Description>Run Script</Description>
 				</SynchronousCommand>
 
-%if bool(isWinPEKickstart):
+%if isWinPEKickstart == 'true':
 				
 				<SynchronousCommand wcm:action="add">
 					<Order>3</Order>

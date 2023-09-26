@@ -767,12 +767,18 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
-
-bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
-((bytes=bytes+10000))
-
-mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+then
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
+    ((bytes=bytes+10000))
+    
+    mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -837,13 +843,20 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+then
 
-MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-
-mkdir --verbose &quot;${MOUNT_PATH}&quot;
-
-mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    
+    mkdir --verbose &quot;${MOUNT_PATH}&quot;
+    
+    mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -897,9 +910,16 @@ mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}&quot;
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+then
 
-mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -954,19 +974,26 @@ mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uef
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
-
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
 then
 
-    cd &quot;{automationWorkerBaseDirectory}&quot;
+    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
     
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    if df -h | grep --ignore-case \
+        --quiet \
+        &quot;${MOUNT_PATH}&quot;
+    then
+    
+        cd &quot;{automationWorkerBaseDirectory}&quot;
+        
+        umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    else
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
 else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    echo &quot;Skipping for BIOS ISO creation.&quot;
 fi
                 </code>
             </pre>

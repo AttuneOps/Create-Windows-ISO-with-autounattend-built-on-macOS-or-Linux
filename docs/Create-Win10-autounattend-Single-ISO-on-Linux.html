@@ -6,29 +6,41 @@
 
 
 <head>
-    <title>How to Create Win2019 BIOS autounattend Single ISO on Linux - Attune Automation</title>
+    <title>How to Create Win10 autounattend Single ISO on Linux - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win2019 BIOS autounattend Single ISO on Linux - Attune Automation">
+          content="How to Create Win10 autounattend Single ISO on Linux - Attune Automation">
     <meta name="description"
-          content="">
+          content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
+
+For both BIOS and UEFI.">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win2019 BIOS autounattend Single ISO on Linux - Attune Automation" />
-    <meta property="og:description" content="" />
+          content="HowTo Create Win10 autounattend Single ISO on Linux - Attune Automation" />
+    <meta property="og:description" content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
+
+For both BIOS and UEFI." />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win2019 BIOS autounattend Single ISO on Linux - Attune Automation" />
-    <meta name="twitter:description" content="" />
+          content="How to Create Win10 autounattend Single ISO on Linux - Attune Automation" />
+    <meta name="twitter:description" content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
+
+For both BIOS and UEFI." />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -119,7 +131,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win2019 BIOS autounattend Single ISO on Linux</strong>
+                    <strong>Create Win10 autounattend Single ISO on Linux</strong>
                 </li>
             </ol>
         </nav>
@@ -133,12 +145,21 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win2019 BIOS autounattend Single ISO on Linux
+                How to Create Win10 autounattend Single ISO on Linux
             </h1>
         </div>
     </div>
 
 <!-- Blueprint Description -->
+    <div class="row">
+        <div class="description col px-0">
+            <p class="text-left">
+                <p>Creates a single Windows Desktop 10 ISO with <code>autounattend.xml</code> for unattended installation.</p>
+<p>The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".</p>
+<p>For both BIOS and UEFI.</p>
+            </p>
+        </div>
+    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -197,7 +218,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win2019 BIOS autounattend Single ISO on Linux</strong>
+                            <strong>Create Win10 autounattend Single ISO on Linux</strong>
                         </a>
                     </p>
 
@@ -214,8 +235,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2019dvdiso">
-                            <strong>Step 2 -</strong> Deploy Win2019 DVD ISO
+                        <a href="#deploywin10dvdiso">
+                            <strong>Step 2 -</strong> Deploy Win10 DVD ISO
                         </a>
                     </p>
 
@@ -262,8 +283,49 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#performcreateuefiforsingleiso">
+                            <strong>Step 8 -</strong> Perform Create UEFI for Single ISO
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createemptyuefiforsingleiso">
+                            <strong>Step 8.1 -</strong> Create Empty UEFI for Single ISO 
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#mountemptyuefiforsingleiso">
+                            <strong>Step 8.2 -</strong> Mount Empty UEFI for Single ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movefilestouefimount">
+                            <strong>Step 8.3 -</strong> Move Files to UEFI Mount
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#unmountsingleisouefimount">
+                            <strong>Step 8.4 -</strong> Unmount Single ISO UEFI Mount
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#deletebuilddirectory">
-                            <strong>Step 8 -</strong> Delete Build Directory
+                            <strong>Step 9 -</strong> Delete Build Directory
                         </a>
                     </p>
 
@@ -326,7 +388,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win2019 BIOS autounattend Single ISO on Linux</strong>
+                You've automated: <strong>Create Win10 autounattend Single ISO on Linux</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -427,9 +489,9 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2019dvdiso">
-                            <a href="#deploywin2019dvdiso">
-                                <strong>Step 2 -</strong> Deploy Win2019 DVD ISO
+                        <h3 id="deploywin10dvdiso">
+                            <a href="#deploywin10dvdiso">
+                                <strong>Step 2 -</strong> Deploy Win10 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -437,7 +499,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Desktop 10 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -458,11 +520,12 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019.</p>
+            <p>Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.</p>
+<p>Please select the English (United States) version.</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>Windows_Server_201_ISO.tar</strong>
+            <strong>Win10_Desktop_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -815,9 +878,320 @@ fi
 
 
                     <div class="row pt-5">
+                        <h3 id="performcreateuefiforsingleiso">
+                            <a href="#performcreateuefiforsingleiso">
+                                <strong>Step 8 -</strong> Perform Create UEFI for Single ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates the Windows ISO again from the contents of the <code>build-{newOsNode.fqn}</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createemptyuefiforsingleiso">
+                            <a href="#createemptyuefiforsingleiso">
+                                <strong>Step 8.1 -</strong> Create Empty UEFI for Single ISO 
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the <code>build-{newOsNode.fqn}</code> directory at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+then
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
+    ((bytes=bytes+10000))
+    
+    mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="mountemptyuefiforsingleiso">
+                            <a href="#mountemptyuefiforsingleiso">
+                                <strong>Step 8.2 -</strong> Mount Empty UEFI for Single ISO
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts the UEFI ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+then
+
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    
+    mkdir --verbose &quot;${MOUNT_PATH}&quot;
+    
+    mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movefilestouefimount">
+                            <a href="#movefilestouefimount">
+                                <strong>Step 8.3 -</strong> Move Files to UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Move contents of <code>build-{newOsNode.fqn}</code> to <code>build-{newOsNode.fqn}-uefi-mount</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+then
+
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="unmountsingleisouefimount">
+                            <a href="#unmountsingleisouefimount">
+                                <strong>Step 8.4 -</strong> Unmount Single ISO UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>. </p>
+<p>This writes the contents of <code>build-{newOsNode.fqn}-uefi-mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for Single ISO</code>. </p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+then
+
+    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
+    
+    if df -h | grep --ignore-case \
+        --quiet \
+        &quot;${MOUNT_PATH}&quot;
+    then
+    
+        cd &quot;{automationWorkerBaseDirectory}&quot;
+        
+        umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    else
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="deletebuilddirectory">
                             <a href="#deletebuilddirectory">
-                                <strong>Step 8 -</strong> Delete Build Directory
+                                <strong>Step 9 -</strong> Delete Build Directory
                             </a>
                         </h3>
                     </div>
@@ -838,7 +1212,18 @@ fi
 
 
 
-    
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
 
 
     

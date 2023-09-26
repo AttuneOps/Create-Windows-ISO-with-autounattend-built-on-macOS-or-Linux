@@ -881,21 +881,28 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-# Extract the boot.img out of the WinPE ISO
+if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+then
 
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-# Case insensitve globbing
-shopt -s nocaseglob
-
-# Set the filename of the ISO
-F=$(ls *.iso)
-
-# Get the Boot image offset
-OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
-
-# Extract the boot.img.
-dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
+    # Extract the boot.img out of the WinPE ISO
+    
+    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    
+    # Case insensitve globbing
+    shopt -s nocaseglob
+    
+    # Set the filename of the ISO
+    F=$(ls *.iso)
+    
+    # Get the Boot image offset
+    OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
+    
+    # Extract the boot.img.
+    dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
+    
+else
+    echo &quot;Skipping for UEFI ISO creation.&quot;
+fi
                 </code>
             </pre>
         </div>

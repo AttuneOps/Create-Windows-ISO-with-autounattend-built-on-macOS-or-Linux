@@ -1561,7 +1561,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -1766,7 +1766,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -1830,7 +1830,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;True&quot; ] || [ {isWinServerUefi} == &quot;True&quot; ]
+if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
 then
     MOUNT_FOLDER=&quot;uefi_mount&quot;
     BUILD_PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
