@@ -54,36 +54,6 @@ This Project contains the following Blueprints.
 
 
 
-### Create Win10 autounattend Dual ISO on macOS or Linux
-
-For Windows Desktop 10 BIOS or UEFI kickstarts.
-
-### Create Win10 autounattend Single ISO on Linux
-
-Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso".
-
-For both BIOS and UEFI.
-
-### Create Win2016 autounattend Dual ISO on macOS or Linux
-
-
-### Create Win2016 autounattend Single ISO on Linux
-
-
-### Create Win2019 autounattend Dual ISO on macOS or Linux
-
-
-### Create Win2019 autounattend Single ISO on Linux
-
-
-### Create Win2022 autounattend Dual ISO on macOS or Linux
-
-
-### Create Win2022 autounattend Single ISO on Linux
-
-
 ### Create Windows autounattend WinPE ISO on Linux
 
 Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
@@ -98,9 +68,112 @@ in combination with one of thest boot methods:
 1. BIOS
 2. UEFI
 
-### Create WinPE Plain Win2019 ISO
+### Create Win10 autounattend Dual ISO on macOS or Linux
 
-Can be configured to build for BIOS or UEFI.
+For Windows Desktop 10 BIOS or UEFI dual ISO kickstarts.
+
+For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
+
+For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### Create Win2016 autounattend Dual ISO on macOS or Linux
+
+For Windows Server 2016 BIOS or UEFI dual ISO kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### Create Win2019 autounattend Dual ISO on macOS or Linux
+
+For Windows Server 2019 BIOS or UEFI dual ISO kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### Create Win2022 autounattend Dual ISO on macOS or Linux
+
+For Windows Server 2022 BIOS or UEFI dual ISO kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### Create Win10 autounattend Single ISO on Linux
+
+Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
+
+For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### Create Win2016 autounattend Single ISO on Linux
+
+Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### Create Win2019 autounattend Single ISO on Linux
+
+Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### Create Win2022 autounattend Single ISO on Linux
+
+Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+### First Time Create WinPE Plain Win2019 ISO
+
+Pulls the initial WinPE ISO from a Windows Server 2019 DVD ISO.
+
+This WinPE ISO will have it's default `setup.exe` removed and can be used to kickstart BIOS or UEFI boot methods for all the following WIndows operating system versions:
+
+1. Windows Desktop 10
+2. Windows Server 2016
+3. Windows Server 2019
+4. Windows Server 2022
 
 
 
