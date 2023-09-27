@@ -20,7 +20,7 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "cleanbuildfiles"
+            "stepKey": "cleanupbuildfilesandisos"
         }, 
         {
             "order": 200, 

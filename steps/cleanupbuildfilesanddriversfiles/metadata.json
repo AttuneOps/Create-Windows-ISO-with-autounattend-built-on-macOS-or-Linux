@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "36c01aab-1889-4670-afaf-076fdba48231", 
+    "externalUuid4": "edd3b826-c74e-483f-93bf-0138952065e1", 
     "interpreter": 1, 
-    "key": "cleanbuildfiles", 
-    "name": "Clean Build Files", 
+    "key": "cleanupbuildfilesanddriversfiles", 
+    "name": "Clean up Build Files and Drivers Files", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

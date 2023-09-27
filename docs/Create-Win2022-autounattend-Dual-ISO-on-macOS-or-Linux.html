@@ -234,8 +234,8 @@ Please set `isWinPEKickstart` to the string 'false'." />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanbuildfiles">
-                            <strong>Step 1 -</strong> Clean Build Files
+                        <a href="#cleanupbuildfilesandisos">
+                            <strong>Step 1 -</strong> Clean up Build Files and ISOs
                         </a>
                     </p>
 
@@ -369,9 +369,9 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanbuildfiles">
-                            <a href="#cleanbuildfiles">
-                                <strong>Step 1 -</strong> Clean Build Files
+                        <h3 id="cleanupbuildfilesandisos">
+                            <a href="#cleanupbuildfilesandisos">
+                                <strong>Step 1 -</strong> Clean up Build Files and ISOs
                             </a>
                         </h3>
                     </div>
@@ -423,7 +423,7 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
 
-ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 [[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
             </pre>

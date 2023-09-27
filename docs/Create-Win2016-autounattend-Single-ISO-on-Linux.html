@@ -242,8 +242,8 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanbuildfiles">
-                            <strong>Step 1 -</strong> Clean Build Files
+                        <a href="#cleanupbuildfilesandisos">
+                            <strong>Step 1 -</strong> Clean up Build Files and ISOs
                         </a>
                     </p>
 
@@ -339,8 +339,8 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deletebuilddirectory">
-                            <strong>Step 9 -</strong> Delete Build Directory
+                        <a href="#cleanupbuildfilesanddriversfiles">
+                            <strong>Step 9 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -434,9 +434,9 @@ For " />
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanbuildfiles">
-                            <a href="#cleanbuildfiles">
-                                <strong>Step 1 -</strong> Clean Build Files
+                        <h3 id="cleanupbuildfilesandisos">
+                            <a href="#cleanupbuildfilesandisos">
+                                <strong>Step 1 -</strong> Clean up Build Files and ISOs
                             </a>
                         </h3>
                     </div>
@@ -488,7 +488,7 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
 
-ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 [[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
             </pre>
@@ -1241,9 +1241,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deletebuilddirectory">
-                            <a href="#deletebuilddirectory">
-                                <strong>Step 9 -</strong> Delete Build Directory
+                        <h3 id="cleanupbuildfilesanddriversfiles">
+                            <a href="#cleanupbuildfilesanddriversfiles">
+                                <strong>Step 9 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>
@@ -1292,6 +1292,14 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
             <pre>
                 <code class="language-sql py-0">
 DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+if [ -d &quot;${DIR}&quot; ]
+then
+    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+else
+    echo &quot;No directory to remove.&quot;
+fi
+
+DIR=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
 if [ -d &quot;${DIR}&quot; ]
 then
     rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
