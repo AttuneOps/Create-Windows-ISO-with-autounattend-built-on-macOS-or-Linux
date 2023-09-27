@@ -150,17 +150,6 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-### First Time Create WinPE Plain Win2019 ISO
-
-Pulls the initial WinPE ISO from a Windows Server 2019 DVD ISO.
-
-This WinPE ISO will have it's default `setup.exe` removed and can be used to kickstart BIOS or UEFI boot methods for all the following WIndows operating system versions:
-
-1. Windows Desktop 10
-2. Windows Server 2016
-3. Windows Server 2019
-4. Windows Server 2022
-
 ### Create Windows autounattend WinPE ISO on Linux
 
 ### Purpose
@@ -209,6 +198,19 @@ Win2019 | BIOS |  isWinServerBios | windows2019
 Win2019 | UEFI |  isWinServerUefi | windows2019
 Win2022 | BIOS |  isWinServerBios | windows2022
 Win2022 | UEFI |  isWinServerUefi | windows2022
+
+### Create WinPE Plain ISO
+
+This only needs to be run once.
+
+Pulls the initial WinPE ISO from a Windows Server 2019 DVD ISO.
+
+This WinPE ISO will have it's default `setup.exe` removed and can be used to kickstart BIOS or UEFI boot methods for all the following WIndows operating system versions:
+
+1. Windows Desktop 10
+2. Windows Server 2016
+3. Windows Server 2019
+4. Windows Server 2022
 
 
 
