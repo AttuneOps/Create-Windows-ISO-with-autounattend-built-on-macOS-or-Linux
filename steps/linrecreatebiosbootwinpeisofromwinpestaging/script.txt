@@ -1,4 +1,4 @@
-if [ {isWin10Bios} == "true" ] || [ {isWinServerBios} == "true" ]
+if {isWin10Bios} || {isWinServerBios}
 then
 
     cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}

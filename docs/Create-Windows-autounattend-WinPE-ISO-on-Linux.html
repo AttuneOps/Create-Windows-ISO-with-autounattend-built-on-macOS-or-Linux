@@ -14,17 +14,22 @@
     <meta name="title"
           content="How to Create Windows autounattend WinPE ISO on Linux - Attune Automation">
     <meta name="description"
-          content="Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
+          content="# Purpose
+Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
 
 1. Windows Desktop 10
 2. Windows Server 2016
 3. Windows Server 2019
 4. Windows Server 2022
 
-in combination with one of thest boot methods:
+in combination with one of these boot methods:
 
 1. BIOS
-2. UEFI">
+2. UEFI
+
+# Usage
+
+## Set isWinPEKickstart">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
@@ -32,33 +37,43 @@ in combination with one of thest boot methods:
     <meta property="og:type" content="article" />
     <meta property="og:title"
           content="HowTo Create Windows autounattend WinPE ISO on Linux - Attune Automation" />
-    <meta property="og:description" content="Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
+    <meta property="og:description" content="# Purpose
+Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
 
 1. Windows Desktop 10
 2. Windows Server 2016
 3. Windows Server 2019
 4. Windows Server 2022
 
-in combination with one of thest boot methods:
+in combination with one of these boot methods:
 
 1. BIOS
-2. UEFI" />
+2. UEFI
+
+# Usage
+
+## Set isWinPEKickstart" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
           content="How to Create Windows autounattend WinPE ISO on Linux - Attune Automation" />
-    <meta name="twitter:description" content="Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
+    <meta name="twitter:description" content="# Purpose
+Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:
 
 1. Windows Desktop 10
 2. Windows Server 2016
 3. Windows Server 2019
 4. Windows Server 2022
 
-in combination with one of thest boot methods:
+in combination with one of these boot methods:
 
 1. BIOS
-2. UEFI" />
+2. UEFI
+
+# Usage
+
+## Set isWinPEKickstart" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -172,18 +187,94 @@ in combination with one of thest boot methods:
     <div class="row">
         <div class="description col px-0">
             <p class="text-left">
-                <p>Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:</p>
+                <h3>Purpose</h3>
+<p>Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:</p>
 <ol>
 <li>Windows Desktop 10</li>
 <li>Windows Server 2016</li>
 <li>Windows Server 2019</li>
 <li>Windows Server 2022</li>
 </ol>
-<p>in combination with one of thest boot methods:</p>
+<p>in combination with one of these boot methods:</p>
 <ol>
 <li>BIOS</li>
 <li>UEFI</li>
 </ol>
+<h3>Usage</h3>
+<h4>Set isWinPEKickstart</h4>
+<p>To use please set <code>isWinPEKickstart</code> to the string <code>true</code>.</p>
+<h4>Set Windows Boot Method and Version</h4>
+<p>Please set one of the following to the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWin10Uefi</li>
+<li>isWinServerBios</li>
+<li>isWinServerUefi</li>
+</ol>
+<p>This is used in <code>autounattend.xml</code>.</p>
+<h4>Set Windows Verstion using windowsFolderOnSamba</h4>
+<p>Please set the <code>windowsFolderOnSamba</code> to the correct Samba folder for the Windows operating system version. This is used by WinPE <code>startnet.cmd</code> in step <code>LIN Deploy startnet.cmd for WinPE</code>.</p>
+<h4>Table of Values for Windows Versions</h4>
+<table>
+<thead>
+<tr>
+<th>Windows Version</th>
+<th>Boot Method</th>
+<th>Set 'true'</th>
+<th>Set windowsFolderOnSamba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Win10</td>
+<td>BIOS</td>
+<td>isWin10Bios</td>
+<td>windows10</td>
+</tr>
+<tr>
+<td>Win10</td>
+<td>UEFI</td>
+<td>isWin10Uefi</td>
+<td>windows10</td>
+</tr>
+<tr>
+<td>Win2016</td>
+<td>BIOS</td>
+<td>isWinServerBios</td>
+<td>windows2016</td>
+</tr>
+<tr>
+<td>Win2016</td>
+<td>UEFI</td>
+<td>isWinServerUefi</td>
+<td>windows2016</td>
+</tr>
+<tr>
+<td>Win2019</td>
+<td>BIOS</td>
+<td>isWinServerBios</td>
+<td>windows2019</td>
+</tr>
+<tr>
+<td>Win2019</td>
+<td>UEFI</td>
+<td>isWinServerUefi</td>
+<td>windows2019</td>
+</tr>
+<tr>
+<td>Win2022</td>
+<td>BIOS</td>
+<td>isWinServerBios</td>
+<td>windows2022</td>
+</tr>
+<tr>
+<td>Win2022</td>
+<td>UEFI</td>
+<td>isWinServerUefi</td>
+<td>windows2022</td>
+</tr>
+</tbody>
+</table>
             </p>
         </div>
     </div>
@@ -254,8 +345,16 @@ in combination with one of thest boot methods:
         
 
                     <p class="text-muted pt-2">
+                        <a href="#checkinputparametervaluesforwinpekickstart">
+                            <strong>Step 1 -</strong> Check Input Parameter Values for WinPE Kickstart
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#confirmwinpewin2019plainbiosisoexists">
-                            <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Exists
+                            <strong>Step 2 -</strong> Confirm winpe_win2019_plain_bios.iso Exists
                         </a>
                     </p>
 
@@ -263,7 +362,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#confirmwinpewin2019plainuefiisoexists">
-                            <strong>Step 2 -</strong> Confirm winpe_win2019_plain_uefi.iso Exists
+                            <strong>Step 3 -</strong> Confirm winpe_win2019_plain_uefi.iso Exists
                         </a>
                     </p>
 
@@ -271,7 +370,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#cleanbuildfiles">
-                            <strong>Step 3 -</strong> Clean Build Files
+                            <strong>Step 4 -</strong> Clean Build Files
                         </a>
                     </p>
 
@@ -279,7 +378,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#lincopywinpewin2019plainbiosisotowinpeiso">
-                            <strong>Step 4 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
+                            <strong>Step 5 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
                         </a>
                     </p>
 
@@ -287,7 +386,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#lincopywinpewin2019plainuefiisotowinpeiso">
-                            <strong>Step 5 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
+                            <strong>Step 6 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
                         </a>
                     </p>
 
@@ -295,7 +394,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linextractwinpeisotowinpestaging">
-                            <strong>Step 6 -</strong> LIN Extract winpe.iso to winpe_staging
+                            <strong>Step 7 -</strong> LIN Extract winpe.iso to winpe_staging
                         </a>
                     </p>
 
@@ -303,7 +402,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#lindeploystartnetcmdforwinpe">
-                            <strong>Step 7 -</strong> LIN Deploy startnet.cmd for WinPE
+                            <strong>Step 8 -</strong> LIN Deploy startnet.cmd for WinPE
                         </a>
                     </p>
 
@@ -311,7 +410,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 8 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 9 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -319,7 +418,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#createpostsetupwim">
-                            <strong>Step 9 -</strong> Create Post Setup WIM
+                            <strong>Step 10 -</strong> Create Post Setup WIM
                         </a>
                     </p>
     
@@ -327,7 +426,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 9.1 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 10.1 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -335,7 +434,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
-                            <strong>Step 9.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                            <strong>Step 10.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
                         </a>
                     </p>
 
@@ -343,7 +442,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#createpostinstallwimwindowsimage">
-                            <strong>Step 9.3 -</strong> Create post_install.wim Windows Image
+                            <strong>Step 10.3 -</strong> Create post_install.wim Windows Image
                         </a>
                     </p>
 
@@ -352,7 +451,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#modifywinpebootwim">
-                            <strong>Step 10 -</strong> Modify WinPE boot.wim
+                            <strong>Step 11 -</strong> Modify WinPE boot.wim
                         </a>
                     </p>
     
@@ -360,7 +459,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#lincreatebootwimmountfolder">
-                            <strong>Step 10.1 -</strong> LIN Create boot.wim Mount Folder
+                            <strong>Step 11.1 -</strong> LIN Create boot.wim Mount Folder
                         </a>
                     </p>
 
@@ -368,7 +467,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
-                            <strong>Step 10.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                            <strong>Step 11.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
                         </a>
                     </p>
 
@@ -376,7 +475,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linmovefilestobootwim">
-                            <strong>Step 10.3 -</strong> LIN Move Files to boot.wim
+                            <strong>Step 11.3 -</strong> LIN Move Files to boot.wim
                         </a>
                     </p>
     
@@ -384,7 +483,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linmovestartnetcmdtobootwim">
-                            <strong>Step 10.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                            <strong>Step 11.3.1 -</strong> LIN Move startnet.cmd to boot.wim
                         </a>
                     </p>
 
@@ -392,7 +491,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linmoveautounattendxmltobootwim">
-                            <strong>Step 10.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                            <strong>Step 11.3.2 -</strong> LIN Move autounattend.xml to boot.wim
                         </a>
                     </p>
 
@@ -400,7 +499,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linmovepostinstallwimtobootwim">
-                            <strong>Step 10.3.3 -</strong> LIN Move post_install.wim to boot.wim
+                            <strong>Step 11.3.3 -</strong> LIN Move post_install.wim to boot.wim
                         </a>
                     </p>
 
@@ -409,7 +508,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linwimlibunmountbootwim">
-                            <strong>Step 10.4 -</strong> LIN wimlib Unmount boot.wim
+                            <strong>Step 11.4 -</strong> LIN wimlib Unmount boot.wim
                         </a>
                     </p>
 
@@ -418,7 +517,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#linrecreatebiosbootwinpeisofromwinpestaging">
-                            <strong>Step 11 -</strong> LIN Recreate BIOS Boot WinPE ISO from winpe_staging
+                            <strong>Step 12 -</strong> LIN Recreate BIOS Boot WinPE ISO from winpe_staging
                         </a>
                     </p>
 
@@ -426,7 +525,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#performrecreateuefibootwinpeiso">
-                            <strong>Step 12 -</strong> Perform Recreate UEFI Boot WinPE ISO
+                            <strong>Step 13 -</strong> Perform Recreate UEFI Boot WinPE ISO
                         </a>
                     </p>
     
@@ -434,7 +533,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
-                            <strong>Step 12.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
+                            <strong>Step 13.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
                         </a>
                     </p>
 
@@ -442,7 +541,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#createemptyuefiforwinpeiso">
-                            <strong>Step 12.2 -</strong> Create Empty UEFI for WinPE ISO
+                            <strong>Step 13.2 -</strong> Create Empty UEFI for WinPE ISO
                         </a>
                     </p>
 
@@ -450,7 +549,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#mountemptyuefiforwinpeiso">
-                            <strong>Step 12.3 -</strong> Mount Empty UEFI for WinPE ISO
+                            <strong>Step 13.3 -</strong> Mount Empty UEFI for WinPE ISO
                         </a>
                     </p>
 
@@ -458,7 +557,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#movewinpestagingtouefimount">
-                            <strong>Step 12.4 -</strong> Move WinPE Staging to UEFI Mount
+                            <strong>Step 13.4 -</strong> Move WinPE Staging to UEFI Mount
                         </a>
                     </p>
 
@@ -466,7 +565,7 @@ in combination with one of thest boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwinpeuefimount">
-                            <strong>Step 12.5 -</strong> Unmount WinPE UEFI Mount
+                            <strong>Step 13.5 -</strong> Unmount WinPE UEFI Mount
                         </a>
                     </p>
 
@@ -561,26 +660,13 @@ in combination with one of thest boot methods:
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmwinpewin2019plainbiosisoexists">
-                            <a href="#confirmwinpewin2019plainbiosisoexists">
-                                <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Exists
+                        <h3 id="checkinputparametervaluesforwinpekickstart">
+                            <a href="#checkinputparametervaluesforwinpekickstart">
+                                <strong>Step 1 -</strong> Check Input Parameter Values for WinPE Kickstart
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> exists.</p>
-<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create WinPE Plain Win2019 BIOS ISO</code>.</p>
-<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -617,7 +703,71 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if [ {isWinPEKickstart } != &quot;true&quot; ]
+then
+    echo &quot;Please set isWinPEKickstart as the string &#x27;true&#x27;&quot;
+    exit 1
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="confirmwinpewin2019plainbiosisoexists">
+                            <a href="#confirmwinpewin2019plainbiosisoexists">
+                                <strong>Step 2 -</strong> Confirm winpe_win2019_plain_bios.iso Exists
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> exists.</p>
+<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create WinPE Plain Win2019 BIOS ISO</code>.</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Bios} || {isWinServerBios}
 then
 
     DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
@@ -651,7 +801,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="confirmwinpewin2019plainuefiisoexists">
                             <a href="#confirmwinpewin2019plainuefiisoexists">
-                                <strong>Step 2 -</strong> Confirm winpe_win2019_plain_uefi.iso Exists
+                                <strong>Step 3 -</strong> Confirm winpe_win2019_plain_uefi.iso Exists
                             </a>
                         </h3>
                     </div>
@@ -694,7 +844,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
@@ -728,7 +878,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanbuildfiles">
                             <a href="#cleanbuildfiles">
-                                <strong>Step 3 -</strong> Clean Build Files
+                                <strong>Step 4 -</strong> Clean Build Files
                             </a>
                         </h3>
                     </div>
@@ -787,7 +937,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row pt-5">
                         <h3 id="lincopywinpewin2019plainbiosisotowinpeiso">
                             <a href="#lincopywinpewin2019plainbiosisotowinpeiso">
-                                <strong>Step 4 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
+                                <strong>Step 5 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
                             </a>
                         </h3>
                     </div>
@@ -836,7 +986,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios}
 then
     PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
     mkdir --parents &quot;${PATH}&quot;
@@ -862,7 +1012,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="lincopywinpewin2019plainuefiisotowinpeiso">
                             <a href="#lincopywinpewin2019plainuefiisotowinpeiso">
-                                <strong>Step 5 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
+                                <strong>Step 6 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
                             </a>
                         </h3>
                     </div>
@@ -911,7 +1061,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
     PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
     mkdir --parents &quot;${PATH}&quot;
@@ -936,7 +1086,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="linextractwinpeisotowinpestaging">
                             <a href="#linextractwinpeisotowinpestaging">
-                                <strong>Step 6 -</strong> LIN Extract winpe.iso to winpe_staging
+                                <strong>Step 7 -</strong> LIN Extract winpe.iso to winpe_staging
                             </a>
                         </h3>
                     </div>
@@ -995,7 +1145,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row pt-5">
                         <h3 id="lindeploystartnetcmdforwinpe">
                             <a href="#lindeploystartnetcmdforwinpe">
-                                <strong>Step 7 -</strong> LIN Deploy startnet.cmd for WinPE
+                                <strong>Step 8 -</strong> LIN Deploy startnet.cmd for WinPE
                             </a>
                         </h3>
                     </div>
@@ -1063,7 +1213,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 8 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 9 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -1134,7 +1284,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row pt-5">
                         <h3 id="createpostsetupwim">
                             <a href="#createpostsetupwim">
-                                <strong>Step 9 -</strong> Create Post Setup WIM
+                                <strong>Step 10 -</strong> Create Post Setup WIM
                             </a>
                         </h3>
                     </div>
@@ -1165,7 +1315,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row pt-5">
                         <h4 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 9.1 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 10.1 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h4>
                     </div>
@@ -1222,7 +1372,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row pt-5">
                         <h4 id="movepostsetuppowershellscripttopostinstallwimfolder">
                             <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
-                                <strong>Step 9.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                                <strong>Step 10.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
                             </a>
                         </h4>
                     </div>
@@ -1278,7 +1428,7 @@ mv --verbose post_install_setup.ps1 post_install_wim
                     <div class="row pt-5">
                         <h4 id="createpostinstallwimwindowsimage">
                             <a href="#createpostinstallwimwindowsimage">
-                                <strong>Step 9.3 -</strong> Create post_install.wim Windows Image
+                                <strong>Step 10.3 -</strong> Create post_install.wim Windows Image
                             </a>
                         </h4>
                     </div>
@@ -1344,7 +1494,7 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row pt-5">
                         <h3 id="modifywinpebootwim">
                             <a href="#modifywinpebootwim">
-                                <strong>Step 10 -</strong> Modify WinPE boot.wim
+                                <strong>Step 11 -</strong> Modify WinPE boot.wim
                             </a>
                         </h3>
                     </div>
@@ -1378,7 +1528,7 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row pt-5">
                         <h4 id="lincreatebootwimmountfolder">
                             <a href="#lincreatebootwimmountfolder">
-                                <strong>Step 10.1 -</strong> LIN Create boot.wim Mount Folder
+                                <strong>Step 11.1 -</strong> LIN Create boot.wim Mount Folder
                             </a>
                         </h4>
                     </div>
@@ -1438,7 +1588,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="linwimlibmountbootwimtowinpebootimagedirfolder">
                             <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
-                                <strong>Step 10.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                                <strong>Step 11.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
                             </a>
                         </h4>
                     </div>
@@ -1493,7 +1643,7 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                     <div class="row pt-5">
                         <h4 id="linmovefilestobootwim">
                             <a href="#linmovefilestobootwim">
-                                <strong>Step 10.3 -</strong> LIN Move Files to boot.wim
+                                <strong>Step 11.3 -</strong> LIN Move Files to boot.wim
                             </a>
                         </h4>
                     </div>
@@ -1527,7 +1677,7 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                     <div class="row pt-5">
                         <h5 id="linmovestartnetcmdtobootwim">
                             <a href="#linmovestartnetcmdtobootwim">
-                                <strong>Step 10.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                                <strong>Step 11.3.1 -</strong> LIN Move startnet.cmd to boot.wim
                             </a>
                         </h5>
                     </div>
@@ -1584,7 +1734,7 @@ mv --verbose startnet.cmd \
                     <div class="row pt-5">
                         <h5 id="linmoveautounattendxmltobootwim">
                             <a href="#linmoveautounattendxmltobootwim">
-                                <strong>Step 10.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                                <strong>Step 11.3.2 -</strong> LIN Move autounattend.xml to boot.wim
                             </a>
                         </h5>
                     </div>
@@ -1639,7 +1789,7 @@ mv --verbose autounattend.xml WinPE_BootImageDir
                     <div class="row pt-5">
                         <h5 id="linmovepostinstallwimtobootwim">
                             <a href="#linmovepostinstallwimtobootwim">
-                                <strong>Step 10.3.3 -</strong> LIN Move post_install.wim to boot.wim
+                                <strong>Step 11.3.3 -</strong> LIN Move post_install.wim to boot.wim
                             </a>
                         </h5>
                     </div>
@@ -1696,7 +1846,7 @@ mv --verbose post_install.wim WinPE_BootImageDir
                     <div class="row pt-5">
                         <h4 id="linwimlibunmountbootwim">
                             <a href="#linwimlibunmountbootwim">
-                                <strong>Step 10.4 -</strong> LIN wimlib Unmount boot.wim
+                                <strong>Step 11.4 -</strong> LIN wimlib Unmount boot.wim
                             </a>
                         </h4>
                     </div>
@@ -1753,7 +1903,7 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                     <div class="row pt-5">
                         <h3 id="linrecreatebiosbootwinpeisofromwinpestaging">
                             <a href="#linrecreatebiosbootwinpeisofromwinpestaging">
-                                <strong>Step 11 -</strong> LIN Recreate BIOS Boot WinPE ISO from winpe_staging
+                                <strong>Step 12 -</strong> LIN Recreate BIOS Boot WinPE ISO from winpe_staging
                             </a>
                         </h3>
                     </div>
@@ -1795,7 +1945,7 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios}
 then
 
     cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
@@ -1824,7 +1974,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="performrecreateuefibootwinpeiso">
                             <a href="#performrecreateuefibootwinpeiso">
-                                <strong>Step 12 -</strong> Perform Recreate UEFI Boot WinPE ISO
+                                <strong>Step 13 -</strong> Perform Recreate UEFI Boot WinPE ISO
                             </a>
                         </h3>
                     </div>
@@ -1853,7 +2003,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
                             <a href="#changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
-                                <strong>Step 12.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
+                                <strong>Step 13.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
                             </a>
                         </h4>
                     </div>
@@ -1906,7 +2056,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -1935,7 +2085,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="createemptyuefiforwinpeiso">
                             <a href="#createemptyuefiforwinpeiso">
-                                <strong>Step 12.2 -</strong> Create Empty UEFI for WinPE ISO
+                                <strong>Step 13.2 -</strong> Create Empty UEFI for WinPE ISO
                             </a>
                         </h4>
                     </div>
@@ -1988,7 +2138,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -2019,7 +2169,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="mountemptyuefiforwinpeiso">
                             <a href="#mountemptyuefiforwinpeiso">
-                                <strong>Step 12.3 -</strong> Mount Empty UEFI for WinPE ISO
+                                <strong>Step 13.3 -</strong> Mount Empty UEFI for WinPE ISO
                             </a>
                         </h4>
                     </div>
@@ -2072,7 +2222,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -2100,7 +2250,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="movewinpestagingtouefimount">
                             <a href="#movewinpestagingtouefimount">
-                                <strong>Step 12.4 -</strong> Move WinPE Staging to UEFI Mount
+                                <strong>Step 13.4 -</strong> Move WinPE Staging to UEFI Mount
                             </a>
                         </h4>
                     </div>
@@ -2142,7 +2292,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -2169,7 +2319,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="unmountwinpeuefimount">
                             <a href="#unmountwinpeuefimount">
-                                <strong>Step 12.5 -</strong> Unmount WinPE UEFI Mount
+                                <strong>Step 13.5 -</strong> Unmount WinPE UEFI Mount
                             </a>
                         </h4>
                     </div>
@@ -2211,7 +2361,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
     MOUNT_FOLDER=&quot;uefi_mount&quot;
     BUILD_PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;

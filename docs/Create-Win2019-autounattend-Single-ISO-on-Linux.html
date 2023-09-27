@@ -605,7 +605,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios}
 then
 
     # Extract the boot.img out of the WinPE ISO
@@ -883,14 +883,14 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios} 
 then
 
     cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
     
     mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
         -b boot.img -no-emul-boot -c BOOT.CAT \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames \
+        -iso-level 3 -udf -joliet-long -relaxed-filenames -allow-limited-size \
         -J -l -D -N -V &quot;KS_WIN&quot; .
         
 else
@@ -983,7 +983,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
     cd &quot;{automationWorkerBaseDirectory}&quot;
     
@@ -1064,7 +1064,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}&quot;
@@ -1136,7 +1136,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}&quot;
@@ -1205,7 +1205,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;

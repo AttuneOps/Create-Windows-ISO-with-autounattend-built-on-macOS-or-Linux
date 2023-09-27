@@ -177,35 +177,6 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Create-Windows-autounattend-WinPE-ISO-on-Linux">
-                                <div class="card-body">
-                                    <a href="Create-Windows-autounattend-WinPE-ISO-on-Linux.html">
-                                        <h3 class="card-title">
-                                            Create Windows autounattend WinPE ISO on Linux
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:</p>
-<ol>
-<li>Windows Desktop 10</li>
-<li>Windows Server 2016</li>
-<li>Windows Server 2019</li>
-<li>Windows Server 2022</li>
-</ol>
-<p>in combination with one of thest boot methods:</p>
-<ol>
-<li>BIOS</li>
-<li>UEFI</li>
-</ol>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
                                  id="Create-Win10-autounattend-Dual-ISO-on-macOS-or-Linux">
                                 <div class="card-body">
                                     <a href="Create-Win10-autounattend-Dual-ISO-on-macOS-or-Linux.html">
@@ -399,6 +370,111 @@
 <li>Windows Server 2019</li>
 <li>Windows Server 2022</li>
 </ol>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Create-Windows-autounattend-WinPE-ISO-on-Linux">
+                                <div class="card-body">
+                                    <a href="Create-Windows-autounattend-WinPE-ISO-on-Linux.html">
+                                        <h3 class="card-title">
+                                            Create Windows autounattend WinPE ISO on Linux
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <h3>Purpose</h3>
+<p>Recreates a WinPE Bootable ISO. This blueprint can be configured for one of these Windows versions:</p>
+<ol>
+<li>Windows Desktop 10</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
+<p>in combination with one of these boot methods:</p>
+<ol>
+<li>BIOS</li>
+<li>UEFI</li>
+</ol>
+<h3>Usage</h3>
+<h4>Set isWinPEKickstart</h4>
+<p>To use please set <code>isWinPEKickstart</code> to the string <code>true</code>.</p>
+<h4>Set Windows Boot Method and Version</h4>
+<p>Please set one of the following to the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWin10Uefi</li>
+<li>isWinServerBios</li>
+<li>isWinServerUefi</li>
+</ol>
+<p>This is used in <code>autounattend.xml</code>.</p>
+<h4>Set Windows Verstion using windowsFolderOnSamba</h4>
+<p>Please set the <code>windowsFolderOnSamba</code> to the correct Samba folder for the Windows operating system version. This is used by WinPE <code>startnet.cmd</code> in step <code>LIN Deploy startnet.cmd for WinPE</code>.</p>
+<h4>Table of Values for Windows Versions</h4>
+<table>
+<thead>
+<tr>
+<th>Windows Version</th>
+<th>Boot Method</th>
+<th>Set 'true'</th>
+<th>Set windowsFolderOnSamba</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Win10</td>
+<td>BIOS</td>
+<td>isWin10Bios</td>
+<td>windows10</td>
+</tr>
+<tr>
+<td>Win10</td>
+<td>UEFI</td>
+<td>isWin10Uefi</td>
+<td>windows10</td>
+</tr>
+<tr>
+<td>Win2016</td>
+<td>BIOS</td>
+<td>isWinServerBios</td>
+<td>windows2016</td>
+</tr>
+<tr>
+<td>Win2016</td>
+<td>UEFI</td>
+<td>isWinServerUefi</td>
+<td>windows2016</td>
+</tr>
+<tr>
+<td>Win2019</td>
+<td>BIOS</td>
+<td>isWinServerBios</td>
+<td>windows2019</td>
+</tr>
+<tr>
+<td>Win2019</td>
+<td>UEFI</td>
+<td>isWinServerUefi</td>
+<td>windows2019</td>
+</tr>
+<tr>
+<td>Win2022</td>
+<td>BIOS</td>
+<td>isWinServerBios</td>
+<td>windows2022</td>
+</tr>
+<tr>
+<td>Win2022</td>
+<td>UEFI</td>
+<td>isWinServerUefi</td>
+<td>windows2022</td>
+</tr>
+</tbody>
+</table>
                                         </p>
                                     </div>
                                 </div>

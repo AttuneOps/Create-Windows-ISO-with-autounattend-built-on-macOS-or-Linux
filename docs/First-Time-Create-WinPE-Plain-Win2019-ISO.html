@@ -625,7 +625,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios}
 then
 
     DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
@@ -700,7 +700,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
@@ -1070,7 +1070,7 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios}
 then
 
     # Extract the boot.img out of the WinPE ISO
@@ -1421,7 +1421,7 @@ cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -1765,7 +1765,7 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
     
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -1834,7 +1834,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Bios} == &quot;true&quot; ] || [ {isWinServerBios} == &quot;true&quot; ]
+if {isWin10Bios} || {isWinServerBios}
 then
 
     cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
@@ -1945,7 +1945,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -2028,7 +2028,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -2099,7 +2099,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -2180,7 +2180,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
@@ -2249,7 +2249,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWin10Uefi} == &quot;true&quot; ] || [ {isWinServerUefi} == &quot;true&quot; ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
     MOUNT_FOLDER=&quot;uefi_mount&quot;
     BUILD_PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
