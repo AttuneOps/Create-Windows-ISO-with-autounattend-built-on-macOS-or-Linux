@@ -51,7 +51,7 @@
 					
 					<InstallTo>
 						<DiskID>0</DiskID>
-%if isWin10Bios == 'true' or isWinServerBIOS == 'true':
+%if isWin10Bios == 'true' or isWinServerBios == 'true':
 						
 						<PartitionID>2</PartitionID>
 %elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
@@ -72,7 +72,7 @@
 					</InstallFrom>
 					<InstallTo>
 						<DiskID>0</DiskID>
-  %if isWin10Bios == 'true' or isWinServerBIOS == 'true':
+  %if isWin10Bios == 'true' or isWinServerBios == 'true':
 						
 						<PartitionID>2</PartitionID>
   %elif isWin10Uefi == 'true' or isWinServerUefi == 'true':
@@ -278,7 +278,7 @@
 					</LocalAccount>
 				</LocalAccounts>
 			</UserAccounts>
-%elif isWinServerBIOS == 'true' or isWinServerUefi == 'true':
+%elif isWinServerBios == 'true' or isWinServerUefi == 'true':
 			
 			<UserAccounts>
 				<AdministratorPassword>
@@ -345,7 +345,7 @@
 			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
 		</component>
 	</settings>
-%if isWinServerBIOS == 'true' or isWinServerUefi == 'true':
+%if isWinServerBios == 'true' or isWinServerUefi == 'true':
 	
 	<cpi:offlineImage cpi:source="wim:c:/users/documents/win_images/win2016/sources/install.wim#Windows Server 2016 SERVERSTANDARD"
 		xmlns:cpi="urn:schemas-microsoft-com:cpi" />
