@@ -1,4 +1,4 @@
-if [ {isWin10Bios} == "true" ] || [ {isWinServerBios} == "true" ]
+if {isWin10Bios} || {isWinServerBios}
 then
     PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
     mkdir --parents "${PATH}"

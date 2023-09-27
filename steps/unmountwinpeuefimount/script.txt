@@ -1,4 +1,4 @@
-if [ {isWin10Uefi} == "true" ] || [ {isWinServerUefi} == "true" ]
+if {isWin10Uefi} || {isWinServerUefi}
 then
     MOUNT_FOLDER="uefi_mount"
     BUILD_PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
