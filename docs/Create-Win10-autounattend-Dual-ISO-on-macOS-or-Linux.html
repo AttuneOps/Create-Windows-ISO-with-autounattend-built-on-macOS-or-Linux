@@ -281,8 +281,16 @@ This blueprint assumes the drivers drop in directory" />
         
 
                     <p class="text-muted pt-2">
+                        <a href="#copydriversdropinfolder">
+                            <strong>Step 6 -</strong> Copy Drivers Drop in Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#createanswerfileisoonmacosorlinux">
-                            <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
+                            <strong>Step 7 -</strong> Create Answer File ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -290,7 +298,7 @@ This blueprint assumes the drivers drop in directory" />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 8 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -699,9 +707,71 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
+                        <h3 id="copydriversdropinfolder">
+                            <a href="#copydriversdropinfolder">
+                                <strong>Step 6 -</strong> Copy Drivers Drop in Folder
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
+
+mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+
+cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
+    &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="createanswerfileisoonmacosorlinux">
                             <a href="#createanswerfileisoonmacosorlinux">
-                                <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
+                                <strong>Step 7 -</strong> Create Answer File ISO on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -711,6 +781,7 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
                             <p>
                                 <p>Creates an ISO called <code>Drivers.iso</code> containing:</p>
 <ol>
+<li><code>drivers</code> folder</li>
 <li><code>autounattend.xml</code></li>
 <li><code>post_install_setup.ps1</code></li>
 </ol>
@@ -749,6 +820,8 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
                 <code class="language-sql py-0">
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
     
+DRIVERS_FOLDER=&quot;drivers&quot;
+
 if uname | \
     grep -iq &quot;darwin&quot;
 then
@@ -759,13 +832,15 @@ then
     
     xorriso -as mkisofs -o Drivers.iso \
         -iso-level 2 -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;DRIVERS&quot; autounattend.xml post_install_setup.ps1
+        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
+        autounattend.xml post_install_setup.ps1
 else
     echo &quot;not macOS&quot;
     
     mkisofs -o Drivers.iso \
         -iso-level 3 -udf -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;DRIVERS&quot; autounattend.xml post_install_setup.ps1
+        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
+        autounattend.xml post_install_setup.ps1
 fi
                 </code>
             </pre>
@@ -783,7 +858,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 8 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

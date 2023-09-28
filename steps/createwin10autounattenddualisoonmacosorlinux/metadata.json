@@ -28,10 +28,14 @@
         }, 
         {
             "order": 300, 
-            "stepKey": "createanswerfileisoonmacosorlinux"
+            "stepKey": "copydriversdropinfolder"
         }, 
         {
             "order": 350, 
+            "stepKey": "createanswerfileisoonmacosorlinux"
+        }, 
+        {
+            "order": 400, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
