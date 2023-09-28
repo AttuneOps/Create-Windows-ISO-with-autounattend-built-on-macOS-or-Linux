@@ -1,5 +1,4 @@
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
 
 DRIVERS_FOLDER="drivers"
 DRIVERS_ISO_NAME="drivers_{newOsNode.fqn}.iso"
@@ -23,6 +22,5 @@ else
         -iso-level 3 -udf -joliet-long -relaxed-filenames \
         -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
         autounattend.xml post_install_setup.ps1
-
 fi
 

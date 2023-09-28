@@ -1,3 +1,6 @@
+
+Creates an ISO called `Drivers.iso` containing:
+
 1. `drivers` folder
 2. `autounattend.xml`
 2. `post_install_setup.ps1`
