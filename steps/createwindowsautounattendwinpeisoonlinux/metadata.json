@@ -43,23 +43,23 @@
             "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
-            "order": 450, 
+            "order": 500, 
             "stepKey": "createpostsetupwim"
         }, 
         {
-            "order": 500, 
+            "order": 550, 
             "stepKey": "modifywinpebootwim"
         }, 
         {
-            "order": 550, 
+            "order": 600, 
             "stepKey": "linrecreatebiosbootwinpeisofromwinpestaging"
         }, 
         {
-            "order": 600, 
+            "order": 650, 
             "stepKey": "performrecreateuefibootwinpeiso"
         }, 
         {
-            "order": 650, 
+            "order": 700, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 

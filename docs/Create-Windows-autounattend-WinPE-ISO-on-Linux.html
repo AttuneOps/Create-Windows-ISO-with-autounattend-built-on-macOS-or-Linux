@@ -498,8 +498,16 @@ in combination with one of these boot methods:
         
 
                     <p class="text-muted pt-2">
+                        <a href="#copydriversdropinfoldertobootwim">
+                            <strong>Step 11.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#linmovepostinstallwimtobootwim">
-                            <strong>Step 11.3.3 -</strong> LIN Move post_install.wim to boot.wim
+                            <strong>Step 11.3.4 -</strong> LIN Move post_install.wim to boot.wim
                         </a>
                     </p>
 
@@ -1520,12 +1528,15 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code></p>
+                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code>.</p>
+<p>This will be seen at <code>X</code> drive when WinPE runs.</p>
 <ol>
 <li><code>startnet.cmd</code></li>
 <li><code>autounattend.xml</code></li>
 <li><code>post_install.wim</code></li>
+<li><code>drivers</code> folder</li>
 </ol>
+<p>Notes: for (3) after the <code>post_install.wim</code> image file is overlayed onto <code>C</code> drive, the file at <code>C:\ post_install_setup.ps1</code> will be available to the Windows installer.</p>
                             </p>
                         </div>
                     </div>
@@ -1805,9 +1816,64 @@ mv --verbose autounattend.xml WinPE_BootImageDir
 
 
                     <div class="row pt-5">
+                        <h5 id="copydriversdropinfoldertobootwim">
+                            <a href="#copydriversdropinfoldertobootwim">
+                                <strong>Step 11.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim
+                            </a>
+                        </h5>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+DESTINATION_DRIVERS_FOLDER=&quot;WinPE_BootImageDir/drivers&quot;
+
+mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+
+cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
+    &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
                         <h5 id="linmovepostinstallwimtobootwim">
                             <a href="#linmovepostinstallwimtobootwim">
-                                <strong>Step 11.3.3 -</strong> LIN Move post_install.wim to boot.wim
+                                <strong>Step 11.3.4 -</strong> LIN Move post_install.wim to boot.wim
                             </a>
                         </h5>
                     </div>

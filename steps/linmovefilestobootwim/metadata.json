@@ -16,6 +16,10 @@
         }, 
         {
             "order": 150, 
+            "stepKey": "copydriversdropinfoldertobootwim"
+        }, 
+        {
+            "order": 200, 
             "stepKey": "linmovepostinstallwimtobootwim"
         }
     ], 
