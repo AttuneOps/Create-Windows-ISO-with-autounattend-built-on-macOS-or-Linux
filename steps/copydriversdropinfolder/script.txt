@@ -1,0 +1,9 @@
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+DRIVERS_DROP_IN_FOLDER="{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}"
+DESTINATION_DRIVERS_FOLDER="drivers"
+
+mkdir --verbose "${DESTINATION_DRIVERS_FOLDER}"
+
+cp --verbose --recursive "${DRIVERS_DROP_IN_FOLDER}"/* \
+    "${DESTINATION_DRIVERS_FOLDER}"

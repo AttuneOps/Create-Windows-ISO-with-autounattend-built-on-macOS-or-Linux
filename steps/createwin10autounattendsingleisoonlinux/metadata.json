@@ -32,14 +32,18 @@
         }, 
         {
             "order": 350, 
-            "stepKey": "createbiosbootiso"
+            "stepKey": "copydriversdropinfolder"
         }, 
         {
             "order": 400, 
-            "stepKey": "performcreateuefiforsingleiso"
+            "stepKey": "createbiosbootiso"
         }, 
         {
             "order": 450, 
+            "stepKey": "performcreateuefiforsingleiso"
+        }, 
+        {
+            "order": 500, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 

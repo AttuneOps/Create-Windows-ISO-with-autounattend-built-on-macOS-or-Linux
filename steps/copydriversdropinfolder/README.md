@@ -1,0 +1,1 @@
+Copies the contents of the drivers drop in folder at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` to `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers`.
