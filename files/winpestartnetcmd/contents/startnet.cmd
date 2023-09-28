@@ -1,5 +1,5 @@
 REM Change into the drivers directory
-cd X:\attune_drivers
+cd X:\drivers
 
 REM Recursively install all drivers
 FOR /R %%f in (*.inf) DO drvload "%%f"

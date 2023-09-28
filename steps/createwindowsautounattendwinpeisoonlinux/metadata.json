@@ -57,6 +57,10 @@
         {
             "order": 600, 
             "stepKey": "performrecreateuefibootwinpeiso"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on Linux", 

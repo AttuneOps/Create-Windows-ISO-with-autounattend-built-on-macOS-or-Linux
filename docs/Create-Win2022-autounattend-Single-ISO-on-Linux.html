@@ -172,6 +172,7 @@ For UEFI kic" />
 <p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
 <p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
 <p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
+<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
             </p>
         </div>
     </div>
@@ -488,6 +489,9 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
 
+# The wildcard will allow removal of 
+# - kickstart_{newOsNode.fqn}.iso
+# - drivers_{newOsNode.fqn}.iso
 ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 [[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>

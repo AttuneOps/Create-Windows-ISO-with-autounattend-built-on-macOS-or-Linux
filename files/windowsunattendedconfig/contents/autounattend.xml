@@ -17,7 +17,7 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<DriverPaths>
 				<PathAndCredentials wcm:keyValue="1" wcm:action="add">
-					<Path>${driversAndScriptsDrive}:\windows_drivers</Path>
+					<Path>${driversAndScriptsDrive}:\drivers</Path>
 					<Credentials></Credentials>
 				</PathAndCredentials>
 			</DriverPaths>

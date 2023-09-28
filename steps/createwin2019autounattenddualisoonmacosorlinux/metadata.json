@@ -29,6 +29,10 @@
         {
             "order": 300, 
             "stepKey": "createanswerfileisoonmacosorlinux"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
     "name": "Create Win2019 autounattend Dual ISO on macOS or Linux", 

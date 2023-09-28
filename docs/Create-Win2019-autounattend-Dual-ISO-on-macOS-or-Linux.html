@@ -279,6 +279,14 @@ Please set `isWinPEKickstart` to the string 'false'." />
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#cleanupbuildfilesanddriversfiles">
+                            <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -423,6 +431,9 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
 
+# The wildcard will allow removal of 
+# - kickstart_{newOsNode.fqn}.iso
+# - drivers_{newOsNode.fqn}.iso
 ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 [[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
@@ -747,6 +758,74 @@ else
     mkisofs -o Drivers.iso \
         -iso-level 3 -udf -joliet-long -relaxed-filenames \
         -J -l -D -N -V &quot;DRIVERS&quot; autounattend.xml post_install_setup.ps1
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="cleanupbuildfilesanddriversfiles">
+                            <a href="#cleanupbuildfilesanddriversfiles">
+                                <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the build directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+if [ -d &quot;${DIR}&quot; ]
+then
+    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+else
+    echo &quot;No directory to remove.&quot;
+fi
+
+DIR=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+if [ -d &quot;${DIR}&quot; ]
+then
+    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+else
+    echo &quot;No directory to remove.&quot;
 fi
                 </code>
             </pre>
