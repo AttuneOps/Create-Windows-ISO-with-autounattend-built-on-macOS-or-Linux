@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Test Win BIOS Node - Attune Automation</title>
+    <title>How to Perform Test Win10 - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Test Win BIOS Node - Attune Automation">
+          content="How to Perform Test Win10 - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Test Win BIOS Node - Attune Automation" />
+          content="HowTo Perform Test Win10 - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Test Win BIOS Node - Attune Automation" />
+          content="How to Perform Test Win10 - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Test Win BIOS Node</strong>
+                    <strong>Perform Test Win10</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Test Win BIOS Node
+                How to Perform Test Win10
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Test Win BIOS Node</strong>
+                            <strong>Perform Test Win10</strong>
                         </a>
                     </p>
 
@@ -206,65 +206,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#testwindowsnode">
-                            <strong>Step 1 -</strong> Test Windows Node
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#testecho">
-                            <strong>Step 1.1 -</strong> Test Echo
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#checkhostname">
-                            <strong>Step 1.2 -</strong> Check Hostname
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#checkipaddress">
-                            <strong>Step 1.3 -</strong> Check IP Address
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#testpushfiles">
-                            <strong>Step 1.4 -</strong> Test Push Files
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deletepushedfile">
-                            <strong>Step 1.5 -</strong> Delete Pushed File
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#checknetworkaccess">
-                            <strong>Step 1.6 -</strong> Check Network Access
-                        </a>
-                    </p>
-
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#confirmifbios">
-                            <strong>Step 2 -</strong> Confirm if BIOS
+                        <a href="#testwin10">
+                            <strong>Step 1 -</strong> Test Win10
                         </a>
                     </p>
 
@@ -327,7 +270,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Test Win BIOS Node</strong>
+                You've automated: <strong>Perform Test Win10</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -358,40 +301,11 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="testwindowsnode">
-                            <a href="#testwindowsnode">
-                                <strong>Step 1 -</strong> Test Windows Node
+                        <h3 id="testwin10">
+                            <a href="#testwin10">
+                                <strong>Step 1 -</strong> Test Win10
                             </a>
                         </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="testecho">
-                            <a href="#testecho">
-                                <strong>Step 1.1 -</strong> Test Echo
-                            </a>
-                        </h4>
                     </div>
 
                     <div class="row">
@@ -443,385 +357,13 @@ mstsc /admin /v:{newoswindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-Write-Host &quot;hi&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
+$SEARCH_STRING = &quot;Windows 10&quot;
 
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="checkhostname">
-                            <a href="#checkhostname">
-                                <strong>Step 1.2 -</strong> Check Hostname
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>$env:COMPUTERNAME has a 15 character limit.</p>
-<p>HostName.exe does not.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if (-Not (HostName | `
-    findstr /I &quot;{newOsWindowsNode.hostname}&quot;)) {
-    Write-Host &quot;Hostname $(HostName) should be {newOsWindowsNode.hostname}.&quot;
-    exit 1
+if (systeminfo | findstr /B /C:&quot;OS Name&quot; `
+    | findstr &quot;$SEARCH_STRING&quot;) {
+    Write-Host &quot;This is $SEARCH_STRING&quot;
 } else {
-    Write-Host &quot;Hostname $(HostName) is correct.&quot;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="checkipaddress">
-                            <a href="#checkipaddress">
-                                <strong>Step 1.3 -</strong> Check IP Address
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if (-Not (ipconfig | `
-    findstr &quot;IPv4 Address&quot; | `
-    findstr &quot;{newOsWindowsNode.ip}&quot;)) {
-    Write-Host &quot;Wrong IP Address.&quot;
-    exit 1
-} else {
-    Write-Host &quot;IP address {newOsWindowsNode.ip} is correct.&quot;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="testpushfiles">
-                            <a href="#testpushfiles">
-                                <strong>Step 1.4 -</strong> Test Push Files
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Test_File.tar</strong>
-            to the target node.
-        </p>
-        <p>
-            <strong>Extract and deploy the File(s)</strong> here:
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-/c$/software
-        </code>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="deletepushedfile">
-                            <a href="#deletepushedfile">
-                                <strong>Step 1.5 -</strong> Delete Pushed File
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via RDP:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-mstsc /admin /v:{newoswindowsnode}
-                            </code>
-                        </div>
-                        <div class="row">
-                            <p>
-                                Login as user {newoswindowsuseradministrator} and open a
-                                command prompt.
-                            </p>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-Set-Location -Path C:\software
-$FILE = &quot;test.txt&quot;
-
-if (-Not (Test-Path &quot;$FILE&quot; -PathType Leaf)) {
-    Write-Host &quot;File was not transferred.&quot;
-    exit 1
-} else {
-    Remove-Item $FILE
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="checknetworkaccess">
-                            <a href="#checknetworkaccess">
-                                <strong>Step 1.6 -</strong> Check Network Access
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-ping -n 1 &quot;{newOsNodeSubnet.gateway}&quot;
-
-if (-Not $?) {
-    Write-Host &quot;Can&#x27;t ping Gateway {newOsNodeSubnet.gateway}. No network&quot;
-    exit 1
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="confirmifbios">
-                            <a href="#confirmifbios">
-                                <strong>Step 2 -</strong> Confirm if BIOS
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>https://stackoverflow.com/questions/65314573/how-to-check-device-boot-mode-uefi-or-legacy</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$BootMode = bcdedit | Select-String &quot;path.*efi&quot;
-if (-Not ($null -eq $BootMode)) {
-    echo &quot;This looks like UEFI boot.&quot;
-    exit 1
-}else {
-    Write-Host &quot;This looks like BIOS boot.&quot;
+    Write-Host &quot;This is not $SEARCH_STRING&quot;
 }
                 </code>
             </pre>

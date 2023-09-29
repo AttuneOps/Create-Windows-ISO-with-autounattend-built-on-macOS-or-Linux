@@ -1,0 +1,8 @@
+$SEARCH_STRING = "Windows 10"
+
+if (systeminfo | findstr /B /C:"OS Name" `
+    | findstr "$SEARCH_STRING") {
+    Write-Host "This is $SEARCH_STRING"
+} else {
+    Write-Host "This is not $SEARCH_STRING"
+}

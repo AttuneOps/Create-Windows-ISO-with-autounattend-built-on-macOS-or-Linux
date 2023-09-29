@@ -228,6 +228,9 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 ### Test Win BIOS Node
 
 
+### Perform Test Win10
+
+
 
 
 
@@ -249,12 +252,12 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
+| New OS Windows Node | Windows Node | `newoswindowsnode` |  |
 | New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
-| New OS Windows Node | Windows Node | `newoswindowsnode` |  |
 
 
 
