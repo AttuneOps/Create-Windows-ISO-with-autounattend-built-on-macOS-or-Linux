@@ -243,8 +243,16 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
+                        <a href="#checkinputparametervaluesforwin10singleisokickstart">
+                            <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Single ISO Kickstart
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 1 -</strong> Clean Up Build Files and ISOs
+                            <strong>Step 2 -</strong> Clean Up Build Files and ISOs
                         </a>
                     </p>
 
@@ -252,7 +260,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywin10dvdiso">
-                            <strong>Step 2 -</strong> Deploy Win10 DVD ISO
+                            <strong>Step 3 -</strong> Deploy Win10 DVD ISO
                         </a>
                     </p>
 
@@ -260,7 +268,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsbootimg">
-                            <strong>Step 3 -</strong> Extract Windows boot.img
+                            <strong>Step 4 -</strong> Extract Windows boot.img
                         </a>
                     </p>
 
@@ -268,7 +276,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsiso">
-                            <strong>Step 4 -</strong> Extract Windows ISO
+                            <strong>Step 5 -</strong> Extract Windows ISO
                         </a>
                     </p>
 
@@ -276,7 +284,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 5 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -284,7 +292,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 6 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 7 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -292,7 +300,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 7 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 8 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -300,7 +308,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootiso">
-                            <strong>Step 8 -</strong> Create BIOS Boot ISO
+                            <strong>Step 9 -</strong> Create BIOS Boot ISO
                         </a>
                     </p>
 
@@ -308,7 +316,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#performcreateuefiforsingleiso">
-                            <strong>Step 9 -</strong> Perform Create UEFI for Single ISO
+                            <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
                         </a>
                     </p>
     
@@ -316,7 +324,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createemptyuefiforsingleiso">
-                            <strong>Step 9.1 -</strong> Create Empty UEFI for Single ISO 
+                            <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
                         </a>
                     </p>
 
@@ -324,7 +332,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#mountemptyuefiforsingleiso">
-                            <strong>Step 9.2 -</strong> Mount Empty UEFI for Single ISO
+                            <strong>Step 10.2 -</strong> Mount Empty UEFI for Single ISO
                         </a>
                     </p>
 
@@ -332,7 +340,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#movefilestouefimount">
-                            <strong>Step 9.3 -</strong> Move Files to UEFI Mount
+                            <strong>Step 10.3 -</strong> Move Files to UEFI Mount
                         </a>
                     </p>
 
@@ -340,7 +348,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#unmountsingleisouefimount">
-                            <strong>Step 9.4 -</strong> Unmount Single ISO UEFI Mount
+                            <strong>Step 10.4 -</strong> Unmount Single ISO UEFI Mount
                         </a>
                     </p>
 
@@ -349,7 +357,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 10 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -443,9 +451,73 @@ For UEFI kickstar" />
 
 
                     <div class="row pt-5">
+                        <h3 id="checkinputparametervaluesforwin10singleisokickstart">
+                            <a href="#checkinputparametervaluesforwin10singleisokickstart">
+                                <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Single ISO Kickstart
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ! {isWin10Bios} &amp;&amp; ! {isWin10Uefi}
+then
+    echo &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
+    exit 1
+else
+    echo &quot;Ok.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="cleanupbuildfilesandisos">
                             <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 1 -</strong> Clean Up Build Files and ISOs
+                                <strong>Step 2 -</strong> Clean Up Build Files and ISOs
                             </a>
                         </h3>
                     </div>
@@ -468,18 +540,7 @@ For UEFI kickstar" />
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -517,7 +578,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="deploywin10dvdiso">
                             <a href="#deploywin10dvdiso">
-                                <strong>Step 2 -</strong> Deploy Win10 DVD ISO
+                                <strong>Step 3 -</strong> Deploy Win10 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -575,7 +636,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="extractwindowsbootimg">
                             <a href="#extractwindowsbootimg">
-                                <strong>Step 3 -</strong> Extract Windows boot.img
+                                <strong>Step 4 -</strong> Extract Windows boot.img
                             </a>
                         </h3>
                     </div>
@@ -617,7 +678,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {isWin10Bios} || {isWinServerBios}
+if {isWin10Bios} || {isWin10Uefi}
 then
 
     # Extract the boot.img out of the WinPE ISO
@@ -655,7 +716,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="extractwindowsiso">
                             <a href="#extractwindowsiso">
-                                <strong>Step 4 -</strong> Extract Windows ISO
+                                <strong>Step 5 -</strong> Extract Windows ISO
                             </a>
                         </h3>
                     </div>
@@ -725,7 +786,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 5 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -782,7 +843,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 6 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 7 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -853,7 +914,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 7 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 8 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -921,7 +982,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootiso">
                             <a href="#createbiosbootiso">
-                                <strong>Step 8 -</strong> Create BIOS Boot ISO
+                                <strong>Step 9 -</strong> Create BIOS Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -992,7 +1053,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="performcreateuefiforsingleiso">
                             <a href="#performcreateuefiforsingleiso">
-                                <strong>Step 9 -</strong> Perform Create UEFI for Single ISO
+                                <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
                             </a>
                         </h3>
                     </div>
@@ -1021,7 +1082,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="createemptyuefiforsingleiso">
                             <a href="#createemptyuefiforsingleiso">
-                                <strong>Step 9.1 -</strong> Create Empty UEFI for Single ISO 
+                                <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
                             </a>
                         </h4>
                     </div>
@@ -1091,7 +1152,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="mountemptyuefiforsingleiso">
                             <a href="#mountemptyuefiforsingleiso">
-                                <strong>Step 9.2 -</strong> Mount Empty UEFI for Single ISO
+                                <strong>Step 10.2 -</strong> Mount Empty UEFI for Single ISO
                             </a>
                         </h4>
                     </div>
@@ -1174,7 +1235,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="movefilestouefimount">
                             <a href="#movefilestouefimount">
-                                <strong>Step 9.3 -</strong> Move Files to UEFI Mount
+                                <strong>Step 10.3 -</strong> Move Files to UEFI Mount
                             </a>
                         </h4>
                     </div>
@@ -1242,7 +1303,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="unmountsingleisouefimount">
                             <a href="#unmountsingleisouefimount">
-                                <strong>Step 9.4 -</strong> Unmount Single ISO UEFI Mount
+                                <strong>Step 10.4 -</strong> Unmount Single ISO UEFI Mount
                             </a>
                         </h4>
                     </div>
@@ -1323,7 +1384,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 10 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

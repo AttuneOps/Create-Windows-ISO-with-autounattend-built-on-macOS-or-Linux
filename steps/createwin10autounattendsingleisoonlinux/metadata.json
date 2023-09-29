@@ -8,22 +8,26 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "checkinputparametervaluesforwin10singleisokickstart"
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "cleanupbuildfilesandisos"
         }, 
         {
             "order": 100, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "deploywin10dvdiso"
         }, 
         {
             "order": 150, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 200, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 250, 
             "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
