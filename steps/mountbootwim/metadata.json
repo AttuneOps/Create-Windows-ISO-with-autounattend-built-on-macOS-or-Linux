@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "f5982038-a77d-409f-9792-e4526b704f17", 
+    "externalUuid4": "590346ee-498e-4b3e-bac4-180949c976cd", 
     "interpreter": 1, 
-    "key": "lincreatebootwimmountfolder", 
-    "name": "LIN Create boot.wim Mount Folder", 
+    "key": "mountbootwim", 
+    "name": "Mount BOOT.WIM", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

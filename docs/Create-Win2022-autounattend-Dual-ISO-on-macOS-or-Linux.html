@@ -441,9 +441,6 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
 
-# The wildcard will allow removal of 
-# - kickstart_{newOsNode.fqn}.iso
-# - drivers_{newOsNode.fqn}.iso
 ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 [[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
@@ -747,8 +744,14 @@ DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
 
 mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
 
-cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
-    &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
+then
+
+    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
+        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+else
+    echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
+fi
                 </code>
             </pre>
         </div>

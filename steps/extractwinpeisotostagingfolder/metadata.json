@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "773bfbb3-ea23-490d-9f06-e2665b00685b", 
+    "externalUuid4": "78773d77-13e1-4100-bd10-0222e5154665", 
     "interpreter": 1, 
-    "key": "linmovepostinstallwimtobootwim", 
-    "name": "LIN Move post_install.wim to boot.wim", 
+    "key": "extractwinpeisotostagingfolder", 
+    "name": "Extract WinPE ISO to Staging Folder", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

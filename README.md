@@ -222,7 +222,7 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 3. Windows Server 2019
 4. Windows Server 2022
 
-### Perform Clean Up All
+### Perform Post Cleanup
 
 
 

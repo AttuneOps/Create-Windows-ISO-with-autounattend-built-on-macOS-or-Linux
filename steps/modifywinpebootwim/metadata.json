@@ -8,15 +8,15 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "lincreatebootwimmountfolder"
+            "stepKey": "createbootwimmountfolder"
         }, 
         {
             "order": 50, 
-            "stepKey": "linwimlibmountbootwimtowinpebootimagedirfolder"
+            "stepKey": "mountbootwim"
         }, 
         {
             "order": 100, 
-            "stepKey": "linmovefilestobootwim"
+            "stepKey": "movefilestobootwim"
         }, 
         {
             "order": 400, 

@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "658243af-921d-45c4-a83a-3e1462b957f6", 
+    "externalUuid4": "773bfbb3-ea23-490d-9f06-e2665b00685b", 
     "interpreter": 1, 
-    "key": "linmoveautounattendxmltobootwim", 
-    "name": "LIN Move autounattend.xml to boot.wim", 
+    "key": "movepostinstallwimtobootwim", 
+    "name": "Move post_install.wim to boot.wim", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

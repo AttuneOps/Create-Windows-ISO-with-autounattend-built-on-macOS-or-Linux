@@ -353,16 +353,16 @@ in combination with one of these boot methods:
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmwinpewin2019plainbiosisoexists">
-                            <strong>Step 2 -</strong> Confirm winpe_win2019_plain_bios.iso Exists
+                        <a href="#confirmplainwinpebiosisoexists">
+                            <strong>Step 2 -</strong> Confirm Plain WinPE BIOS ISO Exists
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmwinpewin2019plainuefiisoexists">
-                            <strong>Step 3 -</strong> Confirm winpe_win2019_plain_uefi.iso Exists
+                        <a href="#confirmplainwinpeuefiisoexists">
+                            <strong>Step 3 -</strong> Confirm Plain WinPE UEFI ISO Exists
                         </a>
                     </p>
 
@@ -377,32 +377,32 @@ in combination with one of these boot methods:
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincopywinpewin2019plainbiosisotowinpeiso">
-                            <strong>Step 5 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
+                        <a href="#copyandrenamewinpebiosiso">
+                            <strong>Step 5 -</strong> Copy and Rename WinPE BIOS ISO
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincopywinpewin2019plainuefiisotowinpeiso">
-                            <strong>Step 6 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
+                        <a href="#copyandrenamewinpeuefiiso">
+                            <strong>Step 6 -</strong> Copy and Rename WinPE UEFI ISO
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linextractwinpeisotowinpestaging">
-                            <strong>Step 7 -</strong> LIN Extract winpe.iso to winpe_staging
+                        <a href="#extractwinpeisotostagingfolder">
+                            <strong>Step 7 -</strong> Extract WinPE ISO to Staging Folder
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lindeploystartnetcmdforwinpe">
-                            <strong>Step 8 -</strong> LIN Deploy startnet.cmd for WinPE
+                        <a href="#deploystartnetcmd">
+                            <strong>Step 8 -</strong> Deploy startnet.cmd
                         </a>
                     </p>
 
@@ -458,40 +458,40 @@ in combination with one of these boot methods:
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincreatebootwimmountfolder">
-                            <strong>Step 11.1 -</strong> LIN Create boot.wim Mount Folder
+                        <a href="#createbootwimmountfolder">
+                            <strong>Step 11.1 -</strong> Create boot.wim Mount Folder
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
-                            <strong>Step 11.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                        <a href="#mountbootwim">
+                            <strong>Step 11.2 -</strong> Mount BOOT.WIM
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmovefilestobootwim">
-                            <strong>Step 11.3 -</strong> LIN Move Files to boot.wim
+                        <a href="#movefilestobootwim">
+                            <strong>Step 11.3 -</strong> Move Files to boot.wim
                         </a>
                     </p>
     
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmovestartnetcmdtobootwim">
-                            <strong>Step 11.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                        <a href="#movestartnetcmdtobootwim">
+                            <strong>Step 11.3.1 -</strong> Move startnet.cmd to boot.wim
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmoveautounattendxmltobootwim">
-                            <strong>Step 11.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                        <a href="#moveautounattendxmltobootwim">
+                            <strong>Step 11.3.2 -</strong> Move autounattend.xml to boot.wim
                         </a>
                     </p>
 
@@ -506,8 +506,8 @@ in combination with one of these boot methods:
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmovepostinstallwimtobootwim">
-                            <strong>Step 11.3.4 -</strong> LIN Move post_install.wim to boot.wim
+                        <a href="#movepostinstallwimtobootwim">
+                            <strong>Step 11.3.4 -</strong> Move post_install.wim to boot.wim
                         </a>
                     </p>
 
@@ -524,8 +524,8 @@ in combination with one of these boot methods:
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linrecreatebiosbootwinpeisofromwinpestaging">
-                            <strong>Step 12 -</strong> LIN Recreate BIOS Boot WinPE ISO from winpe_staging
+                        <a href="#recreatebiosbootwinpeisofromwinpestaging">
+                            <strong>Step 12 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging
                         </a>
                     </p>
 
@@ -683,13 +683,6 @@ in combination with one of these boot methods:
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -726,10 +719,30 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWinPEKickstart } != &quot;true&quot; ]
+if [ {isWinPEKickstart} != &quot;true&quot; ]
 then
     echo &quot;Please set isWinPEKickstart as the string &#x27;true&#x27;&quot;
     exit 1
+fi
+
+if [ {windowsFolderOnSamba| == &quot;windows10&quot; ]
+then
+    if ! {isWin10Bios} &amp;&amp; ! {isWin10Uefi}
+    then
+        echo &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
+        exit 1
+    fi
+fi
+
+if [ {windowsFolderOnSamba| == &quot;windows2016&quot; ] ||
+    [ {windowsFolderOnSamba| == &quot;windows2019&quot; ] ||
+    [ {windowsFolderOnSamba| == &quot;windows2022&quot; ]
+then
+    if ! {isWinServerBios} &amp;&amp; ! {isWinServerUefi}
+    then
+        echo &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server.&quot;
+        exit 1
+    fi
 fi
                 </code>
             </pre>
@@ -745,9 +758,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmwinpewin2019plainbiosisoexists">
-                            <a href="#confirmwinpewin2019plainbiosisoexists">
-                                <strong>Step 2 -</strong> Confirm winpe_win2019_plain_bios.iso Exists
+                        <h3 id="confirmplainwinpebiosisoexists">
+                            <a href="#confirmplainwinpebiosisoexists">
+                                <strong>Step 2 -</strong> Confirm Plain WinPE BIOS ISO Exists
                             </a>
                         </h3>
                     </div>
@@ -822,9 +835,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmwinpewin2019plainuefiisoexists">
-                            <a href="#confirmwinpewin2019plainuefiisoexists">
-                                <strong>Step 3 -</strong> Confirm winpe_win2019_plain_uefi.iso Exists
+                        <h3 id="confirmplainwinpeuefiisoexists">
+                            <a href="#confirmplainwinpeuefiisoexists">
+                                <strong>Step 3 -</strong> Confirm Plain WinPE UEFI ISO Exists
                             </a>
                         </h3>
                     </div>
@@ -944,9 +957,6 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
 
-# The wildcard will allow removal of 
-# - kickstart_{newOsNode.fqn}.iso
-# - drivers_{newOsNode.fqn}.iso
 ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 [[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
@@ -963,9 +973,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="lincopywinpewin2019plainbiosisotowinpeiso">
-                            <a href="#lincopywinpewin2019plainbiosisotowinpeiso">
-                                <strong>Step 5 -</strong> LIN Copy winpe_win2019_plain_bios.iso to winpe.iso
+                        <h3 id="copyandrenamewinpebiosiso">
+                            <a href="#copyandrenamewinpebiosiso">
+                                <strong>Step 5 -</strong> Copy and Rename WinPE BIOS ISO
                             </a>
                         </h3>
                     </div>
@@ -1038,9 +1048,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="lincopywinpewin2019plainuefiisotowinpeiso">
-                            <a href="#lincopywinpewin2019plainuefiisotowinpeiso">
-                                <strong>Step 6 -</strong> LIN Copy winpe_win2019_plain_uefi.iso to winpe.iso
+                        <h3 id="copyandrenamewinpeuefiiso">
+                            <a href="#copyandrenamewinpeuefiiso">
+                                <strong>Step 6 -</strong> Copy and Rename WinPE UEFI ISO
                             </a>
                         </h3>
                     </div>
@@ -1112,9 +1122,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="linextractwinpeisotowinpestaging">
-                            <a href="#linextractwinpeisotowinpestaging">
-                                <strong>Step 7 -</strong> LIN Extract winpe.iso to winpe_staging
+                        <h3 id="extractwinpeisotostagingfolder">
+                            <a href="#extractwinpeisotostagingfolder">
+                                <strong>Step 7 -</strong> Extract WinPE ISO to Staging Folder
                             </a>
                         </h3>
                     </div>
@@ -1171,9 +1181,9 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="lindeploystartnetcmdforwinpe">
-                            <a href="#lindeploystartnetcmdforwinpe">
-                                <strong>Step 8 -</strong> LIN Deploy startnet.cmd for WinPE
+                        <h3 id="deploystartnetcmd">
+                            <a href="#deploystartnetcmd">
+                                <strong>Step 8 -</strong> Deploy startnet.cmd
                             </a>
                         </h3>
                     </div>
@@ -1557,9 +1567,9 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
 
 
                     <div class="row pt-5">
-                        <h4 id="lincreatebootwimmountfolder">
-                            <a href="#lincreatebootwimmountfolder">
-                                <strong>Step 11.1 -</strong> LIN Create boot.wim Mount Folder
+                        <h4 id="createbootwimmountfolder">
+                            <a href="#createbootwimmountfolder">
+                                <strong>Step 11.1 -</strong> Create boot.wim Mount Folder
                             </a>
                         </h4>
                     </div>
@@ -1617,9 +1627,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="linwimlibmountbootwimtowinpebootimagedirfolder">
-                            <a href="#linwimlibmountbootwimtowinpebootimagedirfolder">
-                                <strong>Step 11.2 -</strong> LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder
+                        <h4 id="mountbootwim">
+                            <a href="#mountbootwim">
+                                <strong>Step 11.2 -</strong> Mount BOOT.WIM
                             </a>
                         </h4>
                     </div>
@@ -1672,9 +1682,9 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h4 id="linmovefilestobootwim">
-                            <a href="#linmovefilestobootwim">
-                                <strong>Step 11.3 -</strong> LIN Move Files to boot.wim
+                        <h4 id="movefilestobootwim">
+                            <a href="#movefilestobootwim">
+                                <strong>Step 11.3 -</strong> Move Files to boot.wim
                             </a>
                         </h4>
                     </div>
@@ -1706,9 +1716,9 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h5 id="linmovestartnetcmdtobootwim">
-                            <a href="#linmovestartnetcmdtobootwim">
-                                <strong>Step 11.3.1 -</strong> LIN Move startnet.cmd to boot.wim
+                        <h5 id="movestartnetcmdtobootwim">
+                            <a href="#movestartnetcmdtobootwim">
+                                <strong>Step 11.3.1 -</strong> Move startnet.cmd to boot.wim
                             </a>
                         </h5>
                     </div>
@@ -1763,9 +1773,9 @@ mv --verbose startnet.cmd \
 
 
                     <div class="row pt-5">
-                        <h5 id="linmoveautounattendxmltobootwim">
-                            <a href="#linmoveautounattendxmltobootwim">
-                                <strong>Step 11.3.2 -</strong> LIN Move autounattend.xml to boot.wim
+                        <h5 id="moveautounattendxmltobootwim">
+                            <a href="#moveautounattendxmltobootwim">
+                                <strong>Step 11.3.2 -</strong> Move autounattend.xml to boot.wim
                             </a>
                         </h5>
                     </div>
@@ -1857,8 +1867,15 @@ DESTINATION_DRIVERS_FOLDER=&quot;WinPE_BootImageDir/drivers&quot;
 
 mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
 
-cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
-    &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
+then
+
+    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
+        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+        
+else
+    echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -1873,9 +1890,9 @@ cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
 
 
                     <div class="row pt-5">
-                        <h5 id="linmovepostinstallwimtobootwim">
-                            <a href="#linmovepostinstallwimtobootwim">
-                                <strong>Step 11.3.4 -</strong> LIN Move post_install.wim to boot.wim
+                        <h5 id="movepostinstallwimtobootwim">
+                            <a href="#movepostinstallwimtobootwim">
+                                <strong>Step 11.3.4 -</strong> Move post_install.wim to boot.wim
                             </a>
                         </h5>
                     </div>
@@ -1987,9 +2004,9 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
 
 
                     <div class="row pt-5">
-                        <h3 id="linrecreatebiosbootwinpeisofromwinpestaging">
-                            <a href="#linrecreatebiosbootwinpeisofromwinpestaging">
-                                <strong>Step 12 -</strong> LIN Recreate BIOS Boot WinPE ISO from winpe_staging
+                        <h3 id="recreatebiosbootwinpeisofromwinpestaging">
+                            <a href="#recreatebiosbootwinpeisofromwinpestaging">
+                                <strong>Step 12 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging
                             </a>
                         </h3>
                     </div>

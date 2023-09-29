@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "590346ee-498e-4b3e-bac4-180949c976cd", 
+    "externalUuid4": "38c828fa-8719-46a3-91d8-1266a681c279", 
     "interpreter": 1, 
-    "key": "linwimlibmountbootwimtowinpebootimagedirfolder", 
-    "name": "LIN wimlib Mount BOOT.WIM to WinPE_BootImageDir Folder", 
+    "key": "postcleanup", 
+    "name": "Post Cleanup", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

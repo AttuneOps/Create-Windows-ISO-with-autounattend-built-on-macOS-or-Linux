@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "0892528d-4a2d-48c0-95a3-c8fb8be9d705", 
+    "externalUuid4": "f5982038-a77d-409f-9792-e4526b704f17", 
     "interpreter": 1, 
-    "key": "confirmwinpewin2019plainbiosisoexists", 
-    "name": "Confirm winpe_win2019_plain_bios.iso Exists", 
+    "key": "createbootwimmountfolder", 
+    "name": "Create boot.wim Mount Folder", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

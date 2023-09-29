@@ -4,7 +4,7 @@
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
-    "key": "lindeploystartnetcmdforwinpe", 
+    "key": "deploystartnetcmd", 
     "makoFileNames": [
         "startnet.cmd"
     ], 
@@ -30,7 +30,7 @@
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-    "name": "LIN Deploy startnet.cmd for WinPE", 
+    "name": "Deploy startnet.cmd", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"

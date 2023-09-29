@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "78773d77-13e1-4100-bd10-0222e5154665", 
+    "externalUuid4": "0892528d-4a2d-48c0-95a3-c8fb8be9d705", 
     "interpreter": 1, 
-    "key": "linextractwinpeisotowinpestaging", 
-    "name": "LIN Extract winpe.iso to winpe_staging", 
+    "key": "confirmplainwinpebiosisoexists", 
+    "name": "Confirm Plain WinPE BIOS ISO Exists", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

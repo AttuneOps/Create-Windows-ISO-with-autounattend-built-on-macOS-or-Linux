@@ -36,7 +36,7 @@
         }, 
         {
             "order": 400, 
-            "stepKey": "linextractwinpeisotowinpestaging"
+            "stepKey": "extractwinpeisotostagingfolder"
         }, 
         {
             "order": 450, 

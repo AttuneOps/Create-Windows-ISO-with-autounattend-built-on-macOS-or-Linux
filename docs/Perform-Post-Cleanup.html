@@ -6,47 +6,29 @@
 
 
 <head>
-    <title>How to Create Win2019 autounattend Dual ISO on macOS or Linux - Attune Automation</title>
+    <title>How to Perform Post Cleanup - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win2019 autounattend Dual ISO on macOS or Linux - Attune Automation">
+          content="How to Perform Post Cleanup - Attune Automation">
     <meta name="description"
-          content="For Windows Server 2019 BIOS or UEFI dual ISO kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.">
+          content="">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win2019 autounattend Dual ISO on macOS or Linux - Attune Automation" />
-    <meta property="og:description" content="For Windows Server 2019 BIOS or UEFI dual ISO kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'." />
+          content="HowTo Perform Post Cleanup - Attune Automation" />
+    <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win2019 autounattend Dual ISO on macOS or Linux - Attune Automation" />
-    <meta name="twitter:description" content="For Windows Server 2019 BIOS or UEFI dual ISO kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'." />
+          content="How to Perform Post Cleanup - Attune Automation" />
+    <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -137,7 +119,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win2019 autounattend Dual ISO on macOS or Linux</strong>
+                    <strong>Perform Post Cleanup</strong>
                 </li>
             </ol>
         </nav>
@@ -151,22 +133,12 @@ Please set `isWinPEKickstart` to the string 'false'." />
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win2019 autounattend Dual ISO on macOS or Linux
+                How to Perform Post Cleanup
             </h1>
         </div>
     </div>
 
 <!-- Blueprint Description -->
-    <div class="row">
-        <div class="description col px-0">
-            <p class="text-left">
-                <p>For Windows Server 2019 BIOS or UEFI dual ISO kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
-<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-            </p>
-        </div>
-    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -225,7 +197,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win2019 autounattend Dual ISO on macOS or Linux</strong>
+                            <strong>Perform Post Cleanup</strong>
                         </a>
                     </p>
 
@@ -234,64 +206,8 @@ Please set `isWinPEKickstart` to the string 'false'." />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 1 -</strong> Clean Up Build Files and ISOs
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywin2019dvdiso">
-                            <strong>Step 2 -</strong> Deploy Win2019 DVD ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#renameinstalliso">
-                            <strong>Step 3 -</strong> Rename Install ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 5 -</strong> Deploy Windows Unattended Config
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfolder">
-                            <strong>Step 6 -</strong> Copy Drivers Drop in Folder
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createanswerfileisoonmacosorlinux">
-                            <strong>Step 7 -</strong> Create Answer File ISO on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 8 -</strong> Clean up Build Files and Drivers Files
+                        <a href="#postcleanup">
+                            <strong>Step 1 -</strong> Post Cleanup
                         </a>
                     </p>
 
@@ -354,7 +270,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win2019 autounattend Dual ISO on macOS or Linux</strong>
+                You've automated: <strong>Perform Post Cleanup</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -385,9 +301,9 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesandisos">
-                            <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 1 -</strong> Clean Up Build Files and ISOs
+                        <h3 id="postcleanup">
+                            <a href="#postcleanup">
+                                <strong>Step 1 -</strong> Post Cleanup
                             </a>
                         </h3>
                     </div>
@@ -396,8 +312,9 @@ Please set `isWinPEKickstart` to the string 'false'." />
                         <div class="description col px-0">
                             <p>
                                 <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
-3. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
+1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Drivers drop in directory at</code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}<code>.
+3. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
+4. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
                             </p>
                         </div>
                     </div>
@@ -438,463 +355,6 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
             <pre>
                 <code class="language-sql py-0">
 DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-[[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
-    echo &quot;No directory to remove.&quot;
-
-ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
-[[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywin2019dvdiso">
-                            <a href="#deploywin2019dvdiso">
-                                <strong>Step 2 -</strong> Deploy Win2019 DVD ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Windows_Server_201_ISO.tar</strong>
-            to the target node.
-        </p>
-        <p>
-            <strong>Deploy the File(s)</strong> here:
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="renameinstalliso">
-                            <a href="#renameinstalliso">
-                                <strong>Step 3 -</strong> Rename Install ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Renames the copied WinPE ISO to <code>kickstart_{newOsNode.fqn}.iso</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywindowsunattendedconfig">
-                            <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 5 -</strong> Deploy Windows Unattended Config
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the generic autounattend.xml.</p>
-<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWin10Uefi</li>
-<li>isWinServerBios</li>
-<li>isWinServerUefi</li>
-</ol>
-<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="copydriversdropinfolder">
-                            <a href="#copydriversdropinfolder">
-                                <strong>Step 6 -</strong> Copy Drivers Drop in Folder
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
-DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
-
-mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-
-if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
-then
-
-    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
-        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-else
-    echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createanswerfileisoonmacosorlinux">
-                            <a href="#createanswerfileisoonmacosorlinux">
-                                <strong>Step 7 -</strong> Create Answer File ISO on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates an ISO called <code>Drivers.iso</code> containing:</p>
-<ol>
-<li><code>drivers</code> folder</li>
-<li><code>autounattend.xml</code></li>
-<li><code>post_install_setup.ps1</code></li>
-</ol>
-<p>This works for kickstarts on Linux or macOS with:
-1. Windows Desktop 10
-2. Windows Server 2016
-2. Windows Server 2019
-3. Windows Server 2022</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
-DRIVERS_FOLDER=&quot;drivers&quot;
-
-if uname | \
-    grep -iq &quot;darwin&quot;
-then
-    echo &quot;is macOS&quot;
-    
-    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-    echo &quot;Using $(which xorriso)&quot;
-    
-    xorriso -as mkisofs -o Drivers.iso \
-        -iso-level 2 -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
-        autounattend.xml post_install_setup.ps1
-else
-    echo &quot;not macOS&quot;
-    
-    mkisofs -o Drivers.iso \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
-        autounattend.xml post_install_setup.ps1
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesanddriversfiles">
-                            <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 8 -</strong> Clean up Build Files and Drivers Files
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.
-2. Drivers drop in directory at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 if [ -d &quot;${DIR}&quot; ]
 then
     rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
@@ -909,6 +369,12 @@ then
 else
     echo &quot;No directory to remove.&quot;
 fi
+
+# The wildcard will allow removal of 
+# - kickstart_{newOsNode.fqn}.iso
+# - drivers_{newOsNode.fqn}.iso
+ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
+[[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
             </pre>
         </div>

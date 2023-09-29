@@ -5,5 +5,11 @@ DESTINATION_DRIVERS_FOLDER="drivers"
 
 mkdir --verbose "${DESTINATION_DRIVERS_FOLDER}"
 
-cp --verbose --recursive "${DRIVERS_DROP_IN_FOLDER}"/* \
-    "${DESTINATION_DRIVERS_FOLDER}"
+if [ -d "${DRIVERS_DROP_IN_FOLDER}" ]
+then
+
+    cp --verbose --recursive "${DRIVERS_DROP_IN_FOLDER}"/* \
+        "${DESTINATION_DRIVERS_FOLDER}"
+else
+    echo "Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied."
+fi
