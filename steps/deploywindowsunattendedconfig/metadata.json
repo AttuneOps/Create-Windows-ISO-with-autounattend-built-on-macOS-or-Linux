@@ -25,8 +25,8 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "driversAndScriptsDrive", 
-            "parameterKey": "driversandscriptsdrive", 
+            "name": "driversAndAutounattendDriveLetter", 
+            "parameterKey": "driversandautounattenddriveletter", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -57,6 +57,11 @@
         {
             "name": "isWinPEKickstart", 
             "parameterKey": "iswinpekickstart", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "postInstallSetupScriptDriveLetter", 
+            "parameterKey": "postinstallsetupscriptdriveletter", 
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 

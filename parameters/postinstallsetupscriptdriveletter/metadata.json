@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "5bb97c7d-b369-4feb-bc00-bc898a011ff3", 
+    "key": "postinstallsetupscriptdriveletter", 
+    "name": "Post Install Setup Script Drive Letter", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

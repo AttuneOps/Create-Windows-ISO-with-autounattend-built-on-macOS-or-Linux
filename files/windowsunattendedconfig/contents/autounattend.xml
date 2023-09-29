@@ -17,7 +17,7 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<DriverPaths>
 				<PathAndCredentials wcm:keyValue="1" wcm:action="add">
-					<Path>${driversAndScriptsDrive}:\drivers</Path>
+					<Path>${driversAndAutounattendDriveLetter}:\drivers</Path>
 					<Credentials></Credentials>
 				</PathAndCredentials>
 			</DriverPaths>
@@ -326,7 +326,7 @@
 				<SynchronousCommand wcm:action="add">
 					<Order>2</Order>
 					<RequiresUserInput>false</RequiresUserInput>
-					<CommandLine>PowerShell -File "${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
+					<CommandLine>PowerShell -File "${postInstallSetupScriptDriveLetter}:\post_install_setup.ps1"</CommandLine>
 					<Description>Run Script</Description>
 				</SynchronousCommand>
 
@@ -335,7 +335,7 @@
 				<SynchronousCommand wcm:action="add">
 					<Order>3</Order>
 					<RequiresUserInput>false</RequiresUserInput>
-					<CommandLine>PowerShell -Command "Remove-Item ${driversAndScriptsDrive}:\post_install_setup.ps1"</CommandLine>
+					<CommandLine>PowerShell -Command "Remove-Item ${postInstallSetupScriptDriveLetter}:\post_install_setup.ps1"</CommandLine>
 					<Description>Setup WinRM</Description>
 				</SynchronousCommand>
 %endif
