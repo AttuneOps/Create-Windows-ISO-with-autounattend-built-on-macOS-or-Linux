@@ -85,5 +85,3 @@ Set-Service WinRM -startuptype automatic
 
 # Update Hostname and Restart
 Rename-Computer -NewName '${newOsNode.hostname}' -Force -Restart
-
-Restart-Computer -Force
