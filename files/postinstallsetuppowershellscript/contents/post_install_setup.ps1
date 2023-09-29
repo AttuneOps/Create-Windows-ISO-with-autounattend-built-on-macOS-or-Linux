@@ -89,3 +89,5 @@ Set-Content -Path C:\post_install.bat -Value 'sc config "WinRM" start= auto'
 
 # Update Hostname and Restart
 Rename-Computer -NewName '${newOsNode.hostname}' -Force -Restart
+
+Restart-Computer
