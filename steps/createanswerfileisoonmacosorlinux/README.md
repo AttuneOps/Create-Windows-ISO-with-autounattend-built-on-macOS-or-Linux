@@ -1,5 +1,5 @@
 
-Creates an ISO called `Drivers.iso` containing:
+Creates an ISO at `{automationWorkerBaseDirectory}/drivers_{newVmNode.fqn}.iso` containing:
 
 1. `drivers` folder
 2. `autounattend.xml`
