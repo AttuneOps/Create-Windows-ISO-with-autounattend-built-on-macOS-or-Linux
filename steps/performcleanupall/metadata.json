@@ -1,0 +1,11 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "87ff3764-59d7-4033-adce-c208a4d5bd2f", 
+    "isBlueprint": true, 
+    "key": "performcleanupall", 
+    "links": [], 
+    "name": "Perform Clean Up All", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
