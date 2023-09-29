@@ -776,7 +776,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates an ISO called <code>Drivers.iso</code> containing:</p>
+                                <p>Creates an ISO at <code>{automationWorkerBaseDirectory}/drivers_{newVmNode.fqn}.iso</code> containing:</p>
 <ol>
 <li><code>drivers</code> folder</li>
 <li><code>autounattend.xml</code></li>
@@ -818,6 +818,7 @@ fi
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
     
 DRIVERS_FOLDER=&quot;drivers&quot;
+DRIVERS_ISO_NAME=&quot;drivers_{newVmNode.fqn}.iso&quot;
 
 if uname | \
     grep -iq &quot;darwin&quot;
@@ -827,14 +828,14 @@ then
     export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
     echo &quot;Using $(which xorriso)&quot;
     
-    xorriso -as mkisofs -o Drivers.iso \
+    xorriso -as mkisofs -o ../${DRIVERS_ISO_NAME} \
         -iso-level 2 -joliet-long -relaxed-filenames \
         -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
         autounattend.xml post_install_setup.ps1
 else
     echo &quot;not macOS&quot;
     
-    mkisofs -o Drivers.iso \
+    mkisofs -o ../${DRIVERS_ISO_NAME} \
         -iso-level 3 -udf -joliet-long -relaxed-filenames \
         -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
         autounattend.xml post_install_setup.ps1
