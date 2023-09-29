@@ -370,7 +370,7 @@ in combination with one of these boot methods:
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 4 -</strong> Clean up Build Files and ISOs
+                            <strong>Step 4 -</strong> Clean Up Build Files and ISOs
                         </a>
                     </p>
 
@@ -901,7 +901,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesandisos">
                             <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 4 -</strong> Clean up Build Files and ISOs
+                                <strong>Step 4 -</strong> Clean Up Build Files and ISOs
                             </a>
                         </h3>
                     </div>
@@ -909,7 +909,9 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the build files and kickstart ISO.</p>
+                                <p>Deletes the following:
+1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
+3. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
                             </p>
                         </div>
                     </div>
@@ -2492,7 +2494,9 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the build directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deletes the following:
+1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.
+2. Drivers drop in directory at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
