@@ -225,6 +225,9 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 ### Perform Post Cleanup
 
 
+### Test Win BIOS Node
+
+
 
 
 
@@ -251,6 +254,7 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
+| New OS Windows Node | Windows Node | `newoswindowsnode` |  |
 
 
 
@@ -260,6 +264,7 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 | Name | Type | Comment |
 | ---- | ---- | ------- |
 | Post Install Setup PowerShell Script | Version Controlled Files | This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.<br><br>This script is run once post installation of the WIndows operating system. |
+| Test File | Version Controlled Files |  |
 | Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |

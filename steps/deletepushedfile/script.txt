@@ -1,0 +1,9 @@
+Set-Location -Path C:\software
+$FILE = "test.txt"
+
+if (-Not (Test-Path "$FILE" -PathType Leaf)) {
+    Write-Host "File was not transferred."
+    exit 1
+} else {
+    Remove-Item $FILE
+}

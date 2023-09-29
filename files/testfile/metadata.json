@@ -1,0 +1,6 @@
+{
+    "externalUuid4": "3a770674-afba-4cbd-889e-3efccc52953e", 
+    "key": "testfile", 
+    "name": "Test File", 
+    "type": "com.servertribe.attune.tuples.FileArchiveVersionedTuple"
+}
