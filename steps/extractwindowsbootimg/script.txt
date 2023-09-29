@@ -1,4 +1,4 @@
-if {isWin10Bios} || {isWin10Uefi}
+if {isWin10Bios} || {isWinServerBios}
 then
 
     # Extract the boot.img out of the WinPE ISO
