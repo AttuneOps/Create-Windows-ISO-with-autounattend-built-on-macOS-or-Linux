@@ -83,10 +83,6 @@ powercfg.exe -x -hibernate-timeout-dc 0
 # Set WinRM to start automatically on reboots.
 Set-Service WinRM -startuptype automatic
 
-# Set WinRM to start automatically using Service Controller with a batch script
-Set-Content -Path C:\post_install.bat -Value 'sc config "WinRM" start= auto'
-& C:\post_install.bat
-
 # Update Hostname and Restart
 Rename-Computer -NewName '${newOsNode.hostname}' -Force -Restart
 

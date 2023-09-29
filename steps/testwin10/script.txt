@@ -5,4 +5,5 @@ if (systeminfo | findstr /B /C:"OS Name" `
     Write-Host "This is $SEARCH_STRING"
 } else {
     Write-Host "This is not $SEARCH_STRING"
+    exit 1
 }
