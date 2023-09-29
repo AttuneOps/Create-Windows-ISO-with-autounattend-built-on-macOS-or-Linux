@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "1f6885b0-3297-4837-ae5d-3eb51bd5ef6a", 
+    "interpreter": 1, 
+    "key": "checkinputparametervaluesforwindowsserversingleisokickstart", 
+    "name": "Check Input Parameter Values for Windows Server Single ISO Kickstart", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -8,22 +8,26 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstart"
         }, 
         {
             "order": 50, 
-            "stepKey": "deploywin2016dvdiso"
+            "stepKey": "cleanupbuildfilesandisos"
         }, 
         {
             "order": 100, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "deploywin2016dvdiso"
         }, 
         {
             "order": 150, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 200, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 250, 
             "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
