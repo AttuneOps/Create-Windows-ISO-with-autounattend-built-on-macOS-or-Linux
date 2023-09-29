@@ -80,5 +80,8 @@ powercfg.exe -x -standby-timeout-dc 0
 powercfg.exe -x -hibernate-timeout-ac 0
 powercfg.exe -x -hibernate-timeout-dc 0
 
+# Set WinRM to start automatically on reboots.
+Set-Service WinRM -startuptype automatic
+
 # Update Hostname and Restart
 Rename-Computer -NewName '${newOsNode.hostname}' -Force -Restart
