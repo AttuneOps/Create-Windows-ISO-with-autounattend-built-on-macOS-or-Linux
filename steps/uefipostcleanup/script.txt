@@ -3,7 +3,10 @@ then
 
     cd "{automationWorkerBaseDirectory}"
     
-    mv --verbose "build-{newOsNode.fqn}"/* "build-{newOsNode.fqn}-uefi-mount"
+    MOUNT_FOLDER="build-{newOsNode.fqn}-uefi-mount"
+    
+
+    rm -rf "${MOUNT_FOLDER}"
     
 else
     echo "Skipping for BIOS ISO creation."

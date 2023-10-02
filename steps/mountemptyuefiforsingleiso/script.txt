@@ -7,7 +7,9 @@ then
     
     mkdir --verbose "${MOUNT_FOLDER}"
     
-    mount "./kickstart_{newOsNode.fqn}.iso" "${MOUNT_FOLDER}"
+    mount --options "uid={automationWorkerLinuxUser.user}" \
+        --options "gid={automationWorkerLinuxUser.user}" \
+        "./kickstart_{newOsNode.fqn}.iso" "${MOUNT_FOLDER}"
     
 else
     echo "Skipping for BIOS ISO creation."
