@@ -5,7 +5,7 @@ then
     
     MOUNT_FOLDER="build-{newOsNode.fqn}-uefi-mount"
     
-    mkdir --verbose "${MOUNT_PATH}"
+    mkdir --verbose "${MOUNT_FOLDER}"
     
     mount "./kickstart_{newOsNode.fqn}.iso" "${MOUNT_FOLDER}"
     
