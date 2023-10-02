@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "fd2bd149-64ee-4406-ad7c-e0c226948cb1", 
+    "isBlueprint": true, 
+    "key": "performtestwin2022", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "testwin2022"
+        }
+    ], 
+    "name": "Perform Test Win2022", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
