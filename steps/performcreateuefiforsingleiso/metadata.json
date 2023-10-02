@@ -15,10 +15,6 @@
             "stepKey": "mountemptyuefiforsingleiso"
         }, 
         {
-            "order": 100, 
-            "stepKey": "setrxpermissionsforsourcesfolder"
-        }, 
-        {
             "order": 150, 
             "stepKey": "movefilestouefimount"
         }, 

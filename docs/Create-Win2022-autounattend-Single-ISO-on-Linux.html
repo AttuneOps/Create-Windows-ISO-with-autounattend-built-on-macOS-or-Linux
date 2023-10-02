@@ -339,16 +339,8 @@ For UEFI kic" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#setrxpermissionsforsourcesfolder">
-                            <strong>Step 10.3 -</strong> Set rx Permissions for sources Folder
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#movefilestouefimount">
-                            <strong>Step 10.4 -</strong> Move Files to UEFI Mount
+                            <strong>Step 10.3 -</strong> Move Files to UEFI Mount
                         </a>
                     </p>
 
@@ -356,7 +348,7 @@ For UEFI kic" />
 
                     <p class="text-muted pt-2">
                         <a href="#unmountsingleisouefimount">
-                            <strong>Step 10.5 -</strong> Unmount Single ISO UEFI Mount
+                            <strong>Step 10.4 -</strong> Unmount Single ISO UEFI Mount
                         </a>
                     </p>
 
@@ -1142,10 +1134,16 @@ if {isWin10Uefi} || {isWinServerUefi}
 then
     cd &quot;{automationWorkerBaseDirectory}&quot;
     
-    bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
-    ((bytes=bytes+10000))
+    KBYTES=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
+    ((KBYTES=KBYTES+10000))
     
-    mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
+    # Inputs to dd
+    BLOCK_SIZE_BYTES=512
+    (( COUNT=KBYTES*1024/BLOCK_SIZE_BYTES ))
+    echo &quot;KBYTES=${KBYTES}, COUNT = ${COUNT}&quot;
+    
+    dd if=/dev/zero of=kickstart_{newOsNode.fqn}.iso bs=512 count=${COUNT}
+    mkfs.exfat &quot;./kickstart_{newOsNode.fqn}.iso&quot;
     
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;
@@ -1249,76 +1247,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="setrxpermissionsforsourcesfolder">
-                            <a href="#setrxpermissionsforsourcesfolder">
-                                <strong>Step 10.3 -</strong> Set rx Permissions for sources Folder
-                            </a>
-                        </h4>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-    
-    chmod a+rwx --recursive sources
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
                         <h4 id="movefilestouefimount">
                             <a href="#movefilestouefimount">
-                                <strong>Step 10.4 -</strong> Move Files to UEFI Mount
+                                <strong>Step 10.3 -</strong> Move Files to UEFI Mount
                             </a>
                         </h4>
                     </div>
@@ -1344,18 +1275,7 @@ fi
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -1397,7 +1317,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="unmountsingleisouefimount">
                             <a href="#unmountsingleisouefimount">
-                                <strong>Step 10.5 -</strong> Unmount Single ISO UEFI Mount
+                                <strong>Step 10.4 -</strong> Unmount Single ISO UEFI Mount
                             </a>
                         </h4>
                     </div>

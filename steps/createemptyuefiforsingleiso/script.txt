@@ -2,10 +2,16 @@ if {isWin10Uefi} || {isWinServerUefi}
 then
     cd "{automationWorkerBaseDirectory}"
     
-    bytes=$(du --summarize "build-{newOsNode.fqn}" | awk '{print $1}')
-    ((bytes=bytes+10000))
+    KBYTES=$(du --summarize "build-{newOsNode.fqn}" | awk '{print $1}')
+    ((KBYTES=KBYTES+10000))
     
-    mkfs.msdos -C "./kickstart_{newOsNode.fqn}.iso" "${bytes}"
+    # Inputs to dd
+    BLOCK_SIZE_BYTES=512
+    (( COUNT=KBYTES*1024/BLOCK_SIZE_BYTES ))
+    echo "KBYTES=${KBYTES}, COUNT = ${COUNT}"
+    
+    dd if=/dev/zero of=kickstart_{newOsNode.fqn}.iso bs=512 count=${COUNT}
+    mkfs.exfat "./kickstart_{newOsNode.fqn}.iso"
     
 else
     echo "Skipping for BIOS ISO creation."
