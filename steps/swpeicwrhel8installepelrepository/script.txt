@@ -1,0 +1,8 @@
+count=$(dnf repolist enabled | grep epel | wc -l)
+
+if [ $count -eq 0 ]
+then
+    dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+else
+    echo "EPEL repository already installed."
+fi

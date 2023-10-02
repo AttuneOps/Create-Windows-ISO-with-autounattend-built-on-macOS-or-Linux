@@ -1,0 +1,10 @@
+if [ -f /usr/local/lib/libwim.so ]
+then
+    echo "libwim.so already installed"
+else
+    dnf -y install libxml2 libxml2-devel \
+        fuse3 fuse fuse-devel \
+        ntfs-3g ntfs-3g-devel \
+        openssl openssl-devel \
+        mtools syslinux cabextract
+fi
