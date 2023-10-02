@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "51033096-49c6-44fe-b8c4-b8abd627c176", 
+    "interpreter": 1, 
+    "key": "swpeicwrhel8installepelrepository", 
+    "name": "SWPE ICW RHEL8 Install EPEL Repository", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

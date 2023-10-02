@@ -1,0 +1,8 @@
+wimlib_dir="wimlib"
+
+if [ -d $wimlib_dir ]
+then
+    echo "Already cloned"
+else
+    git clone https://github.com/ebiggers/wimlib.git
+fi

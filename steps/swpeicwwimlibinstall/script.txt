@@ -1,0 +1,7 @@
+if [ -f /usr/local/lib/libwim.so ]
+then
+    echo "libwim.so already installed"
+else
+    cd /home/attune/wimlib
+    make install
+fi

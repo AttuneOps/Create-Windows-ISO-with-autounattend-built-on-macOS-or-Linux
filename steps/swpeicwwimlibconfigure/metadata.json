@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "8404bcb0-cb8a-4ff9-9ee2-fd772bc996e0", 
+    "interpreter": 1, 
+    "key": "swpeicwwimlibconfigure", 
+    "name": "SWPE ICW wimlib Configure", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

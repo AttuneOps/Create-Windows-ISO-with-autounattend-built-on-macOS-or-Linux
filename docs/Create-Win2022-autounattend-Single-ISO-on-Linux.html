@@ -1297,7 +1297,7 @@ then
 
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
     
-    chmod a+rx sources
+    chmod a+rwx --recursive sources
     
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;

@@ -6,53 +6,29 @@
 
 
 <head>
-    <title>How to Create Win10 autounattend Single ISO on Linux - Attune Automation</title>
+    <title>How to Attune v5 SWPE Install C wimlib - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win10 autounattend Single ISO on Linux - Attune Automation">
+          content="How to Attune v5 SWPE Install C wimlib - Attune Automation">
     <meta name="description"
-          content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
-
-For UEFI kickstar">
+          content="">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win10 autounattend Single ISO on Linux - Attune Automation" />
-    <meta property="og:description" content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
-
-For UEFI kickstar" />
+          content="HowTo Attune v5 SWPE Install C wimlib - Attune Automation" />
+    <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win10 autounattend Single ISO on Linux - Attune Automation" />
-    <meta name="twitter:description" content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
-
-For UEFI kickstar" />
+          content="How to Attune v5 SWPE Install C wimlib - Attune Automation" />
+    <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -143,7 +119,7 @@ For UEFI kickstar" />
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win10 autounattend Single ISO on Linux</strong>
+                    <strong>Attune v5 SWPE Install C wimlib</strong>
                 </li>
             </ol>
         </nav>
@@ -157,25 +133,12 @@ For UEFI kickstar" />
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win10 autounattend Single ISO on Linux
+                How to Attune v5 SWPE Install C wimlib
             </h1>
         </div>
     </div>
 
 <!-- Blueprint Description -->
-    <div class="row">
-        <div class="description col px-0">
-            <p class="text-left">
-                <p>Creates a single Windows Desktop 10 ISO with <code>autounattend.xml</code> for unattended installation.</p>
-<p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
-<p>For both BIOS and UEFI kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWin10Bios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWin10Uefi</code> to the string 'true'.</p>
-<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
-            </p>
-        </div>
-    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -234,7 +197,7 @@ For UEFI kickstar" />
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win10 autounattend Single ISO on Linux</strong>
+                            <strong>Attune v5 SWPE Install C wimlib</strong>
                         </a>
                     </p>
 
@@ -243,129 +206,88 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkinputparametervaluesforwin10singleisokickstart">
-                            <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Single ISO Kickstart
+                        <a href="#swpeicwrhel8installepelrepository">
+                            <strong>Step 1 -</strong> SWPE ICW RHEL8 Install EPEL Repository
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 2 -</strong> Clean Up Build Files and ISOs
+                        <a href="#dnfupdate">
+                            <strong>Step 2 -</strong> dnf update
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin10dvdiso">
-                            <strong>Step 3 -</strong> Deploy Win10 DVD ISO
+                        <a href="#swpeicwinstallwimlibdependencies">
+                            <strong>Step 3 -</strong> SWPE ICW Install wimlib Dependencies
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsbootimg">
-                            <strong>Step 4 -</strong> Extract Windows boot.img
+                        <a href="#swpeicwinstallautotools">
+                            <strong>Step 4 -</strong> SWPE ICW Install autotools
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsiso">
-                            <strong>Step 5 -</strong> Extract Windows ISO
+                        <a href="#swpeicwclonewimlib">
+                            <strong>Step 5 -</strong> SWPE ICW Clone wimlib
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
+                        <a href="#swpeicwrunautotools">
+                            <strong>Step 6 -</strong> SWPE ICW Run autotools
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 7 -</strong> Deploy Windows Unattended Config
+                        <a href="#swpeicwwimlibconfigure">
+                            <strong>Step 7 -</strong> SWPE ICW wimlib Configure
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfolder">
-                            <strong>Step 8 -</strong> Copy Drivers Drop in Folder
+                        <a href="#swpeicwwimlibmake">
+                            <strong>Step 8 -</strong> SWPE ICW wimlib Make
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createbiosbootiso">
-                            <strong>Step 9 -</strong> Create BIOS Boot ISO
+                        <a href="#swpeicwwimlibinstall">
+                            <strong>Step 9 -</strong> SWPE ICW wimlib Install
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#performcreateuefiforsingleiso">
-                            <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createemptyuefiforsingleiso">
-                            <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
+                        <a href="#swpeicwwimlibaddsymboliclinks">
+                            <strong>Step 10 -</strong> SWPE ICW wimlib Add Symbolic Links
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#mountemptyuefiforsingleiso">
-                            <strong>Step 10.2 -</strong> Mount Empty UEFI for Single ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#setrxpermissionsforsourcesfolder">
-                            <strong>Step 10.3 -</strong> Set rx Permissions for sources Folder
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movefilestouefimount">
-                            <strong>Step 10.4 -</strong> Move Files to UEFI Mount
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountsingleisouefimount">
-                            <strong>Step 10.5 -</strong> Unmount Single ISO UEFI Mount
-                        </a>
-                    </p>
-
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
+                        <a href="#swpeinstallexfatprogs">
+                            <strong>Step 11 -</strong> SWPE Install exfatprogs
                         </a>
                     </p>
 
@@ -428,7 +350,7 @@ For UEFI kickstar" />
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win10 autounattend Single ISO on Linux</strong>
+                You've automated: <strong>Attune v5 SWPE Install C wimlib</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -459,9 +381,252 @@ For UEFI kickstar" />
 
 
                     <div class="row pt-5">
-                        <h3 id="checkinputparametervaluesforwin10singleisokickstart">
-                            <a href="#checkinputparametervaluesforwin10singleisokickstart">
-                                <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Single ISO Kickstart
+                        <h3 id="swpeicwrhel8installepelrepository">
+                            <a href="#swpeicwrhel8installepelrepository">
+                                <strong>Step 1 -</strong> SWPE ICW RHEL8 Install EPEL Repository
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+count=$(dnf repolist enabled | grep epel | wc -l)
+
+if [ $count -eq 0 ]
+then
+    dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+else
+    echo &quot;EPEL repository already installed.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="dnfupdate">
+                            <a href="#dnfupdate">
+                                <strong>Step 2 -</strong> dnf update
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+dnf -y update
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="swpeicwinstallwimlibdependencies">
+                            <a href="#swpeicwinstallwimlibdependencies">
+                                <strong>Step 3 -</strong> SWPE ICW Install wimlib Dependencies
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [ -f /usr/local/lib/libwim.so ]
+then
+    echo &quot;libwim.so already installed&quot;
+else
+    dnf -y install libxml2 libxml2-devel \
+        fuse3 fuse fuse-devel \
+        ntfs-3g ntfs-3g-devel \
+        openssl openssl-devel \
+        mtools syslinux cabextract
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="swpeicwinstallautotools">
+                            <a href="#swpeicwinstallautotools">
+                                <strong>Step 4 -</strong> SWPE ICW Install autotools
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+dnf -y install autoconf automake libtool
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="swpeicwclonewimlib">
+                            <a href="#swpeicwclonewimlib">
+                                <strong>Step 5 -</strong> SWPE ICW Clone wimlib
                             </a>
                         </h3>
                     </div>
@@ -509,12 +674,13 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {isWin10Bios} &amp;&amp; ! {isWin10Uefi}
+wimlib_dir=&quot;wimlib&quot;
+
+if [ -d $wimlib_dir ]
 then
-    echo &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
-    exit 1
+    echo &quot;Already cloned&quot;
 else
-    echo &quot;Ok.&quot;
+    git clone https://github.com/ebiggers/wimlib.git
 fi
                 </code>
             </pre>
@@ -530,9 +696,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesandisos">
-                            <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 2 -</strong> Clean Up Build Files and ISOs
+                        <h3 id="swpeicwrunautotools">
+                            <a href="#swpeicwrunautotools">
+                                <strong>Step 6 -</strong> SWPE ICW Run autotools
                             </a>
                         </h3>
                     </div>
@@ -540,9 +706,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
-3. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
+                                
                             </p>
                         </div>
                     </div>
@@ -571,12 +735,19 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-[[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
-    echo &quot;No directory to remove.&quot;
-
-ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
-[[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
+if [ -f /usr/local/lib/libwim.so ]
+then
+    echo &quot;libwim.so already installed&quot;
+else
+    wimlib_dir=&quot;wimlib&quot;
+    cd $wimlib_dir
+    libtoolize
+    aclocal
+    autoconf
+    autoheader
+    automake --add-missing
+    autoreconf
+fi
                 </code>
             </pre>
         </div>
@@ -591,9 +762,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin10dvdiso">
-                            <a href="#deploywin10dvdiso">
-                                <strong>Step 3 -</strong> Deploy Win10 DVD ISO
+                        <h3 id="swpeicwwimlibconfigure">
+                            <a href="#swpeicwwimlibconfigure">
+                                <strong>Step 7 -</strong> SWPE ICW wimlib Configure
                             </a>
                         </h3>
                     </div>
@@ -601,70 +772,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Desktop 10 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.</p>
-<p>Please select the English (United States) version.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Win10_Desktop_ISO.tar</strong>
-            to the target node.
-        </p>
-        <p>
-            <strong>Deploy the File(s)</strong> here:
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="extractwindowsbootimg">
-                            <a href="#extractwindowsbootimg">
-                                <strong>Step 4 -</strong> Extract Windows boot.img
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
-</ol>
+                                
                             </p>
                         </div>
                     </div>
@@ -693,27 +801,13 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {isWin10Bios} || {isWinServerBios}
+if [ -f /usr/local/lib/libwim.so ]
 then
-
-    # Extract the boot.img out of the WinPE ISO
-    
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
-    # Case insensitve globbing
-    shopt -s nocaseglob
-    
-    # Set the filename of the ISO
-    F=$(ls *.iso)
-    
-    # Get the Boot image offset
-    OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
-    
-    # Extract the boot.img.
-    dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
-    
+    echo &quot;libwim.so already installed&quot;
 else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
+    wimlib_dir=&quot;wimlib&quot;
+    cd $wimlib_dir
+    ./configure
 fi
                 </code>
             </pre>
@@ -729,9 +823,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsiso">
-                            <a href="#extractwindowsiso">
-                                <strong>Step 5 -</strong> Extract Windows ISO
+                        <h3 id="swpeicwwimlibmake">
+                            <a href="#swpeicwwimlibmake">
+                                <strong>Step 8 -</strong> SWPE ICW wimlib Make
                             </a>
                         </h3>
                     </div>
@@ -739,7 +833,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Extracts the Windows ISO.</p>
+                                
                             </p>
                         </div>
                     </div>
@@ -768,22 +862,13 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-# Case insensitve globbing
-shopt -s nocaseglob
-
-if ls | grep -q *iso
+if [ -f /usr/local/lib/libwim.so ]
 then
-    
-    ISO=&quot;$(echo *iso)&quot;
-    echo &quot;ISO is $ISO&quot;
-    
-    7z x &quot;${ISO}&quot;
-    
-    rm -v &quot;${ISO}&quot;
+    echo &quot;libwim.so already installed&quot;
 else
-    echo &quot;ISO is already extracted.&quot;
+    wimlib_dir=&quot;wimlib&quot;
+    cd $wimlib_dir
+    make
 fi
                 </code>
             </pre>
@@ -799,9 +884,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
+                        <h3 id="swpeicwwimlibinstall">
+                            <a href="#swpeicwwimlibinstall">
+                                <strong>Step 9 -</strong> SWPE ICW wimlib Install
                             </a>
                         </h3>
                     </div>
@@ -809,378 +894,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywindowsunattendedconfig">
-                            <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 7 -</strong> Deploy Windows Unattended Config
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the generic autounattend.xml.</p>
-<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWin10Uefi</li>
-<li>isWinServerBios</li>
-<li>isWinServerUefi</li>
-</ol>
-<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="copydriversdropinfolder">
-                            <a href="#copydriversdropinfolder">
-                                <strong>Step 8 -</strong> Copy Drivers Drop in Folder
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
-DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
-
-mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-
-if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
-then
-
-    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
-        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-else
-    echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createbiosbootiso">
-                            <a href="#createbiosbootiso">
-                                <strong>Step 9 -</strong> Create BIOS Boot ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Bios} || {isWinServerBios} 
-then
-
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
-    mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-        -b boot.img -no-emul-boot -c BOOT.CAT \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames -allow-limited-size \
-        -J -l -D -N -V &quot;KS_WIN&quot; .
-        
-else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="performcreateuefiforsingleiso">
-                            <a href="#performcreateuefiforsingleiso">
-                                <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates the Windows ISO again from the contents of the <code>build-{newOsNode.fqn}</code> folder.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createemptyuefiforsingleiso">
-                            <a href="#createemptyuefiforsingleiso">
-                                <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the <code>build-{newOsNode.fqn}</code> directory at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code>.</p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-    cd &quot;{automationWorkerBaseDirectory}&quot;
-    
-    bytes=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
-    ((bytes=bytes+10000))
-    
-    mkfs.msdos -C &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${bytes}&quot;
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountemptyuefiforsingleiso">
-                            <a href="#mountemptyuefiforsingleiso">
-                                <strong>Step 10.2 -</strong> Mount Empty UEFI for Single ISO
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Mounts the UEFI ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>.</p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
+                                
                             </p>
                         </div>
                     </div>
@@ -1220,253 +934,17 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
+if [ -f /usr/local/lib/libwim.so ]
 then
-
-    cd &quot;{automationWorkerBaseDirectory}&quot;
-    
-    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-    
-    mkdir --verbose &quot;${MOUNT_FOLDER}&quot;
-    
-    mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
-        --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
-        &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
-    
+    echo &quot;libwim.so already installed&quot;
 else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
+    cd /home/attune/wimlib
+    make install
 fi
                 </code>
             </pre>
         </div>
     </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="setrxpermissionsforsourcesfolder">
-                            <a href="#setrxpermissionsforsourcesfolder">
-                                <strong>Step 10.3 -</strong> Set rx Permissions for sources Folder
-                            </a>
-                        </h4>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-    
-    chmod a+rwx --recursive sources
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="movefilestouefimount">
-                            <a href="#movefilestouefimount">
-                                <strong>Step 10.4 -</strong> Move Files to UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Move contents of <code>build-{newOsNode.fqn}</code> to <code>build-{newOsNode.fqn}-uefi-mount</code>.</p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    cd &quot;{automationWorkerBaseDirectory}&quot;
-    
-    mv --verbose &quot;build-{newOsNode.fqn}&quot;/* &quot;build-{newOsNode.fqn}-uefi-mount&quot;
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="unmountsingleisouefimount">
-                            <a href="#unmountsingleisouefimount">
-                                <strong>Step 10.5 -</strong> Unmount Single ISO UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>. </p>
-<p>This writes the contents of <code>build-{newOsNode.fqn}-uefi-mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for Single ISO</code>. </p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-    MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
-    
-    if df -h | grep --ignore-case \
-        --quiet \
-        &quot;${MOUNT_PATH}&quot;
-    then
-    
-        cd &quot;{automationWorkerBaseDirectory}&quot;
-        
-        umount --verbose &quot;${MOUNT_FOLDER}&quot;
-    else
-        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-    fi
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
 
 
 
@@ -1477,9 +955,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesanddriversfiles">
-                            <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
+                        <h3 id="swpeicwwimlibaddsymboliclinks">
+                            <a href="#swpeicwwimlibaddsymboliclinks">
+                                <strong>Step 10 -</strong> SWPE ICW wimlib Add Symbolic Links
                             </a>
                         </h3>
                     </div>
@@ -1487,9 +965,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.
-2. Drivers drop in directory at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code>.</p>
+                                
                             </p>
                         </div>
                     </div>
@@ -1502,18 +978,7 @@ fi
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -1529,20 +994,64 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-if [ -d &quot;${DIR}&quot; ]
+if [ -f /usr/local/lib/libwim.so ]
 then
-    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+    echo &quot;libwim.so already installed&quot;
 else
-    echo &quot;No directory to remove.&quot;
+    ln -s /usr/local/lib/libwim.so /usr/lib/libwim.so
 fi
+                </code>
+            </pre>
+        </div>
+    </div>
 
-DIR=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
-if [ -d &quot;${DIR}&quot; ]
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="swpeinstallexfatprogs">
+                            <a href="#swpeinstallexfatprogs">
+                                <strong>Step 11 -</strong> SWPE Install exfatprogs
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+PACKAGE=&quot;exfatprogs&quot;
+if rpm -qa | grep -q &quot;${PACKAGE}&quot;
 then
-    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+    echo &quot;Package ${PACKAGE} already installed.&quot;
 else
-    echo &quot;No directory to remove.&quot;
+    dnf -y install &quot;${PACKAGE}&quot;
 fi
                 </code>
             </pre>

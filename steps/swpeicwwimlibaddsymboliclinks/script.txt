@@ -1,0 +1,6 @@
+if [ -f /usr/local/lib/libwim.so ]
+then
+    echo "libwim.so already installed"
+else
+    ln -s /usr/local/lib/libwim.so /usr/lib/libwim.so
+fi

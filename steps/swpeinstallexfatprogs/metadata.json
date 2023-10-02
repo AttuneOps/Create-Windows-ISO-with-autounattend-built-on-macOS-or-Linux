@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "0f0a3061-f822-4da9-b7b6-28537c5fe313", 
+    "interpreter": 1, 
+    "key": "swpeinstallexfatprogs", 
+    "name": "SWPE Install exfatprogs", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "0051995e-bd62-47f1-a0e6-08e933effab9", 
+    "interpreter": 1, 
+    "key": "swpeicwrunautotools", 
+    "name": "SWPE ICW Run autotools", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
