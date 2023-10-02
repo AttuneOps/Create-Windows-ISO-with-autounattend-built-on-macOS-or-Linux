@@ -295,7 +295,11 @@
 				</Password>
 				<LogonCount>88</LogonCount>
 				<Enabled>true</Enabled>
+%if isWin10Bios == 'true' or isWin10Uefi == 'true':
 				<Username>${newOsWindowsUser.user}</Username>
+%elif isWinServerBios == 'true' or isWinServerUefi == 'true':
+				<Username>Administrator</Username>
+%endif
 			</AutoLogon>
 %if isWin10Bios == 'true' or isWin10Uefi == 'true':
 			

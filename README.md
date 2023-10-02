@@ -225,10 +225,13 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 ### Perform Post Cleanup
 
 
-### Test Win BIOS Node
-
-
 ### Perform Test Win10
+
+
+### Perform Test Win2019
+
+
+### Test Win BIOS Node
 
 
 
@@ -249,6 +252,8 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 | Is WinPE Kickstart | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
 | Is Win Server BIOS | Text | `iswinserverbios` |  |
 | Is Win Server UEFI | Text | `iswinserveruefi` |  |
+| Kickstarted Windows Node | Windows Node | `kickstartedwindowsnode` |  |
+| Kickstarted Windows User: Administrator | Windows Credential | `kickstartedwindowsuseradministrator` | The windows administrator user |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
