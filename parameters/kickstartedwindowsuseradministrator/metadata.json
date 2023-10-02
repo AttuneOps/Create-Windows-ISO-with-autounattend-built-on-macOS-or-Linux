@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "7a3732b2-0192-4e2a-bf44-292550958394", 
-    "key": "kickstartedwindowsuseradministrator", 
-    "name": "Kickstarted Windows User: Administrator", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.WinOsCred"
-}
