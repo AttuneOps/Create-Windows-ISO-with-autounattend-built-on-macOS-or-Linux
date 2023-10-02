@@ -16,10 +16,14 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "movefilestouefimount"
+            "stepKey": "setrxpermissionsforsourcesfolder"
         }, 
         {
             "order": 150, 
+            "stepKey": "movefilestouefimount"
+        }, 
+        {
+            "order": 200, 
             "stepKey": "unmountsingleisouefimount"
         }
     ], 

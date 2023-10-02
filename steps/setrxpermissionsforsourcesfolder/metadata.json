@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c5a7c615-0e9c-48c9-a9f1-98d13344a5e0", 
+    "interpreter": 1, 
+    "key": "setrxpermissionsforsourcesfolder", 
+    "name": "Set rx Permissions for sources Folder", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
