@@ -228,19 +228,22 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 ### Perform Test Win10
 
 
+### Perform Test Win2016
+
+
 ### Perform Test Win2019
-
-
-### Test Win BIOS Node
 
 
 ### Perform Test Win2022
 
 
-### Perform Test Win2016
+### Test Win BIOS Node
 
 
 ### Test Win UEFI Node
+
+
+### Perform UEFI Post Cleanup
 
 
 

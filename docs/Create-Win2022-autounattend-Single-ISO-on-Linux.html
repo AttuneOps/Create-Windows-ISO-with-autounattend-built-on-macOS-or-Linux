@@ -1220,7 +1220,9 @@ then
     
     mkdir --verbose &quot;${MOUNT_FOLDER}&quot;
     
-    mount &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
+    mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
+        --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
+        &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
     
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;
@@ -1288,7 +1290,7 @@ then
 
     cd &quot;{automationWorkerBaseDirectory}&quot;
     
-    mv --verbose &quot;build-{newOsNode.fqn}/*&quot; &quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    mv --verbose &quot;build-{newOsNode.fqn}&quot;/* &quot;build-{newOsNode.fqn}-uefi-mount&quot;
     
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;

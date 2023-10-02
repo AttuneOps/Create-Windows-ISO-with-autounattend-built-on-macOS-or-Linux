@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Perform Test Win2016 - Attune Automation</title>
+    <title>How to Perform UEFI Post Cleanup - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Perform Test Win2016 - Attune Automation">
+          content="How to Perform UEFI Post Cleanup - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Perform Test Win2016 - Attune Automation" />
+          content="HowTo Perform UEFI Post Cleanup - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Perform Test Win2016 - Attune Automation" />
+          content="How to Perform UEFI Post Cleanup - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Perform Test Win2016</strong>
+                    <strong>Perform UEFI Post Cleanup</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Perform Test Win2016
+                How to Perform UEFI Post Cleanup
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Perform Test Win2016</strong>
+                            <strong>Perform UEFI Post Cleanup</strong>
                         </a>
                     </p>
 
@@ -206,8 +206,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#testwin2016">
-                            <strong>Step 1 -</strong> Test Win2016
+                        <a href="#unmountsingleisouefimount">
+                            <strong>Step 1 -</strong> Unmount Single ISO UEFI Mount
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#uefipostcleanup">
+                            <strong>Step 2 -</strong> UEFI  Post Cleanup
                         </a>
                     </p>
 
@@ -270,7 +278,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Perform Test Win2016</strong>
+                You've automated: <strong>Perform UEFI Post Cleanup</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -301,9 +309,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="testwin2016">
-                            <a href="#testwin2016">
-                                <strong>Step 1 -</strong> Test Win2016
+                        <h3 id="unmountsingleisouefimount">
+                            <a href="#unmountsingleisouefimount">
+                                <strong>Step 1 -</strong> Unmount Single ISO UEFI Mount
                             </a>
                         </h3>
                     </div>
@@ -311,7 +319,13 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>. </p>
+<p>This writes the contents of <code>build-{newOsNode.fqn}-uefi-mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for Single ISO</code>. </p>
+<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -327,19 +341,13 @@
 
                         <div class="row">
                             <p>
-                                Connect via RDP:
+                                Connect via ssh:
                             </p>
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-mstsc /admin /v:{newoswindowsnode}
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                             </code>
-                        </div>
-                        <div class="row">
-                            <p>
-                                Login as user {newoswindowsuseradministrator} and open a
-                                command prompt.
-                            </p>
                         </div>
 
 
@@ -357,14 +365,97 @@ mstsc /admin /v:{newoswindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$SEARCH_STRING = &quot;Windows Server 2016&quot;
+if {isWin10Uefi} || {isWinServerUefi}
+then
 
-if (systeminfo | findstr /B /C:&quot;OS Name&quot; `
-    | findstr &quot;$SEARCH_STRING&quot;) {
-    Write-Host &quot;This is $SEARCH_STRING&quot;
-} else {
-    Write-Host &quot;This is not $SEARCH_STRING&quot;
-}
+    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
+    
+    if df -h | grep --ignore-case \
+        --quiet \
+        &quot;${MOUNT_PATH}&quot;
+    then
+    
+        cd &quot;{automationWorkerBaseDirectory}&quot;
+        
+        umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    else
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="uefipostcleanup">
+                            <a href="#uefipostcleanup">
+                                <strong>Step 2 -</strong> UEFI  Post Cleanup
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cd &quot;{automationWorkerBaseDirectory}&quot;
+    
+    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
+    
+
+    rm -rf &quot;${MOUNT_FOLDER}&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
                 </code>
             </pre>
         </div>
