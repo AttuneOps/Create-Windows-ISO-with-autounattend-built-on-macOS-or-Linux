@@ -286,8 +286,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#centos8enablerpmfusionfreerepositorylink">
+                            <strong>Step 11 -</strong> CentOS8 Enable RPM Fusion Free Repository (link)
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#swpeinstallexfatprogs">
-                            <strong>Step 11 -</strong> SWPE Install exfatprogs
+                            <strong>Step 12 -</strong> SWPE Install exfatprogs
                         </a>
                     </p>
 
@@ -1014,13 +1022,51 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="swpeinstallexfatprogs">
-                            <a href="#swpeinstallexfatprogs">
-                                <strong>Step 11 -</strong> SWPE Install exfatprogs
+                        <h3 id="centos8enablerpmfusionfreerepositorylink">
+                            <a href="#centos8enablerpmfusionfreerepositorylink">
+                                <strong>Step 11 -</strong> CentOS8 Enable RPM Fusion Free Repository (link)
                             </a>
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+    
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="swpeinstallexfatprogs">
+                            <a href="#swpeinstallexfatprogs">
+                                <strong>Step 12 -</strong> SWPE Install exfatprogs
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1046,13 +1092,20 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-PACKAGE=&quot;exfatprogs&quot;
-if rpm -qa | grep -q &quot;${PACKAGE}&quot;
-then
-    echo &quot;Package ${PACKAGE} already installed.&quot;
-else
-    dnf -y install &quot;${PACKAGE}&quot;
-fi
+PACKAGES=( \
+    &quot;fuse-exfat&quot; \
+    &quot;exfat-utils&quot;
+)
+
+for PACKAGE in ${PACKAGES[@]}
+do
+    if rpm -qa | grep -q &quot;${PACKAGE}&quot;
+    then
+        echo &quot;Package ${PACKAGE} already installed.&quot;
+    else
+        dnf -y install &quot;${PACKAGE}&quot;
+    fi
+done
                 </code>
             </pre>
         </div>

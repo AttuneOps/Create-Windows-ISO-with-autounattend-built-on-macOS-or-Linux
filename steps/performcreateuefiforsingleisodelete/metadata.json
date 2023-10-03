@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "4fb1e0dd-9684-4421-8f7e-6d722c0069b3", 
     "isBlueprint": false, 
-    "key": "performcreateuefiforsingleiso", 
+    "key": "performcreateuefiforsingleisodelete", 
     "links": [
         {
             "order": 0, 
@@ -23,6 +23,6 @@
             "stepKey": "unmountsingleisouefimount"
         }
     ], 
-    "name": "Perform Create UEFI for Single ISO", 
+    "name": "Perform Create UEFI for Single ISO - DELETE", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

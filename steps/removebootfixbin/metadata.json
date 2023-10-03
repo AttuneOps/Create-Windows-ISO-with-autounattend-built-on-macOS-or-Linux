@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "0324fba4-63af-4512-8080-9ff6836f5c87", 
+    "externalUuid4": "2b2bd814-5c22-43c3-81d1-b20d483b56c9", 
     "interpreter": 1, 
-    "key": "createemptyuefiforsingleiso", 
-    "name": "Create Empty UEFI for Single ISO", 
+    "key": "removebootfixbin", 
+    "name": "Remove bootfix.bin", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

@@ -1,0 +1,15 @@
+{
+    "actionOnStepFail": null, 
+    "blueprintName": "", 
+    "blueprintUuid": "49774840-2945-4702-b78a-ebff3d09b1d0", 
+    "cloneUrl": "", 
+    "enabled": true, 
+    "externalUuid4": "61eca545-6239-4fd3-a4a0-b8abe9a28096", 
+    "key": "centos8enablerpmfusionfreerepositorylink", 
+    "name": "CentOS8 Enable RPM Fusion Free Repository (link)", 
+    "parameterMap": [], 
+    "projectName": "", 
+    "projectUuid": "d0c58a02-9cfc-483f-9777-9c8fe7285609", 
+    "projectVersion": "", 
+    "type": "com.servertribe.attune.tuples.StepProjectLinkTuple"
+}

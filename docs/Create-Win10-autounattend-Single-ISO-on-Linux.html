@@ -283,8 +283,16 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
+                        <a href="#removebootfixbin">
+                            <strong>Step 6 -</strong> Remove bootfix.bin
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 7 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -292,7 +300,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 7 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 8 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -300,7 +308,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 8 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 9 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -308,56 +316,23 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootiso">
-                            <strong>Step 9 -</strong> Create BIOS Boot ISO
+                            <strong>Step 10 -</strong> Create BIOS Boot ISO
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#performcreateuefiforsingleiso">
-                            <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
+                        <a href="#createuefibootiso">
+                            <strong>Step 11 -</strong> Create UEFI Boot ISO
                         </a>
                     </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createemptyuefiforsingleiso">
-                            <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountemptyuefiforsingleiso">
-                            <strong>Step 10.2 -</strong> Mount Empty UEFI for Single ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movefilestouefimount">
-                            <strong>Step 10.3 -</strong> Move Files to UEFI Mount
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountsingleisouefimount">
-                            <strong>Step 10.4 -</strong> Unmount Single ISO UEFI Mount
-                        </a>
-                    </p>
-
 
         
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -791,9 +766,58 @@ fi
 
 
                     <div class="row pt-5">
+                        <h3 id="removebootfixbin">
+                            <a href="#removebootfixbin">
+                                <strong>Step 6 -</strong> Remove bootfix.bin
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/boot&quot;
+
+# rm -vf bootfix.bin
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 7 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -850,7 +874,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 7 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 8 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -921,7 +945,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 8 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 9 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -989,7 +1013,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootiso">
                             <a href="#createbiosbootiso">
-                                <strong>Step 9 -</strong> Create BIOS Boot ISO
+                                <strong>Step 10 -</strong> Create BIOS Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -1031,10 +1055,10 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
 if {isWin10Bios} || {isWinServerBios} 
 then
-
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
     
     mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
         -b boot.img -no-emul-boot -c BOOT.CAT \
@@ -1042,7 +1066,7 @@ then
         -J -l -D -N -V &quot;KS_WIN&quot; .
         
 else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
+    echo &quot;Skipping for UEFI boot.&quot;
 fi
                 </code>
             </pre>
@@ -1058,54 +1082,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="performcreateuefiforsingleiso">
-                            <a href="#performcreateuefiforsingleiso">
-                                <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
+                        <h3 id="createuefibootiso">
+                            <a href="#createuefibootiso">
+                                <strong>Step 11 -</strong> Create UEFI Boot ISO
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates the Windows ISO again from the contents of the <code>build-{newOsNode.fqn}</code> folder.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createemptyuefiforsingleiso">
-                            <a href="#createemptyuefiforsingleiso">
-                                <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a UEFI Boot enabled MSDOS ISO that is large enough to fit the contents of the <code>build-{newOsNode.fqn}</code> directory at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code>.</p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -1131,262 +1114,40 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    cd &quot;{automationWorkerBaseDirectory}&quot;
+    pwd
+    ls -lh
     
-    KBYTES=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
-    ((KBYTES=KBYTES+10000))
-    
-    # Inputs to dd
-    BLOCK_SIZE_BYTES=512
-    (( COUNT=KBYTES*1024/BLOCK_SIZE_BYTES ))
-    echo &quot;KBYTES=${KBYTES}, COUNT = ${COUNT}&quot;
-    
-    dd if=/dev/zero of=kickstart_{newOsNode.fqn}.iso bs=512 count=${COUNT}
-    mkfs.exfat &quot;./kickstart_{newOsNode.fqn}.iso&quot;
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountemptyuefiforsingleiso">
-                            <a href="#mountemptyuefiforsingleiso">
-                                <strong>Step 10.2 -</strong> Mount Empty UEFI for Single ISO
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Mounts the UEFI ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>.</p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    cd &quot;{automationWorkerBaseDirectory}&quot;
-    
-    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-    
-    mkdir --verbose &quot;${MOUNT_FOLDER}&quot;
-    
-    mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
-        --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
-        &quot;./kickstart_{newOsNode.fqn}.iso&quot; &quot;${MOUNT_FOLDER}&quot;
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="movefilestouefimount">
-                            <a href="#movefilestouefimount">
-                                <strong>Step 10.3 -</strong> Move Files to UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Move contents of <code>build-{newOsNode.fqn}</code> to <code>build-{newOsNode.fqn}-uefi-mount</code>.</p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    cd &quot;{automationWorkerBaseDirectory}&quot;
-    
-    mv --verbose &quot;build-{newOsNode.fqn}&quot;/* &quot;build-{newOsNode.fqn}-uefi-mount&quot;
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="unmountsingleisouefimount">
-                            <a href="#unmountsingleisouefimount">
-                                <strong>Step 10.4 -</strong> Unmount Single ISO UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}-uefi-mount</code>. </p>
-<p>This writes the contents of <code>build-{newOsNode.fqn}-uefi-mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for Single ISO</code>. </p>
-<p>Only applies UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    MOUNT_FOLDER=&quot;build-{newOsNode.fqn}-uefi-mount&quot;
-    MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/${MOUNT_FOLDER}&quot;
-    
-    if df -h | grep --ignore-case \
-        --quiet \
-        &quot;${MOUNT_PATH}&quot;
-    then
-    
-        cd &quot;{automationWorkerBaseDirectory}&quot;
+    mkisofs \
+        -allow-limited-size \
+        -iso-level 4 \
+        -l \
+        -R \
+        -b boot/etfsboot.com \
+        -no-emul-boot \
+        -boot-load-seg 0 \
+        -boot-load-size 8 \
+        -hide boot.catalog \
+        -eltorito-alt-boot \
+        -no-emul-boot \
+        -b efi/microsoft/boot/efisys.bin \
+        -boot-load-size 1 \
+        -udf \
+        -U \
+        -D \
+        -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        .
         
-        umount --verbose &quot;${MOUNT_FOLDER}&quot;
-    else
-        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-    fi
-    
 else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
+    echo &quot;Skipping for BIOS boot.&quot;
 fi
                 </code>
             </pre>
         </div>
     </div>
-
 
 
 
@@ -1399,7 +1160,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>
@@ -1422,18 +1183,7 @@ fi
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     

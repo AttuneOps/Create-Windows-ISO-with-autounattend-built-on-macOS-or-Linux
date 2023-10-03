@@ -54,6 +54,9 @@ This Project contains the following Blueprints.
 
 
 
+### Attune v5 SWPE Install C wimlib
+
+
 ### Create Win10 autounattend Dual ISO on macOS or Linux
 
 For Windows Desktop 10 BIOS or UEFI dual ISO kickstarts.
@@ -237,16 +240,13 @@ This WinPE ISO will have it's default `setup.exe` removed and can be used to kic
 ### Perform Test Win2022
 
 
+### Perform UEFI Post Cleanup
+
+
 ### Test Win BIOS Node
 
 
 ### Test Win UEFI Node
-
-
-### Perform UEFI Post Cleanup
-
-
-### Attune v5 SWPE Install C wimlib
 
 
 

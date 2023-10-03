@@ -315,8 +315,8 @@ For UEFI kic" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#performcreateuefiforsingleiso">
-                            <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
+                        <a href="#performcreateuefiforsingleisodelete">
+                            <strong>Step 10 -</strong> Perform Create UEFI for Single ISO - DELETE
                         </a>
                     </p>
     
@@ -324,7 +324,7 @@ For UEFI kic" />
 
                     <p class="text-muted pt-2">
                         <a href="#createemptyuefiforsingleiso">
-                            <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
+                            <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO
                         </a>
                     </p>
 
@@ -1030,10 +1030,10 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
 if {isWin10Bios} || {isWinServerBios} 
 then
-
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
     
     mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
         -b boot.img -no-emul-boot -c BOOT.CAT \
@@ -1041,7 +1041,7 @@ then
         -J -l -D -N -V &quot;KS_WIN&quot; .
         
 else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
+    echo &quot;Skipping for UEFI boot.&quot;
 fi
                 </code>
             </pre>
@@ -1057,9 +1057,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="performcreateuefiforsingleiso">
-                            <a href="#performcreateuefiforsingleiso">
-                                <strong>Step 10 -</strong> Perform Create UEFI for Single ISO
+                        <h3 id="performcreateuefiforsingleisodelete">
+                            <a href="#performcreateuefiforsingleisodelete">
+                                <strong>Step 10 -</strong> Perform Create UEFI for Single ISO - DELETE
                             </a>
                         </h3>
                     </div>
@@ -1088,7 +1088,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="createemptyuefiforsingleiso">
                             <a href="#createemptyuefiforsingleiso">
-                                <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO 
+                                <strong>Step 10.1 -</strong> Create Empty UEFI for Single ISO
                             </a>
                         </h4>
                     </div>
@@ -1135,7 +1135,7 @@ then
     cd &quot;{automationWorkerBaseDirectory}&quot;
     
     KBYTES=$(du --summarize &quot;build-{newOsNode.fqn}&quot; | awk &#x27;{print $1}&#x27;)
-    ((KBYTES=KBYTES+10000))
+    ((KBYTES=KBYTES+100000))
     
     # Inputs to dd
     BLOCK_SIZE_BYTES=512
