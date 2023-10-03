@@ -44,10 +44,10 @@
         }, 
         {
             "order": 450, 
-            "stepKey": "performcreateuefiforsingleisodelete"
+            "stepKey": "createuefibootiso"
         }, 
         {
-            "order": 500, 
+            "order": 550, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
