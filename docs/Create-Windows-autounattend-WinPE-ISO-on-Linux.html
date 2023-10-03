@@ -812,9 +812,9 @@ then
     ISO=&quot;winpe_win2019_plain_bios.iso&quot;
     if [[ -f ${ISO} ]]
     then
-        echo &quot;${DIRECTORY|/${ISO} exists. Great.&quot;
+        echo &quot;${DIRECTORY}/${ISO} exists. Great.&quot;
     else
-        echo &quot;${DIRECTORY|/${ISO} does not exist. Please run blueprint \&quot;Create WinPE Plain Win2019 BIOS ISO\&quot; to create it.&quot;
+        echo &quot;${DIRECTORY}/${ISO} does not exist. Please run blueprint \&quot;Create WinPE Plain Win2019 BIOS ISO\&quot; to create it.&quot;
         exit 1
     fi
     
