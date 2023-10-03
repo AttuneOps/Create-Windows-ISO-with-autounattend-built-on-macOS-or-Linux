@@ -27,10 +27,6 @@
             "stepKey": "extractwindowsiso"
         }, 
         {
-            "order": 250, 
-            "stepKey": "removebootfixbinfromwindowsforuefi"
-        }, 
-        {
             "order": 300, 
             "stepKey": "deploypostsetuppowershellscript"
         }, 

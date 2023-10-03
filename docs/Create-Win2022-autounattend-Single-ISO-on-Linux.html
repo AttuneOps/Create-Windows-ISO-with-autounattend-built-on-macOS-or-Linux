@@ -307,49 +307,16 @@ For UEFI kic" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#removebootfixbinfromwindowsforuefi">
-                            <strong>Step 9 -</strong> Remove bootfix.bin from Windows for UEFI
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#copyefisysnopromptbinintoefisysbin">
-                            <strong>Step 10 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                            <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
                         </a>
                     </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#performremovebootfixbinfromwinpe">
-                            <strong>Step 11 -</strong> Perform Remove bootfix.bin from WinPE
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createbootwimmountfolder">
-                            <strong>Step 11.1 -</strong> Create boot.wim Mount Folder
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountwindowsbootwimdelete">
-                            <strong>Step 11.2 -</strong> Mount Windows boot.wim - DELETE
-                        </a>
-                    </p>
-
 
         
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootiso">
-                            <strong>Step 12 -</strong> Create BIOS Boot ISO
+                            <strong>Step 10 -</strong> Create BIOS Boot ISO
                         </a>
                     </p>
 
@@ -357,7 +324,7 @@ For UEFI kic" />
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootiso">
-                            <strong>Step 13 -</strong> Create UEFI Boot ISO
+                            <strong>Step 11 -</strong> Create UEFI Boot ISO
                         </a>
                     </p>
 
@@ -365,7 +332,7 @@ For UEFI kic" />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 14 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -994,72 +961,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="removebootfixbinfromwindowsforuefi">
-                            <a href="#removebootfixbinfromwindowsforuefi">
-                                <strong>Step 9 -</strong> Remove bootfix.bin from Windows for UEFI
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/boot&quot;
-
-    rm -vf bootfix.bin
-
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="copyefisysnopromptbinintoefisysbin">
                             <a href="#copyefisysnopromptbinintoefisysbin">
-                                <strong>Step 10 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                                <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
                             </a>
                         </h3>
                     </div>
@@ -1067,7 +971,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>From https://serverfault.com/questions/353826/windows-boot-iso-file-without-press-any-key this disables the "Press any key To boot from CD or DVD . . . .".</p>
                             </p>
                         </div>
                     </div>
@@ -1120,158 +1024,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="performremovebootfixbinfromwinpe">
-                            <a href="#performremovebootfixbinfromwinpe">
-                                <strong>Step 11 -</strong> Perform Remove bootfix.bin from WinPE
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createbootwimmountfolder">
-                            <a href="#createbootwimmountfolder">
-                                <strong>Step 11.1 -</strong> Create boot.wim Mount Folder
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a directory <code>WinPE_BootImageDir</code> for mounting <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
-if [ ! -d WinPE_BootImageDir ]
-then
-    mkdir $WinPE_BootImageDir
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountwindowsbootwimdelete">
-                            <a href="#mountwindowsbootwimdelete">
-                                <strong>Step 11.2 -</strong> Mount Windows boot.wim - DELETE
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Use this to find out the 1 based image index of WinPE in <code>sources/boot.wim</code>.</p>
-<pre><code>wiminfo sources/boot.wim
-</code></pre>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-WINPE_INDEX=1
-wimmountrw sources/boot.wim ${WINPE_INDEX} WinPE_BootImageDir
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="createbiosbootiso">
                             <a href="#createbiosbootiso">
-                                <strong>Step 12 -</strong> Create BIOS Boot ISO
+                                <strong>Step 10 -</strong> Create BIOS Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -1342,7 +1097,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootiso">
                             <a href="#createuefibootiso">
-                                <strong>Step 13 -</strong> Create UEFI Boot ISO
+                                <strong>Step 11 -</strong> Create UEFI Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -1350,7 +1105,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>https://unix.stackexchange.com/questions/531012/how-to-modify-an-installation-iso-and-keep-it-bootable</p>
                             </p>
                         </div>
                     </div>
@@ -1425,7 +1180,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 14 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

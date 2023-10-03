@@ -283,16 +283,8 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#removebootfixbinfromwindowsforuefi">
-                            <strong>Step 6 -</strong> Remove bootfix.bin from Windows for UEFI
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 7 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -300,7 +292,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 8 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 7 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -308,7 +300,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 9 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 8 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -316,7 +308,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootiso">
-                            <strong>Step 10 -</strong> Create BIOS Boot ISO
+                            <strong>Step 9 -</strong> Create BIOS Boot ISO
                         </a>
                     </p>
 
@@ -324,7 +316,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootiso">
-                            <strong>Step 11 -</strong> Create UEFI Boot ISO
+                            <strong>Step 10 -</strong> Create UEFI Boot ISO
                         </a>
                     </p>
 
@@ -332,7 +324,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -766,72 +758,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="removebootfixbinfromwindowsforuefi">
-                            <a href="#removebootfixbinfromwindowsforuefi">
-                                <strong>Step 6 -</strong> Remove bootfix.bin from Windows for UEFI
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/boot&quot;
-
-    rm -vf bootfix.bin
-
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 7 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -888,7 +817,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 8 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 7 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -959,7 +888,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 9 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 8 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -1027,7 +956,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootiso">
                             <a href="#createbiosbootiso">
-                                <strong>Step 10 -</strong> Create BIOS Boot ISO
+                                <strong>Step 9 -</strong> Create BIOS Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -1098,7 +1027,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootiso">
                             <a href="#createuefibootiso">
-                                <strong>Step 11 -</strong> Create UEFI Boot ISO
+                                <strong>Step 10 -</strong> Create UEFI Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -1106,7 +1035,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>https://unix.stackexchange.com/questions/531012/how-to-modify-an-installation-iso-and-keep-it-bootable</p>
                             </p>
                         </div>
                     </div>
@@ -1181,7 +1110,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

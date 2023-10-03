@@ -39,16 +39,8 @@
             "stepKey": "copydriversdropinfolder"
         }, 
         {
-            "order": 400, 
-            "stepKey": "removebootfixbinfromwindowsforuefi"
-        }, 
-        {
             "order": 450, 
             "stepKey": "copyefisysnopromptbinintoefisysbin"
-        }, 
-        {
-            "order": 500, 
-            "stepKey": "performremovebootfixbinfromwinpe"
         }, 
         {
             "order": 550, 
