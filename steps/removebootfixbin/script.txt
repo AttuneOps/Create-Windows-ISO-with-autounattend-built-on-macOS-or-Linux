@@ -1,3 +1,0 @@
-cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/boot"
-
-# rm -vf bootfix.bin

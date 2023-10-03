@@ -1,0 +1,28 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "ba56a2c1-42b8-44dc-9144-e0764ee8be93", 
+    "isBlueprint": true, 
+    "key": "deploywin2022isoforwinpe", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "drw2022createdirectory"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "drw2022deploywinrawwin2022iso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "drw2022extractrawwin2022iso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "drw2022setpermissions"
+        }
+    ], 
+    "name": "Deploy Win2022 ISO For WinPE", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

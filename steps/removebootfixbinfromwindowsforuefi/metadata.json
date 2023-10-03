@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "2b2bd814-5c22-43c3-81d1-b20d483b56c9", 
+    "interpreter": 1, 
+    "key": "removebootfixbinfromwindowsforuefi", 
+    "name": "Remove bootfix.bin from Windows for UEFI", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

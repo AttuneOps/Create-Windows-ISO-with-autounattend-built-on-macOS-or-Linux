@@ -1,0 +1,2 @@
+cd /home/attune/windows_iso_data_for_winpe/
+sudo chmod -R a+rx windows2019

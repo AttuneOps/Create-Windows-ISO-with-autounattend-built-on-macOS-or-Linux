@@ -1,0 +1,1 @@
+The Windows 2019 ISO is placed on the samba server at `/home/attune/windows_iso_data_for_winpe/windows2019`.

@@ -1,0 +1,5 @@
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+cd WinPE_BootImageDir/Windows/Boot/DVD/PCAT/en-US
+
+rm -vf bootfix.bin

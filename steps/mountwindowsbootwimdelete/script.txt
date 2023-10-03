@@ -1,0 +1,4 @@
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+WINPE_INDEX=1
+wimmountrw sources/boot.wim ${WINPE_INDEX} WinPE_BootImageDir
