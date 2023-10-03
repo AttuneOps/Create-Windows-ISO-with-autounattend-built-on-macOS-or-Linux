@@ -7,9 +7,9 @@ then
     ISO="winpe_win2019_plain_uefi.iso"
     if [[ -f ${ISO} ]]
     then
-        echo "${DIRECTORY|/${ISO} exists. Great."
+        echo "${DIRECTORY}/${ISO} exists. Great."
     else
-        echo "${DIRECTORY|/${ISO} does not exist. Please run blueprint \"Create WinPE Plain Win2019 BIOS ISO\" to create it."
+        echo "${DIRECTORY}/${ISO} does not exist. Please run blueprint \"Create WinPE Plain Win2019 BIOS ISO\" to create it."
         exit 1
     fi
     
