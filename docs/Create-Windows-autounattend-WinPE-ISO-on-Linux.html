@@ -683,13 +683,6 @@ in combination with one of these boot methods:
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -726,13 +719,13 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if [ {isWinPEKickstart} != &quot;true&quot; ]
+if ! {isWinPEKickstart}
 then
     echo &quot;Please set isWinPEKickstart as the string &#x27;true&#x27;&quot;
     exit 1
 fi
 
-if [ {windowsFolderOnSamba| == &quot;windows10&quot; ]
+if [ {windowsFolderOnSamba} == &quot;windows10&quot; ]
 then
     if ! {isWin10Bios} &amp;&amp; ! {isWin10Uefi}
     then
@@ -741,9 +734,9 @@ then
     fi
 fi
 
-if [ {windowsFolderOnSamba| == &quot;windows2016&quot; ] ||
-    [ {windowsFolderOnSamba| == &quot;windows2019&quot; ] ||
-    [ {windowsFolderOnSamba| == &quot;windows2022&quot; ]
+if [ {windowsFolderOnSamba} == &quot;windows2016&quot; ] ||
+    [ {windowsFolderOnSamba} == &quot;windows2019&quot; ] ||
+    [ {windowsFolderOnSamba} == &quot;windows2022&quot; ]
 then
     if ! {isWinServerBios} &amp;&amp; ! {isWinServerUefi}
     then

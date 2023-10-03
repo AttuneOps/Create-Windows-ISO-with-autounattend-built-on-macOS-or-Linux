@@ -1,10 +1,10 @@
-if [ {isWinPEKickstart} != "true" ]
+if ! {isWinPEKickstart}
 then
     echo "Please set isWinPEKickstart as the string 'true'"
     exit 1
 fi
 
-if [ {windowsFolderOnSamba| == "windows10" ]
+if [ {windowsFolderOnSamba} == "windows10" ]
 then
     if ! {isWin10Bios} && ! {isWin10Uefi}
     then
@@ -13,9 +13,9 @@ then
     fi
 fi
 
-if [ {windowsFolderOnSamba| == "windows2016" ] ||
-    [ {windowsFolderOnSamba| == "windows2019" ] ||
-    [ {windowsFolderOnSamba| == "windows2022" ]
+if [ {windowsFolderOnSamba} == "windows2016" ] ||
+    [ {windowsFolderOnSamba} == "windows2019" ] ||
+    [ {windowsFolderOnSamba} == "windows2022" ]
 then
     if ! {isWinServerBios} && ! {isWinServerUefi}
     then

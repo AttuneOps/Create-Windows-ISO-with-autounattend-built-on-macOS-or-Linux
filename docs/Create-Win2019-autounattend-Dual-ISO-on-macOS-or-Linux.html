@@ -776,7 +776,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates an ISO at <code>{automationWorkerBaseDirectory}/drivers_{newVmNode.fqn}.iso</code> containing:</p>
+                                <p>Creates an ISO at <code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso</code> containing:</p>
 <ol>
 <li><code>drivers</code> folder</li>
 <li><code>autounattend.xml</code></li>
@@ -818,7 +818,7 @@ fi
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
     
 DRIVERS_FOLDER=&quot;drivers&quot;
-DRIVERS_ISO_NAME=&quot;drivers_{newVmNode.fqn}.iso&quot;
+DRIVERS_ISO_NAME=&quot;drivers_{newOsNode.fqn}.iso&quot;
 
 if uname | \
     grep -iq &quot;darwin&quot;

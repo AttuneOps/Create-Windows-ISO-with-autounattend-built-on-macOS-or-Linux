@@ -1,7 +1,7 @@
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
     
 DRIVERS_FOLDER="drivers"
-DRIVERS_ISO_NAME="drivers_{newVmNode.fqn}.iso"
+DRIVERS_ISO_NAME="drivers_{newOsNode.fqn}.iso"
 
 if uname | \
     grep -iq "darwin"
