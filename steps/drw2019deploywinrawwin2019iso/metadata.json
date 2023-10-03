@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "windowsserver2019iso", 
+    "deployPath": "/home/attune/windows_iso_data_for_winpe/windows2019", 
+    "enabled": true, 
+    "externalUuid4": "447d8908-d9ce-4b36-adae-d4b0b1d35a61", 
+    "key": "drw2019deploywinrawwin2019iso", 
+    "name": "DRW2019 Deploy WIN RAW Win2019 ISO", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "sambaserver", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

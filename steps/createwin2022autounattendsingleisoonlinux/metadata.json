@@ -40,14 +40,26 @@
         }, 
         {
             "order": 400, 
-            "stepKey": "createbiosbootiso"
+            "stepKey": "removebootfixbinfromwindowsforuefi"
         }, 
         {
             "order": 450, 
-            "stepKey": "performcreateuefiforsingleisodelete"
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
         }, 
         {
             "order": 500, 
+            "stepKey": "performremovebootfixbinfromwinpe"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "createuefibootiso"
+        }, 
+        {
+            "order": 650, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 

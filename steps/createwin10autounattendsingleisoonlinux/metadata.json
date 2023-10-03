@@ -28,7 +28,7 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "removebootfixbin"
+            "stepKey": "removebootfixbinfromwindowsforuefi"
         }, 
         {
             "order": 300, 

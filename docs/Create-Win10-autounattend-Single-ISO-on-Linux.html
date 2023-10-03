@@ -283,8 +283,8 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#removebootfixbin">
-                            <strong>Step 6 -</strong> Remove bootfix.bin
+                        <a href="#removebootfixbinfromwindowsforuefi">
+                            <strong>Step 6 -</strong> Remove bootfix.bin from Windows for UEFI
                         </a>
                     </p>
 
@@ -766,9 +766,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="removebootfixbin">
-                            <a href="#removebootfixbin">
-                                <strong>Step 6 -</strong> Remove bootfix.bin
+                        <h3 id="removebootfixbinfromwindowsforuefi">
+                            <a href="#removebootfixbinfromwindowsforuefi">
+                                <strong>Step 6 -</strong> Remove bootfix.bin from Windows for UEFI
                             </a>
                         </h3>
                     </div>
@@ -805,9 +805,16 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
 cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/boot&quot;
 
-# rm -vf bootfix.bin
+    rm -vf bootfix.bin
+
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
                 </code>
             </pre>
         </div>
