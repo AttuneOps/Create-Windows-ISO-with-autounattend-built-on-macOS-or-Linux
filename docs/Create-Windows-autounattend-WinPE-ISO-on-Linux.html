@@ -1104,9 +1104,9 @@ fi
                 <code class="language-sql py-0">
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-    mkdir --parents &quot;${PATH}&quot;
-    cd &quot;${PATH}&quot;
+    FOLDER=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    mkdir --parents &quot;${FOLDER}&quot;
+    cd &quot;${FOLDER}&quot;
     cp --verbose &quot;../winpe_win2019_plain_uefi.iso&quot; &quot;winpe.iso&quot;
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;
