@@ -6,9 +6,10 @@ FOR /R %%f in (*.inf) DO drvload "%%f"
 
 wpeutil InitializeNetwork
 
-REM Get the "Interface Name" value and store in windowsInterfaceAlias
-FOR /F "skip=3 tokens=3*" %G IN ('netsh interface show interface') DO (
-	SET windowsInterfaceAlias=%H
+REM Get the "Interface Name" value and store in windowsInterfaceAlias.
+REM Use a % to escape the % for "%G" and "%H".
+FOR /F "skip=3 tokens=3*" %%G IN ('netsh interface show interface') DO (
+	SET windowsInterfaceAlias=%%H
 )
 echo Found network interface name = %windowsInterfaceAlias%
 
