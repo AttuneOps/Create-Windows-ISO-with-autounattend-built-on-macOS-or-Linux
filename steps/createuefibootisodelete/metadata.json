@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "0324fba4-63af-4512-8080-9ff6836f5c87", 
+    "externalUuid4": "2e3347bf-9744-4e6f-917f-6e2a61c490b8", 
     "interpreter": 1, 
-    "key": "createemptyuefiforsingleiso", 
-    "name": "Create Empty UEFI for Single ISO", 
+    "key": "createuefibootisodelete", 
+    "name": "Create UEFI Boot ISO - DELETE", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

@@ -3,7 +3,7 @@ then
     cd "{automationWorkerBaseDirectory}"
     
     KBYTES=$(du --summarize "build-{newOsNode.fqn}" | awk '{print $1}')
-    ((KBYTES=KBYTES+10000))
+    ((KBYTES=KBYTES+100000))
     
     # Inputs to dd
     BLOCK_SIZE_BYTES=512

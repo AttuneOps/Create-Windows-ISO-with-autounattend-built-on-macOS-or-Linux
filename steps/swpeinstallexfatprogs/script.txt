@@ -1,7 +1,14 @@
-PACKAGE="exfatprogs"
-if rpm -qa | grep -q "${PACKAGE}"
-then
-    echo "Package ${PACKAGE} already installed."
-else
-    dnf -y install "${PACKAGE}"
-fi
+PACKAGES=( \
+    "fuse-exfat" \
+    "exfat-utils"
+)
+
+for PACKAGE in ${PACKAGES[@]}
+do
+    if rpm -qa | grep -q "${PACKAGE}"
+    then
+        echo "Package ${PACKAGE} already installed."
+    else
+        dnf -y install "${PACKAGE}"
+    fi
+done

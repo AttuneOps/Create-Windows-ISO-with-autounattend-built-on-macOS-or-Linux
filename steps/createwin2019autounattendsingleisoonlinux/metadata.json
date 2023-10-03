@@ -44,7 +44,7 @@
         }, 
         {
             "order": 450, 
-            "stepKey": "performcreateuefiforsingleiso"
+            "stepKey": "performcreateuefiforsingleisodelete"
         }, 
         {
             "order": 500, 

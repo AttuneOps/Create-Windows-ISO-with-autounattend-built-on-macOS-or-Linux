@@ -48,6 +48,10 @@
         }, 
         {
             "order": 500, 
+            "stepKey": "centos8enablerpmfusionfreerepositorylink"
+        }, 
+        {
+            "order": 550, 
             "stepKey": "swpeinstallexfatprogs"
         }
     ], 
