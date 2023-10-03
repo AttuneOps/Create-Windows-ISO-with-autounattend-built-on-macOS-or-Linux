@@ -1024,11 +1024,14 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
+whoami
+which mkdir
+
 if {isWin10Bios} || {isWinServerBios}
 then
-    PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-    mkdir --parents &quot;${PATH}&quot;
-    cd &quot;${PATH}&quot;
+    FOLDER=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    mkdir --parents &quot;${FOLDER}&quot;
+    cd &quot;${FOLDER}&quot;
     cp --verbose &quot;../winpe_win2019_plain_bios.iso&quot; &quot;winpe.iso&quot;
     
 else
