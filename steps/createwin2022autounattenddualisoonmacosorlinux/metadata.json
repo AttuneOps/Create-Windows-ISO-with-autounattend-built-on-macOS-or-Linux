@@ -16,7 +16,7 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "renameinstalliso"
+            "stepKey": "renameinstallisodelete"
         }, 
         {
             "order": 150, 

@@ -1,1 +1,0 @@
-Renames the copied WinPE ISO to `kickstart_{newOsNode.fqn}.iso`.

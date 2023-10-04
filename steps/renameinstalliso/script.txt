@@ -1,3 +1,0 @@
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
