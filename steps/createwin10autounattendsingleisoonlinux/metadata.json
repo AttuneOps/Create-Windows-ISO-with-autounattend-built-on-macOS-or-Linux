@@ -40,10 +40,14 @@
         }, 
         {
             "order": 450, 
-            "stepKey": "createbiosbootiso"
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
         }, 
         {
             "order": 500, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 550, 
             "stepKey": "createuefibootiso"
         }, 
         {

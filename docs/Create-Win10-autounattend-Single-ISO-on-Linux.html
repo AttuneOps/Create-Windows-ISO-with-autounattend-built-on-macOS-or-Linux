@@ -307,8 +307,16 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
+                        <a href="#copyefisysnopromptbinintoefisysbin">
+                            <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#createbiosbootiso">
-                            <strong>Step 9 -</strong> Create BIOS Boot ISO
+                            <strong>Step 10 -</strong> Create BIOS Boot ISO
                         </a>
                     </p>
 
@@ -316,7 +324,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootiso">
-                            <strong>Step 10 -</strong> Create UEFI Boot ISO
+                            <strong>Step 11 -</strong> Create UEFI Boot ISO
                         </a>
                     </p>
 
@@ -324,7 +332,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -954,9 +962,72 @@ fi
 
 
                     <div class="row pt-5">
+                        <h3 id="copyefisysnopromptbinintoefisysbin">
+                            <a href="#copyefisysnopromptbinintoefisysbin">
+                                <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>From https://serverfault.com/questions/353826/windows-boot-iso-file-without-press-any-key this disables the "Press any key To boot from CD or DVD . . . .".</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    cd efi/microsoft/boot/
+    
+    cp --verbose efisys_noprompt.bin efisys.bin
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="createbiosbootiso">
                             <a href="#createbiosbootiso">
-                                <strong>Step 9 -</strong> Create BIOS Boot ISO
+                                <strong>Step 10 -</strong> Create BIOS Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -1027,7 +1098,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootiso">
                             <a href="#createuefibootiso">
-                                <strong>Step 10 -</strong> Create UEFI Boot ISO
+                                <strong>Step 11 -</strong> Create UEFI Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -1110,7 +1181,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 11 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>
