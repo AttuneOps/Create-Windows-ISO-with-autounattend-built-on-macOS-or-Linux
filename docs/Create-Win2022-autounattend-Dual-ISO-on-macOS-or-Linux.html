@@ -290,16 +290,16 @@ Please set `isWinPEKickstart` to the string 'false'." />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script
+                        <a href="#deploywindowsunattendedconfig">
+                            <strong>Step 8 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 9 -</strong> Deploy Windows Unattended Config
+                        <a href="#deploypostsetuppowershellscript">
+                            <strong>Step 9 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -913,66 +913,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 9 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 8 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -1021,6 +964,63 @@ fi
         <p>
             Copy the File(s)
             <strong>Windows_Unattended_config.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploypostsetuppowershellscript">
+                            <a href="#deploypostsetuppowershellscript">
+                                <strong>Step 9 -</strong> Deploy Post Setup PowerShell Script
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
+<p>This script is run once post installation of the WIndows operating system.</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
             to the target node.
         </p>
         <p>
