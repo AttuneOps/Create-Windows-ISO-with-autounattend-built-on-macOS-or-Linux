@@ -16,26 +16,42 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "renameinstallisodelete"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 150, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
         }, 
         {
             "order": 250, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "createbiosbootiso"
         }, 
         {
             "order": 300, 
-            "stepKey": "copydriversdropinfolder"
+            "stepKey": "createuefibootiso"
         }, 
         {
             "order": 350, 
-            "stepKey": "createanswerfileisoonmacosorlinux"
+            "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
             "order": 400, 
+            "stepKey": "deploywindowsunattendedconfig"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "copydriversdropinfolder"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "createanswerfileisoonmacosorlinux"
+        }, 
+        {
+            "order": 550, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
