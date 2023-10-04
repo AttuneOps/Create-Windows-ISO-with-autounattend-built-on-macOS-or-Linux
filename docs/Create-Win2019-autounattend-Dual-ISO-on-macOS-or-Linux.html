@@ -250,16 +250,8 @@ Please set `isWinPEKickstart` to the string 'false'." />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#renameinstalliso">
-                            <strong>Step 3 -</strong> Rename Install ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 3 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -267,7 +259,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 5 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 4 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -275,7 +267,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 6 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 5 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -283,7 +275,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#createanswerfileisoonmacosorlinux">
-                            <strong>Step 7 -</strong> Create Answer File ISO on macOS or Linux
+                            <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -291,7 +283,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 8 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -492,7 +484,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
         </p>
         <p>
             Copy the File(s)
-            <strong>Windows_Server_201_ISO.unknown</strong>
+            <strong>Windows_Server_201_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -514,65 +506,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="renameinstalliso">
-                            <a href="#renameinstalliso">
-                                <strong>Step 3 -</strong> Rename Install ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Renames the copied WinPE ISO to <code>kickstart_{newOsNode.fqn}.iso</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 4 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 3 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -629,7 +565,7 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 5 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 4 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -700,7 +636,7 @@ mv -v $(ls) {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 6 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 5 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -768,7 +704,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createanswerfileisoonmacosorlinux">
                             <a href="#createanswerfileisoonmacosorlinux">
-                                <strong>Step 7 -</strong> Create Answer File ISO on macOS or Linux
+                                <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -856,7 +792,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 8 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

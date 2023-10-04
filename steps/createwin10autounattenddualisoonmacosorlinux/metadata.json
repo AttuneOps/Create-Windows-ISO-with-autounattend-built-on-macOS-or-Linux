@@ -15,27 +15,43 @@
             "stepKey": "deploywin10dvdiso"
         }, 
         {
-            "order": 100, 
-            "stepKey": "renameinstalliso"
-        }, 
-        {
             "order": 150, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
-            "order": 250, 
-            "stepKey": "deploywindowsunattendedconfig"
-        }, 
-        {
-            "order": 300, 
-            "stepKey": "copydriversdropinfolder"
-        }, 
-        {
-            "order": 350, 
-            "stepKey": "createanswerfileisoonmacosorlinux"
+            "order": 200, 
+            "stepKey": "extractwindowsiso"
         }, 
         {
             "order": 400, 
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "createbiosbootiso"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "createuefibootiso"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "deploywindowsunattendedconfig"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "copydriversdropinfolder"
+        }, 
+        {
+            "order": 750, 
+            "stepKey": "createanswerfileisoonmacosorlinux"
+        }, 
+        {
+            "order": 800, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
