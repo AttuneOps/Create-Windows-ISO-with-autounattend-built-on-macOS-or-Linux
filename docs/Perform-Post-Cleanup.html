@@ -374,11 +374,12 @@ fi
 # - kickstart_{newOsNode.fqn}.iso
 # - drivers_{newOsNode.fqn}.iso
 ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
-if [ -f ${ISO} ] 
+
+if [ -z &quot;${ISO}&quot; ] 
 then
-    rm -fv ${ISO}
-else
     echo &quot;No ISO to remove.&quot;
+else
+    rm -fv ${ISO}
 fi
                 </code>
             </pre>
