@@ -51,15 +51,15 @@
             "stepKey": "modifywinpebootwim"
         }, 
         {
-            "order": 600, 
+            "order": 700, 
             "stepKey": "recreatebiosbootwinpeisofromwinpestaging"
         }, 
         {
-            "order": 650, 
+            "order": 800, 
             "stepKey": "performrecreateuefibootwinpeiso"
         }, 
         {
-            "order": 700, 
+            "order": 850, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 

@@ -1135,12 +1135,9 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    pwd
-    ls -lh
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
     
     mkisofs \
         -allow-limited-size \

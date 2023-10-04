@@ -1,13 +1,13 @@
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
-    
+    cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging"
+
     mkisofs \
         -allow-limited-size \
         -iso-level 4 \
         -l \
         -R \
-        -b boot/etfsboot.com \
+        -b BOOT/etfsboot.com \
         -no-emul-boot \
         -boot-load-seg 0 \
         -boot-load-size 8 \
