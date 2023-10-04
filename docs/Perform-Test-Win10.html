@@ -359,12 +359,11 @@ mstsc /admin /v:{newoswindowsnode}
                 <code class="language-sql py-0">
 $SEARCH_STRING = &quot;Windows 10&quot;
 
-if (systeminfo | findstr /B /C:&quot;OS Name&quot; `
-    | findstr &quot;$SEARCH_STRING&quot;) {
-    Write-Host &quot;This is $SEARCH_STRING&quot;
-} else {
+if ((systeminfo | select-string -pattern $SEARCH_STRING) -eq $null) {
     Write-Host &quot;This is not $SEARCH_STRING&quot;
     exit 1
+} else {
+    Write-Host &quot;This is $SEARCH_STRING&quot;
 }
                 </code>
             </pre>
