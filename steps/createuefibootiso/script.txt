@@ -1,9 +1,6 @@
-cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
-
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    pwd
-    ls -lh
+    cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
     
     mkisofs \
         -allow-limited-size \
