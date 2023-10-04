@@ -36,11 +36,11 @@
         }, 
         {
             "order": 350, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
             "order": 450, 
