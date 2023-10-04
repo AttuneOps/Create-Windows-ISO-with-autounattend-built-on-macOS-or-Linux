@@ -250,8 +250,48 @@ Please set `isWinPEKickstart` to the string 'false'." />
         
 
                     <p class="text-muted pt-2">
+                        <a href="#extractwindowsbootimg">
+                            <strong>Step 3 -</strong> Extract Windows boot.img
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#extractwindowsiso">
+                            <strong>Step 4 -</strong> Extract Windows ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copyefisysnopromptbinintoefisysbin">
+                            <strong>Step 5 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createbiosbootiso">
+                            <strong>Step 6 -</strong> Create BIOS Boot ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createuefibootiso">
+                            <strong>Step 7 -</strong> Create UEFI Boot ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 3 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -259,7 +299,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 4 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 9 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -267,7 +307,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 5 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 10 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -275,7 +315,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#createanswerfileisoonmacosorlinux">
-                            <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
+                            <strong>Step 11 -</strong> Create Answer File ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -283,7 +323,7 @@ Please set `isWinPEKickstart` to the string 'false'." />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -506,9 +546,376 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
+                        <h3 id="extractwindowsbootimg">
+                            <a href="#extractwindowsbootimg">
+                                <strong>Step 3 -</strong> Extract Windows boot.img
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Bios} || {isWinServerBios}
+then
+
+    # Extract the boot.img out of the WinPE ISO
+    
+    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    
+    # Case insensitve globbing
+    shopt -s nocaseglob
+    
+    # Set the filename of the ISO
+    F=$(ls *.iso)
+    
+    # Get the Boot image offset
+    OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
+    
+    # Extract the boot.img.
+    dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
+    
+else
+    echo &quot;Skipping for UEFI ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="extractwindowsiso">
+                            <a href="#extractwindowsiso">
+                                <strong>Step 4 -</strong> Extract Windows ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extracts the Windows ISO.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+if ls | grep -q *iso
+then
+    
+    ISO=&quot;$(echo *iso)&quot;
+    echo &quot;ISO is $ISO&quot;
+    
+    7z x &quot;${ISO}&quot;
+    
+    rm -v &quot;${ISO}&quot;
+else
+    echo &quot;ISO is already extracted.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="copyefisysnopromptbinintoefisysbin">
+                            <a href="#copyefisysnopromptbinintoefisysbin">
+                                <strong>Step 5 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>From https://serverfault.com/questions/353826/windows-boot-iso-file-without-press-any-key this disables the "Press any key To boot from CD or DVD . . . .".</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    cd efi/microsoft/boot/
+    
+    cp --verbose efisys_noprompt.bin efisys.bin
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createbiosbootiso">
+                            <a href="#createbiosbootiso">
+                                <strong>Step 6 -</strong> Create BIOS Boot ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+if {isWin10Bios} || {isWinServerBios} 
+then
+    
+    mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        -b boot.img -no-emul-boot -c BOOT.CAT \
+        -iso-level 3 -udf -joliet-long -relaxed-filenames -allow-limited-size \
+        -J -l -D -N -V &quot;KS_WIN&quot; .
+        
+else
+    echo &quot;Skipping for UEFI boot.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createuefibootiso">
+                            <a href="#createuefibootiso">
+                                <strong>Step 7 -</strong> Create UEFI Boot ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>https://unix.stackexchange.com/questions/531012/how-to-modify-an-installation-iso-and-keep-it-bootable</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+if {isWin10Uefi} || {isWinServerUefi}
+then
+    pwd
+    ls -lh
+    
+    mkisofs \
+        -allow-limited-size \
+        -iso-level 4 \
+        -l \
+        -R \
+        -b boot/etfsboot.com \
+        -no-emul-boot \
+        -boot-load-seg 0 \
+        -boot-load-size 8 \
+        -hide boot.catalog \
+        -eltorito-alt-boot \
+        -no-emul-boot \
+        -b efi/microsoft/boot/efisys.bin \
+        -boot-load-size 1 \
+        -udf \
+        -U \
+        -D \
+        -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        .
+        
+else
+    echo &quot;Skipping for BIOS boot.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 3 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -565,7 +972,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 4 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 9 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -636,7 +1043,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 5 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 10 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -704,7 +1111,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createanswerfileisoonmacosorlinux">
                             <a href="#createanswerfileisoonmacosorlinux">
-                                <strong>Step 6 -</strong> Create Answer File ISO on macOS or Linux
+                                <strong>Step 11 -</strong> Create Answer File ISO on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -792,7 +1199,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 7 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

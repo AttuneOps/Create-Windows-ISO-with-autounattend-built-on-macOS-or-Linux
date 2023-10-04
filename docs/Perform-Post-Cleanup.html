@@ -373,14 +373,20 @@ fi
 # The wildcard will allow removal of 
 # - kickstart_{newOsNode.fqn}.iso
 # - drivers_{newOsNode.fqn}.iso
-ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
+ISOS={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
-if [ -z &quot;${ISO}&quot; ] 
-then
-    echo &quot;No ISO to remove.&quot;
-else
-    rm -fv ${ISO}
-fi
+i=0
+for FILE in ${ISOS}
+do
+    echo &quot;$i. F = ${FILE}&quot;
+    ((i=i+1))
+    if [ -f &quot;${FILE}&quot; ] 
+    then
+        rm -fv ${FILE}
+    else
+        echo &quot;No ISO to remove.&quot;
+    fi
+done
                 </code>
             </pre>
         </div>
