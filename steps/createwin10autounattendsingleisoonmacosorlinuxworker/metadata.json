@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "f714d8e3-b7aa-415f-a0ff-97620b5234dc", 
     "isBlueprint": true, 
-    "key": "createwin10autounattendsingleisoonlinux", 
+    "key": "createwin10autounattendsingleisoonmacosorlinuxworker", 
     "links": [
         {
             "order": 0, 
@@ -55,6 +55,6 @@
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
-    "name": "Create Win10 autounattend Single ISO on Linux", 
+    "name": "Create Win10 autounattend Single ISO on macOS or Linux Worker", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

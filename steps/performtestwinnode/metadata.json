@@ -8,15 +8,35 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "testwindowsnode"
+            "stepKey": "testecho"
         }, 
         {
             "order": 50, 
-            "stepKey": "confirmifbios"
+            "stepKey": "checkhostname"
         }, 
         {
             "order": 100, 
-            "stepKey": "confirmifuefi"
+            "stepKey": "checkipaddress"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "testpushfiles"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deletepushedfile"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "checknetworkaccess"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "testwindowsversion"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "confirmbootconfiguration"
         }
     ], 
     "name": "Perform Test Win Node", 
