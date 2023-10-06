@@ -54,45 +54,10 @@ This Project contains the following Blueprints.
 
 
 
-### Create Win2019 autounattend Single ISO on Linux
-
-Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
-
-### Create Win2022 autounattend Single ISO on Linux
-
-Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
-
 ### Perform Post Cleanup
 
 
 ### Perform Test Win Node
-
-
-### Perform UEFI Post Cleanup
 
 
 ### Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker
@@ -138,7 +103,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 | Automation Worker Base Directory | Text | `automationworkerbasedirectory` | Base directory for deploying temporary files to build the kickstart ISO. |
 | Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | The device used to perform tasks to create the ISO. |
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
-| Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 | Drivers and Autounattend Drive Letter | Text | `driversandautounattenddriveletter` | The Windows drive letter containing the drivers and autounattend.xml as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
 | Is Win10 BIOS | Text | `iswin10bios` |  |
 | Is Win10 UEFI | Text | `iswin10uefi` |  |
@@ -168,10 +132,8 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 | Post Install Setup PowerShell Script | Version Controlled Files | This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.<br><br>This script is run once post installation of the WIndows operating system. |
 | Test File | Version Controlled Files |  |
 | Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
-| Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |
 | WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016. |
-| WIN Raw Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
 
 
 

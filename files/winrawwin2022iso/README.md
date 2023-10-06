@@ -1,1 +1,0 @@
-Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022.
