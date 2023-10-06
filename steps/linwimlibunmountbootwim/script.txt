@@ -1,2 +1,0 @@
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-wimunmount WinPE_BootImageDir --commit --check --rebuild

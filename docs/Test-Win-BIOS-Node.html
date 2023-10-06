@@ -816,13 +816,16 @@ if (-Not $?) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$BootMode = bcdedit | Select-String &quot;path.*efi&quot;
-if (-Not ($null -eq $BootMode)) {
-    echo &quot;This looks like UEFI boot.&quot;
-    exit 1
-}else {
-    Write-Host &quot;This looks like BIOS boot.&quot;
-}
+if {kickstartedBootLoaderIsBios}
+then
+    $BootMode = bcdedit | Select-String &quot;path.*efi&quot;
+    if (-Not ($null -eq $BootMode)) {
+        echo &quot;This looks like UEFI boot.&quot;
+        exit 1
+    }else {
+        Write-Host &quot;This looks like BIOS boot.&quot;
+    }
+fi
                 </code>
             </pre>
         </div>

@@ -1,1 +1,0 @@
-Deletes the temporary build directory.

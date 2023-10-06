@@ -1,3 +1,0 @@
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir
-
-rm --verbose setup.exe

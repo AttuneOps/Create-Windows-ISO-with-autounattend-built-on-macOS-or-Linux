@@ -1,3 +1,0 @@
-cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
-
-cp --verbose "winimg/boot/etfsboot.com" "winpe_staging/BOOT"
