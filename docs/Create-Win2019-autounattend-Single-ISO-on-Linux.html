@@ -323,8 +323,8 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createuefibootiso">
-                            <strong>Step 11 -</strong> Create UEFI Boot ISO
+                        <a href="#createuefibootisoonmacosorlinuxworker">
+                            <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -1079,7 +1079,7 @@ then
         export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
         echo &quot;Using $(which xorriso)&quot;
         
-        xorriso -as mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        xorriso -as mkisofs \
             -b boot.img \
             -no-emul-boot \
             -c BOOT.CAT \
@@ -1092,12 +1092,13 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;DRIVERS&quot; \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
             
     else
         echo &quot;not macOS&quot;
         
-        mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        mkisofs \
             -b boot.img \
             -no-emul-boot \
             -c BOOT.CAT \
@@ -1111,6 +1112,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;KS_WIN&quot; \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
     fi
         
@@ -1131,9 +1133,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createuefibootiso">
-                            <a href="#createuefibootiso">
-                                <strong>Step 11 -</strong> Create UEFI Boot ISO
+                        <h3 id="createuefibootisoonmacosorlinuxworker">
+                            <a href="#createuefibootisoonmacosorlinuxworker">
+                                <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1174,25 +1176,54 @@ if {isWin10Uefi} || {isWinServerUefi}
 then
     cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
     
-    mkisofs \
-        -allow-limited-size \
-        -iso-level 4 \
-        -l \
-        -R \
-        -b boot/etfsboot.com \
-        -no-emul-boot \
-        -boot-load-seg 0 \
-        -boot-load-size 8 \
-        -hide boot.catalog \
-        -eltorito-alt-boot \
-        -no-emul-boot \
-        -b efi/microsoft/boot/efisys.bin \
-        -boot-load-size 1 \
-        -udf \
-        -U \
-        -D \
-        -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-        .
+    if uname | \
+        grep -iq &quot;darwin&quot;
+    then
+        echo &quot;is macOS&quot;
+        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+        echo &quot;Using $(which xorriso)&quot;
+        
+        xorriso -as mkisofs \
+            -iso-level 4 \
+            -full-iso9660-filenames \
+            -rock \
+            -b boot/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-seg 0 \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -udf \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            .
+            
+    else
+        
+        mkisofs \
+            -allow-limited-size \
+            -iso-level 4 \ 
+            -full-iso9660-filenames \
+            -rock \
+            -b boot/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-seg 0 \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -udf \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            .
+    fi
         
 else
     echo &quot;Skipping for BIOS boot.&quot;

@@ -6,53 +6,53 @@
 
 
 <head>
-    <title>How to Create Win2022 autounattend Single ISO on Linux - Attune Automation</title>
+    <title>How to Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Win2022 autounattend Single ISO on Linux - Attune Automation">
+          content="How to Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker - Attune Automation">
     <meta name="description"
-          content="Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
+          content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
 
 The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
 
-For UEFI kic">
+For UEFI kickstar">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Win2022 autounattend Single ISO on Linux - Attune Automation" />
-    <meta property="og:description" content="Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
+          content="HowTo Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker - Attune Automation" />
+    <meta property="og:description" content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
 
 The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
 
-For UEFI kic" />
+For UEFI kickstar" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Win2022 autounattend Single ISO on Linux - Attune Automation" />
-    <meta name="twitter:description" content="Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
+          content="How to Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker - Attune Automation" />
+    <meta name="twitter:description" content="Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
 
 The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
 
-For UEFI kic" />
+For UEFI kickstar" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -143,7 +143,7 @@ For UEFI kic" />
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Win2022 autounattend Single ISO on Linux</strong>
+                    <strong>Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker</strong>
                 </li>
             </ol>
         </nav>
@@ -157,7 +157,7 @@ For UEFI kic" />
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Win2022 autounattend Single ISO on Linux
+                How to Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker
             </h1>
         </div>
     </div>
@@ -166,11 +166,11 @@ For UEFI kic" />
     <div class="row">
         <div class="description col px-0">
             <p class="text-left">
-                <p>Creates a single Windows Server 2022 ISO with <code>autounattend.xml</code> for unattended installation.</p>
+                <p>Creates a single Windows Desktop 10 ISO with <code>autounattend.xml</code> for unattended installation.</p>
 <p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
 <p>For both BIOS and UEFI kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
+<p>For BIOS kickstarts please set <code>isWin10Bios</code> to the string 'true'.</p>
+<p>For UEFI kickstarts please set <code>isWin10Uefi</code> to the string 'true'.</p>
 <p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
 <p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
             </p>
@@ -234,7 +234,7 @@ For UEFI kic" />
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Win2022 autounattend Single ISO on Linux</strong>
+                            <strong>Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker</strong>
                         </a>
                     </p>
 
@@ -243,8 +243,8 @@ For UEFI kic" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkinputparametervaluesforwindowsserversingleisokickstart">
-                            <strong>Step 1 -</strong> Check Input Parameter Values for Windows Server Single ISO Kickstart
+                        <a href="#checkinputparametervaluesforwin10singleisokickstart">
+                            <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Single ISO Kickstart
                         </a>
                     </p>
 
@@ -259,8 +259,8 @@ For UEFI kic" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2022dvdiso">
-                            <strong>Step 3 -</strong> Deploy Win2022 DVD ISO
+                        <a href="#deploywin10dvdiso">
+                            <strong>Step 3 -</strong> Deploy Win10 DVD ISO
                         </a>
                     </p>
 
@@ -395,7 +395,7 @@ For UEFI kic" />
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Win2022 autounattend Single ISO on Linux</strong>
+                You've automated: <strong>Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -426,9 +426,9 @@ For UEFI kic" />
 
 
                     <div class="row pt-5">
-                        <h3 id="checkinputparametervaluesforwindowsserversingleisokickstart">
-                            <a href="#checkinputparametervaluesforwindowsserversingleisokickstart">
-                                <strong>Step 1 -</strong> Check Input Parameter Values for Windows Server Single ISO Kickstart
+                        <h3 id="checkinputparametervaluesforwin10singleisokickstart">
+                            <a href="#checkinputparametervaluesforwin10singleisokickstart">
+                                <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Single ISO Kickstart
                             </a>
                         </h3>
                     </div>
@@ -476,9 +476,9 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {isWinServerBios} &amp;&amp; ! {isWinServerUefi}
+if ! {isWin10Bios} &amp;&amp; ! {isWin10Uefi}
 then
-    echo &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server 2016, 2019 or 2022.&quot;
+    echo &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
     exit 1
 else
     echo &quot;Ok.&quot;
@@ -558,9 +558,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2022dvdiso">
-                            <a href="#deploywin2022dvdiso">
-                                <strong>Step 3 -</strong> Deploy Win2022 DVD ISO
+                        <h3 id="deploywin10dvdiso">
+                            <a href="#deploywin10dvdiso">
+                                <strong>Step 3 -</strong> Deploy Win10 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -568,7 +568,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2022 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Desktop 10 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -589,11 +589,12 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022.</p>
+            <p>Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.</p>
+<p>Please select the English (United States) version.</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>WIN_Raw_Win2022_ISO.tar</strong>
+            <strong>Win10_Desktop_ISO.tar</strong>
             to the target node.
         </p>
         <p>

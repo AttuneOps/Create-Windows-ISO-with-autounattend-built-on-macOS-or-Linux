@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "f714d8e3-b7aa-415f-a0ff-97620b5234dc", 
     "isBlueprint": true, 
-    "key": "createwin10autounattendsingleisoonmacosorlinuxworker", 
+    "key": "createwindows10win10autounattendsingleisoonmacosorlinuxworker", 
     "links": [
         {
             "order": 0, 
@@ -48,13 +48,13 @@
         }, 
         {
             "order": 550, 
-            "stepKey": "createuefibootiso"
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
             "order": 600, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
-    "name": "Create Win10 autounattend Single ISO on macOS or Linux Worker", 
+    "name": "Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

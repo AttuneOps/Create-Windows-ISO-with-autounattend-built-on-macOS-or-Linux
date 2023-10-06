@@ -9,7 +9,7 @@ then
         export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
         echo "Using $(which xorriso)"
         
-        xorriso -as mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        xorriso -as mkisofs \
             -b boot.img \
             -no-emul-boot \
             -c BOOT.CAT \
@@ -22,12 +22,13 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "DRIVERS" \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
             
     else
         echo "not macOS"
         
-        mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+        mkisofs \
             -b boot.img \
             -no-emul-boot \
             -c BOOT.CAT \
@@ -41,6 +42,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
     fi
         

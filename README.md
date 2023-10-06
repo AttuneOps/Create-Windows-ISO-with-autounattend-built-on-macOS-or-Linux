@@ -54,38 +54,6 @@ This Project contains the following Blueprints.
 
 
 
-### Create Win10 autounattend Single ISO on macOS or Linux Worker
-
-Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
-
-For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
-
-### Create Win2016 autounattend Single ISO on Linux
-
-Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
-
 ### Create Win2019 autounattend Single ISO on Linux
 
 Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
@@ -126,6 +94,38 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 ### Perform UEFI Post Cleanup
 
+
+### Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker
+
+Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
+
+For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
+
+Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
 
 
