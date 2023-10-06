@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "continue", 
+    "archiveKey": "testfile", 
+    "deployPath": "/c$/software", 
+    "enabled": true, 
+    "externalUuid4": "905ddad1-7308-49e5-8945-3ef8b928e9c9", 
+    "key": "testpushfiles", 
+    "name": "Test Push Files", 
+    "osCredKey": "newoswindowsuseradministrator", 
+    "serverKey": "newosnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": true
+}

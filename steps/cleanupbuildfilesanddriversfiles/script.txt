@@ -1,0 +1,15 @@
+DIR="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+if [ -d "${DIR}" ]
+then
+    rm -rf "${DIR}" && echo "Removed ${DIR}"
+else
+    echo "No directory to remove."
+fi
+
+DIR="{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}"
+if [ -d "${DIR}" ]
+then
+    rm -rf "${DIR}" && echo "Removed ${DIR}"
+else
+    echo "No directory to remove."
+fi

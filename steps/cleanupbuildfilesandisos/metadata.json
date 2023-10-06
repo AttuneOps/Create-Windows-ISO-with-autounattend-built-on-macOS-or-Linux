@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "36c01aab-1889-4670-afaf-076fdba48231", 
+    "interpreter": 1, 
+    "key": "cleanupbuildfilesandisos", 
+    "name": "Clean Up Build Files and ISOs", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

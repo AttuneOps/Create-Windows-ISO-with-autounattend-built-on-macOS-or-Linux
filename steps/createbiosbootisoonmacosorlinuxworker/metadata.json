@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "4f1f567c-ec82-4c18-b14d-208a79891b31", 
+    "interpreter": 1, 
+    "key": "createbiosbootisoonmacosorlinuxworker", 
+    "name": "Create BIOS Boot ISO on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "a994e07d-2388-4391-a3f8-4911de92c519", 
+    "key": "driversandautounattenddriveletter", 
+    "name": "Drivers and Autounattend Drive Letter", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

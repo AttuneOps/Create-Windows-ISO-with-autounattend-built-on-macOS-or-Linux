@@ -1,0 +1,60 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "f714d8e3-b7aa-415f-a0ff-97620b5234dc", 
+    "isBlueprint": true, 
+    "key": "createwindows10win10autounattendsingleisoonmacosorlinuxworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkinputparametervaluesforwin10singleisokickstart"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "cleanupbuildfilesandisos"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "deploywin10dvdiso"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "extractwindowsbootimg"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "extractwindowsiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "deploywindowsunattendedconfig"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "copydriversdropinfolder"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "createbiosbootisoonmacosorlinuxworker"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "cleanupbuildfilesanddriversfiles"
+        }
+    ], 
+    "name": "Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

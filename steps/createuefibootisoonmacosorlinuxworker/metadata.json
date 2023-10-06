@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "86f8954a-9123-4095-baf5-bbafcfe04517", 
+    "interpreter": 1, 
+    "key": "createuefibootisoonmacosorlinuxworker", 
+    "name": "Create UEFI Boot ISO on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

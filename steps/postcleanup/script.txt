@@ -1,0 +1,33 @@
+DIR="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+if [ -d "${DIR}" ]
+then
+    rm -rf "${DIR}" && echo "Removed ${DIR}"
+else
+    echo "No build directory to remove."
+fi
+
+DIR="{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}"
+if [ -d "${DIR}" ]
+then
+    rm -rf "${DIR}" && echo "Removed ${DIR}"
+else
+    echo "No drop in drivers directory to remove."
+fi
+
+# The wildcard will allow removal of 
+# - kickstart_{newOsNode.fqn}.iso
+# - drivers_{newOsNode.fqn}.iso
+ISOS={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
+
+i=0
+for FILE in ${ISOS}
+do
+    echo "$i. F = ${FILE}"
+    ((i=i+1))
+    if [ -f "${FILE}" ] 
+    then
+        rm -fv ${FILE}
+    else
+        echo "No ISO to remove."
+    fi
+done

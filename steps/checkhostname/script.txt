@@ -1,0 +1,7 @@
+if (-Not (HostName | `
+    findstr /I "{newOsWindowsNode.hostname}")) {
+    Write-Host "Hostname $(HostName) should be {newOsWindowsNode.hostname}."
+    exit 1
+} else {
+    Write-Host "Hostname $(HostName) is correct."
+}

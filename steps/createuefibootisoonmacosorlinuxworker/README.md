@@ -1,0 +1,1 @@
+https://unix.stackexchange.com/questions/531012/how-to-modify-an-installation-iso-and-keep-it-bootable

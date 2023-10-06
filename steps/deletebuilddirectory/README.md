@@ -1,1 +1,0 @@
-Deletes the build directory "{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}".

@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "792c5c1b-e029-4643-a675-1fdeb1183fcd", 
+    "key": "newoswindowstimezone", 
+    "name": "New OS Windows TimeZone", 
+    "showInPlan": false, 
+    "type": "c.s.s.b.phv.Text"
+}

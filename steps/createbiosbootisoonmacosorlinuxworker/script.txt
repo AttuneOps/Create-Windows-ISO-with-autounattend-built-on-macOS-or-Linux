@@ -1,0 +1,51 @@
+cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+
+if {isWin10Bios} || {isWinServerBios} 
+then
+    if uname | \
+        grep -iq "darwin"
+    then
+        echo "is macOS"
+        export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+        echo "Using $(which xorriso)"
+        
+        xorriso -as mkisofs \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V "DRIVERS" \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            .
+            
+    else
+        echo "not macOS"
+        
+        mkisofs \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -allow-limited-size \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V "KS_WIN" \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            .
+    fi
+        
+else
+    echo "Skipping for UEFI boot."
+fi

@@ -1,0 +1,20 @@
+if {kickstartedBootLoaderIsBios}
+then
+    $BootMode = bcdedit | Select-String "path.*efi"
+    if (-Not ($null -eq $BootMode)) {
+        echo "This looks like UEFI boot."
+        exit 1
+    }else {
+        Write-Host "This looks like BIOS boot."
+    }
+
+elif {kickstartedBootLoaderIsUefi}
+then
+    $BootMode = bcdedit | Select-String "path.*efi"
+    if ($null -eq $BootMode) {
+        Write-Host "This looks like BIOS boot."
+        exit 1
+    }else {
+        echo "This looks like UEFI boot."
+    }
+fi

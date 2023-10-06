@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "07fd9853-d326-49cd-9946-fb0cb8695949", 
+    "key": "iswin10bios", 
+    "name": "Is Win10 BIOS", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

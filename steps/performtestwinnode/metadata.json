@@ -1,0 +1,44 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "972589c0-aa6d-4174-bf31-c4d69f049e1a", 
+    "isBlueprint": true, 
+    "key": "performtestwinnode", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "testecho"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checkhostname"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkipaddress"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "testpushfiles"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deletepushedfile"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "checknetworkaccess"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "testwindowsversion"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "confirmbootconfiguration"
+        }
+    ], 
+    "name": "Perform Test Win Node", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

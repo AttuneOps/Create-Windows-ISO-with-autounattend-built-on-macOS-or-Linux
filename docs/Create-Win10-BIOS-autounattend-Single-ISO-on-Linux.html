@@ -252,8 +252,16 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin10unattendedconfig">
-                            <strong>Step 5 -</strong> Deploy Win10 Unattended Config
+                        <a href="#deploypostsetuppowershellscript">
+                            <strong>Step 5 -</strong> Deploy Post Setup PowerShell Script
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploywindowsunattendedconfig">
+                            <strong>Step 6 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -261,7 +269,7 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootiso">
-                            <strong>Step 6 -</strong> Create BIOS Boot ISO
+                            <strong>Step 7 -</strong> Create BIOS Boot ISO
                         </a>
                     </p>
 
@@ -269,7 +277,7 @@ The ISO will be created at "{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 
                     <p class="text-muted pt-2">
                         <a href="#deletebuilddirectory">
-                            <strong>Step 7 -</strong> Delete Build Directory
+                            <strong>Step 8 -</strong> Delete Build Directory
                         </a>
                     </p>
 
@@ -443,7 +451,7 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Desktop 10 ISO to <code>{ksAttuneBaseDir}/build-{kickstartedNode.fqn}</code>.</p>
+                                <p>Deploys Windows Desktop 10 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -464,7 +472,8 @@ ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
 
     <div class="row">
         <p>
-            <p>A plain unaltered ISO</p>
+            <p>Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.</p>
+<p>Please select the English (United States) version.</p>
         </p>
         <p>
             Copy the File(s)
@@ -628,9 +637,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin10unattendedconfig">
-                            <a href="#deploywin10unattendedconfig">
-                                <strong>Step 5 -</strong> Deploy Win10 Unattended Config
+                        <h3 id="deploypostsetuppowershellscript">
+                            <a href="#deploypostsetuppowershellscript">
+                                <strong>Step 5 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -638,7 +647,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys a Windows 10 <code>autounattend.xml</code> file. This works with Windows 10.</p>
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -659,11 +668,75 @@ fi
 
     <div class="row">
         <p>
-            <p>Windows Desktop 10 unattended.xml file with "Drivers" in the "D:\" drive for single ISO kickstarts.</p>
+            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
+<p>This script is run once post installation of the WIndows operating system.</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>Win10_Unattended_Config.tar</strong>
+            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploywindowsunattendedconfig">
+                            <a href="#deploywindowsunattendedconfig">
+                                <strong>Step 6 -</strong> Deploy Windows Unattended Config
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>For these Windows versions:
+* WIndows Desktop 10
+* WIndows Server 2016
+* WIndows Server 2019
+* WIndows Server 2022</p>
+<p>For these boot methods:
+* BIOS
+* UEFI</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Windows_Unattended_config.tar</strong>
             to the target node.
         </p>
         <p>
@@ -686,7 +759,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootiso">
                             <a href="#createbiosbootiso">
-                                <strong>Step 6 -</strong> Create BIOS Boot ISO
+                                <strong>Step 7 -</strong> Create BIOS Boot ISO
                             </a>
                         </h3>
                     </div>
@@ -694,7 +767,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a bootable Windows ISO called <code>kickstart_{kickstartedNode.fqn}.iso</code> from the contents in folder <code>{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}</code>.</p>
+                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -745,7 +818,7 @@ mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
                     <div class="row pt-5">
                         <h3 id="deletebuilddirectory">
                             <a href="#deletebuilddirectory">
-                                <strong>Step 7 -</strong> Delete Build Directory
+                                <strong>Step 8 -</strong> Delete Build Directory
                             </a>
                         </h3>
                     </div>
@@ -753,7 +826,7 @@ mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the build directory "{kickstartWorkerBaseDir}/build-{kickstartedNode.fqn}".</p>
+                                <p>Deletes the build directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>

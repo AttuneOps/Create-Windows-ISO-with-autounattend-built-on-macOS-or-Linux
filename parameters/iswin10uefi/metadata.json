@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "7ac710f8-3bc8-4555-9e28-c9ccb2763ec4", 
+    "key": "iswin10uefi", 
+    "name": "Is Win10 UEFI", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}
