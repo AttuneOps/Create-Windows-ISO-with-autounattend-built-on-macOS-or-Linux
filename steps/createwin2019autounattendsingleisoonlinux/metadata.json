@@ -48,7 +48,7 @@
         }, 
         {
             "order": 500, 
-            "stepKey": "createuefibootiso"
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
             "order": 550, 
