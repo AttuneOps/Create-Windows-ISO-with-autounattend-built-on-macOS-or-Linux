@@ -93,6 +93,9 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
+### Create Windows Server 2019 (Win2019) autounattend Single ISO on macOS or Linux Worker
+
+
 
 
 
@@ -135,6 +138,7 @@ Performs basic tests for the built node.
 | Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
 | Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |
 | WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016. |
+| Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 
 
 
