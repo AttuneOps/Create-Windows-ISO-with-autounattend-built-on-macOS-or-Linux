@@ -238,8 +238,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#extractwindowsiso">
+                            <strong>Step 5 -</strong> Extract Windows ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#copyefisysnopromptbinintoefisysbin">
-                            <strong>Step 5 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                            <strong>Step 6 -</strong> Copy efisys_noprompt.bin into efisys.bin
                         </a>
                     </p>
 
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootisoonmacosorlinuxworker">
-                            <strong>Step 6 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                            <strong>Step 7 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -255,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootisoonmacosorlinuxworker">
-                            <strong>Step 7 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                            <strong>Step 8 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -263,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 8 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 9 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -271,7 +279,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 9 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 10 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -279,7 +287,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 10 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 11 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -287,7 +295,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createanswerfileisoonmacosorlinux">
-                            <strong>Step 11 -</strong> Create Answer File ISO on macOS or Linux
+                            <strong>Step 12 -</strong> Create Answer File ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -295,7 +303,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 13 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -659,9 +667,79 @@ fi
 
 
                     <div class="row pt-5">
+                        <h3 id="extractwindowsiso">
+                            <a href="#extractwindowsiso">
+                                <strong>Step 5 -</strong> Extract Windows ISO
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extracts the Windows ISO.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+if ls | grep -q *iso
+then
+    
+    ISO=&quot;$(echo *iso)&quot;
+    echo &quot;ISO is $ISO&quot;
+    
+    7z x &quot;${ISO}&quot;
+    
+    rm -v &quot;${ISO}&quot;
+else
+    echo &quot;ISO is already extracted.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="copyefisysnopromptbinintoefisysbin">
                             <a href="#copyefisysnopromptbinintoefisysbin">
-                                <strong>Step 5 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                                <strong>Step 6 -</strong> Copy efisys_noprompt.bin into efisys.bin
                             </a>
                         </h3>
                     </div>
@@ -724,7 +802,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootisoonmacosorlinuxworker">
                             <a href="#createbiosbootisoonmacosorlinuxworker">
-                                <strong>Step 6 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                                <strong>Step 7 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -833,7 +911,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootisoonmacosorlinuxworker">
                             <a href="#createuefibootisoonmacosorlinuxworker">
-                                <strong>Step 7 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                                <strong>Step 8 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -942,7 +1020,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 8 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 9 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -1013,7 +1091,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 9 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 10 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -1070,7 +1148,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 10 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 11 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -1138,7 +1216,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createanswerfileisoonmacosorlinux">
                             <a href="#createanswerfileisoonmacosorlinux">
-                                <strong>Step 11 -</strong> Create Answer File ISO on macOS or Linux
+                                <strong>Step 12 -</strong> Create Answer File ISO on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1226,7 +1304,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 13 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

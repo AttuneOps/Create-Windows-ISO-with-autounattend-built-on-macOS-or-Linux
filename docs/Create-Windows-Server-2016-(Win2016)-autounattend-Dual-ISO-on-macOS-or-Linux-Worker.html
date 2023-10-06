@@ -6,53 +6,29 @@
 
 
 <head>
-    <title>How to Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker - Attune Automation</title>
+    <title>How to Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker - Attune Automation">
+          content="How to Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker - Attune Automation">
     <meta name="description"
-          content="Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For ">
+          content="">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker - Attune Automation" />
-    <meta property="og:description" content="Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For " />
+          content="HowTo Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker - Attune Automation" />
+    <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker - Attune Automation" />
-    <meta name="twitter:description" content="Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For " />
+          content="How to Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker - Attune Automation" />
+    <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -143,7 +119,7 @@ For " />
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker</strong>
+                    <strong>Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker</strong>
                 </li>
             </ol>
         </nav>
@@ -157,25 +133,12 @@ For " />
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker
+                How to Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
             </h1>
         </div>
     </div>
 
 <!-- Blueprint Description -->
-    <div class="row">
-        <div class="description col px-0">
-            <p class="text-left">
-                <p>Creates a single Windows Server 2022 ISO with <code>autounattend.xml</code> for unattended installation.</p>
-<p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
-<p>For both BIOS and UEFI kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
-<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
-            </p>
-        </div>
-    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -234,7 +197,7 @@ For " />
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker</strong>
+                            <strong>Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker</strong>
                         </a>
                     </p>
 
@@ -259,8 +222,8 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2022dvdiso">
-                            <strong>Step 3 -</strong> Deploy Win2022 DVD ISO
+                        <a href="#deploywin2016dvdiso">
+                            <strong>Step 3 -</strong> Deploy Win2016 DVD ISO
                         </a>
                     </p>
 
@@ -283,32 +246,8 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 7 -</strong> Deploy Windows Unattended Config
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfolder">
-                            <strong>Step 8 -</strong> Copy Drivers Drop in Folder
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#copyefisysnopromptbinintoefisysbin">
-                            <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                            <strong>Step 6 -</strong> Copy efisys_noprompt.bin into efisys.bin
                         </a>
                     </p>
 
@@ -316,7 +255,7 @@ For " />
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootisoonmacosorlinuxworker">
-                            <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                            <strong>Step 7 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -324,7 +263,39 @@ For " />
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootisoonmacosorlinuxworker">
-                            <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                            <strong>Step 8 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploywindowsunattendedconfig">
+                            <strong>Step 9 -</strong> Deploy Windows Unattended Config
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploypostsetuppowershellscript">
+                            <strong>Step 10 -</strong> Deploy Post Setup PowerShell Script
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copydriversdropinfolder">
+                            <strong>Step 11 -</strong> Copy Drivers Drop in Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createanswerfileisoonmacosorlinux">
+                            <strong>Step 12 -</strong> Create Answer File ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -332,7 +303,7 @@ For " />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 13 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -395,7 +366,7 @@ For " />
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker</strong>
+                You've automated: <strong>Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -558,9 +529,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2022dvdiso">
-                            <a href="#deploywin2022dvdiso">
-                                <strong>Step 3 -</strong> Deploy Win2022 DVD ISO
+                        <h3 id="deploywin2016dvdiso">
+                            <a href="#deploywin2016dvdiso">
+                                <strong>Step 3 -</strong> Deploy Win2016 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -568,7 +539,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2022 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Server 2016 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -589,11 +560,11 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022.</p>
+            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016.</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>WIN_Raw_Win2022_ISO.tar</strong>
+            <strong>WIN_Raw_Win2016_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -765,205 +736,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywindowsunattendedconfig">
-                            <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 7 -</strong> Deploy Windows Unattended Config
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the generic autounattend.xml.</p>
-<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWin10Uefi</li>
-<li>isWinServerBios</li>
-<li>isWinServerUefi</li>
-</ol>
-<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="copydriversdropinfolder">
-                            <a href="#copydriversdropinfolder">
-                                <strong>Step 8 -</strong> Copy Drivers Drop in Folder
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
-DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
-
-mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-
-if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
-then
-
-    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
-        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-else
-    echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="copyefisysnopromptbinintoefisysbin">
                             <a href="#copyefisysnopromptbinintoefisysbin">
-                                <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                                <strong>Step 6 -</strong> Copy efisys_noprompt.bin into efisys.bin
                             </a>
                         </h3>
                     </div>
@@ -1026,7 +801,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootisoonmacosorlinuxworker">
                             <a href="#createbiosbootisoonmacosorlinuxworker">
-                                <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                                <strong>Step 7 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1135,7 +910,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootisoonmacosorlinuxworker">
                             <a href="#createuefibootisoonmacosorlinuxworker">
-                                <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                                <strong>Step 8 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1242,9 +1017,293 @@ fi
 
 
                     <div class="row pt-5">
+                        <h3 id="deploywindowsunattendedconfig">
+                            <a href="#deploywindowsunattendedconfig">
+                                <strong>Step 9 -</strong> Deploy Windows Unattended Config
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the generic autounattend.xml.</p>
+<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWin10Uefi</li>
+<li>isWinServerBios</li>
+<li>isWinServerUefi</li>
+</ol>
+<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>For these Windows versions:
+* WIndows Desktop 10
+* WIndows Server 2016
+* WIndows Server 2019
+* WIndows Server 2022</p>
+<p>For these boot methods:
+* BIOS
+* UEFI</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Windows_Unattended_config.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploypostsetuppowershellscript">
+                            <a href="#deploypostsetuppowershellscript">
+                                <strong>Step 10 -</strong> Deploy Post Setup PowerShell Script
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
+<p>This script is run once post installation of the WIndows operating system.</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="copydriversdropinfolder">
+                            <a href="#copydriversdropinfolder">
+                                <strong>Step 11 -</strong> Copy Drivers Drop in Folder
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
+
+mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+
+if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
+then
+
+    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
+        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+else
+    echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createanswerfileisoonmacosorlinux">
+                            <a href="#createanswerfileisoonmacosorlinux">
+                                <strong>Step 12 -</strong> Create Answer File ISO on macOS or Linux
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates an ISO at <code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso</code> containing:</p>
+<ol>
+<li><code>drivers</code> folder</li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install_setup.ps1</code></li>
+</ol>
+<p>This works for kickstarts on Linux or macOS with:
+1. Windows Desktop 10
+2. Windows Server 2016
+2. Windows Server 2019
+3. Windows Server 2022</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    
+DRIVERS_FOLDER=&quot;drivers&quot;
+DRIVERS_ISO_NAME=&quot;drivers_{newOsNode.fqn}.iso&quot;
+
+if uname | \
+    grep -iq &quot;darwin&quot;
+then
+    echo &quot;is macOS&quot;
+    
+    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+    echo &quot;Using $(which xorriso)&quot;
+    
+    xorriso -as mkisofs -o ../${DRIVERS_ISO_NAME} \
+        -iso-level 2 -joliet-long -relaxed-filenames \
+        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
+        autounattend.xml post_install_setup.ps1
+else
+    echo &quot;not macOS&quot;
+    
+    mkisofs -o ../${DRIVERS_ISO_NAME} \
+        -iso-level 3 -udf -joliet-long -relaxed-filenames \
+        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
+        autounattend.xml post_install_setup.ps1
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 13 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

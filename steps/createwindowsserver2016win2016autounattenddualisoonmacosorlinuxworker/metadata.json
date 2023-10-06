@@ -2,63 +2,63 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "d5214dc6-2b04-46f5-b021-c0fade45d7d4", 
+    "externalUuid4": "46a721c4-5bc1-406c-82f5-733518b3ad9f", 
     "isBlueprint": true, 
-    "key": "createwindows10win10autounattenddualisoonmacosorlinuxworker", 
+    "key": "createwindowsserver2016win2016autounattenddualisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "checkinputparametervaluesforwin10kickstart"
-        }, 
-        {
             "order": 50, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstart"
         }, 
         {
             "order": 100, 
-            "stepKey": "deploywin10dvdiso"
-        }, 
-        {
-            "order": 150, 
-            "stepKey": "extractwindowsbootimg"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "cleanupbuildfilesandisos"
         }, 
         {
             "order": 250, 
-            "stepKey": "copyefisysnopromptbinintoefisysbin"
+            "stepKey": "deploywin2016dvdiso"
         }, 
         {
             "order": 300, 
-            "stepKey": "createbiosbootisoonmacosorlinuxworker"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 350, 
-            "stepKey": "createuefibootisoonmacosorlinuxworker"
+            "stepKey": "extractwindowsiso"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfig"
-        }, 
-        {
-            "order": 450, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
         }, 
         {
             "order": 500, 
-            "stepKey": "copydriversdropinfolder"
-        }, 
-        {
-            "order": 550, 
-            "stepKey": "createanswerfileisoonmacosorlinux"
+            "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
             "order": 600, 
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "deploywindowsunattendedconfig"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "deploypostsetuppowershellscript"
+        }, 
+        {
+            "order": 900, 
+            "stepKey": "copydriversdropinfolder"
+        }, 
+        {
+            "order": 1000, 
+            "stepKey": "createanswerfileisoonmacosorlinux"
+        }, 
+        {
+            "order": 1100, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
-    "name": "Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker", 
+    "name": "Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
