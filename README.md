@@ -136,10 +136,7 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Perform UEFI Post Cleanup
 
 
-### Test Win BIOS Node
-
-
-### Test Win UEFI Node
+### Test Win Node
 
 
 
@@ -171,6 +168,7 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
 | Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
+| Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
 
 
 

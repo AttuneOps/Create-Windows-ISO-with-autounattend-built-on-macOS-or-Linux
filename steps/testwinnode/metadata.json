@@ -2,9 +2,9 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "73f6937e-5d72-4544-a37b-cb54d92eae16", 
+    "externalUuid4": "972589c0-aa6d-4174-bf31-c4d69f049e1a", 
     "isBlueprint": true, 
-    "key": "testwinuefinode", 
+    "key": "testwinnode", 
     "links": [
         {
             "order": 0, 
@@ -12,9 +12,13 @@
         }, 
         {
             "order": 50, 
+            "stepKey": "confirmifbios"
+        }, 
+        {
+            "order": 100, 
             "stepKey": "confirmifuefi"
         }
     ], 
-    "name": "Test Win UEFI Node", 
+    "name": "Test Win Node", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
