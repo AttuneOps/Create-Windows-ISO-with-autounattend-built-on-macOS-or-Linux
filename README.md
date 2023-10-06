@@ -134,6 +134,9 @@ Performs basic tests for the built node.
 ### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
 
 
+### Create Windows Server 2022 (Win2022) autounattend Dual ISO on macOS or Linux Worker
+
+
 
 
 
