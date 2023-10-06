@@ -29,6 +29,10 @@
         {
             "order": 250, 
             "stepKey": "checknetworkaccess"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "testwindowsversion"
         }
     ], 
     "name": "Test Windows Node", 
