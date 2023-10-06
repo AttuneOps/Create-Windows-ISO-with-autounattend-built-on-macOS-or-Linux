@@ -86,13 +86,6 @@ Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
-### Perform Post Cleanup
-
-
-### Perform Test Win Node
-
-Performs basic tests for the built node.
-
 ### Create Windows Server 2019 (Win2019) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
@@ -124,6 +117,16 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Perform Post Cleanup
+
+
+### Perform Test Win Node
+
+Performs basic tests for the built node.
+
+### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
+
 
 
 
