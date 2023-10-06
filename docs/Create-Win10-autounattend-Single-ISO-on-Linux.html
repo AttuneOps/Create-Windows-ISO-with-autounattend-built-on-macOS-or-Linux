@@ -315,8 +315,8 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createbiosbootiso">
-                            <strong>Step 10 -</strong> Create BIOS Boot ISO
+                        <a href="#createbiosbootisoonmacosorlinuxworker">
+                            <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -1025,9 +1025,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createbiosbootiso">
-                            <a href="#createbiosbootiso">
-                                <strong>Step 10 -</strong> Create BIOS Boot ISO
+                        <h3 id="createbiosbootisoonmacosorlinuxworker">
+                            <a href="#createbiosbootisoonmacosorlinuxworker">
+                                <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1073,11 +1073,47 @@ cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 
 if {isWin10Bios} || {isWinServerBios} 
 then
-    
-    mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-        -b boot.img -no-emul-boot -c BOOT.CAT \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames -allow-limited-size \
-        -J -l -D -N -V &quot;KS_WIN&quot; .
+    if uname | \
+        grep -iq &quot;darwin&quot;
+    then
+        echo &quot;is macOS&quot;
+        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+        echo &quot;Using $(which xorriso)&quot;
+        
+        xorriso -as mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V &quot;DRIVERS&quot; \
+            .
+            
+    else
+        echo &quot;not macOS&quot;
+        
+        mkisofs -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -allow-limited-size \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V &quot;KS_WIN&quot; \
+            .
+    fi
         
 else
     echo &quot;Skipping for UEFI boot.&quot;

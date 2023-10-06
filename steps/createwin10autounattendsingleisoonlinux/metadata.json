@@ -44,7 +44,7 @@
         }, 
         {
             "order": 500, 
-            "stepKey": "createbiosbootiso"
+            "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
             "order": 550, 
