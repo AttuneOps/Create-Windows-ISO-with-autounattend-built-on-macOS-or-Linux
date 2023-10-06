@@ -57,9 +57,6 @@ This Project contains the following Blueprints.
 ### Perform Post Cleanup
 
 
-### Perform Test Win Node
-
-
 ### Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
@@ -91,6 +88,10 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Perform Test Win Node
+
+Performs basic tests for the built node.
 
 
 

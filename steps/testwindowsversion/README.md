@@ -1,0 +1,1 @@
+Tests if the correct version of the Windows operating system was installed.
