@@ -1,4 +1,4 @@
-if (kickstartedBootLoaderIsUefi)
+if {kickstartedBootLoaderIsUefi}
 then
     $BootMode = bcdedit | Select-String "path.*efi"
     if ($null -eq $BootMode) {
