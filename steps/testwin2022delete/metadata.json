@@ -1,16 +1,16 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "64661bc7-1de9-4d2a-bf6d-bfa4db922d5a", 
+    "externalUuid4": "af5f8944-9201-4e36-b727-b6fae22357f7", 
     "interpreter": 2, 
     "interpreterCommand": "", 
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
-    "key": "testwin2016", 
-    "name": "Test Win2016", 
+    "key": "testwin2022delete", 
+    "name": "Test Win2022 - DELETE", 
     "osCredKey": "newoswindowsuseradministrator", 
     "serverKey": "newoswindowsnode", 
     "successExitCode": 0, 
-    "timeout": 120, 
+    "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
 }

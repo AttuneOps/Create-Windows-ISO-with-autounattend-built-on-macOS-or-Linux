@@ -121,22 +121,10 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Perform Post Cleanup
 
 
-### Perform Test Win10
-
-
-### Perform Test Win2016
-
-
-### Perform Test Win2019
-
-
-### Perform Test Win2022
-
-
 ### Perform UEFI Post Cleanup
 
 
-### Test Win Node
+### Perform Test Win Node
 
 
 
