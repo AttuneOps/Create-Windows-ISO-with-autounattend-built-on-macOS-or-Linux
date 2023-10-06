@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "788fb177-e5fc-4977-b83b-7f027296703a", 
-    "key": "sambaserver", 
-    "name": "Samba Server", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.LinuxServer"
-}

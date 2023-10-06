@@ -1,9 +1,0 @@
-cd /home/attune/windows_iso_data_for_winpe/windows2022
-
-# Case insensitve globbing
-shopt -s nocaseglob
-
-ISO=$(ls *.iso)
-echo $ISO
-7z x $ISO
-rm $ISO

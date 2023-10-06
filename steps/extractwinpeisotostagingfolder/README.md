@@ -1,1 +1,0 @@
-Extract `winpe.iso` to a `winpe_staging` folder.

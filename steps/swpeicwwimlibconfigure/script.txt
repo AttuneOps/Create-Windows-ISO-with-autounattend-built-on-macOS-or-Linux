@@ -1,8 +1,0 @@
-if [ -f /usr/local/lib/libwim.so ]
-then
-    echo "libwim.so already installed"
-else
-    wimlib_dir="wimlib"
-    cd $wimlib_dir
-    ./configure
-fi

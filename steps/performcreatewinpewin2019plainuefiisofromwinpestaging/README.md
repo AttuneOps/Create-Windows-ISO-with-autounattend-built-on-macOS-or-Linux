@@ -1,1 +1,0 @@
-Creates a UEFI bootable WinPE ISO at `{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso` from the contents of the WinPE staging directory at `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging`. 
