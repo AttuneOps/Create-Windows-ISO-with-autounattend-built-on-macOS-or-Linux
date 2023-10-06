@@ -799,6 +799,13 @@ if (-Not $?) {
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -917,6 +924,13 @@ fi
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -942,7 +956,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if (kickstartedBootLoaderIsUefi)
+if {kickstartedBootLoaderIsUefi}
 then
     $BootMode = bcdedit | Select-String &quot;path.*efi&quot;
     if ($null -eq $BootMode) {

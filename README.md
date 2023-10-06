@@ -121,10 +121,10 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Perform Post Cleanup
 
 
-### Perform UEFI Post Cleanup
-
-
 ### Perform Test Win Node
+
+
+### Perform UEFI Post Cleanup
 
 
 
@@ -145,7 +145,10 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 | Is WinPE Kickstart | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
 | Is Win Server BIOS | Text | `iswinserverbios` |  |
 | Is Win Server UEFI | Text | `iswinserveruefi` |  |
+| Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
+| Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
 | Kickstarted Linux Node | Linux/Unix Node | `kickstartedlinuxnode` | Refers to the node being built. |
+| Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
 | Linux: Attune User - DELETE | Linux/Unix Credential | `linuxattuneuserdelete` |  |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
@@ -154,9 +157,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 | New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
-| Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
-| Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
-| Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
 
 
 
