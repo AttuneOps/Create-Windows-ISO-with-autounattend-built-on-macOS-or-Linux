@@ -1,1 +1,0 @@
-Deploys Windows Server 2022 ISO to `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}`.
