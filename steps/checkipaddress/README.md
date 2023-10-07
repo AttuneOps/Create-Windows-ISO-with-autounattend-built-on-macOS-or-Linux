@@ -1,0 +1,1 @@
+Tests if IP address is set correctly.

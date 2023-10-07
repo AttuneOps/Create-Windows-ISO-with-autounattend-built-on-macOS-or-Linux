@@ -14,7 +14,8 @@
     <meta name="title"
           content="How to Perform Test Win Node - Attune Automation">
     <meta name="description"
-          content="">
+          content="Performs basic tests for the built node.">
+
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
@@ -22,13 +23,13 @@
     <meta property="og:type" content="article" />
     <meta property="og:title"
           content="HowTo Perform Test Win Node - Attune Automation" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Performs basic tests for the built node." />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
           content="How to Perform Test Win Node - Attune Automation" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:description" content="Performs basic tests for the built node." />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -139,6 +140,13 @@
     </div>
 
 <!-- Blueprint Description -->
+    <div class="row">
+        <div class="description col px-0">
+            <p class="text-left">
+                <p>Performs basic tests for the built node.</p>
+            </p>
+        </div>
+    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -367,7 +375,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Tests a simple echo.</p>
                             </p>
                         </div>
                     </div>
@@ -499,7 +507,7 @@ if (-Not (HostName | `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Tests if IP address is set correctly.</p>
                             </p>
                         </div>
                     </div>
@@ -560,7 +568,7 @@ if (-Not (ipconfig | `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Test basic push files functionality.</p>
                             </p>
                         </div>
                     </div>
@@ -582,7 +590,7 @@ if (-Not (ipconfig | `
 
     <div class="row">
         <p>
-            
+            <p>Test file for testing push files.</p>
         </p>
         <p>
             Copy the File(s)
@@ -618,7 +626,8 @@ if (-Not (ipconfig | `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deletes the pushed file.
+This implicitly tests if the file was pushed successfully.</p>
                             </p>
                         </div>
                     </div>
@@ -697,7 +706,7 @@ if (-Not (Test-Path &quot;$FILE&quot; -PathType Leaf)) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Tests basic ping test.</p>
                             </p>
                         </div>
                     </div>
@@ -756,7 +765,7 @@ if (-Not $?) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Tests if the correct version of the Windows operating system was installed.</p>
                             </p>
                         </div>
                     </div>
@@ -817,7 +826,8 @@ if ((systeminfo | select-string -pattern $SEARCH_STRING) -eq $null) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>https://stackoverflow.com/questions/65314573/how-to-check-device-boot-mode-uefi-or-legacy</p>
+                                <p>Tests if the correct boot configuration was set.</p>
+<p>More information at https://stackoverflow.com/questions/65314573/how-to-check-device-boot-mode-uefi-or-legacy.</p>
                             </p>
                         </div>
                     </div>

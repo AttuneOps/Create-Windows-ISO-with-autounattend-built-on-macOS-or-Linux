@@ -2,14 +2,13 @@
     "actionOnStepFail": "stop", 
     "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "f714d8e3-b7aa-415f-a0ff-97620b5234dc", 
+    "externalUuid4": "5f27c35e-ed3c-4069-bd04-8d52b5bfc5ca", 
     "isBlueprint": true, 
-    "key": "createwindows10win10autounattendsingleisoonmacosorlinuxworker", 
+    "key": "createwindowsserver2019win2019autounattendsingleisoonmacosorlinuxworker", 
     "links": [
         {
             "order": 0, 
-            "stepKey": "checkinputparametervaluesforwin10kickstart"
-
+            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstart"
         }, 
         {
             "order": 50, 
@@ -17,7 +16,7 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "deploywin2019dvdiso"
         }, 
         {
             "order": 150, 
@@ -28,34 +27,34 @@
             "stepKey": "extractwindowsiso"
         }, 
         {
-            "order": 300, 
+            "order": 250, 
             "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
-            "order": 350, 
+            "order": 300, 
             "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
-            "order": 400, 
+            "order": 350, 
             "stepKey": "copydriversdropinfolder"
         }, 
         {
-            "order": 450, 
+            "order": 400, 
             "stepKey": "copyefisysnopromptbinintoefisysbin"
         }, 
         {
-            "order": 500, 
+            "order": 450, 
             "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 550, 
+            "order": 500, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 600, 
+            "order": 550, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
-    "name": "Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker", 
+    "name": "Create Windows Server 2019 (Win2019) autounattend Single ISO on macOS or Linux Worker", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

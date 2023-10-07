@@ -1,0 +1,1 @@
+Checks if at least one of `isWin10Bios` or `isWin10Uefi` is set tot true.

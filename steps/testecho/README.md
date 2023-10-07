@@ -1,0 +1,1 @@
+Tests a simple echo.
