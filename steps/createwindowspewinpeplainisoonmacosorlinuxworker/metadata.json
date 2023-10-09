@@ -60,13 +60,13 @@
         }, 
         {
             "order": 650, 
-            "stepKey": "performcreatewinpewin2019plainuefiisofromwinpestaging"
+            "stepKey": "lincreatewinpewin2019plainuefiisofromwinpestaging"
         }, 
         {
             "order": 700, 
             "stepKey": "createwinpecleanbuildfiles"
         }
     ], 
-    "name": "Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker", 
+    "name": "Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
