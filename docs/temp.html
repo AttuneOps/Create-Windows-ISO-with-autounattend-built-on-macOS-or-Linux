@@ -206,48 +206,145 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmwinpewin2019plainbiosisodoesnotexist">
-                            <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Does Not Exist
+                        <a href="#linmountwinserverdvdiso">
+                            <strong>Step 1 -</strong> LIN Mount Win Server DVD ISO
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmwinpewin2019plainuefiisodoesnotexist">
-                            <strong>Step 2 -</strong> Confirm winpe_win2019_plain_uefi.iso Does Not Exist
+                        <a href="#linextractwinpeisofromwinimgdirectory">
+                            <strong>Step 2 -</strong> LIN Extract WinPE ISO from winimg Directory
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpecleanbuildfiles">
-                            <strong>Step 3 -</strong> Create WinPE Clean Build Files
+                        <a href="#extractwinpeisotostagingfolder">
+                            <strong>Step 3 -</strong> Extract WinPE ISO to Staging Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
+                            <strong>Step 4 -</strong> LIN Copy Files for mkwinpeimg Compatibility to WinPE Staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linmovebootimgtowinpestaging">
+                            <strong>Step 5 -</strong> LIN Move boot.img to winpe_staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linperformdeletesetupexefromwinpestagingbootwim">
+                            <strong>Step 6 -</strong> LIN Perform Delete setup.exe from winpe_staging boot.wim
                         </a>
                     </p>
     
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linunmountwindowsiso">
-                            <strong>Step 3.1 -</strong> LIN Unmount Windows ISO
+                        <a href="#createbootwimmountfolder">
+                            <strong>Step 6.1 -</strong> Create boot.wim Mount Folder
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lindeletewinimgfolder">
-                            <strong>Step 3.2 -</strong> LIN Delete winimg Folder
+                        <a href="#mountbootwim">
+                            <strong>Step 6.2 -</strong> Mount BOOT.WIM
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincleanbuilddirectory">
-                            <strong>Step 3.3 -</strong> LIN Clean Build Directory
+                        <a href="#lindeletesetupexefrombootwim">
+                            <strong>Step 6.3 -</strong> LIN Delete setup.exe from boot.wim
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linwimlibunmountbootwim">
+                            <strong>Step 6.4 -</strong> LIN wimlib Unmount boot.wim
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copywindowsefifilestowinpestaging">
+                            <strong>Step 7 -</strong> Copy Windows EFI Files to WinPE Staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincreatewinpewin2019plainbiosisofromwinpestaging">
+                            <strong>Step 8 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#performcreatewinpewin2019plainuefiisofromwinpestaging">
+                            <strong>Step 9 -</strong> Perform Create winpe_win2019_plain_uefi.iso from winpe_staging
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
+                            <strong>Step 9.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createwinpewin2019plainuefiiso">
+                            <strong>Step 9.2 -</strong> Create winpe_win2019_plain_uefi.iso
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#mountemptywinpewin2019plainuefiiso">
+                            <strong>Step 9.3 -</strong> Mount Empty winpe_win2019_plain_uefi.iso
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movewinpestagingtouefimount">
+                            <strong>Step 9.4 -</strong> Move WinPE Staging to UEFI Mount
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#unmountwinpeuefimount">
+                            <strong>Step 9.5 -</strong> Unmount WinPE UEFI Mount
                         </a>
                     </p>
 
@@ -342,9 +439,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmwinpewin2019plainbiosisodoesnotexist">
-                            <a href="#confirmwinpewin2019plainbiosisodoesnotexist">
-                                <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Does Not Exist
+                        <h3 id="linmountwinserverdvdiso">
+                            <a href="#linmountwinserverdvdiso">
+                                <strong>Step 1 -</strong> LIN Mount Win Server DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -352,197 +449,8 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> exists.</p>
-<p>If it does, prints a message to ask user to confirm to delete it if they want to recreate it.</p>
-<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Bios} || {isWinServerBios}
-then
-
-    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
-    cd &quot;${DIRECTORY}&quot;
-    
-    ISO=&quot;winpe_win2019_plain_bios.iso&quot;
-    if [[ -f ${ISO} ]]
-    then
-        echo &quot;Please delete ${DIRECTORY|/${ISO} to confirm you want to try again.&quot;
-        exit 1
-    fi
-    
-else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="confirmwinpewin2019plainuefiisodoesnotexist">
-                            <a href="#confirmwinpewin2019plainuefiisodoesnotexist">
-                                <strong>Step 2 -</strong> Confirm winpe_win2019_plain_uefi.iso Does Not Exist
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> exists.</p>
-<p>If it does, prints a message to ask user to confirm to delete it if they want to recreate it.</p>
-<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
-    cd &quot;${DIRECTORY}&quot;
-    
-    ISO=&quot;winpe_win2019_plain_uefi.iso&quot;
-    if [[ -f ${ISO} ]]
-    then
-        echo &quot;Please delete ${DIRECTORY|/${ISO} to confirm you want to try again.&quot;
-        exit 1
-    fi
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createwinpecleanbuildfiles">
-                            <a href="#createwinpecleanbuildfiles">
-                                <strong>Step 3 -</strong> Create WinPE Clean Build Files
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the temporary build directory.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="linunmountwindowsiso">
-                            <a href="#linunmountwindowsiso">
-                                <strong>Step 3.1 -</strong> LIN Unmount Windows ISO
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg</code>.</p>
+                                <p>Mounts the Windows Server ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg</code>.</p>
+<p><code>winimg</code> stands for Windows Image.</p>
                             </p>
                         </div>
                     </div>
@@ -582,20 +490,18 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-MOUNT_FOLDER=&quot;winimg&quot;
-BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+FOLDER=&quot;winimg&quot;
+mkdir -p &quot;${FOLDER}&quot;
 
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
-then
-    cd &quot;${BUILD_DIRECTORY}&quot;
+# Case insensitve globbing
+shopt -s nocaseglob
 
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
-else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-fi
+ISO=$(ls *SERVER*.iso)
+
+mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
+    --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
+    &quot;${ISO}&quot; &quot;${FOLDER}&quot;
                 </code>
             </pre>
         </div>
@@ -605,22 +511,24 @@ fi
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="lindeletewinimgfolder">
-                            <a href="#lindeletewinimgfolder">
-                                <strong>Step 3.2 -</strong> LIN Delete winimg Folder
+                        <h3 id="linextractwinpeisofromwinimgdirectory">
+                            <a href="#linextractwinpeisofromwinimgdirectory">
+                                <strong>Step 2 -</strong> LIN Extract WinPE ISO from winimg Directory
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg</code> folder.</p>
+                                <p>Extracts the WinPE image from Windows Server 2019 <code>boot.wim</code> by default at index 2.</p>
+<p>Writes this out to <code>winpe.iso</code>.</p>
+<p>This is the exact copy of Windows Server 2019's WinPE image which by default will run <code>setup.exe</code> on the Windows Desktop ISO at a higher priority than running <code>startnet.cmd</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -660,17 +568,10 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-if [ ! -d ${BUILD_DIRECTORY} ]
-then
-    echo &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
-else
-    cd &quot;${BUILD_DIRECTORY}&quot;
-        
-    DIR=&quot;winimg&quot;
-    [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
-        echo &quot;No directory to remove.&quot;
-fi
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+mkwinpeimg --iso --windows-dir=winimg \
+    &quot;winpe.iso&quot;
                 </code>
             </pre>
         </div>
@@ -680,22 +581,22 @@ fi
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="lincleanbuilddirectory">
-                            <a href="#lincleanbuilddirectory">
-                                <strong>Step 3.3 -</strong> LIN Clean Build Directory
+                        <h3 id="extractwinpeisotostagingfolder">
+                            <a href="#extractwinpeisotostagingfolder">
+                                <strong>Step 3 -</strong> Extract WinPE ISO to Staging Folder
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code> directory.</p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
                             </p>
                         </div>
                     </div>
@@ -724,9 +625,1024 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-[[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
-    echo &quot;No directory to remove.&quot;
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+FOLDER=winpe_staging
+mkdir -p &quot;${FOLDER}&quot;
+
+7z x winpe.iso -o&quot;${FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
+                            <a href="#lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
+                                <strong>Step 4 -</strong> LIN Copy Files for mkwinpeimg Compatibility to WinPE Staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>This copies <code>boot/etfsboot.com</code> from the Windows Server 2019 ISO to WinPE's <code>BOOT</code> folder.</p>
+<p>This is needed if the WinPE ISO needs to work with future usages with <code>mkwinpeimg</code>.</p>
+<p>Otherwise this step is not needed.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linmovebootimgtowinpestaging">
+                            <a href="#linmovebootimgtowinpestaging">
+                                <strong>Step 5 -</strong> LIN Move boot.img to winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>boot.img</code> to the <code>winpe_staging</code> folder.</p>
+<p><code>mkisofs</code> requires <code>boot.img</code> to make a BIOS bootable ISO.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Bios} || {isWinServerBios}
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    mv --verbose boot.img winpe_staging
+    
+else
+    echo &quot;Skipping for UEFI ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="linperformdeletesetupexefromwinpestagingbootwim">
+                            <a href="#linperformdeletesetupexefromwinpestagingbootwim">
+                                <strong>Step 6 -</strong> LIN Perform Delete setup.exe from winpe_staging boot.wim
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes <code>setup.exe</code> from the extracted WinPE's <code>boot.img</code> at index 2 of the Windows Server 2019 ISO.</p>
+<p>By default Windows Server 2019 <code>boot.img</code> contains <code>setup.exe</code> which was designed to work with calling <code>setup.exe</code> which exists at index 1 of Windows Server 2019 image.</p>
+<p>As the <code>winpe_staging</code> folder will be used to recreate a WinPE BIOS ISO designed to work with a Samba drive which contains the required <code>setup.exe</code> for these versions of Windows below we no longer need the <code>setup.exe</code> on the WinPE <code>boot.img</code>:</p>
+<ol>
+<li>Windows Desktop 10</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createbootwimmountfolder">
+                            <a href="#createbootwimmountfolder">
+                                <strong>Step 6.1 -</strong> Create boot.wim Mount Folder
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a directory <code>WinPE_BootImageDir</code> for mounting <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+
+WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
+if [ ! -d WinPE_BootImageDir ]
+then
+    mkdir $WinPE_BootImageDir
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="mountbootwim">
+                            <a href="#mountbootwim">
+                                <strong>Step 6.2 -</strong> Mount BOOT.WIM
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="lindeletesetupexefrombootwim">
+                            <a href="#lindeletesetupexefrombootwim">
+                                <strong>Step 6.3 -</strong> LIN Delete setup.exe from boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir
+
+rm --verbose setup.exe
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linwimlibunmountbootwim">
+                            <a href="#linwimlibunmountbootwim">
+                                <strong>Step 6.4 -</strong> LIN wimlib Unmount boot.wim
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+<p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+wimunmount WinPE_BootImageDir --commit --check --rebuild
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="copywindowsefifilestowinpestaging">
+                            <a href="#copywindowsefifilestowinpestaging">
+                                <strong>Step 7 -</strong> Copy Windows EFI Files to WinPE Staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Relative to the <code>{ksAttuneBaseDir}/build-{kickstartedNode.fqn/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+    
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    # Copy EFI Files from Windows ISO
+    cp -rv &quot;winimg/efi&quot; &quot;winpe_staging&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="lincreatewinpewin2019plainbiosisofromwinpestaging">
+                            <a href="#lincreatewinpewin2019plainbiosisofromwinpestaging">
+                                <strong>Step 8 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a WinPE BIOS bootable ISO at <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> from the WinPE staging directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+if {isWin10Bios} || {isWinServerBios} 
+then
+    if uname | \
+        grep -iq &quot;darwin&quot;
+    then
+        echo &quot;is macOS&quot;
+        
+        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+        echo &quot;Using $(which xorriso)&quot;
+
+        xorriso -as mkisofs \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -allow-limited-size \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V &quot;KS_WIN&quot; \
+             -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            winpe_staging
+    else
+        echo &quot;not macOS&quot;
+        
+        mkisofs \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -allow-limited-size \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V &quot;KS_WIN&quot; \
+             -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            winpe_staging
+    fi
+        
+else
+    echo &quot;Skipping for UEFI ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="performcreatewinpewin2019plainuefiisofromwinpestaging">
+                            <a href="#performcreatewinpewin2019plainuefiisofromwinpestaging">
+                                <strong>Step 9 -</strong> Perform Create winpe_win2019_plain_uefi.iso from winpe_staging
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a UEFI bootable WinPE ISO at <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> from the contents of the WinPE staging directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
+                            <a href="#changeownershipofwinpestagingfoldertoautomationworkerlinuxuser">
+                                <strong>Step 9.1 -</strong> Change Ownership of winpe_staging Folder to automationWorkerLinuxUser
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Change the ownership of <code>winpe_staging</code>to <code>automationWorkerLinuxUser.user</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    # Copy EFI Files from Windows ISO
+    chown --recursive \
+        &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
+        &quot;winpe_staging&quot;
+
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createwinpewin2019plainuefiiso">
+                            <a href="#createwinpewin2019plainuefiiso">
+                                <strong>Step 9.2 -</strong> Create winpe_win2019_plain_uefi.iso
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates an empty ISO that is compatible with UEFI boot using <code>mkfs.msdos</code>.</p>
+<p>The size is set a bit larger than the size of <code>winpe_staging</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
+    ((bytes=bytes+10000))
+    
+    mkfs.msdos -C &quot;../winpe_win2019_plain_uefi.iso&quot; &quot;${bytes}&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="mountemptywinpewin2019plainuefiiso">
+                            <a href="#mountemptywinpewin2019plainuefiiso">
+                                <strong>Step 9.3 -</strong> Mount Empty winpe_win2019_plain_uefi.iso
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Mounts the empty UEFI ISO at <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/uefi_mount</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    mkdir --parents --verbose uefi_mount
+    
+    mount &quot;../winpe_win2019_plain_uefi.iso&quot; uefi_mount
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movewinpestagingtouefimount">
+                            <a href="#movewinpestagingtouefimount">
+                                <strong>Step 9.4 -</strong> Move WinPE Staging to UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Relative to the <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code> directory, this step moves the contents of <code>winpe_staging</code> to <code>uefi_mount</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    # Copy WinPE Files from WinPE ISO
+    mv --verbose winpe_staging/* &quot;uefi_mount&quot;   
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="unmountwinpeuefimount">
+                            <a href="#unmountwinpeuefimount">
+                                <strong>Step 9.5 -</strong> Unmount WinPE UEFI Mount
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/uefi_mount</code>. This writes back contents of <code>uefi_mount</code> to the MSDOS ISO <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> created in step <code>Create Empty UEFI for WinPE ISO</code>. </p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+    MOUNT_FOLDER=&quot;uefi_mount&quot;
+    BUILD_PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    MOUNT_PATH=&quot;${BUILD_PATH}/${MOUNT_FOLDER}&quot;
+    
+    if df -h | grep --ignore-case \
+        --quiet \
+        &quot;${MOUNT_PATH}&quot;
+    then
+    
+        cd &quot;${BUILD_PATH}&quot;
+        
+        umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    else
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
                 </code>
             </pre>
         </div>

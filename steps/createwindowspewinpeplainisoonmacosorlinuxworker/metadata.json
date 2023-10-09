@@ -25,6 +25,46 @@
         {
             "order": 200, 
             "stepKey": "extractwindowsbootimg"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "linmountwinserverdvdiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "linextractwinpeisofromwinimgdirectory"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "extractwinpeisotostagingfolder"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "linmovebootimgtowinpestaging"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "copywindowsefifilestowinpestaging"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "lincreatewinpewin2019plainbiosisofromwinpestaging"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "performcreatewinpewin2019plainuefiisofromwinpestaging"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "createwinpecleanbuildfiles"
         }
     ], 
     "name": "Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker", 
