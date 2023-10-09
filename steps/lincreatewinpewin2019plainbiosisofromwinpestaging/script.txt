@@ -24,7 +24,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-             -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
             winpe_staging
     else
         echo "not macOS"
@@ -43,7 +43,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-             -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
             winpe_staging
     fi
         

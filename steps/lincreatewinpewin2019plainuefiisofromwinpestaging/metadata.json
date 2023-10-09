@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c3ed6d9e-0de7-4b62-9fb1-0debf84c96fd", 
+    "interpreter": 1, 
+    "key": "lincreatewinpewin2019plainuefiisofromwinpestaging", 
+    "name": "LIN Create winpe_win2019_plain_uefi.iso from winpe_staging", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
