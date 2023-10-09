@@ -9,7 +9,73 @@
 
 # Automate Windows Installation with autounattend
 
+As the demands of modern digital infrastructure grow, the need 
+for efficient and standardised methods of operating system 
+deployment becomes increasingly important.
 
+The autounattend method is a powerfull mechanism that allows system 
+administrators to automate the installation of Windows operating 
+systems on multiple machines.
+
+This Attune Project contains Blueprints to create Windows 
+Autounattend ISOs.
+
+[Clone this Project from GitHub](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend.git)
+
+## About Windows Operating Systems
+
+Windows operating systems are widely used across various sectors, 
+providing a robust platform for a diverse range of computing needs. 
+Microsoft offers multiple editions of Windows, tailored for 
+different use cases, including Windows Server for enterprise-level 
+applications, Windows 10 and Windows 11 for desktop and client 
+computing, and more. These operating systems serve as the 
+foundation for numerous applications, services, and productivity 
+tools used by organizations worldwide.
+
+## Understanding Autounattend Automation
+
+Autounattend is a technology developed by Microsoft that enables 
+system administrators to automate the Windows installation process 
+efficiently. Instead of manually configuring each installation, 
+Autounattend relies on a predefined configuration file, commonly 
+known as an Autounattend.xml file, to specify various installation 
+settings. These settings encompass language preferences, disk 
+partitioning schemes, software package selections, network 
+configuration, and various customization options. The 
+Autounattend.xml file effectively scripts the installation process, 
+ensuring consistency and repeatability across deployments.
+
+## Advantages of Automated Windows Installation with Autounattend
+
+Automating the installation of Windows operating systems using 
+Autounattend offers several significant advantages:
+
+1. **Time Efficiency:** Manual Windows installation can be a 
+time-consuming and labor-intensive task, particularly when 
+deploying to multiple machines. Autounattend automates the process, 
+saving substantial time and effort.
+
+2. **Consistency:** Automated installations ensure that each 
+Windows instance is configured identically, reducing the risk of 
+errors or discrepancies resulting from manual intervention.
+
+3. **Reduced Human Error:** Manual Windows installations can lead 
+to mistakes or deviations in configuration settings. Autounattend 
+eliminates these errors by adhering to a predefined installation 
+script.
+
+4. **Standardization:** Autounattend promotes standardized 
+configurations across the organization, simplifying management 
+and troubleshooting of Windows-based systems.
+
+By leveraging the power of Autounattend, system administrators can 
+achieve greater efficiency, reliability, and consistency in 
+deploying Windows operating systems, ultimately enhancing the 
+overall manageability of their IT infrastructure. This project 
+provides valuable resources and templates to facilitate the 
+creation of Autounattend configuration files, enabling 
+administrators to automate Windows installations seamlessly.
 
 
 
@@ -54,6 +120,9 @@ This Project contains the following Blueprints.
 
 
 
+### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
+
+
 ### Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
@@ -69,6 +138,9 @@ For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
 Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
+
 
 ### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
 
@@ -86,6 +158,9 @@ Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
+### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
+
+
 ### Create Windows Server 2019 (Win2019) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
@@ -101,6 +176,9 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows Server 2022 (Win2022) autounattend Dual ISO on macOS or Linux Worker
+
 
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker
 
@@ -124,17 +202,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Perform Test Win Node
 
 Performs basic tests for the built node.
-
-### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
-
-
-### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
-
-
-### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
-
-
-### Create Windows Server 2022 (Win2022) autounattend Dual ISO on macOS or Linux Worker
 
 
 
@@ -174,13 +241,12 @@ Performs basic tests for the built node.
 | Name | Type | Comment |
 | ---- | ---- | ------- |
 | Post Install Setup PowerShell Script | Version Controlled Files | This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.<br><br>This script is run once post installation of the WIndows operating system. |
+| Test File | Version Controlled Files | Test file for testing push files. |
 | Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |
 | WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016. |
 | WIN Raw Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
-| Test File | Version Controlled Files | Test file for testing push files. |
-
 
 
 
