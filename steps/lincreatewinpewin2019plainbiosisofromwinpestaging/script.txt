@@ -1,0 +1,52 @@
+cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+
+if {isWin10Bios} || {isWinServerBios} 
+then
+    if uname | \
+        grep -iq "darwin"
+    then
+        echo "is macOS"
+        
+        export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+        echo "Using $(which xorriso)"
+
+        xorriso -as mkisofs \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -allow-limited-size \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V "KS_WIN" \
+             -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            winpe_staging
+    else
+        echo "not macOS"
+        
+        mkisofs \
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -allow-limited-size \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V "KS_WIN" \
+             -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            winpe_staging
+    fi
+        
+else
+    echo "Skipping for UEFI ISO creation."
+fi

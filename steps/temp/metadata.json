@@ -8,15 +8,39 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "confirmwinpewin2019plainbiosisodoesnotexist"
+            "stepKey": "linmountwinserverdvdiso"
         }, 
         {
             "order": 50, 
-            "stepKey": "confirmwinpewin2019plainuefiisodoesnotexist"
+            "stepKey": "linextractwinpeisofromwinimgdirectory"
         }, 
         {
             "order": 100, 
-            "stepKey": "createwinpecleanbuildfiles"
+            "stepKey": "extractwinpeisotostagingfolder"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "linmovebootimgtowinpestaging"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "copywindowsefifilestowinpestaging"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "lincreatewinpewin2019plainbiosisofromwinpestaging"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "performcreatewinpewin2019plainuefiisofromwinpestaging"
         }
     ], 
     "name": "temp", 
