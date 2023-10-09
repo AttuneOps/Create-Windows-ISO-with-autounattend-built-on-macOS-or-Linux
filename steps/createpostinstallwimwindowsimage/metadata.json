@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "b796c2c5-7bc5-4c25-a38e-585f6481420c", 
+    "externalUuid4": "e604e7d4-fb54-47f0-8263-56e98bd54ceb", 
     "interpreter": 1, 
-    "key": "lincreatewinpewin2019plainbiosisofromwinpestaging", 
-    "name": "LIN Create winpe_win2019_plain_bios.iso from winpe_staging", 
+    "key": "createpostinstallwimwindowsimage", 
+    "name": "Create post_install.wim Windows Image", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
