@@ -137,10 +137,10 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### temp
-
-
 ### Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
+
+
+### Create Windows autounattend WinPE ISO on macOS or Linux Worker
 
 
 
