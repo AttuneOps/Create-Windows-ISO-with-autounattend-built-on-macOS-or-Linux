@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "520c8b94-c5ed-4652-81be-a0fbba474226", 
+    "key": "windowsfolderonsamba", 
+    "name": "Windows Folder On Samba", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

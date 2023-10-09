@@ -360,16 +360,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincreatewinpewin2019plainbiosisofromwinpestaging">
-                            <strong>Step 13 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging
+                        <a href="#lincreatewinpewin2019plainbiosisofromwinpestagingonmacosorlinuxworker">
+                            <strong>Step 13 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincreatewinpewin2019plainuefiisofromwinpestaging">
-                            <strong>Step 14 -</strong> LIN Create winpe_win2019_plain_uefi.iso from winpe_staging
+                        <a href="#lincreatewinpewin2019plainuefiisofromwinpestagingonmacosorlinuxworker">
+                            <strong>Step 14 -</strong> LIN Create winpe_win2019_plain_uefi.iso from winpe_staging on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -1717,9 +1717,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="lincreatewinpewin2019plainbiosisofromwinpestaging">
-                            <a href="#lincreatewinpewin2019plainbiosisofromwinpestaging">
-                                <strong>Step 13 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging
+                        <h3 id="lincreatewinpewin2019plainbiosisofromwinpestagingonmacosorlinuxworker">
+                            <a href="#lincreatewinpewin2019plainbiosisofromwinpestagingonmacosorlinuxworker">
+                                <strong>Step 13 -</strong> LIN Create winpe_win2019_plain_bios.iso from winpe_staging on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1827,20 +1827,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="lincreatewinpewin2019plainuefiisofromwinpestaging">
-                            <a href="#lincreatewinpewin2019plainuefiisofromwinpestaging">
-                                <strong>Step 14 -</strong> LIN Create winpe_win2019_plain_uefi.iso from winpe_staging
+                        <h3 id="lincreatewinpewin2019plainuefiisofromwinpestagingonmacosorlinuxworker">
+                            <a href="#lincreatewinpewin2019plainuefiisofromwinpestagingonmacosorlinuxworker">
+                                <strong>Step 14 -</strong> LIN Create winpe_win2019_plain_uefi.iso from winpe_staging on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -1894,9 +1887,10 @@ then
             -untranslated-filenames \
             -disable-deep-relocation \
             -o {automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso \
-            .
+            winpe_staging
             
     else
+        echo &quot;not macOS&quot;
         
         mkisofs \
             -allow-limited-size \

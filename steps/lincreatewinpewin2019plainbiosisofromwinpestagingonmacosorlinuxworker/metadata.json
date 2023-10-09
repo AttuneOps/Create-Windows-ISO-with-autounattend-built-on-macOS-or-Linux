@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "c3ed6d9e-0de7-4b62-9fb1-0debf84c96fd", 
+    "externalUuid4": "b796c2c5-7bc5-4c25-a38e-585f6481420c", 
     "interpreter": 1, 
-    "key": "lincreatewinpewin2019plainuefiisofromwinpestaging", 
-    "name": "LIN Create winpe_win2019_plain_uefi.iso from winpe_staging", 
+    "key": "lincreatewinpewin2019plainbiosisofromwinpestagingonmacosorlinuxworker", 
+    "name": "LIN Create winpe_win2019_plain_bios.iso from winpe_staging on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

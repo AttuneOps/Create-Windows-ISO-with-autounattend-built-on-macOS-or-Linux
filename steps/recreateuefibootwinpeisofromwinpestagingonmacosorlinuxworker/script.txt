@@ -25,11 +25,12 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso \
-            .
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            winpe_staging
             
     else
-        
+        echo "not macOS"
+
         mkisofs \
             -allow-limited-size \
             -iso-level 4 \ 
@@ -47,7 +48,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             winpe_staging
     fi
         

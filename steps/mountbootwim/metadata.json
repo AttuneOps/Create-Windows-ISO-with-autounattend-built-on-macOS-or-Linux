@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "7eac349d-e986-4212-8380-3ad552ab07fd", 
+    "externalUuid4": "c172ccf1-2b5e-4471-a609-99958d2c09fe", 
     "interpreter": 1, 
     "key": "mountbootwim", 
     "name": "Mount BOOT.WIM", 

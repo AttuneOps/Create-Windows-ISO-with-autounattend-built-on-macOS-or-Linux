@@ -56,11 +56,11 @@
         }, 
         {
             "order": 600, 
-            "stepKey": "lincreatewinpewin2019plainbiosisofromwinpestaging"
+            "stepKey": "lincreatewinpewin2019plainbiosisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 650, 
-            "stepKey": "lincreatewinpewin2019plainuefiisofromwinpestaging"
+            "stepKey": "lincreatewinpewin2019plainuefiisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 700, 

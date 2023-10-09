@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "db569fc3-04a7-4188-af97-39c1f3f490c6", 
+    "externalUuid4": "773bfbb3-ea23-490d-9f06-e2665b00685b", 
     "interpreter": 1, 
-    "key": "createbootwimmountfolder", 
-    "name": "Create boot.wim Mount Folder", 
+    "key": "movepostinstallwimtobootwim", 
+    "name": "Move post_install.wim to boot.wim", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

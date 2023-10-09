@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "db569fc3-04a7-4188-af97-39c1f3f490c6", 
+    "externalUuid4": "5f8aea57-2548-4f46-a385-6abd9498728f", 
     "interpreter": 1, 
-    "key": "createbootwimmountfolder", 
-    "name": "Create boot.wim Mount Folder", 
+    "key": "copydriversdropinfoldertobootwim", 
+    "name": "Copy Drivers Drop in Folder to boot.wim", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

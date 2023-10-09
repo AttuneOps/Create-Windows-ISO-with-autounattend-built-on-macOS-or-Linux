@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "db569fc3-04a7-4188-af97-39c1f3f490c6", 
+    "externalUuid4": "de74fc3d-fa4a-49a0-bc7c-c2338454b588", 
     "interpreter": 1, 
-    "key": "createbootwimmountfolder", 
-    "name": "Create boot.wim Mount Folder", 
+    "key": "movepostsetuppowershellscripttopostinstallwimfolder", 
+    "name": "Move Post Setup PowerShell Script to post_install_wim Folder", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

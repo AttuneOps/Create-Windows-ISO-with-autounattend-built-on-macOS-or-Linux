@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "db569fc3-04a7-4188-af97-39c1f3f490c6", 
+    "externalUuid4": "ab810cda-1ceb-40e6-b8af-9efcaba908c1", 
     "interpreter": 1, 
-    "key": "createbootwimmountfolder", 
-    "name": "Create boot.wim Mount Folder", 
+    "key": "recreateuefibootwinpeisofromwinpestagingonmacosorlinuxworker", 
+    "name": "Recreate UEFI Boot WinPE ISO from winpe_staging on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
