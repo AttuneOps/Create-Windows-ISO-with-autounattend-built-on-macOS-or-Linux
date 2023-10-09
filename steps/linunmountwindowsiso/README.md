@@ -1,0 +1,1 @@
+Unmounts `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg`.
