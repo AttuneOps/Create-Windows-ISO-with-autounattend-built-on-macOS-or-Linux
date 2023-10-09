@@ -12,54 +12,58 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "confirmplainwinpebiosisoexists"
+            "stepKey": "checkmaximumlengthofwin10hostname"
         }, 
         {
             "order": 100, 
-            "stepKey": "confirmplainwinpeuefiisoexists"
-        }, 
-        {
-            "order": 150, 
             "stepKey": "confirmplainwinpebiosisoexists"
         }, 
         {
+            "order": 150, 
+            "stepKey": "confirmplainwinpeuefiisoexists"
+        }, 
+        {
             "order": 200, 
-            "stepKey": "copyandrenamewinpebiosiso"
+            "stepKey": "confirmplainwinpebiosisoexists"
         }, 
         {
             "order": 250, 
-            "stepKey": "copyandrenamewinpeuefiiso"
+            "stepKey": "copyandrenamewinpebiosiso"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwinpeisotostagingfolder"
+            "stepKey": "copyandrenamewinpeuefiiso"
         }, 
         {
             "order": 350, 
-            "stepKey": "deploystartnetcmd"
+            "stepKey": "extractwinpeisotostagingfolder"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "deploystartnetcmd"
         }, 
         {
             "order": 450, 
-            "stepKey": "createpostsetupwim"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 500, 
-            "stepKey": "modifywinpebootwim"
+            "stepKey": "createpostsetupwim"
         }, 
         {
             "order": 550, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "modifywinpebootwim"
         }, 
         {
             "order": 600, 
-            "stepKey": "recreateuefibootwinpeisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 650, 
+            "stepKey": "recreateuefibootwinpeisofromwinpestagingonmacosorlinuxworker"
+        }, 
+        {
+            "order": 700, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
