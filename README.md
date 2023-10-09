@@ -54,6 +54,9 @@ This Project contains the following Blueprints.
 
 
 
+### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
+
+
 ### Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
@@ -69,6 +72,9 @@ For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
 Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
+
 
 ### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
 
@@ -86,6 +92,9 @@ Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
+### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
+
+
 ### Create Windows Server 2019 (Win2019) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
@@ -101,6 +110,9 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows Server 2022 (Win2022) autounattend Dual ISO on macOS or Linux Worker
+
 
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker
 
@@ -125,16 +137,11 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
+### Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker
 
 
-### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
+### temp
 
-
-### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
-
-
-### Create Windows Server 2022 (Win2022) autounattend Dual ISO on macOS or Linux Worker
 
 
 
@@ -165,6 +172,7 @@ Performs basic tests for the built node.
 | New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
+| Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Automation Worker node. |
 
 
 
@@ -174,13 +182,12 @@ Performs basic tests for the built node.
 | Name | Type | Comment |
 | ---- | ---- | ------- |
 | Post Install Setup PowerShell Script | Version Controlled Files | This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.<br><br>This script is run once post installation of the WIndows operating system. |
+| Test File | Version Controlled Files | Test file for testing push files. |
 | Win10 Desktop ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
 | Windows Server 2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |
 | WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016. |
 | WIN Raw Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
-| Test File | Version Controlled Files | Test file for testing push files. |
-
 
 
 

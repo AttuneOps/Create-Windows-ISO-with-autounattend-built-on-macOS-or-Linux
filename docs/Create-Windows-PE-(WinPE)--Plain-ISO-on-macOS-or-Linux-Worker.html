@@ -6,53 +6,29 @@
 
 
 <head>
-    <title>How to Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker - Attune Automation</title>
+    <title>How to Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker - Attune Automation">
+          content="How to Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker - Attune Automation">
     <meta name="description"
-          content="Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For ">
+          content="">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker - Attune Automation" />
-    <meta property="og:description" content="Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For " />
+          content="HowTo Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker - Attune Automation" />
+    <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker - Attune Automation" />
-    <meta name="twitter:description" content="Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For " />
+          content="How to Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker - Attune Automation" />
+    <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -143,7 +119,7 @@ For " />
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker</strong>
+                    <strong>Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker</strong>
                 </li>
             </ol>
         </nav>
@@ -157,25 +133,12 @@ For " />
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
+                How to Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker
             </h1>
         </div>
     </div>
 
 <!-- Blueprint Description -->
-    <div class="row">
-        <div class="description col px-0">
-            <p class="text-left">
-                <p>Creates a single Windows Server 2016 ISO with <code>autounattend.xml</code> for unattended installation.</p>
-<p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
-<p>For both BIOS and UEFI kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
-<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
-            </p>
-        </div>
-    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -234,7 +197,7 @@ For " />
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker</strong>
+                            <strong>Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker</strong>
                         </a>
                     </p>
 
@@ -243,24 +206,57 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkinputparametervaluesforwindowsserversingleisokickstart">
-                            <strong>Step 1 -</strong> Check Input Parameter Values for Windows Server Single ISO Kickstart
+                        <a href="#confirmwinpewin2019plainbiosisodoesnotexist">
+                            <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Does Not Exist
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 2 -</strong> Clean Up Build Files and ISOs
+                        <a href="#confirmwinpewin2019plainuefiisodoesnotexist">
+                            <strong>Step 2 -</strong> Confirm winpe_win2019_plain_uefi.iso Does Not Exist
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2016dvdiso">
-                            <strong>Step 3 -</strong> Deploy Win2016 DVD ISO
+                        <a href="#createwinpecleanbuildfiles">
+                            <strong>Step 3 -</strong> Create WinPE Clean Build Files
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#linunmountwindowsiso">
+                            <strong>Step 3.1 -</strong> LIN Unmount Windows ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lindeletewinimgfolder">
+                            <strong>Step 3.2 -</strong> LIN Delete winimg Folder
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#lincleanbuilddirectory">
+                            <strong>Step 3.3 -</strong> LIN Clean Build Directory
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploywin2019dvdiso">
+                            <strong>Step 4 -</strong> Deploy Win2019 DVD ISO
                         </a>
                     </p>
 
@@ -268,71 +264,7 @@ For " />
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsbootimg">
-                            <strong>Step 4 -</strong> Extract Windows boot.img
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#extractwindowsiso">
-                            <strong>Step 5 -</strong> Extract Windows ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 7 -</strong> Deploy Windows Unattended Config
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfolder">
-                            <strong>Step 8 -</strong> Copy Drivers Drop in Folder
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#copyefisysnopromptbinintoefisysbin">
-                            <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createbiosbootisoonmacosorlinuxworker">
-                            <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createuefibootisoonmacosorlinuxworker">
-                            <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 5 -</strong> Extract Windows boot.img
                         </a>
                     </p>
 
@@ -395,7 +327,7 @@ For " />
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker</strong>
+                You've automated: <strong>Create Windows PE (WinPE)  Plain ISO on macOS or Linux Worker</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -426,9 +358,9 @@ For " />
 
 
                     <div class="row pt-5">
-                        <h3 id="checkinputparametervaluesforwindowsserversingleisokickstart">
-                            <a href="#checkinputparametervaluesforwindowsserversingleisokickstart">
-                                <strong>Step 1 -</strong> Check Input Parameter Values for Windows Server Single ISO Kickstart
+                        <h3 id="confirmwinpewin2019plainbiosisodoesnotexist">
+                            <a href="#confirmwinpewin2019plainbiosisodoesnotexist">
+                                <strong>Step 1 -</strong> Confirm winpe_win2019_plain_bios.iso Does Not Exist
                             </a>
                         </h3>
                     </div>
@@ -436,7 +368,13 @@ For " />
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if at least one of <code>isWinServerBios</code> or <code>isWinServerUefi</code> is set tot true.</p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> exists.</p>
+<p>If it does, prints a message to ask user to confirm to delete it if they want to recreate it.</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Bios</li>
+<li>isWinServerBios</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -476,12 +414,21 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {isWinServerBios} &amp;&amp; ! {isWinServerUefi}
+if {isWin10Bios} || {isWinServerBios}
 then
-    echo &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server 2016, 2019 or 2022.&quot;
-    exit 1
+
+    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
+    cd &quot;${DIRECTORY}&quot;
+    
+    ISO=&quot;winpe_win2019_plain_bios.iso&quot;
+    if [[ -f ${ISO} ]]
+    then
+        echo &quot;Please delete ${DIRECTORY|/${ISO} to confirm you want to try again.&quot;
+        exit 1
+    fi
+    
 else
-    echo &quot;Ok.&quot;
+    echo &quot;Skipping for UEFI ISO creation.&quot;
 fi
                 </code>
             </pre>
@@ -497,9 +444,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesandisos">
-                            <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 2 -</strong> Clean Up Build Files and ISOs
+                        <h3 id="confirmwinpewin2019plainuefiisodoesnotexist">
+                            <a href="#confirmwinpewin2019plainuefiisodoesnotexist">
+                                <strong>Step 2 -</strong> Confirm winpe_win2019_plain_uefi.iso Does Not Exist
                             </a>
                         </h3>
                     </div>
@@ -507,9 +454,264 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
-3. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
+                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> exists.</p>
+<p>If it does, prints a message to ask user to confirm to delete it if they want to recreate it.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
+    cd &quot;${DIRECTORY}&quot;
+    
+    ISO=&quot;winpe_win2019_plain_uefi.iso&quot;
+    if [[ -f ${ISO} ]]
+    then
+        echo &quot;Please delete ${DIRECTORY|/${ISO} to confirm you want to try again.&quot;
+        exit 1
+    fi
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createwinpecleanbuildfiles">
+                            <a href="#createwinpecleanbuildfiles">
+                                <strong>Step 3 -</strong> Create WinPE Clean Build Files
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the temporary build directory.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="linunmountwindowsiso">
+                            <a href="#linunmountwindowsiso">
+                                <strong>Step 3.1 -</strong> LIN Unmount Windows ISO
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+MOUNT_FOLDER=&quot;winimg&quot;
+BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
+
+if df -h | grep --ignore-case \
+    --quiet \
+    &quot;${MOUNT_PATH}&quot;
+then
+    cd &quot;${BUILD_DIRECTORY}&quot;
+
+    umount --verbose &quot;${MOUNT_FOLDER}&quot;
+else
+    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="lindeletewinimgfolder">
+                            <a href="#lindeletewinimgfolder">
+                                <strong>Step 3.2 -</strong> LIN Delete winimg Folder
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+if [ ! -d ${BUILD_DIRECTORY} ]
+then
+    echo &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
+else
+    cd &quot;${BUILD_DIRECTORY}&quot;
+        
+    DIR=&quot;winimg&quot;
+    [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
+        echo &quot;No directory to remove.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="lincleanbuilddirectory">
+                            <a href="#lincleanbuilddirectory">
+                                <strong>Step 3.3 -</strong> LIN Clean Build Directory
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code> directory.</p>
                             </p>
                         </div>
                     </div>
@@ -541,13 +743,11 @@ fi
 DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
-
-ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
-[[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
             </pre>
         </div>
     </div>
+
 
 
 
@@ -558,9 +758,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2016dvdiso">
-                            <a href="#deploywin2016dvdiso">
-                                <strong>Step 3 -</strong> Deploy Win2016 DVD ISO
+                        <h3 id="deploywin2019dvdiso">
+                            <a href="#deploywin2019dvdiso">
+                                <strong>Step 4 -</strong> Deploy Win2019 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -568,7 +768,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2016 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -589,11 +789,11 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016.</p>
+            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019.</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>WIN_Raw_Win2016_ISO.tar</strong>
+            <strong>Windows_Server_201_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -617,7 +817,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="extractwindowsbootimg">
                             <a href="#extractwindowsbootimg">
-                                <strong>Step 4 -</strong> Extract Windows boot.img
+                                <strong>Step 5 -</strong> Extract Windows boot.img
                             </a>
                         </h3>
                     </div>
@@ -680,623 +880,6 @@ then
     
 else
     echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="extractwindowsiso">
-                            <a href="#extractwindowsiso">
-                                <strong>Step 5 -</strong> Extract Windows ISO
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Extracts the Windows ISO.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-# Case insensitve globbing
-shopt -s nocaseglob
-
-if ls | grep -q *iso
-then
-    
-    ISO=&quot;$(echo *iso)&quot;
-    echo &quot;ISO is $ISO&quot;
-    
-    7z x &quot;${ISO}&quot;
-    
-    rm -v &quot;${ISO}&quot;
-else
-    echo &quot;ISO is already extracted.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywindowsunattendedconfig">
-                            <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 7 -</strong> Deploy Windows Unattended Config
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the generic autounattend.xml.</p>
-<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWin10Uefi</li>
-<li>isWinServerBios</li>
-<li>isWinServerUefi</li>
-</ol>
-<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="copydriversdropinfolder">
-                            <a href="#copydriversdropinfolder">
-                                <strong>Step 8 -</strong> Copy Drivers Drop in Folder
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-
-DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
-DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
-
-mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-
-if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
-then
-
-    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
-        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-else
-    echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="copyefisysnopromptbinintoefisysbin">
-                            <a href="#copyefisysnopromptbinintoefisysbin">
-                                <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>From https://serverfault.com/questions/353826/windows-boot-iso-file-without-press-any-key this disables the "Press any key To boot from CD or DVD . . . .".</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    cd efi/microsoft/boot/
-    
-    cp --verbose efisys_noprompt.bin efisys.bin
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createbiosbootisoonmacosorlinuxworker">
-                            <a href="#createbiosbootisoonmacosorlinuxworker">
-                                <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
-<ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-
-if {isWin10Bios} || {isWinServerBios} 
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-        echo &quot;Using $(which xorriso)&quot;
-        
-        xorriso -as mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V &quot;DRIVERS&quot; \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-            .
-            
-    else
-        echo &quot;not macOS&quot;
-        
-        mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -allow-limited-size \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V &quot;KS_WIN&quot; \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-            .
-    fi
-        
-else
-    echo &quot;Skipping for UEFI boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createuefibootisoonmacosorlinuxworker">
-                            <a href="#createuefibootisoonmacosorlinuxworker">
-                                <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>https://unix.stackexchange.com/questions/531012/how-to-modify-an-installation-iso-and-keep-it-bootable</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {isWin10Uefi} || {isWinServerUefi}
-then
-    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-    
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-        echo &quot;Using $(which xorriso)&quot;
-        
-        xorriso -as mkisofs \
-            -iso-level 4 \
-            -full-iso9660-filenames \
-            -rock \
-            -b boot/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-seg 0 \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -udf \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-            .
-            
-    else
-        
-        mkisofs \
-            -allow-limited-size \
-            -iso-level 4 \ 
-            -full-iso9660-filenames \
-            -rock \
-            -b boot/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-seg 0 \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -udf \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
-            .
-    fi
-        
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesanddriversfiles">
-                            <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.
-2. Drivers drop in directory at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-if [ -d &quot;${DIR}&quot; ]
-then
-    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
-else
-    echo &quot;No directory to remove.&quot;
-fi
-
-DIR=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
-if [ -d &quot;${DIR}&quot; ]
-then
-    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
-else
-    echo &quot;No directory to remove.&quot;
 fi
                 </code>
             </pre>

@@ -1,0 +1,16 @@
+if {isWin10Uefi} || {isWinServerUefi}
+then
+
+    DIRECTORY="{automationWorkerBaseDirectory}"
+    cd "${DIRECTORY}"
+    
+    ISO="winpe_win2019_plain_uefi.iso"
+    if [[ -f ${ISO} ]]
+    then
+        echo "Please delete ${DIRECTORY|/${ISO} to confirm you want to try again."
+        exit 1
+    fi
+    
+else
+    echo "Skipping for BIOS ISO creation."
+fi
