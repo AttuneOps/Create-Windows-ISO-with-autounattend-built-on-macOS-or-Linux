@@ -143,9 +143,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### temp
-
-
 
 
 
