@@ -9,29 +9,91 @@
 
 # Automate Windows Installation with autounattend
 
-As the demands of modern digital infrastructure grow, the need 
-for efficient and standardised methods of operating system 
-deployment becomes increasingly important.
+You can automate Windows installation in several different ways. You can 
+use the methods described below to accomplish the level of automation that 
+your deployment needs.
 
-The autounattend method is a powerfull mechanism that allows system 
-administrators to automate the installation of Windows operating 
-systems on multiple machines.
+You can prevent some or all of the user interface (UI) pages from Windows 
+Setup from being displayed during installation. The default behavior of 
+Windows Setup is to display the Setup UI if any of the required settings are 
+incorrect or empty.
 
-This Attune Project contains Blueprints to create Windows 
-Autounattend ISOs.
+This Attune Project contains the various methods of create ISO(s) required for 
+automating the Windows Setup.
 
-[Clone this Project from GitHub](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend.git)
+## Requries Worker
+Blueprints in this Attune Project require a worker to perform some tasks. The 
+worker can be either the Attune instance itself or a separate machine.
 
-## About Windows Operating Systems
+## Single ISO Windows Setup Method
 
-Windows operating systems are widely used across various sectors, 
-providing a robust platform for a diverse range of computing needs. 
-Microsoft offers multiple editions of Windows, tailored for 
-different use cases, including Windows Server for enterprise-level 
-applications, Windows 10 and Windows 11 for desktop and client 
-computing, and more. These operating systems serve as the 
-foundation for numerous applications, services, and productivity 
-tools used by organizations worldwide.
+This is the simplest automated Windows Setup possible with the least 
+dependencies and configuration.
+
+**Advantages**
+* Simple
+* Doesn't require networking
+* Reasonably fast
+
+**Disadvantages**
+* Requires transferring and unpacking approx 5gb ISO
+
+## Dual ISO Windows Setup Method
+
+This 
+
+**Advantages**
+1. Simple
+2. Light weight
+3. Doesn't require networking
+4. Fast
+
+**Disadvantages**
+1. Requires two drives (oVirt doesn't accept a second cdrom or floppy)
+
+## WinPE ISO Windows Setup Method
+
+This method uses a samba share that contains each Windows ISO. The WinPE ISO 
+is created with the drivers and autounattend files.
+
+**Advantages**
+1. Network efficient
+2. Best for enterprise
+
+**Disadvantages**
+1. Requires the setup of a samba share with the each Windows ISO
+
+## Blueprint Naming Guide
+
+`Create {os_name} {boot_type} autounattend {method} on {worker}`
+
+`os_name`:
+* Windows 10 (Win10)
+* Windows Server 2016 (Win2016)
+* Windows Server 2019 (Win2019)
+* Windows Server 2022 (Win2022)
+
+`boot_type`:
+* BIOS
+* UEFI
+
+The `boot_type` will not be in the Blueprint name if all boot types can be 
+created from a single Blueprint.
+
+`method`:
+* Single ISO
+* Dual ISO
+* WinPE ISO
+
+`worker`:
+* macOS
+* Linux
+* Windows
+
+Examples:
+* Create Windows 10 (Win10) autounattend Single ISO on Windows
+* Create Windows Server (Win2019) autounattend Dual ISO on Linux
+* Create Windows Server (Win2022) autounattend WinPE ISO on Linux
 
 ## Understanding Autounattend Automation
 
@@ -76,6 +138,7 @@ overall manageability of their IT infrastructure. This project
 provides valuable resources and templates to facilitate the 
 creation of Autounattend configuration files, enabling 
 administrators to automate Windows installations seamlessly.
+
 
 
 
