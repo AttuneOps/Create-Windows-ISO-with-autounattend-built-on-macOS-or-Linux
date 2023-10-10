@@ -9,22 +9,25 @@
         {
             "order": 0, 
             "stepKey": "checkinputparametervaluesforwin10kickstart"
-
         }, 
         {
             "order": 50, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "checkmaximumlengthofwin10hostname"
         }, 
         {
             "order": 100, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "cleanupbuildfilesandisos"
         }, 
         {
             "order": 150, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "deploywin10dvdiso"
         }, 
         {
             "order": 200, 
+            "stepKey": "extractwindowsbootimg"
+        }, 
+        {
+            "order": 250, 
             "stepKey": "extractwindowsiso"
         }, 
         {

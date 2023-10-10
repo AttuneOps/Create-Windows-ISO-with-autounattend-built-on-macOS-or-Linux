@@ -1,0 +1,10 @@
+if {isWin10Bios} || {isWinServerBios}
+then
+
+    cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+    
+    mv --verbose boot.img winpe_staging
+    
+else
+    echo "Skipping for UEFI ISO creation."
+fi

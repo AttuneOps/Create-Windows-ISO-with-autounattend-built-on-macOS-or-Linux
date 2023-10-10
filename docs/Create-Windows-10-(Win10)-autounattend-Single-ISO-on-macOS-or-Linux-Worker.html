@@ -251,8 +251,16 @@ For UEFI kickstar" />
         
 
                     <p class="text-muted pt-2">
+                        <a href="#checkmaximumlengthofwin10hostname">
+                            <strong>Step 2 -</strong> Check Maximum Length of Win10 Hostname
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 2 -</strong> Clean Up Build Files and ISOs
+                            <strong>Step 3 -</strong> Clean Up Build Files and ISOs
                         </a>
                     </p>
 
@@ -260,7 +268,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywin10dvdiso">
-                            <strong>Step 3 -</strong> Deploy Win10 DVD ISO
+                            <strong>Step 4 -</strong> Deploy Win10 DVD ISO
                         </a>
                     </p>
 
@@ -268,7 +276,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsbootimg">
-                            <strong>Step 4 -</strong> Extract Windows boot.img
+                            <strong>Step 5 -</strong> Extract Windows boot.img
                         </a>
                     </p>
 
@@ -276,7 +284,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsiso">
-                            <strong>Step 5 -</strong> Extract Windows ISO
+                            <strong>Step 6 -</strong> Extract Windows ISO
                         </a>
                     </p>
 
@@ -284,7 +292,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 7 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -292,7 +300,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 7 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 8 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -300,7 +308,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 8 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 9 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -308,7 +316,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#copyefisysnopromptbinintoefisysbin">
-                            <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                            <strong>Step 10 -</strong> Copy efisys_noprompt.bin into efisys.bin
                         </a>
                     </p>
 
@@ -316,7 +324,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootisoonmacosorlinuxworker">
-                            <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                            <strong>Step 11 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -324,7 +332,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootisoonmacosorlinuxworker">
-                            <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                            <strong>Step 12 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -332,7 +340,7 @@ For UEFI kickstar" />
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 13 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -497,9 +505,74 @@ fi
 
 
                     <div class="row pt-5">
+                        <h3 id="checkmaximumlengthofwin10hostname">
+                            <a href="#checkmaximumlengthofwin10hostname">
+                                <strong>Step 2 -</strong> Check Maximum Length of Win10 Hostname
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {isWin10Bios} || {isWin10Uefi}
+then
+
+    HOSTNAME=&quot;{newOsNode.hostname}&quot;
+    
+    LENGTH=&quot;${#HOSTNAME}&quot;
+    MAX_LENGTH=&quot;15&quot;
+    
+    if [ &quot;${LENGTH}&quot; -gt &quot;${MAX_LENGTH}&quot; ]
+    then
+        echo &quot;Length of hostname ${LENGTH} for Win10 can&#x27;t be more than 15.&quot;
+        false
+    else
+        echo &quot;Length of hostname ${LENGTH} is less than or equal to 15.&quot;
+    fi
+    
+else
+    echo &quot;Not Win10, skipping.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="cleanupbuildfilesandisos">
                             <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 2 -</strong> Clean Up Build Files and ISOs
+                                <strong>Step 3 -</strong> Clean Up Build Files and ISOs
                             </a>
                         </h3>
                     </div>
@@ -560,7 +633,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="deploywin10dvdiso">
                             <a href="#deploywin10dvdiso">
-                                <strong>Step 3 -</strong> Deploy Win10 DVD ISO
+                                <strong>Step 4 -</strong> Deploy Win10 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -618,7 +691,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="extractwindowsbootimg">
                             <a href="#extractwindowsbootimg">
-                                <strong>Step 4 -</strong> Extract Windows boot.img
+                                <strong>Step 5 -</strong> Extract Windows boot.img
                             </a>
                         </h3>
                     </div>
@@ -698,7 +771,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="extractwindowsiso">
                             <a href="#extractwindowsiso">
-                                <strong>Step 5 -</strong> Extract Windows ISO
+                                <strong>Step 6 -</strong> Extract Windows ISO
                             </a>
                         </h3>
                     </div>
@@ -768,7 +841,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 6 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 7 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -825,7 +898,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 7 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 8 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -896,7 +969,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 8 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 9 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -964,7 +1037,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copyefisysnopromptbinintoefisysbin">
                             <a href="#copyefisysnopromptbinintoefisysbin">
-                                <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                                <strong>Step 10 -</strong> Copy efisys_noprompt.bin into efisys.bin
                             </a>
                         </h3>
                     </div>
@@ -1027,7 +1100,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootisoonmacosorlinuxworker">
                             <a href="#createbiosbootisoonmacosorlinuxworker">
-                                <strong>Step 10 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                                <strong>Step 11 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1092,7 +1165,7 @@ then
             -full-iso9660-filenames \
             -disable-deep-relocation \
             -omit-version-number \
-            -V &quot;DRIVERS&quot; \
+            -V &quot;KS_WIN&quot; \
             -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
             
@@ -1136,7 +1209,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootisoonmacosorlinuxworker">
                             <a href="#createuefibootisoonmacosorlinuxworker">
-                                <strong>Step 11 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                                <strong>Step 12 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1245,7 +1318,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesanddriversfiles">
                             <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 12 -</strong> Clean up Build Files and Drivers Files
+                                <strong>Step 13 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>

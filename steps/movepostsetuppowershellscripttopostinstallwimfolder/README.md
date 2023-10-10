@@ -1,0 +1,1 @@
+Moves `post_install_setup.ps1` script to the `post_install_wim` folder.

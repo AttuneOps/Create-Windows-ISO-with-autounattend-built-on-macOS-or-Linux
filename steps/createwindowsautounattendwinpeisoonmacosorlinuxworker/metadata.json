@@ -1,0 +1,72 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "3a80fae8-d64d-4471-a573-eb64cde2f5f7", 
+    "isBlueprint": true, 
+    "key": "createwindowsautounattendwinpeisoonmacosorlinuxworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkinputparametervaluesforwinpekickstart"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checkmaximumlengthofwin10hostname"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "confirmplainwinpebiosisoexists"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "confirmplainwinpeuefiisoexists"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "confirmplainwinpebiosisoexists"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "copyandrenamewinpebiosiso"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "copyandrenamewinpeuefiiso"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "extractwinpeisotostagingfolder"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "deploystartnetcmd"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "deploywindowsunattendedconfig"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "createpostsetupwim"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "modifywinpebootwim"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "recreateuefibootwinpeisofromwinpestagingonmacosorlinuxworker"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "cleanupbuildfilesanddriversfiles"
+        }
+    ], 
+    "name": "Create Windows autounattend WinPE ISO on macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

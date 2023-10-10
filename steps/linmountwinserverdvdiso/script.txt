@@ -1,0 +1,12 @@
+cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+FOLDER="winimg"
+mkdir -p "${FOLDER}"
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+ISO=$(ls *SERVER*.iso)
+
+mount --options "uid={automationWorkerLinuxUser.user}" \
+    --options "gid={automationWorkerLinuxUser.user}" \
+    "${ISO}" "${FOLDER}"

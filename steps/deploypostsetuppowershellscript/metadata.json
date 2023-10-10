@@ -3,7 +3,7 @@
     "archiveKey": "postinstallsetuppowershellscript", 
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
-    "externalUuid4": "27053c3d-2d73-4b2d-a616-7b63d99e24b7", 
+    "externalUuid4": "2f7c99d3-6a08-463f-8a42-d509778486a2", 
     "key": "deploypostsetuppowershellscript", 
     "makoFileNames": [
         "post_install_setup.ps1"

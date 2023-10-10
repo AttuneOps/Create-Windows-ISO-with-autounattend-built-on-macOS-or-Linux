@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "689b032a-13c5-49c2-98d0-55e977abcfc2", 
+    "key": "sambaserveripaddress", 
+    "name": "Samba Server IP Address", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

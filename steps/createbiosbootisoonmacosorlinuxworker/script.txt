@@ -21,7 +21,7 @@ then
             -full-iso9660-filenames \
             -disable-deep-relocation \
             -omit-version-number \
-            -V "DRIVERS" \
+            -V "KS_WIN" \
             -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
             
