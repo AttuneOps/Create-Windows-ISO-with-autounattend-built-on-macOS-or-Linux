@@ -854,22 +854,22 @@ if ((systeminfo | select-string -pattern $SEARCH_STRING) -eq $null) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ({kickstartedBootLoaderIsBios}) {
+if (${{kickstartedBootLoaderIsBios}}) {
     $BootMode = bcdedit | Select-String &quot;path.*efi&quot;
     if (-Not ($null -eq $BootMode)) {
-        echo &quot;This looks like UEFI boot.&quot;
+       Write-Host &quot;This looks like UEFI boot.&quot;
         exit 1
     } else {
         Write-Host &quot;This looks like BIOS boot.&quot;
     }
 
-} elseif ({kickstartedBootLoaderIsUefi}) {
+} elseif (${{kickstartedBootLoaderIsUefi}}) {
     $BootMode = bcdedit | Select-String &quot;path.*efi&quot;
     if ($null -eq $BootMode) {
         Write-Host &quot;This looks like BIOS boot.&quot;
         exit 1
     } else {
-        echo &quot;This looks like UEFI boot.&quot;
+        Write-Host &quot;This looks like UEFI boot.&quot;
     }
 }
                 </code>
