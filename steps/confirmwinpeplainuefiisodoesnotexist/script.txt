@@ -7,8 +7,10 @@ then
     ISO="winpe_plain_uefi.iso"
     if [[ -f ${ISO} ]]
     then
-        echo "Please delete ${DIRECTORY|/${ISO} to confirm you want to try again."
+        echo "Please delete ${DIRECTORY}/${ISO} to confirm you want to try again."
         exit 1
+    else
+        echo "${DIRECTORY}/${ISO} does not exist, good."
     fi
     
 else
