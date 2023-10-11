@@ -507,9 +507,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
-3. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
+                                <p>Deletes the build files and kickstart ISO.</p>
                             </p>
                         </div>
                     </div>
@@ -568,7 +566,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-winpe-iso</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1184,6 +1182,7 @@ then
         echo &quot;Using $(which xorriso)&quot;
         
         xorriso -as mkisofs \
+            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
@@ -1203,10 +1202,11 @@ then
             .
             
     else
+        echo &quot;not macOS&quot;
         
         mkisofs \
             -allow-limited-size \
-            -iso-level 4 \ 
+            -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
             -b boot/etfsboot.com \

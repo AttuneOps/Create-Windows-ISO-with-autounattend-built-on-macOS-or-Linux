@@ -415,7 +415,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if at least one of <code>isWin10Bios</code> or <code>isWin10Uefi</code> is set tot true.</p>
+                                <p>Checks if at least one of <code>isWin10Bios</code> or <code>isWin10Uefi</code> is set tot true. </p>
                             </p>
                         </div>
                     </div>
@@ -483,6 +483,13 @@ fi
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -551,9 +558,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
-3. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
+                                <p>Deletes the build files and kickstart ISO.</p>
                             </p>
                         </div>
                     </div>
@@ -1033,6 +1038,7 @@ then
         echo &quot;Using $(which xorriso)&quot;
         
         xorriso -as mkisofs \
+            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
@@ -1052,10 +1058,11 @@ then
             .
             
     else
+        echo &quot;not macOS&quot;
         
         mkisofs \
             -allow-limited-size \
-            -iso-level 4 \ 
+            -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
             -b boot/etfsboot.com \
@@ -1297,7 +1304,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates an ISO at <code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso</code> containing:</p>
+                                <p>Creates an ISO at <code>{automationWorkerBaseDirectory}/drivers_{newVmNode.fqn}.iso</code> containing:</p>
 <ol>
 <li><code>drivers</code> folder</li>
 <li><code>autounattend.xml</code></li>
@@ -1337,7 +1344,7 @@ fi
             <pre>
                 <code class="language-sql py-0">
 cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
-    
+
 DRIVERS_FOLDER=&quot;drivers&quot;
 DRIVERS_ISO_NAME=&quot;drivers_{newOsNode.fqn}.iso&quot;
 
@@ -1348,7 +1355,6 @@ then
     
     export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
     echo &quot;Using $(which xorriso)&quot;
-    
     xorriso -as mkisofs -o ../${DRIVERS_ISO_NAME} \
         -iso-level 2 -joliet-long -relaxed-filenames \
         -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
