@@ -483,13 +483,6 @@ fi
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -1040,7 +1033,6 @@ then
         echo &quot;Using $(which xorriso)&quot;
         
         xorriso -as mkisofs \
-            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
@@ -1060,11 +1052,10 @@ then
             .
             
     else
-        echo &quot;not macOS&quot;
         
         mkisofs \
             -allow-limited-size \
-            -iso-level 4 \
+            -iso-level 4 \ 
             -full-iso9660-filenames \
             -rock \
             -b boot/etfsboot.com \
