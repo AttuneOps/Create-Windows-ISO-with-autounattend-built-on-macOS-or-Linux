@@ -557,10 +557,11 @@ then
     ISO=&quot;winpe_plain_bios.iso&quot;
     if [[ -f ${ISO} ]]
     then
-        echo &quot;Please delete ${DIRECTORY|/${ISO} to confirm you want to try again.&quot;
+        echo &quot;Please delete ${DIRECTORY}/${ISO} to confirm you want to try again.&quot;
         exit 1
-    fi
-    
+    else
+        echo &quot;${DIRECTORY}/${ISO} does not exist, good.&quot;
+    fi   
 else
     echo &quot;Skipping for UEFI ISO creation.&quot;
 fi
@@ -628,8 +629,10 @@ then
     ISO=&quot;winpe_plain_uefi.iso&quot;
     if [[ -f ${ISO} ]]
     then
-        echo &quot;Please delete ${DIRECTORY|/${ISO} to confirm you want to try again.&quot;
+        echo &quot;Please delete ${DIRECTORY}/${ISO} to confirm you want to try again.&quot;
         exit 1
+    else
+        echo &quot;${DIRECTORY}/${ISO} does not exist, good.&quot;
     fi
     
 else
