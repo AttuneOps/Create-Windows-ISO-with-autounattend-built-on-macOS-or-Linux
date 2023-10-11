@@ -1,4 +1,4 @@
-cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+cd "{automationWorkerBaseDirectory}/build-winpe-iso"
 FOLDER="winimg"
 mkdir -p "${FOLDER}"
 
@@ -10,3 +10,5 @@ ISO=$(ls *SERVER*.iso)
 mount --options "uid={automationWorkerLinuxUser.user}" \
     --options "gid={automationWorkerLinuxUser.user}" \
     "${ISO}" "${FOLDER}"
+
+

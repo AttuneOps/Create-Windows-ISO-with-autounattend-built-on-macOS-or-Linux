@@ -1,3 +1,3 @@
-DIR="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+DIR="{automationWorkerBaseDirectory}/build-winpe-iso"
 [[ -d ${DIR} ]] && rm -rf ${DIR} && echo "Removed ${DIR}" || \
     echo "No directory to remove."

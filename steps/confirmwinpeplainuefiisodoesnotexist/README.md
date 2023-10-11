@@ -2,7 +2,4 @@ Checks if the WinPE plain UEFI ISO `{automationWorkerBaseDirectory}/winpe_win201
 
 If it does, prints a message to ask user to confirm to delete it if they want to recreate it.
 
-Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':
-
-1. isWin10Uefi
-2. isWinServerUefi
+Only applies to UEFI kickstarts. Only runs if the parameter `kickstartedBootLoaderIsUefi` is set `true`.

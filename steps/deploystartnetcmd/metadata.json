@@ -28,6 +28,11 @@
             "name": "windowsFolderOnSamba", 
             "parameterKey": "windowsfolderonsamba", 
             "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "driversAndScriptsDrive", 
+            "parameterKey": "driversandscriptsdrive", 
+            "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
     "name": "Deploy startnet.cmd", 

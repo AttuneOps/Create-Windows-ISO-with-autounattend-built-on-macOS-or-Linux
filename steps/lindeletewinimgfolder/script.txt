@@ -1,4 +1,4 @@
-BUILD_DIRECTORY="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+BUILD_DIRECTORY="{automationWorkerBaseDirectory}/build-winpe-iso"
 if [ ! -d ${BUILD_DIRECTORY} ]
 then
     echo "Directory ${BUILD_DIRECTORY} does not exist. Skipping."

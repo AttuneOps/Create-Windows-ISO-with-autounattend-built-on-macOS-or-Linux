@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "e5a7055e-c37a-4dbf-bd69-3e6963d032f8", 
+    "externalUuid4": "b796c2c5-7bc5-4c25-a38e-585f6481420c", 
     "interpreter": 1, 
-    "key": "checkinputparametervaluesforwin10singleisokickstart", 
-    "name": "Check Input Parameter Values for Win10 Single ISO Kickstart", 
+    "key": "lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker", 
+    "name": "LIN Create winpe_plain_bios.iso from winpe_staging on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

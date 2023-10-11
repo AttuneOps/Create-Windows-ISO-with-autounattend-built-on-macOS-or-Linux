@@ -1,0 +1,18 @@
+if {kickstartedBootLoaderIsUefi}
+then
+
+    DIRECTORY="{automationWorkerBaseDirectory}"
+    cd "${DIRECTORY}"
+    
+    ISO="winpe_plain_uefi.iso"
+    if [[ -f ${ISO} ]]
+    then
+        echo "Please delete ${DIRECTORY}/${ISO} to confirm you want to try again."
+        exit 1
+    else
+        echo "${DIRECTORY}/${ISO} does not exist, good."
+    fi
+    
+else
+    echo "Skipping for BIOS ISO creation."
+fi

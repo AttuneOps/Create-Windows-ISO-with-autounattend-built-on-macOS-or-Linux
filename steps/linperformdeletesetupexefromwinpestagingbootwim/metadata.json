@@ -7,20 +7,20 @@
     "key": "linperformdeletesetupexefromwinpestagingbootwim", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "createbootwimmountfolder"
-        }, 
-        {
-            "order": 150, 
-            "stepKey": "mountbootwim"
+            "order": 50, 
+            "stepKey": "createbootwimmountfolderinbuildwinpeiso"
         }, 
         {
             "order": 200, 
-            "stepKey": "lindeletesetupexefrombootwim"
+            "stepKey": "mountbootwiminbuildwinpeiso"
         }, 
         {
             "order": 250, 
-            "stepKey": "linwimlibunmountbootwim"
+            "stepKey": "lindeletesetupexefrombootwim"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "linwimlibunmountbootwimfrombuildwinpeiso"
         }
     ], 
     "name": "LIN Perform Delete setup.exe from winpe_staging boot.wim", 

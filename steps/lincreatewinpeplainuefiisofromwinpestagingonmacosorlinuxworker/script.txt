@@ -1,6 +1,8 @@
-if {isWin10Uefi} || {isWinServerUefi}
+if {kickstartedBootLoaderIsUefi}
 then
-    cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+    
+    ISO_NAME="winpe_plain_uefi.iso"
     
     if uname | \
         grep -iq "darwin"
@@ -25,7 +27,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso \
+            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
             winpe_staging
             
     else
@@ -48,7 +50,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso \
+            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
             winpe_staging
     fi
         
