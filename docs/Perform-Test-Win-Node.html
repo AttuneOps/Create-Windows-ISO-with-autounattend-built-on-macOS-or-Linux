@@ -794,7 +794,6 @@ if (-Not $?) {
             <pre>
                 <code class="language-sql py-0">
 $SEARCH_STRING = &quot;{kickstartedOperatingSystemName}&quot;
-
 if ((systeminfo | select-string -pattern $SEARCH_STRING) -eq $null) {
     Write-Host &quot;This is not $SEARCH_STRING&quot;
     exit 1
@@ -855,26 +854,24 @@ if ((systeminfo | select-string -pattern $SEARCH_STRING) -eq $null) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsBios}
-then
+if (${{kickstartedBootLoaderIsBios}}) {
     $BootMode = bcdedit | Select-String &quot;path.*efi&quot;
     if (-Not ($null -eq $BootMode)) {
-        echo &quot;This looks like UEFI boot.&quot;
+       Write-Host &quot;This looks like UEFI boot.&quot;
         exit 1
-    }else {
+    } else {
         Write-Host &quot;This looks like BIOS boot.&quot;
     }
 
-elif {kickstartedBootLoaderIsUefi}
-then
+} elseif (${{kickstartedBootLoaderIsUefi}}) {
     $BootMode = bcdedit | Select-String &quot;path.*efi&quot;
     if ($null -eq $BootMode) {
         Write-Host &quot;This looks like BIOS boot.&quot;
         exit 1
-    }else {
-        echo &quot;This looks like UEFI boot.&quot;
+    } else {
+        Write-Host &quot;This looks like UEFI boot.&quot;
     }
-fi
+}
                 </code>
             </pre>
         </div>
