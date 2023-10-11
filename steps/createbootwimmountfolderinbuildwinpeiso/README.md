@@ -1,0 +1,1 @@
+Creates a directory `WinPE_BootImageDir` for mounting `winpe_staging/SOURCES/BOOT.WIM`.

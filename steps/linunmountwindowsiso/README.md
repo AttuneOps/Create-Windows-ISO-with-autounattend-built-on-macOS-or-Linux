@@ -1,1 +1,1 @@
-Unmounts `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg`.
+Unmounts `{automationWorkerBaseDirectory}/build-build-winpe-iso/winimg`.

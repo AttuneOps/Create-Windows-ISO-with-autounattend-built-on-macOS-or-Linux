@@ -23,10 +23,6 @@
             "stepKey": "confirmplainwinpeuefiisoexists"
         }, 
         {
-            "order": 200, 
-            "stepKey": "confirmplainwinpebiosisoexists"
-        }, 
-        {
             "order": 250, 
             "stepKey": "copyandrenamewinpebiosiso"
         }, 

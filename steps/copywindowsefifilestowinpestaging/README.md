@@ -1,4 +1,4 @@
-Relative to the `{ksAttuneBaseDir}/build-{kickstartedNode.fqn/winpe` directory, copies the EFI files in `winimg/efi`to `winpe_staging`.
+Relative to the `{ksAttuneBaseDir}/build-winpe-iso/winpe` directory, copies the EFI files in `winimg/efi`to `winpe_staging`.
 
 Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':
 
