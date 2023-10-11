@@ -1,1 +1,1 @@
-Deletes the `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}` directory.
+Deletes the `{automationWorkerBaseDirectory}/build-winpe-iso` directory.

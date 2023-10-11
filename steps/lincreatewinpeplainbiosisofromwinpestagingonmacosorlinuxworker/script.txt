@@ -1,7 +1,9 @@
-cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+cd "{automationWorkerBaseDirectory}/build-winpe-iso"
 
-if {isWin10Bios} || {isWinServerBios} 
+if {kickstartedBootLoaderIsBios} 
 then
+    ISO_NAME="winpe_plain_bios.iso"
+    
     if uname | \
         grep -iq "darwin"
     then
@@ -24,7 +26,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
             winpe_staging
     else
         echo "not macOS"
@@ -43,7 +45,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o {automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso \
+            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
             winpe_staging
     fi
         

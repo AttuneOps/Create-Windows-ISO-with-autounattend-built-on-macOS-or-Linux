@@ -4,7 +4,7 @@ then
     DIRECTORY="{automationWorkerBaseDirectory}"
     cd "${DIRECTORY}"
     
-    ISO="winpe_win2019_plain_uefi.iso"
+    ISO="winpe_plain_uefi.iso"
     if [[ -f ${ISO} ]]
     then
         echo "${DIRECTORY}/${ISO} exists. Great."

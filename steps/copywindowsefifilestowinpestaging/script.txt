@@ -1,7 +1,7 @@
-if {isWin10Uefi} || {isWinServerUefi}
+if {kickstartedBootLoaderIsUefi}
 then
     
-    cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
     
     # Copy EFI Files from Windows ISO
     cp -rv "winimg/efi" "winpe_staging"

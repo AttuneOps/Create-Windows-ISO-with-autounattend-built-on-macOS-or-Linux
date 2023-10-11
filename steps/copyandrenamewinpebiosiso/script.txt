@@ -1,12 +1,9 @@
-whoami
-which mkdir
-
 if {isWin10Bios} || {isWinServerBios}
 then
     FOLDER="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
     mkdir --parents "${FOLDER}"
     cd "${FOLDER}"
-    cp --verbose "../winpe_win2019_plain_bios.iso" "winpe.iso"
+    cp --verbose "../winpe_plain_bios.iso" "winpe.iso"
     
 else
     echo "Skipping for UEFI ISO creation."

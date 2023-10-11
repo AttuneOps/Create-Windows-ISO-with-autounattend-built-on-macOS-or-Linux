@@ -1,10 +1,10 @@
-if {isWin10Bios} || {isWinServerBios}
+if {kickstartedBootLoaderIsBios}
 then
 
     DIRECTORY="{automationWorkerBaseDirectory}"
     cd "${DIRECTORY}"
     
-    ISO="winpe_win2019_plain_bios.iso"
+    ISO="winpe_plain_bios.iso"
     if [[ -f ${ISO} ]]
     then
         echo "Please delete ${DIRECTORY|/${ISO} to confirm you want to try again."
