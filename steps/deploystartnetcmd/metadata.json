@@ -3,33 +3,23 @@
     "archiveKey": "winpestartnetcmd", 
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
-<<<<<<<< HEAD:steps/deploystartnetcmd/metadata.json
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
     "key": "deploystartnetcmd", 
-========
-    "externalUuid4": "251b7f7d-064d-46e6-8449-d2bfb12172a7", 
-    "key": "deploywin10biosunattendedconfig", 
->>>>>>>> eeecf4e (NZOREG-152: Win10 autounattend.xml now calls PowerShell script. Blueprint "Create Win10 BIOS autounattend Single ISO on Linux" has added step "Deploy Post Setup PowerShell Script".):steps/deploywin10biosunattendedconfig/metadata.json
     "makoFileNames": [
         "startnet.cmd"
     ], 
     "makoParameters": [
         {
-<<<<<<<< HEAD:steps/deploystartnetcmd/metadata.json
             "name": "sambaServerIpAddress", 
             "parameterKey": "sambaserveripaddress", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
             "name": "targetServer", 
-========
-            "name": "newOsNode", 
->>>>>>>> eeecf4e (NZOREG-152: Win10 autounattend.xml now calls PowerShell script. Blueprint "Create Win10 BIOS autounattend Single ISO on Linux" has added step "Deploy Post Setup PowerShell Script".):steps/deploywin10biosunattendedconfig/metadata.json
             "parameterKey": "newosnode", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-<<<<<<<< HEAD:steps/deploystartnetcmd/metadata.json
             "name": "targetSubnet", 
             "parameterKey": "newosnodesubnet", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
@@ -37,20 +27,6 @@
         {
             "name": "windowsFolderOnSamba", 
             "parameterKey": "windowsfolderonsamba", 
-========
-            "name": "newOsWindowsUser", 
-            "parameterKey": "newoswindowsuseradministrator", 
-            "parameterType": "c.s.s.b.phv.WinOsCred"
-        }, 
-        {
-            "name": "kickstartOrganisationName", 
-            "parameterKey": "newosorganisationname", 
-            "parameterType": "c.s.s.b.phv.Text"
-        }, 
-        {
-            "name": "ksWindowsInterfaceAlias", 
-            "parameterKey": "newosinterfacealias", 
->>>>>>>> eeecf4e (NZOREG-152: Win10 autounattend.xml now calls PowerShell script. Blueprint "Create Win10 BIOS autounattend Single ISO on Linux" has added step "Deploy Post Setup PowerShell Script".):steps/deploywin10biosunattendedconfig/metadata.json
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -59,11 +35,7 @@
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-<<<<<<<< HEAD:steps/deploystartnetcmd/metadata.json
     "name": "Deploy startnet.cmd", 
-========
-    "name": "Deploy Win10 BIOS Unattended Config", 
->>>>>>>> eeecf4e (NZOREG-152: Win10 autounattend.xml now calls PowerShell script. Blueprint "Create Win10 BIOS autounattend Single ISO on Linux" has added step "Deploy Post Setup PowerShell Script".):steps/deploywin10biosunattendedconfig/metadata.json
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"

@@ -17,11 +17,7 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<DriverPaths>
 				<PathAndCredentials wcm:keyValue="1" wcm:action="add">
-<<<<<<<< HEAD:files/windowsunattendedconfig/contents/autounattend.xml
 					<Path>${driversAndAutounattendDriveLetter}:\drivers</Path>
-========
-					<Path>${driversAndScriptsDrive}:\attune_drivers</Path>
->>>>>>>> efdf2b9 (NZOREG-152: Cleaned up autounattend.xml Mako parameters.):files/win10biosunattendedconfig/contents/autounattend.xml
 					<Credentials></Credentials>
 				</PathAndCredentials>
 			</DriverPaths>

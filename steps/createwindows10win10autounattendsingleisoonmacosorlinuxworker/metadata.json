@@ -4,11 +4,7 @@
     "enabled": true, 
     "externalUuid4": "f714d8e3-b7aa-415f-a0ff-97620b5234dc", 
     "isBlueprint": true, 
-<<<<<<<< HEAD:steps/createwindows10win10autounattendsingleisoonmacosorlinuxworker/metadata.json
     "key": "createwindows10win10autounattendsingleisoonmacosorlinuxworker", 
-========
-    "key": "createwin10autounattendsingleisoonmacosorlinuxworker", 
->>>>>>>> a6b3378 (AUSTA-234: Cleaned up "Perform Test Win Node".):steps/createwin10autounattendsingleisoonmacosorlinuxworker/metadata.json
     "links": [
         {
             "order": 0, 
@@ -63,10 +59,6 @@
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
-<<<<<<<< HEAD:steps/createwindows10win10autounattendsingleisoonmacosorlinuxworker/metadata.json
     "name": "Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker", 
-========
-    "name": "Create Win10 autounattend Single ISO on macOS or Linux Worker", 
->>>>>>>> a6b3378 (AUSTA-234: Cleaned up "Perform Test Win Node".):steps/createwin10autounattendsingleisoonmacosorlinuxworker/metadata.json
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
