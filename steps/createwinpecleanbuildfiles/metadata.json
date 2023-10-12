@@ -16,6 +16,10 @@
         }, 
         {
             "order": 100, 
+            "stepKey": "linsetwritepermissionstowinpestaging"
+        }, 
+        {
+            "order": 150, 
             "stepKey": "lincleanbuilddirectory"
         }
     ], 
