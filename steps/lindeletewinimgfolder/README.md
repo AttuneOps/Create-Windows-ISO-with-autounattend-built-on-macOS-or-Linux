@@ -1,1 +1,1 @@
-Deletes the `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winimg` folder.
+Deletes the `{automationWorkerBaseDirectory}/build-winpe-iso/winimg` folder.

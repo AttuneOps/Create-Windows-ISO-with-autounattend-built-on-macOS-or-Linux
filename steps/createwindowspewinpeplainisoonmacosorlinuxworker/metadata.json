@@ -8,62 +8,62 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "confirmwinpewin2019plainbiosisodoesnotexist"
+            "stepKey": "confirmwinpeplainbiosisodoesnotexist"
         }, 
         {
             "order": 50, 
-            "stepKey": "confirmwinpewin2019plainuefiisodoesnotexist"
+            "stepKey": "confirmwinpeplainuefiisodoesnotexist"
         }, 
         {
             "order": 100, 
             "stepKey": "createwinpecleanbuildfiles"
         }, 
         {
-            "order": 150, 
-            "stepKey": "deploywin2019dvdiso"
-        }, 
-        {
             "order": 200, 
-            "stepKey": "extractwindowsbootimg"
-        }, 
-        {
-            "order": 250, 
-            "stepKey": "linmountwinserverdvdiso"
+            "stepKey": "deploywin2019dvdisotobuildwinpeiso"
         }, 
         {
             "order": 300, 
-            "stepKey": "linextractwinpeisofromwinimgdirectory"
+            "stepKey": "extractwindowsbootimgfrombuildwinpeiso"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwinpeisotostagingfolder"
+            "stepKey": "linmountwinserverdvdiso"
         }, 
         {
             "order": 400, 
-            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
-        }, 
-        {
-            "order": 450, 
-            "stepKey": "linmovebootimgtowinpestaging"
+            "stepKey": "linextractwinpeisofromwinimgdirectory"
         }, 
         {
             "order": 500, 
-            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeiso"
         }, 
         {
             "order": 550, 
-            "stepKey": "copywindowsefifilestowinpestaging"
+            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
         }, 
         {
             "order": 600, 
-            "stepKey": "lincreatewinpewin2019plainbiosisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "linmovebootimgtowinpestaging"
         }, 
         {
             "order": 650, 
-            "stepKey": "lincreatewinpewin2019plainuefiisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
         }, 
         {
             "order": 700, 
+            "stepKey": "copywindowsefifilestowinpestaging"
+        }, 
+        {
+            "order": 750, 
+            "stepKey": "lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "lincreatewinpeplainuefiisofromwinpestagingonmacosorlinuxworker"
+        }, 
+        {
+            "order": 900, 
             "stepKey": "createwinpecleanbuildfiles"
         }
     ], 

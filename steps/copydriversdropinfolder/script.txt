@@ -13,3 +13,4 @@ then
 else
     echo "Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied."
 fi
+

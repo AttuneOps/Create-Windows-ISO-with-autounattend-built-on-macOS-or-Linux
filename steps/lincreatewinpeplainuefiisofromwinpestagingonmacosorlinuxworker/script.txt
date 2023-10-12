@@ -1,0 +1,59 @@
+if {kickstartedBootLoaderIsUefi}
+then
+    ISO_NAME="winpe_plain_uefi.iso"
+    
+    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+     
+    if uname | \
+        grep -iq "darwin"
+    then
+        echo "It's macOS"
+        export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+        echo "Using $(which xorriso)"
+        
+        xorriso -as mkisofs \
+            -allow-limited-size \
+            -iso-level 4 \
+            -full-iso9660-filenames \
+            -rock \
+            -b BOOT/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-seg 0 \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -udf \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
+            winpe_staging
+            
+    else
+        echo "Not macOS"
+        
+        mkisofs \
+            -allow-limited-size \
+            -iso-level 4 \
+            -full-iso9660-filenames \
+            -rock \
+            -b BOOT/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-seg 0 \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -udf \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
+            winpe_staging
+    fi
+else
+    echo "Skipping for BIOS boot."
+fi

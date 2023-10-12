@@ -1,4 +1,4 @@
-cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+cd "{automationWorkerBaseDirectory}/build-winpe-iso"
     
 mkwinpeimg --iso --windows-dir=winimg \
     "winpe.iso"
