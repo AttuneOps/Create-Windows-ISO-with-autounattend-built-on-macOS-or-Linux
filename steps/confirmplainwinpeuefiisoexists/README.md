@@ -1,6 +1,6 @@
-Checks if the WinPE plain UEFI ISO `{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso` exists.
+Checks if the WinPE plain UEFI ISO `{automationWorkerBaseDirectory}/winpe_plain_uefi.iso` exists.
 
-If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint `Create WinPE Plain Win2019 UEFI ISO`.
+If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint `Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker`.
 
 Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':
 
