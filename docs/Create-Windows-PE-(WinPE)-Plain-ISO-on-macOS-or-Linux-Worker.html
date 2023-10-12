@@ -246,8 +246,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#linsetwritepermissionstowinpestaging">
+                            <strong>Step 3.3 -</strong> LIN Set Write Permissions to winpe_staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#lincleanbuilddirectory">
-                            <strong>Step 3.3 -</strong> LIN Clean Build Directory
+                            <strong>Step 3.4 -</strong> LIN Clean Build Directory
                         </a>
                     </p>
 
@@ -400,8 +408,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#linsetwritepermissionstowinpestaging">
+                            <strong>Step 15.3 -</strong> LIN Set Write Permissions to winpe_staging
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#lincleanbuilddirectory">
-                            <strong>Step 15.3 -</strong> LIN Clean Build Directory
+                            <strong>Step 15.4 -</strong> LIN Clean Build Directory
                         </a>
                     </p>
 
@@ -834,9 +850,77 @@ fi
 
 
                     <div class="row pt-5">
+                        <h4 id="linsetwritepermissionstowinpestaging">
+                            <a href="#linsetwritepermissionstowinpestaging">
+                                <strong>Step 3.3 -</strong> LIN Set Write Permissions to winpe_staging
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+
+if [ ! -d ${DIR} ]
+then
+    echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
+else
+    cd &quot;${DIR}&quot;
+    
+    DIR=&quot;winpe_staging&quot;
+    if [ ! -d ${DIR} ]
+    then
+        echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
+    else
+        echo &quot;Before&quot;
+        ls -lh
+        
+        chmod --recursive a+w &quot;${DIR}&quot;
+        
+        echo &quot;After&quot;
+        ls -lh
+    fi
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
                         <h4 id="lincleanbuilddirectory">
                             <a href="#lincleanbuilddirectory">
-                                <strong>Step 3.3 -</strong> LIN Clean Build Directory
+                                <strong>Step 3.4 -</strong> LIN Clean Build Directory
                             </a>
                         </h4>
                     </div>
@@ -2111,9 +2195,77 @@ fi
 
 
                     <div class="row pt-5">
+                        <h4 id="linsetwritepermissionstowinpestaging">
+                            <a href="#linsetwritepermissionstowinpestaging">
+                                <strong>Step 15.3 -</strong> LIN Set Write Permissions to winpe_staging
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+
+if [ ! -d ${DIR} ]
+then
+    echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
+else
+    cd &quot;${DIR}&quot;
+    
+    DIR=&quot;winpe_staging&quot;
+    if [ ! -d ${DIR} ]
+    then
+        echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
+    else
+        echo &quot;Before&quot;
+        ls -lh
+        
+        chmod --recursive a+w &quot;${DIR}&quot;
+        
+        echo &quot;After&quot;
+        ls -lh
+    fi
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
                         <h4 id="lincleanbuilddirectory">
                             <a href="#lincleanbuilddirectory">
-                                <strong>Step 15.3 -</strong> LIN Clean Build Directory
+                                <strong>Step 15.4 -</strong> LIN Clean Build Directory
                             </a>
                         </h4>
                     </div>
