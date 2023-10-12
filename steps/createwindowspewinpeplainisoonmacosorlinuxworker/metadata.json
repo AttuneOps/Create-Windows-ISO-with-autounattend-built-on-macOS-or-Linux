@@ -63,7 +63,7 @@
             "stepKey": "lincreatewinpeplainuefiisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
-            "order": 850, 
+            "order": 900, 
             "stepKey": "createwinpecleanbuildfiles"
         }
     ], 
