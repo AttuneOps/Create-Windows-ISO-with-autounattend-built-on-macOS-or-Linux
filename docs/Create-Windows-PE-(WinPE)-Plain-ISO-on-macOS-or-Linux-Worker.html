@@ -1858,22 +1858,23 @@ fi
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
-    
     ISO_NAME=&quot;winpe_plain_uefi.iso&quot;
     
+    cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+     
     if uname | \
         grep -iq &quot;darwin&quot;
     then
-        echo &quot;is macOS&quot;
+        echo &quot;It&#x27;s macOS&quot;
         export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
         echo &quot;Using $(which xorriso)&quot;
         
         xorriso -as mkisofs \
+            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
-            -b boot/etfsboot.com \
+            -b BOOT/etfsboot.com \
             -no-emul-boot \
             -boot-load-seg 0 \
             -boot-load-size 8 \
@@ -1889,14 +1890,14 @@ then
             winpe_staging
             
     else
-        echo &quot;not macOS&quot;
+        echo &quot;Not macOS&quot;
         
         mkisofs \
             -allow-limited-size \
-            -iso-level 4 \ 
+            -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
-            -b boot/etfsboot.com \
+            -b BOOT/etfsboot.com \
             -no-emul-boot \
             -boot-load-seg 0 \
             -boot-load-size 8 \
@@ -1911,7 +1912,6 @@ then
             -o &quot;{automationWorkerBaseDirectory}/${ISO_NAME}&quot; \
             winpe_staging
     fi
-        
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
