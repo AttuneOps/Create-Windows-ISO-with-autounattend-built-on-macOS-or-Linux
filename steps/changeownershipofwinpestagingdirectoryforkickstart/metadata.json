@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "da06a53c-2b72-42ab-a3e5-67ac3226a8cc", 
+    "interpreter": 1, 
+    "key": "changeownershipofwinpestagingdirectoryforkickstart", 
+    "name": "Change Ownership of winpe_staging Directory for Kickstart", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
