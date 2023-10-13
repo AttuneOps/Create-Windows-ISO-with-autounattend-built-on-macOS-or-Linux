@@ -1971,7 +1971,12 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Creates a UEFI bootable ISO at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
                             </p>
                         </div>
                     </div>
@@ -2014,10 +2019,11 @@ then
         echo &quot;Using $(which xorriso)&quot;
         
         xorriso -as mkisofs \
+            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
-            -b boot/etfsboot.com \
+            -b BOOT/etfsboot.com \
             -no-emul-boot \
             -boot-load-seg 0 \
             -boot-load-size 8 \
@@ -2034,13 +2040,13 @@ then
             
     else
         echo &quot;not macOS&quot;
-
+        
         mkisofs \
             -allow-limited-size \
-            -iso-level 4 \ 
+            -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
-            -b boot/etfsboot.com \
+            -b BOOT/etfsboot.com \
             -no-emul-boot \
             -boot-load-seg 0 \
             -boot-load-size 8 \

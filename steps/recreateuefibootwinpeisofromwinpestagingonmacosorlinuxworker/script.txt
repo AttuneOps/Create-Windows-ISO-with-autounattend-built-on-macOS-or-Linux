@@ -12,10 +12,11 @@ then
         echo "Using $(which xorriso)"
         
         xorriso -as mkisofs \
+            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
-            -b boot/etfsboot.com \
+            -b BOOT/etfsboot.com \
             -no-emul-boot \
             -boot-load-seg 0 \
             -boot-load-size 8 \
@@ -32,13 +33,13 @@ then
             
     else
         echo "not macOS"
-
+        
         mkisofs \
             -allow-limited-size \
-            -iso-level 4 \ 
+            -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
-            -b boot/etfsboot.com \
+            -b BOOT/etfsboot.com \
             -no-emul-boot \
             -boot-load-seg 0 \
             -boot-load-size 8 \
