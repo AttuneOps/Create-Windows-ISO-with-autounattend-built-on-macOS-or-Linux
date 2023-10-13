@@ -56,7 +56,7 @@
         }, 
         {
             "order": 650, 
-            "stepKey": "recreateuefibootwinpeisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "recreatefat32kickstartisoonlinuxworker"
         }, 
         {
             "order": 700, 
