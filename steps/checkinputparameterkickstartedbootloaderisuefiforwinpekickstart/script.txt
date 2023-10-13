@@ -1,0 +1,14 @@
+if {kickstartedBootLoaderIsUefi}
+then
+    echo "isWin10Uefi = {isWin10Uefi}, isWinServerUefi = {isWinServerUefi}"
+    if ! {isWin10Uefi} &&
+        ! {isWinServerUefi}
+    then
+        echo "If kickstartedBootLoaderIsUefi is set true, then
+        one of isWin10Uefi or isWinServerUefi must also be
+        set true" >&2
+        false
+    fi
+fi
+
+echo "SUCCESS: Ok"

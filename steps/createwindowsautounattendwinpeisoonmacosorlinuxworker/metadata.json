@@ -8,58 +8,66 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "checkinputparametervaluesforwinpekickstart"
+            "stepKey": "checkinputparameterwindowsfolderonsambaforwinpekickstart"
         }, 
         {
             "order": 50, 
-            "stepKey": "checkmaximumlengthofwin10hostname"
+            "stepKey": "checkwindowsandboottypeparametersforwinpekickstart"
         }, 
         {
             "order": 100, 
-            "stepKey": "confirmplainwinpebiosisoexists"
+            "stepKey": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstart"
         }, 
         {
             "order": 150, 
-            "stepKey": "confirmplainwinpeuefiisoexists"
+            "stepKey": "checkmaximumlengthofwin10hostname"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "confirmplainwinpebiosisoexists"
         }, 
         {
             "order": 250, 
-            "stepKey": "copyandrenamewinpebiosiso"
+            "stepKey": "confirmplainwinpeuefiisoexists"
         }, 
         {
             "order": 300, 
-            "stepKey": "copyandrenamewinpeuefiiso"
+            "stepKey": "copyandrenamewinpebiosiso"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwinpeisotostagingfolder"
+            "stepKey": "copyandrenamewinpeuefiiso"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploystartnetcmd"
+            "stepKey": "extractwinpeisotostagingfolder"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "deploystartnetcmd"
         }, 
         {
             "order": 500, 
-            "stepKey": "createpostsetupwim"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 550, 
-            "stepKey": "modifywinpebootwim"
+            "stepKey": "createpostsetupwim"
         }, 
         {
             "order": 600, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "modifywinpebootwim"
         }, 
         {
             "order": 650, 
-            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 700, 
+            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+        }, 
+        {
+            "order": 750, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
