@@ -667,8 +667,8 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_bios.iso</code> exists.</p>
-<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create WinPE Plain Win2019 BIOS ISO</code>.</p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_plain_bios.iso</code> exists.</p>
+<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
 <p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
 <ol>
 <li>isWin10Bios</li>
@@ -713,7 +713,7 @@ then
     then
         echo &quot;${DIRECTORY}/${ISO} exists. Great.&quot;
     else
-        echo &quot;${DIRECTORY}/${ISO} does not exist. Please run blueprint \&quot;Create WinPE Plain Win2019 BIOS ISO\&quot; to create it.&quot;
+        echo &quot;${DIRECTORY}/${ISO} does not exist. Please run blueprint \&quot;Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker\&quot; to create it.&quot;
         exit 1
     fi
     
@@ -744,8 +744,8 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> exists.</p>
-<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create WinPE Plain Win2019 UEFI ISO</code>.</p>
+                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerBaseDirectory}/winpe_plain_uefi.iso</code> exists.</p>
+<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
 <p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
 <ol>
 <li>isWin10Uefi</li>
@@ -790,7 +790,7 @@ then
     then
         echo &quot;${DIRECTORY}/${ISO} exists. Great.&quot;
     else
-        echo &quot;${DIRECTORY}/${ISO} does not exist. Please run blueprint \&quot;Create WinPE Plain Win2019 BIOS ISO\&quot; to create it.&quot;
+        echo &quot;${DIRECTORY}/${ISO} does not exist. Please run blueprint \&quot;Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker\&quot; to create it.&quot;
         exit 1
     fi
     
