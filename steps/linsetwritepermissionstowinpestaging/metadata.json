@@ -5,7 +5,7 @@
     "interpreter": 1, 
     "key": "linsetwritepermissionstowinpestaging", 
     "name": "LIN Set Write Permissions to winpe_staging", 
-    "osCredKey": "automationworkerlinuxuser", 
+    "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
