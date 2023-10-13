@@ -3,14 +3,14 @@ use the methods described below to accomplish the level of automation that
 your deployment needs.
 
 You can prevent some or all of the user interface (UI) pages from Windows 
-Setup from being displayed during installation. The default behavior of 
+Setup from being displayed during installation. The default behaviour of 
 Windows Setup is to display the Setup UI if any of the required settings are 
 incorrect or empty.
 
 This Attune Project contains the various methods of create ISO(s) required for 
 automating the Windows Setup.
 
-## Requries Worker
+## Requires Worker
 Blueprints in this Attune Project require a worker to perform some tasks. The 
 worker can be either the Attune instance itself or a separate machine.
 

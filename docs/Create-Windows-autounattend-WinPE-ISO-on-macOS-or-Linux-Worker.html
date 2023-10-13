@@ -397,8 +397,8 @@
                             <strong>Step 13 -</strong> Recreate FAT32 Kickstart ISO on Linux Worker
                         </a>
                     </p>
-
-
+    
+        
 
                     <p class="text-muted pt-2">
                         <a href="#changeownershipofwinpestagingdirectoryforkickstart">
@@ -406,7 +406,7 @@
                         </a>
                     </p>
 
-
+        
 
                     <p class="text-muted pt-2">
                         <a href="#createuefifat32kickstartiso">
@@ -414,7 +414,7 @@
                         </a>
                     </p>
 
-
+        
 
                     <p class="text-muted pt-2">
                         <a href="#mountuefifat32kickstartiso">
@@ -422,7 +422,7 @@
                         </a>
                     </p>
 
-
+        
 
                     <p class="text-muted pt-2">
                         <a href="#movewinpestagingtouefifat32mountforkickstart">
@@ -430,13 +430,14 @@
                         </a>
                     </p>
 
-
+        
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwinpefat32uefimountforkickstart">
                             <strong>Step 13.5 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
                         </a>
                     </p>
+
 
         
 
@@ -2008,17 +2009,24 @@ fi
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
 
 
+    
 
 
 
 
-
-
+    
 
 
 
@@ -2030,6 +2038,13 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2053,7 +2068,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
 
 
 
-
+    
 
 
 
@@ -2072,12 +2087,12 @@ then
         grep -iq &quot;darwin&quot;
     then
         echo &quot;is macOS, skipping&quot;
-
+        
     else
         echo &quot;not macOS&quot;
-
+        
         cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-
+        
         chown --recursive \
             --verbose \
             &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
@@ -2095,7 +2110,7 @@ fi
 
 
 
-
+    
 
 
 
@@ -2107,6 +2122,13 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2130,7 +2152,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
 
 
 
-
+    
 
 
 
@@ -2145,55 +2167,24 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-
+        
     if uname | \
         grep -iq &quot;darwin&quot;
     then
         echo &quot;is macOS, skipping&quot;
         
-        xorriso -as mkisofs \
-            -iso-level 4 \
-            -full-iso9660-filenames \
-            -rock \
-            -b boot/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-seg 0 \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -udf \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o &quot;{automationWorkerBaseDirectory}/${ISO_NAME}&quot; \
-            winpe_staging
-            
     else
         echo &quot;not macOS&quot;
-
-        mkisofs \
-            -allow-limited-size \
-            -iso-level 4 \ 
-            -full-iso9660-filenames \
-            -rock \
-            -b boot/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-seg 0 \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -udf \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o &quot;{automationWorkerBaseDirectory}/${ISO_NAME}&quot; \
-            winpe_staging
+        
+        cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+        
+        bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
+        ((bytes=bytes+10000))
+        
+        ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
     fi
-
+    
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
@@ -2206,16 +2197,24 @@ fi
 
 
 
-
+    
 
 
 
                     <div class="row pt-5">
-                        <h4 id="movewinpestagingtouefifat32mountforkickstart">
-                            <a href="#movewinpestagingtouefifat32mountforkickstart">
-                                <strong>Step 13.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                        <h4 id="mountuefifat32kickstartiso">
+                            <a href="#mountuefifat32kickstartiso">
+                                <strong>Step 13.3 -</strong> Mount UEFI FAT32 Kickstart ISO
                             </a>
                         </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
                     </div>
 
 
@@ -2227,10 +2226,20 @@ fi
 
 
 
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
 
 
 
-
+    
 
 
 
@@ -2249,12 +2258,86 @@ then
         grep -iq &quot;darwin&quot;
     then
         echo &quot;is macOS, skipping&quot;
-
+        
     else
         echo &quot;not macOS&quot;
-
+        
         cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+        
+        mkdir --parents --verbose uefi_mount
+        
+        mount --verbose \
+            &quot;../kickstart_{newOsNode.fqn}.iso&quot; uefi_mount
+    fi
+    
+else
+    echo &quot;Skipping for BIOS boot.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
 
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movewinpestagingtouefifat32mountforkickstart">
+                            <a href="#movewinpestagingtouefifat32mountforkickstart">
+                                <strong>Step 13.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {kickstartedBootLoaderIsUefi}
+then
+    if uname | \
+        grep -iq &quot;darwin&quot;
+    then
+        echo &quot;is macOS, skipping&quot;
+        
+    else
+        echo &quot;not macOS&quot;
+        
+        cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+        
         # Copy WinPE Files from WinPE ISO
         #mv --verbose winpe_staging/* &quot;uefi_mount&quot;
         cp -r --verbose winpe_staging/* &quot;uefi_mount&quot;
@@ -2271,7 +2354,7 @@ fi
 
 
 
-
+    
 
 
 
@@ -2283,6 +2366,13 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2292,10 +2382,10 @@ fi
 
 
 
+    
 
 
-
-
+    
 
 
 
@@ -2314,26 +2404,26 @@ then
         grep -iq &quot;darwin&quot;
     then
         echo &quot;is macOS, skipping&quot;
-
+        
     else
         echo &quot;not macOS&quot;
-
+    
         MOUNT_FOLDER=&quot;uefi_mount&quot;
         MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}&quot;
-
+        
         if df -h | grep --ignore-case \
             --quiet \
             &quot;${MOUNT_PATH}&quot;
         then
-
+        
             cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-
+            
             umount --verbose &quot;${MOUNT_FOLDER}&quot;
         else
             echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
         fi
     fi
-
+    
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
@@ -2347,7 +2437,7 @@ fi
 
 
 
-
+        
 
 
 
