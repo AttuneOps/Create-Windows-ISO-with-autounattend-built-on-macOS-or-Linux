@@ -16,6 +16,10 @@
         }, 
         {
             "order": 100, 
+            "stepKey": "unmountwinpeuefimount"
+        }, 
+        {
+            "order": 150, 
             "stepKey": "createwinpecleanbuildfiles"
         }, 
         {
@@ -59,11 +63,11 @@
             "stepKey": "lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
-            "order": 800, 
-            "stepKey": "lincreatewinpeplainuefiisofromwinpestagingonmacosorlinuxworker"
+            "order": 900, 
+            "stepKey": "createfat32winpeplainuefiisofromwinpestagingonlinuxworker"
         }, 
         {
-            "order": 900, 
+            "order": 950, 
             "stepKey": "createwinpecleanbuildfiles"
         }
     ], 
