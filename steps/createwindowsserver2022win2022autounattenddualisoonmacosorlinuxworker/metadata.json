@@ -16,6 +16,10 @@
         }, 
         {
             "order": 100, 
+            "stepKey": "checkifgatewayipaddressisinsubnet"
+        }, 
+        {
+            "order": 150, 
             "stepKey": "cleanupbuildfilesandisos"
         }, 
         {

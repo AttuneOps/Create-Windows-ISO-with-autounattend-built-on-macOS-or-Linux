@@ -20,46 +20,50 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "checkifgatewayipaddressisinsubnet"
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "cleanupbuildfilesandisos"
         }, 
         {
             "order": 250, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "deploywin10dvdiso"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 350, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "extractwindowsiso"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
             "order": 450, 
-            "stepKey": "copydriversdropinfolder"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 500, 
-            "stepKey": "copyefisysnopromptbinintoefisysbin"
+            "stepKey": "copydriversdropinfolder"
         }, 
         {
             "order": 550, 
-            "stepKey": "createbiosbootisoonmacosorlinuxworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
         }, 
         {
             "order": 600, 
-            "stepKey": "createuefibootisoonmacosorlinuxworker"
+            "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
             "order": 650, 
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
+        }, 
+        {
+            "order": 700, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
