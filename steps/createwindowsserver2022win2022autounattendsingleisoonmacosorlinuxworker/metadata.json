@@ -11,6 +11,10 @@
             "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstart"
         }, 
         {
+            "order": 50, 
+            "stepKey": "checkifipaddressisinsubnet"
+        }, 
+        {
             "order": 100, 
             "stepKey": "cleanupbuildfilesandisos"
         }, 

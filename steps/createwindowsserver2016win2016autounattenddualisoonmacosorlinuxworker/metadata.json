@@ -12,6 +12,10 @@
         }, 
         {
             "order": 100, 
+            "stepKey": "checkifipaddressisinsubnet"
+        }, 
+        {
+            "order": 150, 
             "stepKey": "cleanupbuildfilesandisos"
         }, 
         {

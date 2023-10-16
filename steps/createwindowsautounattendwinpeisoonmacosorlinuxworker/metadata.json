@@ -24,50 +24,54 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "confirmplainwinpebiosisoexists"
+            "stepKey": "checkifipaddressisinsubnet"
         }, 
         {
             "order": 250, 
-            "stepKey": "confirmplainwinpeuefiisoexists"
+            "stepKey": "confirmplainwinpebiosisoexists"
         }, 
         {
             "order": 300, 
-            "stepKey": "copyandrenamewinpebiosiso"
+            "stepKey": "confirmplainwinpeuefiisoexists"
         }, 
         {
             "order": 350, 
-            "stepKey": "copyandrenamewinpeuefiiso"
+            "stepKey": "copyandrenamewinpebiosiso"
         }, 
         {
             "order": 400, 
-            "stepKey": "extractwinpeisotostagingfolder"
+            "stepKey": "copyandrenamewinpeuefiiso"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploystartnetcmd"
+            "stepKey": "extractwinpeisotostagingfolder"
         }, 
         {
             "order": 500, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "deploystartnetcmd"
         }, 
         {
             "order": 550, 
-            "stepKey": "createpostsetupwim"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 600, 
-            "stepKey": "modifywinpebootwim"
+            "stepKey": "createpostsetupwim"
         }, 
         {
             "order": 650, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "modifywinpebootwim"
         }, 
         {
             "order": 700, 
-            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 750, 
+            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+        }, 
+        {
+            "order": 800, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
