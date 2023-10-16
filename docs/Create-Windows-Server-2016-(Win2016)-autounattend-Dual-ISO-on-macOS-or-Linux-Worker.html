@@ -222,16 +222,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkifgatewayipaddressisinsubnet">
-                            <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 4 -</strong> Clean Up Build Files and ISOs
+                            <strong>Step 3 -</strong> Clean Up Build Files and ISOs
                         </a>
                     </p>
 
@@ -239,7 +231,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploywin2016dvdiso">
-                            <strong>Step 5 -</strong> Deploy Win2016 DVD ISO
+                            <strong>Step 4 -</strong> Deploy Win2016 DVD ISO
                         </a>
                     </p>
 
@@ -247,7 +239,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsbootimg">
-                            <strong>Step 6 -</strong> Extract Windows boot.img
+                            <strong>Step 5 -</strong> Extract Windows boot.img
                         </a>
                     </p>
 
@@ -255,7 +247,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsiso">
-                            <strong>Step 7 -</strong> Extract Windows ISO
+                            <strong>Step 6 -</strong> Extract Windows ISO
                         </a>
                     </p>
 
@@ -263,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copyefisysnopromptbinintoefisysbin">
-                            <strong>Step 8 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                            <strong>Step 7 -</strong> Copy efisys_noprompt.bin into efisys.bin
                         </a>
                     </p>
 
@@ -271,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootisoonmacosorlinuxworker">
-                            <strong>Step 9 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                            <strong>Step 8 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -279,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootisoonmacosorlinuxworker">
-                            <strong>Step 10 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                            <strong>Step 9 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -287,7 +279,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 11 -</strong> Deploy Windows Unattended Config
+                            <strong>Step 10 -</strong> Deploy Windows Unattended Config
                         </a>
                     </p>
 
@@ -295,7 +287,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 12 -</strong> Deploy Post Setup PowerShell Script
+                            <strong>Step 11 -</strong> Deploy Post Setup PowerShell Script
                         </a>
                     </p>
 
@@ -303,7 +295,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolder">
-                            <strong>Step 13 -</strong> Copy Drivers Drop in Folder
+                            <strong>Step 12 -</strong> Copy Drivers Drop in Folder
                         </a>
                     </p>
 
@@ -311,7 +303,15 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createanswerfileisoonmacosorlinux">
-                            <strong>Step 14 -</strong> Create Answer File ISO on macOS or Linux
+                            <strong>Step 13 -</strong> Create Answer File ISO on macOS or Linux
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#cleanupbuildfilesanddriversfiles">
+                            <strong>Step 14 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -572,105 +572,9 @@ done
 
 
                     <div class="row pt-5">
-                        <h3 id="checkifgatewayipaddressisinsubnet">
-                            <a href="#checkifgatewayipaddressisinsubnet">
-                                <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <h4>To Debug</h4>
-<ul>
-<li>Uncomment out the <code>echo</code>s to debug.</li>
-</ul>
-<h4>Logic</h4>
-<ul>
-<li>For loop loops through each octet in the gateway IP address, subnet range octet and subnet mask.</li>
-<li>For each octet:<ul>
-<li>The min octet is the subnet octet bitwised <code>AND</code>ed with the netmask octet.</li>
-<li>A wildcard octet is 255 - netmask octet.</li>
-<li>The max octet is the subnet octet bitwised <code>OR</code>ed with the wildcard octet.</li>
-<li>The gateway IP address octet is tested to see if it is between the min and max octets.</li>
-</ul>
-</li>
-</ul>
-<h4>References</h4>
-<p><a href="https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/">Subnet Cheat Sheet - 24 Subnet Mask, 30, 26, 27, 29, and other IP Address CIDR Network References</a></p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-echo &quot;gateway IP address={newOsNodeSubnet.gateway}&quot;
-echo &quot;subnet={newOsNodeSubnet.subnet}&quot;
-echo &quot;netmask={newOsNodeSubnet.netmask}&quot;
-#echo &quot;i, GATEWAY_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX&quot;
-
-for i in $(seq 1 1 4)
-do
-    GATEWAY_OCTET=$(echo &quot;{newOsNodeSubnet.gateway}&quot; | awk -F&#x27;.&#x27; &quot;{print \$$i}&quot;)
-    SUBNET_OCTET=$(echo &quot;{newOsNodeSubnet.subnet}&quot; | awk -F&#x27;.&#x27; &quot;{print \$$i}&quot;)
-    NETMASK_OCTET=$(echo &quot;{newOsNodeSubnet.netmask}&quot; | awk -F&#x27;.&#x27; &quot;{print \$$i}&quot;)
-    
-    OCTET_MIN=$((SUBNET_OCTET &amp; NETMASK_OCTET))
-
-    WILDCARD_MASK=$((255 - NETMASK_OCTET))
-    OCTET_MAX=$((SUBNET_OCTET | WILDCARD_MASK))
-    
-    #echo &quot;$i. $GATEWAY_OCTET, $SUBNET_OCTET, $NETMASK_OCTET, $WILDCARD_MASK, $OCTET_MIN, $OCTET_MAX&quot;
-    
-    if [ &quot;$GATEWAY_OCTET&quot; -ge &quot;$OCTET_MIN&quot; ] &amp;&amp;
-        [ &quot;$GATEWAY_OCTET&quot; -le &quot;$OCTET_MAX&quot; ]
-    then
-        echo &quot;Octet number $i, $OCTET_MIN &lt;= $GATEWAY_OCTET &lt;= $OCTET_MAX, ok.&quot;
-    else
-        echo &quot;Octet number $i, $OCTET_MIN &lt;= $GATEWAY_OCTET &lt;= $OCTET_MAX is false. Not in range of the subnet mask.&quot;
-        false
-    fi
-done
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="cleanupbuildfilesandisos">
                             <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 4 -</strong> Clean Up Build Files and ISOs
+                                <strong>Step 3 -</strong> Clean Up Build Files and ISOs
                             </a>
                         </h3>
                     </div>
@@ -729,7 +633,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="deploywin2016dvdiso">
                             <a href="#deploywin2016dvdiso">
-                                <strong>Step 5 -</strong> Deploy Win2016 DVD ISO
+                                <strong>Step 4 -</strong> Deploy Win2016 DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -786,7 +690,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row pt-5">
                         <h3 id="extractwindowsbootimg">
                             <a href="#extractwindowsbootimg">
-                                <strong>Step 6 -</strong> Extract Windows boot.img
+                                <strong>Step 5 -</strong> Extract Windows boot.img
                             </a>
                         </h3>
                     </div>
@@ -866,7 +770,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="extractwindowsiso">
                             <a href="#extractwindowsiso">
-                                <strong>Step 7 -</strong> Extract Windows ISO
+                                <strong>Step 6 -</strong> Extract Windows ISO
                             </a>
                         </h3>
                     </div>
@@ -936,7 +840,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copyefisysnopromptbinintoefisysbin">
                             <a href="#copyefisysnopromptbinintoefisysbin">
-                                <strong>Step 8 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                                <strong>Step 7 -</strong> Copy efisys_noprompt.bin into efisys.bin
                             </a>
                         </h3>
                     </div>
@@ -999,7 +903,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createbiosbootisoonmacosorlinuxworker">
                             <a href="#createbiosbootisoonmacosorlinuxworker">
-                                <strong>Step 9 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
+                                <strong>Step 8 -</strong> Create BIOS Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1108,7 +1012,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootisoonmacosorlinuxworker">
                             <a href="#createuefibootisoonmacosorlinuxworker">
-                                <strong>Step 10 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
+                                <strong>Step 9 -</strong> Create UEFI Boot ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1219,7 +1123,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfig">
                             <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 11 -</strong> Deploy Windows Unattended Config
+                                <strong>Step 10 -</strong> Deploy Windows Unattended Config
                             </a>
                         </h3>
                     </div>
@@ -1290,7 +1194,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscript">
                             <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 12 -</strong> Deploy Post Setup PowerShell Script
+                                <strong>Step 11 -</strong> Deploy Post Setup PowerShell Script
                             </a>
                         </h3>
                     </div>
@@ -1347,7 +1251,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolder">
                             <a href="#copydriversdropinfolder">
-                                <strong>Step 13 -</strong> Copy Drivers Drop in Folder
+                                <strong>Step 12 -</strong> Copy Drivers Drop in Folder
                             </a>
                         </h3>
                     </div>
@@ -1415,7 +1319,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createanswerfileisoonmacosorlinux">
                             <a href="#createanswerfileisoonmacosorlinux">
-                                <strong>Step 14 -</strong> Create Answer File ISO on macOS or Linux
+                                <strong>Step 13 -</strong> Create Answer File ISO on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1485,6 +1389,76 @@ else
         -iso-level 3 -udf -joliet-long -relaxed-filenames \
         -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
         autounattend.xml post_install_setup.ps1
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="cleanupbuildfilesanddriversfiles">
+                            <a href="#cleanupbuildfilesanddriversfiles">
+                                <strong>Step 14 -</strong> Clean up Build Files and Drivers Files
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the following:
+1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.
+2. Drivers drop in directory at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+if [ -d &quot;${DIR}&quot; ]
+then
+    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+else
+    echo &quot;No directory to remove.&quot;
+fi
+
+DIR=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+if [ -d &quot;${DIR}&quot; ]
+then
+    rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
+else
+    echo &quot;No directory to remove.&quot;
 fi
                 </code>
             </pre>
