@@ -1,0 +1,27 @@
+echo "gateway IP address={newOsNodeSubnet.gateway}"
+echo "subnet={newOsNodeSubnet.subnet}"
+echo "netmask={newOsNodeSubnet.netmask}"
+#echo "i, GATEWAY_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX"
+
+for i in $(seq 1 1 4)
+do
+    GATEWAY_OCTET=$(echo "{newOsNodeSubnet.gateway}" | awk -F'.' "{print \$$i}")
+    SUBNET_OCTET=$(echo "{newOsNodeSubnet.subnet}" | awk -F'.' "{print \$$i}")
+    NETMASK_OCTET=$(echo "{newOsNodeSubnet.netmask}" | awk -F'.' "{print \$$i}")
+    
+    OCTET_MIN=$((SUBNET_OCTET & NETMASK_OCTET))
+
+    WILDCARD_MASK=$((255 - NETMASK_OCTET))
+    OCTET_MAX=$((SUBNET_OCTET | WILDCARD_MASK))
+    
+    #echo "$i. $GATEWAY_OCTET, $SUBNET_OCTET, $NETMASK_OCTET, $WILDCARD_MASK, $OCTET_MIN, $OCTET_MAX"
+    
+    if [ "$GATEWAY_OCTET" -ge "$OCTET_MIN" ] &&
+        [ "$GATEWAY_OCTET" -le "$OCTET_MAX" ]
+    then
+        echo "Octet number $i, $OCTET_MIN <= $GATEWAY_OCTET <= $OCTET_MAX, ok."
+    else
+        echo "Octet number $i, $OCTET_MIN <= $GATEWAY_OCTET <= $OCTET_MAX is false. Not in range of the subnet mask."
+        false
+    fi
+done
