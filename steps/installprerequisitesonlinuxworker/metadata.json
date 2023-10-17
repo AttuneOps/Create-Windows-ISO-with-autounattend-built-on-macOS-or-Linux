@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c41688f3-d9c5-4ec4-af5e-4751f69a86f5", 
+    "interpreter": 1, 
+    "key": "installprerequisitesonlinuxworker", 
+    "name": "Install Prerequisites on Linux Worker", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

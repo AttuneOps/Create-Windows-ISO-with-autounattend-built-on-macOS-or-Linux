@@ -1,0 +1,1 @@
+Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
