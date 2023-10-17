@@ -213,8 +213,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#createwindows2019directory">
+                            <strong>Step 1 -</strong> Create windows2019 Directory
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#deploywin2019isoforsamba">
-                            <strong>Step 1 -</strong>  Deploy Win2019 ISO for Samba
+                            <strong>Step 2 -</strong>  Deploy Win2019 ISO for Samba
                         </a>
                     </p>
 
@@ -222,7 +230,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwin2019isoforsamba">
-                            <strong>Step 2 -</strong> Extract Win2019 ISO for Samba
+                            <strong>Step 3 -</strong> Extract Win2019 ISO for Samba
                         </a>
                     </p>
 
@@ -230,7 +238,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#setwindows2019folderpermissions">
-                            <strong>Step 3 -</strong> Set windows2019 Folder Permissions
+                            <strong>Step 4 -</strong> Set windows2019 Folder Permissions
                         </a>
                     </p>
 
@@ -324,9 +332,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2019isoforsamba">
-                            <a href="#deploywin2019isoforsamba">
-                                <strong>Step 1 -</strong>  Deploy Win2019 ISO for Samba
+                        <h3 id="createwindows2019directory">
+                            <a href="#createwindows2019directory">
+                                <strong>Step 1 -</strong> Create windows2019 Directory
                             </a>
                         </h3>
                     </div>
@@ -334,7 +342,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the Windows Server 2019 ISO to <code>$HOME/windows_iso_data_for_winpe/windows2019</code> on the Samba server.</p>
+                                <p>Creates the Windows Server 2019 folder for Samba at <code>$HOME/windows_iso_data_for_winpe/windows2019</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -359,6 +367,61 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;$HOME/windows_iso_data_for_winpe&quot;
+mkdir -p windows2019
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploywin2019isoforsamba">
+                            <a href="#deploywin2019isoforsamba">
+                                <strong>Step 2 -</strong>  Deploy Win2019 ISO for Samba
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the Windows Server 2019 ISO to <code>$HOME/windows_iso_data_for_winpe/windows2019</code> on the Samba server.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
 
     
 
@@ -394,7 +457,7 @@ $HOME/windows_iso_data_for_winpe/windows2019, relative to the home directory
                     <div class="row pt-5">
                         <h3 id="extractwin2019isoforsamba">
                             <a href="#extractwin2019isoforsamba">
-                                <strong>Step 2 -</strong> Extract Win2019 ISO for Samba
+                                <strong>Step 3 -</strong> Extract Win2019 ISO for Samba
                             </a>
                         </h3>
                     </div>
@@ -456,7 +519,7 @@ rm $ISO
                     <div class="row pt-5">
                         <h3 id="setwindows2019folderpermissions">
                             <a href="#setwindows2019folderpermissions">
-                                <strong>Step 3 -</strong> Set windows2019 Folder Permissions
+                                <strong>Step 4 -</strong> Set windows2019 Folder Permissions
                             </a>
                         </h3>
                     </div>
