@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win10desktopiso", 
+    "deployPath": "$HOME/windows_iso_data_for_winpe/windows10", 
+    "enabled": true, 
+    "externalUuid4": "d0dce834-6a9e-4355-a832-4bf480a11d92", 
+    "key": "deploywin10isoforsamba", 
+    "name": " Deploy Win10 ISO for Samba", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}
