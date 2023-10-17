@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "2dacbf13-c0cf-487c-9cfa-46c48b623588", 
+    "interpreter": 1, 
+    "key": "createwindows2016directory", 
+    "name": "Create windows2016 Directory", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
