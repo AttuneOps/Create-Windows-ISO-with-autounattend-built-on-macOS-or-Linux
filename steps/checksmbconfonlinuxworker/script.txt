@@ -1,0 +1,2 @@
+testparm --suppress-prompt
+exit $?
