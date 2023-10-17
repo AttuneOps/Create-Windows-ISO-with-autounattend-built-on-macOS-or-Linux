@@ -11,11 +11,19 @@
             "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstart"
         }, 
         {
+            "order": 50, 
+            "stepKey": "checkifipaddressisinsubnet"
+        }, 
+        {
             "order": 100, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "checkifgatewayipaddressisinsubnet"
         }, 
         {
             "order": 150, 
+            "stepKey": "cleanupbuildfilesandisos"
+        }, 
+        {
+            "order": 200, 
             "stepKey": "deploywin2022dvdiso"
         }, 
         {

@@ -12,6 +12,14 @@
         }, 
         {
             "order": 100, 
+            "stepKey": "checkifipaddressisinsubnet"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "checkifgatewayipaddressisinsubnet"
+        }, 
+        {
+            "order": 200, 
             "stepKey": "cleanupbuildfilesandisos"
         }, 
         {

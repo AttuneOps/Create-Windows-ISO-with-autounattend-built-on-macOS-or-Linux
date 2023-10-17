@@ -24,50 +24,58 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "confirmplainwinpebiosisoexists"
+            "stepKey": "checkifipaddressisinsubnet"
         }, 
         {
             "order": 250, 
-            "stepKey": "confirmplainwinpeuefiisoexists"
+            "stepKey": "checkifgatewayipaddressisinsubnet"
         }, 
         {
             "order": 300, 
-            "stepKey": "copyandrenamewinpebiosiso"
+            "stepKey": "confirmplainwinpebiosisoexists"
         }, 
         {
             "order": 350, 
-            "stepKey": "copyandrenamewinpeuefiiso"
+            "stepKey": "confirmplainwinpeuefiisoexists"
         }, 
         {
             "order": 400, 
-            "stepKey": "extractwinpeisotostagingfolder"
+            "stepKey": "copyandrenamewinpebiosiso"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploystartnetcmd"
+            "stepKey": "copyandrenamewinpeuefiiso"
         }, 
         {
             "order": 500, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "extractwinpeisotostagingfolder"
         }, 
         {
             "order": 550, 
-            "stepKey": "createpostsetupwim"
+            "stepKey": "deploystartnetcmd"
         }, 
         {
             "order": 600, 
-            "stepKey": "modifywinpebootwim"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 650, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "createpostsetupwim"
         }, 
         {
             "order": 700, 
-            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+            "stepKey": "modifywinpebootwim"
         }, 
         {
             "order": 750, 
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+        }, 
+        {
+            "order": 850, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 

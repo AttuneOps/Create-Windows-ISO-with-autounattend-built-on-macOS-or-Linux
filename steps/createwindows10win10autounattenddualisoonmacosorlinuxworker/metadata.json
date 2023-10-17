@@ -16,50 +16,58 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "checkifipaddressisinsubnet"
         }, 
         {
             "order": 150, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "checkifgatewayipaddressisinsubnet"
         }, 
         {
             "order": 200, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "cleanupbuildfilesandisos"
         }, 
         {
             "order": 250, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "deploywin10dvdiso"
         }, 
         {
             "order": 300, 
-            "stepKey": "copyefisysnopromptbinintoefisysbin"
+            "stepKey": "extractwindowsbootimg"
         }, 
         {
             "order": 350, 
-            "stepKey": "createbiosbootisoonmacosorlinuxworker"
+            "stepKey": "extractwindowsiso"
         }, 
         {
             "order": 400, 
-            "stepKey": "createuefibootisoonmacosorlinuxworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbin"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "copydriversdropinfolder"
+            "stepKey": "deploywindowsunattendedconfig"
         }, 
         {
             "order": 600, 
-            "stepKey": "createanswerfileisoonmacosorlinux"
+            "stepKey": "deploypostsetuppowershellscript"
         }, 
         {
             "order": 650, 
+            "stepKey": "copydriversdropinfolder"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "createanswerfileisoonmacosorlinux"
+        }, 
+        {
+            "order": 750, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
