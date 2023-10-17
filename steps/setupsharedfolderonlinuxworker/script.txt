@@ -1,0 +1,6 @@
+shared_dir="${HOME}/windows_iso_data_for_winpe"
+mkdir -p $shared_dir
+chmod -R 0775 $shared_dir
+chown -R nobody:{linuxAttuneUser.user} $shared_dir
+
+chcon -R -t samba_share_t $shared_dir
