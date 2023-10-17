@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "d760c66f-d97c-4355-8098-9d9999f5bc7d", 
+    "interpreter": 1, 
+    "key": "createwindows2022directory", 
+    "name": "Create windows2022 Directory", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
