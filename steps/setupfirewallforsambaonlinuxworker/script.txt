@@ -1,2 +1,0 @@
-firewall-cmd --add-service=samba --zone=public --permanent
-firewall-cmd --reload
