@@ -68,6 +68,10 @@
         }, 
         {
             "order": 950, 
+            "stepKey": "createwinpeplainuefiisoonmacosworker"
+        }, 
+        {
+            "order": 1000, 
             "stepKey": "createwinpecleanbuildfiles"
         }
     ], 

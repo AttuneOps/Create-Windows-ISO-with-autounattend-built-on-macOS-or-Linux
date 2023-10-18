@@ -140,6 +140,10 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.
 
+### Deploy Win2016 ISO to Samba Share
+
+The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
+
 ### Deploy Win2019 ISO to Samba Share
 
 The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
@@ -158,10 +162,6 @@ Performs basic tests for the built node.
 ### Setup Samba on Linux Worker
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
-
-### Deploy Win2016 ISO to Samba Share
-
-The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
 
 
 
