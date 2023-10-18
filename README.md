@@ -159,10 +159,9 @@ The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_is
 
 Performs basic tests for the built node.
 
-### Deploy Win2022 ISO to Samba Share
+### Setup Samba on Linux Worker
 
-The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
-
+Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
 
 
@@ -185,6 +184,8 @@ The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_is
 | Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
 | Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
 | Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
+| Linux: Attune User - DELETE | Linux/Unix Credential | `linuxattuneuserdelete` |  |
+| Linux: Root User - DELETE | Linux/Unix Credential | `linuxrootuserdelete` |  |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
