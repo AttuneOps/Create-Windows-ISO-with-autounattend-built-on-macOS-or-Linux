@@ -143,9 +143,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### Create FAT32 winpe_plain_uefi.iso from winpe_staging on macOS Worker - DELETE
-
-
 
 
 
