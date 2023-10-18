@@ -1,5 +1,0 @@
-dnf -y install \
-    policycoreutils-python-utils \
-    fuse3-devel \
-    fuse3-libs
-    
