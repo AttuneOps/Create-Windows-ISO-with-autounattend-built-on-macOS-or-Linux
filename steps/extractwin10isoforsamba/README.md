@@ -1,0 +1,1 @@
+Extracts the Windows Desktop 10 ISO at `${HOME}/windows_iso_data_for_winpe/windows10`.
