@@ -1,7 +1,0 @@
-if sestatus | grep -i "SELinux status:" | grep -q "enabled"
-then
-    setsebool -P samba_export_all_ro=1 samba_export_all_rw=1
-    semanage fcontext -at samba_share_t "/home/attune/windows_iso_data_for_winpe(/.*)?"
-else
-    echo "SElinux is disabled"
-fi
