@@ -165,6 +165,7 @@ The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_is
 
 
 
+
 ## Parameters
 
 
@@ -182,7 +183,6 @@ The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_is
 | Is Win Server UEFI | Text | `iswinserveruefi` |  |
 | Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
 | Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
-| Kickstarted Linux Node | Linux/Unix Node | `kickstartedlinuxnode` | Refers to the node being built. |
 | Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
 | Linux: Attune User - DELETE | Linux/Unix Credential | `linuxattuneuserdelete` |  |
 | Linux: Root User - DELETE | Linux/Unix Credential | `linuxrootuserdelete` |  |

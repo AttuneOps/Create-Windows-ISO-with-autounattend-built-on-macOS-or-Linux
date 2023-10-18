@@ -32,7 +32,7 @@
         }, 
         {
             "order": 350, 
-            "stepKey": "linmountwinserverdvdisoonmacosorlinuxworker"
+            "stepKey": "linmountwinserverdvdiso"
         }, 
         {
             "order": 400, 
@@ -67,11 +67,7 @@
             "stepKey": "createfat32winpeplainuefiisofromwinpestagingonlinuxworker"
         }, 
         {
-            "order": 1050, 
-            "stepKey": "createwinpeplainuefiisoonmacosworker"
-        }, 
-        {
-            "order": 1100, 
+            "order": 950, 
             "stepKey": "createwinpecleanbuildfiles"
         }
     ], 
