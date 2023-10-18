@@ -57,10 +57,6 @@
         {
             "order": 1000, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
-        }, 
-        {
-            "order": 1100, 
-            "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
     "name": "Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker", 
