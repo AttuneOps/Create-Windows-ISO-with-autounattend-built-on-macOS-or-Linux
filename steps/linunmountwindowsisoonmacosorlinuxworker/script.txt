@@ -1,0 +1,27 @@
+MOUNT_FOLDER="winimg"
+BUILD_DIRECTORY="{automationWorkerBaseDirectory}/build-winpe-iso"
+MOUNT_PATH="${BUILD_DIRECTORY}/${MOUNT_FOLDER}"
+
+if df -h | grep --ignore-case \
+    --quiet \
+    "${MOUNT_PATH}"
+then
+    cd "${BUILD_DIRECTORY}"
+
+    if uname | \
+        grep -iq "darwin"
+    then
+        echo "is macOS"
+        echo "MOUNT_PATH=${MOUNT_PATH}"
+        
+        hdiutil detach "${MOUNT_PATH}"
+        
+    else
+        echo "not macOS"
+        
+        umount --verbose "${MOUNT_FOLDER}"
+    fi
+    
+else
+    echo "${MOUNT_PATH} is not mounted. Skipping."
+fi
