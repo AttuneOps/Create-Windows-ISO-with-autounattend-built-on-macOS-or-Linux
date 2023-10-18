@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "8a4a8b89-63bb-4dea-994b-4b53326515ff", 
-    "key": "linuxattuneuserdelete", 
-    "name": "Linux: Attune User - DELETE", 
-    "showInPlan": false, 
-    "type": "c.s.s.b.phv.LinOsCred"
-}
