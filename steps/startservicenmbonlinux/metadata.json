@@ -1,11 +1,11 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "862774fa-c74f-45a8-9d7b-c754b53ec8d1", 
+    "externalUuid4": "f82b8b8a-0071-4342-9565-80e60ea04a3b", 
     "interpreter": 1, 
-    "key": "checkservicesmbonlinuxworker", 
-    "name": "Check Service smb on Linux Worker", 
-    "osCredKey": "automationworkerlinuxuser", 
+    "key": "startservicenmbonlinux", 
+    "name": "Start Service nmb on Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"

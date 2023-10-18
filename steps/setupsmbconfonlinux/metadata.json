@@ -1,11 +1,11 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "6867e66d-5998-4aac-990f-a0454319bb28", 
+    "externalUuid4": "22581306-9272-4f68-87de-396635b1e62f", 
     "interpreter": 1, 
-    "key": "checksmbconfonlinuxworker", 
-    "name": "Check smb.conf on Linux Worker", 
-    "osCredKey": "automationworkerlinuxuser", 
+    "key": "setupsmbconfonlinux", 
+    "name": "Setup smb.conf on Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"

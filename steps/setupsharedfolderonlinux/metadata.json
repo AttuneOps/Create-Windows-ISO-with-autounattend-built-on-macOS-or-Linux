@@ -1,11 +1,11 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "f6bee377-b6bb-4846-9414-c056cdae61ee", 
+    "externalUuid4": "5ad61fd2-1cb9-4c67-a4dd-71824b0e1ce6", 
     "interpreter": 1, 
-    "key": "checkservicenmbonlinuxworker", 
-    "name": "Check Service nmb on Linux Worker", 
-    "osCredKey": "automationworkerlinuxuser", 
+    "key": "setupsharedfolderonlinux", 
+    "name": "Setup Shared Folder on Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"

@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "5ad61fd2-1cb9-4c67-a4dd-71824b0e1ce6", 
+    "externalUuid4": "b5e53b56-0e28-43a9-9774-2b2f5c19baaf", 
     "interpreter": 1, 
-    "key": "setupsharedfolderonlinuxworker", 
-    "name": "Setup Shared Folder on Linux Worker", 
+    "key": "installsambaonlinux", 
+    "name": "Install Samba on Linux", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

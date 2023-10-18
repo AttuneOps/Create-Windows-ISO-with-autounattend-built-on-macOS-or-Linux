@@ -1,11 +1,11 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "b5e53b56-0e28-43a9-9774-2b2f5c19baaf", 
+    "externalUuid4": "8d928af6-9e43-4a04-ac00-6162f900ec2f", 
     "interpreter": 1, 
-    "key": "installsambaonlinuxworker", 
-    "name": "Install Samba on Linux Worker", 
-    "osCredKey": "automationworkerlinuxuserroot", 
+    "key": "checkselinuxforsambaonlinux", 
+    "name": "Check SELinux for Samba on Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"

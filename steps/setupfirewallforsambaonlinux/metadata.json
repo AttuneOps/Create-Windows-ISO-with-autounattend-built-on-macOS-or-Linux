@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "b78494df-3928-45fe-b7a0-65be41cb4bcf", 
+    "externalUuid4": "0cd63fcb-e9cf-4ad8-95a9-5c54f0dd4421", 
     "interpreter": 1, 
-    "key": "setupselinuxforsambaonlinuxworker", 
-    "name": "Setup SELinux for Samba on Linux Worker", 
+    "key": "setupfirewallforsambaonlinux", 
+    "name": "Setup Firewall for Samba on Linux", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

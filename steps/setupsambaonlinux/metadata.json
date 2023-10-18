@@ -4,61 +4,61 @@
     "enabled": true, 
     "externalUuid4": "b79b9e1b-ce17-4732-b458-ddb3b8137246", 
     "isBlueprint": true, 
-    "key": "setupsambaonlinuxworker", 
+    "key": "setupsambaonlinux", 
     "links": [
         {
             "order": 0, 
-            "stepKey": "installsambaonlinuxworker"
+            "stepKey": "installsambaonlinux"
         }, 
         {
             "order": 50, 
-            "stepKey": "setupsharedfolderonlinuxworker"
+            "stepKey": "setupsharedfolderonlinux"
         }, 
         {
             "order": 100, 
-            "stepKey": "setupsmbconfonlinuxworker"
+            "stepKey": "setupsmbconfonlinux"
         }, 
         {
             "order": 150, 
-            "stepKey": "checksmbconfonlinuxworker"
+            "stepKey": "checksmbconfonlinux"
         }, 
         {
             "order": 200, 
-            "stepKey": "setupfirewallforsambaonlinuxworker"
+            "stepKey": "setupfirewallforsambaonlinux"
         }, 
         {
             "order": 250, 
-            "stepKey": "installprerequisitesonlinuxworker"
+            "stepKey": "installprerequisitesonlinux"
         }, 
         {
             "order": 300, 
-            "stepKey": "setupselinuxforsambaonlinuxworker"
+            "stepKey": "setupselinuxforsambaonlinux"
         }, 
         {
             "order": 350, 
-            "stepKey": "checkselinuxforsambaonlinuxworker"
+            "stepKey": "checkselinuxforsambaonlinux"
         }, 
         {
             "order": 400, 
-            "stepKey": "startsmbonlinuxworker"
+            "stepKey": "startsmbonlinux"
         }, 
         {
             "order": 450, 
-            "stepKey": "checkservicesmbonlinuxworker"
+            "stepKey": "checkservicesmbonlinux"
         }, 
         {
             "order": 500, 
-            "stepKey": "startservicenmbonlinuxworker"
+            "stepKey": "startservicenmbonlinux"
         }, 
         {
             "order": 550, 
-            "stepKey": "checkservicenmbonlinuxworker"
+            "stepKey": "checkservicenmbonlinux"
         }, 
         {
             "order": 600, 
-            "stepKey": "setlinuxworkerhomefolderpermissionsforsamba"
+            "stepKey": "setlinuxhomefolderpermissionsforsamba"
         }
     ], 
-    "name": "Setup Samba on Linux Worker", 
+    "name": "Setup Samba on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
