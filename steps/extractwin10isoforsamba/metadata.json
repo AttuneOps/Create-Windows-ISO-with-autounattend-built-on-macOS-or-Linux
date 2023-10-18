@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "8ed009d6-7930-4a26-9f6e-2de701b52dec", 
+    "externalUuid4": "f93b86b9-6af3-4bdf-ad07-5bc71ab4348f", 
     "interpreter": 1, 
-    "key": "createuefibootwinpeisofromwinpestagingonmacosworker", 
-    "name": "Create UEFI Boot WinPE ISO from winpe_staging on macOS Worker", 
+    "key": "extractwin10isoforsamba", 
+    "name": "Extract Win10 ISO for Samba", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
