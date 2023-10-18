@@ -1,0 +1,1 @@
+Creates the Windows Desktop 10 folder for Samba at `$HOME/windows_iso_data_for_winpe/windows10`.
