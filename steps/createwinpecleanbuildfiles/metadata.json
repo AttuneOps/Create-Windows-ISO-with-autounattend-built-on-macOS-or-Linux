@@ -8,7 +8,7 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "linunmountwindowsiso"
+            "stepKey": "linunmountwindowsisoonmacosorlinuxworker"
         }, 
         {
             "order": 50, 
