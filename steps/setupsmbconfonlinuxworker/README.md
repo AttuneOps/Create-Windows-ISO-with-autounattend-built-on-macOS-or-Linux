@@ -1,1 +1,0 @@
-Populates `/etc/samba/smb.conf`.

@@ -136,18 +136,6 @@ Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
-### Deploy Win10 ISO to Samba Share
-
-The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.
-
-### Deploy Win2016 ISO to Samba Share
-
-The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`.
-
-### Deploy Win2019 ISO to Samba Share
-
-The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
-
 ### Perform Post Cleanup
 
 
@@ -155,13 +143,8 @@ The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_is
 
 Performs basic tests for the built node.
 
-### Deploy Win2022 ISO to Samba Share
+### Create FAT32 winpe_plain_uefi.iso from winpe_staging on macOS Worker - DELETE
 
-The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
-
-### Setup Samba on Linux Worker
-
-Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
 
 
@@ -183,7 +166,9 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 | Is Win Server UEFI | Text | `iswinserveruefi` |  |
 | Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
 | Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
+| Kickstarted Linux Node | Linux/Unix Node | `kickstartedlinuxnode` | Refers to the node being built. |
 | Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
+| Linux: Attune User - DELETE | Linux/Unix Credential | `linuxattuneuserdelete` |  |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
@@ -193,8 +178,6 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
-| Linux: Root User - DELETE | Linux/Unix Credential | `linuxrootuserdelete` |  |
-| Linux: Attune User - DELETE | Linux/Unix Credential | `linuxattuneuserdelete` |  |
 
 
 
