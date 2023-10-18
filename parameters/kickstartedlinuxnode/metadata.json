@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "a29aa946-99fd-4772-8c04-8b6e71382aee", 
-    "key": "kickstartedlinuxnode", 
-    "name": "Kickstarted Linux Node", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.LinuxServer"
-}
