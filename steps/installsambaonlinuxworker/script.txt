@@ -1,1 +1,0 @@
-dnf -y install samba samba-common samba-client
