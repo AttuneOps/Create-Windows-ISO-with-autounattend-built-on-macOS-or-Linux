@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "19c1dad9-031e-4b89-965f-a2274c757d15", 
+    "interpreter": 1, 
+    "key": "blesswinpeplainuefiisoonmacosworkerdelete", 
+    "name": "Bless winpe_plain_uefi.iso on macOS Worker - DELETE", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
