@@ -1,0 +1,1 @@
+Sets read and execute permissions for the Windows Server 2022 Samba folder at `$HOME/windows_iso_data_for_winpe/windows2022`. 
