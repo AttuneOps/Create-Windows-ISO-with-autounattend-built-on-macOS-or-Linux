@@ -1,1 +1,0 @@
-Extracts the Windows Server windows2022 ISO at `${HOME}/windows_iso_data_for_winpe/windows2022`.
