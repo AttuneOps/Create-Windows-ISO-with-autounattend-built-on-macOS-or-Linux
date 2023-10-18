@@ -1,0 +1,38 @@
+if uname | \
+    grep -iq "darwin"
+then
+    echo "is macOS"
+    
+    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+    
+    DMG="{automationWorkerBaseDirectory}/winpe_plain_uefi.dmg"
+    echo "DMG=${DMG}"
+    
+    pwd
+    ls -lh
+    
+    #hdiutil makehybrid -iso -joliet -o "${ISO}" winpe_staging
+    
+    # hdiutil create -srcfolder winpe_staging \
+    #     -volname "test_volume" \
+    #     -size 100m -fs FAT32 "${DMG}"
+    
+    hdiutil create -srcfolder tmp \
+        -volname "test_volume" \
+        -format "UDTO" \
+        -fs "ExFAT" \
+        -ov \
+        "${DMG}"
+    
+    cd ..
+    rm -v winpe_plain_uefi.iso
+    hdiutil makehybrid -iso -joliet -o winpe_plain_uefi.iso \
+        "${DMG}"
+    
+    
+        # -no-emul-boot \
+        # -boot-load-seg 0 \
+        # -boot-load-size 8 \
+else
+    echo "not macOS, skipping"
+fi

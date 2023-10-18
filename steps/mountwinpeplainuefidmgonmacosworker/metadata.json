@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "692f71f4-b237-4420-8ede-e8045304c796", 
+    "interpreter": 1, 
+    "key": "mountwinpeplainuefidmgonmacosworker", 
+    "name": "Mount winpe_plain_uefi.dmg on macOS Worker", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
