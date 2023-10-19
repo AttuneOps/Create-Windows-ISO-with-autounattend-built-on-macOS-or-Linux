@@ -8,7 +8,20 @@ if df -h | grep --ignore-case \
 then
     cd "${BUILD_DIRECTORY}"
 
-    umount --verbose "${MOUNT_FOLDER}"
+    if uname | \
+        grep -iq "darwin"
+    then
+        echo "is macOS"
+        echo "MOUNT_PATH=${MOUNT_PATH}"
+        
+        hdiutil detach "${MOUNT_PATH}"
+        
+    else
+        echo "not macOS"
+        
+        umount --verbose "${MOUNT_FOLDER}"
+    fi
+    
 else
     echo "${MOUNT_PATH} is not mounted. Skipping."
 fi

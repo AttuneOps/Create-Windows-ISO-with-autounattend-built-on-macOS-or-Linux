@@ -76,6 +76,10 @@
         }, 
         {
             "order": 850, 
+            "stepKey": "createuefibootwinpeisofromwinpestagingonmacosworker"
+        }, 
+        {
+            "order": 900, 
             "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
