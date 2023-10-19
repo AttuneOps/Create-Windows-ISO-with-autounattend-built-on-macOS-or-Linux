@@ -1,4 +1,4 @@
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 DRIVERS_FOLDER="drivers"
 DRIVERS_ISO_NAME="drivers_{newOsNode.fqn}.iso"

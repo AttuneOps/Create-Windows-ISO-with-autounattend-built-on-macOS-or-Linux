@@ -21,7 +21,7 @@ if (${{isWin10Bios}} -or `
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerWindowsBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .'
 
   & cmd /c "$command"

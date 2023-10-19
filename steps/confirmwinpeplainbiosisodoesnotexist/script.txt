@@ -1,7 +1,7 @@
 if {kickstartedBootLoaderIsBios}
 then
 
-    DIRECTORY="{automationWorkerBaseDirectory}"
+    DIRECTORY="{automationWorkerLinuxBaseDirectory}"
     cd "${DIRECTORY}"
     
     ISO="winpe_plain_bios.iso"

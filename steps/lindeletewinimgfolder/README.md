@@ -1,1 +1,1 @@
-Deletes the `{automationWorkerBaseDirectory}/build-winpe-iso/winimg` folder.
+Deletes the `{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg` folder.

@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "windowsunattendedconfig", 
-    "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "ed8a4e1b-f204-40ea-b78a-90eaa23bece3", 
     "key": "deploywindowsunattendedconfigonmacosorlinuxworker", 

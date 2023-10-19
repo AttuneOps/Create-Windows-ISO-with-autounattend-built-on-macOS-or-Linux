@@ -1,1 +1,1 @@
-Deletes `setup.exe` from `{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir`.
+Deletes `setup.exe` from `{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir`.

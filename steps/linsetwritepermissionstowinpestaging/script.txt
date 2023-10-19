@@ -1,4 +1,4 @@
-DIR="{automationWorkerBaseDirectory}/build-winpe-iso"
+DIR="{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
 if [ ! -d ${DIR} ]
 then

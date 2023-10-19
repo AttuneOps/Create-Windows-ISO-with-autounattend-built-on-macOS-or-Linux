@@ -24,7 +24,7 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin2019dvdiso"
+            "stepKey": "deploywin2019dvdisoonmacosorlinuxworker"
         }, 
         {
             "order": 250, 

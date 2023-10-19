@@ -9,14 +9,14 @@ then
         echo "not macOS"
     
         MOUNT_FOLDER="uefi_mount"
-        MOUNT_PATH="{automationWorkerBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}"
+        MOUNT_PATH="{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}"
         
         if df -h | grep --ignore-case \
             --quiet \
             "${MOUNT_PATH}"
         then
         
-            cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+            cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
             
             umount --verbose "${MOUNT_FOLDER}"
         else
