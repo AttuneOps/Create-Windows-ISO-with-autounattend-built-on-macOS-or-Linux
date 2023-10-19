@@ -3,8 +3,13 @@
     "enabled": true, 
     "externalUuid4": "da0b91ff-a1a7-4cc8-bd4b-9d44bbdf15b3", 
     "interpreter": 1, 
+<<<<<<<< HEAD:steps/copyefisysnopromptbinintoefisysbinonmacosorlinuxworker/metadata.json
     "key": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker", 
     "name": "Copy efisys_noprompt.bin into efisys.bin on macOS or Linux Worker", 
+========
+    "key": "cleanupbuildfilesandisosonmacosorlinuxworker", 
+    "name": "Clean Up Build Files and ISOs on macOS or Linux Worker", 
+>>>>>>>> fe1f9e0 (AUSTA-228: Started blueprint "Create Windows 10 (Win10) autounattend Single ISO on Windows Worker".):steps/cleanupbuildfilesandisosonmacosorlinuxworker/metadata.json
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
