@@ -4,7 +4,7 @@
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "2f7c99d3-6a08-463f-8a42-d509778486a2", 
-    "key": "deploypostsetuppowershellscript", 
+    "key": "deploypostsetuppowershellscriptonmacosorlinuxworker", 
     "makoFileNames": [
         "post_install_setup.ps1"
     ], 
@@ -25,7 +25,7 @@
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }
     ], 
-    "name": "Deploy Post Setup PowerShell Script", 
+    "name": "Deploy Post Setup PowerShell Script on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"

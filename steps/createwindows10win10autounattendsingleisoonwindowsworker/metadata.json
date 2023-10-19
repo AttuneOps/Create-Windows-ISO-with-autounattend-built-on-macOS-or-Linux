@@ -33,6 +33,34 @@
         {
             "order": 300, 
             "stepKey": "extractwindowsbootimgonwindowsworker"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "extractwindowsisoonwindowsworker"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "copydriversdropinfolderonwindowsworker"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "createuefibootisoonwindowsworker"
         }
     ], 
     "name": "Create Windows 10 (Win10) autounattend Single ISO on Windows Worker", 
