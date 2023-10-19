@@ -579,7 +579,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_plain_bios.iso</code> exists.</p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerLinuxBaseDirectory}/winpe_plain_bios.iso</code> exists.</p>
 <p>If it does, prints a message to ask user to confirm to delete it if they want to recreate it.</p>
 <p>Only applies to BIOS kickstarts. Only runs if the parameter <code>kickstartedBootLoaderIsBios</code> is set <code>true</code>.</p>
                             </p>
@@ -624,7 +624,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
 if {kickstartedBootLoaderIsBios}
 then
 
-    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
+    DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}&quot;
     cd &quot;${DIRECTORY}&quot;
     
     ISO=&quot;winpe_plain_bios.iso&quot;
@@ -662,7 +662,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerBaseDirectory}/winpe_win2019_plain_uefi.iso</code> exists.</p>
+                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerLinuxBaseDirectory}/winpe_win2019_plain_uefi.iso</code> exists.</p>
 <p>If it does, prints a message to ask user to confirm to delete it if they want to recreate it.</p>
 <p>Only applies to UEFI kickstarts. Only runs if the parameter <code>kickstartedBootLoaderIsUefi</code> is set <code>true</code>.</p>
                             </p>
@@ -696,7 +696,7 @@ fi
 if {kickstartedBootLoaderIsUefi}
 then
 
-    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
+    DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}&quot;
     cd &quot;${DIRECTORY}&quot;
     
     ISO=&quot;winpe_plain_uefi.iso&quot;
@@ -732,13 +732,6 @@ fi
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -786,14 +779,14 @@ then
         echo &quot;not macOS&quot;
     
         MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
+        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
         
         if df -h | grep --ignore-case \
             --quiet \
             &quot;${MOUNT_PATH}&quot;
         then
         
-            cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
             
             umount --verbose &quot;${MOUNT_FOLDER}&quot;
         else
@@ -857,7 +850,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-build-winpe-iso/winimg</code>.</p>
+                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-build-winpe-iso/winimg</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -887,7 +880,7 @@ fi
             <pre>
                 <code class="language-sql py-0">
 MOUNT_FOLDER=&quot;winimg&quot;
-BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
 
 if df -h | grep --ignore-case \
@@ -924,7 +917,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-winpe-iso/winimg</code> folder.</p>
+                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg</code> folder.</p>
                             </p>
                         </div>
                     </div>
@@ -964,7 +957,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 if [ ! -d ${BUILD_DIRECTORY} ]
 then
     echo &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
@@ -996,13 +989,6 @@ fi
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -1039,7 +1025,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 if [ ! -d ${DIR} ]
 then
@@ -1085,7 +1071,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-winpe-iso</code> directory.</p>
+                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso</code> directory.</p>
                             </p>
                         </div>
                     </div>
@@ -1125,7 +1111,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
                 </code>
@@ -1153,7 +1139,7 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-winpe-iso</code>.</p>
+                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1187,7 +1173,7 @@ DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-winpe-iso, relative to the home directory
+{automationWorkerLinuxBaseDirectory}/build-winpe-iso, relative to the home directory
         </code>
     </div>
 
@@ -1245,7 +1231,7 @@ then
 
     # Extract the boot.img out of the WinPE ISO
     
-    cd {automationWorkerBaseDirectory}/build-winpe-iso
+    cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
     
     # Case insensitve globbing
     shopt -s nocaseglob
@@ -1286,7 +1272,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts the Windows Server ISO to <code>{automationWorkerBaseDirectory}/kickstartedBootLoaderIsBios/winimg</code>.</p>
+                                <p>Mounts the Windows Server ISO to <code>{automationWorkerLinuxBaseDirectory}/kickstartedBootLoaderIsBios/winimg</code>.</p>
 <p><code>winimg</code> stands for Windows Image.</p>
                             </p>
                         </div>
@@ -1327,7 +1313,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 FOLDER=&quot;winimg&quot;
 mkdir -p &quot;${FOLDER}&quot;
 
@@ -1405,7 +1391,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
 mkwinpeimg --iso --windows-dir=winimg \
     &quot;winpe.iso&quot;
@@ -1462,7 +1448,7 @@ mkwinpeimg --iso --windows-dir=winimg \
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-winpe-iso
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
 FOLDER=winpe_staging
 mkdir -p &quot;${FOLDER}&quot;
@@ -1534,7 +1520,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
                 </code>
@@ -1594,7 +1580,7 @@ cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
 if {kickstartedBootLoaderIsBios}
 then
 
-    cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
     mv --verbose boot.img winpe_staging
     
@@ -1702,7 +1688,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-winpe-iso
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
 WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
 if [ ! -d WinPE_BootImageDir ]
@@ -1762,7 +1748,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-winpe-iso
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                 </code>
             </pre>
@@ -1788,7 +1774,7 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1817,7 +1803,7 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-winpe-iso/WinPE_BootImageDir
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir
 
 rm --verbose setup.exe
                 </code>
@@ -1844,7 +1830,7 @@ rm --verbose setup.exe
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
+                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
 <p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
                             </p>
                         </div>
@@ -1874,7 +1860,7 @@ rm --verbose setup.exe
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-winpe-iso
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 wimunmount WinPE_BootImageDir --commit --check --rebuild
                 </code>
             </pre>
@@ -1901,8 +1887,8 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Relative to the <code>{ksAttuneBaseDir}/build-winpe-iso/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
-<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+                                <p>Relative to the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
 <li>isWin10Uefi</li>
 <li>isWinServerUefi</li>
@@ -1938,7 +1924,7 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
 if {kickstartedBootLoaderIsUefi}
 then
     
-    cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
     # Copy EFI Files from Windows ISO
     cp -rv &quot;winimg/efi&quot; &quot;winpe_staging&quot;
@@ -1970,7 +1956,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a WinPE BIOS bootable ISO at <code>{automationWorkerBaseDirectory}/winpe_plain_bios.iso</code> from the WinPE staging directory <code>{automationWorkerBaseDirectory}/build-winpe-iso/winpe_staging</code>. </p>
+                                <p>Creates a WinPE BIOS bootable ISO at <code>{automationWorkerLinuxBaseDirectory}/winpe_plain_bios.iso</code> from the WinPE staging directory <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe_staging</code>. </p>
 <p>Only applies to UEFI kickstarts. Only run if the parameter <code>kickstartedBootLoaderIsBios</code> is set <code>true</code>.</p>
                             </p>
                         </div>
@@ -2000,7 +1986,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 if {kickstartedBootLoaderIsBios} 
 then
@@ -2157,7 +2143,7 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
         
         chown --recursive \
             --verbose \
@@ -2245,12 +2231,12 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
         
         bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
         ((bytes=bytes+10000))
         
-        ISO=&quot;{automationWorkerBaseDirectory}/winpe_plain_uefi.iso&quot;
+        ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
         mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
     fi
     
@@ -2278,13 +2264,6 @@ fi
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2331,7 +2310,7 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
         
         mkdir --parents --verbose uefi_mount
         
@@ -2405,7 +2384,7 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
         
         # Copy WinPE Files from WinPE ISO
         mv --verbose winpe_staging/* &quot;uefi_mount&quot;
@@ -2434,13 +2413,6 @@ fi
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2477,14 +2449,14 @@ then
         echo &quot;not macOS&quot;
     
         MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
+        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
         
         if df -h | grep --ignore-case \
             --quiet \
             &quot;${MOUNT_PATH}&quot;
         then
         
-            cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
             
             umount --verbose &quot;${MOUNT_FOLDER}&quot;
         else
@@ -2567,9 +2539,9 @@ then
     export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
     echo &quot;Using $(which xorriso)&quot;
     
-    cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
-    ISO=&quot;{automationWorkerBaseDirectory}/winpe_plain_uefi.iso&quot;
+    ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
     echo &quot;ISO=${ISO}&quot;
     
     xorriso -as mkisofs \
@@ -2644,7 +2616,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-build-winpe-iso/winimg</code>.</p>
+                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-build-winpe-iso/winimg</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -2685,7 +2657,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
             <pre>
                 <code class="language-sql py-0">
 MOUNT_FOLDER=&quot;winimg&quot;
-BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
 
 if df -h | grep --ignore-case \
@@ -2722,7 +2694,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-winpe-iso/winimg</code> folder.</p>
+                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg</code> folder.</p>
                             </p>
                         </div>
                     </div>
@@ -2762,7 +2734,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-BUILD_DIRECTORY=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 if [ ! -d ${BUILD_DIRECTORY} ]
 then
     echo &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
@@ -2794,13 +2766,6 @@ fi
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2837,7 +2802,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 if [ ! -d ${DIR} ]
 then
@@ -2883,7 +2848,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerBaseDirectory}/build-winpe-iso</code> directory.</p>
+                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso</code> directory.</p>
                             </p>
                         </div>
                     </div>
@@ -2923,7 +2888,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
                 </code>
