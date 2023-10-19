@@ -136,12 +136,28 @@ Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
+### Deploy Win10 ISO to Samba Share
+
+The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.
+
+### Deploy Win2016 ISO to Samba Share
+
+The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`.
+
+### Deploy Win2019 ISO to Samba Share
+
+The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
+
 ### Perform Post Cleanup
 
 
 ### Perform Test Win Node
 
 Performs basic tests for the built node.
+
+### Deploy Win2022 ISO to Samba Share
+
+The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
 
 
 
@@ -163,9 +179,7 @@ Performs basic tests for the built node.
 | Is Win Server UEFI | Text | `iswinserveruefi` |  |
 | Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
 | Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
-| Kickstarted Linux Node | Linux/Unix Node | `kickstartedlinuxnode` | Refers to the node being built. |
 | Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
-| Linux: Attune User - DELETE | Linux/Unix Credential | `linuxattuneuserdelete` |  |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |

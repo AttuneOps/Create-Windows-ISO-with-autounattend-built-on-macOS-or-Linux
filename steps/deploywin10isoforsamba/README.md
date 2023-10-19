@@ -1,0 +1,1 @@
+Deploys the Windows Desktop 10 ISO to `$HOME/windows_iso_data_for_winpe/windows10` on the Samba server.
