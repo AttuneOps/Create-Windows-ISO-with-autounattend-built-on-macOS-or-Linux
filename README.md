@@ -159,9 +159,10 @@ The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_is
 
 Performs basic tests for the built node.
 
-### Setup Samba on Linux
+### Deploy Win2022 ISO to Samba Share
 
-Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
+The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
+
 
 
 
