@@ -16,7 +16,7 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "checkifipaddressisinsubnet"
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 100, 
