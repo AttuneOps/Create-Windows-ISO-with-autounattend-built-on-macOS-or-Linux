@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "da0b91ff-a1a7-4cc8-bd4b-9d44bbdf15b3", 
+    "externalUuid4": "018c74c8-c550-49ae-8a83-6d086508a6c4", 
     "interpreter": 1, 
-    "key": "copyefisysnopromptbinintoefisysbin", 
-    "name": "Copy efisys_noprompt.bin into efisys.bin", 
+    "key": "copydriversdropinfolderonmacosorlinuxworker", 
+    "name": "Copy Drivers Drop in Folder on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

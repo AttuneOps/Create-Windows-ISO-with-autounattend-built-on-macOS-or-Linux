@@ -1,0 +1,13 @@
+if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
+
+    $ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+    $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+
+    Set-Location $BUILD_DIR
+
+    Set-Location efi/microsoft/boot/
+    
+    Copy-Item -Path .\efisys_noprompt.bin -Destination .\efisys.bin
+} else {
+    Write-Host "Skipping for BIOS ISO creation."
+}

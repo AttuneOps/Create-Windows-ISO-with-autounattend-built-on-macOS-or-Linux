@@ -1,1 +1,1 @@
-Deploys Windows Desktop 10 ISO to `{windowsAutomationWorkerBaseDirectory}/build-{newOsNode.fqn}`.
+Deploys Windows Desktop 10 ISO to `{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}`.

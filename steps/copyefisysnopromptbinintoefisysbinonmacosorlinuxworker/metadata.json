@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "2f1d11de-96dc-41ca-a632-8f9c9308bfdd", 
+    "externalUuid4": "da0b91ff-a1a7-4cc8-bd4b-9d44bbdf15b3", 
     "interpreter": 1, 
-    "key": "extractwindowsiso", 
-    "name": "Extract Windows ISO", 
+    "key": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker", 
+    "name": "Copy efisys_noprompt.bin into efisys.bin on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
