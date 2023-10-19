@@ -1,5 +1,5 @@
 MOUNT_FOLDER="winimg"
-BUILD_DIRECTORY="{automationWorkerBaseDirectory}/build-winpe-iso"
+BUILD_DIRECTORY="{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 MOUNT_PATH="${BUILD_DIRECTORY}/${MOUNT_FOLDER}"
 
 if df -h | grep --ignore-case \
