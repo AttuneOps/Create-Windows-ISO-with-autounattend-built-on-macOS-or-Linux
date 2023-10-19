@@ -8,7 +8,6 @@
     "makoFileNames": [
         "autounattend.xml"
     ], 
-    "makoParameters": [
         {
             "name": "newOsNode", 
             "parameterKey": "newosnode", 
