@@ -1,0 +1,1 @@
+The Windows automation worker node used to perform tasks to create the ISO.

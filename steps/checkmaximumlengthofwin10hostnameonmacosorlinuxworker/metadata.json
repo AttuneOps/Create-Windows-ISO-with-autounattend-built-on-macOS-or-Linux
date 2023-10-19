@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "b53bf378-efd4-415a-851e-1a8071563236", 
+    "externalUuid4": "f066bc38-9006-426d-92a0-3837ee32da7b", 
     "interpreter": 1, 
-    "key": "checkifipaddressisinsubnet", 
-    "name": "Check if IP Address is in Subnet", 
+    "key": "checkmaximumlengthofwin10hostnameonmacosorlinuxworker", 
+    "name": "Check Maximum Length of Win10 Hostname on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

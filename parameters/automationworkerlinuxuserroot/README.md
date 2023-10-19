@@ -1,1 +1,1 @@
-root user on the Automation Worker node.
+root user on the Linux Automation Worker node.

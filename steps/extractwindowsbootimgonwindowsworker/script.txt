@@ -1,0 +1,31 @@
+if ((${{isWin10Bios}}) -or `
+    (${{isWin10Uefi}})) {
+
+  $ISO_BUILD="{windowsAutomationWorkerBaseDirectory}"
+  $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+
+
+  Set-Location $BUILD_DIR
+
+  $command = "wsl -d debian --exec "
+
+  # Case insensitve globbing
+  $command += ' shopt -s nocaseglob;' 
+
+  # Set the filename of the ISO
+  $command += ' F=$(ls *.iso);'
+
+  # Get the Boot image offset
+  $command += ' OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`;'
+
+  # Extract the boot.img.
+  $command += ' dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;'
+
+  & cmd /c "$command"
+  if ($LASTEXITCODE -ne 0) {
+    Write-Error 'Failed to extract boot.img'
+  }
+
+} else {
+    Write-Host "Skipping for UEFI ISO creation."
+}
