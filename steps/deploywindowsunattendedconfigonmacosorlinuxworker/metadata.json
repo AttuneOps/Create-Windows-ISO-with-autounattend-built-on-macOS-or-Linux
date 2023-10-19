@@ -4,7 +4,7 @@
     "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "ed8a4e1b-f204-40ea-b78a-90eaa23bece3", 
-    "key": "deploywindowsunattendedconfig", 
+    "key": "deploywindowsunattendedconfigonmacosorlinuxworker", 
     "makoFileNames": [
         "autounattend.xml"
     ], 
@@ -65,7 +65,7 @@
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-    "name": "Deploy Windows Unattended Config", 
+    "name": "Deploy Windows Unattended Config on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"

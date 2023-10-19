@@ -32,23 +32,23 @@
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "extractwindowsisoonmacosorlinuxworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinuxworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "deploywindowsunattendedconfigonmacosorlinuxworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "copydriversdropinfolder"
+            "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "copyefisysnopromptbinintoefisysbin"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
         }, 
         {
             "order": 550, 

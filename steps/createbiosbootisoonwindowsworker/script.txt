@@ -1,0 +1,34 @@
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+
+Set-Location $BUILD_DIR
+
+if (${{isWin10Bios}} -or `
+    ${{isWinServerBios}}) {
+
+  $command = "wsl -d debian --exec "
+  $command += ' xorriso -as mkisofs \ 
+            -b boot.img \
+            -no-emul-boot \
+            -c BOOT.CAT \
+            -iso-level 3 \
+            -udf \
+            -joliet-long \
+            -relaxed-filenames \
+            -allow-limited-size \
+            -J \
+            -full-iso9660-filenames \
+            -disable-deep-relocation \
+            -omit-version-number \
+            -V "KS_WIN" \
+            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            .'
+
+  & cmd /c "$command"
+  if ($LASTEXITCODE -ne 0) {
+    Write-Error 'Failed to create ISO'
+  }
+
+} else {
+    Write-Host "Skipping for UEFI boot."
+}

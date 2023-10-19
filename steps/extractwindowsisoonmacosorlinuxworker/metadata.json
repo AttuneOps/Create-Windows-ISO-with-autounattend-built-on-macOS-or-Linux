@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "018c74c8-c550-49ae-8a83-6d086508a6c4", 
+    "externalUuid4": "2f1d11de-96dc-41ca-a632-8f9c9308bfdd", 
     "interpreter": 1, 
-    "key": "copydriversdropinfolder", 
-    "name": "Copy Drivers Drop in Folder", 
+    "key": "extractwindowsisoonmacosorlinuxworker", 
+    "name": " Extract Windows ISO on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
