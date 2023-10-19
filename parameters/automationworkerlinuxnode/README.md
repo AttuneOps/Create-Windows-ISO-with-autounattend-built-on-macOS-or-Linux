@@ -1,1 +1,1 @@
-The device used to perform tasks to create the ISO.
+The Linux automation worker node used to perform tasks to create the ISO.

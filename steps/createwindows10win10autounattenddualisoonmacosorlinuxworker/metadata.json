@@ -8,31 +8,31 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "checkinputparametervaluesforwin10kickstart"
+            "stepKey": "checkinputparametervaluesforwin10kickstartonmacosorlinuxworker"
         }, 
         {
             "order": 50, 
-            "stepKey": "checkmaximumlengthofwin10hostname"
+            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinuxworker"
         }, 
         {
             "order": 100, 
-            "stepKey": "checkifipaddressisinsubnet"
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 150, 
-            "stepKey": "checkifgatewayipaddressisinsubnet"
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 200, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
             "order": 250, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "deploywin10dvdisoonmacosorlinuxworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
             "order": 350, 

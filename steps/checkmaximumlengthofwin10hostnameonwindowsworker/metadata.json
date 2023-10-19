@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "cda0d199-105c-4469-b771-eb2d850465fd", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "checkmaximumlengthofwin10hostnameonwindowsworker", 
+    "name": "Check Maximum Length of Win10 Hostname on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 60, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

@@ -1,0 +1,1 @@
+The Windows worker can run Linux commands using Windows Subsystem for Linux.

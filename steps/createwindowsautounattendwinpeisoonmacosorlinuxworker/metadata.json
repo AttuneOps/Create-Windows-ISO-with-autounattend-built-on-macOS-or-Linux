@@ -20,15 +20,15 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "checkmaximumlengthofwin10hostname"
+            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinuxworker"
         }, 
         {
             "order": 200, 
-            "stepKey": "checkifipaddressisinsubnet"
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 250, 
-            "stepKey": "checkifgatewayipaddressisinsubnet"
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 300, 
