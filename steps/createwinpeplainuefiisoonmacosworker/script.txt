@@ -5,9 +5,9 @@ then
     export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
     echo "Using $(which xorriso)"
     
-    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
     
-    ISO="{automationWorkerBaseDirectory}/winpe_plain_uefi.iso"
+    ISO="{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso"
     echo "ISO=${ISO}"
     
     xorriso -as mkisofs \

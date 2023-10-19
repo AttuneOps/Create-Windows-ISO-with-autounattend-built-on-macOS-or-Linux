@@ -1,7 +1,7 @@
 if {kickstartedBootLoaderIsUefi}
 then
     
-    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
     
     # Copy EFI Files from Windows ISO
     cp -rv "winimg/efi" "winpe_staging"

@@ -3,7 +3,7 @@ then
 
     # Extract the boot.img out of the WinPE ISO
     
-    cd {automationWorkerBaseDirectory}/build-winpe-iso
+    cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
     
     # Case insensitve globbing
     shopt -s nocaseglob

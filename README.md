@@ -71,7 +71,11 @@ For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{automationWorkerWindowsBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows 10 (Win10) autounattend Single ISO on Windows Worker
+
+The Windows worker can run Linux commands using Windows Subsystem for Linux.
 
 ### Create Windows autounattend WinPE ISO on macOS or Linux Worker
 
@@ -81,22 +85,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
 
-
-### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
-
-Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
 
@@ -163,9 +151,21 @@ Performs basic tests for the built node.
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
-### Create Windows 10 (Win10) autounattend Single ISO on Windows Worker
+### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
 
-The Windows worker can run Linux commands using Windows Subsystem for Linux.
+Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+This blueprint assumes the drivers drop in directory is at `{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
 
 
@@ -175,8 +175,13 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 
 | Name | Type | Script Reference | Comment |
 | ---- | ---- | ---------------- | ------- |
-| Automation Worker Base Directory | Text | `automationworkerbasedirectory` | Base directory for deploying temporary files to build the kickstart ISO. |
+| Automation Worker Linux Base Directory | Text | `automationworkerlinuxbasedirectory` | Base directory for deploying temporary files to build the kickstart ISO on a macOS or Linux Worker. |
+| Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | The Linux automation worker node used to perform tasks to create the ISO. |
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
+| Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Linux Automation Worker node. |
+| Automation Worker Windows Base Directory | Text | `automationworkerwindowsbasedirectory` | Base directory for deploying temporary files to build the kickstart ISO on Windows Worker. |
+| Automation Worker Windows Node | Windows Node | `automationworkerwindowsnode` | The Windows automation worker node used to perform tasks to create the ISO. |
+| Automation Worker Windows User: Administrator | Windows Credential | `automationworkerwindowsuseradministrator` | Administrator user on the Windows Automation Worker node. |
 | Drivers and Autounattend Drive Letter | Text | `driversandautounattenddriveletter` | The Windows drive letter containing the drivers and autounattend.xml as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
 | Is Win10 BIOS | Text | `iswin10bios` |  |
 | Is Win10 UEFI | Text | `iswin10uefi` |  |
@@ -195,11 +200,6 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
-| Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Linux Automation Worker node. |
-| Automation Worker Windows User: Administrator | Windows Credential | `automationworkerwindowsuseradministrator` | Administrator user on the Windows Automation Worker node. |
-| Automation Worker Windows Node | Windows Node | `automationworkerwindowsnode` | The Windows automation worker node used to perform tasks to create the ISO. |
-| Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | The Linux automation worker node used to perform tasks to create the ISO. |
-| Automation Worker Windows Base Directory | Text | `automationworkerwindowsbasedirectory` |  |
 
 
 

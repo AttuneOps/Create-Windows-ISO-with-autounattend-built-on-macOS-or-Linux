@@ -1,7 +1,7 @@
 if {isWin10Uefi} || {isWinServerUefi}
 then
 
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
     cd efi/microsoft/boot/
     
     cp --verbose efisys_noprompt.bin efisys.bin

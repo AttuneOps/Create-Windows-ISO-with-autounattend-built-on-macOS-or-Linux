@@ -1,7 +1,7 @@
 if {kickstartedBootLoaderIsBios}
 then
 
-    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
     
     mv --verbose boot.img winpe_staging
     
