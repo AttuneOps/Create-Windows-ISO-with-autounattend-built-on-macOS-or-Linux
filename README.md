@@ -142,11 +142,15 @@ The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso
 
 ### Deploy Win2016 ISO to Samba Share
 
-The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`.
+The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
 
 ### Deploy Win2019 ISO to Samba Share
 
 The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
+
+### Deploy Win2022 ISO to Samba Share
+
+The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
 
 ### Perform Post Cleanup
 
@@ -158,6 +162,7 @@ Performs basic tests for the built node.
 ### Deploy Win2022 ISO to Samba Share
 
 The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
+
 
 
 

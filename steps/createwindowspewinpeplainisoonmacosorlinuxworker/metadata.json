@@ -67,11 +67,11 @@
             "stepKey": "createfat32winpeplainuefiisofromwinpestagingonlinuxworker"
         }, 
         {
-            "order": 1050, 
+            "order": 950, 
             "stepKey": "createwinpeplainuefiisoonmacosworker"
         }, 
         {
-            "order": 1100, 
+            "order": 1000, 
             "stepKey": "createwinpecleanbuildfiles"
         }
     ], 
