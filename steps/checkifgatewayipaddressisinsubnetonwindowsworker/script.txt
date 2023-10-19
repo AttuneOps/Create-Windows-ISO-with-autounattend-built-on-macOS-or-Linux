@@ -1,0 +1,29 @@
+Write-Host "gateway IP address={newOsNodeSubnet.gateway}"
+Write-Host "subnet={newOsNodeSubnet.subnet}"
+Write-Host "netmask={newOsNodeSubnet.netmask}"
+#Write-Host "i, GATEWAY_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX"
+
+$GATEWAY_OCTETS = {newOsNodeSubnet.gateway}.split('.')
+$SUBNET_OCTETS = {newOsNodeSubnet.subnet}.split('.')
+$NETMASK_OCTETS = (newOsNodeSubnet.netmask}.split('.')
+
+for ($i = 0; $i -lt 4; $i++) {
+    $GATEWAY_OCTET = $GATEWAY_OCTETS[i]
+    $SUBNET_OCTET = $SUBNET_OCTETS[i]
+    $NETMASK_OCTET = $NETMASK_OCTETS[i]
+    
+    $OCTET_MIN = $SUBNET_OCTET -band $NETMASK_OCTET
+
+    $WILDCARD_MASK = 255 - $NETMASK_OCTET
+    $OCTET_MAX = $SUBNET_OCTET -bor $WILDCARD_MASK
+    
+    #Write-Host "$i. $GATEWAY_OCTET, $SUBNET_OCTET, $NETMASK_OCTET, $WILDCARD_MASK, $OCTET_MIN, $OCTET_MAX"
+    
+    if ( ($GATEWAY_OCTET -ge $OCTET_MIN) -and
+        ($GATEWAY_OCTET -le $OCTET_MAX) ) {
+        Write-Host "Octet number $i, $OCTET_MIN <= $GATEWAY_OCTET <= $OCTET_MAX, ok."
+    } else {
+        Write-Host "Octet number $i, $OCTET_MIN <= $GATEWAY_OCTET <= $OCTET_MAX is false. Not in range of the subnet mask."
+        exit 1
+    }
+}

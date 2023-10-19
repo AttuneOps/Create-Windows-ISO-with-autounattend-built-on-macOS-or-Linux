@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "0e0baf15-0492-4b6d-9bf7-98b74f291b94", 
+    "key": "automationworkerwindowsnode", 
+    "name": "Automation Worker Windows Node", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.WindowsServer"
+}

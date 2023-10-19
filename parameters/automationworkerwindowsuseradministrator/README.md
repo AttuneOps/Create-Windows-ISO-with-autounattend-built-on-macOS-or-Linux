@@ -1,0 +1,1 @@
+Administrator user on the Windows Automation Worker node.

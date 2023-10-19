@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "36c01aab-1889-4670-afaf-076fdba48231", 
+    "externalUuid4": "9cf17953-e171-4e2c-9e87-98bcdb755777", 
     "interpreter": 1, 
-    "key": "cleanupbuildfilesandisos", 
-    "name": "Clean Up Build Files and ISOs", 
+    "key": "extractwindowsbootimgonmacosorlinuxworker", 
+    "name": "Extract Windows boot.img on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

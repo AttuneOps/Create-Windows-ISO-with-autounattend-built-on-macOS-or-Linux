@@ -12,15 +12,15 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "checkifipaddressisinsubnet"
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 100, 
-            "stepKey": "checkifgatewayipaddressisinsubnet"
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 150, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
             "order": 250, 
@@ -28,7 +28,7 @@
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
             "order": 400, 

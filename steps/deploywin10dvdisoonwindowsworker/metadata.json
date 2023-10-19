@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win10desktopiso", 
+    "deployPath": "{windowsAutomationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "24a0d270-3728-464d-88ef-bde47cccdc7f", 
+    "key": "deploywin10dvdisoonwindowsworker", 
+    "name": "Deploy Win10 DVD ISO on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

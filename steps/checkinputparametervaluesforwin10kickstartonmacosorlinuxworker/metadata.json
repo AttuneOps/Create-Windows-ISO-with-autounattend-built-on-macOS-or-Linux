@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "f066bc38-9006-426d-92a0-3837ee32da7b", 
+    "externalUuid4": "e5a7055e-c37a-4dbf-bd69-3e6963d032f9", 
     "interpreter": 1, 
-    "key": "checkmaximumlengthofwin10hostname", 
-    "name": "Check Maximum Length of Win10 Hostname", 
+    "key": "checkinputparametervaluesforwin10kickstartonmacosorlinuxworker", 
+    "name": "Check Input Parameter Values for Win10 Kickstart on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
