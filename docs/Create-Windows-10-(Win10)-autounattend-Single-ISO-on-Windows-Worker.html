@@ -419,6 +419,13 @@
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -490,6 +497,13 @@ if ((-Not ${{isWin10Bios}}) -and `
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -749,6 +763,13 @@ for ($i = 0; $i -lt 4; $i++) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -947,6 +968,13 @@ if ((${{isWin10Bios}}) -or `
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1022,6 +1050,13 @@ if ($LASTEXITCODE -ne 0) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1072,6 +1107,13 @@ if ($LASTEXITCODE -ne 0) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1108,7 +1150,7 @@ if ($LASTEXITCODE -ne 0) {
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1128,6 +1170,13 @@ if ($LASTEXITCODE -ne 0) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1158,7 +1207,7 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
-$DRIVERS_DROP_IN_FOLDER = &quot;{automationWorkerBaseDirectory}\drivers-{newOsNode.fqn}&quot;
+$DRIVERS_DROP_IN_FOLDER = &quot;{automationWorkerWindowsBaseDirectory}\drivers-{newOsNode.fqn}&quot;
 $DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
 
 New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
@@ -1191,6 +1240,13 @@ if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1253,7 +1309,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}\build-{newOsNode.fqn}</code>.</p>
+                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}</code>.</p>
 <p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
 <ol>
 <li>isWin10Bios</li>
@@ -1310,7 +1366,7 @@ if (${{isWin10Bios}} -or `
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;KS_WIN&quot; \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerWindowsBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .&#x27;
 
   &amp; cmd /c &quot;$command&quot;
@@ -1342,6 +1398,18 @@ if (${{isWin10Bios}} -or `
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a UEFI bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}</code>.</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1393,7 +1461,7 @@ if (${{isWin10Uefi}} -or `
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerWindowsBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .&#x27;
 
   &amp; cmd /c &quot;$command&quot;
