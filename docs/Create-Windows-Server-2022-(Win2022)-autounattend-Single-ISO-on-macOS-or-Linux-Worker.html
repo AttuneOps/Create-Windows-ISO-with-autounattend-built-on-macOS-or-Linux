@@ -251,24 +251,24 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkifipaddressisinsubnet">
-                            <strong>Step 2 -</strong> Check if IP Address is in Subnet
+                        <a href="#checkifipaddressisinsubnetonmacosorlinuxworker">
+                            <strong>Step 2 -</strong> Check if IP Address is in Subnet on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkifgatewayipaddressisinsubnet">
-                            <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet
+                        <a href="#checkifgatewayipaddressisinsubnetonmacosorlinuxworker">
+                            <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 4 -</strong> Clean Up Build Files and ISOs
+                        <a href="#cleanupbuildfilesandisosonmacosorlinuxworker">
+                            <strong>Step 4 -</strong> Clean Up Build Files and ISOs on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -283,8 +283,8 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsbootimg">
-                            <strong>Step 6 -</strong> Extract Windows boot.img
+                        <a href="#extractwindowsbootimgonmacosorlinuxworker">
+                            <strong>Step 6 -</strong> Extract Windows boot.img on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -505,9 +505,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="checkifipaddressisinsubnet">
-                            <a href="#checkifipaddressisinsubnet">
-                                <strong>Step 2 -</strong> Check if IP Address is in Subnet
+                        <h3 id="checkifipaddressisinsubnetonmacosorlinuxworker">
+                            <a href="#checkifipaddressisinsubnetonmacosorlinuxworker">
+                                <strong>Step 2 -</strong> Check if IP Address is in Subnet on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -601,9 +601,9 @@ done
 
 
                     <div class="row pt-5">
-                        <h3 id="checkifgatewayipaddressisinsubnet">
-                            <a href="#checkifgatewayipaddressisinsubnet">
-                                <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet
+                        <h3 id="checkifgatewayipaddressisinsubnetonmacosorlinuxworker">
+                            <a href="#checkifgatewayipaddressisinsubnetonmacosorlinuxworker">
+                                <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -697,9 +697,9 @@ done
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesandisos">
-                            <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 4 -</strong> Clean Up Build Files and ISOs
+                        <h3 id="cleanupbuildfilesandisosonmacosorlinuxworker">
+                            <a href="#cleanupbuildfilesandisosonmacosorlinuxworker">
+                                <strong>Step 4 -</strong> Clean Up Build Files and ISOs on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -813,9 +813,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsbootimg">
-                            <a href="#extractwindowsbootimg">
-                                <strong>Step 6 -</strong> Extract Windows boot.img
+                        <h3 id="extractwindowsbootimgonmacosorlinuxworker">
+                            <a href="#extractwindowsbootimgonmacosorlinuxworker">
+                                <strong>Step 6 -</strong> Extract Windows boot.img on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -824,7 +824,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                         <div class="description col px-0">
                             <p>
                                 <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
 <li>isWin10Bios</li>
 <li>isWinServerBios</li>
