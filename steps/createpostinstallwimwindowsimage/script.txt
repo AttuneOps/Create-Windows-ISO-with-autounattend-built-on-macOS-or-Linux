@@ -1,4 +1,4 @@
-DIR="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+DIR="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
 cd "${DIR}"
 
 echo "We are in ${DIR}"

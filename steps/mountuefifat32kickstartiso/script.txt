@@ -8,7 +8,7 @@ then
     else
         echo "not macOS"
         
-        cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+        cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
         
         mkdir --parents --verbose uefi_mount
         

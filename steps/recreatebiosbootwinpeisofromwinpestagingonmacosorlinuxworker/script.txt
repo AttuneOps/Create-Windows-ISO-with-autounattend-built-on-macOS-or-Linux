@@ -1,4 +1,4 @@
-cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
 
 if {isWin10Bios} || {isWinServerBios} 
 then
@@ -25,7 +25,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
+            -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
             winpe_staging
 
     else
@@ -45,7 +45,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
+            -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
             winpe_staging
     fi
 
