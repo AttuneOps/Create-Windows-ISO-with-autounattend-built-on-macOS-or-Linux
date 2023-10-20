@@ -1,1 +1,0 @@
-Creates the Windows Server 2022 folder for Samba at `$HOME/windows_iso_data_for_winpe/windows2022`.

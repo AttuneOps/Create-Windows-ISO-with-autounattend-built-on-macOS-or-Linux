@@ -7,10 +7,6 @@
     "key": "deploywin10isotosambashare", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "createwindows10directory"
-        }, 
-        {
             "order": 150, 
             "stepKey": "deploywin10isoforsamba"
         }, 
