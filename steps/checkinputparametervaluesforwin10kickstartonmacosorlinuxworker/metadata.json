@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "e5a7055e-c37a-4dbf-bd69-3e6963d032f9", 
+    "interpreter": 1, 
+    "key": "checkinputparametervaluesforwin10kickstartonmacosorlinuxworker", 
+    "name": "Check Input Parameter Values for Win10 Kickstart on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

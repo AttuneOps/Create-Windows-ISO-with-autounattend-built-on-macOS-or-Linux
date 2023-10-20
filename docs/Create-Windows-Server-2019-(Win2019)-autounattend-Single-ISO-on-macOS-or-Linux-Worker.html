@@ -251,80 +251,80 @@ For " />
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkifipaddressisinsubnet">
-                            <strong>Step 2 -</strong> Check if IP Address is in Subnet
+                        <a href="#checkifipaddressisinsubnetonmacosorlinuxworker">
+                            <strong>Step 2 -</strong> Check if IP Address is in Subnet on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkifgatewayipaddressisinsubnet">
-                            <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet
+                        <a href="#checkifgatewayipaddressisinsubnetonmacosorlinuxworker">
+                            <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#cleanupbuildfilesandisos">
-                            <strong>Step 4 -</strong> Clean Up Build Files and ISOs
+                        <a href="#cleanupbuildfilesandisosonmacosorlinuxworker">
+                            <strong>Step 4 -</strong> Clean Up Build Files and ISOs on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2019dvdiso">
-                            <strong>Step 5 -</strong> Deploy Win2019 DVD ISO
+                        <a href="#deploywin2019dvdisoonmacosorlinuxworker">
+                            <strong>Step 5 -</strong> Deploy Win2019 DVD ISO on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsbootimg">
-                            <strong>Step 6 -</strong> Extract Windows boot.img
+                        <a href="#extractwindowsbootimgonmacosorlinuxworker">
+                            <strong>Step 6 -</strong> Extract Windows boot.img on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsiso">
-                            <strong>Step 7 -</strong> Extract Windows ISO
+                        <a href="#extractwindowsisoonmacosorlinuxworker">
+                            <strong>Step 7 -</strong>  Extract Windows ISO on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscript">
-                            <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script
+                        <a href="#deploypostsetuppowershellscriptonmacosorlinuxworker">
+                            <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfig">
-                            <strong>Step 9 -</strong> Deploy Windows Unattended Config
+                        <a href="#deploywindowsunattendedconfigonmacosorlinuxworker">
+                            <strong>Step 9 -</strong> Deploy Windows Unattended Config on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfolder">
-                            <strong>Step 10 -</strong> Copy Drivers Drop in Folder
+                        <a href="#copydriversdropinfolderonmacosorlinuxworker">
+                            <strong>Step 10 -</strong> Copy Drivers Drop in Folder on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copyefisysnopromptbinintoefisysbin">
-                            <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                        <a href="#copyefisysnopromptbinintoefisysbinonmacosorlinuxworker">
+                            <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -505,9 +505,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="checkifipaddressisinsubnet">
-                            <a href="#checkifipaddressisinsubnet">
-                                <strong>Step 2 -</strong> Check if IP Address is in Subnet
+                        <h3 id="checkifipaddressisinsubnetonmacosorlinuxworker">
+                            <a href="#checkifipaddressisinsubnetonmacosorlinuxworker">
+                                <strong>Step 2 -</strong> Check if IP Address is in Subnet on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -601,9 +601,9 @@ done
 
 
                     <div class="row pt-5">
-                        <h3 id="checkifgatewayipaddressisinsubnet">
-                            <a href="#checkifgatewayipaddressisinsubnet">
-                                <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet
+                        <h3 id="checkifgatewayipaddressisinsubnetonmacosorlinuxworker">
+                            <a href="#checkifgatewayipaddressisinsubnetonmacosorlinuxworker">
+                                <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -697,9 +697,9 @@ done
 
 
                     <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesandisos">
-                            <a href="#cleanupbuildfilesandisos">
-                                <strong>Step 4 -</strong> Clean Up Build Files and ISOs
+                        <h3 id="cleanupbuildfilesandisosonmacosorlinuxworker">
+                            <a href="#cleanupbuildfilesandisosonmacosorlinuxworker">
+                                <strong>Step 4 -</strong> Clean Up Build Files and ISOs on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -736,11 +736,11 @@ done
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
 [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
     echo &quot;No directory to remove.&quot;
 
-ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
+ISO={automationWorkerLinuxBaseDirectory}/*{newOsNode.fqn}.iso
 [[ -f ${ISO} ]] &amp;&amp; rm -fv ${ISO} || echo &quot;No ISO to remove.&quot;
                 </code>
             </pre>
@@ -756,9 +756,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2019dvdiso">
-                            <a href="#deploywin2019dvdiso">
-                                <strong>Step 5 -</strong> Deploy Win2019 DVD ISO
+                        <h3 id="deploywin2019dvdisoonmacosorlinuxworker">
+                            <a href="#deploywin2019dvdisoonmacosorlinuxworker">
+                                <strong>Step 5 -</strong> Deploy Win2019 DVD ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -766,7 +766,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerBaseDirectory}/build-winpe-iso</code>.</p>
+                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -800,7 +800,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -813,9 +813,9 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsbootimg">
-                            <a href="#extractwindowsbootimg">
-                                <strong>Step 6 -</strong> Extract Windows boot.img
+                        <h3 id="extractwindowsbootimgonmacosorlinuxworker">
+                            <a href="#extractwindowsbootimgonmacosorlinuxworker">
+                                <strong>Step 6 -</strong> Extract Windows boot.img on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -824,7 +824,7 @@ ISO={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
                         <div class="description col px-0">
                             <p>
                                 <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
 <li>isWin10Bios</li>
 <li>isWinServerBios</li>
@@ -862,7 +862,7 @@ then
 
     # Extract the boot.img out of the WinPE ISO
     
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
     
     # Case insensitve globbing
     shopt -s nocaseglob
@@ -893,9 +893,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsiso">
-                            <a href="#extractwindowsiso">
-                                <strong>Step 7 -</strong> Extract Windows ISO
+                        <h3 id="extractwindowsisoonmacosorlinuxworker">
+                            <a href="#extractwindowsisoonmacosorlinuxworker">
+                                <strong>Step 7 -</strong>  Extract Windows ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -932,7 +932,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 # Case insensitve globbing
 shopt -s nocaseglob
@@ -963,9 +963,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscript">
-                            <a href="#deploypostsetuppowershellscript">
-                                <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script
+                        <h3 id="deploypostsetuppowershellscriptonmacosorlinuxworker">
+                            <a href="#deploypostsetuppowershellscriptonmacosorlinuxworker">
+                                <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1007,7 +1007,7 @@ fi
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1020,9 +1020,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywindowsunattendedconfig">
-                            <a href="#deploywindowsunattendedconfig">
-                                <strong>Step 9 -</strong> Deploy Windows Unattended Config
+                        <h3 id="deploywindowsunattendedconfigonmacosorlinuxworker">
+                            <a href="#deploywindowsunattendedconfigonmacosorlinuxworker">
+                                <strong>Step 9 -</strong> Deploy Windows Unattended Config on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1078,7 +1078,7 @@ fi
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1091,9 +1091,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="copydriversdropinfolder">
-                            <a href="#copydriversdropinfolder">
-                                <strong>Step 10 -</strong> Copy Drivers Drop in Folder
+                        <h3 id="copydriversdropinfolderonmacosorlinuxworker">
+                            <a href="#copydriversdropinfolderonmacosorlinuxworker">
+                                <strong>Step 10 -</strong> Copy Drivers Drop in Folder on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1101,7 +1101,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
+                                <p>Copies the contents of the drivers drop in folder at <code>{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}</code> to <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/drivers</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1130,9 +1130,9 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}&quot;
 DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
 
 mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
@@ -1159,9 +1159,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="copyefisysnopromptbinintoefisysbin">
-                            <a href="#copyefisysnopromptbinintoefisysbin">
-                                <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin
+                        <h3 id="copyefisysnopromptbinintoefisysbinonmacosorlinuxworker">
+                            <a href="#copyefisysnopromptbinintoefisysbinonmacosorlinuxworker">
+                                <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1201,7 +1201,7 @@ fi
 if {isWin10Uefi} || {isWinServerUefi}
 then
 
-    cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+    cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
     cd efi/microsoft/boot/
     
     cp --verbose efisys_noprompt.bin efisys.bin
@@ -1232,8 +1232,8 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string <code>true</code>'`:</p>
 <ol>
 <li>isWin10Bios</li>
 <li>isWinServerBios</li>
@@ -1266,7 +1266,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
 
 if {isWin10Bios} || {isWinServerBios} 
 then
@@ -1290,7 +1290,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;KS_WIN&quot; \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
             
     else
@@ -1310,7 +1310,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;KS_WIN&quot; \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
     fi
         
@@ -1341,7 +1341,13 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>https://unix.stackexchange.com/questions/531012/how-to-modify-an-installation-iso-and-keep-it-bootable</p>
+                                <p>Creates a UEFI bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+<p>Only applies UEFI kickstarts so if any of these parameters are set the string <code>true</code>:</p>
+<ol>
+<li>isWin10Uefi</li>
+<li>isWinServerUefi</li>
+</ol>
+<p>https://unix.stackexchange.com/questions/531012/how-to-modify-an-installation-iso-and-keep-it-bootable</p>
                             </p>
                         </div>
                     </div>
@@ -1372,7 +1378,7 @@ fi
                 <code class="language-sql py-0">
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
     
     if uname | \
         grep -iq &quot;darwin&quot;
@@ -1398,7 +1404,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
             
     else
@@ -1421,7 +1427,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .
     fi
         

@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "27cbd06c-9a60-48ed-b8d0-bd0d34dbe544", 
+    "key": "automationworkerlinuxbasedirectory", 
+    "name": "Automation Worker Linux Base Directory", 
+    "showInPlan": false, 
+    "type": "c.s.s.b.phv.Text"
+}

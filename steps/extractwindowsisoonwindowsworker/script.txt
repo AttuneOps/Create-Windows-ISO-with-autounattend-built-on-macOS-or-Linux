@@ -1,0 +1,29 @@
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+
+Set-Location $BUILD_DIR
+
+$command = "wsl -d debian --exec "
+
+# Case insensitve globbing
+$command += ' shopt -s nocaseglob;' 
+
+# Set the filename of the ISO
+$command += `
+'if ls | grep -q *iso
+ then
+     
+     ISO="$(echo *iso)"
+     echo "ISO is $ISO"
+     
+     7z x "${ISO}"
+     
+     rm -v "${ISO}"
+ else
+     echo "ISO is already extracted."
+ fi'
+
+& cmd /c "$command"
+if ($LASTEXITCODE -ne 0) {
+  Write-Error 'Failed to extract ISO'
+}

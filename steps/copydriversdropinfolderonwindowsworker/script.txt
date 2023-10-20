@@ -1,0 +1,17 @@
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+
+Set-Location $BUILD_DIR
+
+$DRIVERS_DROP_IN_FOLDER = "{automationWorkerWindowsBaseDirectory}\drivers-{newOsNode.fqn}"
+$DESTINATION_DRIVERS_FOLDER = "drivers"
+
+New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
+
+if ( Test-Path "${DRIVERS_DROP_IN_FOLDER}" ) {
+
+    Copy-Item -Path -Recurse "${DRIVERS_DROP_IN_FOLDER}" `
+        -Destination "${DESTINATION_DRIVERS_FOLDER}"
+} else {
+    Write-Host "Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied."
+}

@@ -1,0 +1,5 @@
+$DIR="{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}"
+
+if (Test-Path $DIR) {
+    Remove-Path -Recursive $DIR
+}

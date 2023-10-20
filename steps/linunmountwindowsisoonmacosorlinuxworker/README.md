@@ -1,1 +1,0 @@
-Unmounts `{automationWorkerBaseDirectory}/build-build-winpe-iso/winimg`.

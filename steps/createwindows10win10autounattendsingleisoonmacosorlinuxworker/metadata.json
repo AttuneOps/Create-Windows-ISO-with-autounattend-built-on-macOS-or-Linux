@@ -8,51 +8,51 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "checkinputparametervaluesforwin10kickstart"
+            "stepKey": "checkinputparametervaluesforwin10kickstartonmacosorlinuxworker"
         }, 
         {
             "order": 50, 
-            "stepKey": "checkmaximumlengthofwin10hostname"
+            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinuxworker"
         }, 
         {
             "order": 100, 
-            "stepKey": "checkifipaddressisinsubnet"
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 150, 
-            "stepKey": "checkifgatewayipaddressisinsubnet"
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
             "order": 200, 
-            "stepKey": "cleanupbuildfilesandisos"
+            "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
             "order": 250, 
-            "stepKey": "deploywin10dvdiso"
+            "stepKey": "deploywin10dvdisoonmacosorlinuxworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimg"
+            "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwindowsiso"
+            "stepKey": "extractwindowsisoonmacosorlinuxworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploypostsetuppowershellscript"
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinuxworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploywindowsunattendedconfig"
+            "stepKey": "deploywindowsunattendedconfigonmacosorlinuxworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "copydriversdropinfolder"
+            "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "copyefisysnopromptbinintoefisysbin"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
         }, 
         {
             "order": 600, 

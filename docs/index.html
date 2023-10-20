@@ -205,7 +205,25 @@
 <p>For BIOS kickstarts please set <code>isWin10Bios</code> to the string 'true'.</p>
 <p>For UEFI kickstarts please set <code>isWin10Uefi</code> to the string 'true'.</p>
 <p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
+<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerWindowsBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Create-Windows-10-(Win10)-autounattend-Single-ISO-on-Windows-Worker">
+                                <div class="card-body">
+                                    <a href="Create-Windows-10-(Win10)-autounattend-Single-ISO-on-Windows-Worker.html">
+                                        <h3 class="card-title">
+                                            Create Windows 10 (Win10) autounattend Single ISO on Windows Worker
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>The Windows worker can run Linux commands using Windows Subsystem for Linux.</p>
                                         </p>
                                     </div>
                                 </div>
@@ -247,30 +265,6 @@
                                             Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
                                         </h3>
                                     </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Creates a single Windows Server 2016 ISO with <code>autounattend.xml</code> for unattended installation.</p>
-<p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
-<p>For both BIOS and UEFI kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
-<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
-                                        </p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -464,6 +458,30 @@
                                     <div class="description">
                                         <p class="card-text">
                                             <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker">
+                                <div class="card-body">
+                                    <a href="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker.html">
+                                        <h3 class="card-title">
+                                            Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>Creates a single Windows Server 2016 ISO with <code>autounattend.xml</code> for unattended installation.</p>
+<p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
+<p>For both BIOS and UEFI kickstarts.</p>
+<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
+<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
+<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
+<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
                                         </p>
                                     </div>
                                 </div>

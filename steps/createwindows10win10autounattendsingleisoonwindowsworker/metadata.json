@@ -1,0 +1,68 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "53d19377-9634-4de3-86ab-8e475a407214", 
+    "isBlueprint": true, 
+    "key": "createwindows10win10autounattendsingleisoonwindowsworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkinputparametervaluesforwin10kickstartonwindowsworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checkmaximumlengthofwin10hostnameonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkifipaddressisinsubnetonwindows"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "deploywin10dvdisoonwindowsworker"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "extractwindowsbootimgonwindowsworker"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "extractwindowsisoonwindowsworker"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "copydriversdropinfolderonwindowsworker"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "createuefibootisoonwindowsworker"
+        }
+    ], 
+    "name": "Create Windows 10 (Win10) autounattend Single ISO on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
