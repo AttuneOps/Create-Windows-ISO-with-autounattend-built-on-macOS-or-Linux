@@ -1,0 +1,64 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "70bb01c6-773e-4ebb-b7c4-9714d6a92b61", 
+    "isBlueprint": true, 
+    "key": "createwindowsserver2016win2016autounattendsingleisoonwindowsworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstartonwindowsworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checkifipaddressisinsubnetonwindows"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "deploywin2016dvdisoonwindowsworker"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "extractwindowsbootimgonwindowsworker"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "extractwindowsisoonwindowsworker"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "copydriversdropinfolderonwindowsworker"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "createuefibootisoonwindowsworker"
+        }
+    ], 
+    "name": "Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

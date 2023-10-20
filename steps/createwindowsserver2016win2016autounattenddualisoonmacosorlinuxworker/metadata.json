@@ -8,7 +8,7 @@
     "links": [
         {
             "order": 50, 
-            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstart"
+            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstartonmacosorlinuxworker"
         }, 
         {
             "order": 100, 

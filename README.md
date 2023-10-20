@@ -86,6 +86,22 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
 
 
+### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
+
+Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
+
+This blueprint assumes the drivers drop in directory is at `{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
 ### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -151,21 +167,8 @@ Performs basic tests for the built node.
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
-### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
+### Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker
 
-Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
 
 

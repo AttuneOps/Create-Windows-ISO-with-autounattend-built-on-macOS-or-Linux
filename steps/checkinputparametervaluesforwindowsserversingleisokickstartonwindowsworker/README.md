@@ -1,0 +1,1 @@
+Checks if at least one of `isWinServerBios` or `isWinServerUefi` is set tot true.
