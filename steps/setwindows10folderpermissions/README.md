@@ -1,0 +1,1 @@
+Sets read and execute permissions for the Windows Destkop 10 Samba folder at `$HOME/windows_iso_data_for_winpe/windows10`. 
