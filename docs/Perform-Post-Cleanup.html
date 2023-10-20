@@ -312,9 +312,9 @@
                         <div class="description col px-0">
                             <p>
                                 <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Drivers drop in directory at</code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}<code>.
-3. Kickstart ISO at</code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
-4. Drivers ISO at</code>{automationWorkerBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
+1. Build directory at <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}</code>.<code>2. Drivers drop in directory at</code>{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}<code>.
+3. Kickstart ISO at</code>{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso<code>.
+4. Drivers ISO at</code>{automationWorkerLinuxBaseDirectory}/drivers_{newOsNode.fqn}.iso`.</p>
                             </p>
                         </div>
                     </div>
@@ -354,7 +354,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
 if [ -d &quot;${DIR}&quot; ]
 then
     rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;
@@ -362,7 +362,7 @@ else
     echo &quot;No build directory to remove.&quot;
 fi
 
-DIR=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}&quot;
 if [ -d &quot;${DIR}&quot; ]
 then
     rm -rf &quot;${DIR}&quot; &amp;&amp; echo &quot;Removed ${DIR}&quot;

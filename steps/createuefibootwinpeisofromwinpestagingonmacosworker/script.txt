@@ -5,9 +5,9 @@ then
     export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
     echo "Using $(which xorriso)"
     
-    cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
     
-    ISO="{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
+    ISO="{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
     echo "ISO=${ISO}"
     
     xorriso -as mkisofs \

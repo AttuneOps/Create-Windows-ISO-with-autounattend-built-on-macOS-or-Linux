@@ -8,7 +8,7 @@ then
     else
         echo "not macOS"
         
-        cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+        cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
         
         # Copy WinPE Files from WinPE ISO
         #mv --verbose winpe_staging/* "uefi_mount"

@@ -9,12 +9,12 @@ then
     else
         echo "not macOS"
         
-        cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+        cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
         
         bytes=$(du --summarize winpe_staging | awk '{print $1}')
         ((bytes=bytes+10000))
         
-        ISO="{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
+        ISO="{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
         mkfs.msdos -v -C "${ISO}" "${bytes}"
     fi
     

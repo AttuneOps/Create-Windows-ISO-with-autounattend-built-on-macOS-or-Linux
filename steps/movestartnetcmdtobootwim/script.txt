@@ -1,4 +1,4 @@
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 mv --verbose startnet.cmd \
     "WinPE_BootImageDir/Windows/System32"

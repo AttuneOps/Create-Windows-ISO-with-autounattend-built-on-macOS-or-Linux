@@ -9,14 +9,14 @@ then
         echo "not macOS"
     
         MOUNT_FOLDER="uefi_mount"
-        MOUNT_PATH="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}"
+        MOUNT_PATH="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}"
         
         if df -h | grep --ignore-case \
             --quiet \
             "${MOUNT_PATH}"
         then
         
-            cd "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+            cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
             
             umount --verbose "${MOUNT_FOLDER}"
         else
