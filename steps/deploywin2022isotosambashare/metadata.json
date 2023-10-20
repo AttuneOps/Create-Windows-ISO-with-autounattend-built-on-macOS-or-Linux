@@ -7,10 +7,6 @@
     "key": "deploywin2022isotosambashare", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "createwindows2022directory"
-        }, 
-        {
             "order": 100, 
             "stepKey": "deploywin2022isoforsamba"
         }, 
