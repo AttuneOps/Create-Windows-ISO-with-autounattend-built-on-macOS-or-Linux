@@ -1,10 +1,17 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
+<<<<<<<< HEAD:steps/extractwindowsisoonmacosorlinuxworker/metadata.json
     "externalUuid4": "2f1d11de-96dc-41ca-a632-8f9c9308bfdd", 
     "interpreter": 1, 
     "key": "extractwindowsisoonmacosorlinuxworker", 
     "name": " Extract Windows ISO on macOS or Linux Worker", 
+========
+    "externalUuid4": "883d8e2d-7ec2-4da9-b89c-3b7af6783ad4", 
+    "interpreter": 1, 
+    "key": "createwinpeplainuefiisoonmacos", 
+    "name": "Create winpe_plain_uefi.iso on macOS", 
+>>>>>>>> eb2cba0 (AUSTA-255: Added blueprints to use mkisofs to create UEFI bootable ISOs on macOS worker.):steps/createwinpeplainuefiisoonmacos/metadata.json
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
