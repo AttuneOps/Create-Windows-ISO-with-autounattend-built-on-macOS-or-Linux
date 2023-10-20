@@ -77,10 +77,6 @@
         {
             "order": 850, 
             "stepKey": "createuefibootwinpeisofromwinpestagingonmacosworker"
-        }, 
-        {
-            "order": 900, 
-            "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on macOS or Linux Worker", 

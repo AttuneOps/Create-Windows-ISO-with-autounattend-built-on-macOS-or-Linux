@@ -57,10 +57,6 @@
         {
             "order": 600, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
-        }, 
-        {
-            "order": 650, 
-            "stepKey": "cleanupbuildfilesanddriversfiles"
         }
     ], 
     "name": "Create Windows Server 2019 (Win2019) autounattend Single ISO on macOS or Linux Worker", 
