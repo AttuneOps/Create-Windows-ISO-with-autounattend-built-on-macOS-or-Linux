@@ -1,4 +1,4 @@
-Makes a copy of the `winpe_win2019_plain_bios.iso` as `winpe.iso` in the folder `{automationWorkerBaseDirectory}/build-{newOsNode.fqn`.
+Makes a copy of the `winpe_win2019_plain_bios.iso` as `winpe.iso` in the folder `{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn`.
 
 This ISO is BIOS bootable and works for:
 

@@ -1089,9 +1089,9 @@ done
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerBaseDirectory}/winpe_plain_bios.iso</code> exists.</p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerLinuxBaseDirectory}/winpe_plain_bios.iso</code> exists.</p>
 <p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
-<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>'`:</p>
 <ol>
 <li>isWin10Bios</li>
 <li>isWinServerBios</li>
@@ -1127,7 +1127,7 @@ done
 if {isWin10Bios} || {isWinServerBios}
 then
 
-    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
+    DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}&quot;
     cd &quot;${DIRECTORY}&quot;
     
     ISO=&quot;winpe_plain_bios.iso&quot;
@@ -1166,9 +1166,9 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerBaseDirectory}/winpe_plain_uefi.iso</code> exists.</p>
+                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso</code> exists.</p>
 <p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
-<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
 <li>isWin10Uefi</li>
 <li>isWinServerUefi</li>
@@ -1204,7 +1204,7 @@ fi
 if {isWin10Uefi} || {isWinServerUefi}
 then
 
-    DIRECTORY=&quot;{automationWorkerBaseDirectory}&quot;
+    DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}&quot;
     cd &quot;${DIRECTORY}&quot;
     
     ISO=&quot;winpe_plain_uefi.iso&quot;
@@ -1243,7 +1243,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Makes a copy of the <code>winpe_win2019_plain_bios.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn</code>.</p>
+                                <p>Makes a copy of the <code>winpe_win2019_plain_bios.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn</code>.</p>
 <p>This ISO is BIOS bootable and works for:</p>
 <ol>
 <li>Windows Desktop 10</li>
