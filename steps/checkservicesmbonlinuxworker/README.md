@@ -1,0 +1,1 @@
+Checks if the `smb` service is running.
