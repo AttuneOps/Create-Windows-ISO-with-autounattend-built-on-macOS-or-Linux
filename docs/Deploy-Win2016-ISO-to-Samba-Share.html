@@ -213,16 +213,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwindows2016directory">
-                            <strong>Step 1 -</strong> Create windows2016 Directory
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#deploywin2016isoforsamba">
-                            <strong>Step 2 -</strong>  Deploy Win2016 ISO for Samba
+                            <strong>Step 1 -</strong>  Deploy Win2016 ISO for Samba
                         </a>
                     </p>
 
@@ -230,7 +222,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwin2016isoforsamba">
-                            <strong>Step 3 -</strong> Extract Win2016 ISO for Samba
+                            <strong>Step 2 -</strong> Extract Win2016 ISO for Samba
                         </a>
                     </p>
 
@@ -238,7 +230,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#setwindows2016folderpermissions">
-                            <strong>Step 4 -</strong> Set windows2016 Folder Permissions
+                            <strong>Step 3 -</strong> Set windows2016 Folder Permissions
                         </a>
                     </p>
 
@@ -332,9 +324,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="createwindows2016directory">
-                            <a href="#createwindows2016directory">
-                                <strong>Step 1 -</strong> Create windows2016 Directory
+                        <h3 id="deploywin2016isoforsamba">
+                            <a href="#deploywin2016isoforsamba">
+                                <strong>Step 1 -</strong>  Deploy Win2016 ISO for Samba
                             </a>
                         </h3>
                     </div>
@@ -342,7 +334,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates the Windows Server 2016 folder for Samba at <code>$HOME/windows_iso_data_for_winpe/windows10</code>.</p>
+                                <p>Deploys the Windows Server 2016 ISO to <code>$HOME/windows_iso_data_for_winpe/windows2016</code> on the Samba server.</p>
                             </p>
                         </div>
                     </div>
@@ -367,61 +359,6 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;$HOME/windows_iso_data_for_winpe&quot;
-mkdir -p windows2016
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywin2016isoforsamba">
-                            <a href="#deploywin2016isoforsamba">
-                                <strong>Step 2 -</strong>  Deploy Win2016 ISO for Samba
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deploys the Windows Server 2016 ISO to <code>$HOME/windows_iso_data_for_winpe/windows2016</code> on the Samba server.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
 
     
 
@@ -457,7 +394,7 @@ $HOME/windows_iso_data_for_winpe/windows2016, relative to the home directory
                     <div class="row pt-5">
                         <h3 id="extractwin2016isoforsamba">
                             <a href="#extractwin2016isoforsamba">
-                                <strong>Step 3 -</strong> Extract Win2016 ISO for Samba
+                                <strong>Step 2 -</strong> Extract Win2016 ISO for Samba
                             </a>
                         </h3>
                     </div>
@@ -519,7 +456,7 @@ rm $ISO
                     <div class="row pt-5">
                         <h3 id="setwindows2016folderpermissions">
                             <a href="#setwindows2016folderpermissions">
-                                <strong>Step 4 -</strong> Set windows2016 Folder Permissions
+                                <strong>Step 3 -</strong> Set windows2016 Folder Permissions
                             </a>
                         </h3>
                     </div>
