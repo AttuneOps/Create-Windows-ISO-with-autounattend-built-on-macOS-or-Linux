@@ -7,10 +7,6 @@
     "key": "deploywin2019isotosambashare", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "createwindows2019directory"
-        }, 
-        {
             "order": 100, 
             "stepKey": "deploywin2019isoforsamba"
         }, 

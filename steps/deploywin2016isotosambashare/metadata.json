@@ -7,10 +7,6 @@
     "key": "deploywin2016isotosambashare", 
     "links": [
         {
-            "order": 50, 
-            "stepKey": "createwindows2016directory"
-        }, 
-        {
             "order": 150, 
             "stepKey": "deploywin2016isoforsamba"
         }, 
