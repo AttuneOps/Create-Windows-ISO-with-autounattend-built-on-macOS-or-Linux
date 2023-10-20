@@ -1,1 +1,1 @@
-Unmounts `{automationWorkerBaseDirectory}/build-build-winpe-iso/winimg`.
+Unmounts `{automationWorkerLinuxBaseDirectory}/build-build-winpe-iso/winimg`.

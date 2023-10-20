@@ -822,6 +822,13 @@ echo &quot;SUCCESS: Ok&quot;
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1279,7 +1286,7 @@ fi
                 <code class="language-sql py-0">
 if {isWin10Bios} || {isWinServerBios}
 then
-    FOLDER=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
     mkdir --parents &quot;${FOLDER}&quot;
     cd &quot;${FOLDER}&quot;
     cp --verbose &quot;../winpe_plain_bios.iso&quot; &quot;winpe.iso&quot;
@@ -1311,7 +1318,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Makes a copy of the <code>winpe_win2019_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn</code>.</p>
+                                <p>Makes a copy of the <code>winpe_win2019_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn</code>.</p>
 <p>This ISO is UEFI bootable and works for:</p>
 <ol>
 <li>Windows Desktop 10</li>
@@ -1354,7 +1361,7 @@ fi
                 <code class="language-sql py-0">
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    FOLDER=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
     mkdir --parents &quot;${FOLDER}&quot;
     cd &quot;${FOLDER}&quot;
     cp --verbose &quot;../winpe_plain_uefi.iso&quot; &quot;winpe.iso&quot;
@@ -1414,7 +1421,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 FOLDER=winpe_staging
 mkdir -p &quot;${FOLDER}&quot;
@@ -1489,7 +1496,7 @@ mkdir -p &quot;${FOLDER}&quot;
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1560,7 +1567,7 @@ mkdir -p &quot;${FOLDER}&quot;
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1648,7 +1655,7 @@ mkdir -p &quot;${FOLDER}&quot;
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1700,7 +1707,7 @@ mkdir -p &quot;${FOLDER}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 mkdir --parents post_install_wim
 mv --verbose post_install_setup.ps1 post_install_wim
                 </code>
@@ -1757,7 +1764,7 @@ mv --verbose post_install_setup.ps1 post_install_wim
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-DIR=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
 cd &quot;${DIR}&quot;
 
 echo &quot;We are in ${DIR}&quot;
@@ -1859,7 +1866,7 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
 if [ ! -d WinPE_BootImageDir ]
@@ -1919,7 +1926,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                 </code>
             </pre>
@@ -2008,7 +2015,7 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 mv --verbose startnet.cmd \
     &quot;WinPE_BootImageDir/Windows/System32&quot;
@@ -2065,7 +2072,7 @@ mv --verbose startnet.cmd \
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 mv --verbose autounattend.xml WinPE_BootImageDir
                 </code>
             </pre>
@@ -2088,13 +2095,6 @@ mv --verbose autounattend.xml WinPE_BootImageDir
                         </h5>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2120,9 +2120,9 @@ mv --verbose autounattend.xml WinPE_BootImageDir
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}&quot;
+DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}&quot;
 DESTINATION_DRIVERS_FOLDER=&quot;WinPE_BootImageDir/drivers&quot;
 
 mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
@@ -2189,7 +2189,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 mv --verbose post_install.wim WinPE_BootImageDir
                 </code>
@@ -2217,7 +2217,7 @@ mv --verbose post_install.wim WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
 <p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
                             </p>
                         </div>
@@ -2247,7 +2247,7 @@ mv --verbose post_install.wim WinPE_BootImageDir
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerBaseDirectory}/build-{newOsNode.fqn}
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 wimunmount WinPE_BootImageDir --commit --check --rebuild
                 </code>
             </pre>
@@ -2274,8 +2274,8 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a BIOS bootable ISO at <code>{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
-<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+                                <p>Creates a BIOS bootable ISO at <code>{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
 <li>isWin10Bios</li>
 <li>isWinServerBios</li>
@@ -2308,7 +2308,7 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
 
 if {isWin10Bios} || {isWinServerBios} 
 then
@@ -2335,7 +2335,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;KS_WIN&quot; \
-            -o &quot;{automationWorkerBaseDirectory}/${ISO_NAME}&quot; \
+            -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
             winpe_staging
 
     else
@@ -2355,7 +2355,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;KS_WIN&quot; \
-            -o &quot;{automationWorkerBaseDirectory}/${ISO_NAME}&quot; \
+            -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
             winpe_staging
     fi
 
@@ -2412,13 +2412,6 @@ fi
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2465,7 +2458,7 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
         
         chown --recursive \
             --verbose \
@@ -2550,12 +2543,12 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
         
         bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
         ((bytes=bytes+10000))
         
-        ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+        ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
         mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
     fi
     
@@ -2636,7 +2629,7 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
         
         mkdir --parents --verbose uefi_mount
         
@@ -2710,7 +2703,7 @@ then
     else
         echo &quot;not macOS&quot;
         
-        cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
         
         # Copy WinPE Files from WinPE ISO
         #mv --verbose winpe_staging/* &quot;uefi_mount&quot;
@@ -2783,14 +2776,14 @@ then
         echo &quot;not macOS&quot;
     
         MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}&quot;
+        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}&quot;
         
         if df -h | grep --ignore-case \
             --quiet \
             &quot;${MOUNT_PATH}&quot;
         then
         
-            cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+            cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
             
             umount --verbose &quot;${MOUNT_FOLDER}&quot;
         else
@@ -2873,9 +2866,9 @@ then
     export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
     echo &quot;Using $(which xorriso)&quot;
     
-    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
     
-    ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+    ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
     echo &quot;ISO=${ISO}&quot;
     
     xorriso -as mkisofs \

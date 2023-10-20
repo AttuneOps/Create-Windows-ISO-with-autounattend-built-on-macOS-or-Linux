@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "winpestartnetcmd", 
-    "deployPath": "{automationWorkerBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
     "key": "deploystartnetcmd", 

@@ -1,6 +1,6 @@
 if {isWin10Bios} || {isWinServerBios}
 then
-    FOLDER="{automationWorkerBaseDirectory}/build-{newOsNode.fqn}"
+    FOLDER="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
     mkdir --parents "${FOLDER}"
     cd "${FOLDER}"
     cp --verbose "../winpe_plain_bios.iso" "winpe.iso"

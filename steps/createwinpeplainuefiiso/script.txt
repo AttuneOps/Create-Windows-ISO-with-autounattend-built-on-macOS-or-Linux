@@ -9,12 +9,12 @@ then
     else
         echo "not macOS"
         
-        cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+        cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
         
         bytes=$(du --summarize winpe_staging | awk '{print $1}')
         ((bytes=bytes+10000))
         
-        ISO="{automationWorkerBaseDirectory}/winpe_plain_uefi.iso"
+        ISO="{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso"
         mkfs.msdos -v -C "${ISO}" "${bytes}"
     fi
     

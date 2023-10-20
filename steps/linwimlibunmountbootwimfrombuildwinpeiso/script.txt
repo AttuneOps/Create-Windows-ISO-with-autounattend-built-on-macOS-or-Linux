@@ -1,2 +1,2 @@
-cd {automationWorkerBaseDirectory}/build-winpe-iso
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 wimunmount WinPE_BootImageDir --commit --check --rebuild

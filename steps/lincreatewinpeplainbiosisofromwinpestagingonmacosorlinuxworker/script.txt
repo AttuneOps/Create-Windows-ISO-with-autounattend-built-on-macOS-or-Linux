@@ -1,4 +1,4 @@
-cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
 if {kickstartedBootLoaderIsBios} 
 then

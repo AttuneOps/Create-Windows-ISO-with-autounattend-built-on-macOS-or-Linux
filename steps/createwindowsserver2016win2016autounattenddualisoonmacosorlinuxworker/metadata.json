@@ -24,7 +24,7 @@
         }, 
         {
             "order": 250, 
-            "stepKey": "deploywin2016dvdiso"
+            "stepKey": "deploywin2016dvdisoonmacosorlinuxworker"
         }, 
         {
             "order": 300, 

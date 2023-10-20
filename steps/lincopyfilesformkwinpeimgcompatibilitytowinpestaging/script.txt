@@ -1,3 +1,3 @@
-cd "{automationWorkerBaseDirectory}/build-winpe-iso"
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
 cp --verbose "winimg/boot/etfsboot.com" "winpe_staging/BOOT"

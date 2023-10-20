@@ -24,7 +24,7 @@ if (${{isWin10Uefi}} -or `
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {automationWorkerWindowsBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
             .'
 
   & cmd /c "$command"
