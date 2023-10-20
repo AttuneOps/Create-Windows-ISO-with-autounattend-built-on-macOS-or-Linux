@@ -238,8 +238,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linunmountwindowsisoonmacosorlinuxworker">
-                            <strong>Step 4.1 -</strong> LIN Unmount Windows ISO on macOS or Linux Worker
+                        <a href="#linunmountwindowsiso">
+                            <strong>Step 4.1 -</strong> LIN Unmount Windows ISO
                         </a>
                     </p>
 
@@ -287,8 +287,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmountwinserverdvdisoonmacosorlinuxworker">
-                            <strong>Step 7 -</strong> LIN Mount Win Server DVD ISO on macOS or Linux Worker
+                        <a href="#linmountwinserverdvdiso">
+                            <strong>Step 7 -</strong> LIN Mount Win Server DVD ISO
                         </a>
                     </p>
 
@@ -433,24 +433,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpeplainuefiisoonmacosworker">
-                            <strong>Step 16 -</strong> Create winpe_plain_uefi.iso on macOS Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#createwinpecleanbuildfiles">
-                            <strong>Step 17 -</strong> Create WinPE Clean Build Files
+                            <strong>Step 16 -</strong> Create WinPE Clean Build Files
                         </a>
                     </p>
     
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linunmountwindowsisoonmacosorlinuxworker">
-                            <strong>Step 17.1 -</strong> LIN Unmount Windows ISO on macOS or Linux Worker
+                        <a href="#linunmountwindowsiso">
+                            <strong>Step 16.1 -</strong> LIN Unmount Windows ISO
                         </a>
                     </p>
 
@@ -458,7 +450,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#lindeletewinimgfolder">
-                            <strong>Step 17.2 -</strong> LIN Delete winimg Folder
+                            <strong>Step 16.2 -</strong> LIN Delete winimg Folder
                         </a>
                     </p>
 
@@ -466,7 +458,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#linsetwritepermissionstowinpestaging">
-                            <strong>Step 17.3 -</strong> LIN Set Write Permissions to winpe_staging
+                            <strong>Step 16.3 -</strong> LIN Set Write Permissions to winpe_staging
                         </a>
                     </p>
 
@@ -474,7 +466,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#lincleanbuilddirectory">
-                            <strong>Step 17.4 -</strong> LIN Clean Build Directory
+                            <strong>Step 16.4 -</strong> LIN Clean Build Directory
                         </a>
                     </p>
 
@@ -847,9 +839,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="linunmountwindowsisoonmacosorlinuxworker">
-                            <a href="#linunmountwindowsisoonmacosorlinuxworker">
-                                <strong>Step 4.1 -</strong> LIN Unmount Windows ISO on macOS or Linux Worker
+                        <h4 id="linunmountwindowsiso">
+                            <a href="#linunmountwindowsiso">
+                                <strong>Step 4.1 -</strong> LIN Unmount Windows ISO
                             </a>
                         </h4>
                     </div>
@@ -896,20 +888,7 @@ if df -h | grep --ignore-case \
 then
     cd &quot;${BUILD_DIRECTORY}&quot;
 
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        echo &quot;MOUNT_PATH=${MOUNT_PATH}&quot;
-        
-        hdiutil detach &quot;${MOUNT_PATH}&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        umount --verbose &quot;${MOUNT_FOLDER}&quot;
-    fi
-    
+    umount --verbose &quot;${MOUNT_FOLDER}&quot;
 else
     echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
 fi
@@ -1289,9 +1268,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="linmountwinserverdvdisoonmacosorlinuxworker">
-                            <a href="#linmountwinserverdvdisoonmacosorlinuxworker">
-                                <strong>Step 7 -</strong> LIN Mount Win Server DVD ISO on macOS or Linux Worker
+                        <h3 id="linmountwinserverdvdiso">
+                            <a href="#linmountwinserverdvdiso">
+                                <strong>Step 7 -</strong> LIN Mount Win Server DVD ISO
                             </a>
                         </h3>
                     </div>
@@ -1299,14 +1278,8 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <ul>
-<li>
-<p>Mounts the Windows Server ISO to <code>{automationWorkerBaseDirectory}/kickstartedBootLoaderIsBios/winimg</code>.</p>
-</li>
-<li>
+                                <p>Mounts the Windows Server ISO to <code>{automationWorkerBaseDirectory}/kickstartedBootLoaderIsBios/winimg</code>.</p>
 <p><code>winimg</code> stands for Windows Image.</p>
-</li>
-</ul>
                             </p>
                         </div>
                     </div>
@@ -1355,20 +1328,9 @@ shopt -s nocaseglob
 
 ISO=$(ls *SERVER*.iso)
 
-if uname | \
-    grep -iq &quot;darwin&quot;
-then
-    echo &quot;is macOS&quot;
-    
-    #hdiutil attach &quot;${ISO}&quot; -mountroot &quot;${FOLDER}&quot;
-    hdiutil attach &quot;${ISO}&quot; -mountpoint &quot;${FOLDER}&quot;    
-else
-    echo &quot;not macOS&quot;
-    
-    mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
-        --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
-        &quot;${ISO}&quot; &quot;${FOLDER}&quot;
-fi
+mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
+    --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
+    &quot;${ISO}&quot; &quot;${FOLDER}&quot;
                 </code>
             </pre>
         </div>
@@ -2179,15 +2141,15 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
-    
     if uname | \
         grep -iq &quot;darwin&quot;
     then
         echo &quot;is macOS, skipping&quot;
-            
+        
     else
         echo &quot;not macOS&quot;
+        
+        cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
         
         chown --recursive \
             --verbose \
@@ -2540,104 +2502,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createwinpeplainuefiisoonmacosworker">
-                            <a href="#createwinpeplainuefiisoonmacosworker">
-                                <strong>Step 16 -</strong> Create winpe_plain_uefi.iso on macOS Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates the UEFI bootable WinPE ISO.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if uname | \
-    grep -iq &quot;darwin&quot;
-then
-    echo &quot;is macOS&quot;
-    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-    echo &quot;Using $(which xorriso)&quot;
-    
-    cd &quot;{automationWorkerBaseDirectory}/build-winpe-iso&quot;
-    
-    ISO=&quot;{automationWorkerBaseDirectory}/winpe_plain_uefi.iso&quot;
-    echo &quot;ISO=${ISO}&quot;
-    
-    xorriso -as mkisofs \
-        -iso-level 4 \
-        -full-iso9660-filenames \
-        -rock \
-        -b BOOT/etfsboot.com \
-        -no-emul-boot \
-        -boot-load-size 8 \
-        -hide boot.catalog \
-        -eltorito-alt-boot \
-        -no-emul-boot \
-        -b efi/microsoft/boot/efisys.bin \
-        -boot-load-size 1 \
-        -untranslated-filenames \
-        -disable-deep-relocation \
-        -o &quot;${ISO}&quot; \
-        winpe_staging
-else
-    echo &quot;not macOS, skipping&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="createwinpecleanbuildfiles">
                             <a href="#createwinpecleanbuildfiles">
-                                <strong>Step 17 -</strong> Create WinPE Clean Build Files
+                                <strong>Step 16 -</strong> Create WinPE Clean Build Files
                             </a>
                         </h3>
                     </div>
@@ -2664,9 +2531,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="linunmountwindowsisoonmacosorlinuxworker">
-                            <a href="#linunmountwindowsisoonmacosorlinuxworker">
-                                <strong>Step 17.1 -</strong> LIN Unmount Windows ISO on macOS or Linux Worker
+                        <h4 id="linunmountwindowsiso">
+                            <a href="#linunmountwindowsiso">
+                                <strong>Step 16.1 -</strong> LIN Unmount Windows ISO
                             </a>
                         </h4>
                     </div>
@@ -2687,18 +2554,7 @@ fi
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -2724,20 +2580,7 @@ if df -h | grep --ignore-case \
 then
     cd &quot;${BUILD_DIRECTORY}&quot;
 
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        echo &quot;MOUNT_PATH=${MOUNT_PATH}&quot;
-        
-        hdiutil detach &quot;${MOUNT_PATH}&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        umount --verbose &quot;${MOUNT_FOLDER}&quot;
-    fi
-    
+    umount --verbose &quot;${MOUNT_FOLDER}&quot;
 else
     echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
 fi
@@ -2757,7 +2600,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="lindeletewinimgfolder">
                             <a href="#lindeletewinimgfolder">
-                                <strong>Step 17.2 -</strong> LIN Delete winimg Folder
+                                <strong>Step 16.2 -</strong> LIN Delete winimg Folder
                             </a>
                         </h4>
                     </div>
@@ -2832,7 +2675,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="linsetwritepermissionstowinpestaging">
                             <a href="#linsetwritepermissionstowinpestaging">
-                                <strong>Step 17.3 -</strong> LIN Set Write Permissions to winpe_staging
+                                <strong>Step 16.3 -</strong> LIN Set Write Permissions to winpe_staging
                             </a>
                         </h4>
                     </div>
@@ -2918,7 +2761,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="lincleanbuilddirectory">
                             <a href="#lincleanbuilddirectory">
-                                <strong>Step 17.4 -</strong> LIN Clean Build Directory
+                                <strong>Step 16.4 -</strong> LIN Clean Build Directory
                             </a>
                         </h4>
                     </div>

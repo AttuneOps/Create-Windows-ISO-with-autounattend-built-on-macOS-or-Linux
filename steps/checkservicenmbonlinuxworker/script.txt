@@ -1,0 +1,9 @@
+service="nmb"
+line_count=$(systemctl status $service | grep running | wc -l)
+if [ $line_count -eq 0 ]
+then
+    echo "$service is not running"
+    exit 1
+else
+    echo "ok"
+fi
