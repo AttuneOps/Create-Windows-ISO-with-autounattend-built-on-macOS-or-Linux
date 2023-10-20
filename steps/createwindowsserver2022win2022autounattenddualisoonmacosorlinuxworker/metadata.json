@@ -15,10 +15,6 @@
             "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
         }, 
         {
-            "order": 50, 
-            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
-        }, 
-        {
             "order": 100, 
             "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker"
         }, 
