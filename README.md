@@ -173,6 +173,9 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 ### Create Windows Server 2019 (Win2019) autounattend Single ISO on Windows Worker
 
 
+### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
+
+
 
 
 
