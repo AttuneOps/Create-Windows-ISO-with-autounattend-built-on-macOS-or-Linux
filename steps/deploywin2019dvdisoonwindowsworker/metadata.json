@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "windowsserver2019iso", 
+    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "b28af02f-5d2d-4508-81d1-70a05f80cc72", 
+    "key": "deploywin2019dvdisoonwindowsworker", 
+    "name": "Deploy Win2019 DVD ISO on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}
