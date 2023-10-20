@@ -71,7 +71,11 @@ For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{automationWorkerWindowsBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows 10 (Win10) autounattend Single ISO on Windows Worker
+
+The Windows worker can run Linux commands using Windows Subsystem for Linux.
 
 ### Create Windows autounattend WinPE ISO on macOS or Linux Worker
 
@@ -81,22 +85,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
 
-
-### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
-
-Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
-
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
-
-For both BIOS and UEFI kickstarts.
-
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
-
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
 
@@ -145,6 +133,37 @@ The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso
 The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
 
 ### Deploy Win2019 ISO to Samba Share
+
+The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
+
+### Deploy Win2022 ISO to Samba Share
+
+The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
+
+### Perform Post Cleanup
+
+
+### Perform Test Win Node
+
+Performs basic tests for the built node.
+
+### Setup Samba on Linux
+
+Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
+
+### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
+
+Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
+
+The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+
+For both BIOS and UEFI kickstarts.
+
+For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+
+For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
+
+Please set `isWinPEKickstart` to the string 'false'.
 
 The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
 
