@@ -474,16 +474,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createuefibootwinpeisofromwinpestagingonmacosworker">
-                            <strong>Step 18 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesanddriversfiles">
-                            <strong>Step 19 -</strong> Clean up Build Files and Drivers Files
+                            <strong>Step 18 -</strong> Clean up Build Files and Drivers Files
                         </a>
                     </p>
 
@@ -2831,9 +2823,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createuefibootwinpeisofromwinpestagingonmacosworker">
-                            <a href="#createuefibootwinpeisofromwinpestagingonmacosworker">
-                                <strong>Step 18 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS Worker
+                        <h3 id="cleanupbuildfilesanddriversfiles">
+                            <a href="#cleanupbuildfilesanddriversfiles">
+                                <strong>Step 18 -</strong> Clean up Build Files and Drivers Files
                             </a>
                         </h3>
                     </div>
@@ -2841,7 +2833,9 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Rereates the UEFI bootable WinPE kickstart ISO.</p>
+                                <p>Deletes the following:
+1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.
+2. Drivers drop in directory at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -2866,92 +2860,6 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                             </code>
                         </div>
 
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if uname | \
-    grep -iq &quot;darwin&quot;
-then
-    echo &quot;is macOS&quot;
-    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-    echo &quot;Using $(which xorriso)&quot;
-    
-    cd &quot;{automationWorkerBaseDirectory}/build-{newOsNode.fqn}&quot;
-    
-    ISO=&quot;{automationWorkerBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-    echo &quot;ISO=${ISO}&quot;
-    
-    xorriso -as mkisofs \
-        -iso-level 4 \
-        -full-iso9660-filenames \
-        -rock \
-        -b BOOT/etfsboot.com \
-        -no-emul-boot \
-        -boot-load-size 8 \
-        -hide boot.catalog \
-        -eltorito-alt-boot \
-        -no-emul-boot \
-        -b efi/microsoft/boot/efisys.bin \
-        -boot-load-size 1 \
-        -untranslated-filenames \
-        -disable-deep-relocation \
-        -o &quot;${ISO}&quot; \
-        winpe_staging
-else
-    echo &quot;not macOS, skipping&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="cleanupbuildfilesanddriversfiles">
-                            <a href="#cleanupbuildfilesanddriversfiles">
-                                <strong>Step 19 -</strong> Clean up Build Files and Drivers Files
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the following:
-1. Build directory at <code>{automationWorkerBaseDirectory}/build-{newOsNode.fqn}</code>.
-2. Drivers drop in directory at <code>{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
 
 
     

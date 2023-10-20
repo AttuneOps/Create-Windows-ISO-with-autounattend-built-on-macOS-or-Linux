@@ -1,0 +1,1 @@
+Checks if `nmb` service is running.

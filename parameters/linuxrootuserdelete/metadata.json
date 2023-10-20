@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "d8b88413-5806-42cd-98e7-b4e09f90331b", 
+    "key": "linuxrootuserdelete", 
+    "name": "Linux: Root User - DELETE", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.LinOsCred"
+}

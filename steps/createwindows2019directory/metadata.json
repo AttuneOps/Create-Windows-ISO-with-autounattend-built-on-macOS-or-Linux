@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "93228936-6ba6-4072-8ebe-14723c18e3f0", 
+    "interpreter": 1, 
+    "key": "createwindows2019directory", 
+    "name": "Create windows2019 Directory", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
