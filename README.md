@@ -156,9 +156,6 @@ The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_is
 
 The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
 
-### Perform Post Cleanup
-
-
 ### Perform Test Win Node
 
 Performs basic tests for the built node.
@@ -177,6 +174,12 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
 
 ### Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker
+
+
+### Perform Post Cleanup on macOS or Linux Worker
+
+
+### Perform Post Cleanup on Windows Worker
 
 
 
