@@ -6,13 +6,13 @@
 
 
 <head>
-    <title>How to Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker - Attune Automation</title>
+    <title>How to Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker - Attune Automation">
+          content="How to Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker - Attune Automation">
     <meta name="description"
           content="">
     <meta name="robots"
@@ -21,13 +21,13 @@
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker - Attune Automation" />
+          content="HowTo Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker - Attune Automation" />
     <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker - Attune Automation" />
+          content="How to Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker - Attune Automation" />
     <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker</strong>
+                    <strong>Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker</strong>
                 </li>
             </ol>
         </nav>
@@ -133,7 +133,7 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker
+                How to Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker
             </h1>
         </div>
     </div>
@@ -197,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker</strong>
+                            <strong>Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker</strong>
                         </a>
                     </p>
 
@@ -206,8 +206,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkinputparametervaluesforwindowsserversingleisokickstartonwindowsworker">
-                            <strong>Step 1 -</strong> Check Input Parameter Values for Windows Server Single ISO Kickstart on Windows Worker
+                        <a href="#checkinputparametervaluesforwin10kickstartonwindowsworker">
+                            <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Kickstart on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
+                            <strong>Step 2 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
                         </a>
                     </p>
 
@@ -215,7 +223,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkifipaddressisinsubnetonwindowsworker">
-                            <strong>Step 2 -</strong> Check if IP Address is in Subnet on Windows Worker
+                            <strong>Step 3 -</strong> Check if IP Address is in Subnet on Windows Worker
                         </a>
                     </p>
 
@@ -223,7 +231,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
-                            <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                            <strong>Step 4 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
                         </a>
                     </p>
 
@@ -231,15 +239,15 @@
 
                     <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesandisosonwindowsworker">
-                            <strong>Step 4 -</strong> Clean Up Build Files and ISOs on Windows Worker
+                            <strong>Step 5 -</strong> Clean Up Build Files and ISOs on Windows Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2016dvdisoonwindowsworker">
-                            <strong>Step 5 -</strong> Deploy Win2016 DVD ISO on Windows Worker
+                        <a href="#deploywin10dvdisoonwindowsworker">
+                            <strong>Step 6 -</strong> Deploy Win10 DVD ISO on Windows Worker
                         </a>
                     </p>
 
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsbootimgonwindowsworker">
-                            <strong>Step 6 -</strong> Extract Windows boot.img on Windows Worker
+                            <strong>Step 7 -</strong> Extract Windows boot.img on Windows Worker
                         </a>
                     </p>
 
@@ -255,31 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsisoonwindowsworker">
-                            <strong>Step 7 -</strong>  Extract Windows ISO on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploypostsetuppowershellscriptonwindowsworker">
-                            <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deploywindowsunattendedconfigonwindowsworker">
-                            <strong>Step 9 -</strong> Deploy Windows Unattended Config on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfolderonwindowsworker">
-                            <strong>Step 10 -</strong> Copy Drivers Drop in Folder on Windows Worker
+                            <strong>Step 8 -</strong>  Extract Windows ISO on Windows Worker
                         </a>
                     </p>
 
@@ -287,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copyefisysnopromptbinintoefisysbinonwindowsworker">
-                            <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
+                            <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
                         </a>
                     </p>
 
@@ -295,7 +279,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootisoonwindowsworker">
-                            <strong>Step 12 -</strong> Create BIOS Boot ISO on Windows Worker
+                            <strong>Step 10 -</strong> Create BIOS Boot ISO on Windows Worker
                         </a>
                     </p>
 
@@ -303,7 +287,39 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootisoonwindowsworker">
-                            <strong>Step 13 -</strong> Create UEFI Boot ISO on Windows Worker
+                            <strong>Step 11 -</strong> Create UEFI Boot ISO on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploywindowsunattendedconfigonwindowsworker">
+                            <strong>Step 12 -</strong> Deploy Windows Unattended Config on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploypostsetuppowershellscriptonwindowsworker">
+                            <strong>Step 13 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copydriversdropinfolderonwindowsworker">
+                            <strong>Step 14 -</strong> Copy Drivers Drop in Folder on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createanswerfileisoonwindowsworker">
+                            <strong>Step 15 -</strong> Create Answer File ISO on Windows Worker
                         </a>
                     </p>
 
@@ -366,7 +382,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker</strong>
+                You've automated: <strong>Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -397,9 +413,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="checkinputparametervaluesforwindowsserversingleisokickstartonwindowsworker">
-                            <a href="#checkinputparametervaluesforwindowsserversingleisokickstartonwindowsworker">
-                                <strong>Step 1 -</strong> Check Input Parameter Values for Windows Server Single ISO Kickstart on Windows Worker
+                        <h3 id="checkinputparametervaluesforwin10kickstartonwindowsworker">
+                            <a href="#checkinputparametervaluesforwin10kickstartonwindowsworker">
+                                <strong>Step 1 -</strong> Check Input Parameter Values for Win10 Kickstart on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -407,7 +423,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if at least one of <code>isWinServerBios</code> or <code>isWinServerUefi</code> is set tot true.</p>
+                                
                             </p>
                         </div>
                     </div>
@@ -453,12 +469,83 @@ mstsc /admin /v:{automationworkerwindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ((-Not ${{isWinServerBios}}) -and `
-    (-Not ${{isWinServerUefi}})) {
-    Write-Host &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server 2016, 2019 or 2022.&quot;
+if ((-Not ${{isWin10Bios}}) -and `
+    (-Not ${{isWin10Uefi}})) {
+
+    Write-Host &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
     exit 1
-else
+} else {
     Write-Host &quot;Ok.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkmaximumlengthofwin10hostnameonwindowsworker">
+                            <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
+                                <strong>Step 2 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
+
+    $HOSTNAME = &quot;{newOsNode.hostname}&quot;
+    
+    $LENGTH = $HOSTNAME.length
+    $MAX_LENGTH = 15
+    
+    if ( $LENGTH -gt $MAX_LENGTH ) {
+        Write-Host &quot;Length of hostname ${LENGTH} for Win10 can&#x27;t be more than ${MAX_LENGTH}.&quot;
+        false
+    } else {
+        Write-Host &quot;Length of hostname ${LENGTH} is less than or equal to ${MAX_LENGTH}.&quot;
+    }
+    
+else
+    Write-Host &quot;Not Win10, skipping.&quot;
 fi
                 </code>
             </pre>
@@ -476,7 +563,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="checkifipaddressisinsubnetonwindowsworker">
                             <a href="#checkifipaddressisinsubnetonwindowsworker">
-                                <strong>Step 2 -</strong> Check if IP Address is in Subnet on Windows Worker
+                                <strong>Step 3 -</strong> Check if IP Address is in Subnet on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -574,7 +661,7 @@ for ($i = 0; $i -lt 4; $i++) {
                     <div class="row pt-5">
                         <h3 id="checkifgatewayipaddressisinsubnetonwindowsworker">
                             <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
-                                <strong>Step 3 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                                <strong>Step 4 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -672,7 +759,7 @@ for ($i = 0; $i -lt 4; $i++) {
                     <div class="row pt-5">
                         <h3 id="cleanupbuildfilesandisosonwindowsworker">
                             <a href="#cleanupbuildfilesandisosonwindowsworker">
-                                <strong>Step 4 -</strong> Clean Up Build Files and ISOs on Windows Worker
+                                <strong>Step 5 -</strong> Clean Up Build Files and ISOs on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -728,9 +815,9 @@ if (Test-Path $DIR) {
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2016dvdisoonwindowsworker">
-                            <a href="#deploywin2016dvdisoonwindowsworker">
-                                <strong>Step 5 -</strong> Deploy Win2016 DVD ISO on Windows Worker
+                        <h3 id="deploywin10dvdisoonwindowsworker">
+                            <a href="#deploywin10dvdisoonwindowsworker">
+                                <strong>Step 6 -</strong> Deploy Win10 DVD ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -738,7 +825,7 @@ if (Test-Path $DIR) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2016 ISO to <code>{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Desktop 10 ISO to <code>{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -759,11 +846,12 @@ if (Test-Path $DIR) {
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016.</p>
+            <p>Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.</p>
+<p>Please select the English (United States) version.</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>WIN_Raw_Win2016_ISO.tar</strong>
+            <strong>Win10_Desktop_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -787,7 +875,7 @@ if (Test-Path $DIR) {
                     <div class="row pt-5">
                         <h3 id="extractwindowsbootimgonwindowsworker">
                             <a href="#extractwindowsbootimgonwindowsworker">
-                                <strong>Step 6 -</strong> Extract Windows boot.img on Windows Worker
+                                <strong>Step 7 -</strong> Extract Windows boot.img on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -876,7 +964,7 @@ if ((${{isWin10Bios}}) -or `
                     <div class="row pt-5">
                         <h3 id="extractwindowsisoonwindowsworker">
                             <a href="#extractwindowsisoonwindowsworker">
-                                <strong>Step 7 -</strong>  Extract Windows ISO on Windows Worker
+                                <strong>Step 8 -</strong>  Extract Windows ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -956,199 +1044,9 @@ if ($LASTEXITCODE -ne 0) {
 
 
                     <div class="row pt-5">
-                        <h3 id="deploypostsetuppowershellscriptonwindowsworker">
-                            <a href="#deploypostsetuppowershellscriptonwindowsworker">
-                                <strong>Step 8 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
-<p>This script is run once post installation of the WIndows operating system.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deploywindowsunattendedconfigonwindowsworker">
-                            <a href="#deploywindowsunattendedconfigonwindowsworker">
-                                <strong>Step 9 -</strong> Deploy Windows Unattended Config on Windows Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-
-
-    <div class="row">
-        <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
-            to the target node.
-        </p>
-        <p>
-        </p>
-    </div>
-    <div class="row py-1">
-        <code class="language-bash">
-{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
-        </code>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="copydriversdropinfolderonwindowsworker">
-                            <a href="#copydriversdropinfolderonwindowsworker">
-                                <strong>Step 10 -</strong> Copy Drivers Drop in Folder on Windows Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
-
-Set-Location $BUILD_DIR
-
-$DRIVERS_DROP_IN_FOLDER = &quot;{automationWorkerWindowsBaseDirectory}\drivers-{newOsNode.fqn}&quot;
-$DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
-
-New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
-
-if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
-
-    Copy-Item -Path -Recurse &quot;${DRIVERS_DROP_IN_FOLDER}&quot; `
-        -Destination &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
-} else {
-    Write-Host &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="copyefisysnopromptbinintoefisysbinonwindowsworker">
                             <a href="#copyefisysnopromptbinintoefisysbinonwindowsworker">
-                                <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
+                                <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1214,7 +1112,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
                     <div class="row pt-5">
                         <h3 id="createbiosbootisoonwindowsworker">
                             <a href="#createbiosbootisoonwindowsworker">
-                                <strong>Step 12 -</strong> Create BIOS Boot ISO on Windows Worker
+                                <strong>Step 10 -</strong> Create BIOS Boot ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1306,7 +1204,7 @@ if (${{isWin10Bios}} -or `
                     <div class="row pt-5">
                         <h3 id="createuefibootisoonwindowsworker">
                             <a href="#createuefibootisoonwindowsworker">
-                                <strong>Step 13 -</strong> Create UEFI Boot ISO on Windows Worker
+                                <strong>Step 11 -</strong> Create UEFI Boot ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1384,6 +1282,261 @@ if (${{isWin10Uefi}} -or `
 
 } else {
     Write-Host &quot;Skipping for BIOS boot.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploywindowsunattendedconfigonwindowsworker">
+                            <a href="#deploywindowsunattendedconfigonwindowsworker">
+                                <strong>Step 12 -</strong> Deploy Windows Unattended Config on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>For these Windows versions:
+* WIndows Desktop 10
+* WIndows Server 2016
+* WIndows Server 2019
+* WIndows Server 2022</p>
+<p>For these boot methods:
+* BIOS
+* UEFI</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Windows_Unattended_config.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploypostsetuppowershellscriptonwindowsworker">
+                            <a href="#deploypostsetuppowershellscriptonwindowsworker">
+                                <strong>Step 13 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
+<p>This script is run once post installation of the WIndows operating system.</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="copydriversdropinfolderonwindowsworker">
+                            <a href="#copydriversdropinfolderonwindowsworker">
+                                <strong>Step 14 -</strong> Copy Drivers Drop in Folder on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+
+Set-Location $BUILD_DIR
+
+$DRIVERS_DROP_IN_FOLDER = &quot;{automationWorkerWindowsBaseDirectory}\drivers-{newOsNode.fqn}&quot;
+$DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
+
+New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
+
+if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
+
+    Copy-Item -Path -Recurse &quot;${DRIVERS_DROP_IN_FOLDER}&quot; `
+        -Destination &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+} else {
+    Write-Host &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createanswerfileisoonwindowsworker">
+                            <a href="#createanswerfileisoonwindowsworker">
+                                <strong>Step 15 -</strong> Create Answer File ISO on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+
+Set-Location $BUILD_DIR
+
+$DRIVERS_FOLDER=&quot;drivers&quot;
+$DRIVERS_ISO_NAME=&quot;drivers_{newOsNode.fqn}.iso&quot;
+
+$command = &quot;wsl -d debian --exec &quot;
+$command += &#x27; xorriso -as mkisofs \
+        -o ../${DRIVERS_ISO_NAME} \
+        -iso-level 3 -udf -joliet-long -relaxed-filenames \
+        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
+        autounattend.xml post_install_setup.ps1&#x27;
+        
+&amp; cmd /c &quot;$command&quot;
+if ($LASTEXITCODE -ne 0) {
+    Write-Error &#x27;Failed to create ISO&#x27;
 }
                 </code>
             </pre>

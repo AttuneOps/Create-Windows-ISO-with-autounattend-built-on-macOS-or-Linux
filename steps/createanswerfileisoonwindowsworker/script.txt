@@ -1,0 +1,19 @@
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+
+Set-Location $BUILD_DIR
+
+$DRIVERS_FOLDER="drivers"
+$DRIVERS_ISO_NAME="drivers_{newOsNode.fqn}.iso"
+
+$command = "wsl -d debian --exec "
+$command += ' xorriso -as mkisofs \
+        -o ../${DRIVERS_ISO_NAME} \
+        -iso-level 3 -udf -joliet-long -relaxed-filenames \
+        -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
+        autounattend.xml post_install_setup.ps1'
+        
+& cmd /c "$command"
+if ($LASTEXITCODE -ne 0) {
+    Write-Error 'Failed to create ISO'
+}
