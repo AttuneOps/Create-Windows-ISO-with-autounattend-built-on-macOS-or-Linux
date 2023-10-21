@@ -12,7 +12,7 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "checkifipaddressisinsubnetonwindows"
+            "stepKey": "checkifipaddressisinsubnetonwindowsworker"
         }, 
         {
             "order": 200, 
