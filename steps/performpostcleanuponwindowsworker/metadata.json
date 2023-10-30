@@ -8,6 +8,10 @@
     "links": [
         {
             "order": 0, 
+            "stepKey": "createwindowsbuilddirectory"
+        }, 
+        {
+            "order": 50, 
             "stepKey": "postcleanuponwindowsworker"
         }
     ], 

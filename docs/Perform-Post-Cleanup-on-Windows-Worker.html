@@ -206,8 +206,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#createwindowsbuilddirectory">
+                            <strong>Step 1 -</strong> Create Windows Build Directory
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#postcleanuponwindowsworker">
-                            <strong>Step 1 -</strong> Post Cleanup on Windows Worker
+                            <strong>Step 2 -</strong> Post Cleanup on Windows Worker
                         </a>
                     </p>
 
@@ -301,20 +309,13 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="postcleanuponwindowsworker">
-                            <a href="#postcleanuponwindowsworker">
-                                <strong>Step 1 -</strong> Post Cleanup on Windows Worker
+                        <h3 id="createwindowsbuilddirectory">
+                            <a href="#createwindowsbuilddirectory">
+                                <strong>Step 1 -</strong> Create Windows Build Directory
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>https://stackoverflow.com/questions/18847145/loop-through-files-in-a-directory-using-powershell</p>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -357,7 +358,68 @@ mstsc /admin /v:{automationworkerwindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$DIR=&quot;{automationWorkerWindowsBaseDirectory}
+$DIR=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+
+if (Test-Path $DIR) {
+    Write-Host &quot;Directory ${DIR} already exists. Great.&quot;
+} else {
+    New-Item -ItemType Directory -Force `
+        -Path &quot;${DIR}&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="postcleanuponwindowsworker">
+                            <a href="#postcleanuponwindowsworker">
+                                <strong>Step 2 -</strong> Post Cleanup on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>https://stackoverflow.com/questions/18847145/loop-through-files-in-a-directory-using-powershell</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$DIR=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 
 Set-Location &quot;${DIR}&quot;
 
