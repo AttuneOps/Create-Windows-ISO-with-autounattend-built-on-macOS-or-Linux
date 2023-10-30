@@ -1,12 +1,10 @@
 if {kickstartedBootLoaderIsUefi}
 then
-    cd "{automationWorkerBaseDirectory}/build-winpe-iso"
-    
     if uname | \
         grep -iq "darwin"
     then
         echo "is macOS, skipping"
-            
+        
     else
         echo "not macOS"
         
