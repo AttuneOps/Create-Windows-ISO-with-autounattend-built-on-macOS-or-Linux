@@ -369,13 +369,72 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Perform-Post-Cleanup">
+                                 id="Deploy-Win10-ISO-to-Samba-Share">
                                 <div class="card-body">
-                                    <a href="Perform-Post-Cleanup.html">
+                                    <a href="Deploy-Win10-ISO-to-Samba-Share.html">
                                         <h3 class="card-title">
-                                            Perform Post Cleanup
+                                            Deploy Win10 ISO to Samba Share
                                         </h3>
                                     </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>The Windows Desktop 10 ISO is placed on the Samba server at <code>${HOME}/windows_iso_data_for_winpe/windows10</code>.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Deploy-Win2016-ISO-to-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Deploy-Win2016-ISO-to-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Deploy Win2016 ISO to Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>The Windows Server 2016 ISO is placed on the Samba server at <code>${HOME}/windows_iso_data_for_winpe/windows2016</code>. </p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Deploy-Win2019-ISO-to-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Deploy-Win2019-ISO-to-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Deploy Win2019 ISO to Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>The Windows Server 2019 ISO is placed on the Samba server at <code>${HOME}/windows_iso_data_for_winpe/windows2019</code>.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Deploy-Win2022-ISO-to-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Deploy-Win2022-ISO-to-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Deploy Win2022 ISO to Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>The Windows Server 2022 ISO is placed on the Samba server at <code>${HOME}/windows_iso_data_for_winpe/windows2022</code>.</p>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -400,146 +459,11 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Create-FAT32-winpe_plain_uefi-iso-from-winpe_staging-on-macOS-Worker---DELETE">
+                                 id="Setup-Samba-on-Linux">
                                 <div class="card-body">
-                                    <a href="Create-FAT32-winpe_plain_uefi-iso-from-winpe_staging-on-macOS-Worker---DELETE.html">
+                                    <a href="Setup-Samba-on-Linux.html">
                                         <h3 class="card-title">
-                                            Create FAT32 winpe_plain_uefi.iso from winpe_staging on macOS Worker - DELETE
-                                        </h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Create-Windows-Server-2022-(Win2022)-autounattend-Single-ISO-on-Windows-Worker">
-                                <div class="card-body">
-                                    <a href="Create-Windows-Server-2022-(Win2022)-autounattend-Single-ISO-on-Windows-Worker.html">
-                                        <h3 class="card-title">
-                                            Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
-                                        </h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Create-Windows-10-(Win10)-autounattend-Dual-ISO-on-Windows-Worker">
-                                <div class="card-body">
-                                    <a href="Create-Windows-10-(Win10)-autounattend-Dual-ISO-on-Windows-Worker.html">
-                                        <h3 class="card-title">
-                                            Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker
-                                        </h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Creates a single Windows Server 2016 ISO with <code>autounattend.xml</code> for unattended installation.</p>
-<p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
-<p>For both BIOS and UEFI kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
-<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
+                                            Setup Samba on Linux
                                         </h3>
                                     </a>
                                     <div class="description">
@@ -566,96 +490,13 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
+                                 id="Create-Windows-Server-2019-(Win2019)-autounattend-Single-ISO-on-Windows-Worker">
                                 <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
+                                    <a href="Create-Windows-Server-2019-(Win2019)-autounattend-Single-ISO-on-Windows-Worker.html">
                                         <h3 class="card-title">
-                                            Setup Samba on Linux Worker
+                                            Create Windows Server 2019 (Win2019) autounattend Single ISO on Windows Worker
                                         </h3>
                                     </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Create-Windows-Server-2016-(Win2016)-autounattend-Single-ISO-on-macOS-or-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Creates a single Windows Server 2016 ISO with <code>autounattend.xml</code> for unattended installation.</p>
-<p>The ISO will be created at <code>{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso</code>.</p>
-<p>For both BIOS and UEFI kickstarts.</p>
-<p>For BIOS kickstarts please set <code>isWinServerBios</code> to the string 'true'.</p>
-<p>For UEFI kickstarts please set <code>isWinServerUefi</code> to the string 'true'.</p>
-<p>Please set <code>isWinPEKickstart</code> to the string 'false'.</p>
-<p>This blueprint assumes the drivers drop in directory is at <code>{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}</code> and has the correct drivers dropped in.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on Linux Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at <code>${HOME}/windows_iso_data_for_winpe</code>.</p>
-                                        </p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -688,11 +529,11 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Create-Windows-Server-2022-(Win2022)-autounattend-Single-ISO-on-Windows-Worker">
+                                 id="Perform-Post-Cleanup-on-macOS-or-Linux-Worker">
                                 <div class="card-body">
-                                    <a href="Create-Windows-Server-2022-(Win2022)-autounattend-Single-ISO-on-Windows-Worker.html">
+                                    <a href="Perform-Post-Cleanup-on-macOS-or-Linux-Worker.html">
                                         <h3 class="card-title">
-                                            Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
+                                            Perform Post Cleanup on macOS or Linux Worker
                                         </h3>
                                     </a>
                                 </div>
@@ -701,11 +542,11 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Create-Windows-Server-2022-(Win2022)-autounattend-Single-ISO-on-Windows-Worker">
+                                 id="Perform-Post-Cleanup-on-Windows-Worker">
                                 <div class="card-body">
-                                    <a href="Create-Windows-Server-2022-(Win2022)-autounattend-Single-ISO-on-Windows-Worker.html">
+                                    <a href="Perform-Post-Cleanup-on-Windows-Worker.html">
                                         <h3 class="card-title">
-                                            Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
+                                            Perform Post Cleanup on Windows Worker
                                         </h3>
                                     </a>
                                 </div>
