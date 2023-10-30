@@ -1,17 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-<<<<<<<< HEAD:steps/copydriversdropinfolderonmacosorlinuxworker/metadata.json
     "externalUuid4": "018c74c8-c550-49ae-8a83-6d086508a6c4", 
     "interpreter": 1, 
     "key": "copydriversdropinfolderonmacosorlinuxworker", 
     "name": "Copy Drivers Drop in Folder on macOS or Linux Worker", 
-========
-    "externalUuid4": "19c1dad9-031e-4b89-965f-a2274c757d15", 
-    "interpreter": 1, 
-    "key": "blesswinpeplainuefiisoonmacosworkerdelete", 
-    "name": "Bless winpe_plain_uefi.iso on macOS Worker - DELETE", 
->>>>>>>> 8fb3e91 (AUSTA-255: Added blueprints to use mkisofs to create UEFI bootable ISOs on macOS worker.):steps/blesswinpeplainuefiisoonmacosworkerdelete/metadata.json
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
