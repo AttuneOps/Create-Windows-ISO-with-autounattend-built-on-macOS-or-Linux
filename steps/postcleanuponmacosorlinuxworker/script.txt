@@ -17,7 +17,7 @@ fi
 # The wildcard will allow removal of 
 # - kickstart_{newOsNode.fqn}.iso
 # - drivers_{newOsNode.fqn}.iso
-ISOS={automationWorkerBaseDirectory}/*{newOsNode.fqn}.iso
+ISOS={automationWorkerLinuxBaseDirectory}/*{newOsNode.fqn}.iso
 
 i=0
 for FILE in ${ISOS}
