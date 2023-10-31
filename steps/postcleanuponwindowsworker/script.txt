@@ -1,3 +1,4 @@
+
 $DIR="{automationWorkerWindowsBaseDirectory}"
 
 Set-Location "${DIR}"
