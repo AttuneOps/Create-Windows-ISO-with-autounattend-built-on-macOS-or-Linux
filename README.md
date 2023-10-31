@@ -57,6 +57,9 @@ This Project contains the following Blueprints.
 ### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
 
 
+### Create Windows 10 (Win10) autounattend Dual ISO on Windows Worker
+
+
 ### Create Windows 10 (Win10) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
@@ -102,6 +105,9 @@ Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
+### Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker
+
+
 ### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -120,6 +126,9 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+
+### Create Windows Server 2019 (Win2019) autounattend Single ISO on Windows Worker
+
 
 ### Create Windows Server 2022 (Win2022) autounattend Dual ISO on macOS or Linux Worker
 
@@ -140,6 +149,9 @@ Please set `isWinPEKickstart` to the string 'false'.
 
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
+### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
+
+
 ### Deploy Win10 ISO to Samba Share
 
 The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.
@@ -155,6 +167,11 @@ The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_is
 ### Deploy Win2022 ISO to Samba Share
 
 The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
+
+### Perform Post Cleanup on macOS or Linux Worker
+
+
+### Perform Post Cleanup on Windows Worker
 
 ### Perform Test Win Node
 
@@ -185,7 +202,6 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 ### Setup Samba on Linux Worker
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
-
 
 
 
