@@ -1,17 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-<<<<<<<< HEAD:steps/checkifgatewayipaddressisinsubnetonmacosorlinuxworker/metadata.json
     "externalUuid4": "f31b6407-2efe-43e5-b0ac-e299fc9e3e1c", 
     "interpreter": 1, 
     "key": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker", 
     "name": "Check if Gateway IP Address is in Subnet on macOS or Linux Worker", 
-========
-    "externalUuid4": "19c1dad9-031e-4b89-965f-a2274c757d15", 
-    "interpreter": 1, 
-    "key": "blesswinpeplainuefiisoonmacosworkerdelete", 
-    "name": "Bless winpe_plain_uefi.iso on macOS Worker - DELETE", 
->>>>>>>> eb2cba0 (AUSTA-255: Added blueprints to use mkisofs to create UEFI bootable ISOs on macOS worker.):steps/blesswinpeplainuefiisoonmacosworkerdelete/metadata.json
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

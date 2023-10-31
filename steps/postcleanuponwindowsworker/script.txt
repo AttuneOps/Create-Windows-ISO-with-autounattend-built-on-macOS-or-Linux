@@ -1,0 +1,36 @@
+$DIR="{automationWorkerWindowsBaseDirectory}
+
+Set-Location "${DIR}"
+
+$DIR="build-{newOsNode.fqn}"
+
+if (Test-Path $DIR) {
+    Remove-Path -Recursive $DIR
+} else {
+    Write-Host "No build directory to remove."
+}
+
+$DIR="drivers-{newOsNode.fqn}"
+if (Test-Path $DIR) {
+    Remove-Path -Recursive $DIR
+} else {
+    Write-Host "No drop in drivers directory to remove."
+}
+
+# The wildcard will allow removal of 
+# - kickstart_{newOsNode.fqn}.iso
+# - drivers_{newOsNode.fqn}.iso
+$ISOS="*{newOsNode.fqn}.iso"
+
+
+if (test-Path "${ISOS}" -pathtype leaf) {
+	Get-ChildItem "${ISOS}" | `
+    	Foreach-Object {
+    		if (test-Path $_.Name -pathtype leaf) {
+    			Write-Host $_.Name
+    			Remove-Item $_.Name
+    		}
+    	}
+} else {
+	Write-Host "No ISOs to remove, skipping."
+}
