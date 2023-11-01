@@ -12,6 +12,6 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
         Write-Host "Length of hostname ${LENGTH} is less than or equal to ${MAX_LENGTH}."
     }
     
-else
+} else {
     Write-Host "Not Win10, skipping."
-fi
+}
