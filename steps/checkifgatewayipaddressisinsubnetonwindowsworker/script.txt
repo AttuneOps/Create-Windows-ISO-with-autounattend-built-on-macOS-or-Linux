@@ -3,14 +3,14 @@ Write-Host "subnet={newOsNodeSubnet.subnet}"
 Write-Host "netmask={newOsNodeSubnet.netmask}"
 #Write-Host "i, GATEWAY_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX"
 
-$GATEWAY_OCTETS = {newOsNodeSubnet.gateway}.split('.')
-$SUBNET_OCTETS = {newOsNodeSubnet.subnet}.split('.')
-$NETMASK_OCTETS = (newOsNodeSubnet.netmask}.split('.')
+$GATEWAY_OCTETS = "{newOsNodeSubnet.gateway}".split('.')
+$SUBNET_OCTETS = "{newOsNodeSubnet.subnet}".split('.')
+$NETMASK_OCTETS = "{newOsNodeSubnet.netmask}".split('.')
 
 for ($i = 0; $i -lt 4; $i++) {
-    $GATEWAY_OCTET = $GATEWAY_OCTETS[i]
-    $SUBNET_OCTET = $SUBNET_OCTETS[i]
-    $NETMASK_OCTET = $NETMASK_OCTETS[i]
+    $GATEWAY_OCTET = $GATEWAY_OCTETS[$i]
+    $SUBNET_OCTET = $SUBNET_OCTETS[$i]
+    $NETMASK_OCTET = $NETMASK_OCTETS[$i]
     
     $OCTET_MIN = $SUBNET_OCTET -band $NETMASK_OCTET
 
