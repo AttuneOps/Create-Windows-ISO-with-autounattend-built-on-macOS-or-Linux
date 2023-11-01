@@ -621,14 +621,14 @@ Write-Host &quot;subnet={newOsNodeSubnet.subnet}&quot;
 Write-Host &quot;netmask={newOsNodeSubnet.netmask}&quot;
 #Write-Host &quot;i, IP_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX&quot;
 
-$IP_OCTETS = {newOsNode.ip}.split(&#x27;.&#x27;)
-$SUBNET_OCTETS = {newOsNodeSubnet.subnet}.split(&#x27;.&#x27;)
-$NETMASK_OCTETS = (newOsNodeSubnet.netmask}.split(&#x27;.&#x27;)
+$IP_OCTETS = &quot;{newOsNode.ip}&quot;.split(&#x27;.&#x27;)
+$SUBNET_OCTETS = &quot;{newOsNodeSubnet.subnet}&quot;.split(&#x27;.&#x27;)
+$NETMASK_OCTETS = &quot;{newOsNodeSubnet.netmask}&quot;.split(&#x27;.&#x27;)
 
 for ($i = 0; $i -lt 4; $i++) {
-    $IP_OCTET = $IP_OCTETS[i]
-    $SUBNET_OCTET = $SUBNET_OCTETS[i]
-    $NETMASK_OCTET = $NETMASK_OCTETS[i]
+    $IP_OCTET = $IP_OCTETS[$i]
+    $SUBNET_OCTET = $SUBNET_OCTETS[$i]
+    $NETMASK_OCTET = $NETMASK_OCTETS[$i]
     
     $OCTET_MIN = $SUBNET_OCTET -band $NETMASK_OCTET
 
