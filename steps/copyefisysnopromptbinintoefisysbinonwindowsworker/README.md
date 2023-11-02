@@ -1,0 +1,1 @@
+`efisys_noprompt.bin` does not have the prompt "Pres any key to boot from CDROM".

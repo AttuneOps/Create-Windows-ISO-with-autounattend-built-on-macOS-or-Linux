@@ -31,10 +31,6 @@
             "stepKey": "deploywin10dvdisoonwindowsworker"
         }, 
         {
-            "order": 300, 
-            "stepKey": "movewindowsdvdisotobuilddirectory"
-        }, 
-        {
             "order": 350, 
             "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 

@@ -1,7 +1,7 @@
 if ((${{isWin10Bios}}) -or `
     (${{isWinServerBios}})) {
 
-  $ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+  $ISO_BUILD="C:\attuneautomationworker"
   $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
 
 

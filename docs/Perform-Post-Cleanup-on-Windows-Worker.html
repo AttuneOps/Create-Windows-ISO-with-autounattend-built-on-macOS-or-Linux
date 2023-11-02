@@ -316,13 +316,6 @@
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -365,7 +358,7 @@ mstsc /admin /v:{automationworkerwindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$DIR=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$DIR=&quot;C:\attuneautomationworker&quot;
 
 if (Test-Path $DIR) {
     Write-Host &quot;Directory ${DIR} already exists. Great.&quot;
@@ -426,7 +419,7 @@ if (Test-Path $DIR) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$DIR=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$DIR=&quot;C:\attuneautomationworker&quot;
 
 Set-Location &quot;${DIR}&quot;
 

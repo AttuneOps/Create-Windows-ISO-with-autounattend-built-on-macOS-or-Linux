@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "windowsserver2019iso", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "b28af02f-5d2d-4508-81d1-70a05f80cc72", 
     "key": "deploywin2019dvdisoonwindowsworker", 
