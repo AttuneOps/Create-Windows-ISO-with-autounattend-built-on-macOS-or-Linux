@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "310e27b0-24fc-4421-9eda-713ccb815066", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "movewindowsdvdisotobuilddirectory", 
+    "name": "Move Windows DVD ISO to Build Directory", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 120, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

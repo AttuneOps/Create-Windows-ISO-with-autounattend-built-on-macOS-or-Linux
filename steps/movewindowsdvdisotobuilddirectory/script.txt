@@ -1,0 +1,20 @@
+$CURRENT_PATH = "C:\software\build-{newOsNode.fqn}"
+
+Set-Location "${CURRENT_PATH}"
+
+$ISO = (dir *.ISO).name
+
+$DEST_FOLDER = "{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}"
+
+if (-Not (Test-Path $DEST_FOLDER)) {
+    New-Item -Path ${DEST_FOLDER} -ItemType Directory
+}
+
+Move-Item -Path "${ISO}" -Destination "${DEST_FOLDER}\${ISO}"
+
+# Remove $CURRENT_PATH
+Set-Location "C:\software"
+Remove-Item "build-{newOsNode.fqn}"
+
+Set-Location "${DEST_FOLDER}"
+dir

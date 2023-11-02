@@ -32,34 +32,38 @@
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimgonwindowsworker"
+            "stepKey": "movewindowsdvdisotobuilddirectory"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwindowsisoonwindowsworker"
+            "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+            "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "copydriversdropinfolderonwindowsworker"
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+            "stepKey": "copydriversdropinfolderonwindowsworker"
         }, 
         {
             "order": 600, 
-            "stepKey": "createbiosbootisoonwindowsworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
             "order": 650, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 700, 
             "stepKey": "createuefibootisoonwindowsworker"
         }
     ], 
