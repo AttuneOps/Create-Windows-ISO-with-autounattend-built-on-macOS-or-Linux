@@ -24,10 +24,14 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+            "stepKey": "performverifyifwslisinstalledlink"
         }, 
         {
             "order": 250, 
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+        }, 
+        {
+            "order": 300, 
             "stepKey": "deploywin10dvdisoonwindowsworker"
         }, 
         {

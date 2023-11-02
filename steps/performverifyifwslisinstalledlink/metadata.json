@@ -1,0 +1,15 @@
+{
+    "actionOnStepFail": null, 
+    "blueprintName": "", 
+    "blueprintUuid": "f99448e6-5996-4aa5-a491-7d05a59d7217", 
+    "cloneUrl": "", 
+    "enabled": true, 
+    "externalUuid4": "5572baf5-8804-401d-b1b3-2dd049003b03", 
+    "key": "performverifyifwslisinstalledlink", 
+    "name": "Perform Verify if WSL is Installed (link)", 
+    "parameterMap": [], 
+    "projectName": "", 
+    "projectUuid": "e1624fc1-f4c0-4289-acbf-261f448c4236", 
+    "projectVersion": "", 
+    "type": "com.servertribe.attune.tuples.StepProjectLinkTuple"
+}

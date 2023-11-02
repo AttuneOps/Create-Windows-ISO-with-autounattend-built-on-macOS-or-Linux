@@ -20,42 +20,46 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+            "stepKey": "performverifyifwslisinstalledlink"
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin2016dvdisoonwindowsworker"
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {
             "order": 250, 
-            "stepKey": "extractwindowsbootimgonwindowsworker"
+            "stepKey": "deploywin2016dvdisoonwindowsworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsisoonwindowsworker"
+            "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+            "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "copydriversdropinfolderonwindowsworker"
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+            "stepKey": "copydriversdropinfolderonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "createbiosbootisoonwindowsworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
             "order": 600, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 650, 
             "stepKey": "createuefibootisoonwindowsworker"
         }
     ], 
