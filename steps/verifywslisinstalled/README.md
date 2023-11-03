@@ -1,0 +1,1 @@
+Check if Windows Subsystem for Linux is installed.

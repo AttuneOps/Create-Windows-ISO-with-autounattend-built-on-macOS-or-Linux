@@ -23,51 +23,51 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
-            "order": 200, 
-            "stepKey": "performverifyifwslisinstalledlink"
-        }, 
-        {
             "order": 250, 
-            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+            "stepKey": "verifywslisinstalled"
         }, 
         {
             "order": 300, 
-            "stepKey": "deploywin10dvdisoonwindowsworker"
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwindowsbootimgonwindowsworker"
+            "stepKey": "deploywin10dvdisoonwindowsworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "extractwindowsisoonwindowsworker"
+            "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+            "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "createbiosbootisoonwindowsworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "createuefibootisoonwindowsworker"
+            "stepKey": "createbiosbootisoonwindowsworker"
         }, 
         {
             "order": 600, 
-            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+            "stepKey": "createuefibootisoonwindowsworker"
         }, 
         {
             "order": 650, 
-            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
             "order": 700, 
-            "stepKey": "copydriversdropinfolderonwindowsworker"
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
             "order": 750, 
+            "stepKey": "copydriversdropinfolderonwindowsworker"
+        }, 
+        {
+            "order": 800, 
             "stepKey": "createanswerfileisoonwindowsworker"
         }
     ], 

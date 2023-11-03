@@ -1,0 +1,8 @@
+wsl --list
+
+if (echo $?) {
+    Write-Host "WSL is installed."
+} else {
+    Write-Host "WSL is not installed."
+    exit 1
+}

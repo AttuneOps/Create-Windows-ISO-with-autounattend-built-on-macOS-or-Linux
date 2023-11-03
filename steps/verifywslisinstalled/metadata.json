@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "535823ee-d7d0-401b-89dc-48e608a95b74", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "verifywslisinstalled", 
+    "name": "Verify WSL is Installed", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 60, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

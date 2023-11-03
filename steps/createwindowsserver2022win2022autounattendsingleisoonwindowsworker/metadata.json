@@ -19,11 +19,11 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
-            "order": 250, 
-            "stepKey": "performverifyifwslisinstalledlink"
+            "order": 300, 
+            "stepKey": "verifywslisinstalled"
         }, 
         {
-            "order": 300, 
+            "order": 350, 
             "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {

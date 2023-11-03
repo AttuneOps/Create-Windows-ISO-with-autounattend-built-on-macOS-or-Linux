@@ -230,8 +230,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#performverifyifwslisinstalledlink">
-                            <strong>Step 4 -</strong> Perform Verify if WSL is Installed (link)
+                        <a href="#verifywslisinstalled">
+                            <strong>Step 4 -</strong> Verify WSL is Installed
                         </a>
                     </p>
 
@@ -678,11 +678,19 @@ for ($i = 0; $i -lt 4; $i++) {
 
 
                     <div class="row pt-5">
-                        <h3 id="performverifyifwslisinstalledlink">
-                            <a href="#performverifyifwslisinstalledlink">
-                                <strong>Step 4 -</strong> Perform Verify if WSL is Installed (link)
+                        <h3 id="verifywslisinstalled">
+                            <a href="#verifywslisinstalled">
+                                <strong>Step 4 -</strong> Verify WSL is Installed
                             </a>
                         </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Check if Windows Subsystem for Linux is installed.</p>
+                            </p>
+                        </div>
                     </div>
 
 
@@ -691,7 +699,36 @@ for ($i = 0; $i -lt 4; $i++) {
 
 
 
+
+
     
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+wsl --list
+
+if (echo $?) {
+    Write-Host &quot;WSL is installed.&quot;
+} else {
+    Write-Host &quot;WSL is not installed.&quot;
+    exit 1
+}
+                </code>
+            </pre>
+        </div>
+    </div>
 
 
 
