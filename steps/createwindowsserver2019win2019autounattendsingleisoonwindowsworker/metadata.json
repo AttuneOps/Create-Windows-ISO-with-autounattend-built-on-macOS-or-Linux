@@ -19,47 +19,47 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
-            "order": 150, 
-            "stepKey": "performverifyifwslisinstalledlink"
-        }, 
-        {
             "order": 200, 
-            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+            "stepKey": "verifywslisinstalled"
         }, 
         {
             "order": 250, 
-            "stepKey": "deploywin2019dvdisoonwindowsworker"
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimgonwindowsworker"
+            "stepKey": "deploywin2019dvdisoonwindowsworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwindowsisoonwindowsworker"
+            "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+            "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "copydriversdropinfolderonwindowsworker"
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+            "stepKey": "copydriversdropinfolderonwindowsworker"
         }, 
         {
             "order": 600, 
-            "stepKey": "createbiosbootisoonwindowsworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
             "order": 650, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 700, 
             "stepKey": "createuefibootisoonwindowsworker"
         }
     ], 

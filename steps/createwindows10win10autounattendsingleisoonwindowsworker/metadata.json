@@ -23,47 +23,47 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
-            "order": 200, 
-            "stepKey": "performverifyifwslisinstalledlink"
-        }, 
-        {
             "order": 250, 
-            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+            "stepKey": "verifywslisinstalled"
         }, 
         {
             "order": 300, 
-            "stepKey": "deploywin10dvdisoonwindowsworker"
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwindowsbootimgonwindowsworker"
+            "stepKey": "deploywin10dvdisoonwindowsworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "extractwindowsisoonwindowsworker"
+            "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+            "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "copydriversdropinfolderonwindowsworker"
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
             "order": 600, 
-            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+            "stepKey": "copydriversdropinfolderonwindowsworker"
         }, 
         {
             "order": 650, 
-            "stepKey": "createbiosbootisoonwindowsworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
             "order": 700, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 750, 
             "stepKey": "createuefibootisoonwindowsworker"
         }
     ], 
