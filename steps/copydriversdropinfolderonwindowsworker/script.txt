@@ -1,9 +1,9 @@
-$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$ISO_BUILD="C:\attuneautomationworker"
 $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
 
 Set-Location $BUILD_DIR
 
-$DRIVERS_DROP_IN_FOLDER = "{automationWorkerWindowsBaseDirectory}\drivers-{newOsNode.fqn}"
+$DRIVERS_DROP_IN_FOLDER = "C:\attuneautomationworker\drivers-{newOsNode.fqn}"
 $DESTINATION_DRIVERS_FOLDER = "drivers"
 
 New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory

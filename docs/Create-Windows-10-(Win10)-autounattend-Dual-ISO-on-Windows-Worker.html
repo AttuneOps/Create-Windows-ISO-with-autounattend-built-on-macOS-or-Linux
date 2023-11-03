@@ -796,7 +796,7 @@ for ($i = 0; $i -lt 4; $i++) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$DIR=&quot;{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}&quot;
+$DIR=&quot;C:\attuneautomationworker\build-{newOsNode.fqn}&quot;
 
 if (Test-Path $DIR) {
     Remove-Path -Recursive $DIR
@@ -825,7 +825,7 @@ if (Test-Path $DIR) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Desktop 10 ISO to <code>{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
+                                <p>Deploys Windows Desktop 10 ISO to <code>/c$/attuneautomationworker/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -860,7 +860,7 @@ if (Test-Path $DIR) {
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+/c$/attuneautomationworker/build-{newOsNode.fqn}
         </code>
     </div>
 
@@ -920,7 +920,7 @@ if (Test-Path $DIR) {
 if ((${{isWin10Bios}}) -or `
     (${{isWinServerBios}})) {
 
-  $ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+  $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
   $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 
@@ -1001,7 +1001,7 @@ if ((${{isWin10Bios}}) -or `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
@@ -1054,7 +1054,7 @@ if ($LASTEXITCODE -ne 0) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p><code>efisys_noprompt.bin</code> does not have the prompt "Pres any key to boot from CDROM".</p>
                             </p>
                         </div>
                     </div>
@@ -1085,7 +1085,7 @@ if ($LASTEXITCODE -ne 0) {
                 <code class="language-sql py-0">
 if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
 
-    $ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
     $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
     Set-Location $BUILD_DIR
@@ -1120,7 +1120,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}</code>.</p>
+                                <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code>.</p>
 <p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
 <ol>
 <li>isWin10Bios</li>
@@ -1154,7 +1154,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
@@ -1177,7 +1177,7 @@ if (${{isWin10Bios}} -or `
             -disable-deep-relocation \
             -omit-version-number \
             -V &quot;KS_WIN&quot; \
-            -o {automationWorkerWindowsBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o C:\attuneautomationworker/kickstart_{newOsNode.fqn}.iso \
             .&#x27;
 
   &amp; cmd /c &quot;$command&quot;
@@ -1212,7 +1212,7 @@ if (${{isWin10Bios}} -or `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a UEFI bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}</code>.</p>
+                                <p>Creates a UEFI bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code>.</p>
 <p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
 <ol>
 <li>isWin10Uefi</li>
@@ -1246,7 +1246,7 @@ if (${{isWin10Bios}} -or `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
@@ -1272,7 +1272,7 @@ if (${{isWin10Uefi}} -or `
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerWindowsBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o C:\attuneautomationworker/kickstart_{newOsNode.fqn}.iso \
             .&#x27;
 
   &amp; cmd /c &quot;$command&quot;
@@ -1347,7 +1347,7 @@ if (${{isWin10Uefi}} -or `
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+/c$/attuneautomationworker/build-{newOsNode.fqn}
         </code>
     </div>
 
@@ -1404,7 +1404,7 @@ if (${{isWin10Uefi}} -or `
     </div>
     <div class="row py-1">
         <code class="language-bash">
-{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}, relative to the home directory
+/c$/attuneautomationworker/build-{newOsNode.fqn}
         </code>
     </div>
 
@@ -1456,12 +1456,12 @@ if (${{isWin10Uefi}} -or `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
-$DRIVERS_DROP_IN_FOLDER = &quot;{automationWorkerWindowsBaseDirectory}\drivers-{newOsNode.fqn}&quot;
+$DRIVERS_DROP_IN_FOLDER = &quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
 $DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
 
 New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
@@ -1526,7 +1526,7 @@ if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR

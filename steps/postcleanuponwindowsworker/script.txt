@@ -1,5 +1,5 @@
 
-$DIR="{automationWorkerWindowsBaseDirectory}"
+$DIR="C:\attuneautomationworker"
 
 Set-Location "${DIR}"
 

@@ -1,4 +1,4 @@
-$DIR="{automationWorkerWindowsBaseDirectory}"
+$DIR="C:\attuneautomationworker"
 
 if (Test-Path $DIR) {
     Write-Host "Directory ${DIR} already exists. Great."

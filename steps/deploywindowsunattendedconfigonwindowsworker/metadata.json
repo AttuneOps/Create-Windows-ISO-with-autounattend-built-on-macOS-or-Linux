@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "windowsunattendedconfig", 
-    "deployPath": "{automationWorkerWindowsBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "c1990586-dec6-4638-96b4-bd63b583413e", 
     "key": "deploywindowsunattendedconfigonwindowsworker", 

@@ -1,4 +1,4 @@
-$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$ISO_BUILD="C:\attuneautomationworker"
 $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
 
 Set-Location $BUILD_DIR
@@ -21,7 +21,7 @@ if (${{isWin10Bios}} -or `
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o {automationWorkerWindowsBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o C:\attuneautomationworker/kickstart_{newOsNode.fqn}.iso \
             .'
 
   & cmd /c "$command"
