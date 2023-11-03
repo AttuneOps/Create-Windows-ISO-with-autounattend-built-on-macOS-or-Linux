@@ -20,6 +20,10 @@
         }, 
         {
             "order": 300, 
+            "stepKey": "verifywslisinstalled"
+        }, 
+        {
+            "order": 350, 
             "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {

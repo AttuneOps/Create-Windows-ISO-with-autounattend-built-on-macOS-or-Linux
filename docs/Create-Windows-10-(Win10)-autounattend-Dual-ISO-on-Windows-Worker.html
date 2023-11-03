@@ -238,8 +238,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#verifywslisinstalled">
+                            <strong>Step 5 -</strong> Verify WSL is Installed
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#cleanupbuildfilesandisosonwindowsworker">
-                            <strong>Step 5 -</strong> Clean Up Build Files and ISOs on Windows Worker
+                            <strong>Step 6 -</strong> Clean Up Build Files and ISOs on Windows Worker
                         </a>
                     </p>
 
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploywin10dvdisoonwindowsworker">
-                            <strong>Step 6 -</strong> Deploy Win10 DVD ISO on Windows Worker
+                            <strong>Step 7 -</strong> Deploy Win10 DVD ISO on Windows Worker
                         </a>
                     </p>
 
@@ -255,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsbootimgonwindowsworker">
-                            <strong>Step 7 -</strong> Extract Windows boot.img on Windows Worker
+                            <strong>Step 8 -</strong> Extract Windows boot.img on Windows Worker
                         </a>
                     </p>
 
@@ -263,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsisoonwindowsworker">
-                            <strong>Step 8 -</strong>  Extract Windows ISO on Windows Worker
+                            <strong>Step 9 -</strong>  Extract Windows ISO on Windows Worker
                         </a>
                     </p>
 
@@ -271,7 +279,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copyefisysnopromptbinintoefisysbinonwindowsworker">
-                            <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
+                            <strong>Step 10 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
                         </a>
                     </p>
 
@@ -279,7 +287,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createbiosbootisoonwindowsworker">
-                            <strong>Step 10 -</strong> Create BIOS Boot ISO on Windows Worker
+                            <strong>Step 11 -</strong> Create BIOS Boot ISO on Windows Worker
                         </a>
                     </p>
 
@@ -287,7 +295,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootisoonwindowsworker">
-                            <strong>Step 11 -</strong> Create UEFI Boot ISO on Windows Worker
+                            <strong>Step 12 -</strong> Create UEFI Boot ISO on Windows Worker
                         </a>
                     </p>
 
@@ -295,7 +303,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploywindowsunattendedconfigonwindowsworker">
-                            <strong>Step 12 -</strong> Deploy Windows Unattended Config on Windows Worker
+                            <strong>Step 13 -</strong> Deploy Windows Unattended Config on Windows Worker
                         </a>
                     </p>
 
@@ -303,7 +311,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deploypostsetuppowershellscriptonwindowsworker">
-                            <strong>Step 13 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
+                            <strong>Step 14 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
                         </a>
                     </p>
 
@@ -311,7 +319,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfolderonwindowsworker">
-                            <strong>Step 14 -</strong> Copy Drivers Drop in Folder on Windows Worker
+                            <strong>Step 15 -</strong> Copy Drivers Drop in Folder on Windows Worker
                         </a>
                     </p>
 
@@ -319,7 +327,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createanswerfileisoonwindowsworker">
-                            <strong>Step 15 -</strong> Create Answer File ISO on Windows Worker
+                            <strong>Step 16 -</strong> Create Answer File ISO on Windows Worker
                         </a>
                     </p>
 
@@ -757,9 +765,70 @@ for ($i = 0; $i -lt 4; $i++) {
 
 
                     <div class="row pt-5">
+                        <h3 id="verifywslisinstalled">
+                            <a href="#verifywslisinstalled">
+                                <strong>Step 5 -</strong> Verify WSL is Installed
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Check if Windows Subsystem for Linux is installed.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+wsl --list
+
+if (echo $?) {
+    Write-Host &quot;WSL is installed.&quot;
+} else {
+    Write-Host &quot;WSL is not installed.&quot;
+    exit 1
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="cleanupbuildfilesandisosonwindowsworker">
                             <a href="#cleanupbuildfilesandisosonwindowsworker">
-                                <strong>Step 5 -</strong> Clean Up Build Files and ISOs on Windows Worker
+                                <strong>Step 6 -</strong> Clean Up Build Files and ISOs on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -817,7 +886,7 @@ if (Test-Path $DIR) {
                     <div class="row pt-5">
                         <h3 id="deploywin10dvdisoonwindowsworker">
                             <a href="#deploywin10dvdisoonwindowsworker">
-                                <strong>Step 6 -</strong> Deploy Win10 DVD ISO on Windows Worker
+                                <strong>Step 7 -</strong> Deploy Win10 DVD ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -875,7 +944,7 @@ if (Test-Path $DIR) {
                     <div class="row pt-5">
                         <h3 id="extractwindowsbootimgonwindowsworker">
                             <a href="#extractwindowsbootimgonwindowsworker">
-                                <strong>Step 7 -</strong> Extract Windows boot.img on Windows Worker
+                                <strong>Step 8 -</strong> Extract Windows boot.img on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -964,7 +1033,7 @@ if ((${{isWin10Bios}}) -or `
                     <div class="row pt-5">
                         <h3 id="extractwindowsisoonwindowsworker">
                             <a href="#extractwindowsisoonwindowsworker">
-                                <strong>Step 8 -</strong>  Extract Windows ISO on Windows Worker
+                                <strong>Step 9 -</strong>  Extract Windows ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1046,7 +1115,7 @@ if ($LASTEXITCODE -ne 0) {
                     <div class="row pt-5">
                         <h3 id="copyefisysnopromptbinintoefisysbinonwindowsworker">
                             <a href="#copyefisysnopromptbinintoefisysbinonwindowsworker">
-                                <strong>Step 9 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
+                                <strong>Step 10 -</strong> Copy efisys_noprompt.bin into efisys.bin on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1112,7 +1181,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
                     <div class="row pt-5">
                         <h3 id="createbiosbootisoonwindowsworker">
                             <a href="#createbiosbootisoonwindowsworker">
-                                <strong>Step 10 -</strong> Create BIOS Boot ISO on Windows Worker
+                                <strong>Step 11 -</strong> Create BIOS Boot ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1204,7 +1273,7 @@ if (${{isWin10Bios}} -or `
                     <div class="row pt-5">
                         <h3 id="createuefibootisoonwindowsworker">
                             <a href="#createuefibootisoonwindowsworker">
-                                <strong>Step 11 -</strong> Create UEFI Boot ISO on Windows Worker
+                                <strong>Step 12 -</strong> Create UEFI Boot ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1299,7 +1368,7 @@ if (${{isWin10Uefi}} -or `
                     <div class="row pt-5">
                         <h3 id="deploywindowsunattendedconfigonwindowsworker">
                             <a href="#deploywindowsunattendedconfigonwindowsworker">
-                                <strong>Step 12 -</strong> Deploy Windows Unattended Config on Windows Worker
+                                <strong>Step 13 -</strong> Deploy Windows Unattended Config on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1362,7 +1431,7 @@ if (${{isWin10Uefi}} -or `
                     <div class="row pt-5">
                         <h3 id="deploypostsetuppowershellscriptonwindowsworker">
                             <a href="#deploypostsetuppowershellscriptonwindowsworker">
-                                <strong>Step 13 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
+                                <strong>Step 14 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1419,7 +1488,7 @@ if (${{isWin10Uefi}} -or `
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfolderonwindowsworker">
                             <a href="#copydriversdropinfolderonwindowsworker">
-                                <strong>Step 14 -</strong> Copy Drivers Drop in Folder on Windows Worker
+                                <strong>Step 15 -</strong> Copy Drivers Drop in Folder on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1489,7 +1558,7 @@ if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
                     <div class="row pt-5">
                         <h3 id="createanswerfileisoonwindowsworker">
                             <a href="#createanswerfileisoonwindowsworker">
-                                <strong>Step 15 -</strong> Create Answer File ISO on Windows Worker
+                                <strong>Step 16 -</strong> Create Answer File ISO on Windows Worker
                             </a>
                         </h3>
                     </div>

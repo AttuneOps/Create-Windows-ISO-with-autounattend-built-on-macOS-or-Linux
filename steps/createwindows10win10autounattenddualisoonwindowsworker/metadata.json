@@ -23,47 +23,51 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
-            "order": 200, 
-            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
-        }, 
-        {
             "order": 250, 
-            "stepKey": "deploywin10dvdisoonwindowsworker"
+            "stepKey": "verifywslisinstalled"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimgonwindowsworker"
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "extractwindowsisoonwindowsworker"
+            "stepKey": "deploywin10dvdisoonwindowsworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+            "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "createbiosbootisoonwindowsworker"
+            "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "createuefibootisoonwindowsworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+            "stepKey": "createbiosbootisoonwindowsworker"
         }, 
         {
             "order": 600, 
-            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+            "stepKey": "createuefibootisoonwindowsworker"
         }, 
         {
             "order": 650, 
-            "stepKey": "copydriversdropinfolderonwindowsworker"
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
             "order": 700, 
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+        }, 
+        {
+            "order": 750, 
+            "stepKey": "copydriversdropinfolderonwindowsworker"
+        }, 
+        {
+            "order": 800, 
             "stepKey": "createanswerfileisoonwindowsworker"
         }
     ], 

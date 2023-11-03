@@ -19,43 +19,47 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
-            "order": 150, 
-            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
-        }, 
-        {
             "order": 200, 
-            "stepKey": "deploywin2019dvdisoonwindowsworker"
+            "stepKey": "verifywslisinstalled"
         }, 
         {
             "order": 250, 
-            "stepKey": "extractwindowsbootimgonwindowsworker"
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsisoonwindowsworker"
+            "stepKey": "deploywin2019dvdisoonwindowsworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+            "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+            "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
             "order": 450, 
-            "stepKey": "copydriversdropinfolderonwindowsworker"
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
             "order": 500, 
-            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "createbiosbootisoonwindowsworker"
+            "stepKey": "copydriversdropinfolderonwindowsworker"
         }, 
         {
             "order": 600, 
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 700, 
             "stepKey": "createuefibootisoonwindowsworker"
         }
     ], 
