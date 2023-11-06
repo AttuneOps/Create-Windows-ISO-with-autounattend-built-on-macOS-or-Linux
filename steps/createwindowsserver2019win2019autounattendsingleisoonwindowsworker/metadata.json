@@ -31,35 +31,35 @@
             "stepKey": "deploywin2019dvdisoonwindowsworker"
         }, 
         {
-            "order": 350, 
+            "order": 400, 
             "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
-            "order": 400, 
+            "order": 450, 
             "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
-            "order": 450, 
+            "order": 500, 
             "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
-            "order": 500, 
+            "order": 550, 
             "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
-            "order": 550, 
+            "order": 600, 
             "stepKey": "copydriversdropinfolderonwindowsworker"
         }, 
         {
-            "order": 600, 
+            "order": 650, 
             "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
-            "order": 650, 
+            "order": 700, 
             "stepKey": "createbiosbootisoonwindowsworker"
         }, 
         {
-            "order": 700, 
+            "order": 750, 
             "stepKey": "createuefibootisoonwindowsworker"
         }
     ], 
