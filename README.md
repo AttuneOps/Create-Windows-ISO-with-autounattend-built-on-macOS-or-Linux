@@ -214,6 +214,7 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
+| WSL2 Automation Worker Linux User | Linux/Unix Credential | `wsl2automationworkerlinuxuser` | Non privilege user on the WSL2 Automation Worker node. |
 
 
 

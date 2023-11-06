@@ -35,39 +35,39 @@
             "stepKey": "deploywin10dvdisoonwindowsworker"
         }, 
         {
-            "order": 400, 
+            "order": 450, 
             "stepKey": "extractwindowsbootimgonwindowsworker"
         }, 
         {
-            "order": 450, 
+            "order": 500, 
             "stepKey": "extractwindowsisoonwindowsworker"
         }, 
         {
-            "order": 500, 
+            "order": 550, 
             "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
         }, 
         {
-            "order": 550, 
+            "order": 600, 
             "stepKey": "createbiosbootisoonwindowsworker"
         }, 
         {
-            "order": 600, 
+            "order": 650, 
             "stepKey": "createuefibootisoonwindowsworker"
         }, 
         {
-            "order": 650, 
+            "order": 700, 
             "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
-            "order": 700, 
+            "order": 750, 
             "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
         }, 
         {
-            "order": 750, 
+            "order": 800, 
             "stepKey": "copydriversdropinfolderonwindowsworker"
         }, 
         {
-            "order": 800, 
+            "order": 850, 
             "stepKey": "createanswerfileisoonwindowsworker"
         }
     ], 

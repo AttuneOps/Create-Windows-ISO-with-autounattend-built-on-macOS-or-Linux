@@ -7,24 +7,28 @@ if ((${{isWin10Bios}}) -or `
 
   Set-Location $BUILD_DIR
 
-  $command = "wsl -d debian --exec "
+  $scriptContent=@'
+# Case insensitve globbing
+shopt -s nocaseglob;
+# Set the filename of the ISO
+F=$(ls *.iso);
+# Get the Boot image offset
+OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`;
+# Extract the boot.img.
+dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
+'@
 
-  # Case insensitve globbing
-  $command += ' shopt -s nocaseglob;' 
+  $FILE = "tmpBash.sh"
 
-  # Set the filename of the ISO
-  $command += ' F=$(ls *.iso);'
+  Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-  # Get the Boot image offset
-  $command += ' OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`;'
+  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
 
-  # Extract the boot.img.
-  $command += ' dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;'
-
-  & cmd /c "$command"
   if ($LASTEXITCODE -ne 0) {
     Write-Error 'Failed to extract boot.img'
   }
+  
+  Remove-Item "${FILE}"
 
 } else {
     Write-Host "Skipping for UEFI ISO creation."
