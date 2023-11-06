@@ -1,33 +1,46 @@
 $ISO_BUILD="C:\attuneautomationworker"
-$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+$BUILD_FOLDER="build-{newOsNode.fqn}"
 
-Set-Location $BUILD_DIR
+# This is so we place the "tmpBash.sh" outside the $BUILD_FOLDER
+Set-Location $ISO_BUILD
 
 if (${{isWin10Bios}} -or `
     ${{isWinServerBios}}) {
 
-  $command = "wsl -d debian --exec "
-  $command += ' xorriso -as mkisofs \ 
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -allow-limited-size \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V "KS_WIN" \
-            -o C:\attuneautomationworker/kickstart_{newOsNode.fqn}.iso \
-            .'
+    $scriptContent=@"
+mkisofs \
+    -b boot.img \
+    -no-emul-boot \
+    -c BOOT.CAT \
+    -iso-level 3 \
+    -udf \
+    -joliet-long \
+    -relaxed-filenames \
+    -allow-limited-size \
+    -J \
+    -full-iso9660-filenames \
+    -disable-deep-relocation \
+    -omit-version-number \
+    -V "KS_WIN" \
+    -o kickstart_{newOsNode.fqn}.iso \
+    '${BUILD_FOLDER}'
+"@
 
-  & cmd /c "$command"
-  if ($LASTEXITCODE -ne 0) {
-    Write-Error 'Failed to create ISO'
-  }
+    $FILE = "tmpBash.sh"
+
+    Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+    # Replace CRLF with LF
+    $text = [IO.File]::ReadAllText("$ISO_BUILD\$FILE") -replace "`r`n", "`n"
+    [IO.File]::WriteAllText("$ISO_BUILD\$FILE", $text)
+
+    wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error 'Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso'
+    }
+      
+    Remove-Item "${FILE}"
 
 } else {
     Write-Host "Skipping for UEFI boot."
