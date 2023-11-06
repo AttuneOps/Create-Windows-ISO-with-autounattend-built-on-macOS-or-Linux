@@ -431,7 +431,9 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>If a Win10 kickstart blueprint is run, check that the user has set one of these Attune parameters as true:
+1. <code>isWin10Bios</code>
+2. <code>isWin10Uefi</code></p>
                             </p>
                         </div>
                     </div>
@@ -509,7 +511,10 @@ if ((-Not ${{isWin10Bios}}) -and `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Windows Desktop 10 has a hostname maximum length of 15 characters.</p>
+<p>This step checks for the hostname length and fails if one of these Attune parameters are true:
+1. isWin10Bios
+2. isWin10Uefi</p>
                             </p>
                         </div>
                     </div>
@@ -836,7 +841,7 @@ if (echo $?) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deletes the folder at <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -953,11 +958,12 @@ if (Test-Path $DIR) {
                         <div class="description col px-0">
                             <p>
                                 <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
 <li>isWin10Bios</li>
 <li>isWinServerBios</li>
 </ol>
+<p>The bash script file needs to have the Windows default carriage return line feed CRLF replaced with Linux default line feeds LF https://stackoverflow.com/questions/19127741/replace-crlf-using-powershell.</p>
                             </p>
                         </div>
                     </div>
@@ -1006,17 +1012,21 @@ OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`;
 dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
 &#x27;@
 
-  $FILE = &quot;tmpBash.sh&quot;
+    $FILE = &quot;tmpBash.sh&quot;
+    
+    Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-  Set-Content -Path $FILE -NoNewline -Value $scriptContent
+    # Replace CRLF with LF
+    $text = [IO.File]::ReadAllText(&quot;$BUILD_DIR\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
+    [IO.File]::WriteAllText(&quot;$BUILD_DIR\$FILE&quot;, $text)
 
-  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+    wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 
-  if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to extract boot.img&#x27;
-  }
-  
-  Remove-Item &quot;${FILE}&quot;
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error &#x27;Failed to extract boot.img&#x27;
+    }
+    
+    Remove-Item &quot;${FILE}&quot;
 
 } else {
     Write-Host &quot;Skipping for UEFI ISO creation.&quot;
@@ -1045,7 +1055,7 @@ dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Extracts the Windows ISO.</p>
                             </p>
                         </div>
                     </div>
@@ -1079,30 +1089,39 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
-$command = &quot;wsl -d debian --exec &quot;
-
+$scriptContent=@&#x27;
 # Case insensitve globbing
-$command += &#x27; shopt -s nocaseglob;&#x27; 
+shopt -s nocaseglob;
 
 # Set the filename of the ISO
-$command += `
-&#x27;if ls | grep -q *iso
- then
-     
-     ISO=&quot;$(echo *iso)&quot;
-     echo &quot;ISO is $ISO&quot;
-     
-     7z x &quot;${ISO}&quot;
-     
-     rm -v &quot;${ISO}&quot;
- else
-     echo &quot;ISO is already extracted.&quot;
- fi&#x27;
+if ls | grep -q *iso;
+then
+  ISO=&quot;$(echo *iso)&quot;;
+  echo &quot;ISO is $ISO&quot;;
 
-&amp; cmd /c &quot;$command&quot;
+  7z x &quot;${ISO}&quot;
+
+  rm -v &quot;${ISO}&quot;
+else
+  echo &quot;ISO is already extracted.&quot;;
+fi
+&#x27;@
+
+$FILE = &quot;tmpBash.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+# Replace CRLF with LF
+$text = [IO.File]::ReadAllText(&quot;$BUILD_DIR\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
+[IO.File]::WriteAllText(&quot;$BUILD_DIR\$FILE&quot;, $text)
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
 if ($LASTEXITCODE -ne 0) {
   Write-Error &#x27;Failed to extract ISO&#x27;
 }
+  
+Remove-Item &quot;${FILE}&quot;
                 </code>
             </pre>
         </div>
@@ -1127,7 +1146,8 @@ if ($LASTEXITCODE -ne 0) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p><code>efisys_noprompt.bin</code> does not have the prompt "Pres any key to boot from CDROM".</p>
+                                <p>From https://serverfault.com/questions/353826/windows-boot-iso-file-without-press-any-key this disables the "Press any key To boot from CD or DVD . . . .".</p>
+<p><code>efisys_noprompt.bin</code> does not have the prompt "Pres any key to boot from CDROM".</p>
                             </p>
                         </div>
                     </div>
@@ -1194,10 +1214,10 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
                         <div class="description col px-0">
                             <p>
                                 <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code>.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<p>Only applies BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
 </ol>
                             </p>
                         </div>
@@ -1228,35 +1248,48 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
             <pre>
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$BUILD_FOLDER=&quot;build-{newOsNode.fqn}&quot;
 
-Set-Location $BUILD_DIR
+# This is so we place the &quot;tmpBash.sh&quot; outside the $BUILD_FOLDER
+Set-Location $ISO_BUILD
 
 if (${{isWin10Bios}} -or `
     ${{isWinServerBios}}) {
 
-  $command = &quot;wsl -d debian --exec &quot;
-  $command += &#x27; xorriso -as mkisofs \ 
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -allow-limited-size \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V &quot;KS_WIN&quot; \
-            -o C:\attuneautomationworker/kickstart_{newOsNode.fqn}.iso \
-            .&#x27;
+    $scriptContent=@&quot;
+mkisofs \
+    -b boot.img \
+    -no-emul-boot \
+    -c BOOT.CAT \
+    -iso-level 3 \
+    -udf \
+    -joliet-long \
+    -relaxed-filenames \
+    -allow-limited-size \
+    -J \
+    -full-iso9660-filenames \
+    -disable-deep-relocation \
+    -omit-version-number \
+    -V &quot;KS_WIN&quot; \
+    -o kickstart_{newOsNode.fqn}.iso \
+    &#x27;${BUILD_FOLDER}&#x27;
+&quot;@
 
-  &amp; cmd /c &quot;$command&quot;
-  if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to create ISO&#x27;
-  }
+    $FILE = &quot;tmpBash.sh&quot;
+
+    Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+    # Replace CRLF with LF
+    $text = [IO.File]::ReadAllText(&quot;$ISO_BUILD\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
+    [IO.File]::WriteAllText(&quot;$ISO_BUILD\$FILE&quot;, $text)
+
+    wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error &#x27;Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso&#x27;
+    }
+      
+    Remove-Item &quot;${FILE}&quot;
 
 } else {
     Write-Host &quot;Skipping for UEFI boot.&quot;
@@ -1286,10 +1319,10 @@ if (${{isWin10Bios}} -or `
                         <div class="description col px-0">
                             <p>
                                 <p>Creates a UEFI bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code>.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<p>Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':</p>
 <ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
+<li><code>isWin10Uefi</code></li>
+<li><code>isWinServerUefi</code></li>
 </ol>
                             </p>
                         </div>
@@ -1320,38 +1353,49 @@ if (${{isWin10Bios}} -or `
             <pre>
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$BUILD_FOLDER=&quot;build-{newOsNode.fqn}&quot;
 
-Set-Location $BUILD_DIR
+# This is so we place the &quot;tmpBash.sh&quot; outside the $BUILD_FOLDER
+Set-Location $ISO_BUILD
 
 if (${{isWin10Uefi}} -or `
     ${{isWinServerUefi}}) {
 
-  $command = &quot;wsl -d debian --exec &quot;
-  $command += &#x27; xorriso -as mkisofs \ 
-            -allow-limited-size \
-            -iso-level 4 \
-            -full-iso9660-filenames \
-            -rock \
-            -b boot/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-seg 0 \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -udf \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o C:\attuneautomationworker/kickstart_{newOsNode.fqn}.iso \
-            .&#x27;
+    $scriptContent=@&quot;
+mkisofs \
+    -allow-limited-size \
+    -iso-level 4 \
+    -full-iso9660-filenames \
+    -rock \
+    -b boot/etfsboot.com \
+    -no-emul-boot \
+    -boot-load-seg 0 \
+    -boot-load-size 8 \
+    -hide boot.catalog \
+    -eltorito-alt-boot \
+    -no-emul-boot \
+    -b efi/microsoft/boot/efisys.bin \
+    -boot-load-size 1 \
+    -udf \
+    -untranslated-filenames \
+    -disable-deep-relocation \
+    -o kickstart_{newOsNode.fqn}.iso \
+    &#x27;${BUILD_FOLDER}&#x27;
+&quot;@
 
-  &amp; cmd /c &quot;$command&quot;
-  if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to create ISO&#x27;
-  }
+    $FILE = &quot;tmpBash.sh&quot;
+
+    Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+    # Replace CRLF with LF
+    $text = [IO.File]::ReadAllText(&quot;$ISO_BUILD\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
+    [IO.File]::WriteAllText(&quot;$ISO_BUILD\$FILE&quot;, $text)
+
+    wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error &#x27;Failed to extract boot.img&#x27;
+    }
 
 } else {
     Write-Host &quot;Skipping for BIOS boot.&quot;
@@ -1380,7 +1424,15 @@ if (${{isWin10Uefi}} -or `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deploys the generic autounattend.xml.</p>
+<p>Set one of these <code>true</code> depending on whether you want Windows Desktop 10 or Windows Server for BIOS or UEFI boot methods.</p>
+<ol>
+<li><code>isWin10Bios</code></li>
+<li><code>isWin10Uefi</code></li>
+<li><code>isWinServerBios</code></li>
+<li><code>isWinServerUefi</code></li>
+</ol>
+<p>Set <code>isWinPEKickstart</code> to <code>true</code>'` for WinPE kickstarts.</p>
                             </p>
                         </div>
                     </div>
@@ -1443,7 +1495,7 @@ if (${{isWin10Uefi}} -or `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code> to <code>/c$/attuneautomationworker/build-{newOsNode.fqn}</code>..</p>
                             </p>
                         </div>
                     </div>
@@ -1500,7 +1552,7 @@ if (${{isWin10Uefi}} -or `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Copies the contents of the drivers drop in folder at <code>C:\attuneautomationworker\drivers-{newOsNode.fqn}</code> to <code>C:\attuneautomationworker\build-{newOsNode.fqn}\drivers</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1537,11 +1589,13 @@ Set-Location $BUILD_DIR
 $DRIVERS_DROP_IN_FOLDER = &quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
 $DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
 
-New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
+if ( -Not (Test-Path &quot;$DESTINATION_DRIVERS_FOLDER&quot;) ) {
+  New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
+}
 
 if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
 
-    Copy-Item -Path -Recurse &quot;${DRIVERS_DROP_IN_FOLDER}&quot; `
+    Copy-Item -Recurse -Path &quot;${DRIVERS_DROP_IN_FOLDER}\*&quot; `
         -Destination &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
 } else {
     Write-Host &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
@@ -1570,7 +1624,17 @@ if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Creates an ISO at <code>{automationWorkerLinuxBaseDirectory}/drivers_{newVmNode.fqn}.iso</code> containing:</p>
+<ol>
+<li><code>drivers</code> folder</li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install_setup.ps1</code></li>
+</ol>
+<p>This works for kickstarts on Windows Worker with:
+1. Windows Desktop 10
+2. Windows Server 2016
+2. Windows Server 2019
+3. Windows Server 2022</p>
                             </p>
                         </div>
                     </div>
@@ -1602,22 +1666,35 @@ if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
+# This is so we place the &quot;tmpBash.sh&quot; outside the $DRIVERS_FOLDER
 Set-Location $BUILD_DIR
 
 $DRIVERS_FOLDER=&quot;drivers&quot;
 $DRIVERS_ISO_NAME=&quot;drivers_{newOsNode.fqn}.iso&quot;
 
-$command = &quot;wsl -d debian --exec &quot;
-$command += &#x27; xorriso -as mkisofs \
-        -o ../${DRIVERS_ISO_NAME} \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames \
-        -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
-        autounattend.xml post_install_setup.ps1&#x27;
-        
-&amp; cmd /c &quot;$command&quot;
+    $scriptContent=@&quot;
+mkisofs \
+    -o &quot;..\${DRIVERS_ISO_NAME}&quot; \
+    -iso-level 3 -udf -joliet-long -relaxed-filenames \
+    -J -l -D -N -V &quot;DRIVERS&quot; &quot;${DRIVERS_FOLDER}&quot; \
+    autounattend.xml post_install_setup.ps1&#x27;
+&quot;@
+      
+$FILE = &quot;tmpBash.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+# Replace CRLF with LF
+$text = [IO.File]::ReadAllText(&quot;$ISO_BUILD\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
+[IO.File]::WriteAllText(&quot;$ISO_BUILD\$FILE&quot;, $text)
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
 if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to create ISO&#x27;
+    Write-Error &#x27;Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso&#x27;
 }
+  
+Remove-Item &quot;${FILE}&quot;
                 </code>
             </pre>
         </div>

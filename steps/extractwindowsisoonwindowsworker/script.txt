@@ -3,27 +3,36 @@ $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
 
 Set-Location $BUILD_DIR
 
-$command = "wsl -d debian --exec "
-
+$scriptContent=@'
 # Case insensitve globbing
-$command += ' shopt -s nocaseglob;' 
+shopt -s nocaseglob;
 
 # Set the filename of the ISO
-$command += `
-'if ls | grep -q *iso
- then
-     
-     ISO="$(echo *iso)"
-     echo "ISO is $ISO"
-     
-     7z x "${ISO}"
-     
-     rm -v "${ISO}"
- else
-     echo "ISO is already extracted."
- fi'
+if ls | grep -q *iso;
+then
+  ISO="$(echo *iso)";
+  echo "ISO is $ISO";
 
-& cmd /c "$command"
+  7z x "${ISO}"
+
+  rm -v "${ISO}"
+else
+  echo "ISO is already extracted.";
+fi
+'@
+
+$FILE = "tmpBash.sh"
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+# Replace CRLF with LF
+$text = [IO.File]::ReadAllText("$BUILD_DIR\$FILE") -replace "`r`n", "`n"
+[IO.File]::WriteAllText("$BUILD_DIR\$FILE", $text)
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
 if ($LASTEXITCODE -ne 0) {
   Write-Error 'Failed to extract ISO'
 }
+  
+Remove-Item "${FILE}"

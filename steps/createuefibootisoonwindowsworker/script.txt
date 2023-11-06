@@ -1,36 +1,47 @@
 $ISO_BUILD="C:\attuneautomationworker"
-$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+$BUILD_FOLDER="build-{newOsNode.fqn}"
 
-Set-Location $BUILD_DIR
+# This is so we place the "tmpBash.sh" outside the $BUILD_FOLDER
+Set-Location $ISO_BUILD
 
 if (${{isWin10Uefi}} -or `
     ${{isWinServerUefi}}) {
 
-  $command = "wsl -d debian --exec "
-  $command += ' xorriso -as mkisofs \ 
-            -allow-limited-size \
-            -iso-level 4 \
-            -full-iso9660-filenames \
-            -rock \
-            -b boot/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-seg 0 \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -udf \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o C:\attuneautomationworker/kickstart_{newOsNode.fqn}.iso \
-            .'
+    $scriptContent=@"
+mkisofs \
+    -allow-limited-size \
+    -iso-level 4 \
+    -full-iso9660-filenames \
+    -rock \
+    -b boot/etfsboot.com \
+    -no-emul-boot \
+    -boot-load-seg 0 \
+    -boot-load-size 8 \
+    -hide boot.catalog \
+    -eltorito-alt-boot \
+    -no-emul-boot \
+    -b efi/microsoft/boot/efisys.bin \
+    -boot-load-size 1 \
+    -udf \
+    -untranslated-filenames \
+    -disable-deep-relocation \
+    -o kickstart_{newOsNode.fqn}.iso \
+    '${BUILD_FOLDER}'
+"@
 
-  & cmd /c "$command"
-  if ($LASTEXITCODE -ne 0) {
-    Write-Error 'Failed to create ISO'
-  }
+    $FILE = "tmpBash.sh"
+
+    Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+    # Replace CRLF with LF
+    $text = [IO.File]::ReadAllText("$ISO_BUILD\$FILE") -replace "`r`n", "`n"
+    [IO.File]::WriteAllText("$ISO_BUILD\$FILE", $text)
+
+    wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Error 'Failed to extract boot.img'
+    }
 
 } else {
     Write-Host "Skipping for BIOS boot."

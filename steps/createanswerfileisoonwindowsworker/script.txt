@@ -1,19 +1,32 @@
 $ISO_BUILD="C:\attuneautomationworker"
 $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
 
+# This is so we place the "tmpBash.sh" outside the $DRIVERS_FOLDER
 Set-Location $BUILD_DIR
 
 $DRIVERS_FOLDER="drivers"
 $DRIVERS_ISO_NAME="drivers_{newOsNode.fqn}.iso"
 
-$command = "wsl -d debian --exec "
-$command += ' xorriso -as mkisofs \
-        -o ../${DRIVERS_ISO_NAME} \
-        -iso-level 3 -udf -joliet-long -relaxed-filenames \
-        -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
-        autounattend.xml post_install_setup.ps1'
-        
-& cmd /c "$command"
+    $scriptContent=@"
+mkisofs \
+    -o "..\${DRIVERS_ISO_NAME}" \
+    -iso-level 3 -udf -joliet-long -relaxed-filenames \
+    -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
+    autounattend.xml post_install_setup.ps1'
+"@
+      
+$FILE = "tmpBash.sh"
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+# Replace CRLF with LF
+$text = [IO.File]::ReadAllText("$ISO_BUILD\$FILE") -replace "`r`n", "`n"
+[IO.File]::WriteAllText("$ISO_BUILD\$FILE", $text)
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
 if ($LASTEXITCODE -ne 0) {
-    Write-Error 'Failed to create ISO'
+    Write-Error 'Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso'
 }
+  
+Remove-Item "${FILE}"

@@ -795,7 +795,7 @@ ISO={automationWorkerLinuxBaseDirectory}/*{newOsNode.fqn}.iso
                         <div class="description col px-0">
                             <p>
                                 <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
-<p>Only applies BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
 <li>isWin10Bios</li>
 <li>isWinServerBios</li>
@@ -1010,8 +1010,8 @@ fi
                                 <p>Creates a BIOS bootable Windows ISO called <code>kickstart_{newOsNode.fqn}.iso</code> from the contents in folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
 <p>Only applies BIOS kickstarts so if any of these parameters are set the string <code>true</code>'`:</p>
 <ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
 </ol>
                             </p>
                         </div>
@@ -1234,14 +1234,14 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Deploys the generic autounattend.xml.</p>
-<p>Set one of these 'true' depending on whether you want Win10 or Windows Server for BIOS or UEFI boot methods.</p>
+<p>Set one of these <code>true</code> depending on whether you want Windows Desktop 10 or Windows Server for BIOS or UEFI boot methods.</p>
 <ol>
-<li>isWin10Bios</li>
-<li>isWin10Uefi</li>
-<li>isWinServerBios</li>
-<li>isWinServerUefi</li>
+<li><code>isWin10Bios</code></li>
+<li><code>isWin10Uefi</code></li>
+<li><code>isWinServerBios</code></li>
+<li><code>isWinServerUefi</code></li>
 </ol>
-<p>Set isWinPEKickstart to 'true' for WinPE kickstarts.</p>
+<p>Set <code>isWinPEKickstart</code> to <code>true</code>'` for WinPE kickstarts.</p>
                             </p>
                         </div>
                     </div>
@@ -1304,7 +1304,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code>.</p>
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code> to <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}</code>.</p>
                             </p>
                         </div>
                     </div>
