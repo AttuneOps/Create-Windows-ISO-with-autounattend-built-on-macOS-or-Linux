@@ -1,0 +1,1 @@
+Non privilege user on the WSL2 Automation Worker node.
