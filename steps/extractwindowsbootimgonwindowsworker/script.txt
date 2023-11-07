@@ -18,13 +18,12 @@ OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`;
 dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
 '@
 
-    $FILE = "tmpBash.sh"
+    # Replace CRLF with LF
+    $scriptContent = $scriptContent.replace("`r`n","`n")
+    
+    $FILE = "attune_wsl_extract_boot_img.sh"
     
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-    # Replace CRLF with LF
-    $text = [IO.File]::ReadAllText("$BUILD_DIR\$FILE") -replace "`r`n", "`n"
-    [IO.File]::WriteAllText("$BUILD_DIR\$FILE", $text)
 
     wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
 

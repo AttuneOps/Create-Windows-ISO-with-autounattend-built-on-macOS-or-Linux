@@ -1011,13 +1011,12 @@ OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`;
 dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
 &#x27;@
 
-    $FILE = &quot;tmpBash.sh&quot;
+    # Replace CRLF with LF
+    $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+    $FILE = &quot;attune_wsl_extract_boot_img.sh&quot;
     
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-    # Replace CRLF with LF
-    $text = [IO.File]::ReadAllText(&quot;$BUILD_DIR\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
-    [IO.File]::WriteAllText(&quot;$BUILD_DIR\$FILE&quot;, $text)
 
     wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 
@@ -1088,6 +1087,8 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
+$ISO=&quot;*.iso&quot;
+
 $scriptContent=@&#x27;
 # Case insensitve globbing
 shopt -s nocaseglob;
@@ -1106,13 +1107,12 @@ else
 fi
 &#x27;@
 
-$FILE = &quot;tmpBash.sh&quot;
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+$FILE = &quot;attune_wsl_extract_iso.sh&quot;
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-# Replace CRLF with LF
-$text = [IO.File]::ReadAllText(&quot;$BUILD_DIR\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
-[IO.File]::WriteAllText(&quot;$BUILD_DIR\$FILE&quot;, $text)
 
 wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 
@@ -1473,14 +1473,12 @@ mkisofs \
     -o kickstart_{newOsNode.fqn}.iso \
     &#x27;${BUILD_FOLDER}&#x27;
 &quot;@
-
-    $FILE = &quot;tmpBash.sh&quot;
+    # Replace CRLF with LF
+    $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+    $FILE = &quot;attune_wsl_create_bios_boot_iso.sh&quot;
 
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-    # Replace CRLF with LF
-    $text = [IO.File]::ReadAllText(&quot;$ISO_BUILD\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
-    [IO.File]::WriteAllText(&quot;$ISO_BUILD\$FILE&quot;, $text)
 
     wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 
@@ -1582,13 +1580,12 @@ mkisofs \
     &#x27;${BUILD_FOLDER}&#x27;
 &quot;@
 
-    $FILE = &quot;tmpBash.sh&quot;
+    # Replace CRLF with LF
+    $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+    $FILE = &quot;attune_wsl_create_uefi_boot_iso.sh&quot;
 
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-    # Replace CRLF with LF
-    $text = [IO.File]::ReadAllText(&quot;$ISO_BUILD\$FILE&quot;) -replace &quot;`r`n&quot;, &quot;`n&quot;
-    [IO.File]::WriteAllText(&quot;$ISO_BUILD\$FILE&quot;, $text)
 
     wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 

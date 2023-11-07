@@ -14,14 +14,13 @@ mkisofs \
     -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
     autounattend.xml post_install_setup.ps1'
 "@
-      
-$FILE = "tmpBash.sh"
-
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
 # Replace CRLF with LF
-$text = [IO.File]::ReadAllText("$ISO_BUILD\$FILE") -replace "`r`n", "`n"
-[IO.File]::WriteAllText("$ISO_BUILD\$FILE", $text)
+$scriptContent = $scriptContent.replace("`r`n","`n")
+    
+$FILE = "attune_wsl_create_answer_file_iso.sh"
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
 wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
 

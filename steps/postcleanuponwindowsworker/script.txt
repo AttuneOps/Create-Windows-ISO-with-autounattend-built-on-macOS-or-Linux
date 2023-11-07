@@ -6,14 +6,14 @@ Set-Location "${DIR}"
 $DIR="build-{newOsNode.fqn}"
 
 if (Test-Path $DIR) {
-    Remove-Path -Recursive $DIR
+    Remove-Item -Recurse $DIR
 } else {
     Write-Host "No build directory to remove."
 }
 
 $DIR="drivers-{newOsNode.fqn}"
 if (Test-Path $DIR) {
-    Remove-Path -Recursive $DIR
+    Remove-Item -Recurse $DIR
 } else {
     Write-Host "No drop in drivers directory to remove."
 }
