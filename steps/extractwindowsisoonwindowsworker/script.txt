@@ -3,6 +3,8 @@ $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
 
 Set-Location $BUILD_DIR
 
+$ISO="*.iso"
+
 $scriptContent=@'
 # Case insensitve globbing
 shopt -s nocaseglob;
@@ -21,13 +23,12 @@ else
 fi
 '@
 
-$FILE = "tmpBash.sh"
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace("`r`n","`n")
+    
+$FILE = "attune_wsl_extract_iso.sh"
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-# Replace CRLF with LF
-$text = [IO.File]::ReadAllText("$BUILD_DIR\$FILE") -replace "`r`n", "`n"
-[IO.File]::WriteAllText("$BUILD_DIR\$FILE", $text)
 
 wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
 
