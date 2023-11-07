@@ -1,0 +1,11 @@
+{
+    "externalUuid4": "cc16a145-4adc-4b7b-bc17-15b29ab0ddfc", 
+    "fileName": "7z2301-x64.zip", 
+    "formatKey": "zip", 
+    "key": "winutil7z", 
+    "md5": "299b7699e6b664042ea5cfed89f9abb9", 
+    "name": "WIN Util 7z", 
+    "remoteUri": null, 
+    "size": 1878241, 
+    "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
+}

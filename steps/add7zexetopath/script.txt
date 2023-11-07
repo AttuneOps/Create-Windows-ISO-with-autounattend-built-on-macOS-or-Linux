@@ -1,0 +1,14 @@
+function Add-Path($Path) {
+    Write-Host "Adding $Path to PATH"
+    $Path = [Environment]::GetEnvironmentVariable("PATH", "Machine") + [IO.Path]::PathSeparator + $Path
+    [Environment]::SetEnvironmentVariable( "Path", $Path, "Machine" )
+
+    [Environment]::GetEnvironmentVariable("PATH", "Machine")
+}
+
+try {
+    Get-Command '7z'
+    Write-Host "7z is already installed."
+} Catch {
+    Add-Path "C:\Program Files\7-Zip\"
+}

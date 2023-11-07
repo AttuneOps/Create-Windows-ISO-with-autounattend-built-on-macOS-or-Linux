@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "winutil7z", 
+    "deployPath": "/c$/software", 
+    "enabled": true, 
+    "externalUuid4": "d1c2f13a-a45d-4eee-9906-f518bc3a4e46", 
+    "key": "deploy7zonwindowsworkerdelete", 
+    "name": "Deploy 7z on Windows Worker - DELETE", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": true
+}

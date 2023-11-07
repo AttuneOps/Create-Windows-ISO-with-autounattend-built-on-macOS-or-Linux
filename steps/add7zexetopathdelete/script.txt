@@ -1,0 +1,6 @@
+try {
+    Get-Command '7z'
+    Write-Host "7z is already installed."
+} Catch {
+    setx /M PATH "%PATH%;C:\Program Files\7-Zip\"
+}

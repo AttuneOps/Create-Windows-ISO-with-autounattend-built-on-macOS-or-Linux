@@ -1087,40 +1087,20 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
-$ISO=&quot;*.iso&quot;
+$ISO_WILDCARD=&quot;*.iso&quot;
 
-$scriptContent=@&#x27;
-# Case insensitve globbing
-shopt -s nocaseglob;
-
-# Set the filename of the ISO
-if ls | grep -q *iso;
-then
-  ISO=&quot;$(echo *iso)&quot;;
-  echo &quot;ISO is $ISO&quot;;
-
-  7z x &quot;${ISO}&quot;
-
-  rm -v &quot;${ISO}&quot;
-else
-  echo &quot;ISO is already extracted.&quot;;
-fi
-&#x27;@
-
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
+    $ISO=(dir $ISO_WILDCARD).name
+    Write-Host &quot;Found ISO ${ISO}. Extracting it.&quot;
     
-$FILE = &quot;attune_wsl_extract_iso.sh&quot;
+    7z x &quot;${ISO}&quot;
+    
+    Write-Host &quot;Removing ${ISO}&quot;
+    Remove-Item &quot;${ISO}&quot;
 
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
-
-if ($LASTEXITCODE -ne 0) {
-  Write-Error &#x27;Failed to extract ISO&#x27;
+} else {
+	Write-Error &quot;No ISO found for extracting.&quot;
 }
-  
-Remove-Item &quot;${FILE}&quot;
                 </code>
             </pre>
         </div>
