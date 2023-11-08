@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "1e862475-4e10-48e7-9a12-c5465a712d66", 
+    "key": "winrmhttpswait60s", 
+    "minDowntime": 0, 
+    "name": "WinRM HTTPS Wait 60s", 
+    "postWait": 60, 
+    "preWait": 0, 
+    "serverKey": "automationworkerwindowsnode", 
+    "tcpPort": 5986, 
+    "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
+}

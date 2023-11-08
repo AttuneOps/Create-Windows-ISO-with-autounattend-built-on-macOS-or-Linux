@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "9733dab8-4df9-4a47-a155-96e579cd60a5", 
+    "isBlueprint": false, 
+    "key": "performinstall7zonwindowsworker", 
+    "links": [
+        {
+            "order": 50, 
+            "stepKey": "install7zonwindowsworker"
+        }
+    ], 
+    "name": "Perform Install 7z on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
