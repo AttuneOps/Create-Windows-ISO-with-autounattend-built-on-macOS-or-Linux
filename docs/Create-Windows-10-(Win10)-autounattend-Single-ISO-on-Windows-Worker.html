@@ -1093,7 +1093,7 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
     $ISO=(dir $ISO_WILDCARD).name
     Write-Host &quot;Found ISO ${ISO}. Extracting it.&quot;
     
-    7z x &quot;${ISO}&quot;
+    &amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x &quot;.\${ISO}&quot;
     
     Write-Host &quot;Removing ${ISO}&quot;
     Remove-Item &quot;${ISO}&quot;

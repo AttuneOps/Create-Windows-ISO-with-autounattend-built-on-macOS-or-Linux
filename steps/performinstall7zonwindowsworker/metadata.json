@@ -9,10 +9,6 @@
         {
             "order": 50, 
             "stepKey": "install7zonwindowsworker"
-        }, 
-        {
-            "order": 150, 
-            "stepKey": "add7zexetopath"
         }
     ], 
     "name": "Perform Install 7z on Windows Worker", 

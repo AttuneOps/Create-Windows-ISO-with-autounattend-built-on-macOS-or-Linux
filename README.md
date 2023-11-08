@@ -168,6 +168,9 @@ The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_is
 
 The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
 
+### Install Prerequisites on Windows Worker
+
+
 ### Perform Post Cleanup on macOS or Linux Worker
 
 
@@ -181,9 +184,6 @@ Performs basic tests for the built node.
 ### Setup Samba on Linux
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
-
-### Install Prerequisites on Windows Worker
-
 
 
 
@@ -234,7 +234,6 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 | WinPE startnet.cmd | Version Controlled Files | The startnet.cmd is run by WinPE. This script:<br>1. Installs drivers from "attune_drivers".<br>2. Sets the IP address.<br>3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.<br>4. Runs Windows setup.exe.<br><br>The Mako parameter "windowsFolderOnSamba" can have these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
 | WIN Raw Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016.<br><br> |
 | WIN Raw Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
-| WIN Util 7z | Large Archives | Please download from https://www.7-zip.org/download.html.<br><br>Use the ".msi" installer with description "(alternative MSI installer) 7-Zip for 64-bit Windows x64 (Intel 64 or AMD64)".<br><br>Zip it up and upload to this file archive. |
 
 
 

@@ -219,14 +219,6 @@
                         </a>
                     </p>
 
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#add7zexetopath">
-                            <strong>Step 1.2 -</strong> Add 7z.exe to PATH
-                        </a>
-                    </p>
-
 
         
 
@@ -341,6 +333,13 @@
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -451,75 +450,6 @@ try {
 
 
 
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="add7zexetopath">
-                            <a href="#add7zexetopath">
-                                <strong>Step 1.2 -</strong> Add 7z.exe to PATH
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Adds the <code>7z.exe</code> directory <code>"C:\Program Files\7-Zip\</code> to the Windows Path environment variable.</p>
-<p>Referenced from https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_environment_variables?view=powershell-7.3</p>
-<p>A restart is required for the <code>7z.exe</code> to be available from the command prompt and PowerShell prompt.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-function Add-Path($Path) {
-    Write-Host &quot;Adding $Path to PATH&quot;
-    $Path = [Environment]::GetEnvironmentVariable(&quot;PATH&quot;, &quot;Machine&quot;) + [IO.Path]::PathSeparator + $Path
-    [Environment]::SetEnvironmentVariable( &quot;Path&quot;, $Path, &quot;Machine&quot; )
-
-    [Environment]::GetEnvironmentVariable(&quot;PATH&quot;, &quot;Machine&quot;)
-}
-
-try {
-    Get-Command &#x27;7z&#x27;
-    Write-Host &quot;7z is already installed.&quot;
-} Catch {
-    Add-Path &quot;C:\Program Files\7-Zip\&quot;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
 
         
 
@@ -533,6 +463,13 @@ try {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -582,6 +519,13 @@ Write-Host &quot;Restarting in $WAIT seconds.&quot;
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
