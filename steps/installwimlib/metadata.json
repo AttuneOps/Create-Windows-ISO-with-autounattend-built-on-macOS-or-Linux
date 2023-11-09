@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "5a744c50-011a-42a1-a66a-76520e32d2ae", 
+    "interpreter": 1, 
+    "key": "installwimlib", 
+    "name": "Install wimlib", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

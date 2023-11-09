@@ -1,0 +1,1 @@
+dnf -y install wimlib wimlib-utils fuse
