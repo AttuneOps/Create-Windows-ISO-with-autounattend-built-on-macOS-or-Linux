@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "bdfd4836-f895-491b-aa22-cb8ef91bf144", 
+    "interpreter": 1, 
+    "key": "checksupportedlinuxversion", 
+    "name": "Check Supported Linux Version", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

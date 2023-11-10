@@ -185,7 +185,7 @@ Performs basic tests for the built node.
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
-### Install wimlib-utils on Linux CentOS 8 Stream
+### Install wimlib-utils on Linux
 
 
 

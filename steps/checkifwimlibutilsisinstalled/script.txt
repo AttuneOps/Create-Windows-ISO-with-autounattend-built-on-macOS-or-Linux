@@ -1,0 +1,8 @@
+if which mkwinpeimg
+then
+    echo "wimlib-utils is already installed." >&2
+    false
+else
+    echo "wimlib-utils is not installed, continuing."
+fi
+

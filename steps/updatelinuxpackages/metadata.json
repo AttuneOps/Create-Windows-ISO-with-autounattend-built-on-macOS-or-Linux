@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "b0947cad-9e59-47ac-984f-e55bc52757d6", 
+    "interpreter": 1, 
+    "key": "updatelinuxpackages", 
+    "name": "Update Linux Packages", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

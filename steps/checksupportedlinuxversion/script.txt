@@ -2,7 +2,6 @@ if hostnamectl | grep --quiet --ignore-case "centos" || \
     hostnamectl | grep --quiet --ignore-case "red hat" 
 then
     echo "This is a CentOS or Red Hat clone."
-    dnf -y install wimlib wimlib-utils fuse
 else
 
     echo "Error: implementation needed for this flavor of Linux" >&2
