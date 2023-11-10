@@ -55,27 +55,27 @@
             "stepKey": "deploystartnetcmd"
         }, 
         {
-            "order": 600, 
+            "order": 650, 
             "stepKey": "deploywindowsunattendedconfigonmacosorlinuxworker"
         }, 
         {
-            "order": 650, 
+            "order": 750, 
             "stepKey": "createpostsetupwim"
         }, 
         {
-            "order": 700, 
+            "order": 800, 
             "stepKey": "modifywinpebootwim"
         }, 
         {
-            "order": 750, 
+            "order": 850, 
             "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
-            "order": 800, 
+            "order": 900, 
             "stepKey": "recreatefat32kickstartisoonlinuxworker"
         }, 
         {
-            "order": 850, 
+            "order": 950, 
             "stepKey": "createuefibootwinpeisofromwinpestagingonmacosworker"
         }
     ], 
