@@ -4,6 +4,11 @@ cd X:\drivers
 REM Recursively install all drivers
 FOR /R %%f in (*.inf) DO drvload "%%f"
 
+echo .
+echo To bring up a command window use "shift" + "F10" on Windows
+echo If on macOS use "shift" + "fn" + "F10"
+echo .
+
 wpeutil InitializeNetwork
 
 REM Get the "Interface Name" value and store in windowsInterfaceAlias.
@@ -33,21 +38,18 @@ ipconfig /all
 @echo off
 set sambaIPaddress=${sambaServerIpAddress}
 
-:pingtheserver
-ping %sambaIPaddress% | find "TTL" > nul
-if errorlevel 1 (
-    echo waiting for pingable Samba IP address %sambaIPaddress%...
-    ping localhost -n 2 >NUL
-    ping 127.0.0.1 -n 10 > nul
-    goto :pingtheserver
-) else (
-    echo ping successful for Samba server
-)
+echo .
+echo You will now see some mount errors with codes 1231 and about 5x 53
+echo codes until the Samba server becomes visible to WinPE which is normal
+echo .
+
+REM Use the net use command's output as a means to test whether the Samba
+REM server is up.
 
 :mountsamba
 net use Z: \\%sambaIPaddress%\share | find "successfully" > nul
 if errorlevel 1 (
-    echo mount failed, waiting...
+    echo mount failed, waiting for retry...
     ping localhost -n 2 >NUL
     ping 127.0.0.1 -n 10 > nul
     goto :mountsamba
