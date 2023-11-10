@@ -4,21 +4,29 @@
     "enabled": true, 
     "externalUuid4": "bec0a4be-05af-42fb-a5bf-a87c5f3f7e6b", 
     "isBlueprint": true, 
-    "key": "installwimlibutilsonlinuxcentos8stream", 
+    "key": "installwimlibutilsonlinux", 
     "links": [
         {
             "order": 0, 
-            "stepKey": "installepelrepository"
+            "stepKey": "checkifwimlibutilsisinstalled"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checksupportedlinuxversion"
         }, 
         {
             "order": 100, 
-            "stepKey": "dnfupdate"
+            "stepKey": "checkifepelrepositoryenabled"
         }, 
         {
             "order": 150, 
+            "stepKey": "updatelinuxpackages"
+        }, 
+        {
+            "order": 200, 
             "stepKey": "installwimlib"
         }
     ], 
-    "name": "Install wimlib-utils on Linux CentOS 8 Stream", 
+    "name": "Install wimlib-utils on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
