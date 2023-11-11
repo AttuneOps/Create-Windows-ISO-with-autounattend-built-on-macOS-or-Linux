@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": "stop", 
-    "archiveKey": "winrawwin2016iso", 
+    "archiveKey": "win2016iso", 
     "deployPath": "$HOME/windows_iso_data_for_winpe/windows2016", 
     "enabled": true, 
     "externalUuid4": "35427f87-db66-4c32-89c9-be453929d2c5", 

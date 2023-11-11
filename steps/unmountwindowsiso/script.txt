@@ -1,0 +1,8 @@
+$FOLDER = "C:\software"
+Set-Location -Path "${FOLDER}"
+
+$ISO_NAME = (Get-ChildItem *.iso).Name
+
+Write-Host "ISO_NAME = ${ISO_NAME}"
+
+Dismount-DiskImage -ImagePath "${FOLDER}\${ISO_NAME}"
