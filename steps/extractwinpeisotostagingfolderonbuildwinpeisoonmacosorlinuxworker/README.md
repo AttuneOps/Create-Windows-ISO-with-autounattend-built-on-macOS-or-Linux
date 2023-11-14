@@ -1,0 +1,1 @@
+Extract `winpe.iso` to a `winpe_staging` folder on macOS or Linux Worker.

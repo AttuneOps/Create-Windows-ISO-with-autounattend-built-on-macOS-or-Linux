@@ -24,11 +24,11 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin2019dvdisotobuildwinpeiso"
+            "stepKey": "deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimgfrombuildwinpeiso"
+            "stepKey": "extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 350, 
@@ -40,7 +40,7 @@
         }, 
         {
             "order": 500, 
-            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeiso"
+            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 550, 

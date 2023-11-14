@@ -1,0 +1,23 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="$ISO_BUILD\build-winpe-iso"
+
+Set-Location $BUILD_DIR
+
+  $scriptContent=@'
+mkwinpeimg --iso --windows-dir=winimg "winpe.iso"
+'@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace("`r`n","`n")
+
+$FILE = "attune_wsl_extract_winpe_from_winimg_directory.sh"
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error 'Failed to extract winpe.iso from winimg directory'
+}
+
+Remove-Item "${FILE}"

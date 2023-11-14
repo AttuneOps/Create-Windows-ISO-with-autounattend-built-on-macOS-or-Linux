@@ -1,0 +1,35 @@
+if (${{kickstartedBootLoaderIsBios}}) {
+
+  $ISO_BUILD="C:\attuneautomationworker"
+  $BUILD_DIR="$ISO_BUILD\build-winpe-iso"
+
+  Set-Location $BUILD_DIR
+
+  $scriptContent=@'
+# Case insensitve globbing
+shopt -s nocaseglob;
+# Set the filename of the ISO
+F=$(ls *.iso);
+# Get the Boot image offset
+OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`;
+# Extract the boot.img.
+dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
+'@
+
+  # Replace CRLF with LF
+  $scriptContent = $scriptContent.replace("`r`n","`n")
+  
+  $FILE = "attune_wsl_extract_boot_img.sh"
+  
+  Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
+  if ($LASTEXITCODE -ne 0) {
+      Write-Error 'Failed to extract boot.img'
+  }
+  
+  Remove-Item "${FILE}"
+} else {
+  Write-Host "Skipping for UEFI ISO creation."
+}
