@@ -1,0 +1,72 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "77ed3cfb-6a5c-4629-a8cd-9a98650ff723", 
+    "isBlueprint": true, 
+    "key": "createwindowsserver2022win2022autounattenddualisoonwindowsworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstartonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkifipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "verifywslisinstalled"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "deploywin2022dvdisoonwindowsworker"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "extractwindowsbootimgonwindowsworker"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "extractwindowsisoonwindowsworker"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+        }, 
+        {
+            "order": 900, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 1000, 
+            "stepKey": "createuefibootisoonwindowsworker"
+        }, 
+        {
+            "order": 1100, 
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+        }, 
+        {
+            "order": 1200, 
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+        }, 
+        {
+            "order": 1300, 
+            "stepKey": "copydriversdropinfolderonwindowsworker"
+        }, 
+        {
+            "order": 1400, 
+            "stepKey": "createanswerfileisoonwindowsworker"
+        }
+    ], 
+    "name": "Create Windows Server 2022 (Win2022) autounattend Dual ISO on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

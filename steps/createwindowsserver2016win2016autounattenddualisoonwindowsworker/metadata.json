@@ -1,0 +1,72 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "a00bc048-342d-4449-b715-54f028fc82c9", 
+    "isBlueprint": true, 
+    "key": "createwindowsserver2016win2016autounattenddualisoonwindowsworker", 
+    "links": [
+        {
+            "order": 50, 
+            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstartonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "checkifipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "verifywslisinstalled"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "cleanupbuildfilesandisosonwindowsworker"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "deploywin2016dvdisoonwindowsworker"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "extractwindowsbootimgonwindowsworker"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "extractwindowsisoonwindowsworker"
+        }, 
+        {
+            "order": 900, 
+            "stepKey": "copyefisysnopromptbinintoefisysbinonwindowsworker"
+        }, 
+        {
+            "order": 1000, 
+            "stepKey": "createbiosbootisoonwindowsworker"
+        }, 
+        {
+            "order": 1100, 
+            "stepKey": "createuefibootisoonwindowsworker"
+        }, 
+        {
+            "order": 1200, 
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+        }, 
+        {
+            "order": 1300, 
+            "stepKey": "deploypostsetuppowershellscriptonwindowsworker"
+        }, 
+        {
+            "order": 1400, 
+            "stepKey": "copydriversdropinfolderonwindowsworker"
+        }, 
+        {
+            "order": 1500, 
+            "stepKey": "createanswerfileisoonwindowsworker"
+        }
+    ], 
+    "name": "Create Windows Server 2016 (Win2016) autounattend Dual ISO on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

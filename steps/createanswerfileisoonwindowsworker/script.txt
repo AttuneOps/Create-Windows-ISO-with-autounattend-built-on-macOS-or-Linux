@@ -9,10 +9,10 @@ $DRIVERS_ISO_NAME="drivers_{newOsNode.fqn}.iso"
 
     $scriptContent=@"
 mkisofs \
-    -o "..\${DRIVERS_ISO_NAME}" \
+    -o "../${DRIVERS_ISO_NAME}" \
     -iso-level 3 -udf -joliet-long -relaxed-filenames \
     -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
-    autounattend.xml post_install_setup.ps1'
+    autounattend.xml post_install_setup.ps1
 "@
 
 # Replace CRLF with LF
