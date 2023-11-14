@@ -465,9 +465,9 @@ if ((-Not ${{isWinServerBios}}) -and `
     (-Not ${{isWinServerUefi}})) {
     Write-Host &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server 2016, 2019 or 2022.&quot;
     exit 1
-else
+} else {
     Write-Host &quot;Ok.&quot;
-fi
+}
                 </code>
             </pre>
         </div>
