@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "af68e498-af4f-4c7d-acae-4c66380ddf2a", 
+    "externalUuid4": "170bc78c-0111-4428-bea5-c4d1660bbda0", 
     "interpreter": 1, 
-    "key": "extractwinpeisotostagingfolderonbuildwinpeiso", 
-    "name": "Extract WinPE ISO to Staging Folder on build-winpe-iso", 
+    "key": "mountbootwiminbuildwinpeisoonmacosorlinuxworker", 
+    "name": "Mount BOOT.WIM in build-winpe-iso on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

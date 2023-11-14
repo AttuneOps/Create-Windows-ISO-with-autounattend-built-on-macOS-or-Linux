@@ -271,16 +271,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2019dvdisotobuildwinpeiso">
-                            <strong>Step 5 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso
+                        <a href="#deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker">
+                            <strong>Step 5 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsbootimgfrombuildwinpeiso">
-                            <strong>Step 6 -</strong> Extract Windows boot.img from build-winpe-iso
+                        <a href="#extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker">
+                            <strong>Step 6 -</strong> Extract Windows boot.img from build-winpe-iso on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -303,8 +303,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwinpeisotostagingfolderonbuildwinpeiso">
-                            <strong>Step 9 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso
+                        <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker">
+                            <strong>Step 9 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -335,16 +335,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createbootwimmountfolderinbuildwinpeiso">
-                            <strong>Step 12.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso
+                        <a href="#createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
+                            <strong>Step 12.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#mountbootwiminbuildwinpeiso">
-                            <strong>Step 12.2 -</strong> Mount BOOT.WIM in build-winpe-iso
+                        <a href="#mountbootwiminbuildwinpeisoonmacosorlinuxworker">
+                            <strong>Step 12.2 -</strong> Mount BOOT.WIM in build-winpe-iso on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -1143,9 +1143,9 @@ DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2019dvdisotobuildwinpeiso">
-                            <a href="#deploywin2019dvdisotobuildwinpeiso">
-                                <strong>Step 5 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso
+                        <h3 id="deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker">
+                            <a href="#deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker">
+                                <strong>Step 5 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1200,9 +1200,9 @@ DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsbootimgfrombuildwinpeiso">
-                            <a href="#extractwindowsbootimgfrombuildwinpeiso">
-                                <strong>Step 6 -</strong> Extract Windows boot.img from build-winpe-iso
+                        <h3 id="extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker">
+                            <a href="#extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker">
+                                <strong>Step 6 -</strong> Extract Windows boot.img from build-winpe-iso on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1286,7 +1286,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts the Windows Server ISO to <code>{automationWorkerLinuxBaseDirectory}/kickstartedBootLoaderIsBios/winimg</code>.</p>
+                                <p>Mounts the Windows Server ISO to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg</code>.</p>
 <p><code>winimg</code> stands for Windows Image.</p>
                             </p>
                         </div>
@@ -1423,9 +1423,9 @@ mkwinpeimg --iso --windows-dir=winimg \
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwinpeisotostagingfolderonbuildwinpeiso">
-                            <a href="#extractwinpeisotostagingfolderonbuildwinpeiso">
-                                <strong>Step 9 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso
+                        <h3 id="extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker">
+                            <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker">
+                                <strong>Step 9 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1433,7 +1433,7 @@ mkwinpeimg --iso --windows-dir=winimg \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder on macOS or Linux Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -1652,9 +1652,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="createbootwimmountfolderinbuildwinpeiso">
-                            <a href="#createbootwimmountfolderinbuildwinpeiso">
-                                <strong>Step 12.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso
+                        <h4 id="createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
+                            <a href="#createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
+                                <strong>Step 12.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1723,9 +1723,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="mountbootwiminbuildwinpeiso">
-                            <a href="#mountbootwiminbuildwinpeiso">
-                                <strong>Step 12.2 -</strong> Mount BOOT.WIM in build-winpe-iso
+                        <h4 id="mountbootwiminbuildwinpeisoonmacosorlinuxworker">
+                            <a href="#mountbootwiminbuildwinpeisoonmacosorlinuxworker">
+                                <strong>Step 12.2 -</strong> Mount BOOT.WIM in build-winpe-iso on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1733,7 +1733,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code>.</p>
+                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code> using <code>wimmountrw</code>.</p>
                             </p>
                         </div>
                     </div>

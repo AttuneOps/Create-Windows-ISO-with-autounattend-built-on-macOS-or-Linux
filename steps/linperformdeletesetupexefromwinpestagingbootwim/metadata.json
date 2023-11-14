@@ -8,11 +8,11 @@
     "links": [
         {
             "order": 50, 
-            "stepKey": "createbootwimmountfolderinbuildwinpeiso"
+            "stepKey": "createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 200, 
-            "stepKey": "mountbootwiminbuildwinpeiso"
+            "stepKey": "mountbootwiminbuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 250, 

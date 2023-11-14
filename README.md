@@ -194,6 +194,9 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 ### Create Windows Server 2022 (Win2022) autounattend Dual ISO on Windows Worker
 
 
+### Create Windows PE (WinPE) Plain ISO on Windows Worker
+
+
 
 
 

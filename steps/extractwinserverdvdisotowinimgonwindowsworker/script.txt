@@ -1,0 +1,20 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="$ISO_BUILD\build-winpe-iso"
+
+Set-Location $BUILD_DIR
+
+$ISO_WILDCARD="*.iso"
+$FOLDER="winimg"
+
+if (test-Path "${ISO_WILDCARD}" -pathtype leaf) {
+    $ISO=(dir $ISO_WILDCARD).name
+    Write-Host "Found ISO ${ISO}. Extracting it."
+    
+    & 'C:\Program Files\7-Zip\7z.exe' x ".\${ISO}" -o"${FOLDER}"
+    
+    Write-Host "Removing ${ISO}"
+    Remove-Item "${ISO}"
+
+} else {
+	Write-Error "No ISO found for extracting."
+}
