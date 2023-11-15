@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "windowsserver2019iso", 
+    "archiveKey": "win2019iso", 
     "deployPath": "/c$/software", 
     "enabled": true, 
     "externalUuid4": "77595f48-79a0-471a-abb2-2c0030f25d5f", 
