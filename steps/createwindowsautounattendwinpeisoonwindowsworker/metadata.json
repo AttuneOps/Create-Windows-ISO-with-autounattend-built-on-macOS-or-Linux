@@ -57,6 +57,22 @@
         {
             "order": 600, 
             "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "createpostsetupwimonwindowsworker"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "modifywinpebootwimonwindowsworker"
+        }, 
+        {
+            "order": 750, 
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonwindowsworker"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "recreateuefibootwinpeisofromwinpestagingonwindowsworker"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on Windows Worker", 

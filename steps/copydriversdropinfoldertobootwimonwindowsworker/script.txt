@@ -1,0 +1,21 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+
+$WinPE_BootImageDir="WinPE_BootImageDir"
+
+Set-Location "${BUILD_DIR}\${WinPE_BootImageDir}"
+
+$DRIVERS="drivers"
+if ( -Not (Test-Path "${DRIVERS}") ) {
+  New-Item DRIVERS -ItemType Directory
+}
+
+$DRIVERS_DROP_IN_FOLDER="C:\attuneautomationworker\drivers-{newOsNode.fqn}"
+
+if (Test-Path "${DRIVERS_DROP_IN_FOLDER}") {
+    
+    Copy-Item -Recurse -Path "${DRIVERS_DROP_IN_FOLDER}\*" `
+        -Destination "${DRIVERS}"
+} else {
+    Write-Host "Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied."
+}

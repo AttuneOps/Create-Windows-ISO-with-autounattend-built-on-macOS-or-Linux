@@ -2,5 +2,5 @@ Creates a BIOS bootable ISO at `{automationWorkerLinuxBaseDirectory}/kickstart_{
 
 Only applies to BIOS kickstarts so if any of these parameters are set the string `true`:
 
-1. isWin10Bios
-2. isWinServerBios
+1. `isWin10Bios`
+2. `isWinServerBios`

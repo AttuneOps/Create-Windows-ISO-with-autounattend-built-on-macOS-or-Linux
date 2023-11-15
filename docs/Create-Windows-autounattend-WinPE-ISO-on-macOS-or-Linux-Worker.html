@@ -310,8 +310,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createpostsetupwim">
-                            <strong>Step 14 -</strong> Create Post Setup WIM
+                        <a href="#createpostsetupwimonmacosorlinuxworker">
+                            <strong>Step 14 -</strong> Create Post Setup WIM on macOS or Linux Worker
                         </a>
                     </p>
     
@@ -326,16 +326,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
-                            <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                        <a href="#movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinuxworker">
+                            <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createpostinstallwimwindowsimage">
-                            <strong>Step 14.3 -</strong> Create post_install.wim Windows Image
+                        <a href="#createpostinstallwimwindowsimageonmacosorlinuxworker">
+                            <strong>Step 14.3 -</strong> Create post_install.wim Windows Image on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -343,64 +343,64 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#modifywinpebootwim">
-                            <strong>Step 15 -</strong> Modify WinPE boot.wim
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createbootwimmountfolder">
-                            <strong>Step 15.1 -</strong> Create boot.wim Mount Folder
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountbootwim">
-                            <strong>Step 15.2 -</strong> Mount BOOT.WIM
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movefilestobootwim">
-                            <strong>Step 15.3 -</strong> Move Files to boot.wim
+                        <a href="#modifywinpebootwimonmacosorlinuxworker">
+                            <strong>Step 15 -</strong> Modify WinPE boot.wim on macOS or Linux Worker
                         </a>
                     </p>
     
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movestartnetcmdtobootwim">
-                            <strong>Step 15.3.1 -</strong> Move startnet.cmd to boot.wim
+                        <a href="#createbootwimmountfolderonmacosorlinuxworker">
+                            <strong>Step 15.1 -</strong> Create boot.wim Mount Folder on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#moveautounattendxmltobootwim">
-                            <strong>Step 15.3.2 -</strong> Move autounattend.xml to boot.wim
+                        <a href="#mountbootwimonmacosorlinuxworker">
+                            <strong>Step 15.2 -</strong> Mount BOOT.WIM on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfoldertobootwim">
-                            <strong>Step 15.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim
+                        <a href="#movefilestobootwimonmacosorlinuxworker">
+                            <strong>Step 15.3 -</strong> Move Files to boot.wim on macOS or Linux Worker
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movestartnetcmdtobootwimonmacosorlinuxworker">
+                            <strong>Step 15.3.1 -</strong> Move startnet.cmd to boot.wim on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movepostinstallwimtobootwim">
-                            <strong>Step 15.3.4 -</strong> Move post_install.wim to boot.wim
+                        <a href="#moveautounattendxmltobootwimonmacosorlinuxworker">
+                            <strong>Step 15.3.2 -</strong> Move autounattend.xml to boot.wim on macOS or Linux Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copydriversdropinfoldertobootwimonmacosorlinuxworker">
+                            <strong>Step 15.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim on macOS or Linux Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movepostinstallwimtobootwimonmacosorlinuxworker">
+                            <strong>Step 15.3.4 -</strong> Move post_install.wim to boot.wim on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -1583,9 +1583,9 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="createpostsetupwim">
-                            <a href="#createpostsetupwim">
-                                <strong>Step 14 -</strong> Create Post Setup WIM
+                        <h3 id="createpostsetupwimonmacosorlinuxworker">
+                            <a href="#createpostsetupwimonmacosorlinuxworker">
+                                <strong>Step 14 -</strong> Create Post Setup WIM on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1593,7 +1593,7 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a <code>post_install.wim</code> Windows Imaging Format file.</p>
+                                <p>Creates a <code>post_install.wim</code> Windows Imaging Format file on macOS or Linux Worker.</p>
 <p>The purpose of this file is to overlay onto the <code>C</code> drive any files we want for the Windows Installer to use.</p>
 <p>in this case we want to deploy a post install setup PowerShell script at <code>C:\post_install_setup.ps1</code> that is called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'s section.</p>
                             </p>
@@ -1671,9 +1671,9 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
-                        <h4 id="movepostsetuppowershellscripttopostinstallwimfolder">
-                            <a href="#movepostsetuppowershellscripttopostinstallwimfolder">
-                                <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder
+                        <h4 id="movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinuxworker">
+                            <a href="#movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinuxworker">
+                                <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1681,7 +1681,8 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Moves <code>post_install_setup.ps1</code> script to the <code>post_install_wim</code> folder.</p>
+                                <p>Moves <code>post_install_setup.ps1</code> script to the <code>post_install_wim</code> folder on macOS or Linux Worker.</p>
+<p>The folder <code>post_install_wim</code> is the staging folder for creating the <code>post_install.wim</code> Windows Imaging Format file.</p>
                             </p>
                         </div>
                     </div>
@@ -1727,9 +1728,9 @@ mv --verbose post_install_setup.ps1 post_install_wim
 
 
                     <div class="row pt-5">
-                        <h4 id="createpostinstallwimwindowsimage">
-                            <a href="#createpostinstallwimwindowsimage">
-                                <strong>Step 14.3 -</strong> Create post_install.wim Windows Image
+                        <h4 id="createpostinstallwimwindowsimageonmacosorlinuxworker">
+                            <a href="#createpostinstallwimwindowsimageonmacosorlinuxworker">
+                                <strong>Step 14.3 -</strong> Create post_install.wim Windows Image on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1737,8 +1738,7 @@ mv --verbose post_install_setup.ps1 post_install_wim
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Moves <code>post_install_setup.ps1</code> into the folder <code>post_install_wim</code>.</p>
-<p>The folder <code>post_install_wim</code> is the staging folder for creating the <code>post_install.wim</code> Windows Imaging Format file.</p>
+                                <p>Creates a <code>post_install.wim</code> file from the contents of <code>post_install_wim</code> on Creates a <code>post_install.wim</code> file from the contents of <code>post_install_wim</code> on macOS or Linux Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -1793,9 +1793,9 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
 
 
                     <div class="row pt-5">
-                        <h3 id="modifywinpebootwim">
-                            <a href="#modifywinpebootwim">
-                                <strong>Step 15 -</strong> Modify WinPE boot.wim
+                        <h3 id="modifywinpebootwimonmacosorlinuxworker">
+                            <a href="#modifywinpebootwimonmacosorlinuxworker">
+                                <strong>Step 15 -</strong> Modify WinPE boot.wim on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1803,7 +1803,7 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code>.</p>
+                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code> on macOS or Linux Worker.</p>
 <p>This will be seen at <code>X</code> drive when WinPE runs.</p>
 <ol>
 <li><code>startnet.cmd</code></li>
@@ -1830,9 +1830,9 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
 
 
                     <div class="row pt-5">
-                        <h4 id="createbootwimmountfolder">
-                            <a href="#createbootwimmountfolder">
-                                <strong>Step 15.1 -</strong> Create boot.wim Mount Folder
+                        <h4 id="createbootwimmountfolderonmacosorlinuxworker">
+                            <a href="#createbootwimmountfolderonmacosorlinuxworker">
+                                <strong>Step 15.1 -</strong> Create boot.wim Mount Folder on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1890,9 +1890,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="mountbootwim">
-                            <a href="#mountbootwim">
-                                <strong>Step 15.2 -</strong> Mount BOOT.WIM
+                        <h4 id="mountbootwimonmacosorlinuxworker">
+                            <a href="#mountbootwimonmacosorlinuxworker">
+                                <strong>Step 15.2 -</strong> Mount BOOT.WIM on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1900,7 +1900,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code>.</p>
+                                <p>In the <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}</code> folder, mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code> on macOS or Linux Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -1945,9 +1945,9 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h4 id="movefilestobootwim">
-                            <a href="#movefilestobootwim">
-                                <strong>Step 15.3 -</strong> Move Files to boot.wim
+                        <h4 id="movefilestobootwimonmacosorlinuxworker">
+                            <a href="#movefilestobootwimonmacosorlinuxworker">
+                                <strong>Step 15.3 -</strong> Move Files to boot.wim on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1979,9 +1979,9 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h5 id="movestartnetcmdtobootwim">
-                            <a href="#movestartnetcmdtobootwim">
-                                <strong>Step 15.3.1 -</strong> Move startnet.cmd to boot.wim
+                        <h5 id="movestartnetcmdtobootwimonmacosorlinuxworker">
+                            <a href="#movestartnetcmdtobootwimonmacosorlinuxworker">
+                                <strong>Step 15.3.1 -</strong> Move startnet.cmd to boot.wim on macOS or Linux Worker
                             </a>
                         </h5>
                     </div>
@@ -2036,9 +2036,9 @@ mv --verbose startnet.cmd \
 
 
                     <div class="row pt-5">
-                        <h5 id="moveautounattendxmltobootwim">
-                            <a href="#moveautounattendxmltobootwim">
-                                <strong>Step 15.3.2 -</strong> Move autounattend.xml to boot.wim
+                        <h5 id="moveautounattendxmltobootwimonmacosorlinuxworker">
+                            <a href="#moveautounattendxmltobootwimonmacosorlinuxworker">
+                                <strong>Step 15.3.2 -</strong> Move autounattend.xml to boot.wim on macOS or Linux Worker
                             </a>
                         </h5>
                     </div>
@@ -2091,9 +2091,9 @@ mv --verbose autounattend.xml WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h5 id="copydriversdropinfoldertobootwim">
-                            <a href="#copydriversdropinfoldertobootwim">
-                                <strong>Step 15.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim
+                        <h5 id="copydriversdropinfoldertobootwimonmacosorlinuxworker">
+                            <a href="#copydriversdropinfoldertobootwimonmacosorlinuxworker">
+                                <strong>Step 15.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim on macOS or Linux Worker
                             </a>
                         </h5>
                     </div>
@@ -2101,7 +2101,7 @@ mv --verbose autounattend.xml WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Copy drivers from the drop in directorty into <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir/drivers</code> on macOS or Linux Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -2160,9 +2160,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h5 id="movepostinstallwimtobootwim">
-                            <a href="#movepostinstallwimtobootwim">
-                                <strong>Step 15.3.4 -</strong> Move post_install.wim to boot.wim
+                        <h5 id="movepostinstallwimtobootwimonmacosorlinuxworker">
+                            <a href="#movepostinstallwimtobootwimonmacosorlinuxworker">
+                                <strong>Step 15.3.4 -</strong> Move post_install.wim to boot.wim on macOS or Linux Worker
                             </a>
                         </h5>
                     </div>
@@ -2227,7 +2227,7 @@ mv --verbose post_install.wim WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code> using <code>wimunmount</code>.</p>
 <p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
                             </p>
                         </div>
@@ -2287,8 +2287,8 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                                 <p>Creates a BIOS bootable ISO at <code>{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
 <p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
 </ol>
                             </p>
                         </div>
@@ -2836,7 +2836,8 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Rereates the UEFI bootable WinPE kickstart ISO.</p>
+                                <p>Creates a UEFI bootable ISO at <code>{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
+<p>Only applies to UEFI kickstarts if the parameter <code>kickstartedBootLoaderIsUefi</code> is set the string <code>true</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -2876,36 +2877,41 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if uname | \
-    grep -iq &quot;darwin&quot;
+if {kickstartedBootLoaderIsUefi}
 then
-    echo &quot;is macOS&quot;
-    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-    echo &quot;Using $(which xorriso)&quot;
-    
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-    
-    ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-    echo &quot;ISO=${ISO}&quot;
-    
-    xorriso -as mkisofs \
-        -iso-level 4 \
-        -full-iso9660-filenames \
-        -rock \
-        -b BOOT/etfsboot.com \
-        -no-emul-boot \
-        -boot-load-size 8 \
-        -hide boot.catalog \
-        -eltorito-alt-boot \
-        -no-emul-boot \
-        -b efi/microsoft/boot/efisys.bin \
-        -boot-load-size 1 \
-        -untranslated-filenames \
-        -disable-deep-relocation \
-        -o &quot;${ISO}&quot; \
-        winpe_staging
+    if uname | \
+        grep -iq &quot;darwin&quot;
+    then
+        echo &quot;is macOS&quot;
+        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+        echo &quot;Using $(which xorriso)&quot;
+        
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
+        
+        ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+        echo &quot;ISO=${ISO}&quot;
+        
+        xorriso -as mkisofs \
+            -iso-level 4 \
+            -full-iso9660-filenames \
+            -rock \
+            -b BOOT/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -o &quot;${ISO}&quot; \
+            winpe_staging
+    else
+        echo &quot;not macOS, skipping&quot;
+    fi
 else
-    echo &quot;not macOS, skipping&quot;
+    echo &quot;Skipping for BIOS boot.&quot;
 fi
                 </code>
             </pre>

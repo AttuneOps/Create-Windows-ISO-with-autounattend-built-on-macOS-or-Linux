@@ -1,0 +1,45 @@
+if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
+    $ISO_BUILD="C:\attuneautomationworker"
+    $BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+    
+    Set-Location "${BUILD_DIR}"
+
+    $ISO_NAME="kickstart_{newOsNode.fqn}.iso"
+    
+    $scriptContent=@"
+mkisofs \
+    -b boot.img \
+    -no-emul-boot \
+    -c BOOT.CAT \
+    -iso-level 3 \
+    -udf \
+    -joliet-long \
+    -relaxed-filenames \
+    -allow-limited-size \
+    -J \
+    -full-iso9660-filenames \
+    -disable-deep-relocation \
+    -omit-version-number \
+    -V "KS_WIN" \
+    -o "../${ISO_NAME}" \
+    winpe_staging
+"@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace("`r`n","`n")
+    
+$FILE = "attune_wsl_recreate_winpe_bios_iso.sh"
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error 'Failed to create $ISO_BUILD\${ISO_NAME}'
+}
+  
+Remove-Item "${FILE}"
+
+} else {
+    echo "Skipping for UEFI ISO creation."
+}

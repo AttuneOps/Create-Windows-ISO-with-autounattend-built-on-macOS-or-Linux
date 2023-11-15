@@ -1,0 +1,1 @@
+Creates a `post_install.wim` file from the contents of `post_install_wim` on Windows Worker.

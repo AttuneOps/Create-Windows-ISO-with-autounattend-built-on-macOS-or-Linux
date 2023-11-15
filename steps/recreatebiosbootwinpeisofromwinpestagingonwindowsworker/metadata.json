@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "e471fb57-a46b-4bd9-ac5b-23874f08ce33", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "recreatebiosbootwinpeisofromwinpestagingonwindowsworker", 
+    "name": "Recreate BIOS Boot WinPE ISO from winpe_staging on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 1800, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

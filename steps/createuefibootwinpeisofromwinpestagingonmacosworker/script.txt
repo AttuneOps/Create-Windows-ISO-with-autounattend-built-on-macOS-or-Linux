@@ -1,31 +1,36 @@
-if uname | \
-    grep -iq "darwin"
+if {kickstartedBootLoaderIsUefi}
 then
-    echo "is macOS"
-    export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
-    echo "Using $(which xorriso)"
-    
-    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
-    
-    ISO="{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
-    echo "ISO=${ISO}"
-    
-    xorriso -as mkisofs \
-        -iso-level 4 \
-        -full-iso9660-filenames \
-        -rock \
-        -b BOOT/etfsboot.com \
-        -no-emul-boot \
-        -boot-load-size 8 \
-        -hide boot.catalog \
-        -eltorito-alt-boot \
-        -no-emul-boot \
-        -b efi/microsoft/boot/efisys.bin \
-        -boot-load-size 1 \
-        -untranslated-filenames \
-        -disable-deep-relocation \
-        -o "${ISO}" \
-        winpe_staging
+    if uname | \
+        grep -iq "darwin"
+    then
+        echo "is macOS"
+        export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+        echo "Using $(which xorriso)"
+        
+        cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+        
+        ISO="{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
+        echo "ISO=${ISO}"
+        
+        xorriso -as mkisofs \
+            -iso-level 4 \
+            -full-iso9660-filenames \
+            -rock \
+            -b BOOT/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -o "${ISO}" \
+            winpe_staging
+    else
+        echo "not macOS, skipping"
+    fi
 else
-    echo "not macOS, skipping"
+    echo "Skipping for BIOS boot."
 fi

@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "53e1ab77-e442-4429-836f-66042e6209a5", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "mountbootwimonwindowsworker", 
+    "name": "Mount BOOT.WIM on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 120, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

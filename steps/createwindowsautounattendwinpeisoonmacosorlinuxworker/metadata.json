@@ -60,11 +60,11 @@
         }, 
         {
             "order": 750, 
-            "stepKey": "createpostsetupwim"
+            "stepKey": "createpostsetupwimonmacosorlinuxworker"
         }, 
         {
             "order": 800, 
-            "stepKey": "modifywinpebootwim"
+            "stepKey": "modifywinpebootwimonmacosorlinuxworker"
         }, 
         {
             "order": 850, 

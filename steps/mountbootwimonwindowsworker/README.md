@@ -1,0 +1,1 @@
+In the `C:\attuneautomationworker\build-{newOsNode.fqn}` folder, mounts `winpe_staging\SOURCES\BOOT.WIM` to `WinPE_BootImageDir` on Windows Worker.

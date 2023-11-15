@@ -1,0 +1,28 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "6b0e2d23-6c3e-4b2f-ba39-4008c8fb8e2a", 
+    "isBlueprint": false, 
+    "key": "modifywinpebootwimonwindowsworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "createbootwimmountfolderonwindowsworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "mountbootwimonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "movefilestobootwimonwindowsworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "wimlibunmountbootwimonwindowsworker"
+        }
+    ], 
+    "name": "Modify WinPE boot.wim on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

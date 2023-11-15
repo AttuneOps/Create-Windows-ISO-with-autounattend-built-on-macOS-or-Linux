@@ -1,7 +1,7 @@
 $ISO_BUILD="C:\attuneautomationworker"
 $BUILD_FOLDER="build-{newOsNode.fqn}"
 
-# This is so we place the "tmpBash.sh" outside the $BUILD_FOLDER
+# This is so we place the "attune_wsl_create_bios_boot_iso.sh" outside the $BUILD_FOLDER
 Set-Location $ISO_BUILD
 
 if (${{isWin10Bios}} -or `

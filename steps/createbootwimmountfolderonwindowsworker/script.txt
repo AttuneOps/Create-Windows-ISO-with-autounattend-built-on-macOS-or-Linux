@@ -1,0 +1,10 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+
+Set-Location "${BUILD_DIR}"
+
+$WinPE_BootImageDir="WinPE_BootImageDir"
+
+if ( -Not (Test-Path "${WinPE_BootImageDir}") ) {
+  New-Item "${WinPE_BootImageDi}" -ItemType Directory
+}
