@@ -230,8 +230,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpecleanbuildfiles">
-                            <strong>Step 4 -</strong> Create WinPE Clean Build Files
+                        <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
+                            <strong>Step 4 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
                         </a>
                     </p>
     
@@ -368,8 +368,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copywindowsefifilestowinpestaging">
-                            <strong>Step 13 -</strong> Copy Windows EFI Files to WinPE Staging
+                        <a href="#copywindowsefifilestowinpestagingonmacosorlinuxworker">
+                            <strong>Step 13 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -441,8 +441,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpecleanbuildfiles">
-                            <strong>Step 17 -</strong> Create WinPE Clean Build Files
+                        <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
+                            <strong>Step 17 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
                         </a>
                     </p>
     
@@ -818,9 +818,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createwinpecleanbuildfiles">
-                            <a href="#createwinpecleanbuildfiles">
-                                <strong>Step 4 -</strong> Create WinPE Clean Build Files
+                        <h3 id="createwinpecleanbuildfilesonmacosorlinuxworker">
+                            <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
+                                <strong>Step 4 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1733,7 +1733,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code> using <code>wimmountrw</code>.</p>
+                                <p>Mounts <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe_staging/SOURCES/BOOT.WIM</code> to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code> using <code>wimmountrw</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1788,7 +1788,7 @@ wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code>.</p>
+                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1845,7 +1845,7 @@ rm --verbose setup.exe
                         <div class="description col px-0">
                             <p>
                                 <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
-<p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+<p>This will write out changes back into <code>{automationWorkerLinuxBaseDirectory}/winpe_staging/SOURCES/BOOT.WIM</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1891,9 +1891,9 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
 
 
                     <div class="row pt-5">
-                        <h3 id="copywindowsefifilestowinpestaging">
-                            <a href="#copywindowsefifilestowinpestaging">
-                                <strong>Step 13 -</strong> Copy Windows EFI Files to WinPE Staging
+                        <h3 id="copywindowsefifilestowinpestagingonmacosorlinuxworker">
+                            <a href="#copywindowsefifilestowinpestagingonmacosorlinuxworker">
+                                <strong>Step 13 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1902,11 +1902,8 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                         <div class="description col px-0">
                             <p>
                                 <p>Relative to the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
-<p>Only applies to UEFI kickstarts so if any of these parameters are set the string <code>true</code>:</p>
-<ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
-</ol>
+<p>The <code>efi</code> folder is also copied.</p>
+<p>Only applies to UEFI kickstarts so only if <code>kickstartedBootLoaderIsUefi</code> is set to the string <code>true</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -2520,7 +2517,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates the UEFI bootable WinPE ISO.</p>
+                                <p>Creates the UEFI bootable WinPE ISO if <code>kickstartedBootLoaderIsUefi</code> is true on macOS Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -2560,36 +2557,43 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if uname | \
-    grep -iq &quot;darwin&quot;
+if {kickstartedBootLoaderIsUefi}
 then
-    echo &quot;is macOS&quot;
-    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-    echo &quot;Using $(which xorriso)&quot;
+
+    if uname | \
+        grep -iq &quot;darwin&quot;
+    then
+        echo &quot;is macOS&quot;
+        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+        echo &quot;Using $(which xorriso)&quot;
+        
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+        
+        ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
+        echo &quot;ISO=${ISO}&quot;
+        
+        xorriso -as mkisofs \
+            -iso-level 4 \
+            -full-iso9660-filenames \
+            -rock \
+            -b BOOT/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -o &quot;${ISO}&quot; \
+            winpe_staging
+    else
+        echo &quot;not macOS, skipping&quot;
+    fi
     
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    
-    ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-    echo &quot;ISO=${ISO}&quot;
-    
-    xorriso -as mkisofs \
-        -iso-level 4 \
-        -full-iso9660-filenames \
-        -rock \
-        -b BOOT/etfsboot.com \
-        -no-emul-boot \
-        -boot-load-size 8 \
-        -hide boot.catalog \
-        -eltorito-alt-boot \
-        -no-emul-boot \
-        -b efi/microsoft/boot/efisys.bin \
-        -boot-load-size 1 \
-        -untranslated-filenames \
-        -disable-deep-relocation \
-        -o &quot;${ISO}&quot; \
-        winpe_staging
 else
-    echo &quot;not macOS, skipping&quot;
+    echo &quot;Skipping for BIOS boot.&quot;
 fi
                 </code>
             </pre>
@@ -2605,9 +2609,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createwinpecleanbuildfiles">
-                            <a href="#createwinpecleanbuildfiles">
-                                <strong>Step 17 -</strong> Create WinPE Clean Build Files
+                        <h3 id="createwinpecleanbuildfilesonmacosorlinuxworker">
+                            <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
+                                <strong>Step 17 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>

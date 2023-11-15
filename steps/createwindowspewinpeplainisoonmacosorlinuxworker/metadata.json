@@ -20,7 +20,7 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "createwinpecleanbuildfiles"
+            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
         }, 
         {
             "order": 200, 
@@ -56,7 +56,7 @@
         }, 
         {
             "order": 700, 
-            "stepKey": "copywindowsefifilestowinpestaging"
+            "stepKey": "copywindowsefifilestowinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 750, 
@@ -72,7 +72,7 @@
         }, 
         {
             "order": 1000, 
-            "stepKey": "createwinpecleanbuildfiles"
+            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
         }
     ], 
     "name": "Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker", 

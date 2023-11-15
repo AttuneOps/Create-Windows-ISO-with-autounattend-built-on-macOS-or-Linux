@@ -13,6 +13,14 @@
         {
             "order": 50, 
             "stepKey": "mountbootwiminbuildwinpeisoonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "deletesetupexefrombootwimonwindowsworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "wimlibunmountbootwimfrombuildwinpeisoonwindowsworker"
         }
     ], 
     "name": "Perform Delete setup.exe from winpe_staging boot.wim on Windows Worker", 

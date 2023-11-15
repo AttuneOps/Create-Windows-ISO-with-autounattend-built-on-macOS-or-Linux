@@ -1,0 +1,1 @@
+Deletes the `C:\attuneautomationworker\build-winpe-iso` folder.

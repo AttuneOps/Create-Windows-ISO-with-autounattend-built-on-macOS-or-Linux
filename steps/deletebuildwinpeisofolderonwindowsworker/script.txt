@@ -1,0 +1,15 @@
+$ISO_BUILD="C:\attuneautomationworker"
+
+if ( -Not (Test-Path "${BUILD_DIRECTORY}") ) {
+    Write-Host "Directory ${BUILD_DIRECTORY} does not exist. Skipping."
+} else {
+    Set-Location "${ISO_BUILD}"
+    
+    $BUILD_FOLDER="build-winpe-iso"
+    
+    if ( -Not (Test-Path "${BUILD_FOLDER}") ) {
+      Write-Host "Directory ${BUILD_DIRECTORY}\${BUILD_FOLDER} does not exist. Skipping."
+    } else {
+      Remove-Item -Recurse "${BUILD_FOLDER}"
+    }
+}

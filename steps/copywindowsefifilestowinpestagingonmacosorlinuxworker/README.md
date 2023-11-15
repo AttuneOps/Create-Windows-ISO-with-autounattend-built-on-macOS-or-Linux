@@ -1,6 +1,5 @@
 Relative to the `{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe` directory, copies the EFI files in `winimg/efi`to `winpe_staging`.
 
-Only applies to UEFI kickstarts so if any of these parameters are set the string `true`:
+The `efi` folder is also copied.
 
-1. isWin10Uefi
-2. isWinServerUefi
+Only applies to UEFI kickstarts so only if `kickstartedBootLoaderIsUefi` is set to the string `true`.
