@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "9c0938b0-e41f-47fd-be5e-7996a0fbefad", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "extractwinserverdvdisotowinimgonwindowsworker", 
+    "name": "Extract Win Server DVD ISO to winimg on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 120, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "adb0b601-7bf2-4814-a64d-9c4225454779", 
+    "interpreter": 1, 
+    "key": "extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker", 
+    "name": "Extract Windows boot.img from build-winpe-iso on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

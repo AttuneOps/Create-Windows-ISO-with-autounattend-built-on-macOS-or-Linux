@@ -1,0 +1,64 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "455bb949-defc-4856-bb84-3a884d5c4e46", 
+    "isBlueprint": true, 
+    "key": "createwindowspewinpeplainisoonwindowsworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deletebuildwinpeisofolderonwindowsworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "deploywin2019dvdisotobuildwinpeisoonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "extractwindowsbootimgfrombuildwinpeisoonwindowsworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "extractwinserverdvdisotowinimgonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "extractwinpeisofromwinimgdirectoryonwindowsworker"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeisoonwindowsworker"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "copyfilesformkwinpeimgcompatibilitytowinpestagingonwindowsworker"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "movebootimgtowinpestagingonwindowsworker"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "performdeletesetupexefromwinpestagingbootwimonwindowsworker"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "copywindowsefifilestowinpestagingonwindowsworker"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "createwinpeplainbiosisofromwinpestagingonwindowsworker"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "createwinpeplainuefiisoonwindowsworker"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "deletebuildwinpeisofolderonwindowsworker"
+        }
+    ], 
+    "name": "Create Windows PE (WinPE) Plain ISO on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

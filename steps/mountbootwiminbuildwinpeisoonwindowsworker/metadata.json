@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "2833449e-b0fd-4f69-b84f-740c64b7dcb4", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "mountbootwiminbuildwinpeisoonwindowsworker", 
+    "name": "Mount BOOT.WIM in build-winpe-iso on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 300, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

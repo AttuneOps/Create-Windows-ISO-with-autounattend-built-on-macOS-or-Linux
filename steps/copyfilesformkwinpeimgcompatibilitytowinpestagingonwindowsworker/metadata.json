@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "bdbb9858-15c1-4ba4-b5e6-3cc476d1aa3e", 
+    "interpreter": 1, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "copyfilesformkwinpeimgcompatibilitytowinpestagingonwindowsworker", 
+    "name": "Copy Files for mkwinpeimg Compatibility to WinPE Staging on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 5, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "af68e498-af4f-4c7d-acae-4c66380ddf2a", 
+    "interpreter": 1, 
+    "key": "extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker", 
+    "name": "Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

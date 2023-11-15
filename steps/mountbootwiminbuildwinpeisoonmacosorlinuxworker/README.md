@@ -1,0 +1,1 @@
+Mounts `{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe_staging/SOURCES/BOOT.WIM` to `{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir` using `wimmountrw`.

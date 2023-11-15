@@ -1,0 +1,28 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "b7653654-1380-46ac-bcdd-c038eeeb2465", 
+    "isBlueprint": false, 
+    "key": "createwinpecleanbuildfilesonmacosorlinuxworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "linunmountwindowsiso"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "lindeletewinimgfolder"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "linsetwritepermissionstowinpestaging"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "lincleanbuilddirectory"
+        }
+    ], 
+    "name": "Create WinPE Clean Build Files on macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

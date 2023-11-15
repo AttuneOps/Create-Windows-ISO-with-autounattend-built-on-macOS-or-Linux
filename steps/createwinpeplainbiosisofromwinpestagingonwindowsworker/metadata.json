@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "626f3fe8-3b21-4406-a803-c7a7ee48f88a", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "createwinpeplainbiosisofromwinpestagingonwindowsworker", 
+    "name": "Create winpe_plain_bios.iso from winpe_staging on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 600, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

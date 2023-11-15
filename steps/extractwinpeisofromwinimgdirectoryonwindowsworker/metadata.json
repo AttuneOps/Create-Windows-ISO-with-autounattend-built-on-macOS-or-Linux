@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "59796f30-055a-4767-9cd6-2b098bc3e1c9", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "extractwinpeisofromwinimgdirectoryonwindowsworker", 
+    "name": "Extract WinPE ISO from winimg Directory on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 300, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

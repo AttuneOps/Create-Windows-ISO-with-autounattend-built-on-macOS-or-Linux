@@ -20,15 +20,15 @@
         }, 
         {
             "order": 150, 
-            "stepKey": "createwinpecleanbuildfiles"
+            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin2019dvdisotobuildwinpeiso"
+            "stepKey": "deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimgfrombuildwinpeiso"
+            "stepKey": "extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 350, 
@@ -40,7 +40,7 @@
         }, 
         {
             "order": 500, 
-            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeiso"
+            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker"
         }, 
         {
             "order": 550, 
@@ -56,7 +56,7 @@
         }, 
         {
             "order": 700, 
-            "stepKey": "copywindowsefifilestowinpestaging"
+            "stepKey": "copywindowsefifilestowinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 750, 
@@ -72,7 +72,7 @@
         }, 
         {
             "order": 1000, 
-            "stepKey": "createwinpecleanbuildfiles"
+            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
         }
     ], 
     "name": "Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker", 

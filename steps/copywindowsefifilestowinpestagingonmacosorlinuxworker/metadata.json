@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "fb49f249-1d9a-4c88-a4b8-8ffa21fb8d3c", 
+    "interpreter": 1, 
+    "key": "copywindowsefifilestowinpestagingonmacosorlinuxworker", 
+    "name": "Copy Windows EFI Files to WinPE Staging on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
