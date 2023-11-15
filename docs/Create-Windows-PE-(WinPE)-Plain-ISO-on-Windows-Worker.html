@@ -206,8 +206,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#deletebuildwinpeisofolderonwindowsworker">
+                            <strong>Step 1 -</strong> Delete build-winpe-iso Folder on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#deploywin2019dvdisotobuildwinpeisoonwindowsworker">
-                            <strong>Step 1 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on Windows Worker
+                            <strong>Step 2 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on Windows Worker
                         </a>
                     </p>
 
@@ -215,7 +223,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwindowsbootimgfrombuildwinpeisoonwindowsworker">
-                            <strong>Step 2 -</strong> Extract Windows boot.img from build-winpe-iso on Windows Worker
+                            <strong>Step 3 -</strong> Extract Windows boot.img from build-winpe-iso on Windows Worker
                         </a>
                     </p>
 
@@ -223,7 +231,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwinserverdvdisotowinimgonwindowsworker">
-                            <strong>Step 3 -</strong> Extract Win Server DVD ISO to winimg on Windows Worker
+                            <strong>Step 4 -</strong> Extract Win Server DVD ISO to winimg on Windows Worker
                         </a>
                     </p>
 
@@ -231,7 +239,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwinpeisofromwinimgdirectoryonwindowsworker">
-                            <strong>Step 4 -</strong> Extract WinPE ISO from winimg Directory on Windows Worker
+                            <strong>Step 5 -</strong> Extract WinPE ISO from winimg Directory on Windows Worker
                         </a>
                     </p>
 
@@ -239,7 +247,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonwindowsworker">
-                            <strong>Step 5 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on Windows Worker
+                            <strong>Step 6 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on Windows Worker
                         </a>
                     </p>
 
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copyfilesformkwinpeimgcompatibilitytowinpestagingonwindowsworker">
-                            <strong>Step 6 -</strong> Copy Files for mkwinpeimg Compatibility to WinPE Staging on Windows Worker
+                            <strong>Step 7 -</strong> Copy Files for mkwinpeimg Compatibility to WinPE Staging on Windows Worker
                         </a>
                     </p>
 
@@ -255,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#movebootimgtowinpestagingonwindowsworker">
-                            <strong>Step 7 -</strong> Move boot.img to winpe_staging on Windows Worker
+                            <strong>Step 8 -</strong> Move boot.img to winpe_staging on Windows Worker
                         </a>
                     </p>
 
@@ -263,7 +271,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#performdeletesetupexefromwinpestagingbootwimonwindowsworker">
-                            <strong>Step 8 -</strong> Perform Delete setup.exe from winpe_staging boot.wim on Windows Worker
+                            <strong>Step 9 -</strong> Perform Delete setup.exe from winpe_staging boot.wim on Windows Worker
                         </a>
                     </p>
     
@@ -271,7 +279,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createbootwimmountfolderinbuildwinpeisoonwindowsworker">
-                            <strong>Step 8.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on Windows Worker
+                            <strong>Step 9.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on Windows Worker
                         </a>
                     </p>
 
@@ -279,10 +287,58 @@
 
                     <p class="text-muted pt-2">
                         <a href="#mountbootwiminbuildwinpeisoonwindowsworker">
-                            <strong>Step 8.2 -</strong> Mount BOOT.WIM in build-winpe-iso on Windows Worker
+                            <strong>Step 9.2 -</strong> Mount BOOT.WIM in build-winpe-iso on Windows Worker
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deletesetupexefrombootwimonwindowsworker">
+                            <strong>Step 9.3 -</strong> Delete setup.exe from boot.wim on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#wimlibunmountbootwimfrombuildwinpeisoonwindowsworker">
+                            <strong>Step 9.4 -</strong> wimlib Unmount boot.wim from build-winpe-iso on Windows Worker
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copywindowsefifilestowinpestagingonwindowsworker">
+                            <strong>Step 10 -</strong> Copy Windows EFI Files to WinPE Staging on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createwinpeplainbiosisofromwinpestagingonwindowsworker">
+                            <strong>Step 11 -</strong> Create winpe_plain_bios.iso from winpe_staging on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createwinpeplainuefiisoonwindowsworker">
+                            <strong>Step 12 -</strong> Create winpe_plain_uefi.iso on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deletebuildwinpeisofolderonwindowsworker">
+                            <strong>Step 13 -</strong> Delete build-winpe-iso Folder on Windows Worker
+                        </a>
+                    </p>
 
 
                 </div>
@@ -374,9 +430,94 @@
 
 
                     <div class="row pt-5">
+                        <h3 id="deletebuildwinpeisofolderonwindowsworker">
+                            <a href="#deletebuildwinpeisofolderonwindowsworker">
+                                <strong>Step 1 -</strong> Delete build-winpe-iso Folder on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the <code>C:\attuneautomationworker\build-winpe-iso</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via RDP:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+mstsc /admin /v:{automationworkerwindowsnode}
+                            </code>
+                        </div>
+                        <div class="row">
+                            <p>
+                                Login as user {automationworkerwindowsuseradministrator} and open a
+                                command prompt.
+                            </p>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+
+if ( -Not (Test-Path &quot;${BUILD_DIRECTORY}&quot;) ) {
+    Write-Host &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
+} else {
+    Set-Location &quot;${ISO_BUILD}&quot;
+    
+    $BUILD_FOLDER=&quot;build-winpe-iso&quot;
+    
+    if ( -Not (Test-Path &quot;${BUILD_FOLDER}&quot;) ) {
+      Write-Host &quot;Directory ${BUILD_DIRECTORY}\${BUILD_FOLDER} does not exist. Skipping.&quot;
+    } else {
+      Remove-Item -Recurse &quot;${BUILD_FOLDER}&quot;
+    }
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="deploywin2019dvdisotobuildwinpeisoonwindowsworker">
                             <a href="#deploywin2019dvdisotobuildwinpeisoonwindowsworker">
-                                <strong>Step 1 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on Windows Worker
+                                <strong>Step 2 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -437,7 +578,7 @@ ssh {automationworkerwindowsuseradministrator}@{automationworkerlinuxnode}
                     <div class="row pt-5">
                         <h3 id="extractwindowsbootimgfrombuildwinpeisoonwindowsworker">
                             <a href="#extractwindowsbootimgfrombuildwinpeisoonwindowsworker">
-                                <strong>Step 2 -</strong> Extract Windows boot.img from build-winpe-iso on Windows Worker
+                                <strong>Step 3 -</strong> Extract Windows boot.img from build-winpe-iso on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -535,7 +676,7 @@ dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
                     <div class="row pt-5">
                         <h3 id="extractwinserverdvdisotowinimgonwindowsworker">
                             <a href="#extractwinserverdvdisotowinimgonwindowsworker">
-                                <strong>Step 3 -</strong> Extract Win Server DVD ISO to winimg on Windows Worker
+                                <strong>Step 4 -</strong> Extract Win Server DVD ISO to winimg on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -609,7 +750,7 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
                     <div class="row pt-5">
                         <h3 id="extractwinpeisofromwinimgdirectoryonwindowsworker">
                             <a href="#extractwinpeisofromwinimgdirectoryonwindowsworker">
-                                <strong>Step 4 -</strong> Extract WinPE ISO from winimg Directory on Windows Worker
+                                <strong>Step 5 -</strong> Extract WinPE ISO from winimg Directory on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -687,7 +828,7 @@ Remove-Item &quot;${FILE}&quot;
                     <div class="row pt-5">
                         <h3 id="extractwinpeisotostagingfolderonbuildwinpeisoonwindowsworker">
                             <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonwindowsworker">
-                                <strong>Step 5 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on Windows Worker
+                                <strong>Step 6 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -748,7 +889,7 @@ $FOLDER = &quot;winpe_staging&quot;
                     <div class="row pt-5">
                         <h3 id="copyfilesformkwinpeimgcompatibilitytowinpestagingonwindowsworker">
                             <a href="#copyfilesformkwinpeimgcompatibilitytowinpestagingonwindowsworker">
-                                <strong>Step 6 -</strong> Copy Files for mkwinpeimg Compatibility to WinPE Staging on Windows Worker
+                                <strong>Step 7 -</strong> Copy Files for mkwinpeimg Compatibility to WinPE Staging on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -813,7 +954,7 @@ Copy-Item -Recurse -Path `
                     <div class="row pt-5">
                         <h3 id="movebootimgtowinpestagingonwindowsworker">
                             <a href="#movebootimgtowinpestagingonwindowsworker">
-                                <strong>Step 7 -</strong> Move boot.img to winpe_staging on Windows Worker
+                                <strong>Step 8 -</strong> Move boot.img to winpe_staging on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -879,7 +1020,7 @@ if ((${{kickstartedBootLoaderIsBios}}) {
                     <div class="row pt-5">
                         <h3 id="performdeletesetupexefromwinpestagingbootwimonwindowsworker">
                             <a href="#performdeletesetupexefromwinpestagingbootwimonwindowsworker">
-                                <strong>Step 8 -</strong> Perform Delete setup.exe from winpe_staging boot.wim on Windows Worker
+                                <strong>Step 9 -</strong> Perform Delete setup.exe from winpe_staging boot.wim on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -901,7 +1042,7 @@ if ((${{kickstartedBootLoaderIsBios}}) {
                     <div class="row pt-5">
                         <h4 id="createbootwimmountfolderinbuildwinpeisoonwindowsworker">
                             <a href="#createbootwimmountfolderinbuildwinpeisoonwindowsworker">
-                                <strong>Step 8.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on Windows Worker
+                                <strong>Step 9.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -964,7 +1105,7 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
                     <div class="row pt-5">
                         <h4 id="mountbootwiminbuildwinpeisoonwindowsworker">
                             <a href="#mountbootwiminbuildwinpeisoonwindowsworker">
-                                <strong>Step 8.2 -</strong> Mount BOOT.WIM in build-winpe-iso on Windows Worker
+                                <strong>Step 9.2 -</strong> Mount BOOT.WIM in build-winpe-iso on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -972,7 +1113,7 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code> using <code>wimmountrw</code> on WSL2.</p>
+                                <p>Mounts <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES\BOOT.WIM</code> to <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code> using <code>wimmountrw</code> on WSL2.</p>
                             </p>
                         </div>
                     </div>
@@ -1029,6 +1170,475 @@ Remove-Item &quot;${FILE}&quot;
         </div>
     </div>
 
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="deletesetupexefrombootwimonwindowsworker">
+                            <a href="#deletesetupexefrombootwimonwindowsworker">
+                                <strong>Step 9.3 -</strong> Delete setup.exe from boot.wim on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes <code>setup.exe</code> from <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$WinPE_BootImageDir=&quot;$ISO_BUILD\build-winpe-iso\WinPE_BootImageDir&quot;
+
+Set-Location $WinPE_BootImageDir
+
+Remove-Item -Verbose .\setup.exe
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="wimlibunmountbootwimfrombuildwinpeisoonwindowsworker">
+                            <a href="#wimlibunmountbootwimfrombuildwinpeisoonwindowsworker">
+                                <strong>Step 9.4 -</strong> wimlib Unmount boot.wim from build-winpe-iso on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code>.</p>
+<p>This will write out changes back into <code>C:\attuneautomationworker\winpe_staging\SOURCES\BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
+
+Set-Location $BUILD_DIR
+
+  $scriptContent=@&#x27;
+wimunmount WinPE_BootImageDir --commit --check --rebuild
+&#x27;@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+
+$FILE = &quot;attune_wsl_unmount_boot_wim_directory.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error &#x27;Failed to extract boot.img&#x27;
+}
+
+Remove-Item &quot;${FILE}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="copywindowsefifilestowinpestagingonwindowsworker">
+                            <a href="#copywindowsefifilestowinpestagingonwindowsworker">
+                                <strong>Step 10 -</strong> Copy Windows EFI Files to WinPE Staging on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Relative to the <code>C:\attuneautomationworker\build-winpe-iso\winpe</code> directory, copies the EFI files in <code>winimg\efi</code>to <code>winpe_staging</code>.</p>
+<p>The <code>efi</code> folder is also copied.</p>
+<p>Only applies to UEFI kickstarts so only if <code>kickstartedBootLoaderIsUefi</code> is set to the string <code>true</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
+
+    Set-Location $BUILD_DIR
+    
+    # Copy EFI Files from Windows ISO
+    Copy-Item -Recurse -Path &quot;.\winimg\efi&quot; `
+        -Destination &quot;.\winpe_staging&quot;
+    
+} else {
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createwinpeplainbiosisofromwinpestagingonwindowsworker">
+                            <a href="#createwinpeplainbiosisofromwinpestagingonwindowsworker">
+                                <strong>Step 11 -</strong> Create winpe_plain_bios.iso from winpe_staging on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a WinPE BIOS bootable ISO at <code>C:\attuneautomationworker\winpe_plain_bios.iso</code> from the WinPE staging directory <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging</code>. </p>
+<p>Only applies to UEFI kickstarts. Only run if the parameter <code>kickstartedBootLoaderIsBios</code> is set <code>true</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsBios}})) {
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
+    
+    Set-Location $BUILD_DIR
+
+    ISO_NAME=&quot;winpe_plain_bios.iso&quot;
+
+    $scriptContent=@&#x27;
+mkisofs \
+    -b boot.img \
+    -no-emul-boot \
+    -c BOOT.CAT \
+    -iso-level 3 \
+    -udf \
+    -joliet-long \
+    -relaxed-filenames \
+    -allow-limited-size \
+    -J \
+    -full-iso9660-filenames \
+    -disable-deep-relocation \
+    -omit-version-number \
+    -V &quot;KS_WIN&quot; \
+    -o &quot;../${ISO_NAME}&quot; \
+    winpe_staging
+&#x27;@
+
+  # Replace CRLF with LF
+  $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+
+  $FILE = &quot;attune_wsl_create_winpe_plain_bios_iso.sh&quot;
+
+  Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+  if ($LASTEXITCODE -ne 0) {
+      Write-Error &#x27;Failed to extract boot.img&#x27;
+  }
+
+  Remove-Item &quot;${FILE}&quot;
+} else {
+  Write-Host &quot;Skipping for UEFI ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createwinpeplainuefiisoonwindowsworker">
+                            <a href="#createwinpeplainuefiisoonwindowsworker">
+                                <strong>Step 12 -</strong> Create winpe_plain_uefi.iso on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates the UEFI bootable WinPE ISO if <code>kickstartedBootLoaderIsUefi</code> is true on a Windows Worker.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsUefi}}) {
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
+    
+    Set-Location $BUILD_DIR
+
+    $ISO_NAME=&quot;winpe_plain_uefi.iso&quot;
+
+    $scriptContent=@&#x27;
+mkisofs \
+    -iso-level 4 \
+    -full-iso9660-filenames \
+    -rock \
+    -b BOOT/etfsboot.com \
+    -no-emul-boot \
+    -boot-load-size 8 \
+    -hide boot.catalog \
+    -eltorito-alt-boot \
+    -no-emul-boot \
+    -b efi/microsoft/boot/efisys.bin \
+    -boot-load-size 1 \
+    -untranslated-filenames \
+    -disable-deep-relocation \
+    -o &quot;../${ISO_NAME}&quot; \
+    winpe_staging
+&#x27;@
+
+  # Replace CRLF with LF
+  $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+
+  $FILE = &quot;attune_wsl_create_winpe_plain_uefi_iso.sh&quot;
+
+  Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+  if ($LASTEXITCODE -ne 0) {
+      Write-Error &#x27;Failed to extract boot.img&#x27;
+  }
+
+  Remove-Item &quot;${FILE}&quot;
+
+} else {
+    Write-Host &quot;Skipping for BIOS boot.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deletebuildwinpeisofolderonwindowsworker">
+                            <a href="#deletebuildwinpeisofolderonwindowsworker">
+                                <strong>Step 13 -</strong> Delete build-winpe-iso Folder on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the <code>C:\attuneautomationworker\build-winpe-iso</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+
+if ( -Not (Test-Path &quot;${BUILD_DIRECTORY}&quot;) ) {
+    Write-Host &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
+} else {
+    Set-Location &quot;${ISO_BUILD}&quot;
+    
+    $BUILD_FOLDER=&quot;build-winpe-iso&quot;
+    
+    if ( -Not (Test-Path &quot;${BUILD_FOLDER}&quot;) ) {
+      Write-Host &quot;Directory ${BUILD_DIRECTORY}\${BUILD_FOLDER} does not exist. Skipping.&quot;
+    } else {
+      Remove-Item -Recurse &quot;${BUILD_FOLDER}&quot;
+    }
+}
+                </code>
+            </pre>
+        </div>
+    </div>
 
 
 
