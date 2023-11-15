@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "windowsserver2019iso", 
+    "deployPath": "/c$/software", 
+    "enabled": true, 
+    "externalUuid4": "77595f48-79a0-471a-abb2-2c0030f25d5f", 
+    "key": "deploywin2019isotosoftware", 
+    "name": "Deploy Win2019 ISO to Software", 
+    "osCredKey": "newoswindowsuseradministrator", 
+    "serverKey": "newoswindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

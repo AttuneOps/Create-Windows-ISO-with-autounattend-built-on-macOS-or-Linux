@@ -26,7 +26,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
+            -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
             winpe_staging
     else
         echo "not macOS"
@@ -45,7 +45,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o "{automationWorkerBaseDirectory}/${ISO_NAME}" \
+            -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
             winpe_staging
     fi
         

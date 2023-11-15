@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": "stop", 
-    "archiveKey": "winrawwin2022iso", 
+    "archiveKey": "win2022iso", 
     "deployPath": "$HOME/windows_iso_data_for_winpe/windows2022", 
     "enabled": true, 
     "externalUuid4": "0b9c8aa0-75ff-4135-ad45-a0265799236e", 

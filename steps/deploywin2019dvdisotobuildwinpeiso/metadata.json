@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": "stop", 
-    "archiveKey": "windowsserver2019iso", 
+    "archiveKey": "win2019iso", 
     "deployPath": "{automationWorkerLinuxBaseDirectory}/build-winpe-iso", 
     "enabled": true, 
     "externalUuid4": "743d9a5b-aab5-4d8d-8287-052c87904348", 

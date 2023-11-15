@@ -2,9 +2,9 @@
     "externalUuid4": "0a023b68-28de-46a2-bf2e-0e43f17e4b45", 
     "fileName": "Windows_Server_2016_Datacenter_EVAL_en-us_14393_refresh.ISO", 
     "formatKey": "tar", 
-    "key": "winrawwin2016iso", 
+    "key": "win2016iso", 
     "md5": "70721288bbcdfe3239d8f8c0fae55f1f", 
-    "name": "WIN Raw Win2016 ISO", 
+    "name": "Win2016 ISO", 
     "remoteUri": null, 
     "size": 6972221440, 
     "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"

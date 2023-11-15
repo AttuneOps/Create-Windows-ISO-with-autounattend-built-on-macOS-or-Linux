@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "win10desktopiso", 
+    "archiveKey": "win10iso", 
     "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "68afedf7-0d10-4a4c-b22f-5ecf578ce3a3", 

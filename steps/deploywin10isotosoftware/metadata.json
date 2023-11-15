@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win10iso", 
+    "deployPath": "/c$/software", 
+    "enabled": true, 
+    "externalUuid4": "6e65cbed-5eed-41e6-9a39-6c871b40d69d", 
+    "key": "deploywin10isotosoftware", 
+    "name": "Deploy Win10 ISO to Software", 
+    "osCredKey": "newoswindowsuseradministrator", 
+    "serverKey": "newoswindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

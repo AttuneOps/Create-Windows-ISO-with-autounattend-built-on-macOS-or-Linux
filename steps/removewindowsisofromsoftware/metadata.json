@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "d0c61f94-e4ec-46c0-828e-7fe449f93b13", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "removewindowsisofromsoftware", 
+    "name": "Remove Windows ISO from Software", 
+    "osCredKey": "newoswindowsuseradministrator", 
+    "serverKey": "newoswindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 60, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

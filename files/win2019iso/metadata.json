@@ -2,9 +2,9 @@
     "externalUuid4": "7e5f705d-8cea-4351-bada-dacc7eaff2ef", 
     "fileName": "17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso", 
     "formatKey": "tar", 
-    "key": "windowsserver2019iso", 
+    "key": "win2019iso", 
     "md5": "c2592569df937aff1c21dafd3d4e9b40", 
-    "name": "Windows Server 2019 ISO", 
+    "name": "Win2019 ISO", 
     "remoteUri": null, 
     "size": 5652088832, 
     "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
