@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "win10desktopiso", 
+    "archiveKey": "win10iso", 
     "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "24a0d270-3728-464d-88ef-bde47cccdc7f", 

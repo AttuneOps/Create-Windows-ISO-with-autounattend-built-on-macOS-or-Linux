@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win2016iso", 
+    "deployPath": "/c$/software", 
+    "enabled": true, 
+    "externalUuid4": "648abcec-865a-4b53-ae39-65cdcaf4323c", 
+    "key": "deploywin2016isotosoftware", 
+    "name": "Deploy Win2016 ISO to Software", 
+    "osCredKey": "newoswindowsuseradministrator", 
+    "serverKey": "newoswindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

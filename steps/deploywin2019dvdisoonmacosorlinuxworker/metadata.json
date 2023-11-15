@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "windowsserver2019iso", 
+    "archiveKey": "win2019iso", 
     "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "c1d6663e-8976-4d6c-99b5-e64859048a35", 

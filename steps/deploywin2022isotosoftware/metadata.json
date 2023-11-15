@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win2022iso", 
+    "deployPath": "/c$/software", 
+    "enabled": true, 
+    "externalUuid4": "e2f4b5b1-eab9-40c1-ba67-e539f7c73e17", 
+    "key": "deploywin2022isotosoftware", 
+    "name": "Deploy Win2022 ISO to Software", 
+    "osCredKey": "newoswindowsuseradministrator", 
+    "serverKey": "newoswindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

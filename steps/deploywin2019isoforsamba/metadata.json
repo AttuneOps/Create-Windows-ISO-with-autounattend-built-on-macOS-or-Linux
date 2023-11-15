@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": "stop", 
-    "archiveKey": "windowsserver2019iso", 
+    "archiveKey": "win2019iso", 
     "deployPath": "$HOME/windows_iso_data_for_winpe/windows2019", 
     "enabled": true, 
     "externalUuid4": "6f83324d-28ca-46be-b77c-71e69a37f789", 

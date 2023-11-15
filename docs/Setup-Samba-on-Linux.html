@@ -514,7 +514,7 @@ https://www.linuxquestions.org/questions/linux-general-1/chcon-can't-apply-parti
 shared_dir=&quot;${HOME}/windows_iso_data_for_winpe&quot;
 mkdir -p $shared_dir
 chmod -R 0775 $shared_dir
-chown -R nobody:{linuxAttuneUser.user} $shared_dir
+chown -R nobody:{automationWorkerLinuxUser.user} $shared_dir
 
 chcon -R -t samba_share_t $shared_dir
                 </code>
@@ -586,7 +586,7 @@ cat &lt;&lt; EOF &gt; smb.conf
 
 [share]
         comment = public share
-        path = /home/{linuxAttuneUser.user}/windows_iso_data_for_winpe
+        path = /home/{automationWorkerLinuxUser.user}/windows_iso_data_for_winpe
         browseable = yes
         guest ok = yes
         guest only = yes
@@ -838,7 +838,7 @@ dnf -y install \
 if sestatus | grep -i &quot;SELinux status:&quot; | grep -q &quot;enabled&quot;
 then
     setsebool -P samba_export_all_ro=1 samba_export_all_rw=1
-    semanage fcontext -at samba_share_t &quot;/home/attune/windows_iso_data_for_winpe(/.*)?&quot;
+    semanage fcontext -at samba_share_t &quot;/home/{automationWorkerLinuxUser.user}/windows_iso_data_for_winpe(/.*)?&quot;
 else
     echo &quot;SElinux is disabled&quot;
 fi

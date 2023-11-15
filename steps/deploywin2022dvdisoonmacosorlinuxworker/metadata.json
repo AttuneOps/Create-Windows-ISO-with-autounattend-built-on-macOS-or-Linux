@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "winrawwin2022iso", 
+    "archiveKey": "win2022iso", 
     "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "827b2807-3fca-408f-90ba-6e4f1f559359", 

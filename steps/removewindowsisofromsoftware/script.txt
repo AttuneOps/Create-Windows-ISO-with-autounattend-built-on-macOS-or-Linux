@@ -1,0 +1,6 @@
+$FOLDER = "C:\software"
+Set-Location -Path "${FOLDER}"
+
+$ISO_NAME = (Get-ChildItem *.iso).Name
+
+Remove-Item $ISO_NAME

@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": "stop", 
-    "archiveKey": "winrawwin2022iso", 
+    "archiveKey": "win2022iso", 
     "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "95187be7-436d-46f1-bde4-bd55edd32f1f", 

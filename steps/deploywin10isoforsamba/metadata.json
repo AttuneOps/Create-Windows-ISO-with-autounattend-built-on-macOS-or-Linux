@@ -1,6 +1,6 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "win10desktopiso", 
+    "archiveKey": "win10iso", 
     "deployPath": "$HOME/windows_iso_data_for_winpe/windows10", 
     "enabled": true, 
     "externalUuid4": "d0dce834-6a9e-4355-a832-4bf480a11d92", 
