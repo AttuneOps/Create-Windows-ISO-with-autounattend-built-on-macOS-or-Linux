@@ -7,4 +7,4 @@ Set one of these `true` depending on whether you want Windows Desktop 10 or Wind
 3. `isWinServerBios`
 4. `isWinServerUefi`
 
-Set `isWinPEKickstart` to `true`'` for WinPE kickstarts.
+Set `isWinPEKickstart` to `true` for WinPE kickstarts.

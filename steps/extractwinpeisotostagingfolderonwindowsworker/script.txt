@@ -1,0 +1,8 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+
+Set-Location $BUILD_DIR
+
+$FOLDER="winpe_staging"
+
+& 'C:\Program Files\7-Zip\7z.exe' x winpe.iso -o"${FOLDER}"

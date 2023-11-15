@@ -206,24 +206,24 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstart">
-                            <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart
+                        <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinuxworker">
+                            <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkwindowsandboottypeparametersforwinpekickstart">
-                            <strong>Step 2 -</strong> Check Windows and Boot Type Parameters for WinPE Kickstart
+                        <a href="#checkwindowsandboottypeparametersforwinpekickstartonmacosorlinuxworker">
+                            <strong>Step 2 -</strong> Check Windows and Boot Type Parameters for WinPE Kickstart on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstart">
-                            <strong>Step 3 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart
+                        <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonmacosorlinuxworker">
+                            <strong>Step 3 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -254,48 +254,48 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmplainwinpebiosisoexists">
-                            <strong>Step 7 -</strong> Confirm Plain WinPE BIOS ISO Exists
+                        <a href="#confirmplainwinpebiosisoexistsonmacosorlinuxworker">
+                            <strong>Step 7 -</strong> Confirm Plain WinPE BIOS ISO Exists on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmplainwinpeuefiisoexists">
-                            <strong>Step 8 -</strong> Confirm Plain WinPE UEFI ISO Exists
+                        <a href="#confirmplainwinpeuefiisoexistsonmacosorlinuxworker">
+                            <strong>Step 8 -</strong> Confirm Plain WinPE UEFI ISO Exists on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copyandrenamewinpebiosiso">
-                            <strong>Step 9 -</strong> Copy and Rename WinPE BIOS ISO
+                        <a href="#copyandrenamewinpebiosisoonmacosorlinuxworker">
+                            <strong>Step 9 -</strong> Copy and Rename WinPE BIOS ISO on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copyandrenamewinpeuefiiso">
-                            <strong>Step 10 -</strong> Copy and Rename WinPE UEFI ISO
+                        <a href="#copyandrenamewinpeuefiisoonmacosorlinuxworker">
+                            <strong>Step 10 -</strong> Copy and Rename WinPE UEFI ISO on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwinpeisotostagingfolder">
-                            <strong>Step 11 -</strong> Extract WinPE ISO to Staging Folder
+                        <a href="#extractwinpeisotostagingfolderonmacosorlinuxworker">
+                            <strong>Step 11 -</strong> Extract WinPE ISO to Staging Folder on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploystartnetcmd">
-                            <strong>Step 12 -</strong> Deploy startnet.cmd
+                        <a href="#deploystartnetcmdonmacosorlinuxworker">
+                            <strong>Step 12 -</strong> Deploy startnet.cmd on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -569,9 +569,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="checkinputparameterwindowsfolderonsambaforwinpekickstart">
-                            <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstart">
-                                <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart
+                        <h3 id="checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinuxworker">
+                            <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinuxworker">
+                                <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -581,10 +581,10 @@
                             <p>
                                 <ol>
 <li>Checks if <code>isWinPEKickstart</code> is set <code>true</code>.</li>
-<li>If <code>windowsFolderOnSamba</code> is set to <code>windows10</code>, checks if one of these are set:
+<li>If <code>windowsFolderOnSamba</code> is set to <code>windows10</code>, checks if one of these are set <code>true</code>
    * <code>isWin10Bios</code>
    * <code>isWin10Uefi</code></li>
-<li>If <code>windowsFolderOnSamba</code> is set to one of <code>windows2016</code>, <code>windows2019</code> or <code>windows2022</code> checks if one of these are set:
+<li>If <code>windowsFolderOnSamba</code> is set to one of <code>windows2016</code>, <code>windows2019</code> or <code>windows2022</code> checks if one of these are set <code>true</code>:
    * <code>isWinServerBios</code>
    * <code>isWinServerUefi</code></li>
 </ol>
@@ -666,9 +666,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="checkwindowsandboottypeparametersforwinpekickstart">
-                            <a href="#checkwindowsandboottypeparametersforwinpekickstart">
-                                <strong>Step 2 -</strong> Check Windows and Boot Type Parameters for WinPE Kickstart
+                        <h3 id="checkwindowsandboottypeparametersforwinpekickstartonmacosorlinuxworker">
+                            <a href="#checkwindowsandboottypeparametersforwinpekickstartonmacosorlinuxworker">
+                                <strong>Step 2 -</strong> Check Windows and Boot Type Parameters for WinPE Kickstart on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -746,9 +746,9 @@ echo &quot;SUCCESS: The parameters above are set correctly&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="checkinputparameterkickstartedbootloaderisuefiforwinpekickstart">
-                            <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstart">
-                                <strong>Step 3 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart
+                        <h3 id="checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonmacosorlinuxworker">
+                            <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonmacosorlinuxworker">
+                                <strong>Step 3 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -825,7 +825,10 @@ echo &quot;SUCCESS: Ok&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Windows Desktop 10 has a hostname maximum length of 15 characters.</p>
+<p>if one of these Attune parameters are true, this step checks for the hostname length and fails if it is larger than 15. 
+1. <code>isWin10Bios</code>
+2. <code>isWin10Uefi</code></p>
                             </p>
                         </div>
                     </div>
@@ -1079,9 +1082,9 @@ done
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmplainwinpebiosisoexists">
-                            <a href="#confirmplainwinpebiosisoexists">
-                                <strong>Step 7 -</strong> Confirm Plain WinPE BIOS ISO Exists
+                        <h3 id="confirmplainwinpebiosisoexistsonmacosorlinuxworker">
+                            <a href="#confirmplainwinpebiosisoexistsonmacosorlinuxworker">
+                                <strong>Step 7 -</strong> Confirm Plain WinPE BIOS ISO Exists on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1090,11 +1093,11 @@ done
                         <div class="description col px-0">
                             <p>
                                 <p>Checks if the WinPE plain BIOS ISO <code>{automationWorkerLinuxBaseDirectory}/winpe_plain_bios.iso</code> exists.</p>
-<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
-<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>'`:</p>
+<p>If it does not, a message will be printed to ask the user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
 </ol>
                             </p>
                         </div>
@@ -1156,9 +1159,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmplainwinpeuefiisoexists">
-                            <a href="#confirmplainwinpeuefiisoexists">
-                                <strong>Step 8 -</strong> Confirm Plain WinPE UEFI ISO Exists
+                        <h3 id="confirmplainwinpeuefiisoexistsonmacosorlinuxworker">
+                            <a href="#confirmplainwinpeuefiisoexistsonmacosorlinuxworker">
+                                <strong>Step 8 -</strong> Confirm Plain WinPE UEFI ISO Exists on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1167,11 +1170,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso</code> exists.</p>
-<p>If it does not, prints a message to ask user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
+<p>If it does not, a message will be printed to ask the user to run the WinPE UEFI ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker</code>.</p>
 <p>Only applies to UEFI kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
-<li>isWin10Uefi</li>
-<li>isWinServerUefi</li>
+<li><code>isWin10Uefi</code></li>
+<li><code>isWinServerUefi</code></li>
 </ol>
                             </p>
                         </div>
@@ -1233,9 +1236,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="copyandrenamewinpebiosiso">
-                            <a href="#copyandrenamewinpebiosiso">
-                                <strong>Step 9 -</strong> Copy and Rename WinPE BIOS ISO
+                        <h3 id="copyandrenamewinpebiosisoonmacosorlinuxworker">
+                            <a href="#copyandrenamewinpebiosisoonmacosorlinuxworker">
+                                <strong>Step 9 -</strong> Copy and Rename WinPE BIOS ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1243,7 +1246,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Makes a copy of the <code>winpe_win2019_plain_bios.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn</code>.</p>
+                                <p>Makes a copy of the <code>winpe_plain_bios.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn</code>.</p>
 <p>This ISO is BIOS bootable and works for:</p>
 <ol>
 <li>Windows Desktop 10</li>
@@ -1253,8 +1256,8 @@ fi
 </ol>
 <p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
 <ol>
-<li>isWin10Bios</li>
-<li>isWinServerBios</li>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
 </ol>
                             </p>
                         </div>
@@ -1308,9 +1311,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="copyandrenamewinpeuefiiso">
-                            <a href="#copyandrenamewinpeuefiiso">
-                                <strong>Step 10 -</strong> Copy and Rename WinPE UEFI ISO
+                        <h3 id="copyandrenamewinpeuefiisoonmacosorlinuxworker">
+                            <a href="#copyandrenamewinpeuefiisoonmacosorlinuxworker">
+                                <strong>Step 10 -</strong> Copy and Rename WinPE UEFI ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1318,7 +1321,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Makes a copy of the <code>winpe_win2019_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn</code>.</p>
+                                <p>Makes a copy of the <code>winpe_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn</code>.</p>
 <p>This ISO is UEFI bootable and works for:</p>
 <ol>
 <li>Windows Desktop 10</li>
@@ -1382,9 +1385,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwinpeisotostagingfolder">
-                            <a href="#extractwinpeisotostagingfolder">
-                                <strong>Step 11 -</strong> Extract WinPE ISO to Staging Folder
+                        <h3 id="extractwinpeisotostagingfolderonmacosorlinuxworker">
+                            <a href="#extractwinpeisotostagingfolderonmacosorlinuxworker">
+                                <strong>Step 11 -</strong> Extract WinPE ISO to Staging Folder on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1441,9 +1444,9 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="deploystartnetcmd">
-                            <a href="#deploystartnetcmd">
-                                <strong>Step 12 -</strong> Deploy startnet.cmd
+                        <h3 id="deploystartnetcmdonmacosorlinuxworker">
+                            <a href="#deploystartnetcmdonmacosorlinuxworker">
+                                <strong>Step 12 -</strong> Deploy startnet.cmd on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1527,7 +1530,7 @@ mkdir -p &quot;${FOLDER}&quot;
 <li><code>isWinServerBios</code></li>
 <li><code>isWinServerUefi</code></li>
 </ol>
-<p>Set <code>isWinPEKickstart</code> to <code>true</code>'` for WinPE kickstarts.</p>
+<p>Set <code>isWinPEKickstart</code> to <code>true</code> for WinPE kickstarts.</p>
                             </p>
                         </div>
                     </div>

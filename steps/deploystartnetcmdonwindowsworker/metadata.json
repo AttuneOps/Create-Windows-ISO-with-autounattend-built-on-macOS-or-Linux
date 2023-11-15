@@ -1,0 +1,37 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "winpestartnetcmd", 
+    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "1e7923ce-a176-4239-b95f-d062c4938610", 
+    "key": "deploystartnetcmdonwindowsworker", 
+    "makoFileNames": [
+        "startnet.cmd"
+    ], 
+    "makoParameters": [
+        {
+            "name": "sambaServerIpAddress", 
+            "parameterKey": "sambaserveripaddress", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "targetServer", 
+            "parameterKey": "newosnode", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "targetSubnet", 
+            "parameterKey": "newosnodesubnet", 
+            "parameterType": "c.s.s.b.phv.Ip4Subnet"
+        }, 
+        {
+            "name": "windowsFolderOnSamba", 
+            "parameterKey": "windowsfolderonsamba", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }
+    ], 
+    "name": "Deploy startnet.cmd on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
+}

@@ -83,10 +83,19 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 ### Create Windows autounattend WinPE ISO on macOS or Linux Worker
 
 
+### Create Windows autounattend WinPE ISO on Windows Worker
+
+
 ### Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
 
 
+### Create Windows PE (WinPE) Plain ISO on Windows Worker
+
+
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
+
+
+### Create Windows Server 2016 (Win2016) autounattend Dual ISO on Windows Worker
 
 
 ### Create Windows Server 2016 (Win2016) autounattend Single ISO on macOS or Linux Worker
@@ -111,6 +120,9 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerLin
 ### Create Windows Server 2019 (Win2019) autounattend Dual ISO on macOS or Linux Worker
 
 
+### Create Windows Server 2019 (Win2019) autounattend Dual ISO on Windows Worker
+
+
 ### Create Windows Server 2019 (Win2019) autounattend Single ISO on macOS or Linux Worker
 
 Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
@@ -131,6 +143,9 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 
 ### Create Windows Server 2022 (Win2022) autounattend Dual ISO on macOS or Linux Worker
+
+
+### Create Windows Server 2022 (Win2022) autounattend Dual ISO on Windows Worker
 
 
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on macOS or Linux Worker
@@ -184,18 +199,6 @@ Performs basic tests for the built node.
 ### Setup Samba on Linux
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
-
-### Create Windows Server 2016 (Win2016) autounattend Dual ISO on Windows Worker
-
-
-### Create Windows Server 2019 (Win2019) autounattend Dual ISO on Windows Worker
-
-
-### Create Windows Server 2022 (Win2022) autounattend Dual ISO on Windows Worker
-
-
-### Create Windows PE (WinPE) Plain ISO on Windows Worker
-
 
 
 
