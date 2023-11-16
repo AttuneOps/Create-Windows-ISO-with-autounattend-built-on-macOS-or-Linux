@@ -6,7 +6,7 @@ Set-Location $BUILD_DIR
 $POST_INSTALL_WIM_FOLDER = "post_install_wim"
 
 if ( -Not (Test-Path "${POST_INSTALL_WIM_FOLDER}") ) {
-  New-Item "${POST_INSTALL_WIM_FOLDER} -ItemType Directory
+  New-Item "${POST_INSTALL_WIM_FOLDER}" -ItemType Directory
 }
 
 Move-Item -Path .\post_install_setup.ps1 `

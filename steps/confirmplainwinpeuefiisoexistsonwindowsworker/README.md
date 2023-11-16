@@ -1,4 +1,4 @@
-Checks if the WinPE plain BIOS ISO `C:\attuneautomationworker/winpe_plain_uefi.iso` exists.
+Checks if the WinPE plain BIOS ISO `C:\attuneautomationworker\winpe_plain_uefi.iso` exists.
 
 If it does not, a message will be printed to ask the user to run the WinPE UEFI ISO creation blueprint `Create Windows PE (WinPE) Plain ISO on Windows Worker`.
 

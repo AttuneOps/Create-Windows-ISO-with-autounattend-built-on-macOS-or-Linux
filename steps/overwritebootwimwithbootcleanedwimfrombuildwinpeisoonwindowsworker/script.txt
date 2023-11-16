@@ -1,5 +1,5 @@
 $ISO_BUILD="C:\attuneautomationworker"
-$WINPE_STAGING_SOURCES_DIR="$ISO_BUILD\build-{newOsNode.fqn}\winpe_staging\SOURCES"
+$WINPE_STAGING_SOURCES_DIR="$ISO_BUILD\build-winpe-iso\winpe_staging\SOURCES"
 
 Set-Location "${WINPE_STAGING_SOURCES_DIR}"
 

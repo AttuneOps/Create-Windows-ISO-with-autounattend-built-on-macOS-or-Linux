@@ -21,6 +21,10 @@
         {
             "order": 150, 
             "stepKey": "wimlibunmountbootwimonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "overwritebootwimwithbootcleanedwimonwindowsworker"
         }
     ], 
     "name": "Modify WinPE boot.wim on Windows Worker", 

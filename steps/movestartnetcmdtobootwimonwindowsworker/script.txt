@@ -3,5 +3,9 @@ $BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
 
 Set-Location "${BUILD_DIR}"
 
+$DESTINATION_FILE = ".\WinPE_BootImageDir\Windows\System32\startnet.cmd"
+
+Remove-Item "${DESTINATION_FILE}"
+
 Move-Item -Path ".\startnet.cmd" `
-    -Destination ".\WinPE_BootImageDir\Windows\System32"
+    -Destination "${DESTINATION_FILE}"

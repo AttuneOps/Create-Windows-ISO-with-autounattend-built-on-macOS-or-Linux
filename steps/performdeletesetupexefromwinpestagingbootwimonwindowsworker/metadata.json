@@ -24,7 +24,7 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "overwritebootwimwithbootcleanedwimonwindowsworker"
+            "stepKey": "overwritebootwimwithbootcleanedwimfrombuildwinpeisoonwindowsworker"
         }
     ], 
     "name": "Perform Delete setup.exe from winpe_staging boot.wim on Windows Worker", 

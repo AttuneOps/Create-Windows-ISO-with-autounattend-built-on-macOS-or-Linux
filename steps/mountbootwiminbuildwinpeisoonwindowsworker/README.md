@@ -1,1 +1,1 @@
-Mounts `C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES\BOOT.WIM` to `C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir` using `Dism`.
+Mounts `C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES\BOOT.WIM` to `C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir` using `Dism` on Windows Worker.

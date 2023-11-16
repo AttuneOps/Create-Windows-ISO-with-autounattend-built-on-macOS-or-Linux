@@ -5,8 +5,8 @@ Set-Location $BUILD_DIR
 
 Write-Host "We are in ${BUILD_DIR}"
 
-SOURCE="post_install_wim"
-WIMFILE="post_install.wim"
+$SOURCE="post_install_wim"
+$WIMFILE="post_install.wim"
 
 Write-Host "Creating ${WIMFILE} from directory ${SOURCE}."
 

@@ -5,21 +5,18 @@ Set-Location "${BUILD_DIR}"
 
 $WinPE_BootImageDir = "WinPE_BootImageDir"
 
-$scriptContent=@"
-wimunmount "${WinPE_BootImageDir}" --commit --check --rebuild
-"@
-
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace("`r`n","`n")
+Dism /Image:"./WinPE_BootImageDir" `
+    /cleanup-image `
+    /StartComponentCleanup `
+    /ResetBase
     
-$FILE = "attune_wsl_unmount_boot_wim.sh"
+# Unmount the WinPE_BootImageDir folder back into BOOT.WIM
+Dism /Unmount-Image /MountDir:"./WinPE_BootImageDir" /Commit
 
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Error 'Failed to unmount $BUILD_DIR\${WinPE_BootImageDir}'
-}
-  
-Remove-Item "${FILE}"
+# Generate a compressed version of BOOT.WIM called BOOT_CLEANED.WIM
+Dism /Export-Image /SourceImageFile:"./winpe_staging/SOURCES/BOOT.WIM" `
+  /SourceIndex:1 `
+  /DestinationImageFile:"./winpe_staging/SOURCES/BOOT_CLEANED.WIM" `
+  /Compress:max `
+  /Bootable `
+  /CheckIntegrity
