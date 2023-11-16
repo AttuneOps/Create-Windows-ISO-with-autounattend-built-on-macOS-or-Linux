@@ -1,0 +1,80 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "80a66755-7471-4db9-8c21-63c3f8961158", 
+    "isBlueprint": true, 
+    "key": "createwindowsautounattendwinpeisoonwindowsworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checkwindowsandboottypeparametersforwinpekickstartonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "checkmaximumlengthofwin10hostnameonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "checkifipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "confirmplainwinpebiosisoexistsonwindowsworker"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "confirmplainwinpeuefiisoexistsonwindowsworker"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "copyandrenamewinpebiosisoonwindowsworker"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "copyandrenamewinpeuefiisoonwindowsworker"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "extractwinpeisotostagingfolderonwindowsworker"
+        }, 
+        {
+            "order": 550, 
+            "stepKey": "deploystartnetcmdonwindowsworker"
+        }, 
+        {
+            "order": 600, 
+            "stepKey": "deploywindowsunattendedconfigonwindowsworker"
+        }, 
+        {
+            "order": 650, 
+            "stepKey": "createpostsetupwimonwindowsworker"
+        }, 
+        {
+            "order": 700, 
+            "stepKey": "modifywinpebootwimonwindowsworker"
+        }, 
+        {
+            "order": 750, 
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonwindowsworker"
+        }, 
+        {
+            "order": 800, 
+            "stepKey": "recreateuefibootwinpeisofromwinpestagingonwindowsworker"
+        }
+    ], 
+    "name": "Create Windows autounattend WinPE ISO on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

@@ -1,0 +1,25 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+
+Set-Location "${BUILD_DIR}"
+
+$WinPE_BootImageDir = "WinPE_BootImageDir"
+
+$scriptContent=@"
+wimunmount "${WinPE_BootImageDir}" --commit --check --rebuild
+"@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace("`r`n","`n")
+    
+$FILE = "attune_wsl_unmount_boot_wim.sh"
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error 'Failed to unmount $BUILD_DIR\${WinPE_BootImageDir}'
+}
+  
+Remove-Item "${FILE}"

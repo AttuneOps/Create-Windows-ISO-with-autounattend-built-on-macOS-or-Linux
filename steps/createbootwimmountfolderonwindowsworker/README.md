@@ -1,0 +1,1 @@
+Creates a directory `C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir` for mounting `C:\attuneautomationworker\build-{newOsNode.fqn}\winpe_staging\SOURCES\BOOT.WIM` on Windows Worker.

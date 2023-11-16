@@ -1,0 +1,45 @@
+if ( ${{kickstartedBootLoaderIsUefi}} ) {
+    $ISO_BUILD="C:\attuneautomationworker"
+    $BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+    
+    Set-Location "${BUILD_DIR}"
+
+    $ISO_NAME="kickstart_{newOsNode.fqn}.iso"
+    
+    $scriptContent=@"
+mkisofs \
+    -iso-level 4 \
+    -full-iso9660-filenames \
+    -rock \
+    -b BOOT/etfsboot.com \
+    -no-emul-boot \
+    -boot-load-size 8 \
+    -hide boot.catalog \
+    -eltorito-alt-boot \
+    -no-emul-boot \
+    -b efi/microsoft/boot/efisys.bin \
+    -boot-load-size 1 \
+    -untranslated-filenames \
+    -disable-deep-relocation \
+    -o "../${ISO_NAME}" \
+    winpe_staging
+"@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace("`r`n","`n")
+    
+$FILE = "attune_wsl_recreate_winpe_uefi_iso.sh"
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error 'Failed to create $ISO_BUILD\${ISO_NAME}'
+}
+  
+Remove-Item "${FILE}"
+
+} else {
+    echo "Skipping for BIOS boot."
+}

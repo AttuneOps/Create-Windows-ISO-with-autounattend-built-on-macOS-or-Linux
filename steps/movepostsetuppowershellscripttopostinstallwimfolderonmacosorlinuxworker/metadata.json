@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "de74fc3d-fa4a-49a0-bc7c-c2338454b588", 
+    "interpreter": 1, 
+    "key": "movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinuxworker", 
+    "name": "Move Post Setup PowerShell Script to post_install_wim Folder on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

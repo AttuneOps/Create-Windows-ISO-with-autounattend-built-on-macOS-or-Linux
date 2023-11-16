@@ -1,0 +1,2660 @@
+
+<!doctype html>
+<html lang="en">
+
+
+
+
+<head>
+    <title>How to Create Windows autounattend WinPE ISO on Windows Worker - Attune Automation</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="title"
+          content="How to Create Windows autounattend WinPE ISO on Windows Worker - Attune Automation">
+    <meta name="description"
+          content="">
+    <meta name="robots"
+          content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title"
+          content="HowTo Create Windows autounattend WinPE ISO on Windows Worker - Attune Automation" />
+    <meta property="og:description" content="" />
+    <meta property="og:site_name" content="Attune Automation" />
+    <meta property="article:section" content="IT Instruction" />
+
+    <meta name="twitter:title"
+          content="How to Create Windows autounattend WinPE ISO on Windows Worker - Attune Automation" />
+    <meta name="twitter:description" content="" />
+
+    <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
+    <link rel="apple-touch-icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-180x180.png">
+    <meta name="msapplication-TileImage" content="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-270x270.png">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id=G-5TZQZNDJCD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-5TZQZNDJCD');
+    </script>
+</head>
+
+
+<body>
+
+<!-- Project NavBar -->
+
+<div class="bg-white border-bottom box-shadow sticky-top mb-3">
+<div class="container px-0">
+    <div class="row px-0">
+        <div class="col d-flex flex-column flex-lg-row align-items-center px-0
+            py-3">
+            <a class="navbar-brand my-0 mr-lg-auto"
+                  href="https://www.servertribe.com/"
+                  target="_blank">
+                    <img
+                        src="https://www.servertribe.com/wp-content/uploads/2022/06/AttuneLogoV2_powered_by.png"
+                        alt="Attune - Powered by ServerTribe"
+                        class="img-fluid navbar-img">
+            </a>
+            <nav class="my-2 my-lg-0 mr-lg-3">
+                <a class="p-2 text-dark" href="http://doc.servertribe.com/"
+                   target="_blank">
+                    Documentation
+                </a>
+                <a class="p-2 text-dark"
+                   href="https://discord.com/invite/3YpJsagqUn"
+                   target="_blank">
+                    Discord
+                </a>
+                <a class="p-2 text-dark" href="https://github.com/Attune-Automation"
+                   target="_blank">
+                    GitHub
+                </a>
+                <a class="p-2 text-dark" href="https://www.servertribe.com/learn/"
+                   target="_blank">
+                    Learn
+                </a>
+            </nav>
+            <a class="btn btn-outline-primary"
+               href="https://www.servertribe.com/download-attune-registration/"
+               target="_blank">
+                Download NOW!
+            </a>
+        </div>
+    </div>
+</div></div>
+
+<!-- Project breadcrumbs -->
+
+<!-- Project breadcrumbs -->
+<div class="container px-0">
+    <div class="row">
+        <nav class="col px-0" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.html">
+                    Automate Windows Installation with autounattend
+                    </a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">
+                    <strong>Create Windows autounattend WinPE ISO on Windows Worker</strong>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Blueprint Header -->
+
+<div class="container px-0">
+    <!-- Blueprint name and description -->
+    <div class="row">
+        <div class="col px-0">
+            <h1 class="text-left">
+                How to Create Windows autounattend WinPE ISO on Windows Worker
+            </h1>
+        </div>
+    </div>
+
+<!-- Blueprint Description -->
+    <div class="row pt-4">
+        <div class="col-6 px-0">
+            <h6 class="text-left">
+                This documentation is generated by
+                <a href="https://www.servertribe.com/"
+                    class="badge badge-primary"
+                    target="_blank">
+                    Attune
+                </a>
+            </h6>
+        </div>
+        <div class="col-6 align-self-end text-right px-0">
+            <h6 class="text-right">
+                <a href="https://www.youtube.com/@servertribe"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    YouTube
+                </a>
+                <a href="https://github.com/Attune-Automation"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    GitHub
+                </a>
+                <a href="https://discord.com/invite/3YpJsagqUn"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    Discord
+                </a>
+                <a href="https://www.linkedin.com/company/servertribe/"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    LinkedIn
+                </a>
+                <a href="http://doc.servertribe.com/"
+                    class="badge badge-secondary"
+                    target="_blank">
+                    Documentation
+                </a>
+            </h6>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="documentation">
+    <div class="container px-0">
+        <div class="row">
+
+<!-- Blueprint ToC -->
+
+
+            <div class="toc col-lg-2 px-0 pr-5">
+                <div class="container px-0 pt-3">
+                    <p class="pb-2">
+                        <strong>Contents</strong>
+                    </p>
+                    <p class="text-muted">
+                        <a href="#top">
+                            <strong>Create Windows autounattend WinPE ISO on Windows Worker</strong>
+                        </a>
+                    </p>
+
+
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
+                            <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkwindowsandboottypeparametersforwinpekickstartonwindowsworker">
+                            <strong>Step 2 -</strong> Check Windows and Boot Type Parameters for WinPE Kickstart on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
+                            <strong>Step 3 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
+                            <strong>Step 4 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkifipaddressisinsubnetonwindowsworker">
+                            <strong>Step 5 -</strong> Check if IP Address is in Subnet on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
+                            <strong>Step 6 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#confirmplainwinpebiosisoexistsonwindowsworker">
+                            <strong>Step 7 -</strong> Confirm Plain WinPE BIOS ISO Exists on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#confirmplainwinpeuefiisoexistsonwindowsworker">
+                            <strong>Step 8 -</strong> Confirm Plain WinPE UEFI ISO Exists on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copyandrenamewinpebiosisoonwindowsworker">
+                            <strong>Step 9 -</strong> Copy and Rename WinPE BIOS ISO on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copyandrenamewinpeuefiisoonwindowsworker">
+                            <strong>Step 10 -</strong> Copy and Rename WinPE UEFI ISO on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#extractwinpeisotostagingfolderonwindowsworker">
+                            <strong>Step 11 -</strong> Extract WinPE ISO to Staging Folder on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploystartnetcmdonwindowsworker">
+                            <strong>Step 12 -</strong> Deploy startnet.cmd on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploywindowsunattendedconfigonwindowsworker">
+                            <strong>Step 13 -</strong> Deploy Windows Unattended Config on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createpostsetupwimonwindowsworker">
+                            <strong>Step 14 -</strong> Create Post Setup WIM on Windows Worker
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deploypostsetuppowershellscriptonwindowsworker">
+                            <strong>Step 14.1 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movepostsetuppowershellscripttopostinstallwimfolderonwindowsworker">
+                            <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createpostinstallwimwindowsimageonwindowsworker">
+                            <strong>Step 14.3 -</strong> Create post_install.wim Windows Image on Windows Worker
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#modifywinpebootwimonwindowsworker">
+                            <strong>Step 15 -</strong> Modify WinPE boot.wim on Windows Worker
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createbootwimmountfolderonwindowsworker">
+                            <strong>Step 15.1 -</strong> Create boot.wim Mount Folder on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#mountbootwimonwindowsworker">
+                            <strong>Step 15.2 -</strong> Mount BOOT.WIM on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movefilestobootwimonwindowsworker">
+                            <strong>Step 15.3 -</strong> Move Files to boot.wim on Windows Worker
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movestartnetcmdtobootwimonwindowsworker">
+                            <strong>Step 15.3.1 -</strong> Move startnet.cmd to boot.wim on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#moveautounattendxmltobootwimonwindowsworker">
+                            <strong>Step 15.3.2 -</strong> Move autounattend.xml to boot.wim on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copydriversdropinfoldertobootwimonwindowsworker">
+                            <strong>Step 15.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#movepostinstallwimtobootwimonwindowsworker">
+                            <strong>Step 15.3.4 -</strong> Move post_install.wim to boot.wim on Windows Worker
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#wimlibunmountbootwimonwindowsworker">
+                            <strong>Step 15.4 -</strong> wimlib Unmount boot.wim on Windows Worker
+                        </a>
+                    </p>
+
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#recreatebiosbootwinpeisofromwinpestagingonwindowsworker">
+                            <strong>Step 16 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworker">
+                            <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker
+                        </a>
+                    </p>
+
+
+                </div>
+            </div>
+
+<!-- Blueprint Contents -->
+            <div class="col-lg-8 pt-3">
+                <div class="container">
+
+
+        <div class="jumbotron">
+            <p class="display-3 text-center">
+                <strong>Automate This</strong>
+            </p>
+            <p class="lead text-center">
+                Use the <strong>Attune GUI</strong> for your Scripts
+            </p>
+            <p class="lead">
+                <ol>
+                    <a href="https://www.servertribe.com/download-attune-registration/"
+                        target="_blank">
+                        <span class="badge badge-primary">1</span>
+                        Download Attune
+                        <i class="fa-solid fa-download fa-beat-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://github.com/attune-Automation/"
+                        target="_blank">
+                        <span class="badge badge-primary">2</span>
+                         Copy the Attune Project URL
+                         <i class="fa-brands fa-github fa-fade"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://servertribe-attune.readthedocs.io/en/latest/howto/design_workspace/clone_project.html"
+                        target="_blank">
+                        <span class="badge badge-primary">3</span>
+                        Clone the Project in Attune
+                         <i class="fa-solid fa-book fa-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://www.youtube.com/watch?v=GCWDI29rDV0"
+                        target="_blank">
+                        <span class="badge badge-primary">4</span>
+                        Plan your Job(s)
+                        <i class="fa-brands fa-youtube fa-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+                <ol>
+                    <a href="https://www.youtube.com/watch?v=b7DhFcURkZg"
+                        target="_blank">
+                        <span class="badge badge-primary">5</span>
+                        Run your Job(s)
+                        <i class="fa-brands fa-youtube fa-fade" style="color: #0197ff;"></i>
+                    </a>
+                </ol>
+            </p>
+            <p class="lead text-center">
+                You've automated: <strong>Create Windows autounattend WinPE ISO on Windows Worker</strong>
+            </p>
+            <hr class="my-4 text-center">
+            <div class="col px-0">
+                <p class="text-center">
+                    Get the most out of automation with our get started
+                    videos, product demonstrations, and more.
+                </p>
+                <p class="lead text-center">
+                    <a class="btn btn-primary btn-lg"
+                       href="https://www.servertribe.com/learn/"
+                       target="_blank"
+                       role="button">
+                        Learn Attune Automation
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <p>The following steps will guide you through the manual process.</p>
+        </div>
+
+<!-- Blueprint Steps -->
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
+                            <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
+                                <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <ol>
+<li>Checks if <code>isWinPEKickstart</code> is set <code>true</code>.</li>
+<li>If <code>windowsFolderOnSamba</code> is set to <code>windows10</code>, checks if one of these are set <code>true</code>
+   * <code>isWin10Bios</code>
+   * <code>isWin10Uefi</code></li>
+<li>If <code>windowsFolderOnSamba</code> is set to one of <code>windows2016</code>, <code>windows2019</code> or <code>windows2022</code> checks if one of these are set <code>true</code>:
+   * <code>isWinServerBios</code>
+   * <code>isWinServerUefi</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via RDP:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+mstsc /admin /v:{automationworkerwindowsnode}
+                            </code>
+                        </div>
+                        <div class="row">
+                            <p>
+                                Login as user {automationworkerwindowsuseradministrator} and open a
+                                command prompt.
+                            </p>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( -Not ${{isWinPEKickstart}} ) {
+    Write-Host &quot;Please set isWinPEKickstart as the string &#x27;true&#x27;&quot;
+    exit 1
+}
+
+if ( {windowsFolderOnSamba} -eq &quot;windows10&quot; ) {
+    if ( (-Not ${{isWin10Bios}}) -And (-Not ${{isWin10Uefi}}) ) {
+        Write-Host &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
+        exit 1
+    }
+}
+
+if (( {windowsFolderOnSamba} -eq &quot;windows2016&quot; ) -Or
+    ( {windowsFolderOnSamba} -eq &quot;windows2019&quot; ) -Or
+    ( {windowsFolderOnSamba} -eq &quot;windows2022&quot; )) {
+
+    if ( (-Not ${{isWinServerBios}}) -And (-Not ${{isWinServerUefi}}) ) {
+        Write-Host &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server.&quot;
+        exit 1
+    }
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkwindowsandboottypeparametersforwinpekickstartonwindowsworker">
+                            <a href="#checkwindowsandboottypeparametersforwinpekickstartonwindowsworker">
+                                <strong>Step 2 -</strong> Check Windows and Boot Type Parameters for WinPE Kickstart on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Checks exactly if one of these are set true:
+1. <code>isWin10Bios</code>
+2. <code>isWin10Uefi</code>
+3. <code>isWinServerBios</code>
+4. <code>isWinServerUefi</code></p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$values = &quot;
+    isWin10Bios = {isWin10Bios}
+    isWin10Uefi = {isWin10Uefi}
+    isWinServerBios = {isWinServerBios}
+    isWinServerUefi = {isWinServerUefi}
+    &quot;
+
+function printVals {
+    Write-Host &quot;${values}&quot;
+}
+
+Write-Host &quot;Checking ...&quot;
+printVals
+
+[regex]$regex = &#x27;true&#x27;
+
+$COUNT = $regex.matches(&quot;${values}&quot;).count
+
+Write-Host &quot;COUNT=${COUNT}&quot;
+
+if ( $COUNT -ne 1 ) {
+    Write-Host &quot;FAIL: You must have exactly one only have one of the parameters above set to true&quot;
+    exit 1
+}
+
+Write-Host &quot;SUCCESS: The parameters above are set correctly&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
+                            <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
+                                <strong>Step 3 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>If <code>kickstartedBootLoaderIsUefi</code> is set <code>true</code>, then checks if at least one of these are also <code>true</code>:
+1. <code>isWin10Uefi</code>
+2. <code>isWinServerUefi</code></p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsUefi}}) {
+
+    Write-Host &quot;isWin10Uefi = {isWin10Uefi}, isWinServerUefi = {isWinServerUefi}&quot;
+
+    if ((-Not ${{isWin10Uefi}}) -And
+        (-Not ${{isWinServerUefi}}) ) {
+
+        Write-Host &quot;If kickstartedBootLoaderIsUefi is set true, then
+        one of isWin10Uefi or isWinServerUefi must also be
+        set true&quot;
+        exit 1
+      }
+}
+
+Write-Host &quot;SUCCESS: Ok&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkmaximumlengthofwin10hostnameonwindowsworker">
+                            <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
+                                <strong>Step 4 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Windows Desktop 10 has a hostname maximum length of 15 characters.</p>
+<p>if one of these Attune parameters are true, this step checks for the hostname length and fails if it is larger than 15. 
+1. <code>isWin10Bios</code>
+2. <code>isWin10Uefi</code></p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
+
+    $HOSTNAME = &quot;{newOsNode.hostname}&quot;
+    
+    $LENGTH = $HOSTNAME.length
+    $MAX_LENGTH = 15
+    
+    if ( $LENGTH -gt $MAX_LENGTH ) {
+        Write-Host &quot;Length of hostname ${LENGTH} for Win10 can&#x27;t be more than ${MAX_LENGTH}.&quot;
+        false
+    } else {
+        Write-Host &quot;Length of hostname ${LENGTH} is less than or equal to ${MAX_LENGTH}.&quot;
+    }
+    
+} else {
+    Write-Host &quot;Not Win10, skipping.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkifipaddressisinsubnetonwindowsworker">
+                            <a href="#checkifipaddressisinsubnetonwindowsworker">
+                                <strong>Step 5 -</strong> Check if IP Address is in Subnet on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <h4>To Debug</h4>
+<ul>
+<li>Uncomment out the <code>Write-Host</code>s to debug.</li>
+</ul>
+<h4>Logic</h4>
+<ul>
+<li>For loop loops through each octet in the IP address, subnet range octet and subnet mask.</li>
+<li>For each octet:<ul>
+<li>The min octet is the subnet octet bitwised <code>AND</code>ed with the netmask octet.</li>
+<li>A wildcard octet is 255 - netmask octet.</li>
+<li>The max octet is the subnet octet bitwised <code>OR</code>ed with the wildcard octet.</li>
+<li>The IP address octet is tested to see if it is between the min and max octets.</li>
+</ul>
+</li>
+</ul>
+<h4>References</h4>
+<p><a href="https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/">Subnet Cheat Sheet - 24 Subnet Mask, 30, 26, 27, 29, and other IP Address CIDR Network References</a></p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+Write-Host &quot;IP address={newOsNode.ip}&quot;
+Write-Host &quot;subnet={newOsNodeSubnet.subnet}&quot;
+Write-Host &quot;netmask={newOsNodeSubnet.netmask}&quot;
+#Write-Host &quot;i, IP_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX&quot;
+
+$IP_OCTETS = &quot;{newOsNode.ip}&quot;.split(&#x27;.&#x27;)
+$SUBNET_OCTETS = &quot;{newOsNodeSubnet.subnet}&quot;.split(&#x27;.&#x27;)
+$NETMASK_OCTETS = &quot;{newOsNodeSubnet.netmask}&quot;.split(&#x27;.&#x27;)
+
+for ($i = 0; $i -lt 4; $i++) {
+    $IP_OCTET = $IP_OCTETS[$i]
+    $SUBNET_OCTET = $SUBNET_OCTETS[$i]
+    $NETMASK_OCTET = $NETMASK_OCTETS[$i]
+    
+    $OCTET_MIN = $SUBNET_OCTET -band $NETMASK_OCTET
+
+    $WILDCARD_MASK = 255 - $NETMASK_OCTET
+    $OCTET_MAX = $SUBNET_OCTET -bor $WILDCARD_MASK
+    
+    #Write-Host &quot;$i. $IP_OCTET, $SUBNET_OCTET, $NETMASK_OCTET, $WILDCARD_MASK, $OCTET_MIN, $OCTET_MAX&quot;
+    
+    if ( ($IP_OCTET -ge $OCTET_MIN) -and
+        ($IP_OCTET -le $OCTET_MAX) ) {
+        Write-Host &quot;Octet number $i, $OCTET_MIN &lt;= $IP_OCTET &lt;= $OCTET_MAX, ok.&quot;
+    } else {
+        Write-Host &quot;Octet number $i, $OCTET_MIN &lt;= $IP_OCTET &lt;= $OCTET_MAX is false. Not in range of the subnet mask.&quot;
+        exit 1
+    }
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="checkifgatewayipaddressisinsubnetonwindowsworker">
+                            <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
+                                <strong>Step 6 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <h4>To Debug</h4>
+<ul>
+<li>Uncomment out the <code>Write-Host</code>s to debug.</li>
+</ul>
+<h4>Logic</h4>
+<ul>
+<li>For loop loops through each octet in the gateway IP address, subnet range octet and subnet mask.</li>
+<li>For each octet:<ul>
+<li>The min octet is the subnet octet bitwised <code>AND</code>ed with the netmask octet.</li>
+<li>A wildcard octet is 255 - netmask octet.</li>
+<li>The max octet is the subnet octet bitwised <code>OR</code>ed with the wildcard octet.</li>
+<li>The gateway IP address octet is tested to see if it is between the min and max octets.</li>
+</ul>
+</li>
+</ul>
+<h4>References</h4>
+<p><a href="https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/">Subnet Cheat Sheet - 24 Subnet Mask, 30, 26, 27, 29, and other IP Address CIDR Network References</a></p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+Write-Host &quot;gateway IP address={newOsNodeSubnet.gateway}&quot;
+Write-Host &quot;subnet={newOsNodeSubnet.subnet}&quot;
+Write-Host &quot;netmask={newOsNodeSubnet.netmask}&quot;
+#Write-Host &quot;i, GATEWAY_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX&quot;
+
+$GATEWAY_OCTETS = &quot;{newOsNodeSubnet.gateway}&quot;.split(&#x27;.&#x27;)
+$SUBNET_OCTETS = &quot;{newOsNodeSubnet.subnet}&quot;.split(&#x27;.&#x27;)
+$NETMASK_OCTETS = &quot;{newOsNodeSubnet.netmask}&quot;.split(&#x27;.&#x27;)
+
+for ($i = 0; $i -lt 4; $i++) {
+    $GATEWAY_OCTET = $GATEWAY_OCTETS[$i]
+    $SUBNET_OCTET = $SUBNET_OCTETS[$i]
+    $NETMASK_OCTET = $NETMASK_OCTETS[$i]
+    
+    $OCTET_MIN = $SUBNET_OCTET -band $NETMASK_OCTET
+
+    $WILDCARD_MASK = 255 - $NETMASK_OCTET
+    $OCTET_MAX = $SUBNET_OCTET -bor $WILDCARD_MASK
+    
+    #Write-Host &quot;$i. $GATEWAY_OCTET, $SUBNET_OCTET, $NETMASK_OCTET, $WILDCARD_MASK, $OCTET_MIN, $OCTET_MAX&quot;
+    
+    if ( ($GATEWAY_OCTET -ge $OCTET_MIN) -and
+        ($GATEWAY_OCTET -le $OCTET_MAX) ) {
+        Write-Host &quot;Octet number $i, $OCTET_MIN &lt;= $GATEWAY_OCTET &lt;= $OCTET_MAX, ok.&quot;
+    } else {
+        Write-Host &quot;Octet number $i, $OCTET_MIN &lt;= $GATEWAY_OCTET &lt;= $OCTET_MAX is false. Not in range of the subnet mask.&quot;
+        exit 1
+    }
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="confirmplainwinpebiosisoexistsonwindowsworker">
+                            <a href="#confirmplainwinpebiosisoexistsonwindowsworker">
+                                <strong>Step 7 -</strong> Confirm Plain WinPE BIOS ISO Exists on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>C:\attuneautomationworker/winpe_plain_bios.iso</code> exists.</p>
+<p>If it does not, a message will be printed to ask the user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on Windows Worker</code>.</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
+<ol>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
+
+    $DIRECTORY=&quot;C:\attuneautomationworker&quot;
+    Set-Location &quot;${DIRECTORY}&quot;
+    
+    $ISO=&quot;winpe_plain_bios.iso&quot;
+
+    if (test-Path &quot;${ISO}&quot; -pathtype leaf) {
+        Write-Host &quot;${DIRECTORY}\${ISO} exists. Great.&quot;
+    } else {
+        Write-Host &quot;${DIRECTORY}\${ISO} does not exist. Please run blueprint \&quot;Create Windows PE (WinPE) Plain ISO on Windows Worker\&quot; to create it.&quot;
+        exit 1
+    }
+    
+} else {
+    Write-Host &quot;Skipping for UEFI ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="confirmplainwinpeuefiisoexistsonwindowsworker">
+                            <a href="#confirmplainwinpeuefiisoexistsonwindowsworker">
+                                <strong>Step 8 -</strong> Confirm Plain WinPE UEFI ISO Exists on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>C:\attuneautomationworker/winpe_plain_uefi.iso</code> exists.</p>
+<p>If it does not, a message will be printed to ask the user to run the WinPE UEFI ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on Windows Worker</code>.</p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
+<ol>
+<li><code>isWin10Uefi</code></li>
+<li><code>isWinServerUefi</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{isWin10Uefi}} -Or ${{isWinServerUefi}} ) {
+
+    $DIRECTORY=&quot;C:\attuneautomationworker&quot;
+    Set-Location &quot;${DIRECTORY}&quot;
+    
+    $ISO=&quot;winpe_plain_uefi.iso&quot;
+
+    if (test-Path &quot;${ISO}&quot; -pathtype leaf) {
+        Write-Host &quot;${DIRECTORY}\${ISO} exists. Great.&quot;
+    } else {
+        Write-Host &quot;${DIRECTORY}\${ISO} does not exist. Please run blueprint \&quot;Create Windows PE (WinPE) Plain ISO on Windows Worker\&quot; to create it.&quot;
+        exit 1
+    }
+    
+} else {
+    Write-Host &quot;Skipping for BIOS ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="copyandrenamewinpebiosisoonwindowsworker">
+                            <a href="#copyandrenamewinpebiosisoonwindowsworker">
+                                <strong>Step 9 -</strong> Copy and Rename WinPE BIOS ISO on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Makes a copy of the <code>winpe_plain_bios.iso</code> as <code>winpe.iso</code> in the folder <code>C:\attuneautomationworker\build-{newOsNode.fqn</code>.</p>
+<p>This ISO is BIOS bootable and works for:</p>
+<ol>
+<li>Windows Desktop 10</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
+    
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+
+    Set-Location $ISO_BUILD
+
+    $BUILD_FOLDER=&quot;build-{newOsNode.fqn}&quot;
+
+    if ( -Not (Test-Path &quot;${BUILD_FOLDER}&quot;) ) {
+        New-Item &quot;${BUILD_FOLDER}&quot; -ItemType Directory
+    }
+
+    Copy-Item -Path &quot;winpe_plain_bios.iso&quot; `
+        -Destination &quot;${BUILD_FOLDER}&quot;
+    
+} else {
+    Write-Host &quot;Skipping for UEFI ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="copyandrenamewinpeuefiisoonwindowsworker">
+                            <a href="#copyandrenamewinpeuefiisoonwindowsworker">
+                                <strong>Step 10 -</strong> Copy and Rename WinPE UEFI ISO on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Makes a copy of the <code>winpe_plain_uefi.iso</code> as <code>winpe.iso</code> in the folder <code>C:\attuneautomationworker\build-{newOsNode.fqn</code>.</p>
+<p>This ISO is UEFI bootable and works for:</p>
+<ol>
+<li>Windows Desktop 10</li>
+<li>Windows Server 2016</li>
+<li>Windows Server 2019</li>
+<li>Windows Server 2022</li>
+</ol>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string 'true':</p>
+<ol>
+<li><code>isWin10Uefi</code></li>
+<li><code>isWinServerUefi</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{isWin10Uefi}} -Or ${{isWinServerUefi}} ) {
+    
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+
+    Set-Location $ISO_BUILD
+
+    $BUILD_FOLDER=&quot;build-{newOsNode.fqn}&quot;
+
+    if ( -Not (Test-Path &quot;${BUILD_FOLDER}&quot;) ) {
+        New-Item &quot;${BUILD_FOLDER}&quot; -ItemType Directory
+    }
+
+    Copy-Item -Path &quot;winpe_plain_uefi.iso&quot; `
+        -Destination &quot;${BUILD_FOLDER}&quot;
+    
+} else {
+    Write-Host &quot;Skipping for BIOS ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="extractwinpeisotostagingfolderonwindowsworker">
+                            <a href="#extractwinpeisotostagingfolderonwindowsworker">
+                                <strong>Step 11 -</strong> Extract WinPE ISO to Staging Folder on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Extract <code>winpe.iso</code> to a <code>winpe_staging</code> folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+
+Set-Location $BUILD_DIR
+
+$FOLDER=&quot;winpe_staging&quot;
+
+&amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x winpe.iso -o&quot;${FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploystartnetcmdonwindowsworker">
+                            <a href="#deploystartnetcmdonwindowsworker">
+                                <strong>Step 12 -</strong> Deploy startnet.cmd on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys <code>startnet.cmd</code>.</p>
+<p>This script is run by WinPE.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>The startnet.cmd is run by WinPE. This script:
+1. Installs drivers from "attune_drivers".
+2. Sets the IP address.
+3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.
+4. Runs Windows setup.exe.</p>
+<p>The Mako parameter "windowsFolderOnSamba" can have these values:</p>
+<ul>
+<li>windows10</li>
+<li>windows2016</li>
+<li>windows2019</li>
+<li>windows2022</li>
+</ul>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>WinPE_startnetcmd.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+/c$/attuneautomationworker/build-{newOsNode.fqn}
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deploywindowsunattendedconfigonwindowsworker">
+                            <a href="#deploywindowsunattendedconfigonwindowsworker">
+                                <strong>Step 13 -</strong> Deploy Windows Unattended Config on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the generic autounattend.xml.</p>
+<p>Set one of these <code>true</code> depending on whether you want Windows Desktop 10 or Windows Server for BIOS or UEFI boot methods.</p>
+<ol>
+<li><code>isWin10Bios</code></li>
+<li><code>isWin10Uefi</code></li>
+<li><code>isWinServerBios</code></li>
+<li><code>isWinServerUefi</code></li>
+</ol>
+<p>Set <code>isWinPEKickstart</code> to <code>true</code> for WinPE kickstarts.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>For these Windows versions:
+* WIndows Desktop 10
+* WIndows Server 2016
+* WIndows Server 2019
+* WIndows Server 2022</p>
+<p>For these boot methods:
+* BIOS
+* UEFI</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Windows_Unattended_config.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+/c$/attuneautomationworker/build-{newOsNode.fqn}
+        </code>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="createpostsetupwimonwindowsworker">
+                            <a href="#createpostsetupwimonwindowsworker">
+                                <strong>Step 14 -</strong> Create Post Setup WIM on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a <code>post_install.wim</code> Windows Imaging Format file on Windows Worker.</p>
+<p>The purpose of this file is to overlay onto the <code>C</code> drive any files we want for the Windows Installer to use.</p>
+<p>in this case we want to deploy a post install setup PowerShell script at <code>C:\post_install_setup.ps1</code> that is called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'s section.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="deploypostsetuppowershellscriptonwindowsworker">
+                            <a href="#deploypostsetuppowershellscriptonwindowsworker">
+                                <strong>Step 14.1 -</strong> Deploy Post Setup PowerShell Script on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code> to <code>/c$/attuneautomationworker/build-{newOsNode.fqn}</code>..</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+    <div class="row">
+        <p>
+            <p>This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.</p>
+<p>This script is run once post installation of the WIndows operating system.</p>
+        </p>
+        <p>
+            Copy the File(s)
+            <strong>Post_Install_Setup_PowerShell_Script.tar</strong>
+            to the target node.
+        </p>
+        <p>
+        </p>
+    </div>
+    <div class="row py-1">
+        <code class="language-bash">
+/c$/attuneautomationworker/build-{newOsNode.fqn}
+        </code>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movepostsetuppowershellscripttopostinstallwimfolderonwindowsworker">
+                            <a href="#movepostsetuppowershellscripttopostinstallwimfolderonwindowsworker">
+                                <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>post_install_setup.ps1</code> script to the <code>post_install_wim</code> folder on Windows Worker.</p>
+<p>The folder <code>post_install_wim</code> is the staging folder for creating the <code>post_install.wim</code> Windows Imaging Format file.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+
+Set-Location $BUILD_DIR
+
+$POST_INSTALL_WIM_FOLDER = &quot;post_install_wim&quot;
+
+if ( -Not (Test-Path &quot;${POST_INSTALL_WIM_FOLDER}&quot;) ) {
+  New-Item &quot;${POST_INSTALL_WIM_FOLDER} -ItemType Directory
+}
+
+Move-Item -Path .\post_install_setup.ps1 `
+    -Destination &quot;${POST_INSTALL_WIM_FOLDER}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createpostinstallwimwindowsimageonwindowsworker">
+                            <a href="#createpostinstallwimwindowsimageonwindowsworker">
+                                <strong>Step 14.3 -</strong> Create post_install.wim Windows Image on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a <code>post_install.wim</code> file from the contents of <code>post_install_wim</code> on Windows Worker.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+
+Set-Location $BUILD_DIR
+
+Write-Host &quot;We are in ${BUILD_DIR}&quot;
+
+SOURCE=&quot;post_install_wim&quot;
+WIMFILE=&quot;post_install.wim&quot;
+
+Write-Host &quot;Creating ${WIMFILE} from directory ${SOURCE}.&quot;
+
+$scriptContent=@&quot;
+wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
+&quot;@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+
+$FILE = &quot;attune_wsl_create_post_install_wim.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error &#x27;Failed to create $BUILD_DIR\${WIMFILE}&#x27;
+}
+      
+Remove-Item &quot;${FILE}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="modifywinpebootwimonwindowsworker">
+                            <a href="#modifywinpebootwimonwindowsworker">
+                                <strong>Step 15 -</strong> Modify WinPE boot.wim on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code> on Windows Worker.</p>
+<p>This will be seen at <code>X</code> drive when WinPE runs.</p>
+<ol>
+<li><code>startnet.cmd</code></li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install.wim</code></li>
+<li><code>drivers</code> folder</li>
+</ol>
+<p>Notes: for (3) after the <code>post_install.wim</code> image file is overlayed onto <code>C</code> drive, the file at <code>C:\ post_install_setup.ps1</code> will be available to the Windows installer.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createbootwimmountfolderonwindowsworker">
+                            <a href="#createbootwimmountfolderonwindowsworker">
+                                <strong>Step 15.1 -</strong> Create boot.wim Mount Folder on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a directory <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir</code> for mounting <code>C:\attuneautomationworker\build-{newOsNode.fqn}\winpe_staging\SOURCES\BOOT.WIM</code> on Windows Worker.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+
+Set-Location &quot;${BUILD_DIR}&quot;
+
+$WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
+
+if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
+  New-Item &quot;${WinPE_BootImageDi}&quot; -ItemType Directory
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="mountbootwimonwindowsworker">
+                            <a href="#mountbootwimonwindowsworker">
+                                <strong>Step 15.2 -</strong> Mount BOOT.WIM on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>In the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder, mounts <code>winpe_staging\SOURCES\BOOT.WIM</code> to <code>WinPE_BootImageDir</code> on Windows Worker.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+
+Set-Location $BUILD_DIR
+
+$scriptContent=@&quot;
+wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
+&quot;@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+$FILE = &quot;attune_wsl_mount_boot_wim.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error &#x27;Failed to mount BOOT.WIM&#x27;
+}
+  
+Remove-Item &quot;${FILE}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="movefilestobootwimonwindowsworker">
+                            <a href="#movefilestobootwimonwindowsworker">
+                                <strong>Step 15.3 -</strong> Move Files to boot.wim on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves these files to the <code>winpe_staging\SOURCES\BOOT.WIM</code> mounted folder <code>WinPE_BootImageDir</code>:</p>
+<ol>
+<li><code>startnet.cmd</code></li>
+<li><code>autounattend.xml</code></li>
+<li><code>post_install.wim</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="movestartnetcmdtobootwimonwindowsworker">
+                            <a href="#movestartnetcmdtobootwimonwindowsworker">
+                                <strong>Step 15.3.1 -</strong> Move startnet.cmd to boot.wim on Windows Worker
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>startnet.cmd</code> to the folder <code>WinPE_BootImageDir/Windows/System32</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+
+Set-Location &quot;${BUILD_DIR}&quot;
+
+Move-Item -Path &quot;.\startnet.cmd&quot; `
+    -Destination &quot;.\WinPE_BootImageDir\Windows\System32&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="moveautounattendxmltobootwimonwindowsworker">
+                            <a href="#moveautounattendxmltobootwimonwindowsworker">
+                                <strong>Step 15.3.2 -</strong> Move autounattend.xml to boot.wim on Windows Worker
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>autounattend.xml</code> to the folder <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+
+Set-Location &quot;${BUILD_DIR}&quot;
+
+Move-Item -Path &quot;.\autounattend.xml&quot; `
+    -Destination &quot;.\WinPE_BootImageDir&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="copydriversdropinfoldertobootwimonwindowsworker">
+                            <a href="#copydriversdropinfoldertobootwimonwindowsworker">
+                                <strong>Step 15.3.3 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Copy drivers from the drop in directorty into <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir\drivers</code> on Windows Worker.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+
+$WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
+
+Set-Location &quot;${BUILD_DIR}\${WinPE_BootImageDir}&quot;
+
+$DRIVERS=&quot;drivers&quot;
+if ( -Not (Test-Path &quot;${DRIVERS}&quot;) ) {
+  New-Item DRIVERS -ItemType Directory
+}
+
+$DRIVERS_DROP_IN_FOLDER=&quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
+
+if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
+    
+    Copy-Item -Recurse -Path &quot;${DRIVERS_DROP_IN_FOLDER}\*&quot; `
+        -Destination &quot;${DRIVERS}&quot;
+} else {
+    Write-Host &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h5 id="movepostinstallwimtobootwimonwindowsworker">
+                            <a href="#movepostinstallwimtobootwimonwindowsworker">
+                                <strong>Step 15.3.4 -</strong> Move post_install.wim to boot.wim on Windows Worker
+                            </a>
+                        </h5>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Moves <code>post_install.wim</code> to the folder <code>WinPE_BootImageDir</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+
+Set-Location &quot;${BUILD_DIR}&quot;
+
+Move-Item -Path &quot;.\post_install.wim&quot; `
+    -Destination &quot;.\WinPE_BootImageDir&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="wimlibunmountbootwimonwindowsworker">
+                            <a href="#wimlibunmountbootwimonwindowsworker">
+                                <strong>Step 15.4 -</strong> wimlib Unmount boot.wim on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Unmounts <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir</code> using <code>wimunmount</code> on Windows Worker with WSL2.</p>
+<p>This will write out changes back into <code>winpe_staging\SOURCES\BOOT.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+
+Set-Location &quot;${BUILD_DIR}&quot;
+
+$WinPE_BootImageDir = &quot;WinPE_BootImageDir&quot;
+
+$scriptContent=@&quot;
+wimunmount &quot;${WinPE_BootImageDir}&quot; --commit --check --rebuild
+&quot;@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+$FILE = &quot;attune_wsl_unmount_boot_wim.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error &#x27;Failed to unmount $BUILD_DIR\${WinPE_BootImageDir}&#x27;
+}
+  
+Remove-Item &quot;${FILE}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="recreatebiosbootwinpeisofromwinpestagingonwindowsworker">
+                            <a href="#recreatebiosbootwinpeisofromwinpestagingonwindowsworker">
+                                <strong>Step 16 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a BIOS bootable ISO at <code>C:\attuneautomationworker\kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>C:\attuneautomationworker\build-{newOsNode.fqn}\winpe_staging</code>. </p>
+<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
+<ol>
+<li><code>isWin10Bios</code></li>
+<li><code>isWinServerBios</code></li>
+</ol>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+    
+    Set-Location &quot;${BUILD_DIR}&quot;
+
+    $ISO_NAME=&quot;kickstart_{newOsNode.fqn}.iso&quot;
+    
+    $scriptContent=@&quot;
+mkisofs \
+    -b boot.img \
+    -no-emul-boot \
+    -c BOOT.CAT \
+    -iso-level 3 \
+    -udf \
+    -joliet-long \
+    -relaxed-filenames \
+    -allow-limited-size \
+    -J \
+    -full-iso9660-filenames \
+    -disable-deep-relocation \
+    -omit-version-number \
+    -V &quot;KS_WIN&quot; \
+    -o &quot;../${ISO_NAME}&quot; \
+    winpe_staging
+&quot;@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+$FILE = &quot;attune_wsl_recreate_winpe_bios_iso.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error &#x27;Failed to create $ISO_BUILD\${ISO_NAME}&#x27;
+}
+  
+Remove-Item &quot;${FILE}&quot;
+
+} else {
+    echo &quot;Skipping for UEFI ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="recreateuefibootwinpeisofromwinpestagingonwindowsworker">
+                            <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworker">
+                                <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Creates a UEFI bootable ISO at <code>C:\attuneautomationworker\kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>C:\attuneautomationworker\build-{newOsNode.fqn}\winpe_staging</code>. </p>
+<p>Only applies to UEFI kickstarts if the parameter <code>kickstartedBootLoaderIsUefi</code> is set the string <code>true</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{kickstartedBootLoaderIsUefi}} ) {
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+    
+    Set-Location &quot;${BUILD_DIR}&quot;
+
+    $ISO_NAME=&quot;kickstart_{newOsNode.fqn}.iso&quot;
+    
+    $scriptContent=@&quot;
+mkisofs \
+    -iso-level 4 \
+    -full-iso9660-filenames \
+    -rock \
+    -b BOOT/etfsboot.com \
+    -no-emul-boot \
+    -boot-load-size 8 \
+    -hide boot.catalog \
+    -eltorito-alt-boot \
+    -no-emul-boot \
+    -b efi/microsoft/boot/efisys.bin \
+    -boot-load-size 1 \
+    -untranslated-filenames \
+    -disable-deep-relocation \
+    -o &quot;../${ISO_NAME}&quot; \
+    winpe_staging
+&quot;@
+
+# Replace CRLF with LF
+$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+    
+$FILE = &quot;attune_wsl_recreate_winpe_uefi_iso.sh&quot;
+
+Set-Content -Path $FILE -NoNewline -Value $scriptContent
+
+wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Error &#x27;Failed to create $ISO_BUILD\${ISO_NAME}&#x27;
+}
+  
+Remove-Item &quot;${FILE}&quot;
+
+} else {
+    echo &quot;Skipping for BIOS boot.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+
+                    <div class="row pt-5">
+                        <div class="col">
+                            <h2>Completed</h2>
+                            <p>
+                                You have completed this instruction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- Download Attune Ad -->
+
+            <div class="toc col-lg-2 px-0">
+                <div class="container px-0 pt-3 pl-5">
+                    <div class="card border-light mb-3" style="max-width: 18rem;">
+                        <div class="card-body attune-ad">
+                            <img
+                                src="https://www.servertribe.com/wp-content/uploads/2022/06/AttuneLogoV2_powered_by.png"
+                                alt="Attune - Powered by ServerTribe"
+                                class="img-fluid">
+                            <p class="card-title mt-3 text-center">
+                                <strong>Automate with Attune</strong>
+                            </p>
+                            <p class="card-text text-center">
+                                Download the Attune Community Edition.
+                            </p>
+                            <p class="text-center">
+                                <a href="https://www.servertribe.com/download-attune-registration/"
+                                   class="btn btn-primary mt-3">
+                                    DOWNLOAD!!!
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+<!-- Join Discord -->
+
+        <div class="row py-5">
+            <div class="jumbotron">
+              <h1 class="display-4 text-center">
+                  Discuss this Project in Discord
+              </h1>
+              <p class="lead">
+
+                  Join our Discord channel and connect with like-minded individuals who
+                  share your passion. Engage in lively discussions, gain valuable insights,
+                  and stay updated on the latest trends in our industry. Don't miss out on
+                  this opportunity to network, learn, and grow together.
+              </p>
+              <hr class="my-4 text-center">
+                <div class="col px-0">
+                  <p class="text-center">
+                      Click the link below and become a part of our vibrant community on
+                      Discord today!
+                  </p>
+                  <p class="lead text-center">
+                    <a class="btn btn-primary btn-lg"
+                       href="https://discord.com/invite/3YpJsagqUn"
+                       role="button">
+                        Join NOW!!!
+                    </a>
+                  </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Project Footer -->
+
+<footer class="footer fixed-bottom bg-white border-top box-shadow">
+      <div class="container px-0">
+          <div class="row">
+              <div class="col px-0">
+                  <a class="my-0 mr-lg-auto"
+                     href="https://www.servertribe.com/"
+                     target="_blank">
+                      <img
+                          src="https://www.servertribe.com/wp-content/uploads/2022/06/AttuneLogoV2_powered_by.png"
+                          alt="Attune - Powered by ServerTribe"
+                          class="img-fluid navbar-img">
+                  </a>
+              </div>
+          </div>
+      </div>
+</footer>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+
+Set-Location "${BUILD_DIR}"
+
+Move-Item -Path ".\startnet.cmd" `
+    -Destination ".\WinPE_BootImageDir\Windows\System32"

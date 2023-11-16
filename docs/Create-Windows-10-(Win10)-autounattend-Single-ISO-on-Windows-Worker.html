@@ -511,9 +511,9 @@ if ((-Not ${{isWin10Bios}}) -and `
                         <div class="description col px-0">
                             <p>
                                 <p>Windows Desktop 10 has a hostname maximum length of 15 characters.</p>
-<p>This step checks for the hostname length and fails if one of these Attune parameters are true:
-1. isWin10Bios
-2. isWin10Uefi</p>
+<p>if one of these Attune parameters are true, this step checks for the hostname length and fails if it is larger than 15. 
+1. <code>isWin10Bios</code>
+2. <code>isWin10Uefi</code></p>
                             </p>
                         </div>
                     </div>
@@ -1190,7 +1190,7 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
 <li><code>isWinServerBios</code></li>
 <li><code>isWinServerUefi</code></li>
 </ol>
-<p>Set <code>isWinPEKickstart</code> to <code>true</code>'` for WinPE kickstarts.</p>
+<p>Set <code>isWinPEKickstart</code> to <code>true</code> for WinPE kickstarts.</p>
                             </p>
                         </div>
                     </div>
@@ -1283,9 +1283,9 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
             <pre>
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
-Set-Location $BUILD_DIR
+Set-Location &quot;${BUILD_DIR}&quot;
 
 $DRIVERS_DROP_IN_FOLDER = &quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
 $DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
@@ -1429,7 +1429,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_FOLDER=&quot;build-{newOsNode.fqn}&quot;
 
-# This is so we place the &quot;tmpBash.sh&quot; outside the $BUILD_FOLDER
+# This is so we place the &quot;attune_wsl_create_bios_boot_iso.sh&quot; outside the $BUILD_FOLDER
 Set-Location $ISO_BUILD
 
 if (${{isWin10Bios}} -or `

@@ -1145,7 +1145,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 $BUILD_FOLDER=&quot;build-{newOsNode.fqn}&quot;
 
-# This is so we place the &quot;tmpBash.sh&quot; outside the $BUILD_FOLDER
+# This is so we place the &quot;attune_wsl_create_bios_boot_iso.sh&quot; outside the $BUILD_FOLDER
 Set-Location $ISO_BUILD
 
 if (${{isWin10Bios}} -or `
@@ -1324,7 +1324,7 @@ mkisofs \
 <li><code>isWinServerBios</code></li>
 <li><code>isWinServerUefi</code></li>
 </ol>
-<p>Set <code>isWinPEKickstart</code> to <code>true</code>'` for WinPE kickstarts.</p>
+<p>Set <code>isWinPEKickstart</code> to <code>true</code> for WinPE kickstarts.</p>
                             </p>
                         </div>
                     </div>
@@ -1474,9 +1474,9 @@ mkisofs \
             <pre>
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
-Set-Location $BUILD_DIR
+Set-Location &quot;${BUILD_DIR}&quot;
 
 $DRIVERS_DROP_IN_FOLDER = &quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
 $DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
@@ -1556,10 +1556,10 @@ if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
             <pre>
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
-# This is so we place the &quot;tmpBash.sh&quot; outside the $DRIVERS_FOLDER
-Set-Location $BUILD_DIR
+# This is so we place the &quot;attune_wsl_create_answer_file_iso.sh&quot; outside the $DRIVERS_FOLDER
+Set-Location &quot;${BUILD_DIR}&quot;
 
 $DRIVERS_FOLDER=&quot;drivers&quot;
 $DRIVERS_ISO_NAME=&quot;drivers_{newOsNode.fqn}.iso&quot;
@@ -1582,7 +1582,7 @@ Set-Content -Path $FILE -NoNewline -Value $scriptContent
 wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso&#x27;
+    Write-Error &#x27;Failed to create $ISO_BUILD\${DRIVERS_ISO_NAME}&#x27;
 }
   
 Remove-Item &quot;${FILE}&quot;

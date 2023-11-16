@@ -1,0 +1,18 @@
+if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
+    
+    $ISO_BUILD="C:\attuneautomationworker"
+
+    Set-Location $ISO_BUILD
+
+    $BUILD_FOLDER="build-{newOsNode.fqn}"
+
+    if ( -Not (Test-Path "${BUILD_FOLDER}") ) {
+        New-Item "${BUILD_FOLDER}" -ItemType Directory
+    }
+
+    Copy-Item -Path "winpe_plain_bios.iso" `
+        -Destination "${BUILD_FOLDER}"
+    
+} else {
+    Write-Host "Skipping for UEFI ISO creation."
+}

@@ -522,6 +522,13 @@ if ( -Not (Test-Path &quot;${BUILD_DIRECTORY}&quot;) ) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -583,6 +590,13 @@ ssh {automationworkerwindowsuseradministrator}@{automationworkerlinuxnode}
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1025,6 +1039,13 @@ if ((${{kickstartedBootLoaderIsBios}}) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1493,7 +1514,8 @@ mkisofs \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates the UEFI bootable WinPE ISO if <code>kickstartedBootLoaderIsUefi</code> is true on a Windows Worker.</p>
+                                <p>Creates a WinPE UEFI bootable ISO at <code>C:\attuneautomationworker\winpe_plain_uefi.iso</code> from the WinPE staging directory <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging</code>. </p>
+<p>Only applies to UEFI kickstarts. Only run if the parameter <code>kickstartedBootLoaderIsUefi</code> is set <code>true</code>.</p>
                             </p>
                         </div>
                     </div>

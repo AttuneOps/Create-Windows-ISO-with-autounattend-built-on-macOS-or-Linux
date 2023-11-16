@@ -1,8 +1,8 @@
 $ISO_BUILD="C:\attuneautomationworker"
-$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
 
-# This is so we place the "tmpBash.sh" outside the $DRIVERS_FOLDER
-Set-Location $BUILD_DIR
+# This is so we place the "attune_wsl_create_answer_file_iso.sh" outside the $DRIVERS_FOLDER
+Set-Location "${BUILD_DIR}"
 
 $DRIVERS_FOLDER="drivers"
 $DRIVERS_ISO_NAME="drivers_{newOsNode.fqn}.iso"
@@ -25,7 +25,7 @@ Set-Content -Path $FILE -NoNewline -Value $scriptContent
 wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Error 'Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso'
+    Write-Error 'Failed to create $ISO_BUILD\${DRIVERS_ISO_NAME}'
 }
   
 Remove-Item "${FILE}"

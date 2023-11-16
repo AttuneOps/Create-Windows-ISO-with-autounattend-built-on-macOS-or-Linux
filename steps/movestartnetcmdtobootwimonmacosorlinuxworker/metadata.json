@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "f9b67cc4-2b4e-491c-8c19-e1a39985f280", 
+    "interpreter": 1, 
+    "key": "movestartnetcmdtobootwimonmacosorlinuxworker", 
+    "name": "Move startnet.cmd to boot.wim on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

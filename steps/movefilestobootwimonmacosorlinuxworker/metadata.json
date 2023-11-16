@@ -1,0 +1,28 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "9c43ab67-733f-4344-8420-f8ae9e62ddfd", 
+    "isBlueprint": false, 
+    "key": "movefilestobootwimonmacosorlinuxworker", 
+    "links": [
+        {
+            "order": 50, 
+            "stepKey": "movestartnetcmdtobootwimonmacosorlinuxworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "moveautounattendxmltobootwimonmacosorlinuxworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "copydriversdropinfoldertobootwimonmacosorlinuxworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "movepostinstallwimtobootwimonmacosorlinuxworker"
+        }
+    ], 
+    "name": "Move Files to boot.wim on macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

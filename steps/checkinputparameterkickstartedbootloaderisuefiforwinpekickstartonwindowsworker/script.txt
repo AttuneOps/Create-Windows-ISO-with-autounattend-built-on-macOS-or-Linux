@@ -1,0 +1,15 @@
+if (${{kickstartedBootLoaderIsUefi}}) {
+
+    Write-Host "isWin10Uefi = {isWin10Uefi}, isWinServerUefi = {isWinServerUefi}"
+
+    if ((-Not ${{isWin10Uefi}}) -And
+        (-Not ${{isWinServerUefi}}) ) {
+
+        Write-Host "If kickstartedBootLoaderIsUefi is set true, then
+        one of isWin10Uefi or isWinServerUefi must also be
+        set true"
+        exit 1
+      }
+}
+
+Write-Host "SUCCESS: Ok"
