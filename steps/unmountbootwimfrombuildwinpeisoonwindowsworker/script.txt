@@ -1,0 +1,20 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="$ISO_BUILD\build-winpe-iso"
+
+Set-Location $BUILD_DIR
+
+Dism /Image:"./WinPE_BootImageDir" `
+    /cleanup-image `
+    /StartComponentCleanup `
+    /ResetBase
+    
+# Unmount the WinPE_BootImageDir folder back into BOOT.WIM
+Dism /Unmount-Image /MountDir:"./WinPE_BootImageDir" /Commit
+
+# Generate a compressed version of BOOT.WIM called BOOT_CLEANED.WIM
+Dism /Export-Image /SourceImageFile:"./winpe_staging/SOURCES/BOOT.WIM" `
+  /SourceIndex:1 `
+  /DestinationImageFile:"./winpe_staging/SOURCES/BOOT_CLEANED.WIM" `
+  /Compress:max `
+  /Bootable `
+  /CheckIntegrity

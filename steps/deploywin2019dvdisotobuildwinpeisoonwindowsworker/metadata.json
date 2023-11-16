@@ -1,13 +1,13 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "windowsserver2019iso", 
+    "archiveKey": "win2019iso", 
     "deployPath": "/c$/attuneautomationworker/build-winpe-iso", 
     "enabled": true, 
     "externalUuid4": "e62108d7-c4d9-4e52-be79-edf5ab130aab", 
     "key": "deploywin2019dvdisotobuildwinpeisoonwindowsworker", 
     "name": "Deploy Win2019 DVD ISO to build-winpe-iso on Windows Worker", 
     "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerlinuxnode", 
+    "serverKey": "automationworkerwindowsnode", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

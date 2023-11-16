@@ -3,8 +3,6 @@ $BUILD_DIR="$ISO_BUILD\build-winpe-iso"
 
 Set-Location $BUILD_DIR
 
-$FOLDER = "winpe_staging"
-
-Copy-Item -Recurse -Path `
-    "${FOLDER}\winimg\boot\etfsboot.com" `
-    -Destination "${FOLDER}\BOOT"
+Copy-Item -Recurse `
+    -Path ".\winimg\boot\etfsboot.com" `
+    -Destination ".\winpe_staging\BOOT"

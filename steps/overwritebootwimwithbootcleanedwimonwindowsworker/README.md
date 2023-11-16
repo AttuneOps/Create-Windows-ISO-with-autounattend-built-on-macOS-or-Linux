@@ -1,0 +1,1 @@
+Overwrites `BOOT.WIM` with `BOOT_CLEANED.WIM` and deletes `BOOT_CLEANED.WIM`.
