@@ -6,7 +6,7 @@ if (${{kickstartedBootLoaderIsUefi}}) {
 
     $ISO_NAME="winpe_plain_uefi.iso"
 
-    $scriptContent=@'
+    $scriptContent=@"
 mkisofs \
     -iso-level 4 \
     -full-iso9660-filenames \
@@ -23,7 +23,7 @@ mkisofs \
     -disable-deep-relocation \
     -o "../${ISO_NAME}" \
     winpe_staging
-'@
+"@
 
   # Replace CRLF with LF
   $scriptContent = $scriptContent.replace("`r`n","`n")

@@ -6,29 +6,29 @@
 
 
 <head>
-    <title>How to Deploy Win10 ISO to Samba Share - Attune Automation</title>
+    <title>How to Deploy and Mount Win2022 ISO To Node for Feature Install - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Deploy Win10 ISO to Samba Share - Attune Automation">
+          content="How to Deploy and Mount Win2022 ISO To Node for Feature Install - Attune Automation">
     <meta name="description"
-          content="The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.">
+          content="">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Deploy Win10 ISO to Samba Share - Attune Automation" />
-    <meta property="og:description" content="The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`." />
+          content="HowTo Deploy and Mount Win2022 ISO To Node for Feature Install - Attune Automation" />
+    <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Deploy Win10 ISO to Samba Share - Attune Automation" />
-    <meta name="twitter:description" content="The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`." />
+          content="How to Deploy and Mount Win2022 ISO To Node for Feature Install - Attune Automation" />
+    <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Deploy Win10 ISO to Samba Share</strong>
+                    <strong>Deploy and Mount Win2022 ISO To Node for Feature Install</strong>
                 </li>
             </ol>
         </nav>
@@ -133,19 +133,12 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Deploy Win10 ISO to Samba Share
+                How to Deploy and Mount Win2022 ISO To Node for Feature Install
             </h1>
         </div>
     </div>
 
 <!-- Blueprint Description -->
-    <div class="row">
-        <div class="description col px-0">
-            <p class="text-left">
-                <p>The Windows Desktop 10 ISO is placed on the Samba server at <code>${HOME}/windows_iso_data_for_winpe/windows10</code>.</p>
-            </p>
-        </div>
-    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -204,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Deploy Win10 ISO to Samba Share</strong>
+                            <strong>Deploy and Mount Win2022 ISO To Node for Feature Install</strong>
                         </a>
                     </p>
 
@@ -213,24 +206,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin10isoforsamba">
-                            <strong>Step 1 -</strong>  Deploy Win10 ISO for Samba
+                        <a href="#deploywin2022isotosoftware">
+                            <strong>Step 1 -</strong> Deploy Win2022 ISO to Software
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwin10isoforsamba">
-                            <strong>Step 2 -</strong> Extract Win10 ISO for Samba
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#setwindows10folderpermissions">
-                            <strong>Step 3 -</strong> Set windows10 Folder Permissions
+                        <a href="#mountwinisofromsoftware">
+                            <strong>Step 2 -</strong> Mount Win ISO from Software
                         </a>
                     </p>
 
@@ -293,7 +278,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Deploy Win10 ISO to Samba Share</strong>
+                You've automated: <strong>Deploy and Mount Win2022 ISO To Node for Feature Install</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -324,9 +309,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin10isoforsamba">
-                            <a href="#deploywin10isoforsamba">
-                                <strong>Step 1 -</strong>  Deploy Win10 ISO for Samba
+                        <h3 id="deploywin2022isotosoftware">
+                            <a href="#deploywin2022isotosoftware">
+                                <strong>Step 1 -</strong> Deploy Win2022 ISO to Software
                             </a>
                         </h3>
                     </div>
@@ -334,7 +319,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the Windows Desktop 10 ISO to <code>$HOME/windows_iso_data_for_winpe/windows10</code> on the Samba server.</p>
+                                
                             </p>
                         </div>
                     </div>
@@ -350,13 +335,19 @@
 
                         <div class="row">
                             <p>
-                                Connect via ssh:
+                                Connect via RDP:
                             </p>
                         </div>
                         <div class="row py-1">
                             <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+mstsc /admin /v:{newoswindowsnode}
                             </code>
+                        </div>
+                        <div class="row">
+                            <p>
+                                Login as user {newoswindowsuseradministrator} and open a
+                                command prompt.
+                            </p>
                         </div>
 
 
@@ -366,12 +357,11 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.</p>
-<p>Please select the English (United States) version.</p>
+            <p>Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022.</p>
         </p>
         <p>
             Copy the File(s)
-            <strong>Win10_ISO.tar</strong>
+            <strong>Win2022_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -380,7 +370,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
     </div>
     <div class="row py-1">
         <code class="language-bash">
-$HOME/windows_iso_data_for_winpe/windows10, relative to the home directory
+/c$/software
         </code>
     </div>
 
@@ -393,9 +383,9 @@ $HOME/windows_iso_data_for_winpe/windows10, relative to the home directory
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwin10isoforsamba">
-                            <a href="#extractwin10isoforsamba">
-                                <strong>Step 2 -</strong> Extract Win10 ISO for Samba
+                        <h3 id="mountwinisofromsoftware">
+                            <a href="#mountwinisofromsoftware">
+                                <strong>Step 2 -</strong> Mount Win ISO from Software
                             </a>
                         </h3>
                     </div>
@@ -403,7 +393,7 @@ $HOME/windows_iso_data_for_winpe/windows10, relative to the home directory
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Extracts the Windows Desktop 10 ISO at <code>${HOME}/windows_iso_data_for_winpe/windows10</code>.</p>
+                                
                             </p>
                         </div>
                     </div>
@@ -432,77 +422,14 @@ $HOME/windows_iso_data_for_winpe/windows10, relative to the home directory
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd &quot;${HOME}/windows_iso_data_for_winpe/windows10&quot;
+$FOLDER = &quot;C:\software&quot;
+Set-Location -Path &quot;${FOLDER}&quot;
 
-# Case insensitve globbing
-shopt -s nocaseglob
+$ISO_NAME = (Get-ChildItem *.iso).Name
 
-ISO=$(ls *.iso)
-echo $ISO
+Write-Host &quot;ISO_NAME = ${ISO_NAME}&quot;
 
-echo &quot;Removing old files, if any&quot;
-TMP_DIR=$(mktemp -d -p ../)
-mv * ${TMP_DIR}
-mv ${TMP_DIR}/$ISO .
-rm -rf ${TMP_DIR}
-
-7z x $ISO
-rm $ISO
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="setwindows10folderpermissions">
-                            <a href="#setwindows10folderpermissions">
-                                <strong>Step 3 -</strong> Set windows10 Folder Permissions
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Sets read and execute permissions for the Windows Destkop 10 Samba folder at <code>$HOME/windows_iso_data_for_winpe/windows10</code>. </p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;$HOME/windows_iso_data_for_winpe/&quot;
-sudo chmod -R a+rx windows10
+Mount-DiskImage -ImagePath &quot;${FOLDER}\${ISO_NAME}&quot;
                 </code>
             </pre>
         </div>

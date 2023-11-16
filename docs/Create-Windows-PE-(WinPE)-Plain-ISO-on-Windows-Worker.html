@@ -302,8 +302,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#wimlibunmountbootwimfrombuildwinpeisoonwindowsworker">
-                            <strong>Step 9.4 -</strong> wimlib Unmount boot.wim from build-winpe-iso on Windows Worker
+                        <a href="#unmountbootwimfrombuildwinpeisoonwindowsworker">
+                            <strong>Step 9.4 -</strong> Unmount boot.wim from build-winpe-iso on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
+                            <strong>Step 9.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
                         </a>
                     </p>
 
@@ -488,15 +496,15 @@ mstsc /admin /v:{automationworkerwindowsnode}
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 
-if ( -Not (Test-Path &quot;${BUILD_DIRECTORY}&quot;) ) {
-    Write-Host &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
+if ( -Not (Test-Path &quot;${ISO_BUILD}&quot;) ) {
+    Write-Host &quot;Directory ${ISO_BUILD} does not exist. Skipping.&quot;
 } else {
     Set-Location &quot;${ISO_BUILD}&quot;
     
     $BUILD_FOLDER=&quot;build-winpe-iso&quot;
     
     if ( -Not (Test-Path &quot;${BUILD_FOLDER}&quot;) ) {
-      Write-Host &quot;Directory ${BUILD_DIRECTORY}\${BUILD_FOLDER} does not exist. Skipping.&quot;
+      Write-Host &quot;Directory ${ISO_BUILD}\${BUILD_FOLDER} does not exist. Skipping.&quot;
     } else {
       Remove-Item -Recurse &quot;${BUILD_FOLDER}&quot;
     }
@@ -522,13 +530,6 @@ if ( -Not (Test-Path &quot;${BUILD_DIRECTORY}&quot;) ) {
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -538,18 +539,7 @@ if ( -Not (Test-Path &quot;${BUILD_DIRECTORY}&quot;) ) {
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerwindowsuseradministrator}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
     
 
@@ -561,7 +551,7 @@ ssh {automationworkerwindowsuseradministrator}@{automationworkerlinuxnode}
         </p>
         <p>
             Copy the File(s)
-            <strong>Windows_Server_201_ISO.tar</strong>
+            <strong>Win201_ISO.tar</strong>
             to the target node.
         </p>
         <p>
@@ -606,24 +596,7 @@ ssh {automationworkerwindowsuseradministrator}@{automationworkerlinuxnode}
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via RDP:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-mstsc /admin /v:{automationworkerwindowsnode}
-                            </code>
-                        </div>
-                        <div class="row">
-                            <p>
-                                Login as user {automationworkerwindowsuseradministrator} and open a
-                                command prompt.
-                            </p>
-                        </div>
-
+    
 
 
     
@@ -947,11 +920,9 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
 
 Set-Location $BUILD_DIR
 
-$FOLDER = &quot;winpe_staging&quot;
-
-Copy-Item -Recurse -Path `
-    &quot;${FOLDER}\winimg\boot\etfsboot.com&quot; `
-    -Destination &quot;${FOLDER}\BOOT&quot;
+Copy-Item -Recurse `
+    -Path &quot;.\winimg\boot\etfsboot.com&quot; `
+    -Destination &quot;.\winpe_staging\BOOT&quot;
                 </code>
             </pre>
         </div>
@@ -1006,7 +977,7 @@ Copy-Item -Recurse -Path `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ((${{kickstartedBootLoaderIsBios}}) {
+if (${{kickstartedBootLoaderIsBios}}) {
     $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
     $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
     
@@ -1134,7 +1105,7 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES\BOOT.WIM</code> to <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code> using <code>wimmountrw</code> on WSL2.</p>
+                                <p>Mounts <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES\BOOT.WIM</code> to <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code> using <code>Dism</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1168,24 +1139,13 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
 
 Set-Location $BUILD_DIR
 
-  $scriptContent=@&#x27;
-wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
-&#x27;@
-
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
-
-$FILE = &quot;attune_wsl_mount_boot_wim.sh&quot;
-
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+Dism /Mount-Image /ImageFile:&quot;./winpe_staging/SOURCES/BOOT.WIM&quot; `
+  /Index:1 `
+  /MountDir:&quot;./WinPE_BootImageDir&quot;
 
 if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to extract boot.img&#x27;
+    Write-Error &#x27;Failed to mount BOOT.WIM&#x27;
 }
-
-Remove-Item &quot;${FILE}&quot;
                 </code>
             </pre>
         </div>
@@ -1259,9 +1219,9 @@ Remove-Item -Verbose .\setup.exe
 
 
                     <div class="row pt-5">
-                        <h4 id="wimlibunmountbootwimfrombuildwinpeisoonwindowsworker">
-                            <a href="#wimlibunmountbootwimfrombuildwinpeisoonwindowsworker">
-                                <strong>Step 9.4 -</strong> wimlib Unmount boot.wim from build-winpe-iso on Windows Worker
+                        <h4 id="unmountbootwimfrombuildwinpeisoonwindowsworker">
+                            <a href="#unmountbootwimfrombuildwinpeisoonwindowsworker">
+                                <strong>Step 9.4 -</strong> Unmount boot.wim from build-winpe-iso on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -1269,8 +1229,18 @@ Remove-Item -Verbose .\setup.exe
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code>.</p>
+                                <p>Unmounts <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code> using <code>Dism</code>.</p>
 <p>This will write out changes back into <code>C:\attuneautomationworker\winpe_staging\SOURCES\BOOT.WIM</code>.</p>
+<p>Then a compressed version of <code>BOOT.WIM</code> is generated called <code>BOOT_CLEANED.WIM</code>.</p>
+<p>Make sure there is no Windows File Explorer open at the mount directory.</p>
+<p>If there is the unmount will fail and you need to run these commands to unmount it:</p>
+<pre><code>$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
+
+Set-Location $BUILD_DIR
+
+Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /discard
+</code></pre>
                             </p>
                         </div>
                     </div>
@@ -1304,24 +1274,91 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
 
 Set-Location $BUILD_DIR
 
-  $scriptContent=@&#x27;
-wimunmount WinPE_BootImageDir --commit --check --rebuild
-&#x27;@
+Dism /Image:&quot;./WinPE_BootImageDir&quot; `
+    /cleanup-image `
+    /StartComponentCleanup `
+    /ResetBase
+    
+# Unmount the WinPE_BootImageDir folder back into BOOT.WIM
+Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /Commit
 
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+# Generate a compressed version of BOOT.WIM called BOOT_CLEANED.WIM
+Dism /Export-Image /SourceImageFile:&quot;./winpe_staging/SOURCES/BOOT.WIM&quot; `
+  /SourceIndex:1 `
+  /DestinationImageFile:&quot;./winpe_staging/SOURCES/BOOT_CLEANED.WIM&quot; `
+  /Compress:max `
+  /Bootable `
+  /CheckIntegrity
+                </code>
+            </pre>
+        </div>
+    </div>
 
-$FILE = &quot;attune_wsl_unmount_boot_wim_directory.sh&quot;
 
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to extract boot.img&#x27;
-}
 
-Remove-Item &quot;${FILE}&quot;
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="overwritebootwimwithbootcleanedwimonwindowsworker">
+                            <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
+                                <strong>Step 9.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Overwrites <code>BOOT.WIM</code> with <code>BOOT_CLEANED.WIM</code> and deletes <code>BOOT_CLEANED.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-winpe-iso\winpe_staging\SOURCES&quot;
+
+Set-Location &quot;${WINPE_STAGING_SOURCES_DIR}&quot;
+
+Write-Host &quot;Before&quot;
+dir
+
+$BOOT_CLEANED_WIM=&quot;BOOT_CLEANED.WIM&quot;
+
+Copy-Item -Path &quot;.\${BOOT_CLEANED_WIM}&quot; `
+    -Destination &quot;.\BOOT.WIM&quot;
+    
+Remove-Item &quot;.\${BOOT_CLEANED_WIM}&quot;
+
+Write-Host &quot;After&quot;
+dir
                 </code>
             </pre>
         </div>
@@ -1446,15 +1483,15 @@ if (${{kickstartedBootLoaderIsUefi}}) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if (${{kickstartedBootLoaderIsBios}})) {
+if (${{kickstartedBootLoaderIsBios}}) {
     $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
     $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
     
     Set-Location $BUILD_DIR
 
-    ISO_NAME=&quot;winpe_plain_bios.iso&quot;
+    $ISO_NAME=&quot;winpe_plain_bios.iso&quot;
 
-    $scriptContent=@&#x27;
+    $scriptContent=@&quot;
 mkisofs \
     -b boot.img \
     -no-emul-boot \
@@ -1471,7 +1508,7 @@ mkisofs \
     -V &quot;KS_WIN&quot; \
     -o &quot;../${ISO_NAME}&quot; \
     winpe_staging
-&#x27;@
+&quot;@
 
   # Replace CRLF with LF
   $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
@@ -1552,7 +1589,7 @@ if (${{kickstartedBootLoaderIsUefi}}) {
 
     $ISO_NAME=&quot;winpe_plain_uefi.iso&quot;
 
-    $scriptContent=@&#x27;
+    $scriptContent=@&quot;
 mkisofs \
     -iso-level 4 \
     -full-iso9660-filenames \
@@ -1569,7 +1606,7 @@ mkisofs \
     -disable-deep-relocation \
     -o &quot;../${ISO_NAME}&quot; \
     winpe_staging
-&#x27;@
+&quot;@
 
   # Replace CRLF with LF
   $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
@@ -1644,15 +1681,15 @@ mkisofs \
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 
-if ( -Not (Test-Path &quot;${BUILD_DIRECTORY}&quot;) ) {
-    Write-Host &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
+if ( -Not (Test-Path &quot;${ISO_BUILD}&quot;) ) {
+    Write-Host &quot;Directory ${ISO_BUILD} does not exist. Skipping.&quot;
 } else {
     Set-Location &quot;${ISO_BUILD}&quot;
     
     $BUILD_FOLDER=&quot;build-winpe-iso&quot;
     
     if ( -Not (Test-Path &quot;${BUILD_FOLDER}&quot;) ) {
-      Write-Host &quot;Directory ${BUILD_DIRECTORY}\${BUILD_FOLDER} does not exist. Skipping.&quot;
+      Write-Host &quot;Directory ${ISO_BUILD}\${BUILD_FOLDER} does not exist. Skipping.&quot;
     } else {
       Remove-Item -Recurse &quot;${BUILD_FOLDER}&quot;
     }

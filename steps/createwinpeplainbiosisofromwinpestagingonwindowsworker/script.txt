@@ -1,12 +1,12 @@
-if (${{kickstartedBootLoaderIsBios}})) {
+if (${{kickstartedBootLoaderIsBios}}) {
     $ISO_BUILD="C:\attuneautomationworker"
     $BUILD_DIR="$ISO_BUILD\build-winpe-iso"
     
     Set-Location $BUILD_DIR
 
-    ISO_NAME="winpe_plain_bios.iso"
+    $ISO_NAME="winpe_plain_bios.iso"
 
-    $scriptContent=@'
+    $scriptContent=@"
 mkisofs \
     -b boot.img \
     -no-emul-boot \
@@ -23,7 +23,7 @@ mkisofs \
     -V "KS_WIN" \
     -o "../${ISO_NAME}" \
     winpe_staging
-'@
+"@
 
   # Replace CRLF with LF
   $scriptContent = $scriptContent.replace("`r`n","`n")

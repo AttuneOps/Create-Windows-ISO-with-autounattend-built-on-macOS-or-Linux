@@ -1,0 +1,17 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$WINPE_STAGING_SOURCES_DIR="$ISO_BUILD\build-winpe-iso\winpe_staging\SOURCES"
+
+Set-Location "${WINPE_STAGING_SOURCES_DIR}"
+
+Write-Host "Before"
+dir
+
+$BOOT_CLEANED_WIM="BOOT_CLEANED.WIM"
+
+Copy-Item -Path ".\${BOOT_CLEANED_WIM}" `
+    -Destination ".\BOOT.WIM"
+    
+Remove-Item ".\${BOOT_CLEANED_WIM}"
+
+Write-Host "After"
+dir

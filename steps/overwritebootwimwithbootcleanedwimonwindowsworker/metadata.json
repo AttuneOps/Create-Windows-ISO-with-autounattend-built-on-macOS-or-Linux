@@ -1,16 +1,16 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "bdbb9858-15c1-4ba4-b5e6-3cc476d1aa3e", 
+    "externalUuid4": "b3e53b17-4103-4944-b7b1-fea0742adbdf", 
     "interpreter": 2, 
     "interpreterCommand": "", 
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
-    "key": "copyfilesformkwinpeimgcompatibilitytowinpestagingonwindowsworker", 
-    "name": "Copy Files for mkwinpeimg Compatibility to WinPE Staging on Windows Worker", 
+    "key": "overwritebootwimwithbootcleanedwimonwindowsworker", 
+    "name": "Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker", 
     "osCredKey": "automationworkerwindowsuseradministrator", 
     "serverKey": "automationworkerwindowsnode", 
     "successExitCode": 0, 
-    "timeout": 60, 
+    "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
 }
