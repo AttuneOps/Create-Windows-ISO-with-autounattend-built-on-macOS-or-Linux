@@ -413,6 +413,14 @@
                         </a>
                     </p>
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
+                            <strong>Step 15.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                        </a>
+                    </p>
+
 
         
 
@@ -589,16 +597,16 @@ if ( -Not ${{isWinPEKickstart}} ) {
     exit 1
 }
 
-if ( {windowsFolderOnSamba} -eq &quot;windows10&quot; ) {
+if ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows10&quot; ) {
     if ( (-Not ${{isWin10Bios}}) -And (-Not ${{isWin10Uefi}}) ) {
         Write-Host &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
         exit 1
     }
 }
 
-if (( {windowsFolderOnSamba} -eq &quot;windows2016&quot; ) -Or
-    ( {windowsFolderOnSamba} -eq &quot;windows2019&quot; ) -Or
-    ( {windowsFolderOnSamba} -eq &quot;windows2022&quot; )) {
+if (( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2016&quot; ) -Or
+    ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2019&quot; ) -Or
+    ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2022&quot; )) {
 
     if ( (-Not ${{isWinServerBios}}) -And (-Not ${{isWinServerUefi}}) ) {
         Write-Host &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server.&quot;
@@ -822,10 +830,10 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
     $MAX_LENGTH = 15
     
     if ( $LENGTH -gt $MAX_LENGTH ) {
-        Write-Host &quot;Length of hostname ${LENGTH} for Win10 can&#x27;t be more than ${MAX_LENGTH}.&quot;
+        Write-Host &quot;Length of hostname `&quot;${HOSTNAME}`&quot;  for Win10 is ${LENGTH} and can&#x27;t be more than ${MAX_LENGTH}.&quot;
         false
     } else {
-        Write-Host &quot;Length of hostname ${LENGTH} is less than or equal to ${MAX_LENGTH}.&quot;
+        Write-Host &quot;Length of hostname `&quot;${HOSTNAME}`&quot; for Win10 is ${LENGTH} which is less than or equal to ${MAX_LENGTH}.&quot;
     }
     
 } else {
@@ -1051,7 +1059,7 @@ for ($i = 0; $i -lt 4; $i++) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain BIOS ISO <code>C:\attuneautomationworker/winpe_plain_bios.iso</code> exists.</p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>C:\attuneautomationworker\winpe_plain_bios.iso</code> exists.</p>
 <p>If it does not, a message will be printed to ask the user to run the WinPE BIOS ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on Windows Worker</code>.</p>
 <p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
@@ -1127,7 +1135,7 @@ if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks if the WinPE plain BIOS ISO <code>C:\attuneautomationworker/winpe_plain_uefi.iso</code> exists.</p>
+                                <p>Checks if the WinPE plain BIOS ISO <code>C:\attuneautomationworker\winpe_plain_uefi.iso</code> exists.</p>
 <p>If it does not, a message will be printed to ask the user to run the WinPE UEFI ISO creation blueprint <code>Create Windows PE (WinPE) Plain ISO on Windows Worker</code>.</p>
 <p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
 <ol>
@@ -1257,7 +1265,7 @@ if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
     }
 
     Copy-Item -Path &quot;winpe_plain_bios.iso&quot; `
-        -Destination &quot;${BUILD_FOLDER}&quot;
+        -Destination &quot;${BUILD_FOLDER}\winpe.iso&quot;
     
 } else {
     Write-Host &quot;Skipping for UEFI ISO creation.&quot;
@@ -1340,7 +1348,7 @@ if ( ${{isWin10Uefi}} -Or ${{isWinServerUefi}} ) {
     }
 
     Copy-Item -Path &quot;winpe_plain_uefi.iso&quot; `
-        -Destination &quot;${BUILD_FOLDER}&quot;
+        -Destination &quot;${BUILD_FOLDER}\winpe.iso&quot;
     
 } else {
     Write-Host &quot;Skipping for BIOS ISO creation.&quot;
@@ -1695,7 +1703,7 @@ Set-Location $BUILD_DIR
 $POST_INSTALL_WIM_FOLDER = &quot;post_install_wim&quot;
 
 if ( -Not (Test-Path &quot;${POST_INSTALL_WIM_FOLDER}&quot;) ) {
-  New-Item &quot;${POST_INSTALL_WIM_FOLDER} -ItemType Directory
+  New-Item &quot;${POST_INSTALL_WIM_FOLDER}&quot; -ItemType Directory
 }
 
 Move-Item -Path .\post_install_setup.ps1 `
@@ -1760,8 +1768,8 @@ Set-Location $BUILD_DIR
 
 Write-Host &quot;We are in ${BUILD_DIR}&quot;
 
-SOURCE=&quot;post_install_wim&quot;
-WIMFILE=&quot;post_install.wim&quot;
+$SOURCE=&quot;post_install_wim&quot;
+$WIMFILE=&quot;post_install.wim&quot;
 
 Write-Host &quot;Creating ${WIMFILE} from directory ${SOURCE}.&quot;
 
@@ -1882,7 +1890,7 @@ Set-Location &quot;${BUILD_DIR}&quot;
 $WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
 
 if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
-  New-Item &quot;${WinPE_BootImageDi}&quot; -ItemType Directory
+  New-Item &quot;${WinPE_BootImageDir}&quot; -ItemType Directory
 }
                 </code>
             </pre>
@@ -1908,7 +1916,7 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>In the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder, mounts <code>winpe_staging\SOURCES\BOOT.WIM</code> to <code>WinPE_BootImageDir</code> on Windows Worker.</p>
+                                <p>In the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder, mounts <code>winpe_staging\SOURCES\BOOT.WIM</code> to <code>WinPE_BootImageDir</code> using <code>Dism</code> on Windows Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -1942,24 +1950,13 @@ $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
-$scriptContent=@&quot;
-wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
-&quot;@
-
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
-    
-$FILE = &quot;attune_wsl_mount_boot_wim.sh&quot;
-
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
-
+Dism /Mount-Image /ImageFile:&quot;./winpe_staging/SOURCES/BOOT.WIM&quot; `
+  /Index:1 `
+  /MountDir:&quot;./WinPE_BootImageDir&quot;
+  
 if ($LASTEXITCODE -ne 0) {
     Write-Error &#x27;Failed to mount BOOT.WIM&#x27;
 }
-  
-Remove-Item &quot;${FILE}&quot;
                 </code>
             </pre>
         </div>
@@ -2052,8 +2049,12 @@ $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
 
+$DESTINATION_FILE = &quot;.\WinPE_BootImageDir\Windows\System32\startnet.cmd&quot;
+
+Remove-Item &quot;${DESTINATION_FILE}&quot;
+
 Move-Item -Path &quot;.\startnet.cmd&quot; `
-    -Destination &quot;.\WinPE_BootImageDir\Windows\System32&quot;
+    -Destination &quot;${DESTINATION_FILE}&quot;
                 </code>
             </pre>
         </div>
@@ -2176,7 +2177,7 @@ Set-Location &quot;${BUILD_DIR}\${WinPE_BootImageDir}&quot;
 
 $DRIVERS=&quot;drivers&quot;
 if ( -Not (Test-Path &quot;${DRIVERS}&quot;) ) {
-  New-Item DRIVERS -ItemType Directory
+  New-Item &quot;${DRIVERS}&quot; -ItemType Directory
 }
 
 $DRIVERS_DROP_IN_FOLDER=&quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
@@ -2273,8 +2274,18 @@ Move-Item -Path &quot;.\post_install.wim&quot; `
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir</code> using <code>wimunmount</code> on Windows Worker with WSL2.</p>
-<p>This will write out changes back into <code>winpe_staging\SOURCES\BOOT.WIM</code>.</p>
+                                <p>Unmounts <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir</code> using <code>Dism</code>.</p>
+<p>This will write out changes back into <code>C:\attuneautomationworker\winpe_staging\SOURCES\BOOT.WIM</code>.</p>
+<p>Then a compressed version of <code>BOOT.WIM</code> is generated called <code>BOOT_CLEANED.WIM</code>.</p>
+<p>Make sure there is no Windows File Explorer open at the mount directory.</p>
+<p>If there is the unmount will fail and you need to run these commands to unmount it:</p>
+<pre><code>$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+
+Set-Location $BUILD_DIR
+
+Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /discard
+</code></pre>
                             </p>
                         </div>
                     </div>
@@ -2310,24 +2321,91 @@ Set-Location &quot;${BUILD_DIR}&quot;
 
 $WinPE_BootImageDir = &quot;WinPE_BootImageDir&quot;
 
-$scriptContent=@&quot;
-wimunmount &quot;${WinPE_BootImageDir}&quot; --commit --check --rebuild
-&quot;@
-
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
+Dism /Image:&quot;./WinPE_BootImageDir&quot; `
+    /cleanup-image `
+    /StartComponentCleanup `
+    /ResetBase
     
-$FILE = &quot;attune_wsl_unmount_boot_wim.sh&quot;
+# Unmount the WinPE_BootImageDir folder back into BOOT.WIM
+Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /Commit
 
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
+# Generate a compressed version of BOOT.WIM called BOOT_CLEANED.WIM
+Dism /Export-Image /SourceImageFile:&quot;./winpe_staging/SOURCES/BOOT.WIM&quot; `
+  /SourceIndex:1 `
+  /DestinationImageFile:&quot;./winpe_staging/SOURCES/BOOT_CLEANED.WIM&quot; `
+  /Compress:max `
+  /Bootable `
+  /CheckIntegrity
+                </code>
+            </pre>
+        </div>
+    </div>
 
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
 
-if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to unmount $BUILD_DIR\${WinPE_BootImageDir}&#x27;
-}
-  
-Remove-Item &quot;${FILE}&quot;
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="overwritebootwimwithbootcleanedwimonwindowsworker">
+                            <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
+                                <strong>Step 15.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Overwrites <code>BOOT.WIM</code> with <code>BOOT_CLEANED.WIM</code> and deletes <code>BOOT_CLEANED.WIM</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\winpe_staging\SOURCES&quot;
+
+Set-Location &quot;${WINPE_STAGING_SOURCES_DIR}&quot;
+
+Write-Host &quot;Before&quot;
+dir
+
+$BOOT_CLEANED_WIM=&quot;BOOT_CLEANED.WIM&quot;
+
+Copy-Item -Path &quot;.\${BOOT_CLEANED_WIM}&quot; `
+    -Destination &quot;.\BOOT.WIM&quot;
+    
+Remove-Item &quot;.\${BOOT_CLEANED_WIM}&quot;
+
+Write-Host &quot;After&quot;
+dir
                 </code>
             </pre>
         </div>

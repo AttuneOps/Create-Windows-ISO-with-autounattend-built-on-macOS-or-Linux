@@ -7,7 +7,7 @@ Set-Location "${BUILD_DIR}\${WinPE_BootImageDir}"
 
 $DRIVERS="drivers"
 if ( -Not (Test-Path "${DRIVERS}") ) {
-  New-Item DRIVERS -ItemType Directory
+  New-Item "${DRIVERS}" -ItemType Directory
 }
 
 $DRIVERS_DROP_IN_FOLDER="C:\attuneautomationworker\drivers-{newOsNode.fqn}"

@@ -11,7 +11,7 @@ if ( ${{isWin10Uefi}} -Or ${{isWinServerUefi}} ) {
     }
 
     Copy-Item -Path "winpe_plain_uefi.iso" `
-        -Destination "${BUILD_FOLDER}"
+        -Destination "${BUILD_FOLDER}\winpe.iso"
     
 } else {
     Write-Host "Skipping for BIOS ISO creation."

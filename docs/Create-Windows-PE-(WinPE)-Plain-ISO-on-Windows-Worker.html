@@ -310,8 +310,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
-                            <strong>Step 9.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                        <a href="#overwritebootwimwithbootcleanedwimfrombuildwinpeisoonwindowsworker">
+                            <strong>Step 9.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM from build-winpe-iso on Windows Worker
                         </a>
                     </p>
 
@@ -1105,7 +1105,7 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES\BOOT.WIM</code> to <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code> using <code>Dism</code>.</p>
+                                <p>Mounts <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES\BOOT.WIM</code> to <code>C:\attuneautomationworker\build-winpe-iso\WinPE_BootImageDir</code> using <code>Dism</code> on Windows Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -1303,9 +1303,9 @@ Dism /Export-Image /SourceImageFile:&quot;./winpe_staging/SOURCES/BOOT.WIM&quot;
 
 
                     <div class="row pt-5">
-                        <h4 id="overwritebootwimwithbootcleanedwimonwindowsworker">
-                            <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
-                                <strong>Step 9.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                        <h4 id="overwritebootwimwithbootcleanedwimfrombuildwinpeisoonwindowsworker">
+                            <a href="#overwritebootwimwithbootcleanedwimfrombuildwinpeisoonwindowsworker">
+                                <strong>Step 9.5 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM from build-winpe-iso on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -1314,6 +1314,7 @@ Dism /Export-Image /SourceImageFile:&quot;./winpe_staging/SOURCES/BOOT.WIM&quot;
                         <div class="description col px-0">
                             <p>
                                 <p>Overwrites <code>BOOT.WIM</code> with <code>BOOT_CLEANED.WIM</code> and deletes <code>BOOT_CLEANED.WIM</code>.</p>
+<p>This is relative to the <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging\SOURCES</code> folder.</p>
                             </p>
                         </div>
                     </div>

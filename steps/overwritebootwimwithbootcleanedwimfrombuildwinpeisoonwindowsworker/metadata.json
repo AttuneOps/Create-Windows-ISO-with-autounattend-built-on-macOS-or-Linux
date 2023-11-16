@@ -1,16 +1,16 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "a545bd46-81c5-4c07-a04c-9c826c41acaf", 
+    "externalUuid4": "b3e53b17-4103-4944-b7b1-fea0742adbdf", 
     "interpreter": 2, 
     "interpreterCommand": "", 
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
-    "key": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker", 
-    "name": "Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker", 
+    "key": "overwritebootwimwithbootcleanedwimfrombuildwinpeisoonwindowsworker", 
+    "name": "Overwrite BOOT.WIM with BOOT_CLEANED.WIM from build-winpe-iso on Windows Worker", 
     "osCredKey": "automationworkerwindowsuseradministrator", 
     "serverKey": "automationworkerwindowsnode", 
     "successExitCode": 0, 
-    "timeout": 60, 
+    "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
 }

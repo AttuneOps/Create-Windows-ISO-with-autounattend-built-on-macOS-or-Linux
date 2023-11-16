@@ -551,10 +551,10 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
     $MAX_LENGTH = 15
     
     if ( $LENGTH -gt $MAX_LENGTH ) {
-        Write-Host &quot;Length of hostname ${LENGTH} for Win10 can&#x27;t be more than ${MAX_LENGTH}.&quot;
+        Write-Host &quot;Length of hostname `&quot;${HOSTNAME}`&quot;  for Win10 is ${LENGTH} and can&#x27;t be more than ${MAX_LENGTH}.&quot;
         false
     } else {
-        Write-Host &quot;Length of hostname ${LENGTH} is less than or equal to ${MAX_LENGTH}.&quot;
+        Write-Host &quot;Length of hostname `&quot;${HOSTNAME}`&quot; for Win10 is ${LENGTH} which is less than or equal to ${MAX_LENGTH}.&quot;
     }
     
 } else {
