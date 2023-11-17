@@ -8,19 +8,17 @@ if ( ${{kickstartedBootLoaderIsUefi}} ) {
     
     $scriptContent=@"
 mkisofs \
-    -iso-level 4 \
-    -full-iso9660-filenames \
-    -rock \
-    -b BOOT/etfsboot.com \
+    -allow-limited-size \
     -no-emul-boot \
+    -b BOOT/etfsboot.com \
+    -boot-load-seg 0 \
     -boot-load-size 8 \
-    -hide boot.catalog \
     -eltorito-alt-boot \
     -no-emul-boot \
     -b efi/microsoft/boot/efisys.bin \
     -boot-load-size 1 \
-    -untranslated-filenames \
-    -disable-deep-relocation \
+    -iso-level 4 \
+    -udf \
     -o "../${ISO_NAME}" \
     winpe_staging
 "@

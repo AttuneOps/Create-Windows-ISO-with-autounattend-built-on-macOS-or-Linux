@@ -215,6 +215,9 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 ### Unmount and Remove ISO From Node for Feature Install
 
 
+### Install Windows Assessment and Deployment Kit on Win2022 Windows Worker
+
+
 
 
 

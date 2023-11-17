@@ -48,14 +48,18 @@
         }, 
         {
             "order": 500, 
-            "stepKey": "createwinpeplainbiosisofromwinpestagingonwindowsworker"
+            "stepKey": "copyefisysnopromptbinintoefisysbinonbuildwinpeisoonwindowsworker"
         }, 
         {
             "order": 550, 
-            "stepKey": "createwinpeplainuefiisoonwindowsworker"
+            "stepKey": "createwinpeplainbiosisofromwinpestagingonwindowsworker"
         }, 
         {
             "order": 600, 
+            "stepKey": "createwinpeplainuefiisoonwindowsworker"
+        }, 
+        {
+            "order": 750, 
             "stepKey": "deletebuildwinpeisofolderonwindowsworker"
         }
     ], 

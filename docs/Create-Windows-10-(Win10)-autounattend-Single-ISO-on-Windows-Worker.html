@@ -1291,7 +1291,7 @@ $DRIVERS_DROP_IN_FOLDER = &quot;C:\attuneautomationworker\drivers-{newOsNode.fqn
 $DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
 
 if ( -Not (Test-Path &quot;$DESTINATION_DRIVERS_FOLDER&quot;) ) {
-  New-Item $DESTINATION_DRIVERS_FOLDER -ItemType Directory
+  New-Item &quot;$DESTINATION_DRIVERS_FOLDER&quot; -ItemType Directory
 }
 
 if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {
@@ -1362,7 +1362,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
 
     Set-Location $BUILD_DIR
 
-    Set-Location efi/microsoft/boot/
+    Set-Location efi\microsoft\boot
     
     Copy-Item -Path .\efisys_noprompt.bin -Destination .\efisys.bin
 } else {

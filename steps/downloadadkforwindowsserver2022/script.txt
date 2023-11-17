@@ -1,0 +1,16 @@
+$ISO_BUILD="C:\attuneautomationworker"
+
+Set-Location "${ISO_BUILD}"
+
+$ADK_DOWNLOADS="ADKDownloads"
+
+if ( -Not (Test-Path "${ADK_DOWNLOADS}") ) {
+  New-Item "${ADK_DOWNLOADS}" -ItemType Directory
+}
+
+Set-Location "${ADK_DOWNLOADS}"
+
+$ADK_WIN2022_URL="https://go.microsoft.com/fwlink/?linkid=2162950"
+
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest $ADK_WIN2022_URL -OutFile "./win2022_adk.iso"

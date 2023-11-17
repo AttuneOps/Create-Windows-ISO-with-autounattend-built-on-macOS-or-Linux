@@ -1,0 +1,13 @@
+$ISO_BUILD="C:\attuneautomationworker"
+
+Set-Location "${ISO_BUILD}"
+
+$WIN2022_ADK="ADKDownloads\Win2022_ADK"
+
+Set-Location "${WIN2022_ADK}"
+
+./adksetup.exe /quiet `
+    /features "OptionId.DeploymentTools" `
+    /norestart `
+    /log win2022_adk_install_log.txt `
+    /ceip off
