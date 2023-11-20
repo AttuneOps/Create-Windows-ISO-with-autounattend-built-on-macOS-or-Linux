@@ -35,20 +35,12 @@
             "stepKey": "confirmplainwinpebiosisoexistsonwindowsworker"
         }, 
         {
-            "order": 350, 
-            "stepKey": "confirmplainwinpeuefiisoexistsonwindowsworker"
-        }, 
-        {
             "order": 400, 
             "stepKey": "copyandrenamewinpebiosisoonwindowsworker"
         }, 
         {
-            "order": 450, 
-            "stepKey": "copyandrenamewinpeuefiisoonwindowsworker"
-        }, 
-        {
             "order": 500, 
-            "stepKey": "extractwinpeisotostagingfolderonwindowsworker"
+            "stepKey": "extractwinpebiosisotostagingfolderonwindowsworker"
         }, 
         {
             "order": 550, 
@@ -64,15 +56,23 @@
         }, 
         {
             "order": 700, 
-            "stepKey": "modifywinpebootwimonwindowsworker"
-        }, 
-        {
-            "order": 750, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonwindowsworker"
+            "stepKey": "deleteuefibuildwinpeisowinpeamd64"
         }, 
         {
             "order": 800, 
-            "stepKey": "recreateuefibootwinpeisofromwinpestagingonwindowsworker"
+            "stepKey": "copywinpeskeletonforuefi"
+        }, 
+        {
+            "order": 850, 
+            "stepKey": "modifywinpebootwimonwindowsworker"
+        }, 
+        {
+            "order": 900, 
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonwindowsworker"
+        }, 
+        {
+            "order": 950, 
+            "stepKey": "recreateuefibootwinpeisoonwindowsworker"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on Windows Worker", 

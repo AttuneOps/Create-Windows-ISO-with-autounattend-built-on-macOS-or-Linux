@@ -5,7 +5,7 @@ if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
 
     Set-Location $BUILD_DIR
 
-    Set-Location efi/microsoft/boot/
+    Set-Location efi\microsoft\boot
     
     Copy-Item -Path .\efisys_noprompt.bin -Destination .\efisys.bin
 } else {

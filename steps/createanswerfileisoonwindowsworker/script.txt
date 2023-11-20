@@ -22,7 +22,7 @@ $FILE = "attune_wsl_create_answer_file_iso.sh"
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+wsl -d Ubuntu --user root --exec bash "${FILE}"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error 'Failed to create $ISO_BUILD\${DRIVERS_ISO_NAME}'

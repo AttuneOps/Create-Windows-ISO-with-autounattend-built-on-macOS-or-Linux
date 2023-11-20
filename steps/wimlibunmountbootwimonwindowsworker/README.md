@@ -1,8 +1,8 @@
 Unmounts `C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir` using `Dism`.
 
-This will write out changes back into `C:\attuneautomationworker\winpe_staging\SOURCES\BOOT.WIM`.
-
-Then a compressed version of `BOOT.WIM` is generated called `BOOT_CLEANED.WIM`.
+This will write out changes back into:
+1.  `C:\attuneautomationworker\build-{newOsNode.fqn}\winpe_staging\SOURCES\BOOT.WIM` for BIOS boots.
+2. `C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_amd64\sources\boot.wim` for UEFI boots.
 
 Make sure there is no Windows File Explorer open at the mount directory.
 

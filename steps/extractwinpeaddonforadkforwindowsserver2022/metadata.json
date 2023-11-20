@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "db8bd16b-8949-4dff-882b-1bc285b0c4d6", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "extractwinpeaddonforadkforwindowsserver2022", 
+    "name": "Extract WinPE Add-On for ADK for Windows Server 2022", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 1800, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

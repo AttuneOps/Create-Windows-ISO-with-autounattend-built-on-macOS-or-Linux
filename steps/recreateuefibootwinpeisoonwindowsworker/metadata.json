@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "af724179-7ed5-40d7-8180-b6ce2d692116", 
+    "isBlueprint": false, 
+    "key": "recreateuefibootwinpeisoonwindowsworker", 
+    "links": [
+        {
+            "order": 150, 
+            "stepKey": "deleteuefibootwinpeisoonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "createuefibootwinpeisofromwinpeamd64onwindowsworker"
+        }
+    ], 
+    "name": "Recreate UEFI Boot WinPE ISO on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

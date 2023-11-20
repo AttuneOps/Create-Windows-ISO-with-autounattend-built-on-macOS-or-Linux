@@ -1,0 +1,16 @@
+if {kickstartedBootLoaderIsUefi}==true (
+    echo b
+
+    call "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\DandISetEnv.bat" dir
+    dir
+    
+    echo c
+    
+    cd C:\attuneautomationworker\build-{newOsNode.fqn}
+    dir
+    
+    MakeWinPEMedia /ISO .\WinPE_amd64 ..\kickstart_{newOsNode.fqn}.iso
+    
+) else (
+    echo Skipping for BIOS ISO creation.
+)

@@ -327,16 +327,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpeplainbiosisofromwinpestagingonwindowsworker">
-                            <strong>Step 11 -</strong> Create winpe_plain_bios.iso from winpe_staging on Windows Worker
+                        <a href="#copyefisysnopromptbinintoefisysbinonbuildwinpeisoonwindowsworker">
+                            <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin on build-winpe-iso on Windows Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpeplainuefiisoonwindowsworker">
-                            <strong>Step 12 -</strong> Create winpe_plain_uefi.iso on Windows Worker
+                        <a href="#createwinpeplainbiosisofromwinpestagingonwindowsworker">
+                            <strong>Step 12 -</strong> Create winpe_plain_bios.iso from winpe_staging on Windows Worker
                         </a>
                     </p>
 
@@ -530,6 +530,13 @@ if ( -Not (Test-Path &quot;${ISO_BUILD}&quot;) ) {
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -637,7 +644,7 @@ dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
   
   Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+  wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
   if ($LASTEXITCODE -ne 0) {
       Write-Error &#x27;Failed to extract boot.img&#x27;
@@ -792,7 +799,7 @@ $FILE = &quot;attune_wsl_extract_winpe_from_winimg_directory.sh&quot;
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error &#x27;Failed to extract winpe.iso from winimg directory&#x27;
@@ -1444,9 +1451,84 @@ if (${{kickstartedBootLoaderIsUefi}}) {
 
 
                     <div class="row pt-5">
+                        <h3 id="copyefisysnopromptbinintoefisysbinonbuildwinpeisoonwindowsworker">
+                            <a href="#copyefisysnopromptbinintoefisysbinonbuildwinpeisoonwindowsworker">
+                                <strong>Step 11 -</strong> Copy efisys_noprompt.bin into efisys.bin on build-winpe-iso on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if ( ${{kickstartedBootLoaderIsUefi}} ) {
+
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
+
+    Set-Location $BUILD_DIR
+
+    Set-Location winpe_staging\efi\microsoft\boot
+    
+    Write-Host &quot;Before hashes of efisys.bin and efisys_noprompt.bin&quot;
+    Get-FileHash .\efisys.bin
+    Get-FileHash .\efisys_noprompt.bin
+    
+    Copy-Item -Path .\efisys_noprompt.bin -Destination .\efisys.bin
+    
+    Write-Host &quot;After hashes of efisys.bin and efisys_noprompt.bi&quot;
+    Get-FileHash .\efisys.bin
+    Get-FileHash .\efisys_noprompt.bin
+    
+} else {
+    Write-Host &quot;Skipping for BIOS ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="createwinpeplainbiosisofromwinpestagingonwindowsworker">
                             <a href="#createwinpeplainbiosisofromwinpestagingonwindowsworker">
-                                <strong>Step 11 -</strong> Create winpe_plain_bios.iso from winpe_staging on Windows Worker
+                                <strong>Step 12 -</strong> Create winpe_plain_bios.iso from winpe_staging on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1518,7 +1600,7 @@ mkisofs \
 
   Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+  wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
   if ($LASTEXITCODE -ne 0) {
       Write-Error &#x27;Failed to extract boot.img&#x27;
@@ -1527,105 +1609,6 @@ mkisofs \
   Remove-Item &quot;${FILE}&quot;
 } else {
   Write-Host &quot;Skipping for UEFI ISO creation.&quot;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createwinpeplainuefiisoonwindowsworker">
-                            <a href="#createwinpeplainuefiisoonwindowsworker">
-                                <strong>Step 12 -</strong> Create winpe_plain_uefi.iso on Windows Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a WinPE UEFI bootable ISO at <code>C:\attuneautomationworker\winpe_plain_uefi.iso</code> from the WinPE staging directory <code>C:\attuneautomationworker\build-winpe-iso\winpe_staging</code>. </p>
-<p>Only applies to UEFI kickstarts. Only run if the parameter <code>kickstartedBootLoaderIsUefi</code> is set <code>true</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if (${{kickstartedBootLoaderIsUefi}}) {
-    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-    $BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
-    
-    Set-Location $BUILD_DIR
-
-    $ISO_NAME=&quot;winpe_plain_uefi.iso&quot;
-
-    $scriptContent=@&quot;
-mkisofs \
-    -iso-level 4 \
-    -full-iso9660-filenames \
-    -rock \
-    -b BOOT/etfsboot.com \
-    -no-emul-boot \
-    -boot-load-size 8 \
-    -hide boot.catalog \
-    -eltorito-alt-boot \
-    -no-emul-boot \
-    -b efi/microsoft/boot/efisys.bin \
-    -boot-load-size 1 \
-    -untranslated-filenames \
-    -disable-deep-relocation \
-    -o &quot;../${ISO_NAME}&quot; \
-    winpe_staging
-&quot;@
-
-  # Replace CRLF with LF
-  $scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
-
-  $FILE = &quot;attune_wsl_create_winpe_plain_uefi_iso.sh&quot;
-
-  Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-  wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
-
-  if ($LASTEXITCODE -ne 0) {
-      Write-Error &#x27;Failed to extract boot.img&#x27;
-  }
-
-  Remove-Item &quot;${FILE}&quot;
-
-} else {
-    Write-Host &quot;Skipping for BIOS boot.&quot;
 }
                 </code>
             </pre>

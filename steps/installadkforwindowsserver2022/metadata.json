@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "190903b2-3351-4722-98eb-42fd378772e6", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "installadkforwindowsserver2022", 
+    "name": "Install ADK for Windows Server 2022", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 1800, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

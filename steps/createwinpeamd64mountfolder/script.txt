@@ -1,0 +1,14 @@
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $WinPE_amd64_PATH="C:\attuneautomationworker\build-winpe-iso\WinPE_amd64"
+
+    Set-Location "${WinPE_amd64_PATH}"
+    
+    $MOUNT_FOLDER="mount"
+    if ( -Not (Test-Path "${MOUNT_FOLDER}") ) {
+      New-Item "${MOUNT_FOLDER}" -ItemType Directory
+    }
+
+} else {
+    echo "Skipping for BIOS ISO creation."
+}

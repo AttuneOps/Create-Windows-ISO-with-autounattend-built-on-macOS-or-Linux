@@ -25,7 +25,7 @@ dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
     
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-    wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+    wsl -d Ubuntu --user root --exec bash "${FILE}"
 
     if ($LASTEXITCODE -ne 0) {
         Write-Error 'Failed to extract boot.img'

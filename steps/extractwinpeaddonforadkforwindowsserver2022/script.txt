@@ -1,0 +1,10 @@
+$ISO_BUILD="C:\attuneautomationworker"
+
+Set-Location "${ISO_BUILD}"
+
+$ADK_DOWNLOADS="ADKDownloads"
+
+Set-Location "${ADK_DOWNLOADS}"
+
+& 'C:\Program Files\7-Zip\7z.exe' x "./win2022_winpe_add_on_adk.iso" `
+    -oWin2022_WINPE_ADD_ON_ADK
