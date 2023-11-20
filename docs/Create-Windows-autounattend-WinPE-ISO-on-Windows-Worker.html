@@ -1825,7 +1825,7 @@ $FILE = &quot;attune_wsl_create_post_install_wim.sh&quot;
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user attune --exec bash &quot;${FILE}&quot;
+wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error &#x27;Failed to create $BUILD_DIR\${WIMFILE}&#x27;
@@ -2540,7 +2540,7 @@ $FILE = &quot;attune_wsl_recreate_winpe_bios_iso.sh&quot;
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user attune --exec bash &quot;${FILE}&quot;
+wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error &#x27;Failed to create $ISO_BUILD\${ISO_NAME}&#x27;

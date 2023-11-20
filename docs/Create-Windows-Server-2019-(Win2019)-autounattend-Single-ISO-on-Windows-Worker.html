@@ -926,7 +926,7 @@ dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET;
     
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-    wsl -d Ubuntu --user attune --exec bash &quot;${FILE}&quot;
+    wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
     if ($LASTEXITCODE -ne 0) {
         Write-Error &#x27;Failed to extract boot.img&#x27;
@@ -1368,7 +1368,7 @@ mkisofs \
 
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-    wsl -d Ubuntu --user {attune.user} --exec bash &quot;${FILE}&quot;
+    wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
     if ($LASTEXITCODE -ne 0) {
         Write-Error &#x27;Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso&#x27;
@@ -1475,7 +1475,7 @@ mkisofs \
 
     Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-    wsl -d Ubuntu --user {attune.user} --exec bash &quot;${FILE}&quot;
+    wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
 
     if ($LASTEXITCODE -ne 0) {
         Write-Error &#x27;Failed to extract boot.img&#x27;

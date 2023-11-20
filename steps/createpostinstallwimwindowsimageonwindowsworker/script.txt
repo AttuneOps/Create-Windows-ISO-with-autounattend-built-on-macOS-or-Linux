@@ -21,7 +21,7 @@ $FILE = "attune_wsl_create_post_install_wim.sh"
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user attune --exec bash "${FILE}"
+wsl -d Ubuntu --user root --exec bash "${FILE}"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error 'Failed to create $BUILD_DIR\${WIMFILE}'
