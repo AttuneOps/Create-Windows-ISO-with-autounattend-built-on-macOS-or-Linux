@@ -167,6 +167,12 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
+### Create winpe_plain_uefi.iso on Windows Worker
+
+
+### Create winpe_plain_uefi.iso with MakeWinPEMedia on Windows Worker
+
+
 ### Deploy and Mount Win10 ISO To Node for Feature Install
 
 
@@ -198,6 +204,9 @@ The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_is
 ### Install Prerequisites on Windows Worker
 
 
+### Install Windows Assessment and Deployment Kit on Win2022 Windows Worker
+
+
 ### Perform Post Cleanup on macOS or Linux Worker
 
 
@@ -213,9 +222,6 @@ Performs basic tests for the built node.
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
 ### Unmount and Remove ISO From Node for Feature Install
-
-
-### Install Windows Assessment and Deployment Kit on Win2022 Windows Worker
 
 
 

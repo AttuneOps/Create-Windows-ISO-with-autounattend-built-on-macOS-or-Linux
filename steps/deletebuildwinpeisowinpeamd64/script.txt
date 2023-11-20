@@ -1,0 +1,15 @@
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $BUILD_WINPE_ISO_DIR="C:\attuneautomationworker\build-{newOsNode.fqn}"
+    
+    Set-Location "${BUILD_WINPE_ISO_DIR}"
+    
+    $WinPE_amd64 = "WinPE_amd64"
+    
+    if ( (Test-Path "${WinPE_amd64}") ) {
+      Remove-Item -Path "${WinPE_amd64}" -Recurse
+    }
+    
+} else {
+    echo "Skipping for BIOS ISO creation."
+}

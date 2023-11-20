@@ -1,0 +1,13 @@
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $ISO_BUILD="C:\attuneautomationworker"
+    Set-Location "${ISO_BUILD}"
+    
+    $UEFI_ISO="kickstart_{newOsNode.fqn}.iso"
+    if (Test-Path "${UEFI_ISO}" -PathType Leaf) {
+        Remove-Item "${UEFI_ISO}"
+    }
+    
+} else {
+    echo "Skipping for BIOS ISO creation."
+}

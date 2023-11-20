@@ -1,0 +1,19 @@
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $ISO_BUILD="C:\attuneautomationworker"
+    $BUILD_DIR="${ISO_BUILD}\build-winpe-iso"
+    
+    Set-Location "${BUILD_DIR}"
+    
+    $WinPE_amd64 = "WinPE_amd64"
+    
+    if ( -Not (Test-Path "${WinPE_amd64}") ) {
+      New-Item "${WinPE_amd64}" -ItemType Directory
+    }
+    
+    Copy-Item -Recurse -Path "winpe_staging" `
+        -Destination "${WinPE_amd64}\media"
+        
+} else {
+    echo "Skipping for BIOS ISO creation."
+}

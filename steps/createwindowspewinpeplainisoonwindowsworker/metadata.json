@@ -55,10 +55,6 @@
             "stepKey": "createwinpeplainbiosisofromwinpestagingonwindowsworker"
         }, 
         {
-            "order": 600, 
-            "stepKey": "createwinpeplainuefiisoonwindowsworker"
-        }, 
-        {
             "order": 750, 
             "stepKey": "deletebuildwinpeisofolderonwindowsworker"
         }

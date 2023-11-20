@@ -1290,8 +1290,8 @@ Set-Location &quot;${BUILD_DIR}&quot;
 $DRIVERS_DROP_IN_FOLDER = &quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
 $DESTINATION_DRIVERS_FOLDER = &quot;drivers&quot;
 
-if ( -Not (Test-Path &quot;$DESTINATION_DRIVERS_FOLDER&quot;) ) {
-  New-Item &quot;$DESTINATION_DRIVERS_FOLDER&quot; -ItemType Directory
+if ( -Not (Test-Path &quot;${DESTINATION_DRIVERS_FOLDER}&quot;) ) {
+  New-Item &quot;${DESTINATION_DRIVERS_FOLDER}&quot; -ItemType Directory
 }
 
 if ( Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ) {

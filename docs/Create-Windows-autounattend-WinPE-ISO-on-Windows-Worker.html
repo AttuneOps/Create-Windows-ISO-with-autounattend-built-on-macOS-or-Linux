@@ -433,10 +433,59 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworker">
-                            <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker
+                        <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete">
+                            <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker - DELETE
                         </a>
                     </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#recreateuefibootwinpeisoonwindowsworker">
+                            <strong>Step 18 -</strong> Recreate UEFI Boot WinPE ISO on Windows Worker
+                        </a>
+                    </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deletebuildwinpeisowinpeamd64">
+                            <strong>Step 18.1 -</strong> Delete build-winpe-iso\WinPE_amd64
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copywinpeskeleton">
+                            <strong>Step 18.2 -</strong> Copy WinPE Skeleton
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copybootwimtowinpeamd64">
+                            <strong>Step 18.3 -</strong> Copy Boot.wim to WinPE_amd64
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deleteuefibootwinpeisoonwindowsworker">
+                            <strong>Step 18.4 -</strong> Delete UEFI Boot WinPE ISO on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createuefibootwinpeisofromwinpeamd64onwindowsworker">
+                            <strong>Step 18.5 -</strong> Create UEFI Boot WinPE ISO from WinPE_amd64 on Windows Worker
+                        </a>
+                    </p>
+
 
 
                 </div>
@@ -2524,9 +2573,9 @@ Remove-Item &quot;${FILE}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="recreateuefibootwinpeisofromwinpestagingonwindowsworker">
-                            <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworker">
-                                <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker
+                        <h3 id="recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete">
+                            <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete">
+                                <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker - DELETE
                             </a>
                         </h3>
                     </div>
@@ -2611,6 +2660,379 @@ Remove-Item &quot;${FILE}&quot;
             </pre>
         </div>
     </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="recreateuefibootwinpeisoonwindowsworker">
+                            <a href="#recreateuefibootwinpeisoonwindowsworker">
+                                <strong>Step 18 -</strong> Recreate UEFI Boot WinPE ISO on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="deletebuildwinpeisowinpeamd64">
+                            <a href="#deletebuildwinpeisowinpeamd64">
+                                <strong>Step 18.1 -</strong> Delete build-winpe-iso\WinPE_amd64
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $BUILD_WINPE_ISO_DIR=&quot;C:\attuneautomationworker\build-{newOsNode.fqn}&quot;
+    
+    Set-Location &quot;${BUILD_WINPE_ISO_DIR}&quot;
+    
+    $WinPE_amd64 = &quot;WinPE_amd64&quot;
+    
+    if ( (Test-Path &quot;${WinPE_amd64}&quot;) ) {
+      Remove-Item -Path &quot;${WinPE_amd64}&quot; -Recurse
+    }
+    
+} else {
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="copywinpeskeleton">
+                            <a href="#copywinpeskeleton">
+                                <strong>Step 18.2 -</strong> Copy WinPE Skeleton
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+    
+    Set-Location &quot;${BUILD_DIR}&quot;
+    
+    $WinPE_amd64=&quot;WinPE_amd64&quot;
+    
+    if ( -Not (Test-Path &quot;${WinPE_amd64}&quot;) ) {
+      New-Item &quot;${WinPE_amd64}&quot; -ItemType Directory
+    }
+    
+    Copy-Item -Recurse -Path &quot;C:\${WinPE_amd64}\*&quot; `
+        -Destination &quot;.\${WinPE_amd64}\&quot;
+        
+} else {
+    echo &quot;Skipping for BIOS boot.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="copybootwimtowinpeamd64">
+                            <a href="#copybootwimtowinpeamd64">
+                                <strong>Step 18.3 -</strong> Copy Boot.wim to WinPE_amd64
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+    
+    Set-Location &quot;${BUILD_DIR}&quot;
+    
+    $WinPE_amd64=&quot;WinPE_amd64&quot;
+
+    Copy-Item -Path &quot;.\winpe_staging\sources\boot.wim&quot; `
+        -Destination &quot;.\WinPE_amd64\media\sources\boot.wim&quot;
+        
+} else {
+    echo &quot;Skipping for BIOS boot.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="deleteuefibootwinpeisoonwindowsworker">
+                            <a href="#deleteuefibootwinpeisoonwindowsworker">
+                                <strong>Step 18.4 -</strong> Delete UEFI Boot WinPE ISO on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if (${{kickstartedBootLoaderIsUefi}}) {
+    
+    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+    Set-Location &quot;${ISO_BUILD}&quot;
+    
+    $UEFI_ISO=&quot;kickstart_{newOsNode.fqn}.iso&quot;
+    if (Test-Path &quot;${UEFI_ISO}&quot; -PathType Leaf) {
+        Remove-Item &quot;${UEFI_ISO}&quot;
+    }
+    
+} else {
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="createuefibootwinpeisofromwinpeamd64onwindowsworker">
+                            <a href="#createuefibootwinpeisofromwinpeamd64onwindowsworker">
+                                <strong>Step 18.5 -</strong> Create UEFI Boot WinPE ISO from WinPE_amd64 on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {kickstartedBootLoaderIsUefi}==true (
+    echo b
+
+    call &quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\DandISetEnv.bat&quot; dir
+    dir
+    
+    echo c
+    
+    cd C:\attuneautomationworker\build-{newOsNode.fqn}
+    dir
+    
+    MakeWinPEMedia /ISO .\WinPE_amd64 ..\kickstart_{newOsNode.fqn}.iso
+    
+) else (
+    echo Skipping for BIOS ISO creation.
+)
+                </code>
+            </pre>
+        </div>
+    </div>
+
 
 
 

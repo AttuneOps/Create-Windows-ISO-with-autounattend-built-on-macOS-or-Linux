@@ -72,7 +72,11 @@
         }, 
         {
             "order": 800, 
-            "stepKey": "recreateuefibootwinpeisofromwinpestagingonwindowsworker"
+            "stepKey": "recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete"
+        }, 
+        {
+            "order": 850, 
+            "stepKey": "recreateuefibootwinpeisoonwindowsworker"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on Windows Worker", 

@@ -1,16 +1,20 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
     "enabled": true, 
-    "externalUuid4": "d049b5ae-626c-4eb5-b587-f8edc9a85034", 
-    "interpreter": 2, 
-    "interpreterCommand": "", 
-    "interpreterScriptExt": null, 
-    "interpreterScriptSyntax": "", 
+    "externalUuid4": "9985b441-a788-49c0-91ea-b1e9b0bd0033", 
+    "isBlueprint": true, 
     "key": "createwinpeplainuefiisoonwindowsworker", 
+    "links": [
+        {
+            "order": 300, 
+            "stepKey": "deletewinpeplainuefiiso"
+        }, 
+        {
+            "order": 400, 
+            "stepKey": "createwinpeplainuefiisofromwinpeamd64onwindowsworker"
+        }
+    ], 
     "name": "Create winpe_plain_uefi.iso on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
-    "successExitCode": 0, 
-    "timeout": 600, 
-    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
