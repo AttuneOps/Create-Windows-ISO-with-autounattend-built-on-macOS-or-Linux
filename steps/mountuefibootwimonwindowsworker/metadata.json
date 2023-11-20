@@ -1,16 +1,16 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "f5619f75-6ea3-4f44-9013-71475f2e124b", 
+    "externalUuid4": "422ca012-31ca-4267-bfbc-8edd79641658", 
     "interpreter": 2, 
     "interpreterCommand": "", 
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
-    "key": "deletebuildwinpeisowinpeamd64", 
-    "name": "Delete build-winpe-iso\\WinPE_amd64", 
+    "key": "mountuefibootwimonwindowsworker", 
+    "name": "Mount UEFI BOOT.WIM on Windows Worker", 
     "osCredKey": "automationworkerwindowsuseradministrator", 
     "serverKey": "automationworkerwindowsnode", 
     "successExitCode": 0, 
-    "timeout": 600, 
+    "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
 }

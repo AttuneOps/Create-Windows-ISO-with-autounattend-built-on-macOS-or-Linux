@@ -1,16 +1,16 @@
 {
-    "actionOnStepFail": "stop", 
+    "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "e0467438-9d38-462f-a252-0497133674ae", 
+    "externalUuid4": "53e1ab77-e442-4429-836f-66042e6209a5", 
     "interpreter": 2, 
     "interpreterCommand": "", 
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
-    "key": "copybootwimtowinpeamd64", 
-    "name": "Copy Boot.wim to WinPE_amd64", 
+    "key": "mountbiosbootwimonwindowsworker", 
+    "name": "Mount BIOS BOOT.WIM on Windows Worker", 
     "osCredKey": "automationworkerwindowsuseradministrator", 
     "serverKey": "automationworkerwindowsnode", 
     "successExitCode": 0, 
-    "timeout": 600, 
+    "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
 }

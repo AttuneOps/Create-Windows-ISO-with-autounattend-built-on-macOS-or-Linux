@@ -7,18 +7,6 @@
     "key": "recreateuefibootwinpeisoonwindowsworker", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "deletebuildwinpeisowinpeamd64"
-        }, 
-        {
-            "order": 50, 
-            "stepKey": "copywinpeskeleton"
-        }, 
-        {
-            "order": 100, 
-            "stepKey": "copybootwimtowinpeamd64"
-        }, 
-        {
             "order": 150, 
             "stepKey": "deleteuefibootwinpeisoonwindowsworker"
         }, 

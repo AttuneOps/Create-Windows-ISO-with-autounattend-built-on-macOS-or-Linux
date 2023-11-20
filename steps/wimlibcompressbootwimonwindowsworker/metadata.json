@@ -1,16 +1,16 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "3ab4ef45-d392-4e33-80ef-521995396e59", 
+    "externalUuid4": "aababf68-76af-445e-9ec5-432dff47f4cf", 
     "interpreter": 2, 
     "interpreterCommand": "", 
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
-    "key": "confirmplainwinpeuefiisoexistsonwindowsworker", 
-    "name": "Confirm Plain WinPE UEFI ISO Exists on Windows Worker", 
+    "key": "wimlibcompressbootwimonwindowsworker", 
+    "name": "wimlib Compress boot.wim on Windows Worker", 
     "osCredKey": "automationworkerwindowsuseradministrator", 
     "serverKey": "automationworkerwindowsnode", 
     "successExitCode": 0, 
-    "timeout": 60, 
+    "timeout": 600, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
 }

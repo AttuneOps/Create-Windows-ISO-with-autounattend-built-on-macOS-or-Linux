@@ -1,0 +1,1 @@
+In the `C:\attuneautomationworker\build-{newOsNode.fqn}` folder, mounts `".\WinPE_amd64\sources\boot.wim` to `WinPE_BootImageDir` using `Dism` on Windows Worker.

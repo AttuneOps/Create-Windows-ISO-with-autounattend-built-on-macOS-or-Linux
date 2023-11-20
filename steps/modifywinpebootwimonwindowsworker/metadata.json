@@ -12,18 +12,26 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "mountbootwimonwindowsworker"
+            "stepKey": "mountbiosbootwimonwindowsworker"
         }, 
         {
             "order": 100, 
-            "stepKey": "movefilestobootwimonwindowsworker"
+            "stepKey": "mountuefibootwimonwindowsworker"
         }, 
         {
             "order": 150, 
-            "stepKey": "wimlibunmountbootwimonwindowsworker"
+            "stepKey": "movefilestobootwimonwindowsworker"
         }, 
         {
             "order": 200, 
+            "stepKey": "wimlibunmountbootwimonwindowsworker"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "wimlibcompressbootwimonwindowsworker"
+        }, 
+        {
+            "order": 300, 
             "stepKey": "overwritebootwimwithbootcleanedwimonwindowsworker"
         }
     ], 
