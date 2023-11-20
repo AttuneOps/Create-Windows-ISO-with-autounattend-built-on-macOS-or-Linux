@@ -14,7 +14,7 @@ $FILE = "attune_wsl_extract_winpe_from_winimg_directory.sh"
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash "${FILE}"
+wsl -d Ubuntu --user attune --exec bash "${FILE}"
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error 'Failed to extract winpe.iso from winimg directory'

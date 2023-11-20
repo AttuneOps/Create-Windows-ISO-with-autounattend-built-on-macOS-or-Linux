@@ -71,10 +71,6 @@
             "stepKey": "recreatebiosbootwinpeisofromwinpestagingonwindowsworker"
         }, 
         {
-            "order": 800, 
-            "stepKey": "recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete"
-        }, 
-        {
             "order": 850, 
             "stepKey": "recreateuefibootwinpeisoonwindowsworker"
         }

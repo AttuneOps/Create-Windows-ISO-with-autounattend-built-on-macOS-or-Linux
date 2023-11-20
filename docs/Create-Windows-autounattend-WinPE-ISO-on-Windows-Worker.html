@@ -433,16 +433,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete">
-                            <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker - DELETE
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#recreateuefibootwinpeisoonwindowsworker">
-                            <strong>Step 18 -</strong> Recreate UEFI Boot WinPE ISO on Windows Worker
+                            <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO on Windows Worker
                         </a>
                     </p>
     
@@ -450,7 +442,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deletebuildwinpeisowinpeamd64">
-                            <strong>Step 18.1 -</strong> Delete build-winpe-iso\WinPE_amd64
+                            <strong>Step 17.1 -</strong> Delete build-winpe-iso\WinPE_amd64
                         </a>
                     </p>
 
@@ -458,7 +450,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copywinpeskeleton">
-                            <strong>Step 18.2 -</strong> Copy WinPE Skeleton
+                            <strong>Step 17.2 -</strong> Copy WinPE Skeleton
                         </a>
                     </p>
 
@@ -466,7 +458,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copybootwimtowinpeamd64">
-                            <strong>Step 18.3 -</strong> Copy Boot.wim to WinPE_amd64
+                            <strong>Step 17.3 -</strong> Copy Boot.wim to WinPE_amd64
                         </a>
                     </p>
 
@@ -474,7 +466,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deleteuefibootwinpeisoonwindowsworker">
-                            <strong>Step 18.4 -</strong> Delete UEFI Boot WinPE ISO on Windows Worker
+                            <strong>Step 17.4 -</strong> Delete UEFI Boot WinPE ISO on Windows Worker
                         </a>
                     </p>
 
@@ -482,7 +474,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootwinpeisofromwinpeamd64onwindowsworker">
-                            <strong>Step 18.5 -</strong> Create UEFI Boot WinPE ISO from WinPE_amd64 on Windows Worker
+                            <strong>Step 17.5 -</strong> Create UEFI Boot WinPE ISO from WinPE_amd64 on Windows Worker
                         </a>
                     </p>
 
@@ -1833,7 +1825,7 @@ $FILE = &quot;attune_wsl_create_post_install_wim.sh&quot;
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+wsl -d Ubuntu --user attune --exec bash &quot;${FILE}&quot;
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error &#x27;Failed to create $BUILD_DIR\${WIMFILE}&#x27;
@@ -2548,7 +2540,7 @@ $FILE = &quot;attune_wsl_recreate_winpe_bios_iso.sh&quot;
 
 Set-Content -Path $FILE -NoNewline -Value $scriptContent
 
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
+wsl -d Ubuntu --user attune --exec bash &quot;${FILE}&quot;
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error &#x27;Failed to create $ISO_BUILD\${ISO_NAME}&#x27;
@@ -2573,106 +2565,9 @@ Remove-Item &quot;${FILE}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete">
-                            <a href="#recreateuefibootwinpeisofromwinpestagingonwindowsworkerdelete">
-                                <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO from winpe_staging on Windows Worker - DELETE
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a UEFI bootable ISO at <code>C:\attuneautomationworker\kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>C:\attuneautomationworker\build-{newOsNode.fqn}\winpe_staging</code>. </p>
-<p>Only applies to UEFI kickstarts if the parameter <code>kickstartedBootLoaderIsUefi</code> is set the string <code>true</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if ( ${{kickstartedBootLoaderIsUefi}} ) {
-    $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-    $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
-    
-    Set-Location &quot;${BUILD_DIR}&quot;
-
-    $ISO_NAME=&quot;kickstart_{newOsNode.fqn}.iso&quot;
-    
-    $scriptContent=@&quot;
-mkisofs \
-    -allow-limited-size \
-    -no-emul-boot \
-    -b BOOT/etfsboot.com \
-    -boot-load-seg 0 \
-    -boot-load-size 8 \
-    -eltorito-alt-boot \
-    -no-emul-boot \
-    -b efi/microsoft/boot/efisys.bin \
-    -boot-load-size 1 \
-    -iso-level 4 \
-    -udf \
-    -o &quot;../${ISO_NAME}&quot; \
-    winpe_staging
-&quot;@
-
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
-    
-$FILE = &quot;attune_wsl_recreate_winpe_uefi_iso.sh&quot;
-
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user {wsl2AutomationWorkerLinuxUser.user} --exec bash &quot;${FILE}&quot;
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to create $ISO_BUILD\${ISO_NAME}&#x27;
-}
-  
-Remove-Item &quot;${FILE}&quot;
-
-} else {
-    echo &quot;Skipping for BIOS boot.&quot;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="recreateuefibootwinpeisoonwindowsworker">
                             <a href="#recreateuefibootwinpeisoonwindowsworker">
-                                <strong>Step 18 -</strong> Recreate UEFI Boot WinPE ISO on Windows Worker
+                                <strong>Step 17 -</strong> Recreate UEFI Boot WinPE ISO on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -2701,7 +2596,7 @@ Remove-Item &quot;${FILE}&quot;
                     <div class="row pt-5">
                         <h4 id="deletebuildwinpeisowinpeamd64">
                             <a href="#deletebuildwinpeisowinpeamd64">
-                                <strong>Step 18.1 -</strong> Delete build-winpe-iso\WinPE_amd64
+                                <strong>Step 17.1 -</strong> Delete build-winpe-iso\WinPE_amd64
                             </a>
                         </h4>
                     </div>
@@ -2769,7 +2664,7 @@ if (${{kickstartedBootLoaderIsUefi}}) {
                     <div class="row pt-5">
                         <h4 id="copywinpeskeleton">
                             <a href="#copywinpeskeleton">
-                                <strong>Step 18.2 -</strong> Copy WinPE Skeleton
+                                <strong>Step 17.2 -</strong> Copy WinPE Skeleton
                             </a>
                         </h4>
                     </div>
@@ -2841,7 +2736,7 @@ if (${{kickstartedBootLoaderIsUefi}}) {
                     <div class="row pt-5">
                         <h4 id="copybootwimtowinpeamd64">
                             <a href="#copybootwimtowinpeamd64">
-                                <strong>Step 18.3 -</strong> Copy Boot.wim to WinPE_amd64
+                                <strong>Step 17.3 -</strong> Copy Boot.wim to WinPE_amd64
                             </a>
                         </h4>
                     </div>
@@ -2909,7 +2804,7 @@ if (${{kickstartedBootLoaderIsUefi}}) {
                     <div class="row pt-5">
                         <h4 id="deleteuefibootwinpeisoonwindowsworker">
                             <a href="#deleteuefibootwinpeisoonwindowsworker">
-                                <strong>Step 18.4 -</strong> Delete UEFI Boot WinPE ISO on Windows Worker
+                                <strong>Step 17.4 -</strong> Delete UEFI Boot WinPE ISO on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -2975,7 +2870,7 @@ if (${{kickstartedBootLoaderIsUefi}}) {
                     <div class="row pt-5">
                         <h4 id="createuefibootwinpeisofromwinpeamd64onwindowsworker">
                             <a href="#createuefibootwinpeisofromwinpeamd64onwindowsworker">
-                                <strong>Step 18.5 -</strong> Create UEFI Boot WinPE ISO from WinPE_amd64 on Windows Worker
+                                <strong>Step 17.5 -</strong> Create UEFI Boot WinPE ISO from WinPE_amd64 on Windows Worker
                             </a>
                         </h4>
                     </div>
