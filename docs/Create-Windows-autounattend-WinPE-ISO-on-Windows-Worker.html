@@ -2042,9 +2042,9 @@ if (${{kickstartedBootLoaderIsUefi}}) {
     
     $WinPE_amd64=&quot;WinPE_amd64&quot;
     
-    Dism /Mount-Image /ImageFile:&quot;./${WinPE_amd64}/sources/boot.wim&quot; `
+    Dism /Mount-Image /ImageFile:&quot;.\${WinPE_amd64}\media\sources\boot.wim&quot; `
       /Index:1 `
-      /MountDir:&quot;./WinPE_BootImageDir&quot;
+      /MountDir:&quot;.\WinPE_BootImageDir&quot;
       
     if ($LASTEXITCODE -ne 0) {
         Write-Error &#x27;Failed to mount BOOT.WIM&#x27;
