@@ -47,7 +47,7 @@ REM Use the net use command's output as a means to test whether the Samba
 REM server is up.
 
 :mountsamba
-net use Z: \\%sambaIPaddress%\share | find "successfully" > nul
+net use Z: \\%sambaIPaddress%\share /user:Everyone "" | find "successfully" > nul
 if errorlevel 1 (
     echo mount failed, waiting for retry...
     ping localhost -n 2 >NUL
