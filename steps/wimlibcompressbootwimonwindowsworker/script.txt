@@ -7,8 +7,8 @@ if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
     $SourceImageFile = ".\winpe_staging\SOURCES\BOOT.WIM"
     $DestinationImageFile = ".\winpe_staging\SOURCES\BOOT_CLEANED.WIM"
 } elseif (${{kickstartedBootLoaderIsUefi}}) {
-    $SourceImageFile = ".\WinPE_amd64\sources\boot.wim"
-    $DestinationImageFile = ".\WinPE_amd64\sources\boot_cleaned.wim"
+    $SourceImageFile = ".\WinPE_amd64\media\sources\boot.wim"
+    $DestinationImageFile = ".\WinPE_amd64\media\sources\boot_cleaned.wim"
 } else {
     Write-Host "Unknown boot method"
     exit 1
