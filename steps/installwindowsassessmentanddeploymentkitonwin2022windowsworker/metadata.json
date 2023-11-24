@@ -13,10 +13,6 @@
         {
             "order": 200, 
             "stepKey": "downloadandinstallwinpeaddonforadkforwindowsserver2022"
-        }, 
-        {
-            "order": 250, 
-            "stepKey": "createskeletonwinpefiles"
         }
     ], 
     "name": "Install Windows Assessment and Deployment Kit on Win2022 Windows Worker", 

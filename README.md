@@ -89,9 +89,6 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 ### Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
 
 
-### Create Windows PE (WinPE) Plain ISO on Windows Worker
-
-
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -167,12 +164,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
-### Create winpe_plain_uefi.iso on Windows Worker
-
-
-### Create winpe_plain_uefi.iso with MakeWinPEMedia on Windows Worker
-
-
 ### Deploy and Mount Win10 ISO To Node for Feature Install
 
 
@@ -222,6 +213,12 @@ Performs basic tests for the built node.
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
 ### Unmount and Remove ISO From Node for Feature Install
+
+
+### Setup Skeleton WinPE_amd64 Folder on Windows Worker
+
+
+### Create Windows PE (WinPE) Plain BIOS ISO on Windows Worker
 
 
 
