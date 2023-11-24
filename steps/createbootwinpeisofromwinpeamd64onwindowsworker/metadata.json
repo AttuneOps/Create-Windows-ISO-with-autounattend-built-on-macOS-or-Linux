@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "f8ab655d-3fcf-4607-adac-d5ac4095dc80", 
+    "interpreter": 1, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "createbootwinpeisofromwinpeamd64onwindowsworker", 
+    "name": "Create Boot WinPE ISO from WinPE_amd64 on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 600, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

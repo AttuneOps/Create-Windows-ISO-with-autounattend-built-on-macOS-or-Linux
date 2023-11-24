@@ -1,0 +1,1 @@
+Copies the skeleton WinPE folder `C:\${WinPE_amd64}` to `C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_amd64`.

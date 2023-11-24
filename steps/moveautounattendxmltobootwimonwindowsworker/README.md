@@ -1,1 +1,1 @@
-Moves `autounattend.xml` to the folder `WinPE_BootImageDir`.
+In the `C:\attuneautomationworker\build-{newOsNode.fqn}` folder, moves `autounattend.xml` to the folder `WinPE_BootImageDir`.

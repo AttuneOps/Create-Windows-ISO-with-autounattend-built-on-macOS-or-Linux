@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c5eb2d88-6ba7-4b94-8c87-4e609e5e33c8", 
+    "interpreter": 1, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "createskeletonwinpefilesonwindowsworker", 
+    "name": "Create Skeleton WinPE Files on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 600, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

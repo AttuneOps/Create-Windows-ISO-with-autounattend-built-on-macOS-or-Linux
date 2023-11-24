@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "7d9fe6aa-65f6-40ab-906e-93bc95524f4e", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "deleteskeletonwinpeamd64folderonwindowsworker", 
+    "name": "Delete Skeleton WinPE_amd64 Folder on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 600, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

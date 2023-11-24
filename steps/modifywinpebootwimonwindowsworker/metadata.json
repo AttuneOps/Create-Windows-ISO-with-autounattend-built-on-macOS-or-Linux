@@ -11,12 +11,8 @@
             "stepKey": "createbootwimmountfolderonwindowsworker"
         }, 
         {
-            "order": 50, 
-            "stepKey": "mountbiosbootwimonwindowsworker"
-        }, 
-        {
             "order": 100, 
-            "stepKey": "mountuefibootwimonwindowsworker"
+            "stepKey": "mountbootwimonwindowsworker"
         }, 
         {
             "order": 150, 

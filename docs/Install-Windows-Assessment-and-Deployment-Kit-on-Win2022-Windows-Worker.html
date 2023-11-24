@@ -269,6 +269,14 @@
                     </p>
 
 
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#deleteadkdownloadsfolderonwindowsworker">
+                            <strong>Step 3 -</strong> Delete ADKDownloads Folder on Windows Worker
+                        </a>
+                    </p>
+
 
                 </div>
             </div>
@@ -369,7 +377,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Downloads, extracts and installs the Windows Assessment and Deployment Kit (ADK) for Windows Server 2022.</p>
                             </p>
                         </div>
                     </div>
@@ -398,7 +406,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>The URL is for the <code>ADK for Windows Server 2022</code> at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.</p>
+                                <p>The URL is for the Windows Assessment and Deployment Kit (ADK) for Windows Server 2022 at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.</p>
                             </p>
                         </div>
                     </div>
@@ -622,7 +630,7 @@ Set-Location &quot;${WIN2022_ADK}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Downloads, extracts and installs the <code>Windows PE add-on for the ADK for Windows Server 2022</code> for Windows Server 2022.</p>
                             </p>
                         </div>
                     </div>
@@ -835,6 +843,66 @@ Set-Location &quot;${WIN2022_WINPE_ADD_ON_ADK}&quot;
         </div>
     </div>
 
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="deleteadkdownloadsfolderonwindowsworker">
+                            <a href="#deleteadkdownloadsfolderonwindowsworker">
+                                <strong>Step 3 -</strong> Delete ADKDownloads Folder on Windows Worker
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes the folder at <code>C:\attuneautomationworker\ADKDownloads</code>.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+Set-Location &quot;C:\attuneautomationworker\&quot;
+
+$ADKDownloads = &quot;ADKDownloads&quot;
+
+if (Test-Path &quot;${ADKDownloads}&quot;) {
+    Remove-Item -Recurse &quot;.\${ADKDownloads}&quot;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
 
 
 
