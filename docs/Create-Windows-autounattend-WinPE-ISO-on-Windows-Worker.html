@@ -2005,7 +2005,7 @@ if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>In the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder, mounts <code>".\WinPE_amd64\sources\boot.wim</code> to <code>WinPE_BootImageDir</code> using <code>Dism</code> on Windows Worker.</p>
+                                <p>In the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder, mounts <code>".\WinPE_amd64\media\sources\boot.wim</code> to <code>WinPE_BootImageDir</code> using <code>Dism</code> on Windows Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -2451,7 +2451,7 @@ Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /Commit
                                 <p>A compressed version of <code>BOOT.WIM</code> is generated called <code>BOOT_CLEANED.WIM</code>.</p>
 <p>Relative to the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder:
 1. For BIOS boots compresses <code>.\winpe_staging\SOURCES\BOOT.WIM</code> to <code>.\winpe_staging\SOURCES\BOOT_CLEANED.WIM</code>.
-2. For UEFI boots compresses <code>.\WinPE_amd64\sources\boot.wim</code> to <code>.\WinPE_amd64\sources\boot_cleaned.wim</code>.</p>
+2. For UEFI boots compresses <code>.\WinPE_amd64\media\sources\boot.wim</code> to <code>.\WinPE_amd64\sources\boot_cleaned.wim</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -2489,8 +2489,8 @@ if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
     $SourceImageFile = &quot;.\winpe_staging\SOURCES\BOOT.WIM&quot;
     $DestinationImageFile = &quot;.\winpe_staging\SOURCES\BOOT_CLEANED.WIM&quot;
 } elseif (${{kickstartedBootLoaderIsUefi}}) {
-    $SourceImageFile = &quot;.\WinPE_amd64\sources\boot.wim&quot;
-    $DestinationImageFile = &quot;.\WinPE_amd64\sources\boot_cleaned.wim&quot;
+    $SourceImageFile = &quot;.\WinPE_amd64\media\sources\boot.wim&quot;
+    $DestinationImageFile = &quot;.\WinPE_amd64\media\sources\boot_cleaned.wim&quot;
 } else {
     Write-Host &quot;Unknown boot method&quot;
     exit 1
@@ -2564,7 +2564,7 @@ $ISO_BUILD=&quot;C:\attuneautomationworker&quot;
 if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
     $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\winpe_staging\SOURCES&quot;
 } elseif (${{kickstartedBootLoaderIsUefi}}) {
-    $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\WinPE_amd64\sources&quot;
+    $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\WinPE_amd64\media\sources&quot;
 } else {
     Write-Host &quot;Unknown boot method&quot;
     exit 1
@@ -2837,12 +2837,9 @@ if (${{kickstartedBootLoaderIsUefi}}) {
             <pre>
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}==true (
-    echo b
 
     call &quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\DandISetEnv.bat&quot; dir
     dir
-    
-    echo c
     
     cd C:\attuneautomationworker\build-{newOsNode.fqn}
     dir
