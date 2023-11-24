@@ -1,0 +1,1 @@
+Deletes the ISO at `C:\attuneautomationworker\kickstart_{newOsNode.fqn}.iso`.

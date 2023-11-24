@@ -1,8 +1,0 @@
-$ISO_BUILD="C:\attuneautomationworker"
-$BUILD_DIR="$ISO_BUILD\build-winpe-iso"
-
-Set-Location $BUILD_DIR
-
-Copy-Item -Recurse `
-    -Path ".\winimg\boot\etfsboot.com" `
-    -Destination ".\winpe_staging\BOOT"

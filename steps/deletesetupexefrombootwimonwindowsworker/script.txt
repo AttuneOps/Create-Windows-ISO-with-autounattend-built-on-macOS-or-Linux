@@ -1,6 +1,0 @@
-$ISO_BUILD="C:\attuneautomationworker"
-$WinPE_BootImageDir="$ISO_BUILD\build-winpe-iso\WinPE_BootImageDir"
-
-Set-Location $WinPE_BootImageDir
-
-Remove-Item -Verbose .\setup.exe

@@ -16,15 +16,15 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "deleteskeletonwinpeamd64folder"
+            "stepKey": "deleteskeletonwinpeamd64folderonwindowsworker"
         }, 
         {
             "order": 150, 
-            "stepKey": "createskeletonwinpefiles"
+            "stepKey": "createskeletonwinpefilesonwindowsworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folder"
+            "stepKey": "overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folderonwindowsworker"
         }
     ], 
     "name": "Setup Skeleton WinPE_amd64 Folder on Windows Worker", 

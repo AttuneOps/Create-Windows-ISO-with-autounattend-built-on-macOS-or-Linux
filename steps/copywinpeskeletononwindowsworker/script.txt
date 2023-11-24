@@ -1,0 +1,13 @@
+$ISO_BUILD="C:\attuneautomationworker"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+
+Set-Location "${BUILD_DIR}"
+
+$WinPE_amd64="WinPE_amd64"
+
+if ( -Not (Test-Path "${WinPE_amd64}") ) {
+  New-Item "${WinPE_amd64}" -ItemType Directory
+}
+
+Copy-Item -Recurse -Path "C:\${WinPE_amd64}\*" `
+    -Destination ".\${WinPE_amd64}\"

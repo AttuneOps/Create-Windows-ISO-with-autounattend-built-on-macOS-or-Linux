@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "612f26ba-4f29-4a9f-b136-3060e9c6ce92", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folderonwindowsworker", 
+    "name": "Overwrite fwfiles\\efisys.bin with efisys_noprompt.bin in Skeleton WinPE_amd64 Folder on Windows Worker", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 600, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

@@ -31,18 +31,6 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
-            "order": 300, 
-            "stepKey": "confirmplainwinpebiosisoexistsonwindowsworker"
-        }, 
-        {
-            "order": 400, 
-            "stepKey": "copyandrenamewinpebiosisoonwindowsworker"
-        }, 
-        {
-            "order": 500, 
-            "stepKey": "extractwinpebiosisotostagingfolderonwindowsworker"
-        }, 
-        {
             "order": 550, 
             "stepKey": "deploystartnetcmdonwindowsworker"
         }, 
@@ -56,23 +44,19 @@
         }, 
         {
             "order": 700, 
-            "stepKey": "deleteuefibuildwinpeisowinpeamd64"
+            "stepKey": "deletebuildwinpeisowinpeamd64onwindowsworker"
         }, 
         {
             "order": 800, 
-            "stepKey": "copywinpeskeletonforuefi"
+            "stepKey": "copywinpeskeletononwindowsworker"
         }, 
         {
             "order": 850, 
             "stepKey": "modifywinpebootwimonwindowsworker"
         }, 
         {
-            "order": 900, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonwindowsworker"
-        }, 
-        {
             "order": 950, 
-            "stepKey": "recreateuefibootwinpeisoonwindowsworker"
+            "stepKey": "recreatebootwinpeisoonwindowsworker"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on Windows Worker", 

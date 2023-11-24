@@ -217,9 +217,11 @@ Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
 ### Setup Skeleton WinPE_amd64 Folder on Windows Worker
 
+Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
 
-### Create Windows PE (WinPE) Plain BIOS ISO on Windows Worker
+This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
 
+This folder works for both BIOS and UEFI boot methods.
 
 
 

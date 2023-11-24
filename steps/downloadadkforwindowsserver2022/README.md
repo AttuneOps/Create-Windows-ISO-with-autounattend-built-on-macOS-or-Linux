@@ -1,1 +1,1 @@
-The URL is for the `ADK for Windows Server 2022` at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.
+The URL is for the Windows Assessment and Deployment Kit (ADK) for Windows Server 2022 at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.

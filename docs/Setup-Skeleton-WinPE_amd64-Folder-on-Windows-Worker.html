@@ -14,7 +14,11 @@
     <meta name="title"
           content="How to Setup Skeleton WinPE_amd64 Folder on Windows Worker - Attune Automation">
     <meta name="description"
-          content="">
+          content="Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
+
+This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
+
+This folder works for both BIOS and UEFI boot methods.">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
@@ -22,13 +26,21 @@
     <meta property="og:type" content="article" />
     <meta property="og:title"
           content="HowTo Setup Skeleton WinPE_amd64 Folder on Windows Worker - Attune Automation" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
+
+This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
+
+This folder works for both BIOS and UEFI boot methods." />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
           content="How to Setup Skeleton WinPE_amd64 Folder on Windows Worker - Attune Automation" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:description" content="Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
+
+This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
+
+This folder works for both BIOS and UEFI boot methods." />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -139,6 +151,15 @@
     </div>
 
 <!-- Blueprint Description -->
+    <div class="row">
+        <div class="description col px-0">
+            <p class="text-left">
+                <p>Sets up the "plain" WinPE skeleton files on Windows Worker at <code>C:\WinPE_amd64</code>.</p>
+<p>This folder can be copied and then it's <code>.\media\sources\boot.wim</code> file can be modified for an automated unattended Windows install.</p>
+<p>This folder works for both BIOS and UEFI boot methods.</p>
+            </p>
+        </div>
+    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -222,24 +243,24 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deleteskeletonwinpeamd64folder">
-                            <strong>Step 3 -</strong> Delete Skeleton WinPE_amd64 Folder
+                        <a href="#deleteskeletonwinpeamd64folderonwindowsworker">
+                            <strong>Step 3 -</strong> Delete Skeleton WinPE_amd64 Folder on Windows Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createskeletonwinpefiles">
-                            <strong>Step 4 -</strong> Create Skeleton WinPE Files
+                        <a href="#createskeletonwinpefilesonwindowsworker">
+                            <strong>Step 4 -</strong> Create Skeleton WinPE Files on Windows Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folder">
-                            <strong>Step 5 -</strong> Overwrite fwfiles\efisys.bin with efisys_noprompt.bin in Skeleton WinPE_amd64 Folder
+                        <a href="#overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folderonwindowsworker">
+                            <strong>Step 5 -</strong> Overwrite fwfiles\efisys.bin with efisys_noprompt.bin in Skeleton WinPE_amd64 Folder on Windows Worker
                         </a>
                     </p>
 
@@ -343,7 +364,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deploys the Win2019 DVD ISO to the <code>C:\attuneautomationworker\build-winpe-iso</code> directory on Windows Worker.</p>
                             </p>
                         </div>
                     </div>
@@ -481,13 +502,20 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
 
 
                     <div class="row pt-5">
-                        <h3 id="deleteskeletonwinpeamd64folder">
-                            <a href="#deleteskeletonwinpeamd64folder">
-                                <strong>Step 3 -</strong> Delete Skeleton WinPE_amd64 Folder
+                        <h3 id="deleteskeletonwinpeamd64folderonwindowsworker">
+                            <a href="#deleteskeletonwinpeamd64folderonwindowsworker">
+                                <strong>Step 3 -</strong> Delete Skeleton WinPE_amd64 Folder on Windows Worker
                             </a>
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Deletes Skeleton <code>C:\WinPE_amd64</code> folder on Windows Worker.</p>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -538,9 +566,9 @@ if (${{kickstartedBootLoaderIsUefi}}) {
 
 
                     <div class="row pt-5">
-                        <h3 id="createskeletonwinpefiles">
-                            <a href="#createskeletonwinpefiles">
-                                <strong>Step 4 -</strong> Create Skeleton WinPE Files
+                        <h3 id="createskeletonwinpefilesonwindowsworker">
+                            <a href="#createskeletonwinpefilesonwindowsworker">
+                                <strong>Step 4 -</strong> Create Skeleton WinPE Files on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -549,7 +577,14 @@ if (${{kickstartedBootLoaderIsUefi}}) {
                         <div class="description col px-0">
                             <p>
                                 <p>Starts the <code>Deployment and Imaging Tools Environment</code>.
-Creates the skeleton WinPE files.</p>
+Creates the skeleton WinPE files at <code>C:\WinPE_amd64</code>.</p>
+<p>The path to <code>DandISetEnv.bat</code> was found by:
+1. Typing in "Deployment and Imaging Tools Environment" in the Windows search box.
+2. Right click on <strong>Deployment and Imaging Tools Environment</strong>.
+3. Click on <strong>Open file location</strong>.
+4. Right click on the file <strong>Deployment and Imaging Tools Environment</strong>.
+5. Click <strong>Properties</strong>.
+6. Look at the path in the <strong>Target</strong> field.</p>
 <p>Use <code>call</code> to run multiple commands after running the batch file <code>DandISetEnv.bat</code>. Referenced from https://superuser.com/questions/1079403/how-to-run-multiple-commands-one-after-another-in-cmd.</p>
                             </p>
                         </div>
@@ -595,9 +630,9 @@ copype amd64 C:\WinPE_amd64
 
 
                     <div class="row pt-5">
-                        <h3 id="overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folder">
-                            <a href="#overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folder">
-                                <strong>Step 5 -</strong> Overwrite fwfiles\efisys.bin with efisys_noprompt.bin in Skeleton WinPE_amd64 Folder
+                        <h3 id="overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folderonwindowsworker">
+                            <a href="#overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folderonwindowsworker">
+                                <strong>Step 5 -</strong> Overwrite fwfiles\efisys.bin with efisys_noprompt.bin in Skeleton WinPE_amd64 Folder on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -605,7 +640,11 @@ copype amd64 C:\WinPE_amd64
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Overwrites this default <code>efisys.bin</code> created by the  Windows Assessment and Deployment Kit:
+* <code>C:\WinPE_amd64\fwfiles\efisys.bin</code> - which prompts the user to "Press any key To boot from CD or DVD . . . ." for UEFI boots methods.</p>
+<p>with the <code>efisys_noprompt.bin</code> file from Win2019 DVD ISO:
+* <code>C:\attuneautomationworker\build-winpe-iso\winimg\efi\microsoft\boot\efisys_noprompt.bin</code> - which does not have the "Press any key To boot from CD or DVD . . . ." prompt for UEFI boot methods.</p>
+<p>After this step WinPE ISOs built with a copy of the skeleton WinPE directory <code>C:\WinPE_amd64</code> will not prompt for the "Press any key To boot from CD or DVD . . . ." for UEFI boots methods.</p>
                             </p>
                         </div>
                     </div>
@@ -634,26 +673,21 @@ copype amd64 C:\WinPE_amd64
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if (${{kickstartedBootLoaderIsUefi}}) {
-    $SKELETON_FWFILES_PATH=&quot;C:\WinPE_amd64\fwfiles&quot;
+$SKELETON_FWFILES_PATH=&quot;C:\WinPE_amd64\fwfiles&quot;
 
-    Set-Location &quot;${SKELETON_FWFILES_PATH}&quot;
+Set-Location &quot;${SKELETON_FWFILES_PATH}&quot;
+
+$WinPE_amd64_PATH=&quot;C:\attuneautomationworker\build-winpe-iso\WinPE_amd64&quot;
+
+Write-Host &quot;Before hash of efisys.bin&quot;
+Get-FileHash .\efisys.bin
     
-    $WinPE_amd64_PATH=&quot;C:\attuneautomationworker\build-winpe-iso\WinPE_amd64&quot;
+Copy-Item `
+    -Path &quot;C:\attuneautomationworker\build-winpe-iso\winimg\efi\microsoft\boot\efisys_noprompt.bin&quot; `
+    -Destination &quot;.\efisys.bin&quot;
     
-    Write-Host &quot;Before hash of efisys.bin&quot;
-    Get-FileHash .\efisys.bin
-        
-    Copy-Item `
-        -Path &quot;C:\attuneautomationworker\build-winpe-iso\winimg\efi\microsoft\boot\efisys_noprompt.bin&quot; `
-        -Destination &quot;.\efisys.bin&quot;
-        
-    Write-Host &quot;After hash of efisys.bin&quot;
-    Get-FileHash .\efisys.bin
-    
-} else {
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-}
+Write-Host &quot;After hash of efisys.bin&quot;
+Get-FileHash .\efisys.bin
                 </code>
             </pre>
         </div>
