@@ -541,16 +541,10 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if (${{kickstartedBootLoaderIsUefi}}) {
-    
-    $WinPE_amd64=&quot;C:\WinPE_amd64&quot;
-    
-    if ( (Test-Path &quot;${WinPE_amd64}&quot;) ) {
-      Remove-Item -Path &quot;${WinPE_amd64}&quot; -Recurse
-    }
-    
-} else {
-    echo &quot;Skipping for BIOS ISO creation.&quot;
+$WinPE_amd64=&quot;C:\WinPE_amd64&quot;
+
+if ( (Test-Path &quot;${WinPE_amd64}&quot;) ) {
+  Remove-Item -Path &quot;${WinPE_amd64}&quot; -Recurse
 }
                 </code>
             </pre>
