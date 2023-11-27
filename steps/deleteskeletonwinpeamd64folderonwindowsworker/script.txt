@@ -1,11 +1,6 @@
-if (${{kickstartedBootLoaderIsUefi}}) {
-    
-    $WinPE_amd64="C:\WinPE_amd64"
-    
-    if ( (Test-Path "${WinPE_amd64}") ) {
-      Remove-Item -Path "${WinPE_amd64}" -Recurse
-    }
-    
-} else {
-    echo "Skipping for BIOS ISO creation."
+$WinPE_amd64="C:\WinPE_amd64"
+
+if ( (Test-Path "${WinPE_amd64}") ) {
+  Remove-Item -Path "${WinPE_amd64}" -Recurse
 }
+    

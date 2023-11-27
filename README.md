@@ -212,9 +212,6 @@ Performs basic tests for the built node.
 
 Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
-### Unmount and Remove ISO From Node for Feature Install
-
-
 ### Setup Skeleton WinPE_amd64 Folder on Windows Worker
 
 Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
@@ -222,6 +219,9 @@ Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
 This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
 
 This folder works for both BIOS and UEFI boot methods.
+
+### Unmount and Remove ISO From Node for Feature Install
+
 
 
 
