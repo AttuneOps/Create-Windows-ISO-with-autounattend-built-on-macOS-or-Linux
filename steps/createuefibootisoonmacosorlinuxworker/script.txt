@@ -6,24 +6,24 @@ then
         grep -iq "darwin"
     then
         echo "is macOS"
+        if ! type xorriso > /dev/null; then
+            brew install xorriso
+        fi
         export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
         echo "Using $(which xorriso)"
         
         xorriso -as mkisofs \
-            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
             -b boot/etfsboot.com \
             -no-emul-boot \
-            -boot-load-seg 0 \
             -boot-load-size 8 \
             -hide boot.catalog \
             -eltorito-alt-boot \
             -no-emul-boot \
             -b efi/microsoft/boot/efisys.bin \
             -boot-load-size 1 \
-            -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
             -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
