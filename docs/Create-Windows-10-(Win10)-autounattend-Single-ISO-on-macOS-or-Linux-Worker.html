@@ -1468,9 +1468,6 @@ then
         grep -iq &quot;darwin&quot;
     then
         echo &quot;is macOS&quot;
-        if ! type xorriso &gt; /dev/null; then
-            brew install xorriso
-        fi
         export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
         echo &quot;Using $(which xorriso)&quot;
         
