@@ -1,0 +1,3 @@
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
+
+wimoptimize winpe_staging/SOURCES/BOOT.WIM --recompress

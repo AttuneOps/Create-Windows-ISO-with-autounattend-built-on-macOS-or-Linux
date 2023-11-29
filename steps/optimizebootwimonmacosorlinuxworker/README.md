@@ -1,0 +1,2 @@
+Rebuild the entire WIM rather than appending the updated data to the end of it.  Rebuilding the WIM is slower, but will save a little bit of space that would otherwise be left as a hole in the WIM
+             file.

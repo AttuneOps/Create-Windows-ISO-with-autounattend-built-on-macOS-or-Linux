@@ -1,0 +1,10 @@
+if {kickstartedBootLoaderIsBios}
+then
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+    
+    mv -v boot.img winpe_staging
+    
+else
+    echo "Skipping for UEFI ISO creation."
+fi

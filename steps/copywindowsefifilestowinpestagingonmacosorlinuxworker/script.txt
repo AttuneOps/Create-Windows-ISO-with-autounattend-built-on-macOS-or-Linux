@@ -4,7 +4,7 @@ then
     cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
     
     # Copy EFI Files from Windows ISO
-    cp -rv "winimg/efi" "winpe_staging"
+    cp -rv "$(find winimg -type d -name efi)" "winpe_staging"
     
 else
     echo "Skipping for BIOS ISO creation."

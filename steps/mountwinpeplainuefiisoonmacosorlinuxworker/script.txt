@@ -1,0 +1,26 @@
+if {kickstartedBootLoaderIsUefi}
+then
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+    ISO="{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso"
+    FOLDER="uefi_mount"
+    mkdir -p -v ${FOLDER}
+    
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+        
+        mount --verbose "${ISO}" "${FOLDER}/CD"
+    
+    elif [[ "$(uname)" == "Darwin" ]]
+    then
+    
+        hdiutil attach ${ISO} -mountroot ${FOLDER}
+    
+    else
+        echo "Unsupported operating system."
+    fi
+    
+else
+
+    echo "Skipping for BIOS boot."
+fi

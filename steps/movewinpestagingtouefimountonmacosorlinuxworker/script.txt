@@ -1,0 +1,10 @@
+if {kickstartedBootLoaderIsUefi}
+then
+        
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+    
+    # Copy WinPE Files from WinPE ISO
+    mv -v winpe_staging/* "$(echo uefi_mount/*)"
+else
+    echo "Skipping for BIOS boot."
+fi

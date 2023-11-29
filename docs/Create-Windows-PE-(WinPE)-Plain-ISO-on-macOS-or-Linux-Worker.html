@@ -206,64 +206,48 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmwinpeplainbiosisodoesnotexist">
-                            <strong>Step 1 -</strong> Confirm winpe_plain_bios.iso Does Not Exist
+                        <a href="#confirmwinpeplainisodoesnotexistonmacosorlinuxworker">
+                            <strong>Step 1 -</strong> Confirm WinPE plain ISO does not exist on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#confirmwinpeplainuefiisodoesnotexist">
-                            <strong>Step 2 -</strong> Confirm winpe_plain_uefi.iso Does Not Exist
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountwinpeuefimount">
-                            <strong>Step 3 -</strong> Unmount WinPE UEFI Mount
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
-                            <strong>Step 4 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
+                        <a href="#cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker">
+                            <strong>Step 2 -</strong> Cleanup Build Files for WinPE plain ISO Creation on macOS or Linux Worker
                         </a>
                     </p>
     
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linunmountwindowsiso">
-                            <strong>Step 4.1 -</strong> LIN Unmount Windows ISO
+                        <a href="#unmountwinpeuefimountonmacosorlinuxworker">
+                            <strong>Step 2.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lindeletewinimgfolder">
-                            <strong>Step 4.2 -</strong> LIN Delete winimg Folder
+                        <a href="#unmountwindowsisoonmacosorlinuxworker">
+                            <strong>Step 2.2 -</strong> Unmount Windows ISO on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linsetwritepermissionstowinpestaging">
-                            <strong>Step 4.3 -</strong> LIN Set Write Permissions to winpe_staging
+                        <a href="#setwritepermissionstowinpestagingonmacosorlinuxworker">
+                            <strong>Step 2.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincleanbuilddirectory">
-                            <strong>Step 4.4 -</strong> LIN Clean Build Directory
+                        <a href="#cleanbuilddirectoryonmacosorlinuxworker">
+                            <strong>Step 2.4 -</strong> Clean Build Directory on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -271,32 +255,32 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker">
-                            <strong>Step 5 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on macOS or Linux Worker
+                        <a href="#deploywin2019dvdisotobuildwinpeisodirectoryonmacosorlinuxworker">
+                            <strong>Step 3 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso directory on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker">
-                            <strong>Step 6 -</strong> Extract Windows boot.img from build-winpe-iso on macOS or Linux Worker
+                        <a href="#extractwindowsbootimgfrombuildwinpeisodirectoryforbiosbuildonmacosorlinuxworker">
+                            <strong>Step 4 -</strong> Extract Windows boot.img from build-winpe-iso directory for BIOS build on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmountwinserverdvdiso">
-                            <strong>Step 7 -</strong> LIN Mount Win Server DVD ISO
+                        <a href="#mountwinserverdvdisoonmacosorlinuxworker">
+                            <strong>Step 5 -</strong> Mount Win Server DVD ISO on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linextractwinpeisofromwinimgdirectory">
-                            <strong>Step 8 -</strong> LIN Extract WinPE ISO from winimg Directory
+                        <a href="#extractwinpeisofromwinimgdirectoryonmacosorlinuxworker">
+                            <strong>Step 6 -</strong> Extract WinPE ISO from winimg Directory on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -304,128 +288,95 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker">
-                            <strong>Step 9 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux Worker
+                            <strong>Step 7 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
-                            <strong>Step 10 -</strong> LIN Copy Files for mkwinpeimg Compatibility to WinPE Staging
+                        <a href="#copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinuxworker">
+                            <strong>Step 8 -</strong> Copy Files for mkwinpeimg Compatibility to WinPE Staging on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linmovebootimgtowinpestaging">
-                            <strong>Step 11 -</strong> LIN Move boot.img to winpe_staging
+                        <a href="#movebootimgtowinpestagingforbiosbuildonmacosorlinuxworker">
+                            <strong>Step 9 -</strong> Move boot.img to winpe_staging for BIOS build on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linperformdeletesetupexefromwinpestagingbootwim">
-                            <strong>Step 12 -</strong> LIN Perform Delete setup.exe from winpe_staging boot.wim
+                        <a href="#deletesetupexefrombootwimonmacosorlinuxworker">
+                            <strong>Step 10 -</strong> Delete setup.exe from boot.wim on macOS or Linux Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#optimizebootwimonmacosorlinuxworker">
+                            <strong>Step 11 -</strong> Optimize boot.wim on macOS or Linux Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#createwinpeplainbiosisofromwinpestagingonmacosorlinuxworker">
+                            <strong>Step 12 -</strong> Create winpe_plain_bios.iso from winpe_staging on macOS or Linux Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#putthewinpeplainuefiisocontenttogetheronlinuxworker">
+                            <strong>Step 13 -</strong> Put the winpe_plain_uefi.iso content together on Linux Worker
                         </a>
                     </p>
     
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
-                            <strong>Step 12.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on macOS or Linux Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountbootwiminbuildwinpeisoonmacosorlinuxworker">
-                            <strong>Step 12.2 -</strong> Mount BOOT.WIM in build-winpe-iso on macOS or Linux Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#lindeletesetupexefrombootwim">
-                            <strong>Step 12.3 -</strong> LIN Delete setup.exe from boot.wim
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#linwimlibunmountbootwimfrombuildwinpeiso">
-                            <strong>Step 12.4 -</strong> LIN wimlib Unmount boot.wim from build-winpe-iso
-                        </a>
-                    </p>
-
-
         
 
                     <p class="text-muted pt-2">
                         <a href="#copywindowsefifilestowinpestagingonmacosorlinuxworker">
-                            <strong>Step 13 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux Worker
+                            <strong>Step 13.1 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker">
-                            <strong>Step 14 -</strong> LIN Create winpe_plain_bios.iso from winpe_staging on macOS or Linux Worker
+                        <a href="#changeownershipofwinpestagingdirectorytoattuneonmacosorlinuxworker">
+                            <strong>Step 13.2 -</strong> Change Ownership of winpe_staging Directory to attune on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createfat32winpeplainuefiisofromwinpestagingonlinuxworker">
-                            <strong>Step 15 -</strong> Create FAT32 winpe_plain_uefi.iso from winpe_staging on Linux Worker
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#changeownershipofwinpestagingdirectorytoattune">
-                            <strong>Step 15.1 -</strong> Change Ownership of winpe_staging Directory to attune
+                        <a href="#createwinpeplainuefiisoonmacosorlinuxworker">
+                            <strong>Step 13.3 -</strong> Create winpe_plain_uefi.iso on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpeplainuefiiso">
-                            <strong>Step 15.2 -</strong> Create winpe_plain_uefi.iso
+                        <a href="#mountwinpeplainuefiisoonmacosorlinuxworker">
+                            <strong>Step 13.4 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#mountwinpeplainuefiiso">
-                            <strong>Step 15.3 -</strong> Mount winpe_plain_uefi.iso
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movewinpestagingtouefimount">
-                            <strong>Step 15.4 -</strong> Move WinPE Staging to UEFI Mount
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountwinpeuefimount">
-                            <strong>Step 15.5 -</strong> Unmount WinPE UEFI Mount
+                        <a href="#movewinpestagingtouefimountonmacosorlinuxworker">
+                            <strong>Step 13.5 -</strong> Move WinPE Staging to UEFI Mount on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -433,48 +384,40 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpeplainuefiisoonmacosworker">
-                            <strong>Step 16 -</strong> Create winpe_plain_uefi.iso on macOS Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
-                            <strong>Step 17 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
+                        <a href="#cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker">
+                            <strong>Step 14 -</strong> Cleanup Build Files for WinPE plain ISO Creation on macOS or Linux Worker
                         </a>
                     </p>
     
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linunmountwindowsiso">
-                            <strong>Step 17.1 -</strong> LIN Unmount Windows ISO
+                        <a href="#unmountwinpeuefimountonmacosorlinuxworker">
+                            <strong>Step 14.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lindeletewinimgfolder">
-                            <strong>Step 17.2 -</strong> LIN Delete winimg Folder
+                        <a href="#unmountwindowsisoonmacosorlinuxworker">
+                            <strong>Step 14.2 -</strong> Unmount Windows ISO on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linsetwritepermissionstowinpestaging">
-                            <strong>Step 17.3 -</strong> LIN Set Write Permissions to winpe_staging
+                        <a href="#setwritepermissionstowinpestagingonmacosorlinuxworker">
+                            <strong>Step 14.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux Worker
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#lincleanbuilddirectory">
-                            <strong>Step 17.4 -</strong> LIN Clean Build Directory
+                        <a href="#cleanbuilddirectoryonmacosorlinuxworker">
+                            <strong>Step 14.4 -</strong> Clean Build Directory on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -569,9 +512,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmwinpeplainbiosisodoesnotexist">
-                            <a href="#confirmwinpeplainbiosisodoesnotexist">
-                                <strong>Step 1 -</strong> Confirm winpe_plain_bios.iso Does Not Exist
+                        <h3 id="confirmwinpeplainisodoesnotexistonmacosorlinuxworker">
+                            <a href="#confirmwinpeplainisodoesnotexistonmacosorlinuxworker">
+                                <strong>Step 1 -</strong> Confirm WinPE plain ISO does not exist on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -621,95 +564,45 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsBios}
+if [[ {kickstartedBootLoaderIsBios} == {kickstartedBootLoaderIsUefi} ]]
+then
+
+    echo &quot;Check the plan parameters&quot;
+    echo &quot;UEFI and BIOS are both configured as {kickstartedBootLoaderIsBios}.&quot;
+    exit 1
+    
+elif {kickstartedBootLoaderIsBios}
 then
 
     DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}&quot;
     cd &quot;${DIRECTORY}&quot;
-    
     ISO=&quot;winpe_plain_bios.iso&quot;
     if [[ -f ${ISO} ]]
     then
+    
         echo &quot;Please delete ${DIRECTORY}/${ISO} to confirm you want to try again.&quot;
         exit 1
     else
+    
         echo &quot;${DIRECTORY}/${ISO} does not exist, good.&quot;
-    fi   
-else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="confirmwinpeplainuefiisodoesnotexist">
-                            <a href="#confirmwinpeplainuefiisodoesnotexist">
-                                <strong>Step 2 -</strong> Confirm winpe_plain_uefi.iso Does Not Exist
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Checks if the WinPE plain UEFI ISO <code>{automationWorkerLinuxBaseDirectory}/winpe_win2019_plain_uefi.iso</code> exists.</p>
-<p>If it does, prints a message to ask user to confirm to delete it if they want to recreate it.</p>
-<p>Only applies to UEFI kickstarts. Only runs if the parameter <code>kickstartedBootLoaderIsUefi</code> is set <code>true</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
+    fi
     
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
+elif {kickstartedBootLoaderIsUefi}
 then
 
     DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}&quot;
     cd &quot;${DIRECTORY}&quot;
-    
     ISO=&quot;winpe_plain_uefi.iso&quot;
     if [[ -f ${ISO} ]]
     then
+    
         echo &quot;Please delete ${DIRECTORY}/${ISO} to confirm you want to try again.&quot;
         exit 1
     else
+    
         echo &quot;${DIRECTORY}/${ISO} does not exist, good.&quot;
     fi
     
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
 fi
                 </code>
             </pre>
@@ -725,9 +618,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="unmountwinpeuefimount">
-                            <a href="#unmountwinpeuefimount">
-                                <strong>Step 3 -</strong> Unmount WinPE UEFI Mount
+                        <h3 id="cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker">
+                            <a href="#cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker">
+                                <strong>Step 2 -</strong> Cleanup Build Files for WinPE plain ISO Creation on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -735,10 +628,32 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Deletes the temporary build directory.</p>
                             </p>
                         </div>
                     </div>
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="unmountwinpeuefimountonmacosorlinuxworker">
+                            <a href="#unmountwinpeuefimountonmacosorlinuxworker">
+                                <strong>Step 2.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux Worker
+                            </a>
+                        </h4>
+                    </div>
+
 
 
 
@@ -777,31 +692,43 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
+
+    MOUNT_FOLDER=&quot;uefi_mount&quot;
+    MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
     
-        MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
         
-        if df -h | grep --ignore-case \
-            --quiet \
-            &quot;${MOUNT_PATH}&quot;
+        if df -h | grep --ignore-case --quiet &quot;${MOUNT_PATH}&quot;
         then
         
             cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-            
             umount --verbose &quot;${MOUNT_FOLDER}&quot;
+            
         else
+        
             echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
         fi
+
+    elif [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+    then
+    
+        if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+        then
+        
+            hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        else
+        
+            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+        fi
+
+    else
+        
+        echo &quot;Unsupported operating system.&quot;
     fi
     
 else
+
     echo &quot;Skipping for BIOS boot.&quot;
 fi
                 </code>
@@ -813,43 +740,14 @@ fi
 
 
 
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createwinpecleanbuildfilesonmacosorlinuxworker">
-                            <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
-                                <strong>Step 4 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the temporary build directory.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
     
 
 
 
                     <div class="row pt-5">
-                        <h4 id="linunmountwindowsiso">
-                            <a href="#linunmountwindowsiso">
-                                <strong>Step 4.1 -</strong> LIN Unmount Windows ISO
+                        <h4 id="unmountwindowsisoonmacosorlinuxworker">
+                            <a href="#unmountwindowsisoonmacosorlinuxworker">
+                                <strong>Step 2.2 -</strong> Unmount Windows ISO on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -890,15 +788,32 @@ MOUNT_FOLDER=&quot;winimg&quot;
 BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
 
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    cd &quot;${BUILD_DIRECTORY}&quot;
-
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    if df -h | grep --ignore-case --quiet &quot;${MOUNT_PATH}&quot;
+    then
+    
+        cd &quot;${BUILD_DIRECTORY}&quot;
+        umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+elif [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+then
+    
+    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    then
+    
+        hdiutil detach $(echo ${MOUNT_PATH}/*)
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
 else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
 fi
                 </code>
             </pre>
@@ -914,116 +829,23 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="lindeletewinimgfolder">
-                            <a href="#lindeletewinimgfolder">
-                                <strong>Step 4.2 -</strong> LIN Delete winimg Folder
+                        <h4 id="setwritepermissionstowinpestagingonmacosorlinuxworker">
+                            <a href="#setwritepermissionstowinpestagingonmacosorlinuxworker">
+                                <strong>Step 2.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg</code> folder.</p>
-                            </p>
-                        </div>
-                    </div>
 
 
 
 
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-if [ ! -d ${BUILD_DIRECTORY} ]
-then
-    echo &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
-else
-    cd &quot;${BUILD_DIRECTORY}&quot;
-        
-    DIR=&quot;winimg&quot;
-    [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
-        echo &quot;No directory to remove.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
 
 
 
 
 
     
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="linsetwritepermissionstowinpestaging">
-                            <a href="#linsetwritepermissionstowinpestaging">
-                                <strong>Step 4.3 -</strong> LIN Set Write Permissions to winpe_staging
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
 
 
     
@@ -1055,7 +877,7 @@ else
         echo &quot;Before&quot;
         ls -lh
         
-        chmod --recursive a+w &quot;${DIR}&quot;
+        chmod -R a+w &quot;${DIR}&quot;
         
         echo &quot;After&quot;
         ls -lh
@@ -1075,9 +897,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="lincleanbuilddirectory">
-                            <a href="#lincleanbuilddirectory">
-                                <strong>Step 4.4 -</strong> LIN Clean Build Directory
+                        <h4 id="cleanbuilddirectoryonmacosorlinuxworker">
+                            <a href="#cleanbuilddirectoryonmacosorlinuxworker">
+                                <strong>Step 2.4 -</strong> Clean Build Directory on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -1143,9 +965,9 @@ DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker">
-                            <a href="#deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker">
-                                <strong>Step 5 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso on macOS or Linux Worker
+                        <h3 id="deploywin2019dvdisotobuildwinpeisodirectoryonmacosorlinuxworker">
+                            <a href="#deploywin2019dvdisotobuildwinpeisodirectoryonmacosorlinuxworker">
+                                <strong>Step 3 -</strong> Deploy Win2019 DVD ISO to build-winpe-iso directory on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1200,9 +1022,9 @@ DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker">
-                            <a href="#extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker">
-                                <strong>Step 6 -</strong> Extract Windows boot.img from build-winpe-iso on macOS or Linux Worker
+                        <h3 id="extractwindowsbootimgfrombuildwinpeisodirectoryforbiosbuildonmacosorlinuxworker">
+                            <a href="#extractwindowsbootimgfrombuildwinpeisodirectoryforbiosbuildonmacosorlinuxworker">
+                                <strong>Step 4 -</strong> Extract Windows boot.img from build-winpe-iso directory for BIOS build on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1276,9 +1098,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="linmountwinserverdvdiso">
-                            <a href="#linmountwinserverdvdiso">
-                                <strong>Step 7 -</strong> LIN Mount Win Server DVD ISO
+                        <h3 id="mountwinserverdvdisoonmacosorlinuxworker">
+                            <a href="#mountwinserverdvdisoonmacosorlinuxworker">
+                                <strong>Step 5 -</strong> Mount Win Server DVD ISO on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1336,9 +1158,21 @@ shopt -s nocaseglob
 
 ISO=$(ls *SERVER*.iso)
 
-mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
-    --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
-    &quot;${ISO}&quot; &quot;${FOLDER}&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+
+    mkdir -p &quot;${FOLDER}/CD&quot;
+    mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
+        --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
+        &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
+
+elif [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+then
+    hdiutil attach ${ISO} -mountroot ${FOLDER}
+
+else
+    echo &quot;Unsupported operating system.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -1353,9 +1187,9 @@ mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
 
 
                     <div class="row pt-5">
-                        <h3 id="linextractwinpeisofromwinimgdirectory">
-                            <a href="#linextractwinpeisofromwinimgdirectory">
-                                <strong>Step 8 -</strong> LIN Extract WinPE ISO from winimg Directory
+                        <h3 id="extractwinpeisofromwinimgdirectoryonmacosorlinuxworker">
+                            <a href="#extractwinpeisofromwinimgdirectoryonmacosorlinuxworker">
+                                <strong>Step 6 -</strong> Extract WinPE ISO from winimg Directory on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1406,9 +1240,21 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
             <pre>
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    
-mkwinpeimg --iso --windows-dir=winimg \
-    &quot;winpe.iso&quot;
+
+if [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+then
+    sed &#x27;s/getopt -o.*/getopt iso,windows-dir -- $*); then /g&#x27; $(which mkwinpeimg) \
+        | sed &#x27;/-- &quot;$@&quot; /d&#x27; \
+        | sed &#x27;/,help,version/d&#x27; \
+        | sed &#x27;s/eval set -- &quot;$options&quot;/eval set &quot;$options&quot;/g&#x27; \
+        &gt; mkwinpeimg
+    which sed
+    sed -i &#x27;s/while \[ $# -gt 0 \]; do/echo $*;while [ $# -gt 0 ]; do echo $1/g&#x27; mkwinpeimg
+    chmod +x mkwinpeimg
+    export PATH=&quot;.:$PATH&quot;
+fi
+
+mkwinpeimg --iso --windows-dir $(echo winimg/*) -- winpe.iso
                 </code>
             </pre>
         </div>
@@ -1425,7 +1271,7 @@ mkwinpeimg --iso --windows-dir=winimg \
                     <div class="row pt-5">
                         <h3 id="extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker">
                             <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker">
-                                <strong>Step 9 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux Worker
+                                <strong>Step 7 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1482,9 +1328,9 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
-                            <a href="#lincopyfilesformkwinpeimgcompatibilitytowinpestaging">
-                                <strong>Step 10 -</strong> LIN Copy Files for mkwinpeimg Compatibility to WinPE Staging
+                        <h3 id="copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinuxworker">
+                            <a href="#copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinuxworker">
+                                <strong>Step 8 -</strong> Copy Files for mkwinpeimg Compatibility to WinPE Staging on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1536,7 +1382,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
+cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_staging/BOOT&quot;
                 </code>
             </pre>
         </div>
@@ -1551,9 +1397,9 @@ cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="linmovebootimgtowinpestaging">
-                            <a href="#linmovebootimgtowinpestaging">
-                                <strong>Step 11 -</strong> LIN Move boot.img to winpe_staging
+                        <h3 id="movebootimgtowinpestagingforbiosbuildonmacosorlinuxworker">
+                            <a href="#movebootimgtowinpestagingforbiosbuildonmacosorlinuxworker">
+                                <strong>Step 9 -</strong> Move boot.img to winpe_staging for BIOS build on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1596,7 +1442,7 @@ then
 
     cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
-    mv --verbose boot.img winpe_staging
+    mv -v boot.img winpe_staging
     
 else
     echo &quot;Skipping for UEFI ISO creation.&quot;
@@ -1615,9 +1461,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="linperformdeletesetupexefromwinpestagingbootwim">
-                            <a href="#linperformdeletesetupexefromwinpestagingbootwim">
-                                <strong>Step 12 -</strong> LIN Perform Delete setup.exe from winpe_staging boot.wim
+                        <h3 id="deletesetupexefrombootwimonmacosorlinuxworker">
+                            <a href="#deletesetupexefrombootwimonmacosorlinuxworker">
+                                <strong>Step 10 -</strong> Delete setup.exe from boot.wim on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1634,35 +1480,6 @@ fi
 <li>Windows Server 2019</li>
 <li>Windows Server 2022</li>
 </ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
-                            <a href="#createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
-                                <strong>Step 12.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on macOS or Linux Worker
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a directory <code>WinPE_BootImageDir</code> for mounting <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1704,183 +1521,11 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
-WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
-if [ ! -d WinPE_BootImageDir ]
-then
-    mkdir $WinPE_BootImageDir
-fi
+wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;delete /setup.exe&quot;
                 </code>
             </pre>
         </div>
     </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountbootwiminbuildwinpeisoonmacosorlinuxworker">
-                            <a href="#mountbootwiminbuildwinpeisoonmacosorlinuxworker">
-                                <strong>Step 12.2 -</strong> Mount BOOT.WIM in build-winpe-iso on macOS or Linux Worker
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Mounts <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe_staging/SOURCES/BOOT.WIM</code> to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code> using <code>wimmountrw</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="lindeletesetupexefrombootwim">
-                            <a href="#lindeletesetupexefrombootwim">
-                                <strong>Step 12.3 -</strong> LIN Delete setup.exe from boot.wim
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir
-
-rm --verbose setup.exe
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="linwimlibunmountbootwimfrombuildwinpeiso">
-                            <a href="#linwimlibunmountbootwimfrombuildwinpeiso">
-                                <strong>Step 12.4 -</strong> LIN wimlib Unmount boot.wim from build-winpe-iso
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
-<p>This will write out changes back into <code>{automationWorkerLinuxBaseDirectory}/winpe_staging/SOURCES/BOOT.WIM</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-wimunmount WinPE_BootImageDir --commit --check --rebuild
-                </code>
-            </pre>
-        </div>
-    </div>
-
 
 
 
@@ -1891,9 +1536,9 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
 
 
                     <div class="row pt-5">
-                        <h3 id="copywindowsefifilestowinpestagingonmacosorlinuxworker">
-                            <a href="#copywindowsefifilestowinpestagingonmacosorlinuxworker">
-                                <strong>Step 13 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux Worker
+                        <h3 id="optimizebootwimonmacosorlinuxworker">
+                            <a href="#optimizebootwimonmacosorlinuxworker">
+                                <strong>Step 11 -</strong> Optimize boot.wim on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -1901,9 +1546,8 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Relative to the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
-<p>The <code>efi</code> folder is also copied.</p>
-<p>Only applies to UEFI kickstarts so only if <code>kickstartedBootLoaderIsUefi</code> is set to the string <code>true</code>.</p>
+                                <p>Rebuild the entire WIM rather than appending the updated data to the end of it.  Rebuilding the WIM is slower, but will save a little bit of space that would otherwise be left as a hole in the WIM
+             file.</p>
                             </p>
                         </div>
                     </div>
@@ -1932,17 +1576,9 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    
-    # Copy EFI Files from Windows ISO
-    cp -rv &quot;winimg/efi&quot; &quot;winpe_staging&quot;
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
+
+wimoptimize winpe_staging/SOURCES/BOOT.WIM --recompress
                 </code>
             </pre>
         </div>
@@ -1957,9 +1593,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker">
-                            <a href="#lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker">
-                                <strong>Step 14 -</strong> LIN Create winpe_plain_bios.iso from winpe_staging on macOS or Linux Worker
+                        <h3 id="createwinpeplainbiosisofromwinpestagingonmacosorlinuxworker">
+                            <a href="#createwinpeplainbiosisofromwinpestagingonmacosorlinuxworker">
+                                <strong>Step 12 -</strong> Create winpe_plain_bios.iso from winpe_staging on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -2003,10 +1639,8 @@ if {kickstartedBootLoaderIsBios}
 then
     ISO_NAME=&quot;winpe_plain_bios.iso&quot;
     
-    if uname | \
-        grep -iq &quot;darwin&quot;
+    if [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
     then
-        echo &quot;is macOS&quot;
         
         export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
         echo &quot;Using $(which xorriso)&quot;
@@ -2027,9 +1661,10 @@ then
             -V &quot;KS_WIN&quot; \
             -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
             winpe_staging
-    else
-        echo &quot;not macOS&quot;
-        
+            
+    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+    
         mkisofs \
             -b boot.img \
             -no-emul-boot \
@@ -2046,6 +1681,10 @@ then
             -V &quot;KS_WIN&quot; \
             -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
             winpe_staging
+    
+    else
+    
+        echo &quot;Unsupported operating system.&quot;
     fi
         
 else
@@ -2065,20 +1704,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createfat32winpeplainuefiisofromwinpestagingonlinuxworker">
-                            <a href="#createfat32winpeplainuefiisofromwinpestagingonlinuxworker">
-                                <strong>Step 15 -</strong> Create FAT32 winpe_plain_uefi.iso from winpe_staging on Linux Worker
+                        <h3 id="putthewinpeplainuefiisocontenttogetheronlinuxworker">
+                            <a href="#putthewinpeplainuefiisocontenttogetheronlinuxworker">
+                                <strong>Step 13 -</strong> Put the winpe_plain_uefi.iso content together on Linux Worker
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2094,9 +1726,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="changeownershipofwinpestagingdirectorytoattune">
-                            <a href="#changeownershipofwinpestagingdirectorytoattune">
-                                <strong>Step 15.1 -</strong> Change Ownership of winpe_staging Directory to attune
+                        <h4 id="copywindowsefifilestowinpestagingonmacosorlinuxworker">
+                            <a href="#copywindowsefifilestowinpestagingonmacosorlinuxworker">
+                                <strong>Step 13.1 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -2104,10 +1736,69 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>Relative to the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
+<p>The <code>efi</code> folder is also copied.</p>
+<p>Only applies to UEFI kickstarts so only if <code>kickstartedBootLoaderIsUefi</code> is set to the string <code>true</code>.</p>
                             </p>
                         </div>
                     </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {kickstartedBootLoaderIsUefi}
+then
+    
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+    
+    # Copy EFI Files from Windows ISO
+    cp -rv &quot;$(find winimg -type d -name efi)&quot; &quot;winpe_staging&quot;
+    
+else
+    echo &quot;Skipping for BIOS ISO creation.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="changeownershipofwinpestagingdirectorytoattuneonmacosorlinuxworker">
+                            <a href="#changeownershipofwinpestagingdirectorytoattuneonmacosorlinuxworker">
+                                <strong>Step 13.2 -</strong> Change Ownership of winpe_staging Directory to attune on macOS or Linux Worker
+                            </a>
+                        </h4>
+                    </div>
+
 
 
 
@@ -2146,21 +1837,14 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        chown --recursive \
-            --verbose \
-            &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
-            &quot;winpe_staging&quot;
-    fi
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+    
+    USER=&quot;{automationWorkerLinuxUser.user}&quot;
+    GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
+    echo &quot;User: $USER, Group: $GROUP&quot;
+    
+    chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
@@ -2178,9 +1862,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="createwinpeplainuefiiso">
-                            <a href="#createwinpeplainuefiiso">
-                                <strong>Step 15.2 -</strong> Create winpe_plain_uefi.iso
+                        <h4 id="createwinpeplainuefiisoonmacosorlinuxworker">
+                            <a href="#createwinpeplainuefiisoonmacosorlinuxworker">
+                                <strong>Step 13.3 -</strong> Create winpe_plain_uefi.iso on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -2233,25 +1917,31 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-        
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
-        ((bytes=bytes+10000))
-        
-        ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
-    fi
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
+    bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 1024}&#x27;)
+    ((bytes=bytes+10000))
+    ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
+    
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+        
+        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
+    elif [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+    then
+    
+        megabytes=$(((${bytes} + 1048575) / 1048576))
+        echo ${megabytes}
+        hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_Plain_UEFI&quot; &quot;${ISO}&quot;
+        hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
+        rm -rf ${ISO}.dmg
+        mv -v ${ISO}.cdr ${ISO}
+    else
+        echo &quot;Unsupported operating system.&quot;
+    fi
 else
+
     echo &quot;Skipping for BIOS boot.&quot;
 fi
                 </code>
@@ -2268,20 +1958,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="mountwinpeplainuefiiso">
-                            <a href="#mountwinpeplainuefiiso">
-                                <strong>Step 15.3 -</strong> Mount winpe_plain_uefi.iso
+                        <h4 id="mountwinpeplainuefiisoonmacosorlinuxworker">
+                            <a href="#mountwinpeplainuefiisoonmacosorlinuxworker">
+                                <strong>Step 13.4 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2320,23 +2003,28 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+    ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
+    FOLDER=&quot;uefi_mount&quot;
+    mkdir -p -v ${FOLDER}
+    
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
     then
-        echo &quot;is macOS, skipping&quot;
         
+        mount --verbose &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
+    
+    elif [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+    then
+    
+        hdiutil attach ${ISO} -mountroot ${FOLDER}
+    
     else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        mkdir --parents --verbose uefi_mount
-        
-        mount --verbose \
-            &quot;../winpe_plain_uefi.iso&quot; uefi_mount
+        echo &quot;Unsupported operating system.&quot;
     fi
     
 else
+
     echo &quot;Skipping for BIOS boot.&quot;
 fi
                 </code>
@@ -2353,20 +2041,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="movewinpestagingtouefimount">
-                            <a href="#movewinpestagingtouefimount">
-                                <strong>Step 15.4 -</strong> Move WinPE Staging to UEFI Mount
+                        <h4 id="movewinpestagingtouefimountonmacosorlinuxworker">
+                            <a href="#movewinpestagingtouefimountonmacosorlinuxworker">
+                                <strong>Step 13.5 -</strong> Move WinPE Staging to UEFI Mount on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2394,101 +2075,11 @@ fi
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
         
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        # Copy WinPE Files from WinPE ISO
-        mv --verbose winpe_staging/* &quot;uefi_mount&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="unmountwinpeuefimount">
-                            <a href="#unmountwinpeuefimount">
-                                <strong>Step 15.5 -</strong> Unmount WinPE UEFI Mount
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-    
-        MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
-        
-        if df -h | grep --ignore-case \
-            --quiet \
-            &quot;${MOUNT_PATH}&quot;
-        then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-            
-            umount --verbose &quot;${MOUNT_FOLDER}&quot;
-        else
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
-    fi
-    
+    # Copy WinPE Files from WinPE ISO
+    mv -v winpe_staging/* &quot;$(echo uefi_mount/*)&quot;
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
@@ -2507,111 +2098,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createwinpeplainuefiisoonmacosworker">
-                            <a href="#createwinpeplainuefiisoonmacosworker">
-                                <strong>Step 16 -</strong> Create winpe_plain_uefi.iso on macOS Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates the UEFI bootable WinPE ISO if <code>kickstartedBootLoaderIsUefi</code> is true on macOS Worker.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-        echo &quot;Using $(which xorriso)&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-        echo &quot;ISO=${ISO}&quot;
-        
-        xorriso -as mkisofs \
-            -iso-level 4 \
-            -full-iso9660-filenames \
-            -rock \
-            -b BOOT/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o &quot;${ISO}&quot; \
-            winpe_staging
-    else
-        echo &quot;not macOS, skipping&quot;
-    fi
-    
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createwinpecleanbuildfilesonmacosorlinuxworker">
-                            <a href="#createwinpecleanbuildfilesonmacosorlinuxworker">
-                                <strong>Step 17 -</strong> Create WinPE Clean Build Files on macOS or Linux Worker
+                        <h3 id="cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker">
+                            <a href="#cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker">
+                                <strong>Step 14 -</strong> Cleanup Build Files for WinPE plain ISO Creation on macOS or Linux Worker
                             </a>
                         </h3>
                     </div>
@@ -2638,9 +2127,96 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="linunmountwindowsiso">
-                            <a href="#linunmountwindowsiso">
-                                <strong>Step 17.1 -</strong> LIN Unmount Windows ISO
+                        <h4 id="unmountwinpeuefimountonmacosorlinuxworker">
+                            <a href="#unmountwinpeuefimountonmacosorlinuxworker">
+                                <strong>Step 14.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux Worker
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {kickstartedBootLoaderIsUefi}
+then
+
+    MOUNT_FOLDER=&quot;uefi_mount&quot;
+    MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
+    
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+        
+        if df -h | grep --ignore-case --quiet &quot;${MOUNT_PATH}&quot;
+        then
+        
+            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+            umount --verbose &quot;${MOUNT_FOLDER}&quot;
+            
+        else
+        
+            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+        fi
+
+    elif [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+    then
+    
+        if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+        then
+        
+            hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        else
+        
+            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+        fi
+
+    else
+        
+        echo &quot;Unsupported operating system.&quot;
+    fi
+    
+else
+
+    echo &quot;Skipping for BIOS boot.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="unmountwindowsisoonmacosorlinuxworker">
+                            <a href="#unmountwindowsisoonmacosorlinuxworker">
+                                <strong>Step 14.2 -</strong> Unmount Windows ISO on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
@@ -2661,18 +2237,7 @@ fi
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -2692,15 +2257,32 @@ MOUNT_FOLDER=&quot;winimg&quot;
 BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
 
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    cd &quot;${BUILD_DIRECTORY}&quot;
-
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    if df -h | grep --ignore-case --quiet &quot;${MOUNT_PATH}&quot;
+    then
+    
+        cd &quot;${BUILD_DIRECTORY}&quot;
+        umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+elif [[ &quot;$(uname)&quot; == &quot;Darwin&quot; ]]
+then
+    
+    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    then
+    
+        hdiutil detach $(echo ${MOUNT_PATH}/*)
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
 else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
 fi
                 </code>
             </pre>
@@ -2716,116 +2298,23 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="lindeletewinimgfolder">
-                            <a href="#lindeletewinimgfolder">
-                                <strong>Step 17.2 -</strong> LIN Delete winimg Folder
+                        <h4 id="setwritepermissionstowinpestagingonmacosorlinuxworker">
+                            <a href="#setwritepermissionstowinpestagingonmacosorlinuxworker">
+                                <strong>Step 14.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg</code> folder.</p>
-                            </p>
-                        </div>
-                    </div>
 
 
 
 
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-if [ ! -d ${BUILD_DIRECTORY} ]
-then
-    echo &quot;Directory ${BUILD_DIRECTORY} does not exist. Skipping.&quot;
-else
-    cd &quot;${BUILD_DIRECTORY}&quot;
-        
-    DIR=&quot;winimg&quot;
-    [[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
-        echo &quot;No directory to remove.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
 
 
 
 
 
     
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="linsetwritepermissionstowinpestaging">
-                            <a href="#linsetwritepermissionstowinpestaging">
-                                <strong>Step 17.3 -</strong> LIN Set Write Permissions to winpe_staging
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
 
 
     
@@ -2857,7 +2346,7 @@ else
         echo &quot;Before&quot;
         ls -lh
         
-        chmod --recursive a+w &quot;${DIR}&quot;
+        chmod -R a+w &quot;${DIR}&quot;
         
         echo &quot;After&quot;
         ls -lh
@@ -2877,9 +2366,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="lincleanbuilddirectory">
-                            <a href="#lincleanbuilddirectory">
-                                <strong>Step 17.4 -</strong> LIN Clean Build Directory
+                        <h4 id="cleanbuilddirectoryonmacosorlinuxworker">
+                            <a href="#cleanbuilddirectoryonmacosorlinuxworker">
+                                <strong>Step 14.4 -</strong> Clean Build Directory on macOS or Linux Worker
                             </a>
                         </h4>
                     </div>

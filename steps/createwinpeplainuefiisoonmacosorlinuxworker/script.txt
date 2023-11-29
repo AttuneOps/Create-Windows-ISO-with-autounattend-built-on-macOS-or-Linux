@@ -1,0 +1,29 @@
+if {kickstartedBootLoaderIsUefi}
+then
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+    
+    bytes=$(du -s winpe_staging | awk '{print $1 * 1024}')
+    ((bytes=bytes+10000))
+    ISO="{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso"
+    
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+        
+        mkfs.msdos -v -C "${ISO}" "${bytes}"
+    elif [[ "$(uname)" == "Darwin" ]]
+    then
+    
+        megabytes=$(((${bytes} + 1048575) / 1048576))
+        echo ${megabytes}
+        hdiutil create -fs MS-DOS -size ${megabytes}M -volname "WinPE_Plain_UEFI" "${ISO}"
+        hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
+        rm -rf ${ISO}.dmg
+        mv -v ${ISO}.cdr ${ISO}
+    else
+        echo "Unsupported operating system."
+    fi
+else
+
+    echo "Skipping for BIOS boot."
+fi

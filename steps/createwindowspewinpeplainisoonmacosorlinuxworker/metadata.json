@@ -8,35 +8,27 @@
     "links": [
         {
             "order": 0, 
-            "stepKey": "confirmwinpeplainbiosisodoesnotexist"
-        }, 
-        {
-            "order": 50, 
-            "stepKey": "confirmwinpeplainuefiisodoesnotexist"
-        }, 
-        {
-            "order": 100, 
-            "stepKey": "unmountwinpeuefimount"
+            "stepKey": "confirmwinpeplainisodoesnotexistonmacosorlinuxworker"
         }, 
         {
             "order": 150, 
-            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
+            "stepKey": "cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker"
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker"
+            "stepKey": "deploywin2019dvdisotobuildwinpeisodirectoryonmacosorlinuxworker"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker"
+            "stepKey": "extractwindowsbootimgfrombuildwinpeisodirectoryforbiosbuildonmacosorlinuxworker"
         }, 
         {
             "order": 350, 
-            "stepKey": "linmountwinserverdvdiso"
+            "stepKey": "mountwinserverdvdisoonmacosorlinuxworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "linextractwinpeisofromwinimgdirectory"
+            "stepKey": "extractwinpeisofromwinimgdirectoryonmacosorlinuxworker"
         }, 
         {
             "order": 500, 
@@ -44,35 +36,31 @@
         }, 
         {
             "order": 550, 
-            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
+            "stepKey": "copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 600, 
-            "stepKey": "linmovebootimgtowinpestaging"
+            "stepKey": "movebootimgtowinpestagingforbiosbuildonmacosorlinuxworker"
         }, 
         {
             "order": 650, 
-            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+            "stepKey": "deletesetupexefrombootwimonmacosorlinuxworker"
         }, 
         {
             "order": 700, 
-            "stepKey": "copywindowsefifilestowinpestagingonmacosorlinuxworker"
+            "stepKey": "optimizebootwimonmacosorlinuxworker"
         }, 
         {
-            "order": 750, 
-            "stepKey": "lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker"
+            "order": 850, 
+            "stepKey": "createwinpeplainbiosisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 900, 
-            "stepKey": "createfat32winpeplainuefiisofromwinpestagingonlinuxworker"
-        }, 
-        {
-            "order": 950, 
-            "stepKey": "createwinpeplainuefiisoonmacosworker"
+            "stepKey": "putthewinpeplainuefiisocontenttogetheronlinuxworker"
         }, 
         {
             "order": 1000, 
-            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
+            "stepKey": "cleanupbuildfilesforwinpeplainisocreationonmacosorlinuxworker"
         }
     ], 
     "name": "Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker", 
