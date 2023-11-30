@@ -1748,7 +1748,7 @@ if [[ &quot;{kickstartedBootLoaderIsBios}&quot; == &quot;false&quot; &amp;&amp; 
 then
     
     cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    cp -rv &quot;$(find winimg -type d -name efi)&quot; &quot;winpe_staging&quot;
+    cp -rv &quot;$(echo winimg/*/efi)&quot; &quot;winpe_staging&quot;
     
 elif [[ &quot;{kickstartedBootLoaderIsBios}&quot; == &quot;true&quot; &amp;&amp; &quot;{kickstartedBootLoaderIsUefi}&quot; == &quot;false&quot; ]]
 then

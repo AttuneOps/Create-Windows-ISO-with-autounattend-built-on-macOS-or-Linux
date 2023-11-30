@@ -2,7 +2,7 @@ if [[ "{kickstartedBootLoaderIsBios}" == "false" && "{kickstartedBootLoaderIsUef
 then
     
     cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
-    cp -rv "$(find winimg -type d -name efi)" "winpe_staging"
+    cp -rv "$(echo winimg/*/efi)" "winpe_staging"
     
 elif [[ "{kickstartedBootLoaderIsBios}" == "true" && "{kickstartedBootLoaderIsUefi}" == "false" ]]
 then
