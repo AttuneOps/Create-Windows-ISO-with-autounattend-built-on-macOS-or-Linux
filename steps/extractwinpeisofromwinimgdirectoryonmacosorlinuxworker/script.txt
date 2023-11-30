@@ -1,7 +1,8 @@
 cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
-if [[ "$(uname)" == "Darwin" ]]
+if [[ "Darwin" == "$(uname)" ]]
 then
+
     sed 's/getopt -o.*/getopt iso,windows-dir -- $*); then /g' $(which mkwinpeimg) \
         | sed '/-- "$@" /d' \
         | sed '/,help,version/d' \

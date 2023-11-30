@@ -15,10 +15,13 @@ then
         --options "gid={automationWorkerLinuxUser.user}" \
         "${ISO}" "${FOLDER}/CD"
 
-elif [[ "$(uname)" == "Darwin" ]]
+elif [[ "Darwin" == "$(uname)" ]]
 then
+
     hdiutil attach ${ISO} -mountroot ${FOLDER}
 
 else
+
     echo "Unsupported operating system."
+    exit 1
 fi

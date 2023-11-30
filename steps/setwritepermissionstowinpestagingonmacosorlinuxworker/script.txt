@@ -1,20 +1,23 @@
 DIR="{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
-if [ ! -d ${DIR} ]
+if [[ ! -d ${DIR} ]]
 then
+
     echo "Directory ${DIR} does not exist. Skipping."
 else
+
     cd "${DIR}"
+    STAGING_DIR="winpe_staging"
     
-    DIR="winpe_staging"
-    if [ ! -d ${DIR} ]
+    if [[ ! -d ${STAGING_DIR} ]]
     then
-        echo "Directory ${DIR} does not exist. Skipping."
+    
+        echo "Directory ${STAGING_DIR} does not exist. Skipping."
     else
+    
         echo "Before"
         ls -lh
-        
-        chmod -R a+w "${DIR}"
+        chmod -R a+w "${STAGING_DIR}"
         
         echo "After"
         ls -lh

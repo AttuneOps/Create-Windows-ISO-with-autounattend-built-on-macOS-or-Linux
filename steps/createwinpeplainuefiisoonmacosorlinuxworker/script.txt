@@ -1,4 +1,4 @@
-if {kickstartedBootLoaderIsUefi}
+if [[ "{kickstartedBootLoaderIsBios}" == "false" && "{kickstartedBootLoaderIsUefi}" == "true" ]]
 then
 
     cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
@@ -11,7 +11,8 @@ then
     then
         
         mkfs.msdos -v -C "${ISO}" "${bytes}"
-    elif [[ "$(uname)" == "Darwin" ]]
+        
+    elif [[ "Darwin" == "$(uname)" ]]
     then
     
         megabytes=$(((${bytes} + 1048575) / 1048576))
@@ -20,10 +21,19 @@ then
         hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
         rm -rf ${ISO}.dmg
         mv -v ${ISO}.cdr ${ISO}
+        
     else
+    
         echo "Unsupported operating system."
+        exit 1
     fi
+    
+elif [[ "{kickstartedBootLoaderIsBios}" == "true" && "{kickstartedBootLoaderIsUefi}" == "false" ]]
+then
+
+    echo "Skipping, not required for BIOS boot."
 else
 
-    echo "Skipping for BIOS boot."
+    echo "Plan configuration error. Check the UEFI and BIOS parameters."
+    exit 1
 fi
