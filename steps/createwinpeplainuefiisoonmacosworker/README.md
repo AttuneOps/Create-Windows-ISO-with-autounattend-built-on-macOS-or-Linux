@@ -1,1 +1,0 @@
-Creates the UEFI bootable WinPE ISO if `kickstartedBootLoaderIsUefi` is true on macOS Worker.

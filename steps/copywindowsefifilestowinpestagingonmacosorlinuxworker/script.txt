@@ -1,12 +1,15 @@
-if {kickstartedBootLoaderIsUefi}
+if [[ "{kickstartedBootLoaderIsBios}" == "false" && "{kickstartedBootLoaderIsUefi}" == "true" ]]
 then
     
     cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+    cp -rv "$(echo winimg/*/efi)" "winpe_staging"
     
-    # Copy EFI Files from Windows ISO
-    cp -rv "winimg/efi" "winpe_staging"
-    
-else
-    echo "Skipping for BIOS ISO creation."
-fi
+elif [[ "{kickstartedBootLoaderIsBios}" == "true" && "{kickstartedBootLoaderIsUefi}" == "false" ]]
+then
 
+    echo "Skipping, not required for BIOS boot."
+else
+
+    echo "Plan configuration error. Check the UEFI and BIOS parameters."
+    exit 1
+fi

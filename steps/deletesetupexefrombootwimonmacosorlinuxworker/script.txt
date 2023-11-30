@@ -1,0 +1,3 @@
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
+
+wimupdate winpe_staging/SOURCES/BOOT.WIM --command="delete /setup.exe"

@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "010f6ff7-f5e5-4e72-bbcd-8c807605ca2d", 
+    "isBlueprint": false, 
+    "key": "putthewinpeplainuefiisocontenttogetheronlinuxworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "copywindowsefifilestowinpestagingonmacosorlinuxworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "changeownershipofwinpestagingdirectorytoattuneonmacosorlinuxworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "createwinpeplainuefiisoonmacosorlinuxworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "mountwinpeplainuefiisoonmacosorlinuxworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "movewinpestagingtouefimountonmacosorlinuxworker"
+        }
+    ], 
+    "name": "Put the winpe_plain_uefi.iso content together on Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

@@ -1,0 +1,21 @@
+if [[ "{kickstartedBootLoaderIsBios}" == "false" && "{kickstartedBootLoaderIsUefi}" == "true" ]]
+then
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+    
+    USER="{automationWorkerLinuxUser.user}"
+    GROUP="$(id -gn {automationWorkerLinuxUser.user})"
+    echo "User: $USER, Group: $GROUP"
+    
+    chown -R -v "$USER:$GROUP" "winpe_staging"
+    
+elif [[ "{kickstartedBootLoaderIsBios}" == "true" && "{kickstartedBootLoaderIsUefi}" == "false" ]]
+then
+
+    echo "Skipping, not required for BIOS boot."
+
+else
+
+    echo "Plan configuration error. Check the UEFI and BIOS parameters."
+    exit 1
+fi

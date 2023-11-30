@@ -1,4 +1,0 @@
-cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
-    
-mkwinpeimg --iso --windows-dir=winimg \
-    "winpe.iso"

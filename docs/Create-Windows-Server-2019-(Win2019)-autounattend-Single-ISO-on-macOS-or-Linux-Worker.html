@@ -1135,12 +1135,12 @@ cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}&quot;
 DESTINATION_DRIVERS_FOLDER=&quot;drivers&quot;
 
-mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+[ ! -d &quot;${DESTINATION_DRIVERS_FOLDER}&quot; ] &amp;&amp; mkdir -v &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
 
 if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
 then
 
-    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
+    cp -vR &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
         &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
 else
     echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
@@ -1204,7 +1204,7 @@ then
     cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
     cd efi/microsoft/boot/
     
-    cp --verbose efisys_noprompt.bin efisys.bin
+    cp -v efisys_noprompt.bin efisys.bin
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;
 fi
@@ -1388,20 +1388,17 @@ then
         echo &quot;Using $(which xorriso)&quot;
         
         xorriso -as mkisofs \
-            -allow-limited-size \
             -iso-level 4 \
             -full-iso9660-filenames \
             -rock \
             -b boot/etfsboot.com \
             -no-emul-boot \
-            -boot-load-seg 0 \
             -boot-load-size 8 \
             -hide boot.catalog \
             -eltorito-alt-boot \
             -no-emul-boot \
             -b efi/microsoft/boot/efisys.bin \
             -boot-load-size 1 \
-            -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
             -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \

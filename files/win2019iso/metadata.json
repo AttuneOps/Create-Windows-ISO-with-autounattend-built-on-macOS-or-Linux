@@ -1,11 +1,11 @@
 {
     "externalUuid4": "7e5f705d-8cea-4351-bada-dacc7eaff2ef", 
-    "fileName": "17763.3650.221105-1748.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us.iso", 
+    "fileName": "Win2019_17763.737.190906-2324.rs5_release_svc_refresh_SERVER_EVAL_x64FRE_en-us_1.iso", 
     "formatKey": "tar", 
     "key": "win2019iso", 
-    "md5": "c2592569df937aff1c21dafd3d4e9b40", 
+    "md5": "70fec2cb1d6759108820130c2b5496da", 
     "name": "Win2019 ISO", 
     "remoteUri": null, 
-    "size": 5652088832, 
+    "size": 5296713728, 
     "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
 }

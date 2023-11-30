@@ -1,1 +1,0 @@
-Deploys Windows Server 2019 ISO to `{automationWorkerLinuxBaseDirectory}/build-winpe-iso`.

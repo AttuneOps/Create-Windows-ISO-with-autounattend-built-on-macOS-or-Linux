@@ -4,7 +4,7 @@ then
     cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
     cd efi/microsoft/boot/
     
-    cp --verbose efisys_noprompt.bin efisys.bin
+    cp -v efisys_noprompt.bin efisys.bin
 else
     echo "Skipping for BIOS ISO creation."
 fi
