@@ -14,7 +14,9 @@
     <meta name="title"
           content="How to Create WinPE Bootable ISO on macOS or Linux - Attune Automation">
     <meta name="description"
-          content="">
+          content="This Blueprint creates a WinPE (Windows Preinstallation Environment) bootable 
+ISO on a Linux or macOS system using bash commands.
+">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
@@ -22,13 +24,17 @@
     <meta property="og:type" content="article" />
     <meta property="og:title"
           content="HowTo Create WinPE Bootable ISO on macOS or Linux - Attune Automation" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="This Blueprint creates a WinPE (Windows Preinstallation Environment) bootable 
+ISO on a Linux or macOS system using bash commands.
+" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
           content="How to Create WinPE Bootable ISO on macOS or Linux - Attune Automation" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:description" content="This Blueprint creates a WinPE (Windows Preinstallation Environment) bootable 
+ISO on a Linux or macOS system using bash commands.
+" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -139,6 +145,14 @@
     </div>
 
 <!-- Blueprint Description -->
+    <div class="row">
+        <div class="description col px-0">
+            <p class="text-left">
+                <p>This Blueprint creates a WinPE (Windows Preinstallation Environment) bootable 
+ISO on a Linux or macOS system using bash commands.</p>
+            </p>
+        </div>
+    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -903,7 +917,11 @@ fi
                         <div class="description col px-0">
                             <p>
                                 <p>You can extract necessary files from a Windows installation ISO to create a 
-WinPE ISO. I've selected Win2019, however other distributions should work.</p>
+WinPE ISO. I've selected Win2019 to extract the WinPE ISO from.</p>
+<p>Windows 10 Workstation ISO is not recommended as its WinPE has compatibility 
+issues with the drvload-ing the vioscsi.inf oVirt driver.  </p>
+<p>The WinPE from Win2016 and Win2022 has not been tested for <code>vioscsi.inf</code> 
+compatibility.</p>
                             </p>
                         </div>
                     </div>

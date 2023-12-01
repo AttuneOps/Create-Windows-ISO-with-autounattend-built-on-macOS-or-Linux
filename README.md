@@ -161,9 +161,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
-### Create WinPE Bootable ISO on macOS or Linux
-
-
 ### Deploy and Mount Win10 ISO To Node for Feature Install
 
 
@@ -221,6 +218,12 @@ This folder can be copied and then it's `.\media\sources\boot.wim` file can be m
 This folder works for both BIOS and UEFI boot methods.
 
 ### Unmount and Remove ISO From Node for Feature Install
+
+
+### Create WinPE Bootable ISO on macOS or Linux
+
+This Blueprint creates a WinPE (Windows Preinstallation Environment) bootable 
+ISO on a Linux or macOS system using bash commands.
 
 
 
