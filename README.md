@@ -86,9 +86,6 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 ### Create Windows autounattend WinPE ISO on Windows Worker
 
 
-### Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
-
-
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -162,6 +159,9 @@ Please set `isWinPEKickstart` to the string 'false'.
 This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
+
+
+### Create WinPE Bootable ISO on macOS or Linux
 
 
 ### Deploy and Mount Win10 ISO To Node for Feature Install

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "c44ec2bd-eb55-4315-a820-9e00b9d0eb34", 
+    "interpreter": 1, 
+    "key": "unmountwindowsisoonmacosorlinux", 
+    "name": "Unmount Windows ISO on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

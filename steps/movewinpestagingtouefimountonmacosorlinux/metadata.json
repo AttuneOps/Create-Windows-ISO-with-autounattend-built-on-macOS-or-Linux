@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "acacaeb3-0be7-439e-b908-0702fbf74329", 
+    "interpreter": 1, 
+    "key": "movewinpestagingtouefimountonmacosorlinux", 
+    "name": "Move WinPE Staging to UEFI Mount on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
