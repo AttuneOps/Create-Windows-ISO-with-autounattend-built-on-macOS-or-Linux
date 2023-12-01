@@ -1967,7 +1967,7 @@ then
 
     cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
     
-    bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 1024}&#x27;)
+    bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 512}&#x27;)
     ((bytes=bytes+10000))
     ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
     
