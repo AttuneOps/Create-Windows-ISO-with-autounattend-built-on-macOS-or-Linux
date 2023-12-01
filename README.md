@@ -86,9 +86,6 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 ### Create Windows autounattend WinPE ISO on Windows Worker
 
 
-### Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
-
-
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -221,6 +218,12 @@ This folder can be copied and then it's `.\media\sources\boot.wim` file can be m
 This folder works for both BIOS and UEFI boot methods.
 
 ### Unmount and Remove ISO From Node for Feature Install
+
+
+### Create WinPE Bootable ISO on macOS or Linux
+
+This Blueprint creates a WinPE (Windows Preinstallation Environment) bootable 
+ISO on a Linux or macOS system using bash commands.
 
 
 

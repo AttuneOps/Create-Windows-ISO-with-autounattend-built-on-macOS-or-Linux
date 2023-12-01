@@ -1,0 +1,15 @@
+if {kickstartedBootLoaderIsBios} && ! {kickstartedBootLoaderIsUefi}
+then
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+    mv -v boot.img winpe_staging
+    
+elif ! {kickstartedBootLoaderIsBios} && {kickstartedBootLoaderIsUefi}
+then
+
+    echo "Skipping, not required for UEFI boot."
+else
+
+    echo "Plan configuration error. Check the UEFI and BIOS parameters."
+    exit 1
+fi

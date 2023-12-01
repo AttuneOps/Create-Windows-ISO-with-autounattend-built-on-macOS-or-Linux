@@ -1,0 +1,26 @@
+if {kickstartedBootLoaderIsBios} && ! {kickstartedBootLoaderIsUefi}
+then
+    
+    cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
+    
+    # Case insensitve globbing
+    shopt -s nocaseglob
+    
+    # Set the filename of the ISO
+    F=$(ls *.iso)
+    
+    # Get the Boot image offset
+    OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
+    
+    # Extract the boot.img
+    dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
+    
+elif ! {kickstartedBootLoaderIsBios} && {kickstartedBootLoaderIsUefi}
+then
+
+    echo "Skipping, not required for UEFI boot."
+else
+
+    echo "Plan configuration error. Check the UEFI and BIOS parameters."
+    exit 1
+fi
