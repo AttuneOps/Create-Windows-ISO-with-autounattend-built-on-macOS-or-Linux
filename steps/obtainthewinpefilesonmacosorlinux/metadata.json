@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "399105ce-e30e-40f8-83b5-d96b4fcf0726", 
     "isBlueprint": true, 
-    "key": "createwinpebootableisoonmacosorlinux", 
+    "key": "obtainthewinpefilesonmacosorlinux", 
     "links": [
         {
             "order": 150, 
@@ -59,6 +59,6 @@
             "stepKey": "cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux"
         }
     ], 
-    "name": "Create WinPE Bootable ISO on macOS or Linux", 
+    "name": "Obtain the WinPE Files on macOS or Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "3a80fae8-d64d-4471-a573-eb64cde2f5f7", 
     "isBlueprint": true, 
-    "key": "createwindowsautounattendwinpeisoonmacosorlinuxworker", 
+    "key": "createwindowsautounattendwinpeisoonmacosorlinux", 
     "links": [
         {
             "order": 0, 
@@ -79,6 +79,6 @@
             "stepKey": "createuefibootwinpeisofromwinpestagingonmacosworker"
         }
     ], 
-    "name": "Create Windows autounattend WinPE ISO on macOS or Linux Worker", 
+    "name": "Create Windows autounattend WinPE ISO on macOS or Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
