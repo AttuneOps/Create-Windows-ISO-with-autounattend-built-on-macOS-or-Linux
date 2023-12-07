@@ -220,25 +220,8 @@ For uploading specific Windows distributions to the Samba Share, see
 `Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
 this Project.
 
-### Setup Skeleton WinPE_amd64 Folder on Windows Worker
-
-Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
-
-This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
-
-This folder works for both BIOS and UEFI boot methods.
-
 ### Unmount and Remove ISO From Node for Feature Install
 
-
-### Obtain the WinPE Files on macOS or Linux
-
-This Blueprint obtains the WinPE (Windows Preinstallation Environment) 
-files on a Linux or macOS system using bash commands.
-
-The WinPE files are extracted from a Windows Server 2019 ISO 
-and repackaged into a WinPE ISO. The WinPE ISO is reused to 
-create bootable ISO files for various Windows distributions.
 
 ### Deploy and extract Win2022 ISO for Samba Share
 
@@ -249,6 +232,28 @@ Samba Share server.
 
 This Blueprint deploys the Windows Server 2019 ISO files to the 
 Samba Share server.
+
+### WinPE Essentials Extraction on macOS or Linux
+
+This Blueprint extracts the essential files require for the WinPE 
+(Windows Preinstallation Environment). 
+The steps are performed on a Linux or macOS system using bash commands.
+
+The WinPE files are extracted from a Windows Server 2019 ISO 
+and repackaged into a WinPE ISO. The WinPE ISO is reused to 
+create bootable ISO files for various Windows distributions.
+
+### WinPE Essentials Extraction on Windows Worker
+
+This Blueprint extracts the essential files require for the WinPE 
+(Windows Preinstallation Environment). 
+The steps are performed on a Windows system using PowerShell commands.
+
+The WinPE files are extracted from a Windows Server 2019 ISO 
+and repackaged into a WinPE ISO. The WinPE ISO is reused to 
+create bootable ISO files for various Windows distributions.
+
+This extracted files work for both BIOS and UEFI boot methods.
 
 
 

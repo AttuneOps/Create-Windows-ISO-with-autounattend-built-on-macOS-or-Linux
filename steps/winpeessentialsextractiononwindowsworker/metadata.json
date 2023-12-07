@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "ef53530a-8520-423e-84fd-a1729d86ba95", 
     "isBlueprint": true, 
-    "key": "setupskeletonwinpeamd64folderonwindowsworker", 
+    "key": "winpeessentialsextractiononwindowsworker", 
     "links": [
         {
             "order": 0, 
@@ -27,6 +27,6 @@
             "stepKey": "overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folderonwindowsworker"
         }
     ], 
-    "name": "Setup Skeleton WinPE_amd64 Folder on Windows Worker", 
+    "name": "WinPE Essentials Extraction on Windows Worker", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
