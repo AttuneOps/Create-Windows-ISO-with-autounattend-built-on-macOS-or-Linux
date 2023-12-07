@@ -1,4 +1,4 @@
-shared_dir="${HOME}/windows_iso_data_for_winpe"
+shared_dir="{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe"
 mkdir -p $shared_dir
 chmod -R 0775 $shared_dir
 chown -R nobody:{automationWorkerLinuxUser.user} $shared_dir

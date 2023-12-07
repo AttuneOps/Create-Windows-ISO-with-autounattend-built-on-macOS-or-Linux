@@ -1,0 +1,18 @@
+cd "{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/{windowsFolderOnSamba}"
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+ISO=$(ls *.iso)
+echo $ISO
+
+echo "Removing old files, if any"
+TMP_DIR=$(mktemp -d -p ../)
+mv * ${TMP_DIR}
+mv ${TMP_DIR}/$ISO .
+rm -rf ${TMP_DIR}
+
+7z x $ISO
+rm $ISO
+
+ls -lh

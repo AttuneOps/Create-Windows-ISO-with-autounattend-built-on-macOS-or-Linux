@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "f93b86b9-6af3-4bdf-ad07-5bc71ab4348f", 
+    "interpreter": 1, 
+    "key": "extractisoforsamba", 
+    "name": "Extract ISO for Samba", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,1 @@
+This Blueprint deploys the Windows 10 ISO files to the Samba Share server.

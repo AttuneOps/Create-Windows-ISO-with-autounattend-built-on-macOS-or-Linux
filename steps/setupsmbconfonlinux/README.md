@@ -1,1 +1,1 @@
-Populates `/etc/samba/smb.conf`.
+Populate `/etc/samba/smb.conf`.

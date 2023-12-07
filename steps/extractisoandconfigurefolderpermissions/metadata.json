@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": null, 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "2c6a3c0c-214e-4c9d-bf6c-b14714d50402", 
+    "isBlueprint": true, 
+    "key": "extractisoandconfigurefolderpermissions", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "extractisoforsamba"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "setfolderpermissions"
+        }
+    ], 
+    "name": "Extract ISO and Configure Folder Permissions", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

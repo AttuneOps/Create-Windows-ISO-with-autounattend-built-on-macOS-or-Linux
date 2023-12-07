@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "1829e052-e1e5-44e2-968d-93698d953b08", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin2016isoforsambashare", 
+    "links": [
+        {
+            "order": 150, 
+            "stepKey": "deploywin2016isoforsambashare"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "extractisoandconfigurefolderpermissionsforwin2016"
+        }
+    ], 
+    "name": "Deploy and extract Win2016 ISO for Samba Share", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

@@ -1,0 +1,4 @@
+cd "{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/"
+sudo chmod -R a+rx {windowsFolderOnSamba}
+
+ls -lh

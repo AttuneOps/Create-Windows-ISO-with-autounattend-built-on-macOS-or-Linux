@@ -80,6 +80,9 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerWin
 
 The Windows worker can run Linux commands using Windows Subsystem for Linux.
 
+### Create Windows autounattend WinPE ISO on macOS or Linux
+
+
 ### Create Windows autounattend WinPE ISO on Windows Worker
 
 
@@ -158,6 +161,35 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
+### Deploy and extract Win10 ISO for Samba Share
+
+This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
+
+### Deploy and extract Win2016 ISO for Samba Share
+
+This Blueprint deploys the Windows Server 2016 ISO files to the 
+Samba Share server.
+
+### Deploy and extract Win2019 ISO for Samba Share
+
+The Blueprint deploys the Windows Server 2019 ISO to the Samba Share 
+server at 
+`${HOME}/windows_iso_data_for_winpe/windows2019`.
+
+#### Learn more
+
+[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
+
+[Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
+
+[Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
+
+
+### Deploy and extract Win2022 ISO for Samba Share
+
+The Blueprint deploys the Windows Server 2022 ISO to the Samba server at 
+`${HOME}/windows_iso_data_for_winpe/windows2022`.
+
 ### Deploy and Mount Win10 ISO To Node for Feature Install
 
 
@@ -170,51 +202,13 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Deploy and Mount Win2022 ISO To Node for Feature Install
 
 
+### Extract ISO and Configure Folder Permissions
+
+
 ### Install Prerequisites on Windows Worker
 
 
 ### Install Windows Assessment and Deployment Kit on Win2022 Windows Worker
-
-
-### Perform Post Cleanup on macOS or Linux Worker
-
-
-### Perform Post Cleanup on Windows Worker
-
-
-### Perform Test Win Node
-
-Performs basic tests for the built node.
-
-### Setup Skeleton WinPE_amd64 Folder on Windows Worker
-
-Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
-
-This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
-
-This folder works for both BIOS and UEFI boot methods.
-
-### Unmount and Remove ISO From Node for Feature Install
-
-
-### Setup Samba on Linux
-
-Sets up a Samba server with the folder at 
-`${HOME}/windows_iso_data_for_winpe`.
-
-This Samba Share on Linux is required to host the Windows OS files 
-making them accessible over the network.
-
-For uploading specific Windows distributions to the Samba Share, see 
-`Deploy {os_name} to Samba Share` Blueprints in this Project.
-
-#### Learn more
-
-[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
-
-[Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
-
-[Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
 
 
 ### Obtain the WinPE Files on macOS or Linux
@@ -235,66 +229,37 @@ create bootable ISO files for various Windows distributions.
 [Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
 
 
-### Deploy Win10 ISO to Samba Share
-
-The Blueprint deploys the Windows Desktop 10 ISO to the Samba Share 
-server at
-`${HOME}/windows_iso_data_for_winpe/windows10`.
-
-#### Learn more
-
-[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
-
-[Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
-
-[Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
+### Perform Post Cleanup on macOS or Linux Worker
 
 
-### Deploy Win2016 ISO to Samba Share
-
-The Blueprint deploys the Windows Server 2016 ISO to the Samba Share 
-server at 
-`${HOME}/windows_iso_data_for_winpe/windows2016`. 
-
-#### Learn more
-
-[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
-
-[Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
-
-[Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
+### Perform Post Cleanup on Windows Worker
 
 
-### Deploy Win2019 ISO to Samba Share
+### Perform Test Win Node
 
-The Blueprint deploys the Windows Server 2019 ISO to the Samba Share 
-server at 
-`${HOME}/windows_iso_data_for_winpe/windows2019`.
+Performs basic tests for the built node.
 
-#### Learn more
+### Setup Samba Share on Linux
 
-[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
+Sets up a Samba server with the folder at 
+`{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe`.
 
-[Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
+This Samba Share on Linux is required to host the Windows OS files 
+making them accessible over the network.
 
-[Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
+For uploading specific Windows distributions to the Samba Share, see 
+`Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
+this Project.
 
+### Setup Skeleton WinPE_amd64 Folder on Windows Worker
 
-### Deploy Win2022 ISO to Samba Share
+Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
 
-The Blueprint deploys the Windows Server 2022 ISO to the Samba server at 
-`${HOME}/windows_iso_data_for_winpe/windows2022`.
+This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
 
-#### Learn more
+This folder works for both BIOS and UEFI boot methods.
 
-[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
-
-[Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
-
-[Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
-
-
-### Create Windows autounattend WinPE ISO on macOS or Linux
+### Unmount and Remove ISO From Node for Feature Install
 
 
 

@@ -1,0 +1,1 @@
+Deploys the Windows Server 2022 ISO the Samba Share server.

@@ -1,1 +1,1 @@
-Installs packages required by Samba.
+Install packages required by Samba.
