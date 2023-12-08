@@ -336,8 +336,8 @@ this Project.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#setlinuxhomefolderpermissionsforsamba">
-                            <strong>Step 13 -</strong> Set Linux Home Folder Permissions for Samba
+                        <a href="#setlinuxhomefolderpermissionsforsambaonlinux">
+                            <strong>Step 13 -</strong> Set Linux Home Folder Permissions for Samba on Linux
                         </a>
                     </p>
 
@@ -481,7 +481,26 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-dnf -y install samba samba-common samba-client
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    dnf -y install samba samba-common samba-client
+
+elif [[ -f /etc/debian_version ]]
+then
+
+    apt -y install samba samba-common samba-client
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    brew install samba
+
+else
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
                 </code>
             </pre>
         </div>
@@ -529,11 +548,31 @@ dnf -y install samba samba-common samba-client
             <pre>
                 <code class="language-sql py-0">
 shared_dir=&quot;{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe&quot;
+
+USER=&quot;{automationWorkerLinuxUser.user}&quot;
+GROUP=&quot;$(id -gn $USER)&quot;
+echo &quot;User: $USER, Group: $GROUP&quot;
+
 mkdir -p $shared_dir
 chmod -R 0775 $shared_dir
-chown -R nobody:{automationWorkerLinuxUser.user} $shared_dir
+chown -R nobody:$GROUP $shared_dir
+ls -lrh $shared_dir
 
-chcon -R -t samba_share_t $shared_dir
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    chcon -R -t samba_share_t $shared_dir
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo &quot;&quot;
+
+else
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
                 </code>
             </pre>
         </div>
@@ -587,7 +626,21 @@ chcon -R -t samba_share_t $shared_dir
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd /etc/samba/
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+
+    cd /etc/samba/
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    cd /usr/local/etc/
+
+else
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
 
 cat &lt;&lt; EOF &gt; smb.conf
 # See smb.conf.example for a more detailed config file or
@@ -603,13 +656,15 @@ cat &lt;&lt; EOF &gt; smb.conf
 
 [share]
         comment = public share
-        path = /home/{automationWorkerLinuxUser.user}/windows_iso_data_for_winpe
+        path = {automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe
         browseable = yes
         guest ok = yes
         guest only = yes
         writable = yes
         read only = no
 EOF
+
+cat smb.conf
                 </code>
             </pre>
         </div>
@@ -740,8 +795,22 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-firewall-cmd --add-service=samba --zone=public --permanent
-firewall-cmd --reload
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    firewall-cmd --add-service=samba --zone=public --permanent
+    firewall-cmd --reload
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo &quot;&quot;
+
+else
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
                 </code>
             </pre>
         </div>
@@ -795,10 +864,24 @@ firewall-cmd --reload
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-dnf -y install \
-    policycoreutils-python-utils \
-    fuse3-devel \
-    fuse3-libs
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    dnf -y install \
+        policycoreutils-python-utils \
+        fuse3-devel \
+        fuse3-libs
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo &quot;&quot;
+
+else
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
                 </code>
             </pre>
         </div>
@@ -852,12 +935,26 @@ dnf -y install \
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if sestatus | grep -i &quot;SELinux status:&quot; | grep -q &quot;enabled&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
 then
-    setsebool -P samba_export_all_ro=1 samba_export_all_rw=1
-    semanage fcontext -at samba_share_t &quot;/home/{automationWorkerLinuxUser.user}/windows_iso_data_for_winpe(/.*)?&quot;
+
+    if sestatus | grep -i &quot;SELinux status:&quot; | grep -q &quot;enabled&quot;
+    then
+        setsebool -P samba_export_all_ro=1 samba_export_all_rw=1
+        semanage fcontext -at samba_share_t &quot;{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe(/.*)?&quot;
+    else
+        echo &quot;SElinux is disabled&quot;
+    fi
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo &quot;&quot;
+
 else
-    echo &quot;SElinux is disabled&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -923,19 +1020,33 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if sestatus | grep -i &quot;SELinux status:&quot; | grep -q &quot;enabled&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
 then
-    line_count=$(getsebool -a | grep samba_export | wc -l)
-    
-    if [ $line_count -eq 2 ]
+
+    if sestatus | grep -i &quot;SELinux status:&quot; | grep -q &quot;enabled&quot;
     then
-        echo &quot;ok&quot;
+        line_count=$(getsebool -a | grep samba_export | wc -l)
+        
+        if [ $line_count -eq 2 ]
+        then
+            echo &quot;ok&quot;
+        else
+            echo &quot;wrong number of occurrences for samba_export&quot;
+            exit 1
+        fi
     else
-        echo &quot;wrong number of occurrences for samba_export&quot;
-        exit 1
+        echo &quot;SElinux is disabled&quot;
     fi
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo &quot;&quot;
+
 else
-    echo &quot;SElinux is disabled&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -1003,6 +1114,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 systemctl restart smb
 systemctl enable smb
+systemctl status smb
                 </code>
             </pre>
         </div>
@@ -1074,7 +1186,7 @@ then
     echo &quot;$service is not running&quot;
     exit 1
 else
-    echo &quot;ok&quot;
+    echo &quot;$service is running&quot;
 fi
                 </code>
             </pre>
@@ -1142,6 +1254,7 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 systemctl restart nmb
 systemctl enable nmb
+systemctl status nmb
                 </code>
             </pre>
         </div>
@@ -1213,7 +1326,7 @@ then
     echo &quot;$service is not running&quot;
     exit 1
 else
-    echo &quot;ok&quot;
+    echo &quot;$service is running&quot;
 fi
                 </code>
             </pre>
@@ -1229,9 +1342,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="setlinuxhomefolderpermissionsforsamba">
-                            <a href="#setlinuxhomefolderpermissionsforsamba">
-                                <strong>Step 13 -</strong> Set Linux Home Folder Permissions for Samba
+                        <h3 id="setlinuxhomefolderpermissionsforsambaonlinux">
+                            <a href="#setlinuxhomefolderpermissionsforsambaonlinux">
+                                <strong>Step 13 -</strong> Set Linux Home Folder Permissions for Samba on Linux
                             </a>
                         </h3>
                     </div>
@@ -1268,8 +1381,7 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd /home
-chmod -v +rx {automationWorkerLinuxUser.user}
+chmod -v +rx $HOME
                 </code>
             </pre>
         </div>

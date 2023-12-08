@@ -1,2 +1,16 @@
-firewall-cmd --add-service=samba --zone=public --permanent
-firewall-cmd --reload
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    firewall-cmd --add-service=samba --zone=public --permanent
+    firewall-cmd --reload
+    
+elif [[ "Darwin" == "$(uname)" ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo ""
+
+else
+    
+    echo "Unsupported operating system."
+    exit 1
+fi

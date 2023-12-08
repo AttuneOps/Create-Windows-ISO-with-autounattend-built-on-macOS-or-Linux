@@ -56,7 +56,7 @@
         }, 
         {
             "order": 600, 
-            "stepKey": "setlinuxhomefolderpermissionsforsamba"
+            "stepKey": "setlinuxhomefolderpermissionsforsambaonlinux"
         }
     ], 
     "name": "Setup Samba Share on Linux", 

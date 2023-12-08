@@ -1,14 +1,28 @@
-if sestatus | grep -i "SELinux status:" | grep -q "enabled"
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
 then
-    line_count=$(getsebool -a | grep samba_export | wc -l)
-    
-    if [ $line_count -eq 2 ]
+
+    if sestatus | grep -i "SELinux status:" | grep -q "enabled"
     then
-        echo "ok"
+        line_count=$(getsebool -a | grep samba_export | wc -l)
+        
+        if [ $line_count -eq 2 ]
+        then
+            echo "ok"
+        else
+            echo "wrong number of occurrences for samba_export"
+            exit 1
+        fi
     else
-        echo "wrong number of occurrences for samba_export"
-        exit 1
+        echo "SElinux is disabled"
     fi
+    
+elif [[ "Darwin" == "$(uname)" ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo ""
+
 else
-    echo "SElinux is disabled"
+    
+    echo "Unsupported operating system."
+    exit 1
 fi

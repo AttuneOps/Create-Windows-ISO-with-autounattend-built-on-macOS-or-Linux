@@ -5,5 +5,5 @@ then
     echo "$service is not running"
     exit 1
 else
-    echo "ok"
+    echo "$service is running"
 fi

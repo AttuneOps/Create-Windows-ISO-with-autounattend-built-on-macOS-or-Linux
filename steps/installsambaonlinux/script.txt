@@ -1,1 +1,20 @@
-dnf -y install samba samba-common samba-client
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    dnf -y install samba samba-common samba-client
+
+elif [[ -f /etc/debian_version ]]
+then
+
+    apt -y install samba samba-common samba-client
+    
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    brew install samba
+
+else
+    
+    echo "Unsupported operating system."
+    exit 1
+fi

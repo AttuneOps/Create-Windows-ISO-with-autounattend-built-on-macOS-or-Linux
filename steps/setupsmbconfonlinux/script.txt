@@ -1,4 +1,18 @@
-cd /etc/samba/
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+
+    cd /etc/samba/
+
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    cd /usr/local/etc/
+
+else
+    
+    echo "Unsupported operating system."
+    exit 1
+fi
 
 cat << EOF > smb.conf
 # See smb.conf.example for a more detailed config file or
@@ -14,10 +28,12 @@ cat << EOF > smb.conf
 
 [share]
         comment = public share
-        path = /home/{automationWorkerLinuxUser.user}/windows_iso_data_for_winpe
+        path = {automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe
         browseable = yes
         guest ok = yes
         guest only = yes
         writable = yes
         read only = no
 EOF
+
+cat smb.conf

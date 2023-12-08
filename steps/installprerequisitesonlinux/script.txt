@@ -1,5 +1,18 @@
-dnf -y install \
-    policycoreutils-python-utils \
-    fuse3-devel \
-    fuse3-libs
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    dnf -y install \
+        policycoreutils-python-utils \
+        fuse3-devel \
+        fuse3-libs
+
+elif [[ "Darwin" == "$(uname)" ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo ""
+
+else
     
+    echo "Unsupported operating system."
+    exit 1
+fi

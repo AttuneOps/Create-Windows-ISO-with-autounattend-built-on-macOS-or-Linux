@@ -1,7 +1,21 @@
-if sestatus | grep -i "SELinux status:" | grep -q "enabled"
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
 then
-    setsebool -P samba_export_all_ro=1 samba_export_all_rw=1
-    semanage fcontext -at samba_share_t "/home/{automationWorkerLinuxUser.user}/windows_iso_data_for_winpe(/.*)?"
+
+    if sestatus | grep -i "SELinux status:" | grep -q "enabled"
+    then
+        setsebool -P samba_export_all_ro=1 samba_export_all_rw=1
+        semanage fcontext -at samba_share_t "{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe(/.*)?"
+    else
+        echo "SElinux is disabled"
+    fi
+    
+elif [[ "Darwin" == "$(uname)" ]] || [[ -f /etc/debian_version ]]
+then
+
+    echo ""
+
 else
-    echo "SElinux is disabled"
+    
+    echo "Unsupported operating system."
+    exit 1
 fi
