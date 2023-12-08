@@ -36,7 +36,7 @@
         }, 
         {
             "order": 600, 
-            "stepKey": "movebootimgtowinpestagingforbiosbuildonmacosorlinux"
+            "stepKey": "copybootimgtowinpestagingforbiosbuildonmacosorlinux"
         }, 
         {
             "order": 650, 

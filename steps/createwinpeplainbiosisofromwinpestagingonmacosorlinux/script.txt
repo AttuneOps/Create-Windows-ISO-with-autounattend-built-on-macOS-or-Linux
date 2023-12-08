@@ -1,62 +1,50 @@
 cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
-if {kickstartedBootLoaderIsBios} && ! {kickstartedBootLoaderIsUefi}
-then
-    ISO_NAME="winpe_plain_bios.iso"
-    
-    if [[ "Darwin" == "$(uname)" ]]
-    then
-        
-        export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
-        echo "Using $(which xorriso)"
+ISO_NAME="winpe_plain_bios.iso"
 
-        xorriso -as mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -joliet-long \
-            -relaxed-filenames \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V "KS_WIN" \
-            -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
-            winpe_staging
-            
-    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
+if [[ "Darwin" == "$(uname)" ]]
+then
     
-        mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -allow-limited-size \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V "KS_WIN" \
-            -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
-            winpe_staging
-    
-    else
-    
-        echo "Unsupported operating system."
-        exit 1
-    fi
+    export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+    echo "Using $(which xorriso)"
+
+    xorriso -as mkisofs \
+        -b boot.img \
+        -no-emul-boot \
+        -c BOOT.CAT \
+        -iso-level 3 \
+        -joliet-long \
+        -relaxed-filenames \
+        -J \
+        -full-iso9660-filenames \
+        -disable-deep-relocation \
+        -omit-version-number \
+        -V "KS_WIN" \
+        -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
+        winpe_staging
         
-elif ! {kickstartedBootLoaderIsBios} && {kickstartedBootLoaderIsUefi}
+elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
 
-    echo "Skipping, not required for UEFI boot."
+    mkisofs \
+        -b boot.img \
+        -no-emul-boot \
+        -c BOOT.CAT \
+        -iso-level 3 \
+        -udf \
+        -joliet-long \
+        -relaxed-filenames \
+        -allow-limited-size \
+        -J \
+        -full-iso9660-filenames \
+        -disable-deep-relocation \
+        -omit-version-number \
+        -V "KS_WIN" \
+        -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
+        winpe_staging
+
 else
 
-    echo "Plan configuration error. Check the UEFI and BIOS parameters."
+    echo "Unsupported operating system."
     exit 1
 fi

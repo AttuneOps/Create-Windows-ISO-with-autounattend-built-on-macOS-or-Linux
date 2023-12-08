@@ -322,8 +322,8 @@ create bootable ISO files for various Windows distributions.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movebootimgtowinpestagingforbiosbuildonmacosorlinux">
-                            <strong>Step 8 -</strong> Move boot.img to winpe_staging for BIOS build on macOS or Linux
+                        <a href="#copybootimgtowinpestagingforbiosbuildonmacosorlinux">
+                            <strong>Step 8 -</strong> Copy boot.img to winpe_staging for BIOS build on macOS or Linux
                         </a>
                     </p>
 
@@ -394,8 +394,8 @@ create bootable ISO files for various Windows distributions.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movewinpestagingtouefimountonmacosorlinux">
-                            <strong>Step 12.5 -</strong> Move WinPE Staging to UEFI Mount on macOS or Linux
+                        <a href="#copywinpestagingtouefimountonmacosorlinux">
+                            <strong>Step 12.5 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
                         </a>
                     </p>
 
@@ -616,51 +616,37 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
+MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-
-    MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
     
-    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
-        
-        if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
-        then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-            umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
-            
-        else
-        
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
-
-    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
     then
     
-        if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
-        then
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
         
-            hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
-        else
-        
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
-
     else
-        
-        echo &quot;Unsupported operating system.&quot;
-        exit 1
-    fi
     
-elif {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    echo &quot;Skipping, not required for BIOS boot.&quot;
+    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    then
     
-else
+        hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
 
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
+else
+    
+    echo &quot;Unsupported operating system.&quot;
     exit 1
 fi
                 </code>
@@ -1041,32 +1027,19 @@ before starting to copy, based on the calculated <code>OFFSET</code>.</p>
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
-    
-    cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-    
-    # Case insensitve globbing
-    shopt -s nocaseglob
-    
-    # Set the filename of the ISO
-    F=$(ls *.iso)
-    
-    # Get the Boot image offset
-    OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
-    
-    # Extract the boot.img
-    dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
-    
-elif ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
-then
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
-    echo &quot;Skipping, not required for UEFI boot.&quot;
-else
+# Case insensitve globbing
+shopt -s nocaseglob
 
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
-    exit 1
-fi
+# Set the filename of the ISO
+F=$(ls *.iso)
+
+# Get the Boot image offset
+OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
+
+# Extract the boot.img
+dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
                 </code>
             </pre>
         </div>
@@ -1386,9 +1359,9 @@ cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_staging/
 
 
                     <div class="row pt-5">
-                        <h3 id="movebootimgtowinpestagingforbiosbuildonmacosorlinux">
-                            <a href="#movebootimgtowinpestagingforbiosbuildonmacosorlinux">
-                                <strong>Step 8 -</strong> Move boot.img to winpe_staging for BIOS build on macOS or Linux
+                        <h3 id="copybootimgtowinpestagingforbiosbuildonmacosorlinux">
+                            <a href="#copybootimgtowinpestagingforbiosbuildonmacosorlinux">
+                                <strong>Step 8 -</strong> Copy boot.img to winpe_staging for BIOS build on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1426,21 +1399,8 @@ cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_staging/
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
-
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    mv -v boot.img winpe_staging
-    
-elif ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
-then
-
-    echo &quot;Skipping, not required for UEFI boot.&quot;
-else
-
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
-    exit 1
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+cp -v boot.img winpe_staging
                 </code>
             </pre>
         </div>
@@ -1658,64 +1618,52 @@ ISO image.</p>
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-if {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
-    ISO_NAME=&quot;winpe_plain_bios.iso&quot;
-    
-    if [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-    then
-        
-        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-        echo &quot;Using $(which xorriso)&quot;
+ISO_NAME=&quot;winpe_plain_bios.iso&quot;
 
-        xorriso -as mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -joliet-long \
-            -relaxed-filenames \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V &quot;KS_WIN&quot; \
-            -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
-            winpe_staging
-            
-    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
+if [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
     
-        mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -allow-limited-size \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V &quot;KS_WIN&quot; \
-            -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
-            winpe_staging
-    
-    else
-    
-        echo &quot;Unsupported operating system.&quot;
-        exit 1
-    fi
+    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+    echo &quot;Using $(which xorriso)&quot;
+
+    xorriso -as mkisofs \
+        -b boot.img \
+        -no-emul-boot \
+        -c BOOT.CAT \
+        -iso-level 3 \
+        -joliet-long \
+        -relaxed-filenames \
+        -J \
+        -full-iso9660-filenames \
+        -disable-deep-relocation \
+        -omit-version-number \
+        -V &quot;KS_WIN&quot; \
+        -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
+        winpe_staging
         
-elif ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
+elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
 
-    echo &quot;Skipping, not required for UEFI boot.&quot;
+    mkisofs \
+        -b boot.img \
+        -no-emul-boot \
+        -c BOOT.CAT \
+        -iso-level 3 \
+        -udf \
+        -joliet-long \
+        -relaxed-filenames \
+        -allow-limited-size \
+        -J \
+        -full-iso9660-filenames \
+        -disable-deep-relocation \
+        -omit-version-number \
+        -V &quot;KS_WIN&quot; \
+        -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
+        winpe_staging
+
 else
 
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
+    echo &quot;Unsupported operating system.&quot;
     exit 1
 fi
                 </code>
@@ -1802,21 +1750,8 @@ WinPE ISO might not be able to boot on modern UEFI-enabled hardware.</p>
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
-then
-    
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    cp -rv &quot;$(echo winimg/*/efi)&quot; &quot;winpe_staging&quot;
-    
-elif {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
-
-    echo &quot;Skipping, not required for BIOS boot.&quot;
-else
-
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
-    exit 1
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+cp -rv &quot;$(echo winimg/*/efi)&quot; &quot;winpe_staging&quot;
                 </code>
             </pre>
         </div>
@@ -1886,27 +1821,13 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
-then
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    
-    USER=&quot;{automationWorkerLinuxUser.user}&quot;
-    GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
-    echo &quot;User: $USER, Group: $GROUP&quot;
-    
-    chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
-    
-elif {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
+USER=&quot;{automationWorkerLinuxUser.user}&quot;
+GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
+echo &quot;User: $USER, Group: $GROUP&quot;
 
-    echo &quot;Skipping, not required for BIOS boot.&quot;
-
-else
-
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
-    exit 1
-fi
+chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
                 </code>
             </pre>
         </div>
@@ -1976,43 +1897,30 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+
+bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 512}&#x27;)
+((bytes=bytes+10000))
+ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+    
+    mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+    megabytes=$(((${bytes} + 1048575) / 1048576))
+    echo ${megabytes}
+    hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_Plain_UEFI&quot; &quot;${ISO}&quot;
+    hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
+    rm -rf ${ISO}.dmg
+    mv -v ${ISO}.cdr ${ISO}
     
-    bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 512}&#x27;)
-    ((bytes=bytes+10000))
-    ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-    
-    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
-        
-        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
-        
-    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-    then
-    
-        megabytes=$(((${bytes} + 1048575) / 1048576))
-        echo ${megabytes}
-        hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_Plain_UEFI&quot; &quot;${ISO}&quot;
-        hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
-        rm -rf ${ISO}.dmg
-        mv -v ${ISO}.cdr ${ISO}
-        
-    else
-    
-        echo &quot;Unsupported operating system.&quot;
-        exit 1
-    fi
-    
-elif {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
-
-    echo &quot;Skipping, not required for BIOS boot.&quot;
 else
 
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
+    echo &quot;Unsupported operating system.&quot;
     exit 1
 fi
                 </code>
@@ -2082,37 +1990,24 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
+FOLDER=&quot;uefi_mount&quot;
+mkdir -p -v ${FOLDER}
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+    
+    mount --verbose &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-    FOLDER=&quot;uefi_mount&quot;
-    mkdir -p -v ${FOLDER}
-    
-    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
-        
-        mount --verbose &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
-    
-    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-    then
-    
-        hdiutil attach ${ISO} -mountroot ${FOLDER}
-    
-    else
-    
-        echo &quot;Unsupported operating system.&quot;
-        exit 1
-    fi
-    
-elif {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
+    hdiutil attach ${ISO} -mountroot ${FOLDER}
 
-    echo &quot;Skipping, not required for BIOS boot.&quot;
 else
 
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
+    echo &quot;Unsupported operating system.&quot;
     exit 1
 fi
                 </code>
@@ -2129,20 +2024,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="movewinpestagingtouefimountonmacosorlinux">
-                            <a href="#movewinpestagingtouefimountonmacosorlinux">
-                                <strong>Step 12.5 -</strong> Move WinPE Staging to UEFI Mount on macOS or Linux
+                        <h4 id="copywinpestagingtouefimountonmacosorlinux">
+                            <a href="#copywinpestagingtouefimountonmacosorlinux">
+                                <strong>Step 12.5 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
                             </a>
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2168,22 +2056,9 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
-then
-        
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-    mv -v winpe_staging/* &quot;$(echo uefi_mount/*)&quot;
-
-elif {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
-then
-
-    echo &quot;Skipping, not required for BIOS boot.&quot;
-else
-
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
-    exit 1
-fi
+cp -vr winpe_staging/* &quot;$(echo uefi_mount/*)&quot;
                 </code>
             </pre>
         </div>
@@ -2273,51 +2148,37 @@ terminates any associated processes.</p>
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ! {kickstartedBootLoaderIsBios} &amp;&amp; {kickstartedBootLoaderIsUefi}
+MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-
-    MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
     
-    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
-        
-        if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
-        then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-            umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
-            
-        else
-        
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
-
-    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
     then
     
-        if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
-        then
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
         
-            hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
-        else
-        
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
-
     else
-        
-        echo &quot;Unsupported operating system.&quot;
-        exit 1
-    fi
     
-elif {kickstartedBootLoaderIsBios} &amp;&amp; ! {kickstartedBootLoaderIsUefi}
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    echo &quot;Skipping, not required for BIOS boot.&quot;
+    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    then
     
-else
+        hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
 
-    echo &quot;Plan configuration error. Check the UEFI and BIOS parameters.&quot;
+else
+    
+    echo &quot;Unsupported operating system.&quot;
     exit 1
 fi
                 </code>

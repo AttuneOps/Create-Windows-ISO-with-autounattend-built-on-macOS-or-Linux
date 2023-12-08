@@ -24,7 +24,7 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "movewinpestagingtouefimountonmacosorlinux"
+            "stepKey": "copywinpestagingtouefimountonmacosorlinux"
         }
     ], 
     "name": "Put the winpe_plain_uefi.iso content together on Linux", 
