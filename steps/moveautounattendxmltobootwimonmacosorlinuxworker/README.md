@@ -1,1 +1,1 @@
-Moves `autounattend.xml` to the folder `WinPE_BootImageDir`.
+Moves `autounattend.xml` to the folder boot.wim.

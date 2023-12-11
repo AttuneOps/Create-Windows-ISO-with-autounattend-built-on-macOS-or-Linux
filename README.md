@@ -177,6 +177,16 @@ This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
 This Blueprint deploys the Windows Server 2016 ISO files to the 
 Samba Share server.
 
+### Deploy and extract Win2019 ISO for Samba Share
+
+This Blueprint deploys the Windows Server 2019 ISO files to the 
+Samba Share server.
+
+### Deploy and extract Win2022 ISO for Samba Share
+
+This Blueprint deploys the Windows Server 2022 ISO files to the 
+Samba Share server.
+
 ### Deploy and Mount Win10 ISO To Node for Feature Install
 
 
@@ -208,18 +218,20 @@ Samba Share server.
 
 Performs basic tests for the built node.
 
+### Setup Samba Share on Linux
+
+Sets up a Samba server with the folder at 
+`{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe`.
+
+This Samba Share on Linux is required to host the Windows OS files 
+making them accessible over the network.
+
+For uploading specific Windows distributions to the Samba Share, see 
+`Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
+this Project.
+
 ### Unmount and Remove ISO From Node for Feature Install
 
-
-### Deploy and extract Win2022 ISO for Samba Share
-
-This Blueprint deploys the Windows Server 2022 ISO files to the 
-Samba Share server.
-
-### Deploy and extract Win2019 ISO for Samba Share
-
-This Blueprint deploys the Windows Server 2019 ISO files to the 
-Samba Share server.
 
 ### WinPE Essentials Extraction on macOS or Linux
 
@@ -242,18 +254,6 @@ and repackaged into a WinPE ISO. The WinPE ISO is reused to
 create bootable ISO files for various Windows distributions.
 
 This extracted files work for both BIOS and UEFI boot methods.
-
-### Setup Samba Share on Linux
-
-Sets up a Samba server with the folder at 
-`{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe`.
-
-This Samba Share on Linux is required to host the Windows OS files 
-making them accessible over the network.
-
-For uploading specific Windows distributions to the Samba Share, see 
-`Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
-this Project.
 
 
 

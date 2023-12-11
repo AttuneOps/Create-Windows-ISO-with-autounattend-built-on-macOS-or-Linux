@@ -257,8 +257,8 @@ create bootable ISO files for various Windows distributions.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#setwritepermissionstowinpestagingonmacosorlinux">
-                            <strong>Step 1.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux
+                        <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
+                            <strong>Step 1.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                         </a>
                     </p>
 
@@ -427,8 +427,8 @@ create bootable ISO files for various Windows distributions.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#setwritepermissionstowinpestagingonmacosorlinux">
-                            <strong>Step 13.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux
+                        <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
+                            <strong>Step 13.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                         </a>
                     </p>
 
@@ -750,9 +750,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="setwritepermissionstowinpestagingonmacosorlinux">
-                            <a href="#setwritepermissionstowinpestagingonmacosorlinux">
-                                <strong>Step 1.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux
+                        <h4 id="setwritepermissionstowinpeuefistagingonmacosorlinux">
+                            <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
+                                <strong>Step 1.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -804,17 +804,17 @@ then
 else
 
     cd &quot;${DIR}&quot;
-    STAGING_DIR=&quot;winpe_staging&quot;
+    UEFI_STAGING_DIR=&quot;winpe_uefi_staging&quot;
     
-    if [[ ! -d ${STAGING_DIR} ]]
+    if [[ ! -d ${UEFI_STAGING_DIR} ]]
     then
     
-        echo &quot;Directory ${STAGING_DIR} does not exist. Skipping.&quot;
+        echo &quot;Directory does not exist. Skipping.&quot;
     else
     
         echo &quot;Before&quot;
         ls -lh
-        chmod -R a+w &quot;${STAGING_DIR}&quot;
+        chmod -R a+w &quot;${UEFI_STAGING_DIR}&quot;
         
         echo &quot;After&quot;
         ls -lh
@@ -1272,10 +1272,13 @@ mkwinpeimg --iso --windows-dir $(echo winimg/*) -- winpe.iso
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
-FOLDER=winpe_staging
-mkdir -p &quot;${FOLDER}&quot;
+BIOS=winpe_bios_staging
+UEFI=winpe_uefi_staging
+mkdir -p &quot;${BIOS}&quot;
+mkdir -p &quot;${UEFI}&quot;
 
-7z x winpe.iso -o&quot;${FOLDER}&quot;
+7z x winpe.iso -o&quot;${BIOS}&quot;
+7z x winpe.iso -o&quot;${UEFI}&quot;
                 </code>
             </pre>
         </div>
@@ -1344,7 +1347,8 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_staging/BOOT&quot;
+cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_bios_staging/BOOT&quot;
+cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_uefi_staging/BOOT&quot;
                 </code>
             </pre>
         </div>
@@ -1400,7 +1404,7 @@ cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_staging/
             <pre>
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-cp -v boot.img winpe_staging
+cp -v boot.img winpe_bios_staging
                 </code>
             </pre>
         </div>
@@ -1471,7 +1475,8 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
-wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;delete /setup.exe&quot;
+wimupdate winpe_bios_staging/SOURCES/BOOT.WIM --command=&quot;delete /setup.exe&quot;
+wimupdate winpe_uefi_staging/SOURCES/BOOT.WIM --command=&quot;delete /setup.exe&quot;
                 </code>
             </pre>
         </div>
@@ -1527,7 +1532,8 @@ wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;delete /setup.exe&quot;
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
-wimoptimize winpe_staging/SOURCES/BOOT.WIM --recompress
+wimoptimize winpe_bios_staging/SOURCES/BOOT.WIM --recompress
+wimoptimize winpe_uefi_staging/SOURCES/BOOT.WIM --recompress
                 </code>
             </pre>
         </div>
@@ -1639,7 +1645,7 @@ then
         -omit-version-number \
         -V &quot;KS_WIN&quot; \
         -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
-        winpe_staging
+        winpe_bios_staging
         
 elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
@@ -1659,7 +1665,7 @@ then
         -omit-version-number \
         -V &quot;KS_WIN&quot; \
         -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
-        winpe_staging
+        winpe_bios_staging
 
 else
 
@@ -1751,7 +1757,7 @@ WinPE ISO might not be able to boot on modern UEFI-enabled hardware.</p>
             <pre>
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-cp -rv &quot;$(echo winimg/*/efi)&quot; &quot;winpe_staging&quot;
+cp -rv &quot;$(echo winimg/*/efi)&quot; &quot;winpe_uefi_staging&quot;
                 </code>
             </pre>
         </div>
@@ -1827,7 +1833,7 @@ USER=&quot;{automationWorkerLinuxUser.user}&quot;
 GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
 echo &quot;User: $USER, Group: $GROUP&quot;
 
-chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
+chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_uefi_staging&quot;
                 </code>
             </pre>
         </div>
@@ -1899,7 +1905,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 512}&#x27;)
+bytes=$(du -s winpe_uefi_staging | awk &#x27;{print $1 * 512}&#x27;)
 ((bytes=bytes+10000))
 ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
 
@@ -2058,7 +2064,7 @@ fi
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-cp -vr winpe_staging/* &quot;$(echo uefi_mount/*)&quot;
+cp -vr winpe_uefi_staging/* &quot;$(echo uefi_mount/*)&quot;
                 </code>
             </pre>
         </div>
@@ -2282,9 +2288,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h4 id="setwritepermissionstowinpestagingonmacosorlinux">
-                            <a href="#setwritepermissionstowinpestagingonmacosorlinux">
-                                <strong>Step 13.3 -</strong> Set Write Permissions to winpe_staging on macOS or Linux
+                        <h4 id="setwritepermissionstowinpeuefistagingonmacosorlinux">
+                            <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
+                                <strong>Step 13.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2336,17 +2342,17 @@ then
 else
 
     cd &quot;${DIR}&quot;
-    STAGING_DIR=&quot;winpe_staging&quot;
+    UEFI_STAGING_DIR=&quot;winpe_uefi_staging&quot;
     
-    if [[ ! -d ${STAGING_DIR} ]]
+    if [[ ! -d ${UEFI_STAGING_DIR} ]]
     then
     
-        echo &quot;Directory ${STAGING_DIR} does not exist. Skipping.&quot;
+        echo &quot;Directory does not exist. Skipping.&quot;
     else
     
         echo &quot;Before&quot;
         ls -lh
-        chmod -R a+w &quot;${STAGING_DIR}&quot;
+        chmod -R a+w &quot;${UEFI_STAGING_DIR}&quot;
         
         echo &quot;After&quot;
         ls -lh

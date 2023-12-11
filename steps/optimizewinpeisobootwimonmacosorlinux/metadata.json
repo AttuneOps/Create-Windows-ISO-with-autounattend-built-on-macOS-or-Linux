@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "5f8aea57-2548-4f46-a385-6abd9498728f", 
+    "externalUuid4": "ab60b0b8-7aab-4615-8acf-654b8ed497f6", 
     "interpreter": 1, 
-    "key": "copydriversdropinfoldertobootwimonmacosorlinuxworker", 
-    "name": "Copy Drivers Drop in Folder to boot.wim on macOS or Linux Worker", 
+    "key": "optimizewinpeisobootwimonmacosorlinux", 
+    "name": "Optimize WinPE ISO boot.wim on macOS or Linux", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

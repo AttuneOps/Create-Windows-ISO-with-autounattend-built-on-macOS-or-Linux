@@ -1,0 +1,11 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "e5855a65-8de8-4e9e-97d0-943083190d0b", 
+    "isBlueprint": false, 
+    "key": "deletecreatepostsetupwimonmacosorlinuxworker", 
+    "links": [], 
+    "name": "DELETE Create Post Setup WIM on macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

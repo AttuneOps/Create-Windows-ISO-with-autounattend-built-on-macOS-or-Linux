@@ -1,15 +1,11 @@
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 DRIVERS_DROP_IN_FOLDER="{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}"
-DESTINATION_DRIVERS_FOLDER="WinPE_BootImageDir/drivers"
-
-mkdir --verbose "${DESTINATION_DRIVERS_FOLDER}"
 
 if [ -d "${DRIVERS_DROP_IN_FOLDER}" ]
 then
 
-    cp --verbose --recursive "${DRIVERS_DROP_IN_FOLDER}"/* \
-        "${DESTINATION_DRIVERS_FOLDER}"
+    wimupdate winpe_staging/SOURCES/BOOT.WIM --command="add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers"
         
 else
     echo "Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied."

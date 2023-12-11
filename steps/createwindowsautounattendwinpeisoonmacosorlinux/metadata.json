@@ -59,23 +59,27 @@
             "stepKey": "deploywindowsunattendedconfigonmacosorlinuxworker"
         }, 
         {
-            "order": 750, 
-            "stepKey": "createpostsetupwimonmacosorlinuxworker"
+            "order": 700, 
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinuxworker"
         }, 
         {
-            "order": 800, 
-            "stepKey": "modifywinpebootwimonmacosorlinuxworker"
+            "order": 750, 
+            "stepKey": "createpostinstallwimwindowsimageonmacosorlinuxworker"
         }, 
         {
             "order": 850, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "modifywinpebootwimonmacosorlinuxworker"
         }, 
         {
             "order": 900, 
-            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+            "stepKey": "createbiosbootwinpeisofromwinpestagingonmacosorlinuxworker"
         }, 
         {
             "order": 950, 
+            "stepKey": "recreatefat32kickstartisoonlinuxworker"
+        }, 
+        {
+            "order": 1000, 
             "stepKey": "createuefibootwinpeisofromwinpestagingonmacosworker"
         }
     ], 

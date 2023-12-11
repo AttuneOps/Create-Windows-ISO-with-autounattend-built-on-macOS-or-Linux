@@ -1,4 +1,3 @@
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-mv --verbose startnet.cmd \
-    "WinPE_BootImageDir/Windows/System32"
+wimupdate winpe_staging/SOURCES/BOOT.WIM --command="add startnet.cmd /Windows/System32/startnet.cmd"

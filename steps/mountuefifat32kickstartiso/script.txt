@@ -1,19 +1,25 @@
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq "darwin"
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    ISO="{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
+    FOLDER="uefi_mount"
+    mkdir -p -v ${FOLDER}
+    
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
     then
-        echo "is macOS, skipping"
         
+        mount --verbose "${ISO}" "${FOLDER}/CD"
+    
+    elif [[ "Darwin" == "$(uname)" ]]
+    then
+    
+        hdiutil attach ${ISO} -mountroot ${FOLDER}
+    
     else
-        echo "not macOS"
-        
-        cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
-        
-        mkdir --parents --verbose uefi_mount
-        
-        mount --verbose \
-            "../kickstart_{newOsNode.fqn}.iso" uefi_mount
+    
+        echo "Unsupported operating system."
+        exit 1
     fi
     
 else

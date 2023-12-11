@@ -7,17 +7,17 @@ then
 else
 
     cd "${DIR}"
-    STAGING_DIR="winpe_staging"
+    UEFI_STAGING_DIR="winpe_uefi_staging"
     
-    if [[ ! -d ${STAGING_DIR} ]]
+    if [[ ! -d ${UEFI_STAGING_DIR} ]]
     then
     
-        echo "Directory ${STAGING_DIR} does not exist. Skipping."
+        echo "Directory does not exist. Skipping."
     else
     
         echo "Before"
         ls -lh
-        chmod -R a+w "${STAGING_DIR}"
+        chmod -R a+w "${UEFI_STAGING_DIR}"
         
         echo "After"
         ls -lh

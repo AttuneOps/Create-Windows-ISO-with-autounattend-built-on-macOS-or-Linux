@@ -16,7 +16,7 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "setwritepermissionstowinpestagingonmacosorlinux"
+            "stepKey": "setwritepermissionstowinpeuefistagingonmacosorlinux"
         }, 
         {
             "order": 200, 

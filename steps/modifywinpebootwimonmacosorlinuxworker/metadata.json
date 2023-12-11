@@ -7,20 +7,24 @@
     "key": "modifywinpebootwimonmacosorlinuxworker", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "createbootwimmountfolderonmacosorlinuxworker"
+            "order": 200, 
+            "stepKey": "movestartnetcmdtobootwimonmacosorlinuxworker"
         }, 
         {
-            "order": 50, 
-            "stepKey": "mountbootwimonmacosorlinuxworker"
+            "order": 250, 
+            "stepKey": "moveautounattendxmltobootwimonmacosorlinuxworker"
         }, 
         {
-            "order": 100, 
-            "stepKey": "movefilestobootwimonmacosorlinuxworker"
+            "order": 300, 
+            "stepKey": "movepostinstallwimtobootwimonmacosorlinuxworker"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "movedriversdropinfoldertobootwimonmacosorlinuxworker"
         }, 
         {
             "order": 400, 
-            "stepKey": "linwimlibunmountbootwim"
+            "stepKey": "optimizewinpeisobootwimonmacosorlinux"
         }
     ], 
     "name": "Modify WinPE boot.wim on macOS or Linux Worker", 

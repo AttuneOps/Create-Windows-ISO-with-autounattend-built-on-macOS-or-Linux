@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "d1577e39-7943-4a67-b247-72fe1421aff8", 
+    "externalUuid4": "5f8aea57-2548-4f46-a385-6abd9498728f", 
     "interpreter": 1, 
-    "key": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinuxworker", 
-    "name": "Recreate BIOS Boot WinPE ISO from winpe_staging on macOS or Linux Worker", 
+    "key": "movedriversdropinfoldertobootwimonmacosorlinuxworker", 
+    "name": "Move Drivers Drop in Folder to boot.wim on macOS or Linux Worker", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

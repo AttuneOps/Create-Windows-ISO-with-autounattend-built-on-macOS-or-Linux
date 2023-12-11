@@ -3,7 +3,7 @@ then
     FOLDER="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
     mkdir --parents "${FOLDER}"
     cd "${FOLDER}"
-    cp --verbose "../winpe_plain_bios.iso" "winpe.iso"
+    cp -v "../winpe_plain_bios.iso" "winpe.iso"
     
 else
     echo "Skipping for UEFI ISO creation."

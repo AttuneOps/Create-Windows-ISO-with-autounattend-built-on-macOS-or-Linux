@@ -21,7 +21,7 @@ then
         -omit-version-number \
         -V "KS_WIN" \
         -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
-        winpe_staging
+        winpe_bios_staging
         
 elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
@@ -41,7 +41,7 @@ then
         -omit-version-number \
         -V "KS_WIN" \
         -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
-        winpe_staging
+        winpe_bios_staging
 
 else
 
