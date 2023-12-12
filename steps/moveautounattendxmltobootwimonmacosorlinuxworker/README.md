@@ -1,1 +1,1 @@
-Moves `autounattend.xml` to the folder boot.wim.
+Copy the `autounattend.xml` file to the root of boot.wim.

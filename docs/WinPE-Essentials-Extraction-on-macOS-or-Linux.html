@@ -635,7 +635,7 @@ then
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
     then
     
         hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
@@ -722,7 +722,7 @@ then
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
     
-    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
     then
     
         hdiutil detach $(echo ${MOUNT_PATH}/*)
@@ -2173,7 +2173,7 @@ then
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
     then
     
         hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
@@ -2260,7 +2260,7 @@ then
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
     
-    if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
     then
     
         hdiutil detach $(echo ${MOUNT_PATH}/*)

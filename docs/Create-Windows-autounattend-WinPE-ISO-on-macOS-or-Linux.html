@@ -1739,7 +1739,8 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;add startnet.cmd /Windows/System32/startnet.cmd&quot;
+wimupdate winpe_staging/SOURCES/BOOT.WIM /
+    --command=&quot;add startnet.cmd /Windows/System32/startnet.cmd&quot;
                 </code>
             </pre>
         </div>
@@ -1764,7 +1765,7 @@ wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;add startnet.cmd /Windo
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Moves <code>autounattend.xml</code> to the folder boot.wim.</p>
+                                <p>Copy the <code>autounattend.xml</code> file to the root of boot.wim.</p>
                             </p>
                         </div>
                     </div>
@@ -1795,7 +1796,8 @@ wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;add startnet.cmd /Windo
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;add autounattend.xml /autounattend.xml&quot;
+wimupdate winpe_staging/SOURCES/BOOT.WIM /
+    --command=&quot;add autounattend.xml /autounattend.xml&quot;
                 </code>
             </pre>
         </div>
@@ -1851,7 +1853,8 @@ wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;add autounattend.xml /a
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;add post_install.wim /post_install.wim&quot;
+wimupdate winpe_staging/SOURCES/BOOT.WIM /
+    --command=&quot;add post_install.wim /post_install.wim&quot;
                 </code>
             </pre>
         </div>
@@ -1912,7 +1915,8 @@ DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/drivers-{newOs
 if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
 then
 
-    wimupdate winpe_staging/SOURCES/BOOT.WIM --command=&quot;add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers&quot;
+    wimupdate winpe_staging/SOURCES/BOOT.WIM /
+        --command=&quot;add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers&quot;
         
 else
     echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
@@ -2468,13 +2472,6 @@ fi
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2522,7 +2519,7 @@ MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/uefi
     elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
     then
     
-        if [[ -d &quot;$(echo ${MOUNT_PATH}/*)&quot; ]]
+        if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
         then
         
             hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;

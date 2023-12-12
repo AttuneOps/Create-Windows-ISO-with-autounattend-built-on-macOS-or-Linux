@@ -20,7 +20,7 @@ MOUNT_PATH="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/uefi_moun
     elif [[ "Darwin" == "$(uname)" ]]
     then
     
-        if [[ -d "$(echo ${MOUNT_PATH}/*)" ]]
+        if [[ $(find ${MOUNT_PATH}/*  2> /dev/null | wc -l) -gt 10 ]]
         then
         
             hdiutil detach "$(echo ${MOUNT_PATH}/*)"
