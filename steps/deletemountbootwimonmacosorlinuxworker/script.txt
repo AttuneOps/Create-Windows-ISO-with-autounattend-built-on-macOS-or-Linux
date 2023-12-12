@@ -1,2 +1,0 @@
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir

@@ -1,3 +1,0 @@
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-mkdir -p post_install_wim
-mv -v post_install_setup.ps1 post_install_wim
