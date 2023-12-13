@@ -1,2 +1,0 @@
-cd "$HOME/windows_iso_data_for_winpe/"
-sudo chmod -R a+rx windows10
