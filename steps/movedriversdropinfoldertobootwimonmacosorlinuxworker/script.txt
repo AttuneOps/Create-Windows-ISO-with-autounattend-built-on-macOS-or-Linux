@@ -5,7 +5,7 @@ DRIVERS_DROP_IN_FOLDER="{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.
 if [ -d "${DRIVERS_DROP_IN_FOLDER}" ]
 then
 
-    wimupdate winpe_staging/SOURCES/BOOT.WIM /
+    wimupdate winpe_staging/SOURCES/BOOT.WIM \
         --command="add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers"
         
 else

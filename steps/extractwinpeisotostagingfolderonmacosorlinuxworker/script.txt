@@ -3,4 +3,4 @@ cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 FOLDER=winpe_staging
 mkdir -p "${FOLDER}"
 
-7z x winpe.iso -o"${FOLDER}"
+7z x winpe.iso -o"${FOLDER}" -y

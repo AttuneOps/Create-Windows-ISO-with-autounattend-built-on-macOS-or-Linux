@@ -1387,7 +1387,7 @@ cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 FOLDER=winpe_staging
 mkdir -p &quot;${FOLDER}&quot;
 
-7z x winpe.iso -o&quot;${FOLDER}&quot;
+7z x winpe.iso -o&quot;${FOLDER}&quot; -y
                 </code>
             </pre>
         </div>
@@ -1739,7 +1739,7 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-wimupdate winpe_staging/SOURCES/BOOT.WIM /
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
     --command=&quot;add startnet.cmd /Windows/System32/startnet.cmd&quot;
                 </code>
             </pre>
@@ -1796,7 +1796,7 @@ wimupdate winpe_staging/SOURCES/BOOT.WIM /
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-wimupdate winpe_staging/SOURCES/BOOT.WIM /
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
     --command=&quot;add autounattend.xml /autounattend.xml&quot;
                 </code>
             </pre>
@@ -1853,7 +1853,7 @@ wimupdate winpe_staging/SOURCES/BOOT.WIM /
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-wimupdate winpe_staging/SOURCES/BOOT.WIM /
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
     --command=&quot;add post_install.wim /post_install.wim&quot;
                 </code>
             </pre>
@@ -1915,7 +1915,7 @@ DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/drivers-{newOs
 if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
 then
 
-    wimupdate winpe_staging/SOURCES/BOOT.WIM /
+    wimupdate winpe_staging/SOURCES/BOOT.WIM \
         --command=&quot;add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers&quot;
         
 else
@@ -1976,6 +1976,7 @@ fi
             <pre>
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+
 wimoptimize winpe_staging/SOURCES/BOOT.WIM --recompress
                 </code>
             </pre>
@@ -2054,10 +2055,8 @@ then
             -no-emul-boot \
             -c BOOT.CAT \
             -iso-level 3 \
-            -udf \
             -joliet-long \
             -relaxed-filenames \
-            -allow-limited-size \
             -J \
             -full-iso9660-filenames \
             -disable-deep-relocation \
