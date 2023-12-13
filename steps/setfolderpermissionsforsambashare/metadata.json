@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "a0347e02-c921-48e7-b577-dc7839ba71cd", 
+    "externalUuid4": "7fed3e09-69a3-424d-948d-5e8287b1f816", 
     "interpreter": 1, 
-    "key": "extractwin2022isoforsamba", 
-    "name": "Extract Win2022 ISO for Samba", 
+    "key": "setfolderpermissionsforsambashare", 
+    "name": "Set Folder Permissions for Samba Share", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

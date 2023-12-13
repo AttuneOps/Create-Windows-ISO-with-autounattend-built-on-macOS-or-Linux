@@ -1,24 +1,13 @@
 {
     "actionOnStepFail": "stop", 
-    "concurrency": 1, 
+    "archiveKey": "win2022iso", 
+    "deployPath": "$HOME/windows_iso_data_for_winpe/windows2022", 
     "enabled": true, 
-    "externalUuid4": "099b1d47-95ed-4bfc-948b-59d2b99a86e6", 
-    "isBlueprint": true, 
+    "externalUuid4": "0b9c8aa0-75ff-4135-ad45-a0265799236e", 
     "key": "deploywin2022isotosambashare", 
-    "links": [
-        {
-            "order": 100, 
-            "stepKey": "deploywin2022isoforsamba"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "extractwin2022isoforsamba"
-        }, 
-        {
-            "order": 300, 
-            "stepKey": "setwindows2022folderpermissions"
-        }
-    ], 
-    "name": "Deploy Win2022 ISO to Samba Share", 
-    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+    "name": " Deploy Win2022 ISO to Samba Share", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
 }

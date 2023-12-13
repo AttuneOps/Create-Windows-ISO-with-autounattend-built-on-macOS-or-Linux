@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "7c58745e-019b-459f-b140-046211f0fdfb", 
+    "externalUuid4": "f93b86b9-6af3-4bdf-ad07-5bc71ab4348f", 
     "interpreter": 1, 
-    "key": "setwindows10folderpermissions", 
-    "name": "Set windows10 Folder Permissions", 
+    "key": "deleteextractwin10isoforsamba", 
+    "name": "DELETE Extract Win10 ISO for Samba", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

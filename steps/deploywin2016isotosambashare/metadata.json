@@ -1,24 +1,13 @@
 {
     "actionOnStepFail": "stop", 
-    "concurrency": 1, 
+    "archiveKey": "win2016iso", 
+    "deployPath": "$HOME/windows_iso_data_for_winpe/windows2016", 
     "enabled": true, 
-    "externalUuid4": "1829e052-e1e5-44e2-968d-93698d953b08", 
-    "isBlueprint": true, 
+    "externalUuid4": "35427f87-db66-4c32-89c9-be453929d2c5", 
     "key": "deploywin2016isotosambashare", 
-    "links": [
-        {
-            "order": 150, 
-            "stepKey": "deploywin2016isoforsamba"
-        }, 
-        {
-            "order": 250, 
-            "stepKey": "extractwin2016isoforsamba"
-        }, 
-        {
-            "order": 350, 
-            "stepKey": "setwindows2016folderpermissions"
-        }
-    ], 
-    "name": "Deploy Win2016 ISO to Samba Share", 
-    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+    "name": " Deploy Win2016 ISO to Samba Share", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
 }

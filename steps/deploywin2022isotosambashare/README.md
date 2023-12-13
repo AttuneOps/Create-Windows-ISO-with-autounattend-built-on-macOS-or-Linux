@@ -1,1 +1,1 @@
-The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
+Deploys the Windows Server 2022 ISO to `$HOME/windows_iso_data_for_winpe/windows2022` on the Samba server.

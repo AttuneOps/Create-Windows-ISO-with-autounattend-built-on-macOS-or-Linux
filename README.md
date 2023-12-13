@@ -176,22 +176,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Deploy and Mount Win2022 ISO To Node for Feature Install
 
 
-### Deploy Win10 ISO to Samba Share
-
-The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.
-
-### Deploy Win2016 ISO to Samba Share
-
-The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
-
-### Deploy Win2019 ISO to Samba Share
-
-The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
-
-### Deploy Win2022 ISO to Samba Share
-
-The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
-
 ### Install Prerequisites on Windows Worker
 
 
@@ -208,6 +192,10 @@ The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_is
 
 Performs basic tests for the built node.
 
+### Setup Samba on macOS or Linux
+
+Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
+
 ### Setup Skeleton WinPE_amd64 Folder on Windows Worker
 
 Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
@@ -219,9 +207,21 @@ This folder works for both BIOS and UEFI boot methods.
 ### Unmount and Remove ISO From Node for Feature Install
 
 
-### Setup Samba on macOS or Linux
+### Deploy and Extract Win10 ISO to Samba Share
 
-Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
+The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.
+
+### Deploy and Extract Win2016 ISO to Samba Share
+
+The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
+
+### Deploy and Extract Win2019 ISO to Samba Share
+
+The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
+
+### Deploy and Extract Win2022 ISO to Samba Share
+
+The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
 
 
 

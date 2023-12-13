@@ -1,24 +1,13 @@
 {
     "actionOnStepFail": "stop", 
-    "concurrency": 1, 
+    "archiveKey": "win2019iso", 
+    "deployPath": "$HOME/windows_iso_data_for_winpe/windows2019", 
     "enabled": true, 
-    "externalUuid4": "093149ba-46c0-4e4f-9dc0-54ae2da29170", 
-    "isBlueprint": true, 
+    "externalUuid4": "6f83324d-28ca-46be-b77c-71e69a37f789", 
     "key": "deploywin2019isotosambashare", 
-    "links": [
-        {
-            "order": 100, 
-            "stepKey": "deploywin2019isoforsamba"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "extractwin2019isoforsamba"
-        }, 
-        {
-            "order": 300, 
-            "stepKey": "setwindows2019folderpermissions"
-        }
-    ], 
-    "name": "Deploy Win2019 ISO to Samba Share", 
-    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+    "name": " Deploy Win2019 ISO to Samba Share", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
 }
