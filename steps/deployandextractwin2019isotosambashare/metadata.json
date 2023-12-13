@@ -9,14 +9,6 @@
         {
             "order": 100, 
             "stepKey": "deploywin2019isotosambashare"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "deleteextractwin2019isoforsamba"
-        }, 
-        {
-            "order": 300, 
-            "stepKey": "deletesetwindows2019folderpermissions"
         }
     ], 
     "name": "Deploy and Extract Win2019 ISO to Samba Share", 

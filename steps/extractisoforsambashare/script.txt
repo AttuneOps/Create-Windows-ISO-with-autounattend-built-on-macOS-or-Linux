@@ -1,4 +1,4 @@
-cd "${HOME}/windows_iso_data_for_winpe/windows2022"
+cd "{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/{windowsFolderOnSamba}"
 
 # Case insensitve globbing
 shopt -s nocaseglob
@@ -14,3 +14,5 @@ rm -rf ${TMP_DIR}
 
 7z x $ISO
 rm $ISO
+
+ls -lh

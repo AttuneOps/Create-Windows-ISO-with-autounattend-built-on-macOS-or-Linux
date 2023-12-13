@@ -9,14 +9,6 @@
         {
             "order": 150, 
             "stepKey": "deploywin2016isotosambashare"
-        }, 
-        {
-            "order": 250, 
-            "stepKey": "deleteextractwin2016isoforsamba"
-        }, 
-        {
-            "order": 350, 
-            "stepKey": "deletesetwindows2016folderpermissions"
         }
     ], 
     "name": "Deploy and Extract Win2016 ISO to Samba Share", 

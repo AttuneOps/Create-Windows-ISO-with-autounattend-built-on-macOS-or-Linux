@@ -9,14 +9,6 @@
         {
             "order": 100, 
             "stepKey": "deploywin2022isotosambashare"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "extractisoforsambashare"
-        }, 
-        {
-            "order": 300, 
-            "stepKey": "setfolderpermissionsforsambashare"
         }
     ], 
     "name": "Deploy and Extract Win2022 ISO to Samba Share", 

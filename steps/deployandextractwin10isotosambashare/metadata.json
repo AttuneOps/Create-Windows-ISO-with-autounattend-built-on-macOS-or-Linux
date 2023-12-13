@@ -9,14 +9,6 @@
         {
             "order": 150, 
             "stepKey": "deploywin10isotosambashare"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "deleteextractwin10isoforsamba"
-        }, 
-        {
-            "order": 250, 
-            "stepKey": "deletesetwindows10folderpermissions"
         }
     ], 
     "name": "Deploy and Extract Win10 ISO to Samba Share", 

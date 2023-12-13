@@ -1,2 +1,4 @@
-cd "$HOME/windows_iso_data_for_winpe/"
-sudo chmod -R a+rx windows2022
+cd "{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/"
+sudo chmod -R a+rx {windowsFolderOnSamba}
+
+ls -lh

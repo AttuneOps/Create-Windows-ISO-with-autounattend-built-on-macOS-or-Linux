@@ -6,29 +6,29 @@
 
 
 <head>
-    <title>How to Deploy and Extract Win2022 ISO to Samba Share - Attune Automation</title>
+    <title>How to Extract ISO and Configure Folder Permissions for Samba Share - Attune Automation</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="title"
-          content="How to Deploy and Extract Win2022 ISO to Samba Share - Attune Automation">
+          content="How to Extract ISO and Configure Folder Permissions for Samba Share - Attune Automation">
     <meta name="description"
-          content="The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.">
+          content="">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
     <meta property="og:locale" content="en_AU" />
     <meta property="og:type" content="article" />
     <meta property="og:title"
-          content="HowTo Deploy and Extract Win2022 ISO to Samba Share - Attune Automation" />
-    <meta property="og:description" content="The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`." />
+          content="HowTo Extract ISO and Configure Folder Permissions for Samba Share - Attune Automation" />
+    <meta property="og:description" content="" />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
-          content="How to Deploy and Extract Win2022 ISO to Samba Share - Attune Automation" />
-    <meta name="twitter:description" content="The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`." />
+          content="How to Extract ISO and Configure Folder Permissions for Samba Share - Attune Automation" />
+    <meta name="twitter:description" content="" />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -119,7 +119,7 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item active" aria-current="page">
-                    <strong>Deploy and Extract Win2022 ISO to Samba Share</strong>
+                    <strong>Extract ISO and Configure Folder Permissions for Samba Share</strong>
                 </li>
             </ol>
         </nav>
@@ -133,19 +133,12 @@
     <div class="row">
         <div class="col px-0">
             <h1 class="text-left">
-                How to Deploy and Extract Win2022 ISO to Samba Share
+                How to Extract ISO and Configure Folder Permissions for Samba Share
             </h1>
         </div>
     </div>
 
 <!-- Blueprint Description -->
-    <div class="row">
-        <div class="description col px-0">
-            <p class="text-left">
-                <p>The Windows Server 2022 ISO is placed on the Samba server at <code>${HOME}/windows_iso_data_for_winpe/windows2022</code>.</p>
-            </p>
-        </div>
-    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -204,7 +197,7 @@
                     </p>
                     <p class="text-muted">
                         <a href="#top">
-                            <strong>Deploy and Extract Win2022 ISO to Samba Share</strong>
+                            <strong>Extract ISO and Configure Folder Permissions for Samba Share</strong>
                         </a>
                     </p>
 
@@ -213,8 +206,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deploywin2022isotosambashare">
-                            <strong>Step 1 -</strong>  Deploy Win2022 ISO to Samba Share
+                        <a href="#extractisoforsambashare">
+                            <strong>Step 1 -</strong> Extract ISO for Samba Share
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#setfolderpermissionsforsambashare">
+                            <strong>Step 2 -</strong> Set Folder Permissions for Samba Share
                         </a>
                     </p>
 
@@ -277,7 +278,7 @@
                 </ol>
             </p>
             <p class="lead text-center">
-                You've automated: <strong>Deploy and Extract Win2022 ISO to Samba Share</strong>
+                You've automated: <strong>Extract ISO and Configure Folder Permissions for Samba Share</strong>
             </p>
             <hr class="my-4 text-center">
             <div class="col px-0">
@@ -308,9 +309,9 @@
 
 
                     <div class="row pt-5">
-                        <h3 id="deploywin2022isotosambashare">
-                            <a href="#deploywin2022isotosambashare">
-                                <strong>Step 1 -</strong>  Deploy Win2022 ISO to Samba Share
+                        <h3 id="extractisoforsambashare">
+                            <a href="#extractisoforsambashare">
+                                <strong>Step 1 -</strong> Extract ISO for Samba Share
                             </a>
                         </h3>
                     </div>
@@ -318,7 +319,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the Windows Server 2022 ISO to <code>$HOME/windows_iso_data_for_winpe/windows2022</code> on the Samba server.</p>
+                                <p>Remove any old files that exist and extract the ISO files.</p>
                             </p>
                         </div>
                     </div>
@@ -344,27 +345,98 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                         </div>
 
 
+
     
 
 
 
     <div class="row">
         <p>
-            <p>Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022.</p>
-        </p>
-        <p>
-            Copy the File(s)
-            <strong>Win2022_ISO.tar</strong>
-            to the target node.
-        </p>
-        <p>
-            <strong>Deploy the File(s)</strong> here:
+            Execute the following script:
         </p>
     </div>
-    <div class="row py-1">
-        <code class="language-bash">
-$HOME/windows_iso_data_for_winpe/windows2022, relative to the home directory
-        </code>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/{windowsFolderOnSamba}&quot;
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+ISO=$(ls *.iso)
+echo $ISO
+
+echo &quot;Removing old files, if any&quot;
+TMP_DIR=$(mktemp -d -p ../)
+mv * ${TMP_DIR}
+mv ${TMP_DIR}/$ISO .
+rm -rf ${TMP_DIR}
+
+7z x $ISO
+rm $ISO
+
+ls -lh
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="setfolderpermissionsforsambashare">
+                            <a href="#setfolderpermissionsforsambashare">
+                                <strong>Step 2 -</strong> Set Folder Permissions for Samba Share
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Sets read and execute permissions for the Samba Share folder.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd &quot;{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/&quot;
+sudo chmod -R a+rx {windowsFolderOnSamba}
+
+ls -lh
+                </code>
+            </pre>
+        </div>
     </div>
 
 
