@@ -208,10 +208,6 @@ The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_is
 
 Performs basic tests for the built node.
 
-### Setup Samba on Linux
-
-Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
-
 ### Setup Skeleton WinPE_amd64 Folder on Windows Worker
 
 Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
@@ -222,6 +218,10 @@ This folder works for both BIOS and UEFI boot methods.
 
 ### Unmount and Remove ISO From Node for Feature Install
 
+
+### Setup Samba on macOS or Linux
+
+Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
 
 
 

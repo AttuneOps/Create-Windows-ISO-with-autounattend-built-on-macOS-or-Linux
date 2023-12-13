@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "b79b9e1b-ce17-4732-b458-ddb3b8137246", 
     "isBlueprint": true, 
-    "key": "setupsambaonlinux", 
+    "key": "setupsambaonmacosorlinux", 
     "links": [
         {
             "order": 0, 
@@ -59,6 +59,6 @@
             "stepKey": "setlinuxhomefolderpermissionsforsamba"
         }
     ], 
-    "name": "Setup Samba on Linux", 
+    "name": "Setup Samba on macOS or Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }

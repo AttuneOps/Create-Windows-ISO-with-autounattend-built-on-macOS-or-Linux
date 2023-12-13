@@ -1,2 +1,1 @@
-cd /home
-chmod -v +rx {automationWorkerLinuxUser.user}
+chmod -v +rx $HOME
