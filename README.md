@@ -192,10 +192,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### Setup Samba on macOS or Linux
-
-Sets up a Samba server with the folder at `${HOME}/windows_iso_data_for_winpe`.
-
 ### Setup Skeleton WinPE_amd64 Folder on Windows Worker
 
 Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
@@ -207,24 +203,38 @@ This folder works for both BIOS and UEFI boot methods.
 ### Unmount and Remove ISO From Node for Feature Install
 
 
-### Deploy and Extract Win10 ISO to Samba Share
+### Extract ISO and Configure Folder Permissions for Samba Share
 
-The Windows Desktop 10 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows10`.
-
-### Deploy and Extract Win2016 ISO to Samba Share
-
-The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
-
-### Deploy and Extract Win2019 ISO to Samba Share
-
-The Windows Server 2019 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2019`.
+This blueprint is a repeatable process for the 
+`Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
 
 ### Deploy and Extract Win2022 ISO to Samba Share
 
-The Windows Server 2022 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2022`.
+This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
 
-### Extract ISO and Configure Folder Permissions for Samba Share
+### Deploy and Extract Win2019 ISO to Samba Share
 
+This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2016 ISO to Samba Share
+
+This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
+
+### Deploy and Extract Win10 ISO to Samba Share
+
+This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
+
+### Setup Samba on macOS or Linux
+
+Sets up a Samba server with the folder at 
+`{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe`.
+
+This Samba Share on Linux is required to host the Windows OS files 
+making them accessible over the network.
+
+For uploading specific Windows distributions to the Samba Share, see 
+`Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
+this Project.
 
 
 

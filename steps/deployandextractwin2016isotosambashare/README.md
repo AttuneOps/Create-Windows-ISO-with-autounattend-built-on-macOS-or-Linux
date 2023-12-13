@@ -1,1 +1,1 @@
-The Windows Server 2016 ISO is placed on the Samba server at `${HOME}/windows_iso_data_for_winpe/windows2016`. 
+This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
