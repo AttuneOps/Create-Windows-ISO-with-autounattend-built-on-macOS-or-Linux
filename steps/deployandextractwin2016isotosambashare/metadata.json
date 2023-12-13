@@ -9,6 +9,10 @@
         {
             "order": 150, 
             "stepKey": "deploywin2016isotosambashare"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "extractisoandconfigurefolderpermissionsforwin2016"
         }
     ], 
     "name": "Deploy and Extract Win2016 ISO to Samba Share", 

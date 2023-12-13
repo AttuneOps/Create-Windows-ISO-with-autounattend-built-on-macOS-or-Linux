@@ -9,6 +9,10 @@
         {
             "order": 100, 
             "stepKey": "deploywin2019isotosambashare"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "extractisoandconfigurefolderpermissionsforwin2019"
         }
     ], 
     "name": "Deploy and Extract Win2019 ISO to Samba Share", 

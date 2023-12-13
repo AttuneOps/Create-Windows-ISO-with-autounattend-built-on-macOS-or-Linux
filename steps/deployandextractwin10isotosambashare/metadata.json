@@ -9,6 +9,10 @@
         {
             "order": 150, 
             "stepKey": "deploywin10isotosambashare"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "extractisoandconfigurefolderpermissionsforwin10"
         }
     ], 
     "name": "Deploy and Extract Win10 ISO to Samba Share", 
