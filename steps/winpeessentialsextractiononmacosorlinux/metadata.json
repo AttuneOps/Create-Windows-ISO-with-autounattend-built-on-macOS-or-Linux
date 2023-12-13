@@ -47,15 +47,31 @@
             "stepKey": "optimizebootwimonmacosorlinux"
         }, 
         {
-            "order": 850, 
+            "order": 750, 
             "stepKey": "createwinpeplainbiosisofromwinpestagingonmacosorlinux"
         }, 
         {
+            "order": 800, 
+            "stepKey": "copywindowsefifilestowinpeuefistagingonmacosorlinux"
+        }, 
+        {
+            "order": 850, 
+            "stepKey": "changeownershipofwinpeuefistagingdirectorytoattuneonmacosorlinuxworker"
+        }, 
+        {
             "order": 900, 
-            "stepKey": "putthewinpeplainuefiisocontenttogetheronlinux"
+            "stepKey": "createwinpeplainuefiisoonmacosorlinux"
+        }, 
+        {
+            "order": 950, 
+            "stepKey": "mountwinpeplainuefiisoonmacosorlinux"
         }, 
         {
             "order": 1000, 
+            "stepKey": "copywinpestagingtouefimountonmacosorlinux"
+        }, 
+        {
+            "order": 1100, 
             "stepKey": "cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux"
         }
     ], 

@@ -1248,7 +1248,7 @@ fi
 if {isWin10Bios} || {isWinServerBios}
 then
     FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-    mkdir --parents &quot;${FOLDER}&quot;
+    mkdir -p &quot;${FOLDER}&quot;
     cd &quot;${FOLDER}&quot;
     cp -v &quot;../winpe_plain_bios.iso&quot; &quot;winpe.iso&quot;
     
@@ -2472,6 +2472,13 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 

@@ -354,24 +354,16 @@ create bootable ISO files for various Windows distributions.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#putthewinpeplainuefiisocontenttogetheronlinux">
-                            <strong>Step 12 -</strong> Put the winpe_plain_uefi.iso content together on Linux
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#copywindowsefifilestowinpestagingonmacosorlinux">
-                            <strong>Step 12.1 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux
+                        <a href="#copywindowsefifilestowinpeuefistagingonmacosorlinux">
+                            <strong>Step 12 -</strong> Copy Windows EFI Files to WinPE UEFI Staging on macOS or Linux
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#changeownershipofwinpestagingdirectorytoattuneonmacosorlinuxworker">
-                            <strong>Step 12.2 -</strong> Change Ownership of winpe_staging Directory to attune on macOS or Linux Worker
+                        <a href="#changeownershipofwinpeuefistagingdirectorytoattuneonmacosorlinuxworker">
+                            <strong>Step 13 -</strong> Change Ownership of winpe_uefi_staging Directory to attune on macOS or Linux Worker
                         </a>
                     </p>
 
@@ -379,7 +371,7 @@ create bootable ISO files for various Windows distributions.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#createwinpeplainuefiisoonmacosorlinux">
-                            <strong>Step 12.3 -</strong> Create winpe_plain_uefi.iso on macOS or Linux
+                            <strong>Step 14 -</strong> Create winpe_plain_uefi.iso on macOS or Linux
                         </a>
                     </p>
 
@@ -387,7 +379,7 @@ create bootable ISO files for various Windows distributions.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#mountwinpeplainuefiisoonmacosorlinux">
-                            <strong>Step 12.4 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux
+                            <strong>Step 15 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux
                         </a>
                     </p>
 
@@ -395,16 +387,15 @@ create bootable ISO files for various Windows distributions.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#copywinpestagingtouefimountonmacosorlinux">
-                            <strong>Step 12.5 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
+                            <strong>Step 16 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
                         </a>
                     </p>
-
 
         
 
                     <p class="text-muted pt-2">
                         <a href="#cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
-                            <strong>Step 13 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
+                            <strong>Step 17 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
                         </a>
                     </p>
     
@@ -412,7 +403,7 @@ create bootable ISO files for various Windows distributions.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwinpeuefimountonmacosorlinux">
-                            <strong>Step 13.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
+                            <strong>Step 17.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
                         </a>
                     </p>
 
@@ -420,7 +411,7 @@ create bootable ISO files for various Windows distributions.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwindowsisoonmacosorlinux">
-                            <strong>Step 13.2 -</strong> Unmount Windows ISO on macOS or Linux
+                            <strong>Step 17.2 -</strong> Unmount Windows ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -428,7 +419,7 @@ create bootable ISO files for various Windows distributions.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
-                            <strong>Step 13.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
+                            <strong>Step 17.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                         </a>
                     </p>
 
@@ -436,7 +427,7 @@ create bootable ISO files for various Windows distributions.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#deletethebuilddirectoryonmacosorlinux">
-                            <strong>Step 13.4 -</strong> Delete the build directory on macOS or Linux
+                            <strong>Step 17.4 -</strong> Delete the build directory on macOS or Linux
                         </a>
                     </p>
 
@@ -1686,40 +1677,11 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="putthewinpeplainuefiisocontenttogetheronlinux">
-                            <a href="#putthewinpeplainuefiisocontenttogetheronlinux">
-                                <strong>Step 12 -</strong> Put the winpe_plain_uefi.iso content together on Linux
+                        <h3 id="copywindowsefifilestowinpeuefistagingonmacosorlinux">
+                            <a href="#copywindowsefifilestowinpeuefistagingonmacosorlinux">
+                                <strong>Step 12 -</strong> Copy Windows EFI Files to WinPE UEFI Staging on macOS or Linux
                             </a>
                         </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="copywindowsefifilestowinpestagingonmacosorlinux">
-                            <a href="#copywindowsefifilestowinpestagingonmacosorlinux">
-                                <strong>Step 12.1 -</strong> Copy Windows EFI Files to WinPE Staging on macOS or Linux
-                            </a>
-                        </h4>
                     </div>
 
                     <div class="row">
@@ -1767,16 +1729,16 @@ cp -rv &quot;$(echo winimg/*/efi)&quot; &quot;winpe_uefi_staging&quot;
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="changeownershipofwinpestagingdirectorytoattuneonmacosorlinuxworker">
-                            <a href="#changeownershipofwinpestagingdirectorytoattuneonmacosorlinuxworker">
-                                <strong>Step 12.2 -</strong> Change Ownership of winpe_staging Directory to attune on macOS or Linux Worker
+                        <h3 id="changeownershipofwinpeuefistagingdirectorytoattuneonmacosorlinuxworker">
+                            <a href="#changeownershipofwinpeuefistagingdirectorytoattuneonmacosorlinuxworker">
+                                <strong>Step 13 -</strong> Change Ownership of winpe_uefi_staging Directory to attune on macOS or Linux Worker
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -1843,16 +1805,16 @@ chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_uefi_staging&quot;
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="createwinpeplainuefiisoonmacosorlinux">
+                        <h3 id="createwinpeplainuefiisoonmacosorlinux">
                             <a href="#createwinpeplainuefiisoonmacosorlinux">
-                                <strong>Step 12.3 -</strong> Create winpe_plain_uefi.iso on macOS or Linux
+                                <strong>Step 14 -</strong> Create winpe_plain_uefi.iso on macOS or Linux
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -1938,16 +1900,16 @@ fi
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="mountwinpeplainuefiisoonmacosorlinux">
+                        <h3 id="mountwinpeplainuefiisoonmacosorlinux">
                             <a href="#mountwinpeplainuefiisoonmacosorlinux">
-                                <strong>Step 12.4 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux
+                                <strong>Step 15 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -2025,18 +1987,25 @@ fi
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="copywinpestagingtouefimountonmacosorlinux">
+                        <h3 id="copywinpestagingtouefimountonmacosorlinux">
                             <a href="#copywinpestagingtouefimountonmacosorlinux">
-                                <strong>Step 12.5 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
+                                <strong>Step 16 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2074,7 +2043,6 @@ cp -vr winpe_uefi_staging/* &quot;$(echo uefi_mount/*)&quot;
 
 
 
-
         
 
 
@@ -2082,7 +2050,7 @@ cp -vr winpe_uefi_staging/* &quot;$(echo uefi_mount/*)&quot;
                     <div class="row pt-5">
                         <h3 id="cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
                             <a href="#cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
-                                <strong>Step 13 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
+                                <strong>Step 17 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -2114,7 +2082,7 @@ working directory.</p>
                     <div class="row pt-5">
                         <h4 id="unmountwinpeuefimountonmacosorlinux">
                             <a href="#unmountwinpeuefimountonmacosorlinux">
-                                <strong>Step 13.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
+                                <strong>Step 17.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2203,7 +2171,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="unmountwindowsisoonmacosorlinux">
                             <a href="#unmountwindowsisoonmacosorlinux">
-                                <strong>Step 13.2 -</strong> Unmount Windows ISO on macOS or Linux
+                                <strong>Step 17.2 -</strong> Unmount Windows ISO on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2290,7 +2258,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="setwritepermissionstowinpeuefistagingonmacosorlinux">
                             <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
-                                <strong>Step 13.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
+                                <strong>Step 17.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2374,7 +2342,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="deletethebuilddirectoryonmacosorlinux">
                             <a href="#deletethebuilddirectoryonmacosorlinux">
-                                <strong>Step 13.4 -</strong> Delete the build directory on macOS or Linux
+                                <strong>Step 17.4 -</strong> Delete the build directory on macOS or Linux
                             </a>
                         </h4>
                     </div>
