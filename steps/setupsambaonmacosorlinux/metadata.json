@@ -16,46 +16,50 @@
         }, 
         {
             "order": 100, 
-            "stepKey": "setupsmbconfonlinux"
+            "stepKey": "configureselinuxsecuritycontextonlinux"
         }, 
         {
             "order": 150, 
-            "stepKey": "checksmbconfonlinux"
+            "stepKey": "setupsmbconfonlinux"
         }, 
         {
             "order": 200, 
-            "stepKey": "setupfirewallforsambaonlinux"
+            "stepKey": "checksmbconfonlinux"
         }, 
         {
             "order": 250, 
-            "stepKey": "installprerequisitesonlinux"
+            "stepKey": "setupfirewallforsambaonlinux"
         }, 
         {
             "order": 300, 
-            "stepKey": "setupselinuxforsambaonlinux"
+            "stepKey": "installprerequisitesonlinux"
         }, 
         {
             "order": 350, 
-            "stepKey": "checkselinuxforsambaonlinux"
+            "stepKey": "setupselinuxforsambaonlinux"
         }, 
         {
             "order": 400, 
-            "stepKey": "startsmbonlinux"
+            "stepKey": "checkselinuxforsambaonlinux"
         }, 
         {
             "order": 450, 
-            "stepKey": "checkservicesmbonlinux"
+            "stepKey": "startsmbonlinux"
         }, 
         {
             "order": 500, 
-            "stepKey": "startservicenmbonlinux"
+            "stepKey": "checkservicesmbonlinux"
         }, 
         {
             "order": 550, 
-            "stepKey": "checkservicenmbonlinux"
+            "stepKey": "startservicenmbonlinux"
         }, 
         {
             "order": 600, 
+            "stepKey": "checkservicenmbonlinux"
+        }, 
+        {
+            "order": 650, 
             "stepKey": "setlinuxhomefolderpermissionsforsamba"
         }
     ], 

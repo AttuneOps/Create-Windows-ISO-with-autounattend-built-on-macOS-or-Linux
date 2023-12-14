@@ -11,12 +11,16 @@ then
 elif [[ -f /etc/debian_version ]]
 then
 
-    echo ""
+    apt-get -y install \
+        policycoreutils \
+        libfuse3-dev \
+        fuse3 \
+        p7zip-full p7zip-rar
 
 elif [[ "Darwin" == "$(uname)" ]]
 then
 
-    echo ""
+    brew install osxfuse p7zip
 
 else
     

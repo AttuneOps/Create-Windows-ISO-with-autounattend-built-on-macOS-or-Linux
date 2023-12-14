@@ -12,12 +12,12 @@ then
 elif [[ -f /etc/debian_version ]]
 then
 
-    echo ""
+    echo "This is Debian, Nothing to do!"
     
 elif [[ "Darwin" == "$(uname)" ]]
 then
 
-    echo ""
+    echo "This is macOS, Nothing to do!"
 
 else
     

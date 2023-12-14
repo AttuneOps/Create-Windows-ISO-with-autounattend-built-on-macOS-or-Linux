@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "afe020b0-81f2-445c-8d0c-96acd45d3549", 
+    "interpreter": 1, 
+    "key": "configureselinuxsecuritycontextonlinux", 
+    "name": "Configure SELinux Security Context on Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

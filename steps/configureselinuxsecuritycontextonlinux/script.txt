@@ -1,8 +1,9 @@
+shared_dir="{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe"
+
 if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
 then
 
-    firewall-cmd --add-service=samba --zone=public --permanent
-    firewall-cmd --reload
+    chcon -R -t samba_share_t $shared_dir
     
 elif [[ -f /etc/debian_version ]]
 then

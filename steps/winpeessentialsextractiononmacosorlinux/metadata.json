@@ -32,22 +32,26 @@
         }, 
         {
             "order": 550, 
-            "stepKey": "copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinux"
+            "stepKey": "confirmmkwinpeimgisinstalled"
         }, 
         {
             "order": 600, 
-            "stepKey": "copybootimgtowinpestagingforbiosbuildonmacosorlinux"
+            "stepKey": "copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinux"
         }, 
         {
             "order": 650, 
-            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+            "stepKey": "copybootimgtowinpestagingforbiosbuildonmacosorlinux"
         }, 
         {
             "order": 700, 
-            "stepKey": "copywindowsefifilestowinpeuefistagingonmacosorlinux"
+            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
         }, 
         {
             "order": 750, 
+            "stepKey": "copywindowsefifilestowinpeuefistagingonmacosorlinux"
+        }, 
+        {
+            "order": 800, 
             "stepKey": "createwinpeplainbiosisofromwinpestagingonmacosorlinux"
         }, 
         {
