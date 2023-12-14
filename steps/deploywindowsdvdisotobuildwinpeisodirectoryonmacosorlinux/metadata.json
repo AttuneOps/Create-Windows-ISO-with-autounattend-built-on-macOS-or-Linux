@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "win2019iso", 
+    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-winpe-iso", 
+    "enabled": true, 
+    "externalUuid4": "743d9a5b-aab5-4d8d-8287-052c87904348", 
+    "key": "deploywindowsdvdisotobuildwinpeisodirectoryonmacosorlinux", 
+    "name": "Deploy Windows DVD ISO to build-winpe-iso directory on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

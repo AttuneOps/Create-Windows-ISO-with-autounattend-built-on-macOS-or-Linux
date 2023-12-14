@@ -24,7 +24,7 @@
         }, 
         {
             "order": 200, 
-            "stepKey": "unmountwinpeuefimount"
+            "stepKey": "unmountwinpeuefimountonmacosorlinux"
         }
     ], 
     "name": "Create FAT32 winpe_plain_uefi.iso from winpe_staging on Linux Worker", 

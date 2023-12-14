@@ -7,48 +7,36 @@
     "key": "winpeessentialsextractiononmacosorlinux", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "confirmwinpeplainbiosisodoesnotexist"
-        }, 
-        {
-            "order": 50, 
-            "stepKey": "confirmwinpeplainuefiisodoesnotexist"
-        }, 
-        {
-            "order": 100, 
-            "stepKey": "unmountwinpeuefimount"
-        }, 
-        {
             "order": 150, 
-            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
+            "stepKey": "cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux"
         }, 
         {
             "order": 200, 
-            "stepKey": "deploywin2019dvdisotobuildwinpeisoonmacosorlinuxworker"
+            "stepKey": "deploywindowsdvdisotobuildwinpeisodirectoryonmacosorlinux"
         }, 
         {
             "order": 300, 
-            "stepKey": "extractwindowsbootimgfrombuildwinpeisoonmacosorlinuxworker"
+            "stepKey": "extractwindowsbootimgfrombuildwinpeisodirectoryforbiosbuildonmacosorlinux"
         }, 
         {
             "order": 350, 
-            "stepKey": "linmountwinserverdvdiso"
+            "stepKey": "mountwinserverdvdisoonmacosorlinux"
         }, 
         {
             "order": 400, 
-            "stepKey": "linextractwinpeisofromwinimgdirectory"
+            "stepKey": "extractwinpeisofromwinimgdirectoryonmacosorlinux"
         }, 
         {
             "order": 500, 
-            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinuxworker"
+            "stepKey": "extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinux"
         }, 
         {
             "order": 550, 
-            "stepKey": "lincopyfilesformkwinpeimgcompatibilitytowinpestaging"
+            "stepKey": "copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinux"
         }, 
         {
             "order": 600, 
-            "stepKey": "linmovebootimgtowinpestaging"
+            "stepKey": "copybootimgtowinpestagingforbiosbuildonmacosorlinux"
         }, 
         {
             "order": 650, 
@@ -56,11 +44,11 @@
         }, 
         {
             "order": 700, 
-            "stepKey": "copywindowsefifilestowinpestagingonmacosorlinuxworker"
+            "stepKey": "copywindowsefifilestowinpeuefistagingonmacosorlinux"
         }, 
         {
             "order": 750, 
-            "stepKey": "lincreatewinpeplainbiosisofromwinpestagingonmacosorlinuxworker"
+            "stepKey": "createwinpeplainbiosisofromwinpestagingonmacosorlinux"
         }, 
         {
             "order": 900, 
@@ -72,7 +60,7 @@
         }, 
         {
             "order": 1000, 
-            "stepKey": "createwinpecleanbuildfilesonmacosorlinuxworker"
+            "stepKey": "cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux"
         }
     ], 
     "name": "WinPE Essentials Extraction on macOS or Linux", 

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "aef097b0-7eb5-4441-92fa-12c0f6fd352a", 
+    "interpreter": 1, 
+    "key": "deletethebuilddirectoryonmacosorlinux", 
+    "name": "Delete the build directory on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}
