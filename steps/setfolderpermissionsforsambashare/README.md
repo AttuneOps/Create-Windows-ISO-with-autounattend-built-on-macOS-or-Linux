@@ -1,0 +1,1 @@
+Sets read and execute permissions for the Samba Share folder.

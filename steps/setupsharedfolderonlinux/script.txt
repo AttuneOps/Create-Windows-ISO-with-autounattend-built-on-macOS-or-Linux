@@ -1,6 +1,31 @@
-shared_dir="${HOME}/windows_iso_data_for_winpe"
+shared_dir="{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe"
+
+USER="{automationWorkerLinuxUser.user}"
+GROUP="$(id -gn $USER)"
+echo "User: $USER, Group: $GROUP"
+
 mkdir -p $shared_dir
 chmod -R 0775 $shared_dir
-chown -R nobody:{automationWorkerLinuxUser.user} $shared_dir
+chown -R nobody:$GROUP $shared_dir
+ls -lrh $shared_dir
 
-chcon -R -t samba_share_t $shared_dir
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    chcon -R -t samba_share_t $shared_dir
+    
+elif [[ -f /etc/debian_version ]]
+then
+
+    echo ""
+    
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    echo ""
+
+else
+    
+    echo "Unsupported operating system."
+    exit 1
+fi

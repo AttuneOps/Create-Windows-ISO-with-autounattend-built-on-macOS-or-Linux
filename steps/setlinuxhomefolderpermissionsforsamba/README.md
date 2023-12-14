@@ -1,1 +1,1 @@
-Sets the permissions of the home folder for the user `automationWorkerLinuxUser.user`.
+Sets the permissions of the home folder.

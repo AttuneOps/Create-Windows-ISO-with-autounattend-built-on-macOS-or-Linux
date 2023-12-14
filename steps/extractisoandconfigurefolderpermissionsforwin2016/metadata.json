@@ -1,0 +1,25 @@
+{
+    "actionOnStepFail": "stop", 
+    "blueprintName": "", 
+    "blueprintUuid": "7aaca3e2-3d9b-43b2-b56e-6d7f6d4bc39b", 
+    "cloneUrl": "https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend.git", 
+    "enabled": true, 
+    "externalUuid4": "1ed5eccb-ee89-407a-950e-1a5a497febbc", 
+    "key": "extractisoandconfigurefolderpermissionsforwin2016", 
+    "name": "Extract ISO and Configure Folder Permissions for Win2016", 
+    "parameterMap": [
+        {
+            "childParameterName": null, 
+            "childParameterType": "c.s.s.b.phv.Text", 
+            "childParameterUuid": "520c8b94-c5ed-4652-81be-a0fbba474226", 
+            "childProjectName": null, 
+            "childProjectUuid": "05c41adc-9b4e-49f9-b72c-aa4ee4a0cf27", 
+            "parentParameterKey": null, 
+            "parentStaticTextValue": "windows2016"
+        }
+    ], 
+    "projectName": "", 
+    "projectUuid": "05c41adc-9b4e-49f9-b72c-aa4ee4a0cf27", 
+    "projectVersion": "", 
+    "type": "com.servertribe.attune.tuples.StepProjectLinkTuple"
+}

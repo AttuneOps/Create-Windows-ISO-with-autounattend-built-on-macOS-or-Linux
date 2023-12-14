@@ -1,24 +1,13 @@
 {
     "actionOnStepFail": null, 
-    "concurrency": 1, 
+    "archiveKey": "win10iso", 
+    "deployPath": "$HOME/windows_iso_data_for_winpe/windows10", 
     "enabled": true, 
-    "externalUuid4": "20f76cda-e6ce-4cfb-85e3-e46356e276e2", 
-    "isBlueprint": true, 
+    "externalUuid4": "d0dce834-6a9e-4355-a832-4bf480a11d92", 
     "key": "deploywin10isotosambashare", 
-    "links": [
-        {
-            "order": 150, 
-            "stepKey": "deploywin10isoforsamba"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "extractwin10isoforsamba"
-        }, 
-        {
-            "order": 250, 
-            "stepKey": "setwindows10folderpermissions"
-        }
-    ], 
-    "name": "Deploy Win10 ISO to Samba Share", 
-    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+    "name": " Deploy Win10 ISO to Samba Share", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
 }
