@@ -1,6 +1,9 @@
 if {kickstartedBootLoaderIsUefi}
 then
-        
+    
+    cd "{automationWorkerLinuxBaseDirectory}"
+    rm -rf winpe_plain_uefi.iso
+    
     if uname | \
         grep -iq "darwin"
     then

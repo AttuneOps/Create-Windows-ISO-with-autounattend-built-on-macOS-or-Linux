@@ -271,8 +271,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#confirmmkwinpeimgisinstalled">
+                            <strong>Step 5 -</strong> Confirm mkwinpeimg is installed
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#extractwinpeisofromwinimgdirectoryonmacosorlinux">
-                            <strong>Step 5 -</strong> Extract WinPE ISO from winimg Directory on macOS or Linux
+                            <strong>Step 6 -</strong> Extract WinPE ISO from winimg Directory on macOS or Linux
                         </a>
                     </p>
 
@@ -280,15 +288,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinux">
-                            <strong>Step 6 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#confirmmkwinpeimgisinstalled">
-                            <strong>Step 7 -</strong> Confirm mkwinpeimg is installed
+                            <strong>Step 7 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux
                         </a>
                     </p>
 
@@ -1081,9 +1081,90 @@ mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
 
 
                     <div class="row pt-5">
+                        <h3 id="confirmmkwinpeimgisinstalled">
+                            <a href="#confirmmkwinpeimgisinstalled">
+                                <strong>Step 5 -</strong> Confirm mkwinpeimg is installed
+                            </a>
+                        </h3>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    if which mkwinpeimg &gt;/dev/null; then
+        echo &quot;mkwinpeimg is installed.&quot;
+    else
+        echo &quot;mkwinpeimg is not installed.&quot;
+        dnf -y install wimlib wimlib-utils fuse
+    fi
+
+elif [[ -f /etc/debian_version ]]
+then
+
+    if which mkwinpeimg &gt;/dev/null; then
+        echo &quot;mkwinpeimg is installed.&quot;
+    else
+        echo &quot;mkwinpeimg is not installed.&quot;
+        apt-get -y install wimlib wimlib-utils fuse
+    fi
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    if which mkwinpeimg &gt;/dev/null; then
+        echo &quot;mkwinpeimg is installed.&quot;
+    else
+        echo &quot;mkwinpeimg is not installed.&quot;
+        brew -y install wimlib
+    fi
+
+else
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="extractwinpeisofromwinimgdirectoryonmacosorlinux">
                             <a href="#extractwinpeisofromwinimgdirectoryonmacosorlinux">
-                                <strong>Step 5 -</strong> Extract WinPE ISO from winimg Directory on macOS or Linux
+                                <strong>Step 6 -</strong> Extract WinPE ISO from winimg Directory on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1153,7 +1234,7 @@ mkwinpeimg --iso --windows-dir=winimg \
                     <div class="row pt-5">
                         <h3 id="extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinux">
                             <a href="#extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinux">
-                                <strong>Step 6 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux
+                                <strong>Step 7 -</strong> Extract WinPE ISO to Staging Folder on build-winpe-iso on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1210,98 +1291,6 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
-                        <h3 id="confirmmkwinpeimgisinstalled">
-                            <a href="#confirmmkwinpeimgisinstalled">
-                                <strong>Step 7 -</strong> Confirm mkwinpeimg is installed
-                            </a>
-                        </h3>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
-then
-
-    if which mkwinpeimg &gt;/dev/null; then
-        echo &quot;mkwinpeimg is installed.&quot;
-    else
-        echo &quot;mkwinpeimg is not installed.&quot;
-        dnf -y install wimlib
-    fi
-
-elif [[ -f /etc/debian_version ]]
-then
-
-    if which mkwinpeimg &gt;/dev/null; then
-        echo &quot;mkwinpeimg is installed.&quot;
-    else
-        echo &quot;mkwinpeimg is not installed.&quot;
-        apt-get -y install wimlib
-    fi
-
-elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-then
-
-    if which mkwinpeimg &gt;/dev/null; then
-        echo &quot;mkwinpeimg is installed.&quot;
-    else
-        echo &quot;mkwinpeimg is not installed.&quot;
-        brew -y install wimlib
-    fi
-
-else
-    
-    echo &quot;Unsupported operating system.&quot;
-    exit 1
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinux">
                             <a href="#copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinux">
                                 <strong>Step 8 -</strong> Copy Files for mkwinpeimg Compatibility to WinPE Staging on macOS or Linux
@@ -1327,7 +1316,18 @@ fi
 
 
 
-    
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
 
 
     
@@ -2042,7 +2042,10 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-        
+    
+    cd &quot;{automationWorkerLinuxBaseDirectory}&quot;
+    rm -rf winpe_plain_uefi.iso
+    
     if uname | \
         grep -iq &quot;darwin&quot;
     then

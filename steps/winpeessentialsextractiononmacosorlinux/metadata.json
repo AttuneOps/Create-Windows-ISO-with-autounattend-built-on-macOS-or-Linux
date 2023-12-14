@@ -24,15 +24,15 @@
         }, 
         {
             "order": 400, 
+            "stepKey": "confirmmkwinpeimgisinstalled"
+        }, 
+        {
+            "order": 450, 
             "stepKey": "extractwinpeisofromwinimgdirectoryonmacosorlinux"
         }, 
         {
             "order": 500, 
             "stepKey": "extractwinpeisotostagingfolderonbuildwinpeisoonmacosorlinux"
-        }, 
-        {
-            "order": 550, 
-            "stepKey": "confirmmkwinpeimgisinstalled"
         }, 
         {
             "order": 600, 
