@@ -86,9 +86,6 @@ The Windows worker can run Linux commands using Windows Subsystem for Linux.
 ### Create Windows autounattend WinPE ISO on Windows Worker
 
 
-### Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
-
-
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -192,14 +189,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### Setup Skeleton WinPE_amd64 Folder on Windows Worker
-
-Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
-
-This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
-
-This folder works for both BIOS and UEFI boot methods.
-
 ### Unmount and Remove ISO From Node for Feature Install
 
 
@@ -235,6 +224,17 @@ making them accessible over the network.
 For uploading specific Windows distributions to the Samba Share, see 
 `Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
 this Project.
+
+### WinPE Essentials Extraction on macOS or Linux
+
+
+### WinPE Essentials Extraction on Windows
+
+Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
+
+This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
+
+This folder works for both BIOS and UEFI boot methods.
 
 
 
