@@ -68,15 +68,15 @@
         }, 
         {
             "order": 850, 
-            "stepKey": "movestartnetcmdtobootwimonmacosorlinux"
+            "stepKey": "copystartnetcmdtobootwimonmacosorlinux"
         }, 
         {
             "order": 900, 
-            "stepKey": "moveautounattendxmltobootwimonmacosorlinux"
+            "stepKey": "copyautounattendxmltobootwimonmacosorlinux"
         }, 
         {
             "order": 950, 
-            "stepKey": "movepostinstallwimtobootwimonmacosorlinux"
+            "stepKey": "copypostinstallwimtobootwimonmacosorlinux"
         }, 
         {
             "order": 1000, 
@@ -84,7 +84,7 @@
         }, 
         {
             "order": 1100, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinux"
+            "stepKey": "createbiosbootwinpeisofromwinpestagingonmacosorlinux"
         }, 
         {
             "order": 1150, 
