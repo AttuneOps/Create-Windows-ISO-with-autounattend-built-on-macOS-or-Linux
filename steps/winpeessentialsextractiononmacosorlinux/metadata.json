@@ -79,10 +79,6 @@
             "stepKey": "unmountwinpeuefimountonmacosorlinux"
         }, 
         {
-            "order": 1200, 
-            "stepKey": "createwinpeplainuefiisoonmacos"
-        }, 
-        {
             "order": 1250, 
             "stepKey": "cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux"
         }

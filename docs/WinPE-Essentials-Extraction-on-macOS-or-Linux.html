@@ -383,16 +383,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createwinpeplainuefiisoonmacos">
-                            <strong>Step 19 -</strong> Create winpe_plain_uefi.iso on macOS
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
-                            <strong>Step 20 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
+                            <strong>Step 19 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
                         </a>
                     </p>
     
@@ -400,7 +392,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwinpeuefimountonmacosorlinux">
-                            <strong>Step 20.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
+                            <strong>Step 19.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
                         </a>
                     </p>
 
@@ -408,7 +400,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwindowsisoonmacosorlinux">
-                            <strong>Step 20.2 -</strong> Unmount Windows ISO on macOS or Linux
+                            <strong>Step 19.2 -</strong> Unmount Windows ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -416,7 +408,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
-                            <strong>Step 20.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
+                            <strong>Step 19.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                         </a>
                     </p>
 
@@ -424,7 +416,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#deletethebuilddirectoryonmacosorlinux">
-                            <strong>Step 20.4 -</strong> Delete the build directory on macOS or Linux
+                            <strong>Step 19.4 -</strong> Delete the build directory on macOS or Linux
                         </a>
                     </p>
 
@@ -2217,111 +2209,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createwinpeplainuefiisoonmacos">
-                            <a href="#createwinpeplainuefiisoonmacos">
-                                <strong>Step 19 -</strong> Create winpe_plain_uefi.iso on macOS
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates the UEFI bootable WinPE ISO if <code>kickstartedBootLoaderIsUefi</code> is true on macOS Worker.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-        echo &quot;Using $(which xorriso)&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-        echo &quot;ISO=${ISO}&quot;
-        
-        xorriso -as mkisofs \
-            -iso-level 4 \
-            -full-iso9660-filenames \
-            -rock \
-            -b BOOT/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o &quot;${ISO}&quot; \
-            winpe_staging
-    else
-        echo &quot;not macOS, skipping&quot;
-    fi
-    
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
                             <a href="#cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
-                                <strong>Step 20 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
+                                <strong>Step 19 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -2353,7 +2243,7 @@ working directory.</p>
                     <div class="row pt-5">
                         <h4 id="unmountwinpeuefimountonmacosorlinux">
                             <a href="#unmountwinpeuefimountonmacosorlinux">
-                                <strong>Step 20.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
+                                <strong>Step 19.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2377,18 +2267,7 @@ terminates any associated processes.</p>
 
 
 
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
+    
 
 
     
@@ -2453,7 +2332,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="unmountwindowsisoonmacosorlinux">
                             <a href="#unmountwindowsisoonmacosorlinux">
-                                <strong>Step 20.2 -</strong> Unmount Windows ISO on macOS or Linux
+                                <strong>Step 19.2 -</strong> Unmount Windows ISO on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2541,7 +2420,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="setwritepermissionstowinpeuefistagingonmacosorlinux">
                             <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
-                                <strong>Step 20.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
+                                <strong>Step 19.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2625,7 +2504,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="deletethebuilddirectoryonmacosorlinux">
                             <a href="#deletethebuilddirectoryonmacosorlinux">
-                                <strong>Step 20.4 -</strong> Delete the build directory on macOS or Linux
+                                <strong>Step 19.4 -</strong> Delete the build directory on macOS or Linux
                             </a>
                         </h4>
                     </div>
