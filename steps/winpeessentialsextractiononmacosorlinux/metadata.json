@@ -44,7 +44,7 @@
         }, 
         {
             "order": 700, 
-            "stepKey": "lindeletesetupexefrombootwim"
+            "stepKey": "deletesetupexefrombootwimonmacosorlinux"
         }, 
         {
             "order": 800, 
