@@ -273,9 +273,6 @@ this Project.
 ### Unmount and Remove ISO From Node for Feature Install
 
 
-### WinPE Essentials Extraction on macOS or Linux
-
-
 ### WinPE Essentials Extraction on Windows
 
 Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
@@ -283,6 +280,15 @@ Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
 This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
 
 This folder works for both BIOS and UEFI boot methods.
+
+### WinPE Essentials Extraction on macOS or Linux
+
+This Attune Blueprint extracts the essential WinPE files from a full 5GB 
+Windows installation ISO, reducing the ISO file size to less than 500MB.
+
+The steps in the Blueprint are performed on macOS or Linux.
+
+Two WinPE ISOs are created, one for BIOS boot and another for UEFI boot.
 
 
 
