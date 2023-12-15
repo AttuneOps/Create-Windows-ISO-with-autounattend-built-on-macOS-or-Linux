@@ -2,13 +2,22 @@
 This Attune Project provides an efficient and streamlined approach to 
 creating customised Windows installation ISOs using the autounattend. 
 
+<p  align="center">
+    <img  width="180" height="260" src="https://www.servertribe.com/wp-content/uploads/2023/12/2023-12-15_22-52-20.png" hspace="10">
+</p>
+
 The project is designed to cater to various Windows distributions and employs 
 multiple methodologies to facilitate the creation of these tailored 
 installation media. Whether you're working with large 5GB ISOs or building 
 a lightweight WinPE installer, this project has the resources and 
 blueprints you need to automate the process effectively.
 
+<p  align="center">
+    <img width="180" height="260" src="https://www.servertribe.com/wp-content/uploads/2023/12/2023-12-15_22-53-17.png" hspace="10">
+</p>
+
 # Key Features
+
 **Versatile Windows Support:** The project includes blueprints for a range 
 of Windows distributions, allowing for broad application across different 
 Windows environments.
@@ -29,8 +38,6 @@ minimal experience in Windows automation can achieve successful outcomes.
 creation process, making it faster and more reliable, whether you are an 
 IT professional setting up multiple systems or an individual user 
 installing Windows on a new PC.
-
-
 
 # Target Audience
 IT professionals and system administrators who regularly set up Windows 
