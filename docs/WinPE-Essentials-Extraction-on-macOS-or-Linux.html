@@ -1829,7 +1829,12 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>The <code>id -gn</code> command gets the primary group name of the specified user.</p>
+<p><code>chown</code> changes the ownership of the winpe_staging directory to the user 
+and group specified by the <code>USER</code> and <code>GROUP</code> variables.</p>
+<p><code>-R</code> makes the command recursive, applying to all files and subdirectories.</p>
+<p><code>-v</code> (verbose) means the command will display detailed output about what 
+it's doing.</p>
                             </p>
                         </div>
                     </div>
@@ -1869,26 +1874,13 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        chown --recursive \
-            --verbose \
-            &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
-            &quot;winpe_staging&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+
+USER=&quot;{automationWorkerLinuxUser.user}&quot;
+GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
+echo &quot;User: $USER, Group: $GROUP&quot;
+
+chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_uefi_staging&quot;
                 </code>
             </pre>
         </div>
@@ -1913,10 +1905,12 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Referenced from https://apple.stackexchange.com/questions/394372/create-file-that-can-be-mounted</p>
-<p>On macOS to see all available filesystems for the <code>-fs</code> switch use:</p>
-<pre><code>hdiutil create -help
-</code></pre>
+                                <p><code>mkfs.msdos</code> is a Linux command used to create an MS-DOS (FAT) filesystem. 
+This is part of the dosfstools package on Linux systems. 
+It's equivalent to the mkfs command used for other filesystem types.</p>
+<p><code>hdiutil</code> is a macOS utility to create and manipulate disk images. 
+The script creates a FAT file system (MS-DOS) disk image, 
+converts it to a CDR format, and then renames it to ISO.</p>
                             </p>
                         </div>
                     </div>
@@ -1956,31 +1950,32 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+
+bytes=$(du -s winpe_uefi_staging | awk &#x27;{print $1 * 512}&#x27;)
+((bytes=bytes+10000))
+ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
     
-    cd &quot;{automationWorkerLinuxBaseDirectory}&quot;
-    rm -rf winpe_plain_uefi.iso
+    rm -rf ${ISO}
+    mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
     
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
-        ((bytes=bytes+10000))
-        
-        ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
-    fi
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    megabytes=$(((${bytes} + 1048575) / 1048576))
+    echo ${megabytes}
+    hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_Plain_UEFI&quot; &quot;${ISO}&quot;
+    hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
+    rm -rf ${ISO}.dmg
+    mv -v ${ISO}.cdr ${ISO}
     
 else
-    echo &quot;Skipping for BIOS boot.&quot;
+
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -2006,7 +2001,10 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>For a linux system, the <code>mount</code> command attaches a file system found on a 
+device. </p>
+<p>For a macOS system, the <code>hdiutil attach</code> command attaches a disk image as a 
+device. <code>-mountroot</code> mounts volumes on a subdirectory.</p>
                             </p>
                         </div>
                     </div>
@@ -2046,26 +2044,26 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
+FOLDER=&quot;uefi_mount&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        mkdir --parents --verbose uefi_mount
-        
-        mount --verbose \
-            &quot;../winpe_plain_uefi.iso&quot; uefi_mount
-    fi
     
+    mkdir --parent --verbose ${FOLDER}/CD
+    mount --verbose &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    mkdir -p -v ${FOLDER}
+    hdiutil attach ${ISO} -mountroot ${FOLDER}
+
 else
-    echo &quot;Skipping for BIOS boot.&quot;
+
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -2088,13 +2086,6 @@ fi
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2120,24 +2111,9 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-        
-        # Copy WinPE Files from WinPE ISO
-        mv --verbose winpe_staging/* &quot;uefi_mount&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+
+cp -vr winpe_uefi_staging/* &quot;$(echo uefi_mount/*)&quot;
                 </code>
             </pre>
         </div>
