@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "postinstallsetuppowershellscript", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "2f7c99d3-6a08-463f-8a42-d509778486a2", 
     "key": "deploypostsetuppowershellscriptonmacosorlinux", 

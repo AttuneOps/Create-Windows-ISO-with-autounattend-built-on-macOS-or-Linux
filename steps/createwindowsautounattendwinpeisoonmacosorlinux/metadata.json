@@ -59,23 +59,27 @@
             "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
         }, 
         {
-            "order": 750, 
-            "stepKey": "createpostsetupwimonmacosorlinux"
+            "order": 700, 
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 800, 
-            "stepKey": "modifywinpebootwimonmacosorlinux"
+            "order": 750, 
+            "stepKey": "createpostinstallwimwindowsimageonmacosorlinux"
         }, 
         {
             "order": 850, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinux"
+            "stepKey": "modifywinpebootwimonmacosorlinux"
         }, 
         {
             "order": 900, 
-            "stepKey": "recreatefat32kickstartisoonlinux"
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinux"
         }, 
         {
             "order": 950, 
+            "stepKey": "recreatefat32kickstartisoonlinux"
+        }, 
+        {
+            "order": 1000, 
             "stepKey": "createuefibootwinpeisofromwinpestagingonmacos"
         }
     ], 
