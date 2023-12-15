@@ -1,1 +1,0 @@
-In the `{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}` folder, mounts `winpe_staging/SOURCES/BOOT.WIM` to `WinPE_BootImageDir` on macOS or Linux Worker.

@@ -83,10 +83,6 @@
             "stepKey": "movepostinstallwimtobootwimonmacosorlinux"
         }, 
         {
-            "order": 1050, 
-            "stepKey": "modifywinpebootwimonmacosorlinux"
-        }, 
-        {
             "order": 1100, 
             "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinux"
         }, 

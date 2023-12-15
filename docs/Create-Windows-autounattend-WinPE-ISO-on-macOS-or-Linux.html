@@ -358,50 +358,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#modifywinpebootwimonmacosorlinux">
-                            <strong>Step 20 -</strong> Modify WinPE boot.wim on macOS or Linux
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createbootwimmountfolderonmacosorlinux">
-                            <strong>Step 20.1 -</strong> Create boot.wim Mount Folder on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountbootwimonmacosorlinux">
-                            <strong>Step 20.2 -</strong> Mount BOOT.WIM on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movefilestobootwimonmacosorlinux">
-                            <strong>Step 20.3 -</strong> Move Files to boot.wim on macOS or Linux
-                        </a>
-                    </p>
-    
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#linwimlibunmountbootwim">
-                            <strong>Step 20.4 -</strong> LIN wimlib Unmount boot.wim
-                        </a>
-                    </p>
-
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#recreatebiosbootwinpeisofromwinpestagingonmacosorlinux">
-                            <strong>Step 21 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
+                            <strong>Step 20 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
                         </a>
                     </p>
 
@@ -409,7 +367,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#recreatefat32kickstartisoonlinux">
-                            <strong>Step 22 -</strong> Recreate FAT32 Kickstart ISO on Linux
+                            <strong>Step 21 -</strong> Recreate FAT32 Kickstart ISO on Linux
                         </a>
                     </p>
     
@@ -417,7 +375,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#changeownershipofwinpestagingdirectoryforkickstart">
-                            <strong>Step 22.1 -</strong> Change Ownership of winpe_staging Directory for Kickstart
+                            <strong>Step 21.1 -</strong> Change Ownership of winpe_staging Directory for Kickstart
                         </a>
                     </p>
 
@@ -425,7 +383,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createuefifat32kickstartiso">
-                            <strong>Step 22.2 -</strong> Create UEFI FAT32 Kickstart ISO
+                            <strong>Step 21.2 -</strong> Create UEFI FAT32 Kickstart ISO
                         </a>
                     </p>
 
@@ -433,7 +391,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#mountuefifat32kickstartiso">
-                            <strong>Step 22.3 -</strong> Mount UEFI FAT32 Kickstart ISO
+                            <strong>Step 21.3 -</strong> Mount UEFI FAT32 Kickstart ISO
                         </a>
                     </p>
 
@@ -441,7 +399,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#movewinpestagingtouefifat32mountforkickstart">
-                            <strong>Step 22.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                            <strong>Step 21.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
                         </a>
                     </p>
 
@@ -449,7 +407,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwinpefat32uefimountforkickstart">
-                            <strong>Step 22.5 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
+                            <strong>Step 21.5 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
                         </a>
                     </p>
 
@@ -458,7 +416,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createuefibootwinpeisofromwinpestagingonmacos">
-                            <strong>Step 23 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS
+                            <strong>Step 22 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS
                         </a>
                     </p>
 
@@ -1921,253 +1879,9 @@ mv --verbose post_install.wim WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h3 id="modifywinpebootwimonmacosorlinux">
-                            <a href="#modifywinpebootwimonmacosorlinux">
-                                <strong>Step 20 -</strong> Modify WinPE boot.wim on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code> on macOS or Linux Worker.</p>
-<p>This will be seen at <code>X</code> drive when WinPE runs.</p>
-<ol>
-<li><code>startnet.cmd</code></li>
-<li><code>autounattend.xml</code></li>
-<li><code>post_install.wim</code></li>
-<li><code>drivers</code> folder</li>
-</ol>
-<p>Notes: for (3) after the <code>post_install.wim</code> image file is overlayed onto <code>C</code> drive, the file at <code>C:\ post_install_setup.ps1</code> will be available to the Windows installer.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createbootwimmountfolderonmacosorlinux">
-                            <a href="#createbootwimmountfolderonmacosorlinux">
-                                <strong>Step 20.1 -</strong> Create boot.wim Mount Folder on macOS or Linux
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a directory <code>WinPE_BootImageDir</code> for mounting <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-
-WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
-if [ ! -d WinPE_BootImageDir ]
-then
-    mkdir $WinPE_BootImageDir
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountbootwimonmacosorlinux">
-                            <a href="#mountbootwimonmacosorlinux">
-                                <strong>Step 20.2 -</strong> Mount BOOT.WIM on macOS or Linux
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>In the <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}</code> folder, mounts <code>winpe_staging/SOURCES/BOOT.WIM</code> to <code>WinPE_BootImageDir</code> on macOS or Linux Worker.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="movefilestobootwimonmacosorlinux">
-                            <a href="#movefilestobootwimonmacosorlinux">
-                                <strong>Step 20.3 -</strong> Move Files to boot.wim on macOS or Linux
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Moves these files to the <code>winpe_staging/SOURCES/BOOT.WIM</code> mounted folder <code>WinPE_BootImageDir</code>:</p>
-<ol>
-<li><code>startnet.cmd</code></li>
-<li><code>autounattend.xml</code></li>
-<li><code>post_install.wim</code></li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="linwimlibunmountbootwim">
-                            <a href="#linwimlibunmountbootwim">
-                                <strong>Step 20.4 -</strong> LIN wimlib Unmount boot.wim
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir</code> using <code>wimunmount</code>.</p>
-<p>This will write out changes back into <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-wimunmount WinPE_BootImageDir --commit --check --rebuild
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="recreatebiosbootwinpeisofromwinpestagingonmacosorlinux">
                             <a href="#recreatebiosbootwinpeisofromwinpestagingonmacosorlinux">
-                                <strong>Step 21 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
+                                <strong>Step 20 -</strong> Recreate BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -2279,7 +1993,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="recreatefat32kickstartisoonlinux">
                             <a href="#recreatefat32kickstartisoonlinux">
-                                <strong>Step 22 -</strong> Recreate FAT32 Kickstart ISO on Linux
+                                <strong>Step 21 -</strong> Recreate FAT32 Kickstart ISO on Linux
                             </a>
                         </h3>
                     </div>
@@ -2301,7 +2015,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="changeownershipofwinpestagingdirectoryforkickstart">
                             <a href="#changeownershipofwinpestagingdirectoryforkickstart">
-                                <strong>Step 22.1 -</strong> Change Ownership of winpe_staging Directory for Kickstart
+                                <strong>Step 21.1 -</strong> Change Ownership of winpe_staging Directory for Kickstart
                             </a>
                         </h4>
                     </div>
@@ -2385,7 +2099,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="createuefifat32kickstartiso">
                             <a href="#createuefifat32kickstartiso">
-                                <strong>Step 22.2 -</strong> Create UEFI FAT32 Kickstart ISO
+                                <strong>Step 21.2 -</strong> Create UEFI FAT32 Kickstart ISO
                             </a>
                         </h4>
                     </div>
@@ -2472,7 +2186,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="mountuefifat32kickstartiso">
                             <a href="#mountuefifat32kickstartiso">
-                                <strong>Step 22.3 -</strong> Mount UEFI FAT32 Kickstart ISO
+                                <strong>Step 21.3 -</strong> Mount UEFI FAT32 Kickstart ISO
                             </a>
                         </h4>
                     </div>
@@ -2557,7 +2271,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="movewinpestagingtouefifat32mountforkickstart">
                             <a href="#movewinpestagingtouefifat32mountforkickstart">
-                                <strong>Step 22.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                                <strong>Step 21.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
                             </a>
                         </h4>
                     </div>
@@ -2629,7 +2343,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="unmountwinpefat32uefimountforkickstart">
                             <a href="#unmountwinpefat32uefimountforkickstart">
-                                <strong>Step 22.5 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
+                                <strong>Step 21.5 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
                             </a>
                         </h4>
                     </div>
@@ -2712,7 +2426,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefibootwinpeisofromwinpestagingonmacos">
                             <a href="#createuefibootwinpeisofromwinpestagingonmacos">
-                                <strong>Step 23 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS
+                                <strong>Step 22 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS
                             </a>
                         </h3>
                     </div>
