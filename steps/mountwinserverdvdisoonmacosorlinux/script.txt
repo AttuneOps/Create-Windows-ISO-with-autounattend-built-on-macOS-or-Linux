@@ -7,8 +7,21 @@ shopt -s nocaseglob
 
 ISO=$(ls *SERVER*.iso)
 
-mount --options "uid={automationWorkerLinuxUser.user}" \
-    --options "gid={automationWorkerLinuxUser.user}" \
-    "${ISO}" "${FOLDER}"
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
 
+    mkdir -p "${FOLDER}/CD"
+    mount --options "uid={automationWorkerLinuxUser.user}" \
+        --options "gid={automationWorkerLinuxUser.user}" \
+        "${ISO}" "${FOLDER}/CD"
 
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    hdiutil attach ${ISO} -mountroot ${FOLDER}
+
+else
+
+    echo "Unsupported operating system."
+    exit 1
+fi

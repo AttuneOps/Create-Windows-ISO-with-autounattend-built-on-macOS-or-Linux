@@ -1,5 +1,3 @@
-Relative to the `{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe` directory, copies the EFI files in `winimg/efi`to `winpe_staging`.
-
-The `efi` folder is also copied.
-
-Only applies to UEFI kickstarts so only if `kickstartedBootLoaderIsUefi` is set to the string `true`.
+To boot WinPE on a UEFI-based system, the ISO needs to include a 
+UEFI-compatible boot loader and related files. Without this UEFI support, the 
+WinPE ISO might not be able to boot on modern UEFI-enabled hardware.

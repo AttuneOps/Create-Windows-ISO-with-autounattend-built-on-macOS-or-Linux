@@ -1,3 +1,5 @@
-Mounts the Windows Server ISO to `{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg`.
+For a linux system, the `mount` command attaches a file system found on a 
+device. 
 
-`winimg` stands for Windows Image.
+For a macOS system, the `hdiutil attach` command attaches a disk image as a 
+device. `-mountroot` mounts volumes on a subdirectory.

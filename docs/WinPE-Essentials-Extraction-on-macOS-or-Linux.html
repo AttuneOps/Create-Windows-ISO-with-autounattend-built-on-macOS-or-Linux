@@ -941,7 +941,12 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys Windows Server 2019 ISO to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso</code>.</p>
+                                <p>You can extract necessary files from a Windows installation ISO to create a 
+WinPE ISO. I've selected Win2019 to extract the WinPE ISO from.</p>
+<p>Windows 10 Workstation ISO is not recommended as its WinPE has compatibility 
+issues with the drvload-ing the vioscsi.inf oVirt driver.  </p>
+<p>The WinPE from Win2016 and Win2022 has not been tested for <code>vioscsi.inf</code> 
+compatibility.</p>
                             </p>
                         </div>
                     </div>
@@ -998,8 +1003,25 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Extracts the <code>boot.img</code> from the ISO. This is required for passing to <code>mkisofs</code> to regenerate a bootable BIOS ISO.</p>
-<p>Only applies BIOS kickstarts so if the parameter <code>kickstartedBootLoaderIsBios</code> is set <code>true</code>.</p>
+                                <p>Set the shell option <code>nocaseglob</code> so that filenames will be matched regardless 
+of their case.
+Set the variable <code>F</code> to the list of filenames that end with 
+<code>.iso</code> in the current directory.</p>
+<p>The <code>isoinfo -d -i $F</code> command displays the details of the ISO image specified 
+by <code>$F</code>. 
+<code>grep Bootoff</code> filters this output to only include the line containing 
+"Bootoff," which presumably contains information about the boot image offset.
+<code>cut -c21-</code> extracts the characters starting from the 21st character of the 
+line, which is assumed to be the offset value. 
+The result is stored in the variable <code>OFFSET</code>.</p>
+<p>The <code>dd</code> command is used for low-level copying of raw data.
+<code>if=$F</code> specifies the input file, which is the ISO image.
+<code>of=boot.img</code> sets the output file to <code>boot.img</code>.
+<code>bs=2048</code> sets the block size to 2048 bytes. 
+This is often the size of a sector in ISO9660 file systems.
+<code>count=8</code> means only read 8 blocks (based on the block size).
+<code>skip=$OFFSET</code> skips a number of blocks at the beginning of the input file 
+before starting to copy, based on the calculated <code>OFFSET</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1028,28 +1050,19 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsBios}
-then
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
-    # Extract the boot.img out of the WinPE ISO
-    
-    cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-    
-    # Case insensitve globbing
-    shopt -s nocaseglob
-    
-    # Set the filename of the ISO
-    F=$(ls *.iso)
-    
-    # Get the Boot image offset
-    OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
-    
-    # Extract the boot.img.
-    dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
-    
-else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
+# Case insensitve globbing
+shopt -s nocaseglob
+
+# Set the filename of the ISO
+F=$(ls *.iso)
+
+# Get the Boot image offset
+OFFSET=`isoinfo -d -i $F | grep Bootoff | cut  -c21-`
+
+# Extract the boot.img
+dd if=$F of=boot.img bs=2048 count=8 skip=$OFFSET
                 </code>
             </pre>
         </div>
@@ -1074,8 +1087,10 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Mounts the Windows Server ISO to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg</code>.</p>
-<p><code>winimg</code> stands for Windows Image.</p>
+                                <p>For a linux system, the <code>mount</code> command attaches a file system found on a 
+device. </p>
+<p>For a macOS system, the <code>hdiutil attach</code> command attaches a disk image as a 
+device. <code>-mountroot</code> mounts volumes on a subdirectory.</p>
                             </p>
                         </div>
                     </div>
@@ -1124,9 +1139,24 @@ shopt -s nocaseglob
 
 ISO=$(ls *SERVER*.iso)
 
-mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
-    --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
-    &quot;${ISO}&quot; &quot;${FOLDER}&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+
+    mkdir -p &quot;${FOLDER}/CD&quot;
+    mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
+        --options &quot;gid={automationWorkerLinuxUser.user}&quot; \
+        &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    hdiutil attach ${ISO} -mountroot ${FOLDER}
+
+else
+
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
+fi
                 </code>
             </pre>
         </div>
@@ -1282,9 +1312,22 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
             <pre>
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    
-mkwinpeimg --iso --windows-dir=winimg \
-    &quot;winpe.iso&quot;
+
+if [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    sed &#x27;s/getopt -o.*/getopt iso,windows-dir -- $*); then /g&#x27; $(which mkwinpeimg) \
+        | sed &#x27;/-- &quot;$@&quot; /d&#x27; \
+        | sed &#x27;/,help,version/d&#x27; \
+        | sed &#x27;s/eval set -- &quot;$options&quot;/eval set &quot;$options&quot;/g&#x27; \
+        &gt; mkwinpeimg
+    which sed
+    sed -i &#x27;s/while \[ $# -gt 0 \]; do/echo $*;while [ $# -gt 0 ]; do echo $1/g&#x27; mkwinpeimg
+    chmod +x mkwinpeimg
+    export PATH=&quot;.:$PATH&quot;
+fi
+
+mkwinpeimg --iso --windows-dir $(echo winimg/*) -- winpe.iso
                 </code>
             </pre>
         </div>
@@ -1340,10 +1383,13 @@ mkwinpeimg --iso --windows-dir=winimg \
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
 
-FOLDER=winpe_staging
-mkdir -p &quot;${FOLDER}&quot;
+BIOS=winpe_bios_staging
+UEFI=winpe_uefi_staging
+mkdir -p &quot;${BIOS}&quot;
+mkdir -p &quot;${UEFI}&quot;
 
-7z x winpe.iso -o&quot;${FOLDER}&quot;
+7z x winpe.iso -o&quot;${BIOS}&quot;
+7z x winpe.iso -o&quot;${UEFI}&quot;
                 </code>
             </pre>
         </div>
@@ -1368,9 +1414,8 @@ mkdir -p &quot;${FOLDER}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>This copies <code>boot/etfsboot.com</code> from the Windows Server 2019 ISO to WinPE's <code>BOOT</code> folder.</p>
-<p>This is needed if the WinPE ISO needs to work with future usages with <code>mkwinpeimg</code>.</p>
-<p>Otherwise this step is not needed.</p>
+                                <p>Copy the <code>boot/etfsboot.com</code> files from the Windows ISO to WinPE's <code>BOOT</code> 
+folder.</p>
                             </p>
                         </div>
                     </div>
@@ -1412,7 +1457,8 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
+cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_bios_staging/BOOT&quot;
+cp -v &quot;$(find winimg -type f -name etfsboot.com)&quot; &quot;winpe_uefi_staging/BOOT&quot;
                 </code>
             </pre>
         </div>
@@ -1467,16 +1513,8 @@ cp --verbose &quot;winimg/boot/etfsboot.com&quot; &quot;winpe_staging/BOOT&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsBios}
-then
-
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    
-    mv --verbose boot.img winpe_staging
-    
-else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+cp -v boot.img winpe_bios_staging
                 </code>
             </pre>
         </div>
@@ -1777,9 +1815,9 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Relative to the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe</code> directory, copies the EFI files in <code>winimg/efi</code>to <code>winpe_staging</code>.</p>
-<p>The <code>efi</code> folder is also copied.</p>
-<p>Only applies to UEFI kickstarts so only if <code>kickstartedBootLoaderIsUefi</code> is set to the string <code>true</code>.</p>
+                                <p>To boot WinPE on a UEFI-based system, the ISO needs to include a 
+UEFI-compatible boot loader and related files. Without this UEFI support, the 
+WinPE ISO might not be able to boot on modern UEFI-enabled hardware.</p>
                             </p>
                         </div>
                     </div>
@@ -1808,17 +1846,8 @@ wimunmount WinPE_BootImageDir --commit --check --rebuild
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-    
-    # Copy EFI Files from Windows ISO
-    cp -rv &quot;winimg/efi&quot; &quot;winpe_staging&quot;
-    
-else
-    echo &quot;Skipping for BIOS ISO creation.&quot;
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
+cp -rv &quot;$(echo winimg/*/efi)&quot; &quot;winpe_uefi_staging&quot;
                 </code>
             </pre>
         </div>
@@ -1843,8 +1872,42 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a WinPE BIOS bootable ISO at <code>{automationWorkerLinuxBaseDirectory}/winpe_plain_bios.iso</code> from the WinPE staging directory <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe_staging</code>. </p>
-<p>Only applies to UEFI kickstarts. Only run if the parameter <code>kickstartedBootLoaderIsBios</code> is set <code>true</code>.</p>
+                                <p>The <code>xorriso</code> and <code>mkisofs</code> command is used to create a customised, 
+bootable ISO image from the contents of the winpe_staging directory. 
+The command includes various settings for bootability, file system types, 
+naming conventions, and compatibility options to ensure the ISO functions as 
+intended in various environments. </p>
+<p>Let's break down the command and its options:</p>
+<p><code>xorriso -as mkisofs</code> runs xorriso in a mode that emulates <code>mkisofs</code>, 
+a linux command.</p>
+<p><code>-b boot.img</code> specifies boot.img as the boot image for a bootable ISO. </p>
+<p><code>-no-emul-boot</code> indicates that no disk emulation mode is used for the boot 
+image. This is typically used for bootable ISOs intended for systems that 
+can understand the ISO file system directly.</p>
+<p><code>-c BOOT.CAT</code> specifies the creation of a boot catalog (BOOT.CAT) in the 
+ISO image.</p>
+<p><code>-iso-level 3</code> sets the compliance level for the ISO 9660 standard. 
+Level 3 allows for file names up to 207 characters in length and file 
+sizes larger than 2 GB.</p>
+<p><code>-udf</code> includes UDF (Universal Disk Format) file system in 
+addition to ISO 9660. UDF is often used for DVDs and newer 
+optical media formats and supports larger file sizes.</p>
+<p><code>-joliet-long</code> Enables the use of the Joliet file system extension 
+with support for longer file names.</p>
+<p><code>-relaxed-filenames</code> allows file names that do not strictly adhere to the 
+ISO 9660 standard, providing more flexibility.</p>
+<p><code>-allow-limited-size</code> permits the creation of ISO images that exceed the 
+size limitations of the ISO 9660 standard.</p>
+<p><code>-J</code> enables Joliet file system extensions for longer file names and 
+Unicode characters.</p>
+<p><code>-full-iso9660-filenames</code> allows using the full ISO 9660 file naming 
+rules without the usual length limitations.</p>
+<p><code>-disable-deep-relocation</code> disables the relocation of deep directory 
+trees, which can be necessary for certain boot scenarios.</p>
+<p><code>-omit-version-number</code> omits the version number from file names in the 
+ISO image.</p>
+<p><code>-V</code> sets the volume ID of the ISO image.</p>
+<p><code>-o</code> specifies the output path and filename for the created ISO image.</p>
                             </p>
                         </div>
                     </div>
@@ -1875,57 +1938,53 @@ fi
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-if {kickstartedBootLoaderIsBios} 
-then
-    ISO_NAME=&quot;winpe_plain_bios.iso&quot;
-    
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        
-        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-        echo &quot;Using $(which xorriso)&quot;
+ISO_NAME=&quot;winpe_plain_bios.iso&quot;
 
-        xorriso -as mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -allow-limited-size \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V &quot;KS_WIN&quot; \
-            -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
-            winpe_staging
-    else
-        echo &quot;not macOS&quot;
+if [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+    
+    export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
+    echo &quot;Using $(which xorriso)&quot;
+
+    xorriso -as mkisofs \
+        -b boot.img \
+        -no-emul-boot \
+        -c BOOT.CAT \
+        -iso-level 3 \
+        -joliet-long \
+        -relaxed-filenames \
+        -J \
+        -full-iso9660-filenames \
+        -disable-deep-relocation \
+        -omit-version-number \
+        -V &quot;KS_WIN&quot; \
+        -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
+        winpe_bios_staging
         
-        mkisofs \
-            -b boot.img \
-            -no-emul-boot \
-            -c BOOT.CAT \
-            -iso-level 3 \
-            -udf \
-            -joliet-long \
-            -relaxed-filenames \
-            -allow-limited-size \
-            -J \
-            -full-iso9660-filenames \
-            -disable-deep-relocation \
-            -omit-version-number \
-            -V &quot;KS_WIN&quot; \
-            -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
-            winpe_staging
-    fi
-        
+elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+
+    mkisofs \
+        -b boot.img \
+        -no-emul-boot \
+        -c BOOT.CAT \
+        -iso-level 3 \
+        -udf \
+        -joliet-long \
+        -relaxed-filenames \
+        -allow-limited-size \
+        -J \
+        -full-iso9660-filenames \
+        -disable-deep-relocation \
+        -omit-version-number \
+        -V &quot;KS_WIN&quot; \
+        -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
+        winpe_bios_staging
+
 else
-    echo &quot;Skipping for UEFI ISO creation.&quot;
+
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>

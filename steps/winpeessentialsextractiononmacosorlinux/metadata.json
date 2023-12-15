@@ -43,15 +43,15 @@
             "stepKey": "copybootimgtowinpestagingforbiosbuildonmacosorlinux"
         }, 
         {
-            "order": 700, 
+            "order": 750, 
             "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
         }, 
         {
-            "order": 750, 
+            "order": 800, 
             "stepKey": "copywindowsefifilestowinpeuefistagingonmacosorlinux"
         }, 
         {
-            "order": 800, 
+            "order": 850, 
             "stepKey": "createwinpeplainbiosisofromwinpestagingonmacosorlinux"
         }, 
         {
