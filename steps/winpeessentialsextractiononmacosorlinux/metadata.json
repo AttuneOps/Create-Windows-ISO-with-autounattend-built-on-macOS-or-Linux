@@ -43,8 +43,8 @@
             "stepKey": "copybootimgtowinpestagingforbiosbuildonmacosorlinux"
         }, 
         {
-            "order": 750, 
-            "stepKey": "linperformdeletesetupexefromwinpestagingbootwim"
+            "order": 700, 
+            "stepKey": "lindeletesetupexefrombootwim"
         }, 
         {
             "order": 800, 

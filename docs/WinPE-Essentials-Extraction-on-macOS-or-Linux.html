@@ -311,43 +311,10 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#linperformdeletesetupexefromwinpestagingbootwim">
-                            <strong>Step 10 -</strong> LIN Perform Delete setup.exe from winpe_staging boot.wim
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
-                            <strong>Step 10.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on macOS or Linux Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountbootwiminbuildwinpeisoonmacosorlinuxworker">
-                            <strong>Step 10.2 -</strong> Mount BOOT.WIM in build-winpe-iso on macOS or Linux Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#lindeletesetupexefrombootwim">
-                            <strong>Step 10.3 -</strong> LIN Delete setup.exe from boot.wim
+                            <strong>Step 10 -</strong> LIN Delete setup.exe from boot.wim
                         </a>
                     </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#linwimlibunmountbootwimfrombuildwinpeiso">
-                            <strong>Step 10.4 -</strong> LIN wimlib Unmount boot.wim from build-winpe-iso
-                        </a>
-                    </p>
-
 
         
 
@@ -1529,9 +1496,9 @@ cp -v boot.img winpe_bios_staging
 
 
                     <div class="row pt-5">
-                        <h3 id="linperformdeletesetupexefromwinpestagingbootwim">
-                            <a href="#linperformdeletesetupexefromwinpestagingbootwim">
-                                <strong>Step 10 -</strong> LIN Perform Delete setup.exe from winpe_staging boot.wim
+                        <h3 id="lindeletesetupexefrombootwim">
+                            <a href="#lindeletesetupexefrombootwim">
+                                <strong>Step 10 -</strong> LIN Delete setup.exe from boot.wim
                             </a>
                         </h3>
                     </div>
@@ -1539,44 +1506,7 @@ cp -v boot.img winpe_bios_staging
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes <code>setup.exe</code> from the extracted WinPE's <code>boot.img</code> at index 2 of the Windows Server 2019 ISO.</p>
-<p>By default Windows Server 2019 <code>boot.img</code> contains <code>setup.exe</code> which was designed to work with calling <code>setup.exe</code> which exists at index 1 of Windows Server 2019 image.</p>
-<p>As the <code>winpe_staging</code> folder will be used to recreate a WinPE BIOS ISO designed to work with a Samba drive which contains the required <code>setup.exe</code> for these versions of Windows below we no longer need the <code>setup.exe</code> on the WinPE <code>boot.img</code>:</p>
-<ol>
-<li>Windows Desktop 10</li>
-<li>Windows Server 2016</li>
-<li>Windows Server 2019</li>
-<li>Windows Server 2022</li>
-</ol>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
-                            <a href="#createbootwimmountfolderinbuildwinpeisoonmacosorlinuxworker">
-                                <strong>Step 10.1 -</strong> Create boot.wim Mount Folder in build-winpe-iso on macOS or Linux Worker
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a directory <code>WinPE_BootImageDir</code> for mounting <code>winpe_staging/SOURCES/BOOT.WIM</code>.</p>
+                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1616,121 +1546,6 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-
-WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
-if [ ! -d WinPE_BootImageDir ]
-then
-    mkdir $WinPE_BootImageDir
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountbootwiminbuildwinpeisoonmacosorlinuxworker">
-                            <a href="#mountbootwiminbuildwinpeisoonmacosorlinuxworker">
-                                <strong>Step 10.2 -</strong> Mount BOOT.WIM in build-winpe-iso on macOS or Linux Worker
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Mounts <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winpe_staging/SOURCES/BOOT.WIM</code> to <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code> using <code>wimmountrw</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="lindeletesetupexefrombootwim">
-                            <a href="#lindeletesetupexefrombootwim">
-                                <strong>Step 10.3 -</strong> LIN Delete setup.exe from boot.wim
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes <code>setup.exe</code> from <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir
 
 rm --verbose setup.exe
@@ -1738,63 +1553,6 @@ rm --verbose setup.exe
             </pre>
         </div>
     </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="linwimlibunmountbootwimfrombuildwinpeiso">
-                            <a href="#linwimlibunmountbootwimfrombuildwinpeiso">
-                                <strong>Step 10.4 -</strong> LIN wimlib Unmount boot.wim from build-winpe-iso
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir</code>.</p>
-<p>This will write out changes back into <code>{automationWorkerLinuxBaseDirectory}/winpe_staging/SOURCES/BOOT.WIM</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-wimunmount WinPE_BootImageDir --commit --check --rebuild
-                </code>
-            </pre>
-        </div>
-    </div>
-
 
 
 
