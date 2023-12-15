@@ -67,19 +67,35 @@
             "stepKey": "createpostinstallwimwindowsimageonmacosorlinux"
         }, 
         {
+            "order": 800, 
+            "stepKey": "moveautounattendxmltobootwimonmacosorlinux"
+        }, 
+        {
             "order": 850, 
-            "stepKey": "modifywinpebootwimonmacosorlinux"
+            "stepKey": "movestartnetcmdtobootwimonmacosorlinux"
         }, 
         {
             "order": 900, 
-            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinux"
+            "stepKey": "copydriversdropinfoldertobootwimonmacosorlinux"
         }, 
         {
             "order": 950, 
+            "stepKey": "movepostinstallwimtobootwimonmacosorlinux"
+        }, 
+        {
+            "order": 1050, 
+            "stepKey": "modifywinpebootwimonmacosorlinux"
+        }, 
+        {
+            "order": 1100, 
+            "stepKey": "recreatebiosbootwinpeisofromwinpestagingonmacosorlinux"
+        }, 
+        {
+            "order": 1150, 
             "stepKey": "recreatefat32kickstartisoonlinux"
         }, 
         {
-            "order": 1000, 
+            "order": 1200, 
             "stepKey": "createuefibootwinpeisofromwinpestagingonmacos"
         }
     ], 
