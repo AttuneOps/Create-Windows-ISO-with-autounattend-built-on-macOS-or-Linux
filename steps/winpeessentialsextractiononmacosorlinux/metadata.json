@@ -60,19 +60,19 @@
         }, 
         {
             "order": 900, 
-            "stepKey": "changeownershipofwinpestagingdirectorytoattune"
+            "stepKey": "changeownershipofwinpestagingdirectorytoattuneonmacosorlinux"
         }, 
         {
             "order": 950, 
-            "stepKey": "createwinpeplainuefiiso"
+            "stepKey": "createwinpeplainuefiisoonmacosorlinux"
         }, 
         {
             "order": 1000, 
-            "stepKey": "mountwinpeplainuefiiso"
+            "stepKey": "mountwinpeplainuefiisoonmacosorlinux"
         }, 
         {
             "order": 1050, 
-            "stepKey": "movewinpestagingtouefimount"
+            "stepKey": "copywinpestagingtouefimountonmacosorlinux"
         }, 
         {
             "order": 1100, 
@@ -80,7 +80,7 @@
         }, 
         {
             "order": 1200, 
-            "stepKey": "createwinpeplainuefiisoonmacosworker"
+            "stepKey": "createwinpeplainuefiisoonmacos"
         }, 
         {
             "order": 1250, 

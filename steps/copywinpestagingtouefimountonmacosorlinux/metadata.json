@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "ae932873-1972-4b51-88a0-ce6b84a18718", 
+    "externalUuid4": "acacaeb3-0be7-439e-b908-0702fbf74329", 
     "interpreter": 1, 
-    "key": "mountwinpeplainuefiiso", 
-    "name": "Mount winpe_plain_uefi.iso", 
+    "key": "copywinpestagingtouefimountonmacosorlinux", 
+    "name": "Copy WinPE Staging to UEFI Mount on macOS or Linux", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

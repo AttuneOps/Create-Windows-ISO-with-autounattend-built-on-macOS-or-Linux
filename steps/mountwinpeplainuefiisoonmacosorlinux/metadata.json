@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "3327cf09-01f5-4998-9b89-a403febab727", 
+    "externalUuid4": "ae932873-1972-4b51-88a0-ce6b84a18718", 
     "interpreter": 1, 
-    "key": "changeownershipofwinpestagingdirectorytoattune", 
-    "name": "Change Ownership of winpe_staging Directory to attune", 
+    "key": "mountwinpeplainuefiisoonmacosorlinux", 
+    "name": "Mount winpe_plain_uefi.iso on macOS or Linux", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
