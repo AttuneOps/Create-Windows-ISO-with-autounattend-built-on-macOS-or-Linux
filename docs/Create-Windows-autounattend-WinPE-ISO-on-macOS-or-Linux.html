@@ -326,24 +326,16 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#moveautounattendxmltobootwimonmacosorlinux">
-                            <strong>Step 16 -</strong> Move autounattend.xml to boot.wim on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#movestartnetcmdtobootwimonmacosorlinux">
-                            <strong>Step 17 -</strong> Move startnet.cmd to boot.wim on macOS or Linux
+                            <strong>Step 16 -</strong> Move startnet.cmd to boot.wim on macOS or Linux
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#copydriversdropinfoldertobootwimonmacosorlinux">
-                            <strong>Step 18 -</strong> Copy Drivers Drop in Folder to boot.wim on macOS or Linux
+                        <a href="#moveautounattendxmltobootwimonmacosorlinux">
+                            <strong>Step 17 -</strong> Move autounattend.xml to boot.wim on macOS or Linux
                         </a>
                     </p>
 
@@ -351,7 +343,15 @@
 
                     <p class="text-muted pt-2">
                         <a href="#movepostinstallwimtobootwimonmacosorlinux">
-                            <strong>Step 19 -</strong> Move post_install.wim to boot.wim on macOS or Linux
+                            <strong>Step 18 -</strong> Move post_install.wim to boot.wim on macOS or Linux
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#copydriversdropinfoldertobootwimonmacosorlinux">
+                            <strong>Step 19 -</strong> Copy Drivers Drop in Folder to boot.wim on macOS or Linux
                         </a>
                     </p>
 
@@ -1642,9 +1642,9 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
 
 
                     <div class="row pt-5">
-                        <h3 id="moveautounattendxmltobootwimonmacosorlinux">
-                            <a href="#moveautounattendxmltobootwimonmacosorlinux">
-                                <strong>Step 16 -</strong> Move autounattend.xml to boot.wim on macOS or Linux
+                        <h3 id="movestartnetcmdtobootwimonmacosorlinux">
+                            <a href="#movestartnetcmdtobootwimonmacosorlinux">
+                                <strong>Step 16 -</strong> Move startnet.cmd to boot.wim on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1652,7 +1652,7 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Moves <code>autounattend.xml</code> to the folder <code>WinPE_BootImageDir</code>.</p>
+                                <p>Moves <code>startnet.cmd</code> to the folder <code>/Windows/System32</code>.</p>
                             </p>
                         </div>
                     </div>
@@ -1682,7 +1682,9 @@ wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
             <pre>
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-mv --verbose autounattend.xml WinPE_BootImageDir
+
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
+    --command=&quot;add startnet.cmd /Windows/System32/startnet.cmd&quot;
                 </code>
             </pre>
         </div>
@@ -1697,9 +1699,9 @@ mv --verbose autounattend.xml WinPE_BootImageDir
 
 
                     <div class="row pt-5">
-                        <h3 id="movestartnetcmdtobootwimonmacosorlinux">
-                            <a href="#movestartnetcmdtobootwimonmacosorlinux">
-                                <strong>Step 17 -</strong> Move startnet.cmd to boot.wim on macOS or Linux
+                        <h3 id="moveautounattendxmltobootwimonmacosorlinux">
+                            <a href="#moveautounattendxmltobootwimonmacosorlinux">
+                                <strong>Step 17 -</strong> Move autounattend.xml to boot.wim on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1707,7 +1709,7 @@ mv --verbose autounattend.xml WinPE_BootImageDir
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Moves <code>startnet.cmd</code> to the folder <code>WinPE_BootImageDir/Windows/System32</code>.</p>
+                                <p>Copy the <code>autounattend.xml</code> file to the root of boot.wim.</p>
                             </p>
                         </div>
                     </div>
@@ -1738,8 +1740,65 @@ mv --verbose autounattend.xml WinPE_BootImageDir
                 <code class="language-sql py-0">
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
-mv --verbose startnet.cmd \
-    &quot;WinPE_BootImageDir/Windows/System32&quot;
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
+    --command=&quot;add autounattend.xml /autounattend.xml&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="movepostinstallwimtobootwimonmacosorlinux">
+                            <a href="#movepostinstallwimtobootwimonmacosorlinux">
+                                <strong>Step 18 -</strong> Move post_install.wim to boot.wim on macOS or Linux
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Copy <code>post_install.wim</code> file to the root of boot.wim.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
+    --command=&quot;add post_install.wim /post_install.wim&quot;
                 </code>
             </pre>
         </div>
@@ -1756,7 +1815,7 @@ mv --verbose startnet.cmd \
                     <div class="row pt-5">
                         <h3 id="copydriversdropinfoldertobootwimonmacosorlinux">
                             <a href="#copydriversdropinfoldertobootwimonmacosorlinux">
-                                <strong>Step 18 -</strong> Copy Drivers Drop in Folder to boot.wim on macOS or Linux
+                                <strong>Step 19 -</strong> Copy Drivers Drop in Folder to boot.wim on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1764,7 +1823,7 @@ mv --verbose startnet.cmd \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Copy drivers from the drop in directorty into <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir/drivers</code> on macOS or Linux Worker.</p>
+                                <p>Copy drivers from the drop in directorty into <code>/drivers</code> directory in boot.wim.</p>
                             </p>
                         </div>
                     </div>
@@ -1796,75 +1855,16 @@ mv --verbose startnet.cmd \
 cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
 
 DRIVERS_DROP_IN_FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}&quot;
-DESTINATION_DRIVERS_FOLDER=&quot;WinPE_BootImageDir/drivers&quot;
-
-mkdir --verbose &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
 
 if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
 then
 
-    cp --verbose --recursive &quot;${DRIVERS_DROP_IN_FOLDER}&quot;/* \
-        &quot;${DESTINATION_DRIVERS_FOLDER}&quot;
+    wimupdate winpe_staging/SOURCES/BOOT.WIM \
+        --command=&quot;add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers&quot;
         
 else
     echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
 fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="movepostinstallwimtobootwimonmacosorlinux">
-                            <a href="#movepostinstallwimtobootwimonmacosorlinux">
-                                <strong>Step 19 -</strong> Move post_install.wim to boot.wim on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Moves <code>post_install.wim</code> to the folder <code>WinPE_BootImageDir</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-
-mv --verbose post_install.wim WinPE_BootImageDir
                 </code>
             </pre>
         </div>
@@ -1941,10 +1941,8 @@ then
             -no-emul-boot \
             -c BOOT.CAT \
             -iso-level 3 \
-            -udf \
             -joliet-long \
             -relaxed-filenames \
-            -allow-limited-size \
             -J \
             -full-iso9660-filenames \
             -disable-deep-relocation \
@@ -1998,6 +1996,13 @@ fi
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 

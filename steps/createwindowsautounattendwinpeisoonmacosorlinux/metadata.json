@@ -67,20 +67,20 @@
             "stepKey": "createpostinstallwimwindowsimageonmacosorlinux"
         }, 
         {
-            "order": 800, 
-            "stepKey": "moveautounattendxmltobootwimonmacosorlinux"
-        }, 
-        {
             "order": 850, 
             "stepKey": "movestartnetcmdtobootwimonmacosorlinux"
         }, 
         {
             "order": 900, 
-            "stepKey": "copydriversdropinfoldertobootwimonmacosorlinux"
+            "stepKey": "moveautounattendxmltobootwimonmacosorlinux"
         }, 
         {
             "order": 950, 
             "stepKey": "movepostinstallwimtobootwimonmacosorlinux"
+        }, 
+        {
+            "order": 1000, 
+            "stepKey": "copydriversdropinfoldertobootwimonmacosorlinux"
         }, 
         {
             "order": 1100, 

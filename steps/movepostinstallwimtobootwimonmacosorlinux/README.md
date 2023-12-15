@@ -1,1 +1,1 @@
-Moves `post_install.wim` to the folder `WinPE_BootImageDir`.
+Copy `post_install.wim` file to the root of boot.wim.
