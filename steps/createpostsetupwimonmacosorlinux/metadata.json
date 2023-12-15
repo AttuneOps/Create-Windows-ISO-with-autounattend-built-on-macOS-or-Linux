@@ -11,10 +11,6 @@
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 50, 
-            "stepKey": "movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinux"
-        }, 
-        {
             "order": 100, 
             "stepKey": "createpostinstallwimwindowsimageonmacosorlinux"
         }

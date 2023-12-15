@@ -326,16 +326,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinux">
-                            <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#createpostinstallwimwindowsimageonmacosorlinux">
-                            <strong>Step 14.3 -</strong> Create post_install.wim Windows Image on macOS or Linux
+                            <strong>Step 14.2 -</strong> Create post_install.wim Windows Image on macOS or Linux
                         </a>
                     </p>
 
@@ -1671,66 +1663,9 @@ mkdir -p &quot;${FOLDER}&quot;
 
 
                     <div class="row pt-5">
-                        <h4 id="movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinux">
-                            <a href="#movepostsetuppowershellscripttopostinstallwimfolderonmacosorlinux">
-                                <strong>Step 14.2 -</strong> Move Post Setup PowerShell Script to post_install_wim Folder on macOS or Linux
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Moves <code>post_install_setup.ps1</code> script to the <code>post_install_wim</code> folder on macOS or Linux Worker.</p>
-<p>The folder <code>post_install_wim</code> is the staging folder for creating the <code>post_install.wim</code> Windows Imaging Format file.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-mkdir --parents post_install_wim
-mv --verbose post_install_setup.ps1 post_install_wim
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
                         <h4 id="createpostinstallwimwindowsimageonmacosorlinux">
                             <a href="#createpostinstallwimwindowsimageonmacosorlinux">
-                                <strong>Step 14.3 -</strong> Create post_install.wim Windows Image on macOS or Linux
+                                <strong>Step 14.2 -</strong> Create post_install.wim Windows Image on macOS or Linux
                             </a>
                         </h4>
                     </div>
