@@ -47,6 +47,10 @@
             "stepKey": "deletesetupexefrombootwimonmacosorlinux"
         }, 
         {
+            "order": 750, 
+            "stepKey": "optimizebootwimonmacosorlinux"
+        }, 
+        {
             "order": 800, 
             "stepKey": "copywindowsefifilestowinpeuefistagingonmacosorlinux"
         }, 
@@ -56,14 +60,30 @@
         }, 
         {
             "order": 900, 
-            "stepKey": "createfat32winpeplainuefiisofromwinpestagingonlinuxworker"
+            "stepKey": "changeownershipofwinpestagingdirectorytoattune"
         }, 
         {
             "order": 950, 
-            "stepKey": "createwinpeplainuefiisoonmacosworker"
+            "stepKey": "createwinpeplainuefiiso"
         }, 
         {
             "order": 1000, 
+            "stepKey": "mountwinpeplainuefiiso"
+        }, 
+        {
+            "order": 1050, 
+            "stepKey": "movewinpestagingtouefimount"
+        }, 
+        {
+            "order": 1100, 
+            "stepKey": "unmountwinpeuefimountonmacosorlinux"
+        }, 
+        {
+            "order": 1200, 
+            "stepKey": "createwinpeplainuefiisoonmacosworker"
+        }, 
+        {
+            "order": 1250, 
             "stepKey": "cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux"
         }
     ], 
