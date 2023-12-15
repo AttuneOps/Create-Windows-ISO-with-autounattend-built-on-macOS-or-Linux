@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "16551efe-5e77-4bf9-865e-9851f49e3394", 
+    "interpreter": 1, 
+    "key": "copyandrenamewinpeuefiisoonmacosorlinux", 
+    "name": "Copy and Rename WinPE UEFI ISO on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

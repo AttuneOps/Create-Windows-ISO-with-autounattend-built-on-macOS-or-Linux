@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "f066bc38-9006-426d-92a0-3837ee32da7b", 
+    "interpreter": 1, 
+    "key": "checkmaximumlengthofwin10hostnameonmacosorlinux", 
+    "name": "Check Maximum Length of Win10 Hostname on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

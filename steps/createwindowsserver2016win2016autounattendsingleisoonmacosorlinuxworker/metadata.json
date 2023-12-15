@@ -12,11 +12,11 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
         }, 
         {
             "order": 100, 
-            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker"
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
         }, 
         {
             "order": 150, 
@@ -36,11 +36,11 @@
         }, 
         {
             "order": 350, 
-            "stepKey": "deploypostsetuppowershellscriptonmacosorlinuxworker"
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
             "order": 400, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinuxworker"
+            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
         }, 
         {
             "order": 450, 

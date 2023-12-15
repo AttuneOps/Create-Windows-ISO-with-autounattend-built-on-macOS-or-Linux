@@ -12,15 +12,15 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinuxworker"
+            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
         }, 
         {
             "order": 100, 
-            "stepKey": "checkifipaddressisinsubnetonmacosorlinuxworker"
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
         }, 
         {
             "order": 150, 
-            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinuxworker"
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
         }, 
         {
             "order": 200, 
@@ -40,11 +40,11 @@
         }, 
         {
             "order": 400, 
-            "stepKey": "deploypostsetuppowershellscriptonmacosorlinuxworker"
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
             "order": 450, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinuxworker"
+            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
         }, 
         {
             "order": 500, 
