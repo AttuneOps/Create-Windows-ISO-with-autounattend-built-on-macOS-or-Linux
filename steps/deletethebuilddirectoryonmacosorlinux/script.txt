@@ -1,3 +1,9 @@
 DIR="{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
-[[ -d ${DIR} ]] && rm -rf ${DIR} && echo "Removed ${DIR}" || \
+
+if [ -d ${DIR} ]
+then
+    rm -rf ${DIR}
+    echo "Removed ${DIR}"
+else
     echo "No directory to remove."
+fi

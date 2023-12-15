@@ -1,1 +1,1 @@
-Deletes the `{automationWorkerLinuxBaseDirectory}/build-winpe-iso` directory.
+Delete any remaining build files.

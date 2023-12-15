@@ -161,6 +161,22 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
+### Deploy and Extract Win10 ISO to Samba Share
+
+This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2016 ISO to Samba Share
+
+This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2019 ISO to Samba Share
+
+This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2022 ISO to Samba Share
+
+This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
+
 ### Deploy and Mount Win10 ISO To Node for Feature Install
 
 
@@ -172,6 +188,11 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 ### Deploy and Mount Win2022 ISO To Node for Feature Install
 
+
+### Extract ISO and Configure Folder Permissions for Samba Share
+
+This blueprint is a repeatable process for the 
+`Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
 
 ### Install Prerequisites on Windows Worker
 
@@ -189,30 +210,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### Unmount and Remove ISO From Node for Feature Install
-
-
-### Extract ISO and Configure Folder Permissions for Samba Share
-
-This blueprint is a repeatable process for the 
-`Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
-
-### Deploy and Extract Win2022 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
-
-### Deploy and Extract Win2019 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
-
-### Deploy and Extract Win2016 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
-
-### Deploy and Extract Win10 ISO to Samba Share
-
-This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
-
 ### Setup Samba on macOS or Linux
 
 Sets up a Samba server with the folder at 
@@ -224,6 +221,9 @@ making them accessible over the network.
 For uploading specific Windows distributions to the Samba Share, see 
 `Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
 this Project.
+
+### Unmount and Remove ISO From Node for Feature Install
+
 
 ### WinPE Essentials Extraction on macOS or Linux
 

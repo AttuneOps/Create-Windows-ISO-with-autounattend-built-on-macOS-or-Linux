@@ -563,7 +563,10 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the temporary build directory.</p>
+                                <p>Unmount any existing WinPE or Windows ISO mounts. </p>
+<p>Set appropriate write permissions to enable modifications in the 
+working directory.</p>
+<p>Delete any remaining build files.</p>
                             </p>
                         </div>
                     </div>
@@ -589,6 +592,16 @@
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
+from the file hierarchy.</p>
+<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
+terminates any associated processes.</p>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -625,34 +638,38 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
+MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
+    
+    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
     then
-        echo &quot;is macOS, skipping&quot;
+    
+        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        chmod -R a+w &quot;${MOUNT_PATH}&quot;
         
     else
-        echo &quot;not macOS&quot;
     
-        MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
-        
-        if df -h | grep --ignore-case \
-            --quiet \
-            &quot;${MOUNT_PATH}&quot;
-        then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-            
-            umount --verbose &quot;${MOUNT_FOLDER}&quot;
-        else
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
     fi
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
+    then
     
+        hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+
 else
-    echo &quot;Skipping for BIOS boot.&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -678,7 +695,10 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-build-winpe-iso/winimg</code>.</p>
+                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
+from the file hierarchy.</p>
+<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
+terminates any associated processes.</p>
                             </p>
                         </div>
                     </div>
@@ -707,19 +727,37 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-MOUNT_FOLDER=&quot;winimg&quot;
-BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
+MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg&quot;
 
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    cd &quot;${BUILD_DIRECTORY}&quot;
 
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
+    then
+    
+        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        chmod -R a+w &quot;${MOUNT_PATH}&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+    
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
+    then
+    
+        hdiutil detach $(echo ${MOUNT_PATH}/*)
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
 else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -742,6 +780,19 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>The <code>chmod -R a+w</code> command modifies the permissions recursively for a directory 
+and its contents. </p>
+<p><code>-R</code> stands for recursive.</p>
+<p><code>a</code> stands for all.</p>
+<p><code>+</code> adds permissions.</p>
+<p><code>w</code> stands for write.</p>
+<p>This action is needed to delete the build directory.</p>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -769,21 +820,24 @@ fi
                 <code class="language-sql py-0">
 DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-if [ ! -d ${DIR} ]
+if [[ ! -d ${DIR} ]]
 then
+
     echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
 else
+
     cd &quot;${DIR}&quot;
+    UEFI_STAGING_DIR=&quot;winpe_uefi_staging&quot;
     
-    DIR=&quot;winpe_staging&quot;
-    if [ ! -d ${DIR} ]
+    if [[ ! -d ${UEFI_STAGING_DIR} ]]
     then
-        echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
+    
+        echo &quot;Directory does not exist. Skipping.&quot;
     else
+    
         echo &quot;Before&quot;
         ls -lh
-        
-        chmod --recursive a+w &quot;${DIR}&quot;
+        chmod -R a+w &quot;${UEFI_STAGING_DIR}&quot;
         
         echo &quot;After&quot;
         ls -lh
@@ -813,7 +867,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso</code> directory.</p>
+                                <p>Delete any remaining build files.</p>
                             </p>
                         </div>
                     </div>
@@ -854,8 +908,14 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
             <pre>
                 <code class="language-sql py-0">
 DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-[[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
+
+if [ -d ${DIR} ]
+then
+    rm -rf ${DIR}
+    echo &quot;Removed ${DIR}&quot;
+else
     echo &quot;No directory to remove.&quot;
+fi
                 </code>
             </pre>
         </div>
@@ -1088,6 +1148,13 @@ mount --options &quot;uid={automationWorkerLinuxUser.user}&quot; \
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2243,6 +2310,16 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
+from the file hierarchy.</p>
+<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
+terminates any associated processes.</p>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2268,34 +2345,38 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
+MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
+    
+    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
     then
-        echo &quot;is macOS, skipping&quot;
+    
+        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        chmod -R a+w &quot;${MOUNT_PATH}&quot;
         
     else
-        echo &quot;not macOS&quot;
     
-        MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
-        
-        if df -h | grep --ignore-case \
-            --quiet \
-            &quot;${MOUNT_PATH}&quot;
-        then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-            
-            umount --verbose &quot;${MOUNT_FOLDER}&quot;
-        else
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
     fi
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
+    then
     
+        hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+
 else
-    echo &quot;Skipping for BIOS boot.&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -2424,7 +2505,10 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the temporary build directory.</p>
+                                <p>Unmount any existing WinPE or Windows ISO mounts. </p>
+<p>Set appropriate write permissions to enable modifications in the 
+working directory.</p>
+<p>Delete any remaining build files.</p>
                             </p>
                         </div>
                     </div>
@@ -2450,6 +2534,16 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
+from the file hierarchy.</p>
+<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
+terminates any associated processes.</p>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2486,34 +2580,38 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
+MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
+    
+    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
     then
-        echo &quot;is macOS, skipping&quot;
+    
+        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        chmod -R a+w &quot;${MOUNT_PATH}&quot;
         
     else
-        echo &quot;not macOS&quot;
     
-        MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/${MOUNT_FOLDER}&quot;
-        
-        if df -h | grep --ignore-case \
-            --quiet \
-            &quot;${MOUNT_PATH}&quot;
-        then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-            
-            umount --verbose &quot;${MOUNT_FOLDER}&quot;
-        else
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
     fi
+
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
+    then
     
+        hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+
 else
-    echo &quot;Skipping for BIOS boot.&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -2539,7 +2637,10 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Unmounts <code>{automationWorkerLinuxBaseDirectory}/build-build-winpe-iso/winimg</code>.</p>
+                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
+from the file hierarchy.</p>
+<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
+terminates any associated processes.</p>
                             </p>
                         </div>
                     </div>
@@ -2568,19 +2669,37 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-MOUNT_FOLDER=&quot;winimg&quot;
-BUILD_DIRECTORY=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-MOUNT_PATH=&quot;${BUILD_DIRECTORY}/${MOUNT_FOLDER}&quot;
+MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg&quot;
 
-if df -h | grep --ignore-case \
-    --quiet \
-    &quot;${MOUNT_PATH}&quot;
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
-    cd &quot;${BUILD_DIRECTORY}&quot;
 
-    umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
+    then
+    
+        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        chmod -R a+w &quot;${MOUNT_PATH}&quot;
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
+elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+then
+    
+    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
+    then
+    
+        hdiutil detach $(echo ${MOUNT_PATH}/*)
+    else
+    
+        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    fi
+    
 else
-    echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+    
+    echo &quot;Unsupported operating system.&quot;
+    exit 1
 fi
                 </code>
             </pre>
@@ -2603,6 +2722,19 @@ fi
                         </h4>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>The <code>chmod -R a+w</code> command modifies the permissions recursively for a directory 
+and its contents. </p>
+<p><code>-R</code> stands for recursive.</p>
+<p><code>a</code> stands for all.</p>
+<p><code>+</code> adds permissions.</p>
+<p><code>w</code> stands for write.</p>
+<p>This action is needed to delete the build directory.</p>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2630,21 +2762,24 @@ fi
                 <code class="language-sql py-0">
 DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-if [ ! -d ${DIR} ]
+if [[ ! -d ${DIR} ]]
 then
+
     echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
 else
+
     cd &quot;${DIR}&quot;
+    UEFI_STAGING_DIR=&quot;winpe_uefi_staging&quot;
     
-    DIR=&quot;winpe_staging&quot;
-    if [ ! -d ${DIR} ]
+    if [[ ! -d ${UEFI_STAGING_DIR} ]]
     then
-        echo &quot;Directory ${DIR} does not exist. Skipping.&quot;
+    
+        echo &quot;Directory does not exist. Skipping.&quot;
     else
+    
         echo &quot;Before&quot;
         ls -lh
-        
-        chmod --recursive a+w &quot;${DIR}&quot;
+        chmod -R a+w &quot;${UEFI_STAGING_DIR}&quot;
         
         echo &quot;After&quot;
         ls -lh
@@ -2674,7 +2809,7 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deletes the <code>{automationWorkerLinuxBaseDirectory}/build-winpe-iso</code> directory.</p>
+                                <p>Delete any remaining build files.</p>
                             </p>
                         </div>
                     </div>
@@ -2715,8 +2850,14 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
             <pre>
                 <code class="language-sql py-0">
 DIR=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-[[ -d ${DIR} ]] &amp;&amp; rm -rf ${DIR} &amp;&amp; echo &quot;Removed ${DIR}&quot; || \
+
+if [ -d ${DIR} ]
+then
+    rm -rf ${DIR}
+    echo &quot;Removed ${DIR}&quot;
+else
     echo &quot;No directory to remove.&quot;
+fi
                 </code>
             </pre>
         </div>
