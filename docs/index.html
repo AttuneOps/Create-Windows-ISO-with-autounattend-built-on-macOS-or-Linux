@@ -773,30 +773,6 @@ installation process.</p>
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Setup-Samba-on-macOS-or-Linux">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-macOS-or-Linux.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on macOS or Linux
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at 
-<code>{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe</code>.</p>
-<p>This Samba Share on Linux is required to host the Windows OS files 
-making them accessible over the network.</p>
-<p>For uploading specific Windows distributions to the Samba Share, see 
-<code>Deploy and extract {os_name} ISO for Samba Share</code> Blueprints in 
-this Project.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
                                  id="Unmount-and-Remove-ISO-From-Node-for-Feature-Install">
                                 <div class="card-body">
                                     <a href="Unmount-and-Remove-ISO-From-Node-for-Feature-Install.html">
@@ -804,26 +780,6 @@ this Project.</p>
                                             Unmount and Remove ISO From Node for Feature Install
                                         </h3>
                                     </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="WinPE-Essentials-Extraction-on-Windows">
-                                <div class="card-body">
-                                    <a href="WinPE-Essentials-Extraction-on-Windows.html">
-                                        <h3 class="card-title">
-                                            WinPE Essentials Extraction on Windows
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up the "plain" WinPE skeleton files on Windows Worker at <code>C:\WinPE_amd64</code>.</p>
-<p>This folder can be copied and then it's <code>.\media\sources\boot.wim</code> file can be modified for an automated unattended Windows install.</p>
-<p>This folder works for both BIOS and UEFI boot methods.</p>
-                                        </p>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -843,6 +799,26 @@ this Project.</p>
 Windows installation ISO, reducing the ISO file size to less than 500MB.</p>
 <p>The steps in the Blueprint are performed on macOS or Linux.</p>
 <p>Two WinPE ISOs are created, one for BIOS boot and another for UEFI boot.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="WinPE-Essentials-Extraction-on-Windows">
+                                <div class="card-body">
+                                    <a href="WinPE-Essentials-Extraction-on-Windows.html">
+                                        <h3 class="card-title">
+                                            WinPE Essentials Extraction on Windows
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>Sets up the "plain" WinPE skeleton files on Windows Worker at <code>C:\WinPE_amd64</code>.</p>
+<p>This folder can be copied and then it's <code>.\media\sources\boot.wim</code> file can be modified for an automated unattended Windows install.</p>
+<p>This folder works for both BIOS and UEFI boot methods.</p>
                                         </p>
                                     </div>
                                 </div>

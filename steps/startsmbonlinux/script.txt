@@ -1,3 +1,0 @@
-systemctl restart smb
-systemctl enable smb
-systemctl status smb

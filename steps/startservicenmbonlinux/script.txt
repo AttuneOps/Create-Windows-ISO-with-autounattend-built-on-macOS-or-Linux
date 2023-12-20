@@ -1,3 +1,0 @@
-systemctl restart nmb
-systemctl enable nmb
-systemctl status nmb
