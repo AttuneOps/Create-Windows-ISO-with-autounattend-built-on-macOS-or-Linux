@@ -1,0 +1,2 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+cp -v boot.img winpe_bios_staging

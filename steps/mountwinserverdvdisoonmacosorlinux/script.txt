@@ -1,0 +1,27 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+FOLDER="winimg"
+mkdir -p "${FOLDER}"
+
+# Case insensitve globbing
+shopt -s nocaseglob
+
+ISO=$(ls *SERVER*.iso)
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+
+    mkdir -p "${FOLDER}/CD"
+    mount --options "uid={automationWorkerLinuxUser.user}" \
+        --options "gid={automationWorkerLinuxUser.user}" \
+        "${ISO}" "${FOLDER}/CD"
+
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    hdiutil attach ${ISO} -mountroot ${FOLDER}
+
+else
+
+    echo "Unsupported operating system."
+    exit 1
+fi

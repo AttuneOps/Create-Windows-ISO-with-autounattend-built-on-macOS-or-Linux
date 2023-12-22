@@ -1,0 +1,17 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+
+if [[ "Darwin" == "$(uname)" ]]
+then
+
+    sed 's/getopt -o.*/getopt iso,windows-dir -- $*); then /g' $(which mkwinpeimg) \
+        | sed '/-- "$@" /d' \
+        | sed '/,help,version/d' \
+        | sed 's/eval set -- "$options"/eval set "$options"/g' \
+        > mkwinpeimg
+    which sed
+    sed -i 's/while \[ $# -gt 0 \]; do/echo $*;while [ $# -gt 0 ]; do echo $1/g' mkwinpeimg
+    chmod +x mkwinpeimg
+    export PATH=".:$PATH"
+fi
+
+mkwinpeimg --iso --windows-dir $(echo winimg/*) -- winpe.iso

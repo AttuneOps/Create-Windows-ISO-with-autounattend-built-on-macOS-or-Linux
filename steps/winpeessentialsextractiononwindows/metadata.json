@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "ef53530a-8520-423e-84fd-a1729d86ba95", 
+    "isBlueprint": true, 
+    "key": "winpeessentialsextractiononwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deploywin2019dvdisotobuildwinpeisoonwindowsworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "extractwinserverdvdisotowinimgonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "deleteskeletonwinpeamd64folderonwindowsworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "createskeletonwinpefilesonwindowsworker"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "overwritefwfilesefisysbinwithefisysnopromptbininskeletonwinpeamd64folderonwindowsworker"
+        }
+    ], 
+    "name": "WinPE Essentials Extraction on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

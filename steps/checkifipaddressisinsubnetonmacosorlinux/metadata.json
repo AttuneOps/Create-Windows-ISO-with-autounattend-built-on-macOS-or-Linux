@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "b53bf378-efd4-415a-851e-1a8071563236", 
+    "interpreter": 1, 
+    "key": "checkifipaddressisinsubnetonmacosorlinux", 
+    "name": "Check if IP Address is in Subnet on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

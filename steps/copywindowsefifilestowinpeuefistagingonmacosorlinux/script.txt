@@ -1,0 +1,2 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+cp -rv "$(echo winimg/*/efi)" "winpe_uefi_staging"

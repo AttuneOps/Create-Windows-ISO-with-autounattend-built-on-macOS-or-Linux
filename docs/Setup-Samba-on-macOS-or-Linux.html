@@ -256,8 +256,16 @@ this Project.</p>
         
 
                     <p class="text-muted pt-2">
+                        <a href="#configureselinuxsecuritycontextonlinux">
+                            <strong>Step 3 -</strong> Configure SELinux Security Context on Linux
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#setupsmbconfonlinux">
-                            <strong>Step 3 -</strong> Setup smb.conf on Linux
+                            <strong>Step 4 -</strong> Setup smb.conf on Linux
                         </a>
                     </p>
 
@@ -265,7 +273,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#checksmbconfonlinux">
-                            <strong>Step 4 -</strong> Check smb.conf on Linux
+                            <strong>Step 5 -</strong> Check smb.conf on Linux
                         </a>
                     </p>
 
@@ -273,7 +281,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#setupfirewallforsambaonlinux">
-                            <strong>Step 5 -</strong> Setup Firewall for Samba on Linux
+                            <strong>Step 6 -</strong> Setup Firewall for Samba on Linux
                         </a>
                     </p>
 
@@ -281,7 +289,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#installprerequisitesonlinux">
-                            <strong>Step 6 -</strong> Install Prerequisites on Linux
+                            <strong>Step 7 -</strong> Install Prerequisites on Linux
                         </a>
                     </p>
 
@@ -289,7 +297,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#setupselinuxforsambaonlinux">
-                            <strong>Step 7 -</strong> Setup SELinux for Samba on Linux
+                            <strong>Step 8 -</strong> Setup SELinux for Samba on Linux
                         </a>
                     </p>
 
@@ -297,7 +305,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#checkselinuxforsambaonlinux">
-                            <strong>Step 8 -</strong> Check SELinux for Samba on Linux
+                            <strong>Step 9 -</strong> Check SELinux for Samba on Linux
                         </a>
                     </p>
 
@@ -305,7 +313,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#startsmbonlinux">
-                            <strong>Step 9 -</strong> Start smb on Linux
+                            <strong>Step 10 -</strong> Start smb on Linux
                         </a>
                     </p>
 
@@ -313,7 +321,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#checkservicesmbonlinux">
-                            <strong>Step 10 -</strong> Check Service smb on Linux
+                            <strong>Step 11 -</strong> Check Service smb on Linux
                         </a>
                     </p>
 
@@ -321,7 +329,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#startservicenmbonlinux">
-                            <strong>Step 11 -</strong> Start Service nmb on Linux
+                            <strong>Step 12 -</strong> Start Service nmb on Linux
                         </a>
                     </p>
 
@@ -329,7 +337,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#checkservicenmbonlinux">
-                            <strong>Step 12 -</strong> Check Service nmb on Linux
+                            <strong>Step 13 -</strong> Check Service nmb on Linux
                         </a>
                     </p>
 
@@ -337,7 +345,7 @@ this Project.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#setlinuxhomefolderpermissionsforsamba">
-                            <strong>Step 13 -</strong> Set Linux Home Folder Permissions for Samba
+                            <strong>Step 14 -</strong> Set Linux Home Folder Permissions for Samba
                         </a>
                     </p>
 
@@ -564,6 +572,60 @@ mkdir -p $shared_dir
 chmod -R 0775 $shared_dir
 chown -R nobody:$GROUP $shared_dir
 ls -lrh $shared_dir
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="configureselinuxsecuritycontextonlinux">
+                            <a href="#configureselinuxsecuritycontextonlinux">
+                                <strong>Step 3 -</strong> Configure SELinux Security Context on Linux
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+shared_dir=&quot;{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe&quot;
 
 if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
 then
@@ -573,12 +635,12 @@ then
 elif [[ -f /etc/debian_version ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is Debian, Nothing to do!&quot;
     
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is macOS, Nothing to do!&quot;
 
 else
     
@@ -601,7 +663,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="setupsmbconfonlinux">
                             <a href="#setupsmbconfonlinux">
-                                <strong>Step 3 -</strong> Setup smb.conf on Linux
+                                <strong>Step 4 -</strong> Setup smb.conf on Linux
                             </a>
                         </h3>
                     </div>
@@ -693,7 +755,7 @@ cat smb.conf
                     <div class="row pt-5">
                         <h3 id="checksmbconfonlinux">
                             <a href="#checksmbconfonlinux">
-                                <strong>Step 4 -</strong> Check smb.conf on Linux
+                                <strong>Step 5 -</strong> Check smb.conf on Linux
                             </a>
                         </h3>
                     </div>
@@ -759,7 +821,7 @@ exit $?
                     <div class="row pt-5">
                         <h3 id="setupfirewallforsambaonlinux">
                             <a href="#setupfirewallforsambaonlinux">
-                                <strong>Step 5 -</strong> Setup Firewall for Samba on Linux
+                                <strong>Step 6 -</strong> Setup Firewall for Samba on Linux
                             </a>
                         </h3>
                     </div>
@@ -816,12 +878,12 @@ then
 elif [[ -f /etc/debian_version ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is Debian, Nothing to do!&quot;
     
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is macOS, Nothing to do!&quot;
 
 else
     
@@ -844,7 +906,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="installprerequisitesonlinux">
                             <a href="#installprerequisitesonlinux">
-                                <strong>Step 6 -</strong> Install Prerequisites on Linux
+                                <strong>Step 7 -</strong> Install Prerequisites on Linux
                             </a>
                         </h3>
                     </div>
@@ -894,12 +956,16 @@ then
 elif [[ -f /etc/debian_version ]]
 then
 
-    echo &quot;&quot;
+    apt-get -y install \
+        policycoreutils \
+        libfuse3-dev \
+        fuse3 \
+        p7zip-full p7zip-rar
 
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    echo &quot;&quot;
+    brew install osxfuse p7zip
 
 else
     
@@ -922,7 +988,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="setupselinuxforsambaonlinux">
                             <a href="#setupselinuxforsambaonlinux">
-                                <strong>Step 7 -</strong> Setup SELinux for Samba on Linux
+                                <strong>Step 8 -</strong> Setup SELinux for Samba on Linux
                             </a>
                         </h3>
                     </div>
@@ -973,12 +1039,12 @@ then
 elif [[ -f /etc/debian_version ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is Debian, Nothing to do!&quot;
     
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is macOS, Nothing to do!&quot;
 
 else
     
@@ -1001,7 +1067,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="checkselinuxforsambaonlinux">
                             <a href="#checkselinuxforsambaonlinux">
-                                <strong>Step 8 -</strong> Check SELinux for Samba on Linux
+                                <strong>Step 9 -</strong> Check SELinux for Samba on Linux
                             </a>
                         </h3>
                     </div>
@@ -1070,12 +1136,12 @@ then
 elif [[ -f /etc/debian_version ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is Debian, Nothing to do!&quot;
     
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    echo &quot;&quot;
+    echo &quot;This is macOS, Nothing to do!&quot;
 
 else
     
@@ -1098,7 +1164,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="startsmbonlinux">
                             <a href="#startsmbonlinux">
-                                <strong>Step 9 -</strong> Start smb on Linux
+                                <strong>Step 10 -</strong> Start smb on Linux
                             </a>
                         </h3>
                     </div>
@@ -1165,7 +1231,7 @@ systemctl status smb
                     <div class="row pt-5">
                         <h3 id="checkservicesmbonlinux">
                             <a href="#checkservicesmbonlinux">
-                                <strong>Step 10 -</strong> Check Service smb on Linux
+                                <strong>Step 11 -</strong> Check Service smb on Linux
                             </a>
                         </h3>
                     </div>
@@ -1238,7 +1304,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="startservicenmbonlinux">
                             <a href="#startservicenmbonlinux">
-                                <strong>Step 11 -</strong> Start Service nmb on Linux
+                                <strong>Step 12 -</strong> Start Service nmb on Linux
                             </a>
                         </h3>
                     </div>
@@ -1305,7 +1371,7 @@ systemctl status nmb
                     <div class="row pt-5">
                         <h3 id="checkservicenmbonlinux">
                             <a href="#checkservicenmbonlinux">
-                                <strong>Step 12 -</strong> Check Service nmb on Linux
+                                <strong>Step 13 -</strong> Check Service nmb on Linux
                             </a>
                         </h3>
                     </div>
@@ -1378,7 +1444,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="setlinuxhomefolderpermissionsforsamba">
                             <a href="#setlinuxhomefolderpermissionsforsamba">
-                                <strong>Step 13 -</strong> Set Linux Home Folder Permissions for Samba
+                                <strong>Step 14 -</strong> Set Linux Home Folder Permissions for Samba
                             </a>
                         </h3>
                     </div>

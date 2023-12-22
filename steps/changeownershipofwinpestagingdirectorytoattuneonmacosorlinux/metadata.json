@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "3327cf09-01f5-4998-9b89-a403febab727", 
+    "interpreter": 1, 
+    "key": "changeownershipofwinpestagingdirectorytoattuneonmacosorlinux", 
+    "name": "Change Ownership of winpe_staging Directory to attune on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

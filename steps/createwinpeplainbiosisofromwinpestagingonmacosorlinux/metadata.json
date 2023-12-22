@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "b796c2c5-7bc5-4c25-a38e-585f6481420c", 
+    "interpreter": 1, 
+    "key": "createwinpeplainbiosisofromwinpestagingonmacosorlinux", 
+    "name": "Create winpe_plain_bios.iso from winpe_staging on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

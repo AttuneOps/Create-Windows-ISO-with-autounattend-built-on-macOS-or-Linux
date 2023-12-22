@@ -1,0 +1,35 @@
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]]
+then
+
+    if which mkwinpeimg >/dev/null; then
+        echo "mkwinpeimg is installed."
+    else
+        echo "mkwinpeimg is not installed."
+        dnf -y install wimlib wimlib-utils fuse
+    fi
+
+elif [[ -f /etc/debian_version ]]
+then
+
+    if which mkwinpeimg >/dev/null; then
+        echo "mkwinpeimg is installed."
+    else
+        echo "mkwinpeimg is not installed."
+        apt-get -y install wimlib wimlib-utils fuse
+    fi
+
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    if which mkwinpeimg >/dev/null; then
+        echo "mkwinpeimg is installed."
+    else
+        echo "mkwinpeimg is not installed."
+        brew -y install wimlib
+    fi
+
+else
+    
+    echo "Unsupported operating system."
+    exit 1
+fi

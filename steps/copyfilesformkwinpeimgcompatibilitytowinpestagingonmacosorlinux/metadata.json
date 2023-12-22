@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "2247fc63-8b96-4f7b-bb89-e4c56bcaf9bf", 
+    "interpreter": 1, 
+    "key": "copyfilesformkwinpeimgcompatibilitytowinpestagingonmacosorlinux", 
+    "name": "Copy Files for mkwinpeimg Compatibility to WinPE Staging on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

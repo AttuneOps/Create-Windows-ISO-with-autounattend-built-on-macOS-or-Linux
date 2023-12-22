@@ -1,1 +1,0 @@
-Sets the permissions of the home folder.

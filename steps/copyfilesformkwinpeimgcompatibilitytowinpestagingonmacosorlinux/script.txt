@@ -1,0 +1,4 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+
+cp -v "$(find winimg -type f -name etfsboot.com)" "winpe_bios_staging/BOOT"
+cp -v "$(find winimg -type f -name etfsboot.com)" "winpe_uefi_staging/BOOT"

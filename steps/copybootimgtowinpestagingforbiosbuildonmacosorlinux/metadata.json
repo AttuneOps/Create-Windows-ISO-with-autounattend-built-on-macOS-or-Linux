@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "06b81f57-40a6-4698-8edf-596b37e1177a", 
+    "interpreter": 1, 
+    "key": "copybootimgtowinpestagingforbiosbuildonmacosorlinux", 
+    "name": "Copy boot.img to winpe_staging for BIOS build on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

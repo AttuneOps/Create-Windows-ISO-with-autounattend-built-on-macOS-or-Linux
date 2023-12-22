@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "b173b0d6-18ae-491e-8241-9e1cad5fa270", 
+    "interpreter": 1, 
+    "key": "optimizebootwimonmacosorlinux", 
+    "name": "Optimize boot.wim on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

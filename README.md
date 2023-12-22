@@ -9,7 +9,120 @@
 
 # Automate Windows Installation with autounattend
 
+# Project Overview
+This Attune Project provides an efficient and streamlined approach to 
+creating customised Windows installation ISOs using the autounattend. 
 
+The project is designed to cater to various Windows distributions and employs 
+multiple methodologies to facilitate the creation of these tailored 
+installation media. Whether you're working with large 5GB ISOs or building 
+a lightweight WinPE installer, this project has the resources and 
+blueprints you need to automate the process effectively.
+
+# Key Features
+
+**Versatile Windows Support:** The project includes blueprints for a range 
+of Windows distributions, allowing for broad application across different 
+Windows environments.
+
+**Comprehensive Methodologies:** From mounting large 5GB ISO files to 
+constructing a WinPE installer ISO, the project encompasses diverse 
+techniques to suit various requirements and preferences.
+
+**Autounattend.xml Integration:** Central to the project is the utilisation 
+of autounattend.xml, which automates the Windows installation process and 
+eliminating manual input.
+
+**Blueprints for Customisation:** Each blueprint within the project is 
+designed to be clear and user-friendly, ensuring that even users with 
+minimal experience in Windows automation can achieve successful outcomes.
+
+**Efficient ISO Creation Process:** The project streamlines the ISO 
+creation process, making it faster and more reliable, whether you are an 
+IT professional setting up multiple systems or an individual user 
+installing Windows on a new PC.
+
+# Target Audience
+IT professionals and system administrators who regularly set up Windows 
+environments.
+
+Organisations looking to streamline their OS deployment process.
+
+Individuals seeking an efficient way to install or reinstall Windows on 
+their computers.
+
+# autounattend Installation Methods
+
+Three methods to autounattend install Windows OS are documented in 
+this Project.
+
+1. Single ISO
+2. Dual ISO
+3. WinPE ISO
+
+## Single ISO
+This is the simplest installation possible with the least 
+dependencies and configuration.
+
+The large 5GB Windows installation ISO is extracted and repackaged 
+with the drivers and configuration files.
+
+**Ideal Use Case:** Great fallback method for when no other 
+methods are easy.
+
+**Advantages:**
+* Simple process
+* Doesn't require networking
+
+**Disadvantages:** Each installation being performed requires 
+unpacking, repacking, and transfering around a unique 5GB ISO 
+file.
+
+## Dual ISO
+The unalted Windows Installation ISO is deployed directly to 
+the device. Drivers and configuration files are attached to 
+the device in a separate ISO file.
+
+**Ideal Use Case:** Preferred method for a small number of 
+machines to build.
+
+**Advantages:**
+* Light work load
+* Doesn't require networking
+
+**Disadvantages:** Host requires capability to attach a second 
+CD-ROM (eg. oVirt cannot attach a second CD-ROM).
+
+## WinPE ISO
+Small WinPE ISO file for each device and any aditional files 
+required during the installation are copied from a Samba Share 
+on the network.
+
+**Ideal Use Case:** Great for building a large number of 
+machines or if a small ISO file is required.
+
+**Advantages:**
+* Best for Enterprise
+* Small files
+* Fastest installation
+* Network efficient
+
+**Disadvantages:** Requires significant setup to gather the 
+WinPE files and setup a Samba Share.
+
+# Conclusion
+By utilising this Attune Project, users can expect a significant reduction 
+in the time and effort typically required for Windows installations. The 
+combination of versatility, efficiency, and ease of use makes this project 
+an invaluable resource for anyone looking to automate their Windows 
+installation process.
+
+# Read More
+[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
+
+[Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
+
+[Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
 
 
 
@@ -80,13 +193,10 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerWin
 
 The Windows worker can run Linux commands using Windows Subsystem for Linux.
 
-### Create Windows autounattend WinPE ISO on macOS or Linux Worker
+### Create Windows autounattend WinPE ISO on macOS or Linux
 
 
 ### Create Windows autounattend WinPE ISO on Windows Worker
-
-
-### Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
 
 
 ### Create Windows Server 2016 (Win2016) autounattend Dual ISO on macOS or Linux Worker
@@ -164,6 +274,22 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
+### Deploy and Extract Win10 ISO to Samba Share
+
+This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2016 ISO to Samba Share
+
+This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2019 ISO to Samba Share
+
+This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2022 ISO to Samba Share
+
+This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
+
 ### Deploy and Mount Win10 ISO To Node for Feature Install
 
 
@@ -175,6 +301,11 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 ### Deploy and Mount Win2022 ISO To Node for Feature Install
 
+
+### Extract ISO and Configure Folder Permissions for Samba Share
+
+This blueprint is a repeatable process for the 
+`Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
 
 ### Install Prerequisites on Windows Worker
 
@@ -192,49 +323,25 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### Setup Skeleton WinPE_amd64 Folder on Windows Worker
+### Unmount and Remove ISO From Node for Feature Install
+
+
+### WinPE Essentials Extraction on macOS or Linux
+
+This Attune Blueprint extracts the essential WinPE files from a full 5GB 
+Windows installation ISO, reducing the ISO file size to less than 500MB.
+
+The steps in the Blueprint are performed on macOS or Linux.
+
+Two WinPE ISOs are created, one for BIOS boot and another for UEFI boot.
+
+### WinPE Essentials Extraction on Windows
 
 Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
 
 This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
 
 This folder works for both BIOS and UEFI boot methods.
-
-### Unmount and Remove ISO From Node for Feature Install
-
-
-### Extract ISO and Configure Folder Permissions for Samba Share
-
-This blueprint is a repeatable process for the 
-`Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
-
-### Deploy and Extract Win2022 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
-
-### Deploy and Extract Win2019 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
-
-### Deploy and Extract Win2016 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
-
-### Deploy and Extract Win10 ISO to Samba Share
-
-This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
-
-### Setup Samba on macOS or Linux
-
-Sets up a Samba server with the folder at 
-`{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe`.
-
-This Samba Share on Linux is required to host the Windows OS files 
-making them accessible over the network.
-
-For uploading specific Windows distributions to the Samba Share, see 
-`Deploy and extract {os_name} ISO for Samba Share` Blueprints in 
-this Project.
 
 
 

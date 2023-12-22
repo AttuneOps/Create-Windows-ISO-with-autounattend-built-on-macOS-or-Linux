@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "postinstallsetuppowershellscript", 
+    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "enabled": true, 
+    "externalUuid4": "2f7c99d3-6a08-463f-8a42-d509778486a2", 
+    "key": "deploypostsetuppowershellscriptonmacosorlinux", 
+    "makoFileNames": [
+        "post_install_setup.ps1"
+    ], 
+    "makoParameters": [
+        {
+            "name": "newOsNode", 
+            "parameterKey": "newosnode", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "newOsNodeSubnet", 
+            "parameterKey": "newosnodesubnet", 
+            "parameterType": "c.s.s.b.phv.Ip4Subnet"
+        }, 
+        {
+            "name": "newOsWindowsUser", 
+            "parameterKey": "newoswindowsuseradministrator", 
+            "parameterType": "c.s.s.b.phv.WinOsCred"
+        }
+    ], 
+    "name": "Deploy Post Setup PowerShell Script on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
+}

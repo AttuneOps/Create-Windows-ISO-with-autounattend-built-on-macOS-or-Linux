@@ -1,0 +1,21 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+ISO="{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso"
+FOLDER="uefi_mount"
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+    
+    mkdir --parent --verbose ${FOLDER}/CD
+    mount --verbose "${ISO}" "${FOLDER}/CD"
+
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    mkdir -p -v ${FOLDER}
+    hdiutil attach ${ISO} -mountroot ${FOLDER}
+
+else
+
+    echo "Unsupported operating system."
+    exit 1
+fi

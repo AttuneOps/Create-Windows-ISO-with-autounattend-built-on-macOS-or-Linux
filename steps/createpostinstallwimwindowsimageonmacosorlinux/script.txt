@@ -1,0 +1,8 @@
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+
+SOURCE="post_install_wim"
+WIMFILE="post_install.wim"
+
+echo "Creating ${WIMFILE} from directory ${SOURCE}."
+
+wimcapture "${SOURCE}" "${WIMFILE}" --check

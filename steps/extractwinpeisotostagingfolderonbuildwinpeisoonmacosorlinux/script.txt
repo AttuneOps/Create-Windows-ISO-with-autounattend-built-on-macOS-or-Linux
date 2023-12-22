@@ -1,0 +1,9 @@
+cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
+
+BIOS=winpe_bios_staging
+UEFI=winpe_uefi_staging
+mkdir -p "${BIOS}"
+mkdir -p "${UEFI}"
+
+7z x winpe.iso -o"${BIOS}"
+7z x winpe.iso -o"${UEFI}"

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "fdfddcc4-3c06-42b7-88f8-040dfb14d799", 
+    "interpreter": 1, 
+    "key": "confirmmkwinpeimgisinstalled", 
+    "name": "Confirm mkwinpeimg is installed", 
+    "osCredKey": "automationworkerlinuxuserroot", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

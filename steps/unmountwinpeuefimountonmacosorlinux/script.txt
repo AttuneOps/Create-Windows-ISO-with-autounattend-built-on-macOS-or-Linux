@@ -1,0 +1,33 @@
+MOUNT_PATH="{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount"
+
+if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+    
+    if df -h | grep --ignore-case --quiet "$(echo ${MOUNT_PATH}/*)"
+    then
+    
+        umount --verbose "$(echo ${MOUNT_PATH}/*)"
+        chmod -R a+w "${MOUNT_PATH}"
+        
+    else
+    
+        echo "${MOUNT_PATH} is not mounted. Skipping."
+    fi
+
+elif [[ "Darwin" == "$(uname)" ]]
+then
+
+    if [[ $(find ${MOUNT_PATH}/*  2> /dev/null | wc -l) -gt 10 ]]
+    then
+    
+        hdiutil detach "$(echo ${MOUNT_PATH}/*)"
+    else
+    
+        echo "${MOUNT_PATH} is not mounted. Skipping."
+    fi
+
+else
+    
+    echo "Unsupported operating system."
+    exit 1
+fi

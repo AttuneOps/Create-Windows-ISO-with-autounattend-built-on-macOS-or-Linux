@@ -1,1 +1,0 @@
-chmod -v +rx $HOME

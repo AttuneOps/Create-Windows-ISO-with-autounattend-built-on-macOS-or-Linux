@@ -1,0 +1,13 @@
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+
+DRIVERS_DROP_IN_FOLDER="{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}"
+
+if [ -d "${DRIVERS_DROP_IN_FOLDER}" ]
+then
+
+    wimupdate winpe_staging/SOURCES/BOOT.WIM \
+        --command="add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers"
+        
+else
+    echo "Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied."
+fi

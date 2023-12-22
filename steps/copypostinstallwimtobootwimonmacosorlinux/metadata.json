@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "773bfbb3-ea23-490d-9f06-e2665b00685b", 
+    "interpreter": 1, 
+    "key": "copypostinstallwimtobootwimonmacosorlinux", 
+    "name": "Copy post_install.wim to boot.wim on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,1 +1,0 @@
-Copy drivers from the drop in directorty into `{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/WinPE_BootImageDir/drivers` on macOS or Linux Worker.

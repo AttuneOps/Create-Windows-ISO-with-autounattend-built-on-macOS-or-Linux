@@ -1,0 +1,4 @@
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
+    --command="add autounattend.xml /autounattend.xml"

@@ -1,0 +1,7 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+
+USER="{automationWorkerLinuxUser.user}"
+GROUP="$(id -gn {automationWorkerLinuxUser.user})"
+echo "User: $USER, Group: $GROUP"
+
+chown -R -v "$USER:$GROUP" "winpe_uefi_staging"

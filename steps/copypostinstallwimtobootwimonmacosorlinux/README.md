@@ -1,0 +1,1 @@
+Copy `post_install.wim` file to the root of boot.wim.

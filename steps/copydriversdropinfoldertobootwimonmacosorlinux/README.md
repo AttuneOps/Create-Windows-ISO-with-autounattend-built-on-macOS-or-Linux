@@ -1,0 +1,1 @@
+Copy drivers from the drop in directorty into `/drivers` directory in boot.wim.

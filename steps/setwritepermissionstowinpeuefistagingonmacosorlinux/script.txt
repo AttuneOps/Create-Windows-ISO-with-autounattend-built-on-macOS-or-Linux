@@ -1,0 +1,25 @@
+DIR="{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+
+if [[ ! -d ${DIR} ]]
+then
+
+    echo "Directory ${DIR} does not exist. Skipping."
+else
+
+    cd "${DIR}"
+    UEFI_STAGING_DIR="winpe_uefi_staging"
+    
+    if [[ ! -d ${UEFI_STAGING_DIR} ]]
+    then
+    
+        echo "Directory does not exist. Skipping."
+    else
+    
+        echo "Before"
+        ls -lh
+        chmod -R a+w "${UEFI_STAGING_DIR}"
+        
+        echo "After"
+        ls -lh
+    fi
+fi

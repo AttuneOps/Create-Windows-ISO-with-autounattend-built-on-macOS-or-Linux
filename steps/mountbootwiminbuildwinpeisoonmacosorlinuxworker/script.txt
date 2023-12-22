@@ -1,2 +1,0 @@
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-wimmountrw winpe_staging/SOURCES/BOOT.WIM WinPE_BootImageDir

@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "fb5a8768-96ac-46ec-8fbb-e8c326bb6cc5", 
+    "interpreter": 1, 
+    "key": "deletesetupexefrombootwimonmacosorlinux", 
+    "name": "Delete setup.exe from boot.wim on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

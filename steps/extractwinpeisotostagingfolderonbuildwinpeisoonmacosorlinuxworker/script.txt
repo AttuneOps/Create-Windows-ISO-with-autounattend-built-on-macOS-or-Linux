@@ -1,6 +1,0 @@
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso
-
-FOLDER=winpe_staging
-mkdir -p "${FOLDER}"
-
-7z x winpe.iso -o"${FOLDER}"

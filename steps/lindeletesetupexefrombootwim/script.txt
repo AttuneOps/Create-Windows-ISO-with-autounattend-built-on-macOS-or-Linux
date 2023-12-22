@@ -1,3 +1,0 @@
-cd {automationWorkerLinuxBaseDirectory}/build-winpe-iso/WinPE_BootImageDir
-
-rm --verbose setup.exe

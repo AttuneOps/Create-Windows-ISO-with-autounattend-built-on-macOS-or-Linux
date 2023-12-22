@@ -12,7 +12,12 @@
     <meta name="title"
           content="Attune Automation Project: Automate Windows Installation with autounattend">
     <meta name="description"
-          content="">
+          content="# Project Overview
+This Attune Project provides an efficient and streamlined approach to 
+creating customised Windows installation ISOs using the autounattend. 
+
+The project is designed to cater to various Windows distributions and employs 
+multiple methodologies to facilitate the creation of these ">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
@@ -20,13 +25,23 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title"
           content="Attune Automation Project: Automate Windows Installation with autounattend"/>
-    <meta property="og:description" content=""/>
+    <meta property="og:description" content="# Project Overview
+This Attune Project provides an efficient and streamlined approach to 
+creating customised Windows installation ISOs using the autounattend. 
+
+The project is designed to cater to various Windows distributions and employs 
+multiple methodologies to facilitate the creation of these "/>
     <meta property="og:site_name" content="Attune Automation"/>
     <meta property="article:section" content="IT Instruction"/>
 
     <meta name="twitter:title"
           content="Attune Automation Project: Automate Windows Installation with autounattend"/>
-    <meta name="twitter:description" content=""/>
+    <meta name="twitter:description" content="# Project Overview
+This Attune Project provides an efficient and streamlined approach to 
+creating customised Windows installation ISOs using the autounattend. 
+
+The project is designed to cater to various Windows distributions and employs 
+multiple methodologies to facilitate the creation of these "/>
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -108,7 +123,92 @@
     <div class="row">
         <div class="description col px-0">
             <p class="text-left">
-                
+                <h3>Project Overview</h3>
+<p>This Attune Project provides an efficient and streamlined approach to 
+creating customised Windows installation ISOs using the autounattend. </p>
+<p>The project is designed to cater to various Windows distributions and employs 
+multiple methodologies to facilitate the creation of these tailored 
+installation media. Whether you're working with large 5GB ISOs or building 
+a lightweight WinPE installer, this project has the resources and 
+blueprints you need to automate the process effectively.</p>
+<h3>Key Features</h3>
+<p><strong>Versatile Windows Support:</strong> The project includes blueprints for a range 
+of Windows distributions, allowing for broad application across different 
+Windows environments.</p>
+<p><strong>Comprehensive Methodologies:</strong> From mounting large 5GB ISO files to 
+constructing a WinPE installer ISO, the project encompasses diverse 
+techniques to suit various requirements and preferences.</p>
+<p><strong>Autounattend.xml Integration:</strong> Central to the project is the utilisation 
+of autounattend.xml, which automates the Windows installation process and 
+eliminating manual input.</p>
+<p><strong>Blueprints for Customisation:</strong> Each blueprint within the project is 
+designed to be clear and user-friendly, ensuring that even users with 
+minimal experience in Windows automation can achieve successful outcomes.</p>
+<p><strong>Efficient ISO Creation Process:</strong> The project streamlines the ISO 
+creation process, making it faster and more reliable, whether you are an 
+IT professional setting up multiple systems or an individual user 
+installing Windows on a new PC.</p>
+<h3>Target Audience</h3>
+<p>IT professionals and system administrators who regularly set up Windows 
+environments.</p>
+<p>Organisations looking to streamline their OS deployment process.</p>
+<p>Individuals seeking an efficient way to install or reinstall Windows on 
+their computers.</p>
+<h3>autounattend Installation Methods</h3>
+<p>Three methods to autounattend install Windows OS are documented in 
+this Project.</p>
+<ol>
+<li>Single ISO</li>
+<li>Dual ISO</li>
+<li>WinPE ISO</li>
+</ol>
+<h4>Single ISO</h4>
+<p>This is the simplest installation possible with the least 
+dependencies and configuration.</p>
+<p>The large 5GB Windows installation ISO is extracted and repackaged 
+with the drivers and configuration files.</p>
+<p><strong>Ideal Use Case:</strong> Great fallback method for when no other 
+methods are easy.</p>
+<p><strong>Advantages:</strong>
+* Simple process
+* Doesn't require networking</p>
+<p><strong>Disadvantages:</strong> Each installation being performed requires 
+unpacking, repacking, and transfering around a unique 5GB ISO 
+file.</p>
+<h4>Dual ISO</h4>
+<p>The unalted Windows Installation ISO is deployed directly to 
+the device. Drivers and configuration files are attached to 
+the device in a separate ISO file.</p>
+<p><strong>Ideal Use Case:</strong> Preferred method for a small number of 
+machines to build.</p>
+<p><strong>Advantages:</strong>
+* Light work load
+* Doesn't require networking</p>
+<p><strong>Disadvantages:</strong> Host requires capability to attach a second 
+CD-ROM (eg. oVirt cannot attach a second CD-ROM).</p>
+<h4>WinPE ISO</h4>
+<p>Small WinPE ISO file for each device and any aditional files 
+required during the installation are copied from a Samba Share 
+on the network.</p>
+<p><strong>Ideal Use Case:</strong> Great for building a large number of 
+machines or if a small ISO file is required.</p>
+<p><strong>Advantages:</strong>
+* Best for Enterprise
+* Small files
+* Fastest installation
+* Network efficient</p>
+<p><strong>Disadvantages:</strong> Requires significant setup to gather the 
+WinPE files and setup a Samba Share.</p>
+<h3>Conclusion</h3>
+<p>By utilising this Attune Project, users can expect a significant reduction 
+in the time and effort typically required for Windows installations. The 
+combination of versatility, efficiency, and ease of use makes this project 
+an invaluable resource for anyone looking to automate their Windows 
+installation process.</p>
+<h3>Read More</h3>
+<p><a href="https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend">Attune Project - Automate Windows Installation with autounattend</a></p>
+<p><a href="https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html">Attune Documentation - Automate Operating System Installation</a></p>
+<p><a href="https://docs.attuneautomation.com/en/latest/howto/index.html">Attune Documentation - How-to Guides</a></p>
             </p>
         </div>
     </div>
@@ -245,11 +345,11 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Create-Windows-autounattend-WinPE-ISO-on-macOS-or-Linux-Worker">
+                                 id="Create-Windows-autounattend-WinPE-ISO-on-macOS-or-Linux">
                                 <div class="card-body">
-                                    <a href="Create-Windows-autounattend-WinPE-ISO-on-macOS-or-Linux-Worker.html">
+                                    <a href="Create-Windows-autounattend-WinPE-ISO-on-macOS-or-Linux.html">
                                         <h3 class="card-title">
-                                            Create Windows autounattend WinPE ISO on macOS or Linux Worker
+                                            Create Windows autounattend WinPE ISO on macOS or Linux
                                         </h3>
                                     </a>
                                 </div>
@@ -263,19 +363,6 @@
                                     <a href="Create-Windows-autounattend-WinPE-ISO-on-Windows-Worker.html">
                                         <h3 class="card-title">
                                             Create Windows autounattend WinPE ISO on Windows Worker
-                                        </h3>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Create-Windows-PE-(WinPE)-Plain-ISO-on-macOS-or-Linux-Worker">
-                                <div class="card-body">
-                                    <a href="Create-Windows-PE-(WinPE)-Plain-ISO-on-macOS-or-Linux-Worker.html">
-                                        <h3 class="card-title">
-                                            Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker
                                         </h3>
                                     </a>
                                 </div>
@@ -473,6 +560,78 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
+                                 id="Deploy-and-Extract-Win10-ISO-to-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Deploy-and-Extract-Win10-ISO-to-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Deploy and Extract Win10 ISO to Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>This Blueprint deploys the Windows 10 ISO files to the Samba Share server.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Deploy-and-Extract-Win2016-ISO-to-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Deploy-and-Extract-Win2016-ISO-to-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Deploy and Extract Win2016 ISO to Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Deploy-and-Extract-Win2019-ISO-to-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Deploy-and-Extract-Win2019-ISO-to-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Deploy and Extract Win2019 ISO to Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Deploy-and-Extract-Win2022-ISO-to-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Deploy-and-Extract-Win2022-ISO-to-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Deploy and Extract Win2022 ISO to Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.</p>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
                                  id="Deploy-and-Mount-Win10-ISO-To-Node-for-Feature-Install">
                                 <div class="card-body">
                                     <a href="Deploy-and-Mount-Win10-ISO-To-Node-for-Feature-Install.html">
@@ -519,6 +678,25 @@
                                             Deploy and Mount Win2022 ISO To Node for Feature Install
                                         </h3>
                                     </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 pt-3 pl-0">
+                            <div class="card"
+                                 id="Extract-ISO-and-Configure-Folder-Permissions-for-Samba-Share">
+                                <div class="card-body">
+                                    <a href="Extract-ISO-and-Configure-Folder-Permissions-for-Samba-Share.html">
+                                        <h3 class="card-title">
+                                            Extract ISO and Configure Folder Permissions for Samba Share
+                                        </h3>
+                                    </a>
+                                    <div class="description">
+                                        <p class="card-text">
+                                            <p>This blueprint is a repeatable process for the 
+<code>Deploy and Extract {windows_distribution} ISO to Samba Share</code> blueprints.</p>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -595,26 +773,6 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Setup-Skeleton-WinPE_amd64-Folder-on-Windows-Worker">
-                                <div class="card-body">
-                                    <a href="Setup-Skeleton-WinPE_amd64-Folder-on-Windows-Worker.html">
-                                        <h3 class="card-title">
-                                            Setup Skeleton WinPE_amd64 Folder on Windows Worker
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up the "plain" WinPE skeleton files on Windows Worker at <code>C:\WinPE_amd64</code>.</p>
-<p>This folder can be copied and then it's <code>.\media\sources\boot.wim</code> file can be modified for an automated unattended Windows install.</p>
-<p>This folder works for both BIOS and UEFI boot methods.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
                                  id="Unmount-and-Remove-ISO-From-Node-for-Feature-Install">
                                 <div class="card-body">
                                     <a href="Unmount-and-Remove-ISO-From-Node-for-Feature-Install.html">
@@ -628,17 +786,19 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Extract-ISO-and-Configure-Folder-Permissions-for-Samba-Share">
+                                 id="WinPE-Essentials-Extraction-on-macOS-or-Linux">
                                 <div class="card-body">
-                                    <a href="Extract-ISO-and-Configure-Folder-Permissions-for-Samba-Share.html">
+                                    <a href="WinPE-Essentials-Extraction-on-macOS-or-Linux.html">
                                         <h3 class="card-title">
-                                            Extract ISO and Configure Folder Permissions for Samba Share
+                                            WinPE Essentials Extraction on macOS or Linux
                                         </h3>
                                     </a>
                                     <div class="description">
                                         <p class="card-text">
-                                            <p>This blueprint is a repeatable process for the 
-<code>Deploy and Extract {windows_distribution} ISO to Samba Share</code> blueprints.</p>
+                                            <p>This Attune Blueprint extracts the essential WinPE files from a full 5GB 
+Windows installation ISO, reducing the ISO file size to less than 500MB.</p>
+<p>The steps in the Blueprint are performed on macOS or Linux.</p>
+<p>Two WinPE ISOs are created, one for BIOS boot and another for UEFI boot.</p>
                                         </p>
                                     </div>
                                 </div>
@@ -647,94 +807,18 @@
 
                         <div class="col-12 pt-3 pl-0">
                             <div class="card"
-                                 id="Deploy-and-Extract-Win2022-ISO-to-Samba-Share">
+                                 id="WinPE-Essentials-Extraction-on-Windows">
                                 <div class="card-body">
-                                    <a href="Deploy-and-Extract-Win2022-ISO-to-Samba-Share.html">
+                                    <a href="WinPE-Essentials-Extraction-on-Windows.html">
                                         <h3 class="card-title">
-                                            Deploy and Extract Win2022 ISO to Samba Share
+                                            WinPE Essentials Extraction on Windows
                                         </h3>
                                     </a>
                                     <div class="description">
                                         <p class="card-text">
-                                            <p>This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Deploy-and-Extract-Win2019-ISO-to-Samba-Share">
-                                <div class="card-body">
-                                    <a href="Deploy-and-Extract-Win2019-ISO-to-Samba-Share.html">
-                                        <h3 class="card-title">
-                                            Deploy and Extract Win2019 ISO to Samba Share
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Deploy-and-Extract-Win2016-ISO-to-Samba-Share">
-                                <div class="card-body">
-                                    <a href="Deploy-and-Extract-Win2016-ISO-to-Samba-Share.html">
-                                        <h3 class="card-title">
-                                            Deploy and Extract Win2016 ISO to Samba Share
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Deploy-and-Extract-Win10-ISO-to-Samba-Share">
-                                <div class="card-body">
-                                    <a href="Deploy-and-Extract-Win10-ISO-to-Samba-Share.html">
-                                        <h3 class="card-title">
-                                            Deploy and Extract Win10 ISO to Samba Share
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>This Blueprint deploys the Windows 10 ISO files to the Samba Share server.</p>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12 pt-3 pl-0">
-                            <div class="card"
-                                 id="Setup-Samba-on-macOS-or-Linux">
-                                <div class="card-body">
-                                    <a href="Setup-Samba-on-macOS-or-Linux.html">
-                                        <h3 class="card-title">
-                                            Setup Samba on macOS or Linux
-                                        </h3>
-                                    </a>
-                                    <div class="description">
-                                        <p class="card-text">
-                                            <p>Sets up a Samba server with the folder at 
-<code>{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe</code>.</p>
-<p>This Samba Share on Linux is required to host the Windows OS files 
-making them accessible over the network.</p>
-<p>For uploading specific Windows distributions to the Samba Share, see 
-<code>Deploy and extract {os_name} ISO for Samba Share</code> Blueprints in 
-this Project.</p>
+                                            <p>Sets up the "plain" WinPE skeleton files on Windows Worker at <code>C:\WinPE_amd64</code>.</p>
+<p>This folder can be copied and then it's <code>.\media\sources\boot.wim</code> file can be modified for an automated unattended Windows install.</p>
+<p>This folder works for both BIOS and UEFI boot methods.</p>
                                         </p>
                                     </div>
                                 </div>

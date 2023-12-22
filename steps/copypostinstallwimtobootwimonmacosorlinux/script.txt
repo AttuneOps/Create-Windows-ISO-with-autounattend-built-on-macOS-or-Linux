@@ -1,0 +1,4 @@
+cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+
+wimupdate winpe_staging/SOURCES/BOOT.WIM \
+    --command="add post_install.wim /post_install.wim"

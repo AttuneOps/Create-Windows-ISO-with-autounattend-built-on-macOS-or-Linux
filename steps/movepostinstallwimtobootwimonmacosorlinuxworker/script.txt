@@ -1,3 +1,0 @@
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
-
-mv --verbose post_install.wim WinPE_BootImageDir
