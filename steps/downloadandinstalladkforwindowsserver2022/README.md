@@ -1,1 +1,0 @@
-Downloads, extracts and installs the Windows Assessment and Deployment Kit (ADK) for Windows Server 2022.

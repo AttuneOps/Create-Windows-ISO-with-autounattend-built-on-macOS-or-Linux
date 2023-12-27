@@ -14,7 +14,11 @@
     <meta name="title"
           content="How to Install Windows Assessment and Deployment Kit on Win2022 Windows Worker - Attune Automation">
     <meta name="description"
-          content="">
+          content="The Windows Assessment and Deployment Kit (Windows ADK) and 
+Windows PE add-on has the tools you need to customise 
+Windows images for large-scale deployment, and to test 
+the quality and performance of your system, its added 
+components, and the applications running on it.">
     <meta name="robots"
           content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
 
@@ -22,13 +26,21 @@
     <meta property="og:type" content="article" />
     <meta property="og:title"
           content="HowTo Install Windows Assessment and Deployment Kit on Win2022 Windows Worker - Attune Automation" />
-    <meta property="og:description" content="" />
+    <meta property="og:description" content="The Windows Assessment and Deployment Kit (Windows ADK) and 
+Windows PE add-on has the tools you need to customise 
+Windows images for large-scale deployment, and to test 
+the quality and performance of your system, its added 
+components, and the applications running on it." />
     <meta property="og:site_name" content="Attune Automation" />
     <meta property="article:section" content="IT Instruction" />
 
     <meta name="twitter:title"
           content="How to Install Windows Assessment and Deployment Kit on Win2022 Windows Worker - Attune Automation" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:description" content="The Windows Assessment and Deployment Kit (Windows ADK) and 
+Windows PE add-on has the tools you need to customise 
+Windows images for large-scale deployment, and to test 
+the quality and performance of your system, its added 
+components, and the applications running on it." />
 
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-32x32.png" sizes="32x32">
     <link rel="icon" href="https://www.servertribe.com/wp-content/uploads/2020/10/cropped-server_tribe_favicon-192x192.png" sizes="192x192">
@@ -139,6 +151,17 @@
     </div>
 
 <!-- Blueprint Description -->
+    <div class="row">
+        <div class="description col px-0">
+            <p class="text-left">
+                <p>The Windows Assessment and Deployment Kit (Windows ADK) and 
+Windows PE add-on has the tools you need to customise 
+Windows images for large-scale deployment, and to test 
+the quality and performance of your system, its added 
+components, and the applications running on it.</p>
+            </p>
+        </div>
+    </div>
     <div class="row pt-4">
         <div class="col-6 px-0">
             <h6 class="text-left">
@@ -377,7 +400,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Downloads, extracts and installs the Windows Assessment and Deployment Kit (ADK) for Windows Server 2022.</p>
+                                
                             </p>
                         </div>
                     </div>
@@ -406,7 +429,10 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>The URL is for the Windows Assessment and Deployment Kit (ADK) for Windows Server 2022 at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.</p>
+                                <p>Use the ADK version that matches the Windows version 
+you are working with. If your environment has a mix of 
+Windows versions, use the ADK version that matches the 
+latest operating system in your environment.</p>
                             </p>
                         </div>
                     </div>
@@ -452,11 +478,10 @@ mstsc /admin /v:{automationworkerwindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+# Get the OS information
+$OS = Get-WmiObject Win32_OperatingSystem
 
-Set-Location &quot;${ISO_BUILD}&quot;
-
-$ADK_DOWNLOADS=&quot;ADKDownloads&quot;
+$ADK_DOWNLOADS=&quot;C:\attuneautomationworker\ADKDownloads&quot;
 
 if ( -Not (Test-Path &quot;${ADK_DOWNLOADS}&quot;) ) {
   New-Item &quot;${ADK_DOWNLOADS}&quot; -ItemType Directory
@@ -464,10 +489,26 @@ if ( -Not (Test-Path &quot;${ADK_DOWNLOADS}&quot;) ) {
 
 Set-Location &quot;${ADK_DOWNLOADS}&quot;
 
-$ADK_WIN2022_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2162950&quot;
-
-$ProgressPreference = &#x27;SilentlyContinue&#x27;
-Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./win2022_adk.iso&quot;
+# Check the caption property for Windows Server 2022 or Windows 11
+if ($OS.Caption -like &quot;*Windows Server 2022*&quot;) {
+    
+    Write-Host &quot;This system is running Windows Server 2022&quot;
+    $ADK_WIN2022_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2162950&quot;
+    $ProgressPreference = &#x27;SilentlyContinue&#x27;
+    Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./adk_setup.iso&quot;
+    
+} elseif ($OS.Caption -like &quot;*Windows 11*&quot;) {
+    
+    Write-Host &quot;This system is running Windows 11&quot;
+    $ADK_WIN11_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2165884&quot;
+    $ProgressPreference = &#x27;SilentlyContinue&#x27;
+    Invoke-WebRequest $ADK_WIN11_URL -OutFile &quot;./adk_setup.iso&quot;
+    
+} else {
+    
+    Write-Error &quot;This system is not running Windows Server 2022 or Windows 11&quot;
+    
+}
                 </code>
             </pre>
         </div>
@@ -489,14 +530,6 @@ Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./win2022_adk.iso&quot;
                         </h4>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Extracts the <code>ADK for Windows Server 2022</code> <code>win2022_adk.iso</code> to <code>C:\attuneautomationworker\ADKDownloads\Win2022_ADK</code>.</p>
-<p>There will be a file called <code>adksetup.exe</code>.</p>
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -522,16 +555,12 @@ Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./win2022_adk.iso&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-
-Set-Location &quot;${ISO_BUILD}&quot;
-
-$ADK_DOWNLOADS=&quot;ADKDownloads&quot;
+$ADK_DOWNLOADS=&quot;C:\attuneautomationworker\ADKDownloads&quot;
 
 Set-Location &quot;${ADK_DOWNLOADS}&quot;
 
-&amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x &quot;./win2022_adk.iso&quot; `
-    -oWin2022_ADK
+&amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x &quot;./adk_setup.iso&quot; `
+    -oadk_setup
                 </code>
             </pre>
         </div>
@@ -592,18 +621,14 @@ Set-Location &quot;${ADK_DOWNLOADS}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ADK=&quot;C:\attuneautomationworker\ADKDownloads\adk_setup&quot;
 
-Set-Location &quot;${ISO_BUILD}&quot;
-
-$WIN2022_ADK=&quot;ADKDownloads\Win2022_ADK&quot;
-
-Set-Location &quot;${WIN2022_ADK}&quot;
+Set-Location &quot;${ADK}&quot;
 
 ./adksetup.exe /quiet `
     /features &quot;OptionId.DeploymentTools&quot; `
     /norestart `
-    /log win2022_adk_install_log.txt `
+    /log adk_install_log.txt `
     /ceip off
                 </code>
             </pre>
@@ -659,7 +684,7 @@ Set-Location &quot;${WIN2022_ADK}&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>The URL is for the <code>Windows PE add-on for the ADK for Windows Server 2022</code> at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.</p>
+                                <p>Use the ADK version that matches the Windows version you are working with. If your environment has a mix of Windows versions, use the ADK version that matches the latest operating system in your environment.</p>
                             </p>
                         </div>
                     </div>
@@ -688,20 +713,33 @@ Set-Location &quot;${WIN2022_ADK}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+# Get the OS information
+$OS = Get-WmiObject Win32_OperatingSystem
 
-Set-Location &quot;${ISO_BUILD}&quot;
-
-$ADK_DOWNLOADS=&quot;ADKDownloads&quot;
+$ADK_DOWNLOADS=&quot;C:\attuneautomationworker\ADKDownloads&quot;
 
 Set-Location &quot;${ADK_DOWNLOADS}&quot;
 
-$WINPE_ADD_ON_ADK_WIN2022_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2163233&quot;
-
-$ProgressPreference = &#x27;SilentlyContinue&#x27;
-
-Invoke-WebRequest $WINPE_ADD_ON_ADK_WIN2022_URL `
-    -OutFile &quot;./win2022_winpe_add_on_adk.iso&quot;
+# Check the caption property for Windows Server 2022 or Windows 11
+if ($OS.Caption -like &quot;*Windows Server 2022*&quot;) {
+    
+    Write-Host &quot;This system is running Windows Server 2022&quot;
+    $ADK_WIN2022_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2163233&quot;
+    $ProgressPreference = &#x27;SilentlyContinue&#x27;
+    Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./adk_winpe_add_on.iso&quot;
+    
+} elseif ($OS.Caption -like &quot;*Windows 11*&quot;) {
+    
+    Write-Host &quot;This system is running Windows 11&quot;
+    $ADK_WIN11_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2166133&quot;
+    $ProgressPreference = &#x27;SilentlyContinue&#x27;
+    Invoke-WebRequest $ADK_WIN11_URL -OutFile &quot;./adk_winpe_add_on.iso&quot;
+    
+} else {
+    
+    Write-Error &quot;This system is not running Windows Server 2022 or Windows 11&quot;
+    
+}
                 </code>
             </pre>
         </div>
@@ -756,16 +794,12 @@ Invoke-WebRequest $WINPE_ADD_ON_ADK_WIN2022_URL `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-
-Set-Location &quot;${ISO_BUILD}&quot;
-
-$ADK_DOWNLOADS=&quot;ADKDownloads&quot;
+$ADK_DOWNLOADS=&quot;C:\attuneautomationworker\ADKDownloads&quot;
 
 Set-Location &quot;${ADK_DOWNLOADS}&quot;
 
-&amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x &quot;./win2022_winpe_add_on_adk.iso&quot; `
-    -oWin2022_WINPE_ADD_ON_ADK
+&amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x &quot;./adk_winpe_add_on.iso&quot; `
+    -oadk_winpe_add_on
                 </code>
             </pre>
         </div>
@@ -825,18 +859,14 @@ Set-Location &quot;${ADK_DOWNLOADS}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ADK=&quot;C:\attuneautomationworker\ADKDownloads\adk_winpe_add_on&quot;
 
-Set-Location &quot;${ISO_BUILD}&quot;
-
-$WIN2022_WINPE_ADD_ON_ADK=&quot;ADKDownloads\Win2022_WINPE_ADD_ON_ADK&quot;
-
-Set-Location &quot;${WIN2022_WINPE_ADD_ON_ADK}&quot;
+Set-Location &quot;${ADK}&quot;
 
 ./adkwinpesetup.exe /quiet `
     /features &quot;OptionId.WindowsPreinstallationEnvironment&quot; `
     /norestart `
-    /log win2022_winpe_add_on_adk_install_log.txt `
+    /log adk_winpe_add_on_install_log.txt `
     /ceip off
                 </code>
             </pre>
