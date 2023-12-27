@@ -312,6 +312,11 @@ This blueprint is a repeatable process for the
 
 ### Install Windows Assessment and Deployment Kit on Win2022 Windows Worker
 
+The Windows Assessment and Deployment Kit (Windows ADK) and 
+Windows PE add-on has the tools you need to customise 
+Windows images for large-scale deployment, and to test 
+the quality and performance of your system, its added 
+components, and the applications running on it.
 
 ### Perform Post Cleanup on macOS or Linux Worker
 

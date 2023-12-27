@@ -1,1 +1,4 @@
-The URL is for the Windows Assessment and Deployment Kit (ADK) for Windows Server 2022 at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.
+Use the ADK version that matches the Windows version 
+you are working with. If your environment has a mix of 
+Windows versions, use the ADK version that matches the 
+latest operating system in your environment.
