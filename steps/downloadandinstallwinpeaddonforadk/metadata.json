@@ -4,21 +4,21 @@
     "enabled": true, 
     "externalUuid4": "88848fd4-eb1b-401d-bd15-b2bf209cebe0", 
     "isBlueprint": false, 
-    "key": "downloadandinstallwinpeaddonforadkforwindowsserver2022", 
+    "key": "downloadandinstallwinpeaddonforadk", 
     "links": [
         {
             "order": 0, 
-            "stepKey": "downloadwinpeaddonforadkforwindowsserver2022"
+            "stepKey": "downloadwinpeaddonforadk"
         }, 
         {
             "order": 50, 
-            "stepKey": "extractwinpeaddonforadkforwindowsserver2022"
+            "stepKey": "extractwinpeaddonforadk"
         }, 
         {
             "order": 100, 
-            "stepKey": "installwinpeaddonforadkforwindowsserver2022"
+            "stepKey": "installwinpeaddonforadk"
         }
     ], 
-    "name": "Download and Install WinPE Add-On for ADK for Windows Server 2022", 
+    "name": "Download and Install WinPE Add-On for ADK", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
