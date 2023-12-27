@@ -334,7 +334,7 @@ This blueprint is a repeatable process for the
 ### Install Prerequisites on Windows Worker
 
 
-### Install Windows Assessment and Deployment Kit on Win2022 Windows Worker
+### Install Windows Assessment and Deployment Kit
 
 The Windows Assessment and Deployment Kit (Windows ADK) and 
 Windows PE add-on has the tools you need to customise 
