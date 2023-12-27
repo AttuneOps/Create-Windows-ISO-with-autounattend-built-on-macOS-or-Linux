@@ -1,12 +1,20 @@
-# Project Overview
 This Attune Project provides an efficient and streamlined approach to 
 creating customised Windows installation ISOs using the autounattend. 
 
-The project is designed to cater to various Windows distributions and employs 
+The project caters to various Windows distributions and employs 
 multiple methodologies to facilitate the creation of these tailored 
 installation media. Whether you're working with large 5GB ISOs or building 
 a lightweight WinPE installer, this project has the resources and 
 blueprints you need to automate the process effectively.
+
+# Target Audience
+IT professionals and system administrators who regularly set up Windows 
+environments.
+
+Organisations looking to streamline their OS deployment process.
+
+Individuals seeking an efficient way to install or reinstall Windows on 
+their computers.
 
 # Key Features
 
@@ -31,25 +39,16 @@ creation process, making it faster and more reliable, whether you are an
 IT professional setting up multiple systems or an individual user 
 installing Windows on a new PC.
 
-# Target Audience
-IT professionals and system administrators who regularly set up Windows 
-environments.
-
-Organisations looking to streamline their OS deployment process.
-
-Individuals seeking an efficient way to install or reinstall Windows on 
-their computers.
-
 # autounattend Installation Methods
 
-Three methods to autounattend install Windows OS are documented in 
-this Project.
+There are three methods to autounattend install Windows OS in this Project.
 
 1. Single ISO
 2. Dual ISO
 3. WinPE ISO
 
 ## Single ISO
+
 This is the simplest installation possible with the least 
 dependencies and configuration.
 
@@ -59,15 +58,14 @@ with the drivers and configuration files.
 **Ideal Use Case:** Great fallback method for when no other 
 methods are easy.
 
-**Advantages:**
-* Simple process
-* Doesn't require networking
+**Advantages:** Simple setup and process
 
 **Disadvantages:** Each installation being performed requires 
 unpacking, repacking, and transfering around a unique 5GB ISO 
 file.
 
 ## Dual ISO
+
 The unalted Windows Installation ISO is deployed directly to 
 the device. Drivers and configuration files are attached to 
 the device in a separate ISO file.
@@ -75,15 +73,16 @@ the device in a separate ISO file.
 **Ideal Use Case:** Preferred method for a small number of 
 machines to build.
 
-**Advantages:**
+**Advantages:** 
+* Simple setup and process
 * Light work load
-* Doesn't require networking
 
 **Disadvantages:** Host requires capability to attach a second 
 CD-ROM (eg. oVirt cannot attach a second CD-ROM).
 
 ## WinPE ISO
-Small WinPE ISO file for each device and any aditional files 
+
+Small WinPE ISO file for each device. Any aditional files 
 required during the installation are copied from a Samba Share 
 on the network.
 
@@ -96,19 +95,29 @@ machines or if a small ISO file is required.
 * Fastest installation
 * Network efficient
 
-**Disadvantages:** Requires significant setup to gather the 
+**Disadvantages:** Requires significant once off setup to gather the 
 WinPE files and setup a Samba Share.
 
-# Conclusion
-By utilising this Attune Project, users can expect a significant reduction 
-in the time and effort typically required for Windows installations. The 
-combination of versatility, efficiency, and ease of use makes this project 
-an invaluable resource for anyone looking to automate their Windows 
-installation process.
+# Get Started
 
-# Read More
-[Attune Project - Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend)
+If you haven't already, download and install the free 
+[Attune Community Edition](https://www.servertribe.com/).
 
+Clone the 
+[Automate Windows Installation with autounattend](https://github.com/Attune-Automation/Automate-Windows-Installation-with-autounattend) 
+Project.
+
+Review the **autounattend Installation Methods** and select a method.
+
+Review the description of the Blueprint you will run and following the 
+instructions.
+
+# Learn More
+
+Visit the 
 [Attune Documentation - Automate Operating System Installation](https://docs.attuneautomation.com/en/latest/topics/automated_os_installation.html)
+to learn how Attune streamlines the OS installation process.
 
+For other guides, visit the 
 [Attune Documentation - How-to Guides](https://docs.attuneautomation.com/en/latest/howto/index.html)
+.
