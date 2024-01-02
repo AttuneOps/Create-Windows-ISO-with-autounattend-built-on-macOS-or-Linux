@@ -1862,12 +1862,42 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Creates a BIOS bootable ISO at <code>{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
-<p>Only applies to BIOS kickstarts so if any of these parameters are set the string <code>true</code>:</p>
-<ol>
-<li><code>isWin10Bios</code></li>
-<li><code>isWinServerBios</code></li>
-</ol>
+                                <p>The <code>xorriso</code> and <code>mkisofs</code> command is used to create a customised, 
+bootable ISO image from the contents of the winpe_staging directory. 
+The command includes various settings for bootability, file system types, 
+naming conventions, and compatibility options to ensure the ISO functions as 
+intended in various environments. </p>
+<p>Let's break down the command and its options:</p>
+<p><code>xorriso -as mkisofs</code> runs xorriso in a mode that emulates <code>mkisofs</code>, 
+a linux command.</p>
+<p><code>-b boot.img</code> specifies boot.img as the boot image for a bootable ISO. </p>
+<p><code>-no-emul-boot</code> indicates that no disk emulation mode is used for the boot 
+image. This is typically used for bootable ISOs intended for systems that 
+can understand the ISO file system directly.</p>
+<p><code>-c BOOT.CAT</code> specifies the creation of a boot catalog (BOOT.CAT) in the 
+ISO image.</p>
+<p><code>-iso-level 3</code> sets the compliance level for the ISO 9660 standard. 
+Level 3 allows for file names up to 207 characters in length and file 
+sizes larger than 2 GB.</p>
+<p><code>-udf</code> includes UDF (Universal Disk Format) file system in 
+addition to ISO 9660. UDF is often used for DVDs and newer 
+optical media formats and supports larger file sizes.</p>
+<p><code>-joliet-long</code> Enables the use of the Joliet file system extension 
+with support for longer file names.</p>
+<p><code>-relaxed-filenames</code> allows file names that do not strictly adhere to the 
+ISO 9660 standard, providing more flexibility.</p>
+<p><code>-allow-limited-size</code> permits the creation of ISO images that exceed the 
+size limitations of the ISO 9660 standard.</p>
+<p><code>-J</code> enables Joliet file system extensions for longer file names and 
+Unicode characters.</p>
+<p><code>-full-iso9660-filenames</code> allows using the full ISO 9660 file naming 
+rules without the usual length limitations.</p>
+<p><code>-disable-deep-relocation</code> disables the relocation of deep directory 
+trees, which can be necessary for certain boot scenarios.</p>
+<p><code>-omit-version-number</code> omits the version number from file names in the 
+ISO image.</p>
+<p><code>-V</code> sets the volume ID of the ISO image.</p>
+<p><code>-o</code> specifies the output path and filename for the created ISO image.</p>
                             </p>
                         </div>
                     </div>
@@ -1898,14 +1928,14 @@ fi
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
 
-if {isWin10Bios} || {isWinServerBios} 
+ISO_NAME=&quot;kickstart_{newOsNode.fqn}.iso&quot;
+
+if {isWin10Bios} || {isWinServerBios}
 then
-    ISO_NAME=&quot;kickstart_{newOsNode.fqn}.iso&quot;
-    
-    if uname | \
-        grep -iq &quot;darwin&quot;
+
+    if [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
     then
-        echo &quot;is macOS&quot;
+
         export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
         echo &quot;Using $(which xorriso)&quot;
 
@@ -1924,8 +1954,8 @@ then
             -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
             winpe_staging
 
-    else
-        echo &quot;not macOS&quot;
+    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
 
         mkisofs \
             -b boot.img \
@@ -1943,6 +1973,12 @@ then
             -V &quot;KS_WIN&quot; \
             -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
             winpe_staging
+
+    else
+
+        echo &quot;Unsupported operating system.&quot;
+        exit 1
+
     fi
 
 else
@@ -1972,7 +2008,12 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>The <code>id -gn</code> command gets the primary group name of the specified user.</p>
+<p><code>chown</code> changes the ownership of the winpe_staging directory to the user 
+and group specified by the <code>USER</code> and <code>GROUP</code> variables.</p>
+<p><code>-R</code> makes the command recursive, applying to all files and subdirectories.</p>
+<p><code>-v</code> (verbose) means the command will display detailed output about what 
+it's doing.</p>
                             </p>
                         </div>
                     </div>
@@ -2012,26 +2053,13 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        chown --recursive \
-            --verbose \
-            &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
-            &quot;winpe_staging&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+USER=&quot;{automationWorkerLinuxUser.user}&quot;
+GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
+echo &quot;User: $USER, Group: $GROUP&quot;
+
+chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
                 </code>
             </pre>
         </div>
@@ -2053,6 +2081,18 @@ fi
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p><code>mkfs.msdos</code> is a Linux command used to create an MS-DOS (FAT) filesystem. 
+This is part of the dosfstools package on Linux systems. 
+It's equivalent to the mkfs command used for other filesystem types.</p>
+<p><code>hdiutil</code> is a macOS utility to create and manipulate disk images. 
+The script creates a FAT file system (MS-DOS) disk image, 
+converts it to a CDR format, and then renames it to ISO.</p>
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -2091,24 +2131,36 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-        
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
-        ((bytes=bytes+10000))
-        
-        ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
-    fi
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
     
+    bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 512}&#x27;)
+    ((bytes=bytes+10000))
+    
+    ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+    
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+    
+        rm -rf ${ISO}
+        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
+    
+    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+    then
+    
+        megabytes=$(((${bytes} + 1048575) / 1048576))
+        echo ${megabytes}
+        hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_UEFI&quot; &quot;${ISO}&quot;
+        hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
+        rm -rf ${ISO}.dmg
+        mv -v ${ISO}.cdr ${ISO}
+    
+    else
+    
+        echo &quot;Unsupported operating system.&quot;
+        exit 1
+    fi
+
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
@@ -2136,7 +2188,10 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>For a linux system, the <code>mount</code> command attaches a file system found on a 
+device. </p>
+<p>For a macOS system, the <code>hdiutil attach</code> command attaches a disk image as a 
+device. <code>-mountroot</code> mounts volumes on a subdirectory.</p>
                             </p>
                         </div>
                     </div>
@@ -2178,22 +2233,30 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
+    ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+    FOLDER=&quot;uefi_mount&quot;
+
+
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
     then
-        echo &quot;is macOS, skipping&quot;
-        
+
+        mkdir --parent --verbose ${FOLDER}/CD
+        mount --verbose &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
+
+    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+    then
+
+        mkdir -p -v ${FOLDER}
+        hdiutil attach ${ISO} -mountroot ${FOLDER}
+
     else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        mkdir --parents --verbose uefi_mount
-        
-        mount --verbose \
-            &quot;../kickstart_{newOsNode.fqn}.iso&quot; uefi_mount
+
+        echo &quot;Unsupported operating system.&quot;
+        exit 1
     fi
-    
+
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
@@ -2218,13 +2281,6 @@ fi
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
@@ -2250,25 +2306,9 @@ fi
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        # Copy WinPE Files from WinPE ISO
-        #mv --verbose winpe_staging/* &quot;uefi_mount&quot;
-        cp -r --verbose winpe_staging/* &quot;uefi_mount&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
+cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
+
+cp -vr winpe_staging/* &quot;$(echo uefi_mount/*)&quot;
                 </code>
             </pre>
         </div>
@@ -2293,7 +2333,10 @@ fi
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
+from the file hierarchy.</p>
+<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
+terminates any associated processes.</p>
                             </p>
                         </div>
                     </div>
@@ -2324,28 +2367,39 @@ fi
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
+
+    MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/uefi_mount&quot;
     
-        MOUNT_FOLDER=&quot;uefi_mount&quot;
-        MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}&quot;
-        
-        if df -h | grep --ignore-case \
-            --quiet \
-            &quot;${MOUNT_PATH}&quot;
+    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+    
+        if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
         then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-            
-            umount --verbose &quot;${MOUNT_FOLDER}&quot;
+    
+            umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
+            chmod -R a+w &quot;${MOUNT_PATH}&quot;
+    
         else
+    
             echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
         fi
+    
+    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
+    then
+    
+        if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
+        then
+    
+            hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
+        else
+    
+            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+        fi
+    
+    else
+    
+        echo &quot;Unsupported operating system.&quot;
+        exit 1
     fi
     
 else

@@ -1,13 +1,13 @@
 cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
 
-if {isWin10Bios} || {isWinServerBios} 
+ISO_NAME="kickstart_{newOsNode.fqn}.iso"
+
+if {isWin10Bios} || {isWinServerBios}
 then
-    ISO_NAME="kickstart_{newOsNode.fqn}.iso"
-    
-    if uname | \
-        grep -iq "darwin"
+
+    if [[ "Darwin" == "$(uname)" ]]
     then
-        echo "is macOS"
+
         export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
         echo "Using $(which xorriso)"
 
@@ -26,8 +26,8 @@ then
             -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
             winpe_staging
 
-    else
-        echo "not macOS"
+    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
 
         mkisofs \
             -b boot.img \
@@ -45,6 +45,12 @@ then
             -V "KS_WIN" \
             -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
             winpe_staging
+
+    else
+
+        echo "Unsupported operating system."
+        exit 1
+
     fi
 
 else
