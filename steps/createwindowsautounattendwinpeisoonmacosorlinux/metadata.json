@@ -7,36 +7,8 @@
     "key": "createwindowsautounattendwinpeisoonmacosorlinux", 
     "links": [
         {
-            "order": 0, 
+            "order": 50, 
             "stepKey": "validateplanparameters"
-        }, 
-        {
-            "order": 100, 
-            "stepKey": "checkwindowsandboottypeparametersforwinpekickstartonmacosorlinux"
-        }, 
-        {
-            "order": 150, 
-            "stepKey": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonmacosorlinux"
-        }, 
-        {
-            "order": 200, 
-            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
-        }, 
-        {
-            "order": 250, 
-            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
-        }, 
-        {
-            "order": 300, 
-            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
-        }, 
-        {
-            "order": 350, 
-            "stepKey": "confirmplainwinpebiosisoexistsonmacosorlinux"
-        }, 
-        {
-            "order": 400, 
-            "stepKey": "confirmplainwinpeuefiisoexistsonmacosorlinux"
         }, 
         {
             "order": 450, 
