@@ -67,18 +67,6 @@
             "stepKey": "createwinpeplainuefiisoonmacosorlinux"
         }, 
         {
-            "order": 1000, 
-            "stepKey": "mountwinpeplainuefiisoonmacosorlinux"
-        }, 
-        {
-            "order": 1050, 
-            "stepKey": "copywinpestagingtouefimountonmacosorlinux"
-        }, 
-        {
-            "order": 1100, 
-            "stepKey": "unmountwinpeuefimountonmacosorlinux"
-        }, 
-        {
             "order": 1250, 
             "stepKey": "cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux"
         }

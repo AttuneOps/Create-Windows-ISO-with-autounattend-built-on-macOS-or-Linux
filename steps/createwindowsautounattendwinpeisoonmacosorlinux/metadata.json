@@ -61,18 +61,6 @@
         {
             "order": 1200, 
             "stepKey": "createuefibootwinpeisoonmacosorlinux"
-        }, 
-        {
-            "order": 1250, 
-            "stepKey": "mountuefibootwinpeisoonmacosorlinux"
-        }, 
-        {
-            "order": 1300, 
-            "stepKey": "movewinpestagingtouefibootwinpeisoonmacosorlinux"
-        }, 
-        {
-            "order": 1350, 
-            "stepKey": "unmountuefibootwinpeisoonmacosorlinux"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on macOS or Linux", 

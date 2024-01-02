@@ -416,30 +416,6 @@ automate the installation.</p>
                         </a>
                     </p>
 
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountuefibootwinpeisoonmacosorlinux">
-                            <strong>Step 15 -</strong> Mount UEFI Boot WinPE ISO on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movewinpestagingtouefibootwinpeisoonmacosorlinux">
-                            <strong>Step 16 -</strong> Move WinPE Staging to UEFI Boot WinPE ISO on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountuefibootwinpeisoonmacosorlinux">
-                            <strong>Step 17 -</strong> Unmount UEFI Boot WinPE ISO on macOS or Linux
-                        </a>
-                    </p>
-
 
                 </div>
             </div>
@@ -2084,12 +2060,42 @@ chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p><code>mkfs.msdos</code> is a Linux command used to create an MS-DOS (FAT) filesystem. 
-This is part of the dosfstools package on Linux systems. 
-It's equivalent to the mkfs command used for other filesystem types.</p>
-<p><code>hdiutil</code> is a macOS utility to create and manipulate disk images. 
-The script creates a FAT file system (MS-DOS) disk image, 
-converts it to a CDR format, and then renames it to ISO.</p>
+                                <p>The <code>xorriso</code> and <code>mkisofs</code> command is used to create a customised, 
+bootable ISO image from the contents of the winpe_staging directory. 
+The command includes various settings for bootability, file system types, 
+naming conventions, and compatibility options to ensure the ISO functions as 
+intended in various environments. </p>
+<p>Let's break down the command and its options:</p>
+<p><code>xorriso -as mkisofs</code> runs xorriso in a mode that emulates <code>mkisofs</code>, 
+a linux command.</p>
+<p><code>-b boot.img</code> specifies boot.img as the boot image for a bootable ISO. </p>
+<p><code>-no-emul-boot</code> indicates that no disk emulation mode is used for the boot 
+image. This is typically used for bootable ISOs intended for systems that 
+can understand the ISO file system directly.</p>
+<p><code>-c BOOT.CAT</code> specifies the creation of a boot catalog (BOOT.CAT) in the 
+ISO image.</p>
+<p><code>-iso-level 3</code> sets the compliance level for the ISO 9660 standard. 
+Level 3 allows for file names up to 207 characters in length and file 
+sizes larger than 2 GB.</p>
+<p><code>-udf</code> includes UDF (Universal Disk Format) file system in 
+addition to ISO 9660. UDF is often used for DVDs and newer 
+optical media formats and supports larger file sizes.</p>
+<p><code>-joliet-long</code> Enables the use of the Joliet file system extension 
+with support for longer file names.</p>
+<p><code>-relaxed-filenames</code> allows file names that do not strictly adhere to the 
+ISO 9660 standard, providing more flexibility.</p>
+<p><code>-allow-limited-size</code> permits the creation of ISO images that exceed the 
+size limitations of the ISO 9660 standard.</p>
+<p><code>-J</code> enables Joliet file system extensions for longer file names and 
+Unicode characters.</p>
+<p><code>-full-iso9660-filenames</code> allows using the full ISO 9660 file naming 
+rules without the usual length limitations.</p>
+<p><code>-disable-deep-relocation</code> disables the relocation of deep directory 
+trees, which can be necessary for certain boot scenarios.</p>
+<p><code>-omit-version-number</code> omits the version number from file names in the 
+ISO image.</p>
+<p><code>-V</code> sets the volume ID of the ISO image.</p>
+<p><code>-o</code> specifies the output path and filename for the created ISO image.</p>
                             </p>
                         </div>
                     </div>
@@ -2133,123 +2139,25 @@ if {kickstartedBootLoaderIsUefi}
 then
 
     cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-    
-    bytes=$(du -s winpe_staging | awk &#x27;{print $1}&#x27;)
-    ((bytes=bytes+10000))
-    
+
     ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-    
+
     if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
     then
-    
+
         rm -rf ${ISO}
+        bytes=$(du -s winpe_staging | awk &#x27;{print $1}&#x27;)
+        ((bytes=bytes+10000))
         mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
-    
-    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-    then
-    
-        megabytes=$(((${bytes} * 512 + 1048575) / 1048576))
-        echo ${megabytes}
-        hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_UEFI&quot; &quot;${ISO}&quot;
-        hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
-        rm -rf ${ISO}.dmg
-        mv -v ${ISO}.cdr ${ISO}
-    
-    else
-    
-        echo &quot;Unsupported operating system.&quot;
-        exit 1
-    fi
-
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="mountuefibootwinpeisoonmacosorlinux">
-                            <a href="#mountuefibootwinpeisoonmacosorlinux">
-                                <strong>Step 15 -</strong> Mount UEFI Boot WinPE ISO on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>For a linux system, the <code>mount</code> command attaches a file system found on a 
-device. </p>
-<p>For a macOS system, the <code>hdiutil attach</code> command attaches a disk image as a 
-device. <code>-mountroot</code> mounts volumes on a subdirectory.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-
-    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-    ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-    FOLDER=&quot;uefi_mount&quot;
-
-
-    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
-
-        mkdir --parent --verbose ${FOLDER}/CD
-        mount --verbose &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
 
     elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
     then
 
-        mkdir -p -v ${FOLDER}
-        hdiutil attach ${ISO} -mountroot ${FOLDER}
+        [ -f &quot;${ISO}&quot; ] &amp;&amp; rm -rf &quot;${ISO}&quot;
+        hdiutil makehybrid \
+            -iso -joliet -o ${ISO} winpe_staging \
+            -no-emul-boot
+        ls -ltrh ${ISO}
 
     else
 
@@ -2257,158 +2165,6 @@ then
         exit 1
     fi
 
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="movewinpestagingtouefibootwinpeisoonmacosorlinux">
-                            <a href="#movewinpestagingtouefibootwinpeisoonmacosorlinux">
-                                <strong>Step 16 -</strong> Move WinPE Staging to UEFI Boot WinPE ISO on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-
-cp -vr winpe_staging/* &quot;$(echo uefi_mount/*)&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="unmountuefibootwinpeisoonmacosorlinux">
-                            <a href="#unmountuefibootwinpeisoonmacosorlinux">
-                                <strong>Step 17 -</strong> Unmount UEFI Boot WinPE ISO on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
-from the file hierarchy.</p>
-<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
-terminates any associated processes.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-
-    MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/uefi_mount&quot;
-    
-    if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-    then
-    
-        if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
-        then
-    
-            umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
-            chmod -R a+w &quot;${MOUNT_PATH}&quot;
-    
-        else
-    
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
-    
-    elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-    then
-    
-        if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
-        then
-    
-            hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
-        else
-    
-            echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-        fi
-    
-    else
-    
-        echo &quot;Unsupported operating system.&quot;
-        exit 1
-    fi
-    
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi

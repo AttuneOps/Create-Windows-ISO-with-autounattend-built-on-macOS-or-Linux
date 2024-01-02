@@ -384,32 +384,8 @@ Windows installation ISO, reducing the ISO file size to less than 500MB.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#mountwinpeplainuefiisoonmacosorlinux">
-                            <strong>Step 16 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#copywinpestagingtouefimountonmacosorlinux">
-                            <strong>Step 17 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountwinpeuefimountonmacosorlinux">
-                            <strong>Step 18 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
-                            <strong>Step 19 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
+                            <strong>Step 16 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
                         </a>
                     </p>
     
@@ -417,7 +393,7 @@ Windows installation ISO, reducing the ISO file size to less than 500MB.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwinpeuefimountonmacosorlinux">
-                            <strong>Step 19.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
+                            <strong>Step 16.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
                         </a>
                     </p>
 
@@ -425,7 +401,7 @@ Windows installation ISO, reducing the ISO file size to less than 500MB.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwindowsisoonmacosorlinux">
-                            <strong>Step 19.2 -</strong> Unmount Windows ISO on macOS or Linux
+                            <strong>Step 16.2 -</strong> Unmount Windows ISO on macOS or Linux
                         </a>
                     </p>
 
@@ -433,7 +409,7 @@ Windows installation ISO, reducing the ISO file size to less than 500MB.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
-                            <strong>Step 19.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
+                            <strong>Step 16.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                         </a>
                     </p>
 
@@ -441,7 +417,7 @@ Windows installation ISO, reducing the ISO file size to less than 500MB.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#deletethebuilddirectoryonmacosorlinux">
-                            <strong>Step 19.4 -</strong> Delete the build directory on macOS or Linux
+                            <strong>Step 16.4 -</strong> Delete the build directory on macOS or Linux
                         </a>
                     </p>
 
@@ -1969,261 +1945,27 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-bytes=$(du -s winpe_uefi_staging | awk &#x27;{print $1}&#x27;)
-((bytes=bytes+10000))
 ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
 
 if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
     
     rm -rf ${ISO}
+    bytes=$(du -s winpe_uefi_staging | awk &#x27;{print $1}&#x27;)
+    ((bytes=bytes+10000))
     mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
     
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    megabytes=$(((${bytes} * 512 + 1048575) / 1048576))
-    echo ${megabytes}
-    hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_Plain_UEFI&quot; &quot;${ISO}&quot;
-    hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
-    rm -rf ${ISO}.dmg
-    mv -v ${ISO}.cdr ${ISO}
+    [ -f &quot;${ISO}&quot; ] &amp;&amp; rm -rf &quot;${ISO}&quot;
+    hdiutil makehybrid \
+        -iso -joliet -o ${ISO} winpe_uefi_staging \
+        -eltorito-boot boot.img -no-emul-boot
+    ls -ltrh ${ISO}
     
 else
 
-    echo &quot;Unsupported operating system.&quot;
-    exit 1
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="mountwinpeplainuefiisoonmacosorlinux">
-                            <a href="#mountwinpeplainuefiisoonmacosorlinux">
-                                <strong>Step 16 -</strong> Mount winpe_plain_uefi.iso on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>For a linux system, the <code>mount</code> command attaches a file system found on a 
-device. </p>
-<p>For a macOS system, the <code>hdiutil attach</code> command attaches a disk image as a 
-device. <code>-mountroot</code> mounts volumes on a subdirectory.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
-FOLDER=&quot;uefi_mount&quot;
-
-if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-then
-    
-    mkdir --parent --verbose ${FOLDER}/CD
-    mount --verbose &quot;${ISO}&quot; &quot;${FOLDER}/CD&quot;
-
-elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-then
-
-    mkdir -p -v ${FOLDER}
-    hdiutil attach ${ISO} -mountroot ${FOLDER}
-
-else
-
-    echo &quot;Unsupported operating system.&quot;
-    exit 1
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="copywinpestagingtouefimountonmacosorlinux">
-                            <a href="#copywinpestagingtouefimountonmacosorlinux">
-                                <strong>Step 17 -</strong> Copy WinPE Staging to UEFI Mount on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
-
-cp -vr winpe_uefi_staging/* &quot;$(echo uefi_mount/*)&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="unmountwinpeuefimountonmacosorlinux">
-                            <a href="#unmountwinpeuefimountonmacosorlinux">
-                                <strong>Step 18 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>For a linux system, the <code>umount</code> command detaches the mentioned file system 
-from the file hierarchy.</p>
-<p>For a macOS system, the <code>hdiutil detach</code> command detaches a disk image and 
-terminates any associated processes.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso/uefi_mount&quot;
-
-if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
-then
-    
-    if df -h | grep --ignore-case --quiet &quot;$(echo ${MOUNT_PATH}/*)&quot;
-    then
-    
-        umount --verbose &quot;$(echo ${MOUNT_PATH}/*)&quot;
-        chmod -R a+w &quot;${MOUNT_PATH}&quot;
-        
-    else
-    
-        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-    fi
-
-elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
-then
-
-    if [[ $(find ${MOUNT_PATH}/*  2&gt; /dev/null | wc -l) -gt 10 ]]
-    then
-    
-        hdiutil detach &quot;$(echo ${MOUNT_PATH}/*)&quot;
-    else
-    
-        echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
-    fi
-
-else
-    
     echo &quot;Unsupported operating system.&quot;
     exit 1
 fi
@@ -2243,7 +1985,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
                             <a href="#cleanuptemporarybuildfilesforwinpeplainisocreationonmacosorlinux">
-                                <strong>Step 19 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
+                                <strong>Step 16 -</strong> Cleanup temporary build files for WinPE plain ISO creation on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -2275,7 +2017,7 @@ working directory.</p>
                     <div class="row pt-5">
                         <h4 id="unmountwinpeuefimountonmacosorlinux">
                             <a href="#unmountwinpeuefimountonmacosorlinux">
-                                <strong>Step 19.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
+                                <strong>Step 16.1 -</strong> Unmount WinPE UEFI Mount on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2299,7 +2041,18 @@ terminates any associated processes.</p>
 
 
 
-    
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
 
 
     
@@ -2364,7 +2117,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="unmountwindowsisoonmacosorlinux">
                             <a href="#unmountwindowsisoonmacosorlinux">
-                                <strong>Step 19.2 -</strong> Unmount Windows ISO on macOS or Linux
+                                <strong>Step 16.2 -</strong> Unmount Windows ISO on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2452,7 +2205,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="setwritepermissionstowinpeuefistagingonmacosorlinux">
                             <a href="#setwritepermissionstowinpeuefistagingonmacosorlinux">
-                                <strong>Step 19.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
+                                <strong>Step 16.3 -</strong> Set Write Permissions to winpe_uefi_staging on macOS or Linux
                             </a>
                         </h4>
                     </div>
@@ -2536,7 +2289,7 @@ fi
                     <div class="row pt-5">
                         <h4 id="deletethebuilddirectoryonmacosorlinux">
                             <a href="#deletethebuilddirectoryonmacosorlinux">
-                                <strong>Step 19.4 -</strong> Delete the build directory on macOS or Linux
+                                <strong>Step 16.4 -</strong> Delete the build directory on macOS or Linux
                             </a>
                         </h4>
                     </div>
