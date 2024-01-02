@@ -1,10 +1,18 @@
+FOLDER="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+mkdir -p "${FOLDER}"
+cd "${FOLDER}"
+
 if {isWin10Bios} || {isWinServerBios}
 then
-    FOLDER="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
-    mkdir --parents "${FOLDER}"
-    cd "${FOLDER}"
-    cp --verbose "../winpe_plain_bios.iso" "winpe.iso"
+
+    cp -v "../winpe_plain_bios.iso" "winpe.iso"
+    
+elif {isWin10Uefi} || {isWinServerUefi}
+then
+
+    cp -v "../winpe_plain_uefi.iso" "winpe.iso"
     
 else
-    echo "Skipping for UEFI ISO creation."
+    echo "Configuration error."
+    exit 1
 fi

@@ -15,10 +15,6 @@
             "stepKey": "copyandrenamewinpeplainisoonmacosorlinux"
         }, 
         {
-            "order": 500, 
-            "stepKey": "copyandrenamewinpeuefiisoonmacosorlinux"
-        }, 
-        {
             "order": 550, 
             "stepKey": "extractwinpeisotostagingfolderonmacosorlinux"
         }, 
