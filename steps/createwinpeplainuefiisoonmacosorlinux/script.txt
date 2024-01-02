@@ -1,6 +1,6 @@
 cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
-bytes=$(du -s winpe_uefi_staging | awk '{print $1 * 512}')
+bytes=$(du -s winpe_uefi_staging | awk '{print $1}')
 ((bytes=bytes+10000))
 ISO="{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso"
 
@@ -13,7 +13,7 @@ then
 elif [[ "Darwin" == "$(uname)" ]]
 then
 
-    megabytes=$(((${bytes} + 1048575) / 1048576))
+    megabytes=$(((${bytes} * 512 + 1048575) / 1048576))
     echo ${megabytes}
     hdiutil create -fs MS-DOS -size ${megabytes}M -volname "WinPE_Plain_UEFI" "${ISO}"
     hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr

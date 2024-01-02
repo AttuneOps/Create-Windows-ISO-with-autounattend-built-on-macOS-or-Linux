@@ -1969,7 +1969,7 @@ ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 cd &quot;{automationWorkerLinuxBaseDirectory}/build-winpe-iso&quot;
 
-bytes=$(du -s winpe_uefi_staging | awk &#x27;{print $1 * 512}&#x27;)
+bytes=$(du -s winpe_uefi_staging | awk &#x27;{print $1}&#x27;)
 ((bytes=bytes+10000))
 ISO=&quot;{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso&quot;
 
@@ -1982,7 +1982,7 @@ then
 elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
 then
 
-    megabytes=$(((${bytes} + 1048575) / 1048576))
+    megabytes=$(((${bytes} * 512 + 1048575) / 1048576))
     echo ${megabytes}
     hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_Plain_UEFI&quot; &quot;${ISO}&quot;
     hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr

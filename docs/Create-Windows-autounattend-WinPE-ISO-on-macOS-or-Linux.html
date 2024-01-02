@@ -2134,7 +2134,7 @@ then
 
     cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
     
-    bytes=$(du -s winpe_staging | awk &#x27;{print $1 * 512}&#x27;)
+    bytes=$(du -s winpe_staging | awk &#x27;{print $1}&#x27;)
     ((bytes=bytes+10000))
     
     ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
@@ -2148,7 +2148,7 @@ then
     elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
     then
     
-        megabytes=$(((${bytes} + 1048575) / 1048576))
+        megabytes=$(((${bytes} * 512 + 1048575) / 1048576))
         echo ${megabytes}
         hdiutil create -fs MS-DOS -size ${megabytes}M -volname &quot;WinPE_UEFI&quot; &quot;${ISO}&quot;
         hdiutil convert ${ISO}.dmg -format UDTO -o ${ISO}.cdr
@@ -2281,6 +2281,13 @@ fi
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
