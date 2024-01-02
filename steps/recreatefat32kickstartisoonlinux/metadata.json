@@ -12,19 +12,19 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "createuefifat32kickstartiso"
+            "stepKey": "createuefibootwinpeisoonmacosorlinux"
         }, 
         {
             "order": 100, 
-            "stepKey": "mountuefifat32kickstartiso"
+            "stepKey": "mountuefibootwinpeisoonmacosorlinux"
         }, 
         {
             "order": 150, 
-            "stepKey": "movewinpestagingtouefifat32mountforkickstart"
+            "stepKey": "movewinpestagingtouefibootwinpeisoonmacosorlinux"
         }, 
         {
             "order": 200, 
-            "stepKey": "unmountwinpefat32uefimountforkickstart"
+            "stepKey": "unmountuefibootwinpeisoonmacosorlinux"
         }
     ], 
     "name": "Recreate FAT32 Kickstart ISO on Linux", 

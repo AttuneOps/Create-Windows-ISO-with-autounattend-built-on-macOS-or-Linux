@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "57ee0a47-0db2-438e-a8bc-c9d246be483e", 
+    "externalUuid4": "a55f0a17-b02d-4ad8-a4c3-1801e9a4fdb5", 
     "interpreter": 1, 
-    "key": "mountuefifat32kickstartiso", 
-    "name": "Mount UEFI FAT32 Kickstart ISO", 
+    "key": "unmountuefibootwinpeisoonmacosorlinux", 
+    "name": "Unmount UEFI Boot WinPE ISO on macOS or Linux", 
     "osCredKey": "automationworkerlinuxuserroot", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 
