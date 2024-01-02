@@ -242,10 +242,19 @@ automate the installation.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux">
-                            <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on macOS or Linux
+                        <a href="#validateplanparameters">
+                            <strong>Step 1 -</strong> Validate Plan Parameters
                         </a>
                     </p>
+    
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux">
+                            <strong>Step 1.1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on macOS or Linux
+                        </a>
+                    </p>
+
 
         
 
@@ -546,11 +555,33 @@ automate the installation.</p>
 
 
                     <div class="row pt-5">
-                        <h3 id="checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux">
-                            <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux">
-                                <strong>Step 1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on macOS or Linux
+                        <h3 id="validateplanparameters">
+                            <a href="#validateplanparameters">
+                                <strong>Step 1 -</strong> Validate Plan Parameters
                             </a>
                         </h3>
+                    </div>
+
+
+
+
+
+
+    
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux">
+                            <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux">
+                                <strong>Step 1.1 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on macOS or Linux
+                            </a>
+                        </h4>
                     </div>
 
                     <div class="row">
@@ -633,6 +664,7 @@ fi
             </pre>
         </div>
     </div>
+
 
 
 
@@ -1342,9 +1374,9 @@ fi
 if {isWin10Uefi} || {isWinServerUefi}
 then
     FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-    mkdir --parents &quot;${FOLDER}&quot;
+    mkdir -p &quot;${FOLDER}&quot;
     cd &quot;${FOLDER}&quot;
-    cp --verbose &quot;../winpe_plain_uefi.iso&quot; &quot;winpe.iso&quot;
+    cp -v &quot;../winpe_plain_uefi.iso&quot; &quot;winpe.iso&quot;
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;
 fi

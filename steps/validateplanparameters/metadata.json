@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "d0c9050b-d5ea-4a7c-9db9-4156752d4c48", 
+    "isBlueprint": false, 
+    "key": "validateplanparameters", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux"
+        }
+    ], 
+    "name": "Validate Plan Parameters", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
