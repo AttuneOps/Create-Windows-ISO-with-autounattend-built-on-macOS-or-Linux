@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "1f4bfcc4-e308-4ca5-9d0d-201daf0678b7", 
     "isBlueprint": false, 
-    "key": "recreatefat32kickstartisoonlinux", 
+    "key": "recreatefat32uefiisoonlinux", 
     "links": [
         {
             "order": 0, 
@@ -27,6 +27,6 @@
             "stepKey": "unmountwinpefat32uefimountforkickstart"
         }
     ], 
-    "name": "Recreate FAT32 Kickstart ISO on Linux", 
+    "name": "Recreate FAT32 UEFI ISO on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
