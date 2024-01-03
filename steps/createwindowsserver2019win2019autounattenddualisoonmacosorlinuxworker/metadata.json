@@ -7,19 +7,11 @@
     "key": "createwindowsserver2019win2019autounattenddualisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstartonmacosorlinuxworker"
-        }, 
-        {
-            "order": 50, 
-            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
-        }, 
-        {
-            "order": 100, 
-            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
-        }, 
-        {
             "order": 150, 
+            "stepKey": "validatethecreatewindowsserverautounattendisoplanparameters"
+        }, 
+        {
+            "order": 200, 
             "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {

@@ -7,27 +7,19 @@
     "key": "createwindowsserver2022win2022autounattenddualisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 0, 
-            "stepKey": "checkinputparametervaluesforwindowsserversingleisokickstartonmacosorlinuxworker"
-        }, 
-        {
             "order": 50, 
-            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
-        }, 
-        {
-            "order": 100, 
-            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
-        }, 
-        {
-            "order": 150, 
-            "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
+            "stepKey": "validatethecreatewindowsserverautounattendisoplanparameters"
         }, 
         {
             "order": 250, 
-            "stepKey": "deploywin2022dvdisoonmacosorlinuxworker"
+            "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
             "order": 300, 
+            "stepKey": "deploywin2022dvdisoonmacosorlinuxworker"
+        }, 
+        {
+            "order": 350, 
             "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
