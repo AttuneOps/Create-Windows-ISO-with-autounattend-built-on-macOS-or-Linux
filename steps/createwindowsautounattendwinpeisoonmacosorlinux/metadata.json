@@ -89,10 +89,6 @@
         {
             "order": 1150, 
             "stepKey": "recreatefat32uefiisoonlinux"
-        }, 
-        {
-            "order": 1200, 
-            "stepKey": "createuefibootwinpeisofromwinpestagingonmacos"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on macOS or Linux", 

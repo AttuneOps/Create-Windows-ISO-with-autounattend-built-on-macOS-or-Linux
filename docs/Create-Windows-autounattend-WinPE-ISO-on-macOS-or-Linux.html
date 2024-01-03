@@ -448,14 +448,6 @@ automate the installation.</p>
                     </p>
 
 
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createuefibootwinpeisofromwinpestagingonmacos">
-                            <strong>Step 22 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS
-                        </a>
-                    </p>
-
 
                 </div>
             </div>
@@ -2448,107 +2440,6 @@ fi
         </div>
     </div>
 
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="createuefibootwinpeisofromwinpestagingonmacos">
-                            <a href="#createuefibootwinpeisofromwinpestagingonmacos">
-                                <strong>Step 22 -</strong> Create UEFI Boot WinPE ISO from winpe_staging on macOS
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a UEFI bootable ISO at <code>{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso</code> from the WinPE staging directory <code>{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/winpe_staging</code>. </p>
-<p>Only applies to UEFI kickstarts if the parameter <code>kickstartedBootLoaderIsUefi</code> is set the string <code>true</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS&quot;
-        export PATH=&quot;${HOME}/Parallels/homebrew/bin:$PATH&quot;
-        echo &quot;Using $(which xorriso)&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-        echo &quot;ISO=${ISO}&quot;
-        
-        xorriso -as mkisofs \
-            -iso-level 4 \
-            -full-iso9660-filenames \
-            -rock \
-            -b BOOT/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -untranslated-filenames \
-            -disable-deep-relocation \
-            -o &quot;${ISO}&quot; \
-            winpe_staging
-    else
-        echo &quot;not macOS, skipping&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
 
 
 
