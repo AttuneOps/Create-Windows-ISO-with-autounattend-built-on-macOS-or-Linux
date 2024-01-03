@@ -59,24 +59,12 @@
             "stepKey": "createwinpeplainbiosisofromwinpestagingonmacosorlinux"
         }, 
         {
-            "order": 900, 
+            "order": 950, 
             "stepKey": "changeownershipofwinpestagingdirectorytoattuneonmacosorlinux"
         }, 
         {
-            "order": 950, 
-            "stepKey": "createwinpeplainuefiisoonmacosorlinux"
-        }, 
-        {
-            "order": 1000, 
-            "stepKey": "mountwinpeplainuefiisoonmacosorlinux"
-        }, 
-        {
             "order": 1050, 
-            "stepKey": "copywinpestagingtouefimountonmacosorlinux"
-        }, 
-        {
-            "order": 1100, 
-            "stepKey": "unmountwinpeuefimountonmacosorlinux"
+            "stepKey": "createwinpeplainuefiisofromwinpestagingonmacosorlinux"
         }, 
         {
             "order": 1250, 
