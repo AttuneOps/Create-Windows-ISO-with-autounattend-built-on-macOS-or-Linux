@@ -1809,7 +1809,7 @@ if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
 then
 
     wimupdate winpe_staging/SOURCES/BOOT.WIM \
-        --command=&quot;add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers&quot;
+        --command=&quot;add ${DRIVERS_DROP_IN_FOLDER} /drivers&quot;
         
 else
     echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
@@ -2141,19 +2141,37 @@ then
     cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
 
     ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+    [ -f &quot;${ISO}&quot; ] &amp;&amp; rm -rf &quot;${ISO}&quot;
 
     if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
     then
-
-        rm -rf ${ISO}
-        bytes=$(du -s winpe_staging | awk &#x27;{print $1}&#x27;)
-        ((bytes=bytes+10000))
-        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
-
+            
+        mkisofs \
+            -allow-limited-size \
+            -iso-level 4 \
+            -full-iso9660-filenames \
+            -rock \
+            -b BOOT/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-seg 0 \
+            -boot-load-size 8 \
+            -hide boot.catalog \
+            -eltorito-alt-boot \
+            -no-emul-boot \
+            -b efi/microsoft/boot/efisys.bin \
+            -boot-load-size 1 \
+            -udf \
+            -untranslated-filenames \
+            -disable-deep-relocation \
+            -V &quot;KS_WIN&quot; \
+            -o ${ISO} \
+            winpe_staging
+            
+            exit 1
+        
     elif [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
     then
 
-        [ -f &quot;${ISO}&quot; ] &amp;&amp; rm -rf &quot;${ISO}&quot;
         hdiutil makehybrid \
             -iso -joliet -o ${ISO} winpe_staging \
             -no-emul-boot

@@ -1,19 +1,37 @@
 cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
 
 ISO="{automationWorkerLinuxBaseDirectory}/winpe_plain_uefi.iso"
+[ -f "${ISO}" ] && rm -rf "${ISO}"
 
 if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
     
-    rm -rf ${ISO}
-    bytes=$(du -s winpe_uefi_staging | awk '{print $1}')
-    ((bytes=bytes+10000))
-    mkfs.msdos -v -C "${ISO}" "${bytes}"
+    mkisofs \
+        -allow-limited-size \
+        -iso-level 4 \
+        -full-iso9660-filenames \
+        -rock \
+        -b BOOT/etfsboot.com \
+        -no-emul-boot \
+        -boot-load-seg 0 \
+        -boot-load-size 8 \
+        -hide boot.catalog \
+        -eltorito-alt-boot \
+        -no-emul-boot \
+        -b efi/microsoft/boot/efisys.bin \
+        -boot-load-size 1 \
+        -udf \
+        -untranslated-filenames \
+        -disable-deep-relocation \
+        -V "KS_WIN" \
+        -o "${ISO}" \
+        winpe_uefi_staging
+        
+        exit 1
     
 elif [[ "Darwin" == "$(uname)" ]]
 then
 
-    [ -f "${ISO}" ] && rm -rf "${ISO}"
     hdiutil makehybrid \
         -iso -joliet -o ${ISO} winpe_uefi_staging \
         -eltorito-boot boot.img -no-emul-boot
