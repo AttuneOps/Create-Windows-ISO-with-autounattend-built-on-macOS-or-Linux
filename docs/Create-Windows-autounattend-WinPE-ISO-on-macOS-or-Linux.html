@@ -402,24 +402,8 @@ automate the installation.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#recreatefat32uefiisoonlinux">
-                            <strong>Step 21 -</strong> Recreate FAT32 UEFI ISO on Linux
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#changeownershipofwinpestagingdirectoryforkickstart">
-                            <strong>Step 21.1 -</strong> Change Ownership of winpe_staging Directory for Kickstart
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#createuefifat32kickstartiso">
-                            <strong>Step 21.2 -</strong> Create UEFI FAT32 Kickstart ISO
+                            <strong>Step 21 -</strong> Create UEFI FAT32 Kickstart ISO
                         </a>
                     </p>
 
@@ -427,7 +411,15 @@ automate the installation.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#mountuefifat32kickstartiso">
-                            <strong>Step 21.3 -</strong> Mount UEFI FAT32 Kickstart ISO
+                            <strong>Step 22 -</strong> Mount UEFI FAT32 Kickstart ISO
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
+                        <a href="#changeownershipofwinpestagingdirectoryforkickstart">
+                            <strong>Step 23 -</strong> Change Ownership of winpe_staging Directory for Kickstart
                         </a>
                     </p>
 
@@ -435,7 +427,7 @@ automate the installation.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#movewinpestagingtouefifat32mountforkickstart">
-                            <strong>Step 21.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                            <strong>Step 24 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
                         </a>
                     </p>
 
@@ -443,10 +435,9 @@ automate the installation.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#unmountwinpefat32uefimountforkickstart">
-                            <strong>Step 21.5 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
+                            <strong>Step 25 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
                         </a>
                     </p>
-
 
 
                 </div>
@@ -2017,39 +2008,21 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="recreatefat32uefiisoonlinux">
-                            <a href="#recreatefat32uefiisoonlinux">
-                                <strong>Step 21 -</strong> Recreate FAT32 UEFI ISO on Linux
+                        <h3 id="createuefifat32kickstartiso">
+                            <a href="#createuefifat32kickstartiso">
+                                <strong>Step 21 -</strong> Create UEFI FAT32 Kickstart ISO
                             </a>
                         </h3>
                     </div>
 
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="changeownershipofwinpestagingdirectoryforkickstart">
-                            <a href="#changeownershipofwinpestagingdirectoryforkickstart">
-                                <strong>Step 21.1 -</strong> Change Ownership of winpe_staging Directory for Kickstart
-                            </a>
-                        </h4>
-                    </div>
-
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                
+                                <p><code>mkwinpeimg</code> cannot build a bootable UEFI system natively, but 
+the necessary UEFI boot files are included in the Windows 
+installation media.</p>
+<p>Create a single partition of type EFI System, and format the 
+partition to FAT32.</p>
                             </p>
                         </div>
                     </div>
@@ -2057,107 +2030,12 @@ fi
 
 
 
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        chown --recursive \
-            --verbose \
-            &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
-            &quot;winpe_staging&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
 
 
 
 
 
     
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createuefifat32kickstartiso">
-                            <a href="#createuefifat32kickstartiso">
-                                <strong>Step 21.2 -</strong> Create UEFI FAT32 Kickstart ISO
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-                        <div class="row">
-                            <p>
-                                Connect via ssh:
-                            </p>
-                        </div>
-                        <div class="row py-1">
-                            <code class="language-sql">
-ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
-                            </code>
-                        </div>
-
 
 
     
@@ -2205,16 +2083,16 @@ fi
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="mountuefifat32kickstartiso">
+                        <h3 id="mountuefifat32kickstartiso">
                             <a href="#mountuefifat32kickstartiso">
-                                <strong>Step 21.3 -</strong> Mount UEFI FAT32 Kickstart ISO
+                                <strong>Step 22 -</strong> Mount UEFI FAT32 Kickstart ISO
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -2290,16 +2168,89 @@ fi
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="movewinpestagingtouefifat32mountforkickstart">
-                            <a href="#movewinpestagingtouefifat32mountforkickstart">
-                                <strong>Step 21.4 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                        <h3 id="changeownershipofwinpestagingdirectoryforkickstart">
+                            <a href="#changeownershipofwinpestagingdirectoryforkickstart">
+                                <strong>Step 23 -</strong> Change Ownership of winpe_staging Directory for Kickstart
                             </a>
-                        </h4>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {kickstartedBootLoaderIsUefi}
+then
+    if uname | \
+        grep -iq &quot;darwin&quot;
+    then
+        echo &quot;is macOS, skipping&quot;
+        
+    else
+        echo &quot;not macOS&quot;
+        
+        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
+        
+        chown --recursive \
+            --verbose \
+            &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
+            &quot;winpe_staging&quot;
+    fi
+else
+    echo &quot;Skipping for BIOS boot.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
+                        <h3 id="movewinpestagingtouefifat32mountforkickstart">
+                            <a href="#movewinpestagingtouefifat32mountforkickstart">
+                                <strong>Step 24 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                            </a>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -2362,16 +2313,16 @@ fi
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="unmountwinpefat32uefimountforkickstart">
+                        <h3 id="unmountwinpefat32uefimountforkickstart">
                             <a href="#unmountwinpefat32uefimountforkickstart">
-                                <strong>Step 21.5 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
+                                <strong>Step 25 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -2439,7 +2390,6 @@ fi
             </pre>
         </div>
     </div>
-
 
 
 
