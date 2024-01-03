@@ -1842,7 +1842,7 @@ if [ -d &quot;${DRIVERS_DROP_IN_FOLDER}&quot; ]
 then
 
     wimupdate winpe_staging/SOURCES/BOOT.WIM \
-        --command=&quot;add {automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn} /drivers&quot;
+        --command=&quot;add ${DRIVERS_DROP_IN_FOLDER} /drivers&quot;
         
 else
     echo &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
@@ -2143,13 +2143,6 @@ fi
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
