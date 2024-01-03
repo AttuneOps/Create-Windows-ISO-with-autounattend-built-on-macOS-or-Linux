@@ -1,7 +1,7 @@
 if {kickstartedBootLoaderIsUefi}
 then
 
-    cd "{automationWorkerLinuxBaseDirectory}/uild-{newOsNode.fqn}"
+    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
     
     USER="{automationWorkerLinuxUser.user}"
     GROUP="$(id -gn {automationWorkerLinuxUser.user})"
