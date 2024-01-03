@@ -2170,21 +2170,15 @@ fi
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        chown --recursive \
-            --verbose \
-            &quot;{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}&quot; \
-            &quot;winpe_staging&quot;
-    fi
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/uild-{newOsNode.fqn}&quot;
+    
+    USER=&quot;{automationWorkerLinuxUser.user}&quot;
+    GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
+    echo &quot;User: $USER, Group: $GROUP&quot;
+    
+    chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
+
 else
     echo &quot;Skipping for BIOS boot.&quot;
 fi
