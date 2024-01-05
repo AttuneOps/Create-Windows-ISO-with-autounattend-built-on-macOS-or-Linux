@@ -64,11 +64,11 @@
         }, 
         {
             "order": 1150, 
-            "stepKey": "createuefifat32kickstartiso"
+            "stepKey": "createuefifat32isoonmacosandlinux"
         }, 
         {
             "order": 1250, 
-            "stepKey": "movewinpestagingtouefifat32mountforkickstart"
+            "stepKey": "movewinpestagingtouefifat32isoonlinux"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on macOS or Linux", 

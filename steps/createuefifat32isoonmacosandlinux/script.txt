@@ -12,10 +12,11 @@ then
     
         hdiutil create -ov -srcfolder winpe_staging -fs "MS-DOS FAT32" \
             -volname "KS_WIN" "${ISO}"
-
+            
         hdiutil makehybrid -iso -joliet -o ${ISO} ${ISO}.dmg
         rm -rf ${ISO}.dmg
         
+        file ${ISO}
         ls -ltrh ${ISO}
         
     elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]

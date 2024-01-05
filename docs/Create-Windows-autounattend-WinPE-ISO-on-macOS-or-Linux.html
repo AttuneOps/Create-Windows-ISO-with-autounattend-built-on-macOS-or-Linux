@@ -411,16 +411,16 @@ automate the installation.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#createuefifat32kickstartiso">
-                            <strong>Step 15 -</strong> Create UEFI FAT32 Kickstart ISO
+                        <a href="#createuefifat32isoonmacosandlinux">
+                            <strong>Step 15 -</strong> Create UEFI FAT32 ISO on macOS and Linux
                         </a>
                     </p>
 
         
 
                     <p class="text-muted pt-2">
-                        <a href="#movewinpestagingtouefifat32mountforkickstart">
-                            <strong>Step 16 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                        <a href="#movewinpestagingtouefifat32isoonlinux">
+                            <strong>Step 16 -</strong> Move WinPE Staging to UEFI FAT32 ISO on Linux
                         </a>
                     </p>
 
@@ -2051,9 +2051,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="createuefifat32kickstartiso">
-                            <a href="#createuefifat32kickstartiso">
-                                <strong>Step 15 -</strong> Create UEFI FAT32 Kickstart ISO
+                        <h3 id="createuefifat32isoonmacosandlinux">
+                            <a href="#createuefifat32isoonmacosandlinux">
+                                <strong>Step 15 -</strong> Create UEFI FAT32 ISO on macOS and Linux
                             </a>
                         </h3>
                     </div>
@@ -2108,10 +2108,11 @@ then
     
         hdiutil create -ov -srcfolder winpe_staging -fs &quot;MS-DOS FAT32&quot; \
             -volname &quot;KS_WIN&quot; &quot;${ISO}&quot;
-
+            
         hdiutil makehybrid -iso -joliet -o ${ISO} ${ISO}.dmg
         rm -rf ${ISO}.dmg
         
+        file ${ISO}
         ls -ltrh ${ISO}
         
     elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
@@ -2145,20 +2146,13 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="movewinpestagingtouefifat32mountforkickstart">
-                            <a href="#movewinpestagingtouefifat32mountforkickstart">
-                                <strong>Step 16 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
+                        <h3 id="movewinpestagingtouefifat32isoonlinux">
+                            <a href="#movewinpestagingtouefifat32isoonlinux">
+                                <strong>Step 16 -</strong> Move WinPE Staging to UEFI FAT32 ISO on Linux
                             </a>
                         </h3>
                     </div>
 
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
 
 
 
