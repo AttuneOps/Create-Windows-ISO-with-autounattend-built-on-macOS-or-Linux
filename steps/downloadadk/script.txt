@@ -15,14 +15,16 @@ if ($OS.Caption -like "*Windows Server 2022*") {
     Write-Host "This system is running Windows Server 2022"
     $ADK_WIN2022_URL="https://go.microsoft.com/fwlink/?linkid=2162950"
     $ProgressPreference = 'SilentlyContinue'
-    Invoke-WebRequest $ADK_WIN2022_URL -OutFile "./adk_setup.iso"
+    Invoke-WebRequest $ADK_WIN2022_URL -OutFile "./adksetup.exe" -Verbose
+    Get-ChildItem -Path "${ADK_DOWNLOADS}" -Recurse
     
 } elseif ($OS.Caption -like "*Windows 11*") {
     
     Write-Host "This system is running Windows 11"
     $ADK_WIN11_URL="https://go.microsoft.com/fwlink/?linkid=2165884"
     $ProgressPreference = 'SilentlyContinue'
-    Invoke-WebRequest $ADK_WIN11_URL -OutFile "./adk_setup.iso"
+    Invoke-WebRequest $ADK_WIN11_URL -OutFile "./adksetup.exe" -Verbose
+    Get-ChildItem -Path "${ADK_DOWNLOADS}" -Recurse
     
 } else {
     
