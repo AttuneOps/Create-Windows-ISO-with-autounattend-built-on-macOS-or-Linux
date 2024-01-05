@@ -13,13 +13,13 @@ then
     xorriso -as mkisofs -o ../${DRIVERS_ISO_NAME} \
         -iso-level 2 -joliet-long -relaxed-filenames \
         -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
-        autounattend.xml post_install_setup.ps1
+        autounattend.xml post_install_wim/post_install_setup.ps1
 else
     echo "not macOS"
     
     mkisofs -o ../${DRIVERS_ISO_NAME} \
         -iso-level 3 -udf -joliet-long -relaxed-filenames \
         -J -l -D -N -V "DRIVERS" "${DRIVERS_FOLDER}" \
-        autounattend.xml post_install_setup.ps1
+        autounattend.xml post_install_wim/post_install_setup.ps1
 fi
 
