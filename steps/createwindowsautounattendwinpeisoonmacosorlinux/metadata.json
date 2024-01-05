@@ -56,27 +56,19 @@
         }, 
         {
             "order": 1050, 
-            "stepKey": "createbiosbootwinpeisofromwinpestagingonmacosorlinux"
+            "stepKey": "changeownershipofwinpestagingdirectoryforkickstart"
         }, 
         {
             "order": 1100, 
-            "stepKey": "createuefifat32kickstartiso"
+            "stepKey": "createbiosbootwinpeisofromwinpestagingonmacosorlinux"
         }, 
         {
             "order": 1150, 
-            "stepKey": "mountuefifat32kickstartiso"
-        }, 
-        {
-            "order": 1200, 
-            "stepKey": "changeownershipofwinpestagingdirectoryforkickstart"
+            "stepKey": "createuefifat32kickstartiso"
         }, 
         {
             "order": 1250, 
             "stepKey": "movewinpestagingtouefifat32mountforkickstart"
-        }, 
-        {
-            "order": 1300, 
-            "stepKey": "unmountwinpefat32uefimountforkickstart"
         }
     ], 
     "name": "Create Windows autounattend WinPE ISO on macOS or Linux", 

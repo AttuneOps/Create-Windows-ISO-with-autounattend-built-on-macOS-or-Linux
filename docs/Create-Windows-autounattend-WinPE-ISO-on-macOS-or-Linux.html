@@ -395,8 +395,16 @@ automate the installation.</p>
         
 
                     <p class="text-muted pt-2">
+                        <a href="#changeownershipofwinpestagingdirectoryforkickstart">
+                            <strong>Step 13 -</strong> Change Ownership of winpe_staging Directory for Kickstart
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#createbiosbootwinpeisofromwinpestagingonmacosorlinux">
-                            <strong>Step 13 -</strong> Create BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
+                            <strong>Step 14 -</strong> Create BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
                         </a>
                     </p>
 
@@ -404,23 +412,7 @@ automate the installation.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#createuefifat32kickstartiso">
-                            <strong>Step 14 -</strong> Create UEFI FAT32 Kickstart ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#mountuefifat32kickstartiso">
-                            <strong>Step 15 -</strong> Mount UEFI FAT32 Kickstart ISO
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#changeownershipofwinpestagingdirectoryforkickstart">
-                            <strong>Step 16 -</strong> Change Ownership of winpe_staging Directory for Kickstart
+                            <strong>Step 15 -</strong> Create UEFI FAT32 Kickstart ISO
                         </a>
                     </p>
 
@@ -428,15 +420,7 @@ automate the installation.</p>
 
                     <p class="text-muted pt-2">
                         <a href="#movewinpestagingtouefifat32mountforkickstart">
-                            <strong>Step 17 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#unmountwinpefat32uefimountforkickstart">
-                            <strong>Step 18 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
+                            <strong>Step 16 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
                         </a>
                     </p>
 
@@ -537,6 +521,13 @@ automate the installation.</p>
                         </h3>
                     </div>
 
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
 
 
 
@@ -1288,9 +1279,9 @@ fi
 if {isWin10Uefi} || {isWinServerUefi}
 then
     FOLDER=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-    mkdir --parents &quot;${FOLDER}&quot;
+    mkdir -p &quot;${FOLDER}&quot;
     cd &quot;${FOLDER}&quot;
-    cp --verbose &quot;../winpe_plain_uefi.iso&quot; &quot;winpe.iso&quot;
+    cp -v &quot;../winpe_plain_uefi.iso&quot; &quot;winpe.iso&quot;
 else
     echo &quot;Skipping for BIOS ISO creation.&quot;
 fi
@@ -1861,9 +1852,87 @@ fi
 
 
                     <div class="row pt-5">
+                        <h3 id="changeownershipofwinpestagingdirectoryforkickstart">
+                            <a href="#changeownershipofwinpestagingdirectoryforkickstart">
+                                <strong>Step 13 -</strong> Change Ownership of winpe_staging Directory for Kickstart
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+if {kickstartedBootLoaderIsUefi}
+then
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    USER=&quot;{automationWorkerLinuxUser.user}&quot;
+    GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
+    echo &quot;User: $USER, Group: $GROUP&quot;
+    
+    chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
+
+else
+    echo &quot;Skipping for BIOS boot.&quot;
+fi
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+        
+
+
+
+                    <div class="row pt-5">
                         <h3 id="createbiosbootwinpeisofromwinpestagingonmacosorlinux">
                             <a href="#createbiosbootwinpeisofromwinpestagingonmacosorlinux">
-                                <strong>Step 13 -</strong> Create BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
+                                <strong>Step 14 -</strong> Create BIOS Boot WinPE ISO from winpe_staging on macOS or Linux
                             </a>
                         </h3>
                     </div>
@@ -1889,7 +1958,18 @@ fi
 
 
 
-    
+
+                        <div class="row">
+                            <p>
+                                Connect via ssh:
+                            </p>
+                        </div>
+                        <div class="row py-1">
+                            <code class="language-sql">
+ssh {automationworkerlinuxuser}@{automationworkerlinuxnode}
+                            </code>
+                        </div>
+
 
 
     
@@ -1973,7 +2053,7 @@ fi
                     <div class="row pt-5">
                         <h3 id="createuefifat32kickstartiso">
                             <a href="#createuefifat32kickstartiso">
-                                <strong>Step 14 -</strong> Create UEFI FAT32 Kickstart ISO
+                                <strong>Step 15 -</strong> Create UEFI FAT32 Kickstart ISO
                             </a>
                         </h3>
                     </div>
@@ -2016,22 +2096,36 @@ partition to FAT32.</p>
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
+
+    cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
+    
+    ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
+    
+    [ -f &quot;${ISO}&quot; ] &amp;&amp; rm &quot;${ISO}&quot;
         
-    if uname | \
-        grep -iq &quot;darwin&quot;
+    if [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
     then
-        echo &quot;is macOS, skipping&quot;
+    
+        hdiutil create -ov -srcfolder winpe_staging -fs &quot;MS-DOS FAT32&quot; \
+            -volname &quot;KS_WIN&quot; &quot;${ISO}&quot;
+
+        hdiutil makehybrid -iso -joliet -o ${ISO} ${ISO}.dmg
+        rm -rf ${ISO}.dmg
+        
+        ls -ltrh ${ISO}
+        
+    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+        
+        block=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
+        ((block=block+10000))
+        echo &quot;block size: ${block}&quot;
+        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${block}&quot;
         
     else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        bytes=$(du --summarize winpe_staging | awk &#x27;{print $1}&#x27;)
-        ((bytes=bytes+10000))
-        
-        ISO=&quot;{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso&quot;
-        mkfs.msdos -v -C &quot;${ISO}&quot; &quot;${bytes}&quot;
+    
+        echo &quot;Unsupported operating system.&quot;
+        exit 1
     fi
     
 else
@@ -2051,9 +2145,9 @@ fi
 
 
                     <div class="row pt-5">
-                        <h3 id="mountuefifat32kickstartiso">
-                            <a href="#mountuefifat32kickstartiso">
-                                <strong>Step 15 -</strong> Mount UEFI FAT32 Kickstart ISO
+                        <h3 id="movewinpestagingtouefifat32mountforkickstart">
+                            <a href="#movewinpestagingtouefifat32mountforkickstart">
+                                <strong>Step 16 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
                             </a>
                         </h3>
                     </div>
@@ -2103,234 +2197,42 @@ ssh {automationworkerlinuxuserroot}@{automationworkerlinuxnode}
                 <code class="language-sql py-0">
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq &quot;darwin&quot;
-    then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        mkdir --parents --verbose uefi_mount
-        
-        mount --verbose \
-            &quot;../kickstart_{newOsNode.fqn}.iso&quot; uefi_mount
-    fi
-    
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="changeownershipofwinpestagingdirectoryforkickstart">
-                            <a href="#changeownershipofwinpestagingdirectoryforkickstart">
-                                <strong>Step 16 -</strong> Change Ownership of winpe_staging Directory for Kickstart
-                            </a>
-                        </h3>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
 
     cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-    
-    USER=&quot;{automationWorkerLinuxUser.user}&quot;
-    GROUP=&quot;$(id -gn {automationWorkerLinuxUser.user})&quot;
-    echo &quot;User: $USER, Group: $GROUP&quot;
-    
-    chown -R -v &quot;$USER:$GROUP&quot; &quot;winpe_staging&quot;
-
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
         
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="movewinpestagingtouefifat32mountforkickstart">
-                            <a href="#movewinpestagingtouefifat32mountforkickstart">
-                                <strong>Step 17 -</strong> Move WinPE Staging to UEFI FAT32 Mount for Kickstart
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
+    if [[ &quot;Darwin&quot; == &quot;$(uname)&quot; ]]
     then
+    
         echo &quot;is macOS, skipping&quot;
         
-    else
-        echo &quot;not macOS&quot;
-        
-        cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
-        
-        # Copy WinPE Files from WinPE ISO
-        #mv --verbose winpe_staging/* &quot;uefi_mount&quot;
-        cp -r --verbose winpe_staging/* &quot;uefi_mount&quot;
-    fi
-else
-    echo &quot;Skipping for BIOS boot.&quot;
-fi
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="unmountwinpefat32uefimountforkickstart">
-                            <a href="#unmountwinpefat32uefimountforkickstart">
-                                <strong>Step 18 -</strong> Unmount WinPE FAT32 UEFI Mount for Kickstart
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-if {kickstartedBootLoaderIsUefi}
-then
-    if uname | \
-        grep -iq &quot;darwin&quot;
+    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
     then
-        echo &quot;is macOS, skipping&quot;
-        
-    else
-        echo &quot;not macOS&quot;
-    
+
         MOUNT_FOLDER=&quot;uefi_mount&quot;
         MOUNT_PATH=&quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}&quot;
+
+        mkdir --parents --verbose ${MOUNT_FOLDER}
         
-        if df -h | grep --ignore-case \
-            --quiet \
-            &quot;${MOUNT_PATH}&quot;
+        mount --verbose \
+            &quot;../kickstart_{newOsNode.fqn}.iso&quot; ${MOUNT_FOLDER}
+        
+        cp -r --verbose winpe_staging/* &quot;${MOUNT_FOLDER}&quot;
+        
+        if df -h | grep --ignore-case --quiet &quot;${MOUNT_PATH}&quot;
         then
-        
-            cd &quot;{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}&quot;
             
             umount --verbose &quot;${MOUNT_FOLDER}&quot;
+            
         else
+        
             echo &quot;${MOUNT_PATH} is not mounted. Skipping.&quot;
+            
         fi
+        
+    else
+    
+        echo &quot;Unsupported operating system.&quot;
+        exit 1
     fi
     
 else

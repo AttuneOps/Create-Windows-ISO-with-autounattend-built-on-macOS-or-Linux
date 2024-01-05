@@ -1984,19 +1984,22 @@ then
     echo &quot;Using $(which xorriso)&quot;
 
     xorriso -as mkisofs \
-        -b boot.img \
-        -no-emul-boot \
-        -c BOOT.CAT \
-        -iso-level 3 \
-        -joliet-long \
-        -relaxed-filenames \
-        -J \
+        -iso-level 4 \
         -full-iso9660-filenames \
+        -rock \
+        -b BOOT/etfsboot.com \
+        -no-emul-boot \
+        -boot-load-size 8 \
+        -hide boot.catalog \
+        -eltorito-alt-boot \
+        -no-emul-boot \
+        -b efi/microsoft/boot/efisys.bin \
+        -boot-load-size 1 \
+        -untranslated-filenames \
         -disable-deep-relocation \
-        -omit-version-number \
         -V &quot;KS_WIN&quot; \
         -o &quot;{automationWorkerLinuxBaseDirectory}/${ISO_NAME}&quot; \
-        winpe_bios_staging
+        winpe_uefi_staging
         
 elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then
