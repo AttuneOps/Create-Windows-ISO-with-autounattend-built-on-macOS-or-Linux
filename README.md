@@ -298,17 +298,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
-### Extract ISO and Configure Folder Permissions for Samba Share
-
-This blueprint is a repeatable process for the 
-`Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
-
-### Perform Post Cleanup on macOS or Linux Worker
-
-
-### Perform Post Cleanup on Windows Worker
-
-
 ### Perform Test Win Node
 
 Performs basic tests for the built node.
@@ -359,6 +348,17 @@ This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share serv
 
 
 ### Deploy and Mount Win2022 ISO To Node for Feature Install on Windows
+
+
+### Extract ISO and Configure Folder Permissions for Samba Share on Linux
+
+This blueprint is a repeatable process for the 
+`Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
+
+### Cleanup Windows Worker
+
+
+### Cleanup macOS or Linux Worker
 
 
 

@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "9debd3f3-2142-4991-b1f0-9a6f7a291f1c", 
     "isBlueprint": true, 
-    "key": "performpostcleanuponwindowsworker", 
+    "key": "cleanupwindowsworker", 
     "links": [
         {
             "order": 0, 
@@ -15,6 +15,6 @@
             "stepKey": "postcleanuponwindowsworker"
         }
     ], 
-    "name": "Perform Post Cleanup on Windows Worker", 
+    "name": "Cleanup Windows Worker", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
