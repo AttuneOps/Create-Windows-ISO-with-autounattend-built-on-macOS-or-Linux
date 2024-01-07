@@ -331,9 +331,6 @@ This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share serv
 This blueprint is a repeatable process for the 
 `Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
 
-### Install Prerequisites on Windows Worker
-
-
 ### Perform Post Cleanup on macOS or Linux Worker
 
 
