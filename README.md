@@ -302,9 +302,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Performs basic tests for the built node.
 
-### Unmount and Remove ISO From Node for Feature Install
-
-
 ### WinPE Essentials Extraction on macOS or Linux
 
 This Attune Blueprint extracts the essential WinPE files from a full 5GB 
@@ -359,6 +356,9 @@ This blueprint is a repeatable process for the
 
 
 ### Cleanup macOS or Linux Worker
+
+
+### Unmount and Remove ISO From Node for Feature Install on Windows
 
 
 
