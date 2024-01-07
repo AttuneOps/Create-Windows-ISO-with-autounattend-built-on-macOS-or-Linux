@@ -298,34 +298,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
-### Deploy and Extract Win10 ISO to Samba Share
-
-This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
-
-### Deploy and Extract Win2016 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
-
-### Deploy and Extract Win2019 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
-
-### Deploy and Extract Win2022 ISO to Samba Share
-
-This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
-
-### Deploy and Mount Win10 ISO To Node for Feature Install
-
-
-### Deploy and Mount Win2016 ISO To Node for Feature Install
-
-
-### Deploy and Mount Win2019 ISO To Node for Feature Install
-
-
-### Deploy and Mount Win2022 ISO To Node for Feature Install
-
-
 ### Extract ISO and Configure Folder Permissions for Samba Share
 
 This blueprint is a repeatable process for the 
@@ -360,6 +332,34 @@ Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
 This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
 
 This folder works for both BIOS and UEFI boot methods.
+
+### Deploy and Extract Win10 ISO to Samba Share on Linux
+
+This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2016 ISO to Samba Share on Linux
+
+This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2019 ISO to Samba Share on Linux
+
+This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2022 ISO to Samba Share on Linux
+
+This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
+
+### Deploy and Mount Win10 ISO To Node for Feature Install on Windows
+
+
+### Deploy and Mount Win2016 ISO To Node for Feature Install on Windows
+
+
+### Deploy and Mount Win2019 ISO To Node for Feature Install on Windows
+
+
+### Deploy and Mount Win2022 ISO To Node for Feature Install on Windows
+
 
 
 

@@ -4,7 +4,7 @@
     "enabled": true, 
     "externalUuid4": "1829e052-e1e5-44e2-968d-93698d953b08", 
     "isBlueprint": true, 
-    "key": "deployandextractwin2016isotosambashare", 
+    "key": "deployandextractwin2016isotosambashareonlinux", 
     "links": [
         {
             "order": 150, 
@@ -15,6 +15,6 @@
             "stepKey": "extractisoandconfigurefolderpermissionsforwin2016"
         }
     ], 
-    "name": "Deploy and Extract Win2016 ISO to Samba Share", 
+    "name": "Deploy and Extract Win2016 ISO to Samba Share on Linux", 
     "type": "com.servertribe.attune.tuples.StepGroupTuple"
 }
