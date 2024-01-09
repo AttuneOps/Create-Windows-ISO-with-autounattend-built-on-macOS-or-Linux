@@ -1,0 +1,34 @@
+if {isWin10Bios} || {isWinServerBios}
+then
+
+    DIRECTORY="{automationWorkerLinuxBaseDirectory}"
+    cd "${DIRECTORY}"
+    
+    ISO="winpe_plain_bios.iso"
+    if [[ -f ${ISO} ]]
+    then
+        echo "${DIRECTORY}/${ISO} exists. Great."
+    else
+        echo "${DIRECTORY}/${ISO} does not exist. Please run blueprint \"Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker\" to create it."
+        exit 1
+    fi
+    
+elif {isWin10Uefi} || {isWinServerUefi}
+then
+
+    DIRECTORY="{automationWorkerLinuxBaseDirectory}"
+    cd "${DIRECTORY}"
+    
+    ISO="winpe_plain_uefi.iso"
+    if [[ -f ${ISO} ]]
+    then
+        echo "${DIRECTORY}/${ISO} exists. Great."
+    else
+        echo "${DIRECTORY}/${ISO} does not exist. Please run blueprint \"Create Windows PE (WinPE) Plain ISO on macOS or Linux Worker\" to create it."
+        exit 1
+    fi
+
+else
+    echo "Parameter configuration error"
+    exit 1
+fi

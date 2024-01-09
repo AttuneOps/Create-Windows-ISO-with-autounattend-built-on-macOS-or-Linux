@@ -1,0 +1,12 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "c6253c53-7719-4489-a71a-8939f096728f", 
+    "interpreter": 1, 
+    "key": "createwinpeplainuefiisofromwinpestagingonmacosorlinux", 
+    "name": "Create winpe_plain_uefi.iso from winpe_staging on macOS or Linux", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "successExitCode": 0, 
+    "type": "com.servertribe.attune.tuples.StepSshTuple"
+}

@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "5cabfad2-3ff4-4030-a432-ddb0afd8ef08", 
+    "isBlueprint": false, 
+    "key": "validatethecreatewindowsworkstationautounattendisoplanparameters", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "checkinputparametervaluesforwindowsworkstationautounattendisoplanonmacosorlinuxworker"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "checkinputparametervaluesforwindowsserverautounattendisoplanonmacosorlinuxworker"
+        }
+    ], 
+    "name": "Validate the Create Windows Workstation autounattend ISO Plan Parameters", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

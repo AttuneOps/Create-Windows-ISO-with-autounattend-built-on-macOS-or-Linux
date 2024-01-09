@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "8ed009d6-7930-4a26-9f6e-2de701b52dec", 
+    "externalUuid4": "0892528d-4a2d-48c0-95a3-c8fb8be9d705", 
     "interpreter": 1, 
-    "key": "createuefibootwinpeisofromwinpestagingonmacos", 
-    "name": "Create UEFI Boot WinPE ISO from winpe_staging on macOS", 
+    "key": "confirmplainwinpeisoexistsonmacosorlinux", 
+    "name": "Confirm Plain WinPE ISO Exists on macOS or Linux", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

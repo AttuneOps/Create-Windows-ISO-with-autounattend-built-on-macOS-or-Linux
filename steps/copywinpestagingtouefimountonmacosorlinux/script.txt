@@ -1,3 +1,0 @@
-cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
-
-cp -vr winpe_uefi_staging/* "$(echo uefi_mount/*)"

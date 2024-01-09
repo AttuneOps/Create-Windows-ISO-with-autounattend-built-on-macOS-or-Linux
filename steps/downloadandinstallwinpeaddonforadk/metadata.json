@@ -11,10 +11,6 @@
             "stepKey": "downloadwinpeaddonforadk"
         }, 
         {
-            "order": 50, 
-            "stepKey": "extractwinpeaddonforadk"
-        }, 
-        {
             "order": 100, 
             "stepKey": "installwinpeaddonforadk"
         }

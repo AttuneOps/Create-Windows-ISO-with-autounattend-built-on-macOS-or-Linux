@@ -245,16 +245,8 @@ components, and the applications running on it.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractadk">
-                            <strong>Step 1.2 -</strong> Extract ADK
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#installadk">
-                            <strong>Step 1.3 -</strong> Install ADK
+                            <strong>Step 1.2 -</strong> Install ADK
                         </a>
                     </p>
 
@@ -278,16 +270,8 @@ components, and the applications running on it.</p>
         
 
                     <p class="text-muted pt-2">
-                        <a href="#extractwinpeaddonforadk">
-                            <strong>Step 2.2 -</strong> Extract WinPE Add-On for ADK
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#installwinpeaddonforadk">
-                            <strong>Step 2.3 -</strong> Install WinPE Add-On for ADK
+                            <strong>Step 2.2 -</strong> Install WinPE Add-On for ADK
                         </a>
                     </p>
 
@@ -495,14 +479,16 @@ if ($OS.Caption -like &quot;*Windows Server 2022*&quot;) {
     Write-Host &quot;This system is running Windows Server 2022&quot;
     $ADK_WIN2022_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2162950&quot;
     $ProgressPreference = &#x27;SilentlyContinue&#x27;
-    Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./adk_setup.iso&quot;
+    Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./adksetup.exe&quot; -Verbose
+    Get-ChildItem -Path &quot;${ADK_DOWNLOADS}&quot; -Recurse
     
 } elseif ($OS.Caption -like &quot;*Windows 11*&quot;) {
     
     Write-Host &quot;This system is running Windows 11&quot;
     $ADK_WIN11_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2165884&quot;
     $ProgressPreference = &#x27;SilentlyContinue&#x27;
-    Invoke-WebRequest $ADK_WIN11_URL -OutFile &quot;./adk_setup.iso&quot;
+    Invoke-WebRequest $ADK_WIN11_URL -OutFile &quot;./adksetup.exe&quot; -Verbose
+    Get-ChildItem -Path &quot;${ADK_DOWNLOADS}&quot; -Recurse
     
 } else {
     
@@ -523,61 +509,9 @@ if ($OS.Caption -like &quot;*Windows Server 2022*&quot;) {
 
 
                     <div class="row pt-5">
-                        <h4 id="extractadk">
-                            <a href="#extractadk">
-                                <strong>Step 1.2 -</strong> Extract ADK
-                            </a>
-                        </h4>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ADK_DOWNLOADS=&quot;C:\attuneautomationworker\ADKDownloads&quot;
-
-Set-Location &quot;${ADK_DOWNLOADS}&quot;
-
-&amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x &quot;./adk_setup.iso&quot; `
-    -oadk_setup
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
                         <h4 id="installadk">
                             <a href="#installadk">
-                                <strong>Step 1.3 -</strong> Install ADK
+                                <strong>Step 1.2 -</strong> Install ADK
                             </a>
                         </h4>
                     </div>
@@ -621,15 +555,24 @@ Set-Location &quot;${ADK_DOWNLOADS}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ADK=&quot;C:\attuneautomationworker\ADKDownloads\adk_setup&quot;
+$ADK=&quot;C:\attuneautomationworker\ADKDownloads&quot;
 
 Set-Location &quot;${ADK}&quot;
-
+    
 ./adksetup.exe /quiet `
-    /features &quot;OptionId.DeploymentTools&quot; `
+    /features OptionId.DeploymentTools  `
     /norestart `
     /log adk_install_log.txt `
     /ceip off
+    
+Start-Sleep -Seconds 10
+
+$adkPath = &quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit&quot;
+if (Test-Path $adkPath) {
+    Write-Host &quot;Windows ADK is installed.&quot;
+} else {
+    Write-Host &quot;Windows ADK is not installed.&quot;
+}
                 </code>
             </pre>
         </div>
@@ -726,14 +669,16 @@ if ($OS.Caption -like &quot;*Windows Server 2022*&quot;) {
     Write-Host &quot;This system is running Windows Server 2022&quot;
     $ADK_WIN2022_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2163233&quot;
     $ProgressPreference = &#x27;SilentlyContinue&#x27;
-    Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./adk_winpe_add_on.iso&quot;
+    Invoke-WebRequest $ADK_WIN2022_URL -OutFile &quot;./adk_winpe_add_on.exe&quot; -Verbose
+    Get-ChildItem -Path &quot;${ADK_DOWNLOADS}&quot; -Recurse
     
 } elseif ($OS.Caption -like &quot;*Windows 11*&quot;) {
     
     Write-Host &quot;This system is running Windows 11&quot;
     $ADK_WIN11_URL=&quot;https://go.microsoft.com/fwlink/?linkid=2166133&quot;
     $ProgressPreference = &#x27;SilentlyContinue&#x27;
-    Invoke-WebRequest $ADK_WIN11_URL -OutFile &quot;./adk_winpe_add_on.iso&quot;
+    Invoke-WebRequest $ADK_WIN11_URL -OutFile &quot;./adk_winpe_add_on.exe&quot; -Verbose
+    Get-ChildItem -Path &quot;${ADK_DOWNLOADS}&quot; -Recurse
     
 } else {
     
@@ -754,69 +699,9 @@ if ($OS.Caption -like &quot;*Windows Server 2022*&quot;) {
 
 
                     <div class="row pt-5">
-                        <h4 id="extractwinpeaddonforadk">
-                            <a href="#extractwinpeaddonforadk">
-                                <strong>Step 2.2 -</strong> Extract WinPE Add-On for ADK
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Extracts the <code>Windows PE add-on for the ADK for Windows Server 2022</code> <code>win2022_winpe_add_on_adk.iso</code> to <code>C:\attuneautomationworker\ADKDownloads\Win2022_WINPE_ADD_ON_ADK</code>.</p>
-<p>There will be a file called <code>adkwinpesetup.exe</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ADK_DOWNLOADS=&quot;C:\attuneautomationworker\ADKDownloads&quot;
-
-Set-Location &quot;${ADK_DOWNLOADS}&quot;
-
-&amp; &#x27;C:\Program Files\7-Zip\7z.exe&#x27; x &quot;./adk_winpe_add_on.iso&quot; `
-    -oadk_winpe_add_on
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
                         <h4 id="installwinpeaddonforadk">
                             <a href="#installwinpeaddonforadk">
-                                <strong>Step 2.3 -</strong> Install WinPE Add-On for ADK
+                                <strong>Step 2.2 -</strong> Install WinPE Add-On for ADK
                             </a>
                         </h4>
                     </div>
@@ -859,15 +744,25 @@ Set-Location &quot;${ADK_DOWNLOADS}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ADK=&quot;C:\attuneautomationworker\ADKDownloads\adk_winpe_add_on&quot;
+$ADK=&quot;C:\attuneautomationworker\ADKDownloads&quot;
 
-Set-Location &quot;${ADK}&quot;
+# Set-Location &quot;${ADK}&quot;
 
-./adkwinpesetup.exe /quiet `
-    /features &quot;OptionId.WindowsPreinstallationEnvironment&quot; `
+./adk_winpe_add_on.exe /quiet `
+    /features OptionId.WindowsPreinstallationEnvironment `
     /norestart `
     /log adk_winpe_add_on_install_log.txt `
     /ceip off
+    
+Start-Sleep -Seconds 30
+    
+$winPEPath = &quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Windows Preinstallation Environment&quot;
+
+if (Test-Path $winPEPath) {
+    Write-Host &quot;WinPE add-on for ADK is installed.&quot;
+} else {
+    Write-Host &quot;WinPE add-on for ADK is not installed.&quot;
+}
                 </code>
             </pre>
         </div>

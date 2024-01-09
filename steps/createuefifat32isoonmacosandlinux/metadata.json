@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": null, 
     "enabled": true, 
-    "externalUuid4": "0892528d-4a2d-48c0-95a3-c8fb8be9d705", 
+    "externalUuid4": "d0a3d5e5-2b94-43fb-8e5b-a5b1f1f0bf26", 
     "interpreter": 1, 
-    "key": "confirmplainwinpebiosisoexistsonmacosorlinux", 
-    "name": "Confirm Plain WinPE BIOS ISO Exists on macOS or Linux", 
+    "key": "createuefifat32isoonmacosandlinux", 
+    "name": "Create UEFI FAT32 ISO on macOS and Linux", 
     "osCredKey": "automationworkerlinuxuser", 
     "serverKey": "automationworkerlinuxnode", 
     "successExitCode": 0, 

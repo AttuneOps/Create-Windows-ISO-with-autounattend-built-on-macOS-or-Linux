@@ -1,0 +1,43 @@
+if {kickstartedBootLoaderIsUefi}
+then
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+        
+    if [[ "Darwin" == "$(uname)" ]]
+    then
+    
+        echo "is macOS, skipping"
+        
+    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+
+        MOUNT_FOLDER="uefi_mount"
+        MOUNT_PATH="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}"
+
+        mkdir --parents --verbose ${MOUNT_FOLDER}
+        
+        mount --verbose \
+            "../kickstart_{newOsNode.fqn}.iso" ${MOUNT_FOLDER}
+        
+        cp -r --verbose winpe_staging/* "${MOUNT_FOLDER}"
+        
+        if df -h | grep --ignore-case --quiet "${MOUNT_PATH}"
+        then
+            
+            umount --verbose "${MOUNT_FOLDER}"
+            
+        else
+        
+            echo "${MOUNT_PATH} is not mounted. Skipping."
+            
+        fi
+        
+    else
+    
+        echo "Unsupported operating system."
+        exit 1
+    fi
+    
+else
+    echo "Skipping for BIOS boot."
+fi

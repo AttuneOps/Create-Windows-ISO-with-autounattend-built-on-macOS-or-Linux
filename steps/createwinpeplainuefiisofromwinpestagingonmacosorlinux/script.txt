@@ -1,0 +1,57 @@
+cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+
+ISO_NAME="winpe_plain_uefi.iso"
+
+if [[ "Darwin" == "$(uname)" ]]
+then
+    
+    export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+    echo "Using $(which xorriso)"
+
+    xorriso -as mkisofs \
+        -iso-level 4 \
+        -full-iso9660-filenames \
+        -rock \
+        -b BOOT/etfsboot.com \
+        -no-emul-boot \
+        -boot-load-size 8 \
+        -hide boot.catalog \
+        -eltorito-alt-boot \
+        -no-emul-boot \
+        -b efi/microsoft/boot/efisys.bin \
+        -boot-load-size 1 \
+        -untranslated-filenames \
+        -disable-deep-relocation \
+        -V "KS_WIN" \
+        -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
+        winpe_uefi_staging
+        
+elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+then
+
+    mkisofs \
+        -allow-limited-size \
+        -iso-level 4 \
+        -full-iso9660-filenames \
+        -rock \
+        -b BOOT/etfsboot.com \
+        -no-emul-boot \
+        -boot-load-seg 0 \
+        -boot-load-size 8 \
+        -hide boot.catalog \
+        -eltorito-alt-boot \
+        -no-emul-boot \
+        -b efi/microsoft/boot/efisys.bin \
+        -boot-load-size 1 \
+        -udf \
+        -untranslated-filenames \
+        -disable-deep-relocation \
+        -V "KS_WIN" \
+        -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
+        winpe_uefi_staging
+
+else
+
+    echo "Unsupported operating system."
+    exit 1
+fi

@@ -11,10 +11,6 @@
             "stepKey": "downloadadk"
         }, 
         {
-            "order": 50, 
-            "stepKey": "extractadk"
-        }, 
-        {
             "order": 150, 
             "stepKey": "installadk"
         }

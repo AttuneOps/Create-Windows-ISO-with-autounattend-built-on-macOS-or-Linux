@@ -420,6 +420,10 @@ try {
     # Install 7z
     $FOLDER=&quot;C:\software&quot;
 
+    if (-not (Test-Path -Path $FOLDER)) {
+        New-Item -ItemType Directory -Path $FOLDER
+    }
+    
     Set-Location C:\software
     
     $FILE = &quot;7z2301-x64.msi&quot;
@@ -434,7 +438,7 @@ try {
         $7Z_MSI_FILE = (dir *.msi).name
         
         Write-Host &quot;Installing from $7Z_MSI_FILE&quot;
-    
+        
         Start-Process msiexec.exe &quot;/qn /i $7Z_MSI_FILE&quot; -Wait
         
     } else {

@@ -1,0 +1,40 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "1a108c12-4926-4b9f-82f6-d786a85de938", 
+    "isBlueprint": false, 
+    "key": "validatethecreatewindowsautounattendwinpeisoplanparameters", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonmacosorlinux"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "checkwindowsandboottypeparametersforwinpekickstartonmacosorlinux"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "checkinputparameterwindowsfolderonsambaforwinpekickstartonmacosorlinux"
+        }, 
+        {
+            "order": 300, 
+            "stepKey": "confirmplainwinpeisoexistsonmacosorlinux"
+        }
+    ], 
+    "name": "Validate the Create Windows autounattend WinPE ISO Plan Parameters", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

@@ -1,20 +1,15 @@
 if {kickstartedBootLoaderIsUefi}
 then
-    if uname | \
-        grep -iq "darwin"
-    then
-        echo "is macOS, skipping"
-        
-    else
-        echo "not macOS"
-        
-        cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
-        
-        chown --recursive \
-            --verbose \
-            "{automationWorkerLinuxUser.user}:{automationWorkerLinuxUser.user}" \
-            "winpe_staging"
-    fi
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    
+    USER="{automationWorkerLinuxUser.user}"
+    GROUP="$(id -gn {automationWorkerLinuxUser.user})"
+    echo "User: $USER, Group: $GROUP"
+    
+    chown -R -v "$USER:$GROUP" "winpe_staging"
+
 else
     echo "Skipping for BIOS boot."
 fi
+

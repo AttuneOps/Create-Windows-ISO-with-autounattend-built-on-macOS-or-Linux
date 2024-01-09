@@ -1,0 +1,38 @@
+if {kickstartedBootLoaderIsUefi}
+then
+
+    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    
+    ISO="{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
+    
+    [ -f "${ISO}" ] && rm "${ISO}"
+        
+    if [[ "Darwin" == "$(uname)" ]]
+    then
+    
+        hdiutil create -ov -srcfolder winpe_staging -fs "MS-DOS FAT32" \
+            -volname "KS_WIN" "${ISO}"
+            
+        hdiutil makehybrid -iso -joliet -o ${ISO} ${ISO}.dmg
+        rm -rf ${ISO}.dmg
+        
+        file ${ISO}
+        ls -ltrh ${ISO}
+        
+    elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
+    then
+        
+        block=$(du --summarize winpe_staging | awk '{print $1}')
+        ((block=block+10000))
+        echo "block size: ${block}"
+        mkfs.msdos -v -C "${ISO}" "${block}"
+        
+    else
+    
+        echo "Unsupported operating system."
+        exit 1
+    fi
+    
+else
+    echo "Skipping for BIOS boot."
+fi
