@@ -1,4 +1,4 @@
-$ADK="C:\attuneautomationworker\ADKDownloads"
+ADK="C:\attuneautomationworker\ADKDownloads"
 
 Set-Location "${ADK}"
     
