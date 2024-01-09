@@ -1,6 +1,17 @@
 $WinPE_amd64="C:\WinPE_amd64"
 
-if ( (Test-Path "${WinPE_amd64}") ) {
-  Remove-Item -Path "${WinPE_amd64}" -Recurse
-}
+Write-Host "Checking if the path $WinPE_amd64 exists..."
+
+if (Test-Path "${WinPE_amd64}") {
+
+    Write-Host "Path found. Removing the directory $WinPE_amd64 and its contents..."
+    Remove-Item -Path "${WinPE_amd64}" -Recurse
+    Write-Host "Directory $WinPE_amd64 has been removed successfully."
+
     
+} else {
+
+    Write-Host "Path $WinPE_amd64 does not exist. No action required."
+
+    
+}

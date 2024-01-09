@@ -176,6 +176,12 @@ This Project contains the following Blueprints.
 
 
 
+### Cleanup macOS or Linux Worker
+
+
+### Cleanup Windows Worker
+
+
 ### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -298,27 +304,6 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
-### Perform Test Win Node
-
-Performs basic tests for the built node.
-
-### WinPE Essentials Extraction on macOS or Linux
-
-This Attune Blueprint extracts the essential WinPE files from a full 5GB 
-Windows installation ISO, reducing the ISO file size to less than 500MB.
-
-The steps in the Blueprint are performed on macOS or Linux.
-
-Two WinPE ISOs are created, one for BIOS boot and another for UEFI boot.
-
-### WinPE Essentials Extraction on Windows
-
-Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
-
-This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
-
-This folder works for both BIOS and UEFI boot methods.
-
 ### Deploy and Extract Win10 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
@@ -352,14 +337,29 @@ This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share serv
 This blueprint is a repeatable process for the 
 `Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
 
-### Cleanup Windows Worker
+### Perform Test Win Node
 
-
-### Cleanup macOS or Linux Worker
-
+Performs basic tests for the built node.
 
 ### Unmount and Remove ISO From Node for Feature Install on Windows
 
+
+### WinPE Essentials Extraction on macOS or Linux
+
+This Attune Blueprint extracts the essential WinPE files from a full 5GB 
+Windows installation ISO, reducing the ISO file size to less than 500MB.
+
+The steps in the Blueprint are performed on macOS or Linux.
+
+Two WinPE ISOs are created, one for BIOS boot and another for UEFI boot.
+
+### WinPE Essentials Extraction on Windows
+
+Sets up the "plain" WinPE skeleton files on Windows Worker at `C:\WinPE_amd64`.
+
+This folder can be copied and then it's `.\media\sources\boot.wim` file can be modified for an automated unattended Windows install.
+
+This folder works for both BIOS and UEFI boot methods.
 
 
 

@@ -543,8 +543,20 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
                 <code class="language-sql py-0">
 $WinPE_amd64=&quot;C:\WinPE_amd64&quot;
 
-if ( (Test-Path &quot;${WinPE_amd64}&quot;) ) {
-  Remove-Item -Path &quot;${WinPE_amd64}&quot; -Recurse
+Write-Host &quot;Checking if the path $WinPE_amd64 exists...&quot;
+
+if (Test-Path &quot;${WinPE_amd64}&quot;) {
+
+    Write-Host &quot;Path found. Removing the directory $WinPE_amd64 and its contents...&quot;
+    Remove-Item -Path &quot;${WinPE_amd64}&quot; -Recurse
+    Write-Host &quot;Directory $WinPE_amd64 has been removed successfully.&quot;
+
+    
+} else {
+
+    Write-Host &quot;Path $WinPE_amd64 does not exist. No action required.&quot;
+
+    
 }
                 </code>
             </pre>
