@@ -15,19 +15,31 @@
             "stepKey": "mountbootwimonwindowsworker"
         }, 
         {
-            "order": 150, 
-            "stepKey": "movefilestobootwimonwindowsworker"
-        }, 
-        {
             "order": 200, 
-            "stepKey": "wimlibunmountbootwimonwindowsworker"
+            "stepKey": "movestartnetcmdtobootwimonwindowsworker"
         }, 
         {
             "order": 250, 
-            "stepKey": "wimlibcompressbootwimonwindowsworker"
+            "stepKey": "moveautounattendxmltobootwimonwindowsworker"
         }, 
         {
             "order": 300, 
+            "stepKey": "copydriversdropinfoldertobootwimonwindowsworker"
+        }, 
+        {
+            "order": 350, 
+            "stepKey": "movepostinstallwimtobootwimonwindowsworker"
+        }, 
+        {
+            "order": 450, 
+            "stepKey": "wimlibunmountbootwimonwindowsworker"
+        }, 
+        {
+            "order": 500, 
+            "stepKey": "wimlibcompressbootwimonwindowsworker"
+        }, 
+        {
+            "order": 550, 
             "stepKey": "overwritebootwimwithbootcleanedwimonwindowsworker"
         }
     ], 

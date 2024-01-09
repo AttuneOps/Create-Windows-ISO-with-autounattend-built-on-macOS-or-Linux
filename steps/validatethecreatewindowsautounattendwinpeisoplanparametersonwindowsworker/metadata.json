@@ -1,0 +1,36 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "9b0f8841-c2d1-4542-875b-ec07a2839593", 
+    "isBlueprint": false, 
+    "key": "validatethecreatewindowsautounattendwinpeisoplanparametersonwindowsworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "checkwindowsandboottypeparametersforwinpekickstartonwindowsworker"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "checkifipaddressisinsubnetonwindowsworker"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "checkmaximumlengthofwin10hostnameonwindowsworker"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker"
+        }
+    ], 
+    "name": "Validate the Create Windows autounattend WinPE ISO Plan Parameters on Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

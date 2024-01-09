@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "postinstallsetuppowershellscript", 
-    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
+    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "4cba8f5c-6200-4cd8-acb0-3cb040cb04f0", 
     "key": "deploypostsetuppowershellscriptonwindowsworker", 
