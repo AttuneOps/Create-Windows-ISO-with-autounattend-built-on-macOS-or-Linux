@@ -1,1 +1,0 @@
-The URL is for the `Windows PE add-on for the ADK for Windows Server 2022` at https://learn.microsoft.com/en-us/windows-hardware/get-started/adk-install#other-adk-downloads.

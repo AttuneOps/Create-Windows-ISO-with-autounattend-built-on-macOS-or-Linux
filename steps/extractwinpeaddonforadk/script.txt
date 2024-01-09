@@ -1,0 +1,6 @@
+$ADK_DOWNLOADS="C:\attuneautomationworker\ADKDownloads"
+
+Set-Location "${ADK_DOWNLOADS}"
+
+& 'C:\Program Files\7-Zip\7z.exe' x "./adk_winpe_add_on.iso" `
+    -oadk_winpe_add_on

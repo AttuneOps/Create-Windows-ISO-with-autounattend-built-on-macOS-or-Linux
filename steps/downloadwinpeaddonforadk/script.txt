@@ -1,0 +1,27 @@
+# Get the OS information
+$OS = Get-WmiObject Win32_OperatingSystem
+
+$ADK_DOWNLOADS="C:\attuneautomationworker\ADKDownloads"
+
+Set-Location "${ADK_DOWNLOADS}"
+
+# Check the caption property for Windows Server 2022 or Windows 11
+if ($OS.Caption -like "*Windows Server 2022*") {
+    
+    Write-Host "This system is running Windows Server 2022"
+    $ADK_WIN2022_URL="https://go.microsoft.com/fwlink/?linkid=2163233"
+    $ProgressPreference = 'SilentlyContinue'
+    Invoke-WebRequest $ADK_WIN2022_URL -OutFile "./adk_winpe_add_on.iso"
+    
+} elseif ($OS.Caption -like "*Windows 11*") {
+    
+    Write-Host "This system is running Windows 11"
+    $ADK_WIN11_URL="https://go.microsoft.com/fwlink/?linkid=2166133"
+    $ProgressPreference = 'SilentlyContinue'
+    Invoke-WebRequest $ADK_WIN11_URL -OutFile "./adk_winpe_add_on.iso"
+    
+} else {
+    
+    Write-Error "This system is not running Windows Server 2022 or Windows 11"
+    
+}

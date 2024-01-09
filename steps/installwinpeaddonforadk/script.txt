@@ -1,0 +1,9 @@
+$ADK="C:\attuneautomationworker\ADKDownloads\adk_winpe_add_on"
+
+Set-Location "${ADK}"
+
+./adkwinpesetup.exe /quiet `
+    /features "OptionId.WindowsPreinstallationEnvironment" `
+    /norestart `
+    /log adk_winpe_add_on_install_log.txt `
+    /ceip off

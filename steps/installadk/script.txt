@@ -1,0 +1,9 @@
+$ADK="C:\attuneautomationworker\ADKDownloads\adk_setup"
+
+Set-Location "${ADK}"
+
+./adksetup.exe /quiet `
+    /features "OptionId.DeploymentTools" `
+    /norestart `
+    /log adk_install_log.txt `
+    /ceip off
