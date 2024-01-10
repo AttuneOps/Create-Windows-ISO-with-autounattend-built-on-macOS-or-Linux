@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": null, 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "20f76cda-e6ce-4cfb-85e3-e46356e276e2", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin10isotosambashareonlinux", 
+    "links": [
+        {
+            "order": 150, 
+            "stepKey": "deploywin10isotosambashare"
+        }, 
+        {
+            "order": 250, 
+            "stepKey": "extractisoandconfigurefolderpermissionsforwin10"
+        }
+    ], 
+    "name": "Deploy and Extract Win10 ISO to Samba Share on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

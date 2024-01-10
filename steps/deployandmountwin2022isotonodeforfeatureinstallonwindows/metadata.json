@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "ec177c21-2aba-44df-a5e5-586cb8f0a3cc", 
+    "isBlueprint": true, 
+    "key": "deployandmountwin2022isotonodeforfeatureinstallonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deploywin2022isotosoftware"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "mountwinisofromsoftware"
+        }
+    ], 
+    "name": "Deploy and Mount Win2022 ISO To Node for Feature Install on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

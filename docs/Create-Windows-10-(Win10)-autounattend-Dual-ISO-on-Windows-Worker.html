@@ -1472,7 +1472,11 @@ mkisofs \
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Deploys the post install setup PowerShell script <code>post_install_setup.ps1</code> to <code>/c$/attuneautomationworker/build-{newOsNode.fqn}</code>..</p>
+                                <p>Creates a <code>post_install.wim</code> Windows Imaging Format file on Windows Worker.</p>
+<p>The purpose of this file is to overlay onto the <code>C</code> drive any files we want 
+for the Windows Installer to use. In this case we want to deploy a post 
+install setup PowerShell script at <code>C:\post_install_setup.ps1</code> that is 
+called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'s section.</p>
                             </p>
                         </div>
                     </div>
@@ -1506,7 +1510,7 @@ mkisofs \
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-{newOsNode.fqn}
+/c$/attuneautomationworker/build-{newOsNode.fqn}/post_install_wim
         </code>
     </div>
 

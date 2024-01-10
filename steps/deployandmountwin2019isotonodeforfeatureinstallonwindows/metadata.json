@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "85c65140-414e-4064-a0be-c4955ff47390", 
+    "isBlueprint": true, 
+    "key": "deployandmountwin2019isotonodeforfeatureinstallonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deploywin2019isotosoftware"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "mountwinisofromsoftware"
+        }
+    ], 
+    "name": "Deploy and Mount Win2019 ISO To Node for Feature Install on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "093149ba-46c0-4e4f-9dc0-54ae2da29170", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin2019isotosambashareonlinux", 
+    "links": [
+        {
+            "order": 100, 
+            "stepKey": "deploywin2019isotosambashare"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "extractisoandconfigurefolderpermissionsforwin2019"
+        }
+    ], 
+    "name": "Deploy and Extract Win2019 ISO to Samba Share on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

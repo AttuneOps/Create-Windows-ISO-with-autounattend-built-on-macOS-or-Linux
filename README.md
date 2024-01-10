@@ -176,6 +176,12 @@ This Project contains the following Blueprints.
 
 
 
+### Cleanup macOS or Linux Worker
+
+
+### Cleanup Windows Worker
+
+
 ### Create Windows 10 (Win10) autounattend Dual ISO on macOS or Linux Worker
 
 
@@ -298,61 +304,44 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
 
-### Deploy and Extract Win10 ISO to Samba Share
+### Deploy and Extract Win10 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
 
-### Deploy and Extract Win2016 ISO to Samba Share
+### Deploy and Extract Win2016 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
 
-### Deploy and Extract Win2019 ISO to Samba Share
+### Deploy and Extract Win2019 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
 
-### Deploy and Extract Win2022 ISO to Samba Share
+### Deploy and Extract Win2022 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
 
-### Deploy and Mount Win10 ISO To Node for Feature Install
+### Deploy and Mount Win10 ISO To Node for Feature Install on Windows
 
 
-### Deploy and Mount Win2016 ISO To Node for Feature Install
+### Deploy and Mount Win2016 ISO To Node for Feature Install on Windows
 
 
-### Deploy and Mount Win2019 ISO To Node for Feature Install
+### Deploy and Mount Win2019 ISO To Node for Feature Install on Windows
 
 
-### Deploy and Mount Win2022 ISO To Node for Feature Install
+### Deploy and Mount Win2022 ISO To Node for Feature Install on Windows
 
 
-### Extract ISO and Configure Folder Permissions for Samba Share
+### Extract ISO and Configure Folder Permissions for Samba Share on Linux
 
 This blueprint is a repeatable process for the 
 `Deploy and Extract {windows_distribution} ISO to Samba Share` blueprints.
-
-### Install Prerequisites on Windows Worker
-
-
-### Install Windows Assessment and Deployment Kit
-
-The Windows Assessment and Deployment Kit (Windows ADK) and 
-Windows PE add-on has the tools you need to customise 
-Windows images for large-scale deployment, and to test 
-the quality and performance of your system, its added 
-components, and the applications running on it.
-
-### Perform Post Cleanup on macOS or Linux Worker
-
-
-### Perform Post Cleanup on Windows Worker
-
 
 ### Perform Test Win Node
 
 Performs basic tests for the built node.
 
-### Unmount and Remove ISO From Node for Feature Install
+### Unmount and Remove ISO From Node for Feature Install on Windows
 
 
 ### WinPE Essentials Extraction on macOS or Linux

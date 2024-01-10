@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "7aaca3e2-3d9b-43b2-b56e-6d7f6d4bc39b", 
+    "isBlueprint": true, 
+    "key": "extractisoandconfigurefolderpermissionsforsambashareonlinux", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "extractisoforsambashare"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "setfolderpermissionsforsambashare"
+        }
+    ], 
+    "name": "Extract ISO and Configure Folder Permissions for Samba Share on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

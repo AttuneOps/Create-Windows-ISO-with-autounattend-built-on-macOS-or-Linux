@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "a71ae7eb-6da0-4dc5-b438-950980fba057", 
+    "isBlueprint": true, 
+    "key": "deployandmountwin2016isotonodeforfeatureinstallonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deploywin2016isotosoftware"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "mountwinisofromsoftware"
+        }
+    ], 
+    "name": "Deploy and Mount Win2016 ISO To Node for Feature Install on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

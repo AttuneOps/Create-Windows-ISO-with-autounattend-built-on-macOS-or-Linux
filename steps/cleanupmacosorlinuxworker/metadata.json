@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "87ff3764-59d7-4033-adce-c208a4d5bd2f", 
+    "isBlueprint": true, 
+    "key": "cleanupmacosorlinuxworker", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "postcleanuponmacosorlinuxworker"
+        }
+    ], 
+    "name": "Cleanup macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

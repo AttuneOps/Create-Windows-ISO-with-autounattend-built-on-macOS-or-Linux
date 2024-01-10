@@ -1,7 +1,11 @@
-
 $DIR="C:\attuneautomationworker"
 
-Set-Location "${DIR}"
+if (Test-Path $DIR) {
+    Set-Location "${DIR}"
+} else {
+    New-Item -Path '${DIR}' -ItemType Directory
+    Test-Path '${DIR}'
+}
 
 $DIR="build-{newOsNode.fqn}"
 

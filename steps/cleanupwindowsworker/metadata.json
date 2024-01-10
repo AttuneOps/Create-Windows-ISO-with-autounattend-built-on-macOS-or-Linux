@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "9debd3f3-2142-4991-b1f0-9a6f7a291f1c", 
+    "isBlueprint": true, 
+    "key": "cleanupwindowsworker", 
+    "links": [
+        {
+            "order": 50, 
+            "stepKey": "postcleanuponwindowsworker"
+        }
+    ], 
+    "name": "Cleanup Windows Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

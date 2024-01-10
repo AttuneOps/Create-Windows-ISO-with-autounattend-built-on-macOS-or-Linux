@@ -1,3 +1,0 @@
-$WAIT = 10
-shutdown /r /t $WAIT /c "Restart from Attune"
-Write-Host "Restarting in $WAIT seconds."

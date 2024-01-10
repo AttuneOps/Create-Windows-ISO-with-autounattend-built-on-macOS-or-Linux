@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "099b1d47-95ed-4bfc-948b-59d2b99a86e6", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin2022isotosambashareonlinux", 
+    "links": [
+        {
+            "order": 100, 
+            "stepKey": "deploywin2022isotosambashare"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "extractisoandconfigurefolderpermissionsforwin2022"
+        }
+    ], 
+    "name": "Deploy and Extract Win2022 ISO to Samba Share on Linux", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

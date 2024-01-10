@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "90123093-5c79-4d26-a60b-afacf303878f", 
+    "isBlueprint": true, 
+    "key": "unmountandremoveisofromnodeforfeatureinstallonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "unmountwindowsiso"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "removewindowsisofromsoftware"
+        }
+    ], 
+    "name": "Unmount and Remove ISO From Node for Feature Install on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
