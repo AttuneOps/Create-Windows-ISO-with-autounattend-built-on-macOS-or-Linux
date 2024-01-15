@@ -357,7 +357,7 @@ mstsc /admin /v:{automationworkerwindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$DIR=&quot;C:\attuneautomationworker&quot;
+$DIR=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 
 if (Test-Path $DIR) {
     Set-Location &quot;${DIR}&quot;

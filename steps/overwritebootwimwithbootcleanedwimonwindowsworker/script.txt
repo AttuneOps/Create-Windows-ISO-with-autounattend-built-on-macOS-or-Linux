@@ -1,9 +1,9 @@
-$ISO_BUILD="C:\attuneautomationworker"
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
 
 # if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
 #     $WINPE_STAGING_SOURCES_DIR="$ISO_BUILD\build-{newOsNode.fqn}\winpe_staging\SOURCES"
 # } elseif (${{kickstartedBootLoaderIsUefi}}) {
-    $WINPE_STAGING_SOURCES_DIR="$ISO_BUILD\build-{newOsNode.fqn}\WinPE_amd64\media\sources"
+    $WINPE_STAGING_SOURCES_DIR="${ISO_BUILD}\build-{newOsNode.fqn}\WinPE_amd64\media\sources"
 # } else {
 #     Write-Host "Unknown boot method"
 #     exit 1

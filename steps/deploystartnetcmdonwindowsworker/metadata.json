@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "winpestartnetcmd", 
-    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
+    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "1e7923ce-a176-4239-b95f-d062c4938610", 
     "key": "deploystartnetcmdonwindowsworker", 

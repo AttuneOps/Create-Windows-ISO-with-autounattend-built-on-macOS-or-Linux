@@ -1,4 +1,4 @@
-$ISO_BUILD="C:\attuneautomationworker"
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
 $BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
 
 Set-Location $BUILD_DIR
@@ -10,21 +10,10 @@ $WIMFILE="post_install.wim"
 
 Write-Host "Creating ${WIMFILE} from directory ${SOURCE}."
 
-$scriptContent=@"
-wimcapture "${SOURCE}" "${WIMFILE}" --check
-"@
+dism /Capture-Image /ImageFile:$WIMFILE /CaptureDir:$SOURCE /Name:"post_install"
 
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace("`r`n","`n")
-
-$FILE = "attune_wsl_create_post_install_wim.sh"
-
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user root --exec bash "${FILE}"
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Error 'Failed to create ${BUILD_DIR}\${WIMFILE}'
+if (Test-Path -Path $WIMFILE) {
+    Write-Host "WIM file created successfully at $destinationWIM"
+} else {
+    Write-Host "Failed to create WIM file."
 }
-      
-Remove-Item "${FILE}"

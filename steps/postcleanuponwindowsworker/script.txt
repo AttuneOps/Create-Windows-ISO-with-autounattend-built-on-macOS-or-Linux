@@ -1,4 +1,4 @@
-$DIR="C:\attuneautomationworker"
+$DIR="{automationWorkerWindowsBaseDirectory}"
 
 if (Test-Path $DIR) {
     Set-Location "${DIR}"

@@ -1,4 +1,4 @@
-$BUILD_WINPE_ISO_DIR="C:\attuneautomationworker\build-{newOsNode.fqn}"
+$BUILD_WINPE_ISO_DIR="{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}"
 
 Set-Location "${BUILD_WINPE_ISO_DIR}"
 

@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "win2019iso", 
-    "deployPath": "/c$/attuneautomationworker/build-winpe-iso", 
+    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/build-winpe-iso", 
     "enabled": true, 
     "externalUuid4": "e62108d7-c4d9-4e52-be79-edf5ab130aab", 
     "key": "deploywin2019dvdisotobuildwinpeisoonwindowsworker", 

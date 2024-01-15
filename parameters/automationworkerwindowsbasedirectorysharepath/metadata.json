@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "0c9b899f-b1d1-4e4e-a6db-44b7e5b1815c", 
+    "key": "automationworkerwindowsbasedirectorysharepath", 
+    "name": "Automation Worker Windows Base Directory Share Path", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

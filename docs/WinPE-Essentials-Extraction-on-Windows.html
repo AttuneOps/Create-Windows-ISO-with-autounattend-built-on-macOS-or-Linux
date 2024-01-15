@@ -415,7 +415,7 @@ mstsc /admin /v:{automationworkerwindowsnode}
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-winpe-iso
+{automationWorkerWindowsBaseDirectorySharePath}/build-winpe-iso, relative to the home directory
         </code>
     </div>
 
@@ -468,8 +468,8 @@ mstsc /admin /v:{automationworkerwindowsnode}
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-winpe-iso&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-winpe-iso&quot;
 
 Set-Location $BUILD_DIR
 
@@ -541,7 +541,7 @@ if (test-Path &quot;${ISO_WILDCARD}&quot; -pathtype leaf) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$WinPE_amd64=&quot;C:\WinPE_amd64&quot;
+$WinPE_amd64=&quot;{automationWorkerWindowsBaseDirectory}\WinPE_amd64&quot;
 
 Write-Host &quot;Checking if the path $WinPE_amd64 exists...&quot;
 
@@ -621,7 +621,7 @@ Creates the skeleton WinPE files at <code>C:\WinPE_amd64</code>.</p>
             <pre>
                 <code class="language-sql py-0">
 call &quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\DandISetEnv.bat&quot; dir
-copype amd64 C:\WinPE_amd64
+copype amd64 {automationWorkerWindowsBaseDirectory}\WinPE_amd64
                 </code>
             </pre>
         </div>
@@ -679,17 +679,17 @@ copype amd64 C:\WinPE_amd64
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$SKELETON_FWFILES_PATH=&quot;C:\WinPE_amd64\fwfiles&quot;
+$SKELETON_FWFILES_PATH=&quot;{automationWorkerWindowsBaseDirectory}\WinPE_amd64\fwfiles&quot;
 
 Set-Location &quot;${SKELETON_FWFILES_PATH}&quot;
 
-$WinPE_amd64_PATH=&quot;C:\attuneautomationworker\build-winpe-iso\WinPE_amd64&quot;
+$WinPE_amd64_PATH=&quot;{automationWorkerWindowsBaseDirectory}\build-winpe-iso\WinPE_amd64&quot;
 
 Write-Host &quot;Before hash of efisys.bin&quot;
 Get-FileHash .\efisys.bin
     
 Copy-Item `
-    -Path &quot;C:\attuneautomationworker\build-winpe-iso\winimg\efi\microsoft\boot\efisys_noprompt.bin&quot; `
+    -Path &quot;{automationWorkerWindowsBaseDirectory}\build-winpe-iso\winimg\efi\microsoft\boot\efisys_noprompt.bin&quot; `
     -Destination &quot;.\efisys.bin&quot;
     
 Write-Host &quot;After hash of efisys.bin&quot;

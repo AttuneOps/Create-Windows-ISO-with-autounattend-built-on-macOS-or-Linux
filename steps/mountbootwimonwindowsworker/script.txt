@@ -1,5 +1,5 @@
-$ISO_BUILD="C:\attuneautomationworker"
-$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
 
 Set-Location $BUILD_DIR
 

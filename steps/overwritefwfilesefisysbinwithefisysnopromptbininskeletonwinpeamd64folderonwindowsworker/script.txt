@@ -1,14 +1,14 @@
-$SKELETON_FWFILES_PATH="C:\WinPE_amd64\fwfiles"
+$SKELETON_FWFILES_PATH="{automationWorkerWindowsBaseDirectory}\WinPE_amd64\fwfiles"
 
 Set-Location "${SKELETON_FWFILES_PATH}"
 
-$WinPE_amd64_PATH="C:\attuneautomationworker\build-winpe-iso\WinPE_amd64"
+$WinPE_amd64_PATH="{automationWorkerWindowsBaseDirectory}\build-winpe-iso\WinPE_amd64"
 
 Write-Host "Before hash of efisys.bin"
 Get-FileHash .\efisys.bin
     
 Copy-Item `
-    -Path "C:\attuneautomationworker\build-winpe-iso\winimg\efi\microsoft\boot\efisys_noprompt.bin" `
+    -Path "{automationWorkerWindowsBaseDirectory}\build-winpe-iso\winimg\efi\microsoft\boot\efisys_noprompt.bin" `
     -Destination ".\efisys.bin"
     
 Write-Host "After hash of efisys.bin"

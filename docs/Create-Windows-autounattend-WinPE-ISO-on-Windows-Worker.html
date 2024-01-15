@@ -1101,7 +1101,7 @@ if (( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2016&quot; ) -Or
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-{newOsNode.fqn}
+{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1162,7 +1162,7 @@ called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-{newOsNode.fqn}/post_install_wim
+{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}/post_install_wim, relative to the home directory
         </code>
     </div>
 
@@ -1214,7 +1214,7 @@ called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
@@ -1226,24 +1226,13 @@ $WIMFILE=&quot;post_install.wim&quot;
 
 Write-Host &quot;Creating ${WIMFILE} from directory ${SOURCE}.&quot;
 
-$scriptContent=@&quot;
-wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
-&quot;@
+dism /Capture-Image /ImageFile:$WIMFILE /CaptureDir:$SOURCE /Name:&quot;post_install&quot;
 
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
-
-$FILE = &quot;attune_wsl_create_post_install_wim.sh&quot;
-
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to create ${BUILD_DIR}\${WIMFILE}&#x27;
+if (Test-Path -Path $WIMFILE) {
+    Write-Host &quot;WIM file created successfully at $destinationWIM&quot;
+} else {
+    Write-Host &quot;Failed to create WIM file.&quot;
 }
-      
-Remove-Item &quot;${FILE}&quot;
                 </code>
             </pre>
         </div>
@@ -1316,7 +1305,7 @@ Remove-Item &quot;${FILE}&quot;
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-{newOsNode.fqn}
+{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1368,7 +1357,7 @@ Remove-Item &quot;${FILE}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$BUILD_WINPE_ISO_DIR=&quot;C:\attuneautomationworker\build-{newOsNode.fqn}&quot;
+$BUILD_WINPE_ISO_DIR=&quot;{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_WINPE_ISO_DIR}&quot;
 
@@ -1430,7 +1419,7 @@ if ( (Test-Path &quot;${WinPE_amd64}&quot;) ) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1533,7 +1522,7 @@ Copy-Item -Recurse -Path &quot;C:\${WinPE_amd64}\*&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1597,8 +1586,8 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
@@ -1664,7 +1653,7 @@ if ($LASTEXITCODE -ne 0) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1728,7 +1717,7 @@ Move-Item -Path &quot;.\startnet.cmd&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1788,7 +1777,7 @@ Move-Item -Path &quot;.\autounattend.xml&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 $WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
@@ -1800,7 +1789,7 @@ if ( -Not (Test-Path &quot;${DRIVERS}&quot;) ) {
   New-Item &quot;${DRIVERS}&quot; -ItemType Directory
 }
 
-$DRIVERS_DROP_IN_FOLDER=&quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
+$DRIVERS_DROP_IN_FOLDER=&quot;${ISO_BUILD}\drivers-{newOsNode.fqn}&quot;
 
 if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
     
@@ -1862,7 +1851,7 @@ if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1932,7 +1921,7 @@ Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /discard
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -2001,8 +1990,8 @@ Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /Commit
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
@@ -2078,12 +2067,12 @@ Dism /Export-Image /SourceImageFile:&quot;${SourceImageFile}&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 
 # if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
 #     $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\winpe_staging\SOURCES&quot;
 # } elseif (${{kickstartedBootLoaderIsUefi}}) {
-    $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\WinPE_amd64\media\sources&quot;
+    $WINPE_STAGING_SOURCES_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}\WinPE_amd64\media\sources&quot;
 # } else {
 #     Write-Host &quot;Unknown boot method&quot;
 #     exit 1
@@ -2157,7 +2146,7 @@ dir
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 Set-Location &quot;${ISO_BUILD}&quot;
 
 $ISO=&quot;kickstart_{newOsNode.fqn}.iso&quot;
@@ -2228,7 +2217,7 @@ The directory path is changed to <code>C:\attuneautomationworker\build-{newOsNod
 call &quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\DandISetEnv.bat&quot; dir
 dir
 
-cd C:\attuneautomationworker\build-{newOsNode.fqn}
+cd {automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}
 dir
 
 MakeWinPEMedia /ISO .\WinPE_amd64 ..\kickstart_{newOsNode.fqn}.iso
