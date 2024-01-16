@@ -1,18 +1,10 @@
-$ISO_BUILD="C:\attuneautomationworker"
-$BUILD_DIR="$ISO_BUILD\build-{newOsNode.fqn}"
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
 
 Set-Location $BUILD_DIR
 
-# if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
-#     $SourceImageFile = ".\winpe_staging\SOURCES\BOOT.WIM"
-#     $DestinationImageFile = ".\winpe_staging\SOURCES\BOOT_CLEANED.WIM"
-# } elseif (${{kickstartedBootLoaderIsUefi}}) {
     $SourceImageFile = ".\WinPE_amd64\media\sources\boot.wim"
     $DestinationImageFile = ".\WinPE_amd64\media\sources\boot_cleaned.wim"
-# } else {
-#     Write-Host "Unknown boot method"
-#     exit 1
-# }
     
 # Generate a compressed version of BOOT.WIM called BOOT_CLEANED.WIM
 Dism /Export-Image /SourceImageFile:"${SourceImageFile}" `

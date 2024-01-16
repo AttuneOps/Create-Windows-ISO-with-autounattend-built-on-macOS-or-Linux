@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "win2019iso", 
+    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/windows_iso_data_for_winpe/windows2019", 
+    "enabled": true, 
+    "externalUuid4": "aab26bc7-901f-43e4-8075-293dc069465d", 
+    "key": "deployandextractwin2019iso", 
+    "name": " Deploy and Extract Win2019 ISO", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": true
+}

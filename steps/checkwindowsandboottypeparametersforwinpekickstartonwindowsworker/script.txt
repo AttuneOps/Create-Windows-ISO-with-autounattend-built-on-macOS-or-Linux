@@ -1,8 +1,6 @@
 $values = "
-    isWin10Bios = {isWin10Bios}
-    isWin10Uefi = {isWin10Uefi}
-    isWinServerBios = {isWinServerBios}
-    isWinServerUefi = {isWinServerUefi}
+    isBiosBoot = {isBiosBoot}
+    isUefiBoot = {isUefiBoot}
     "
 
 function printVals {

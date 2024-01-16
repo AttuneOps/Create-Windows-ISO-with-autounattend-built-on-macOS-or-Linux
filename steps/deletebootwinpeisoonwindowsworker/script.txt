@@ -1,4 +1,4 @@
-$ISO_BUILD="C:\attuneautomationworker"
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
 Set-Location "${ISO_BUILD}"
 
 $ISO="kickstart_{newOsNode.fqn}.iso"

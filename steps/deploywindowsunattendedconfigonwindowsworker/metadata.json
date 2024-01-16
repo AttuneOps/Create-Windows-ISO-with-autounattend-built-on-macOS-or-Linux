@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
-    "archiveKey": "windowsunattendedconfig", 
-    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
+    "archiveKey": "windowsunattendedconfigv2", 
+    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}", 
     "enabled": true, 
     "externalUuid4": "c1990586-dec6-4638-96b4-bd63b583413e", 
     "key": "deploywindowsunattendedconfigonwindowsworker", 
@@ -30,23 +30,23 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "isWin10Bios", 
-            "parameterKey": "iswin10bios", 
+            "name": "isBiosBoot", 
+            "parameterKey": "isbiosboot", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "isWin10Uefi", 
-            "parameterKey": "iswin10uefi", 
+            "name": "isUefiBoot", 
+            "parameterKey": "isuefiboot", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "isWinServerBios", 
-            "parameterKey": "iswinserverbios", 
+            "name": "isWindowsServer", 
+            "parameterKey": "iswindowsserver", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "isWinServerUefi", 
-            "parameterKey": "iswinserveruefi", 
+            "name": "isWindowsWorkstation", 
+            "parameterKey": "iswindowsworkstation", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {

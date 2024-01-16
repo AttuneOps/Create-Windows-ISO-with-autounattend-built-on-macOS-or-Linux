@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "abdf7583-6030-42b5-8755-d07880588455", 
+    "key": "isbiosboot", 
+    "name": "Is BIOS Boot", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

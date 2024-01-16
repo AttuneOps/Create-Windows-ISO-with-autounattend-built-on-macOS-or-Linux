@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "79c1fe88-5bee-4fde-af80-0a56e5bc898c", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin2022isotosmbshareonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deployandextractwin2022iso"
+        }
+    ], 
+    "name": "Deploy and Extract Win2022 ISO to Smb Share on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

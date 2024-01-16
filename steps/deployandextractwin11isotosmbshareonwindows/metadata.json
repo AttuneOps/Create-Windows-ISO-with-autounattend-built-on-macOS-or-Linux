@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "7defd21e-d3d9-45d4-b253-9e635553aa47", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin11isotosmbshareonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deployandextractwin11iso"
+        }
+    ], 
+    "name": "Deploy and Extract Win11 ISO to Smb Share on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

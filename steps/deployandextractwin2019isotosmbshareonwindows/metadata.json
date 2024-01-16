@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "13177493-8bb1-4ceb-a325-f04bbd1ae066", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin2019isotosmbshareonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deployandextractwin2019iso"
+        }
+    ], 
+    "name": "Deploy and Extract Win2019 ISO to Smb Share on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

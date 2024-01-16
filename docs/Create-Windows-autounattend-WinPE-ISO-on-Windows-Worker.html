@@ -222,8 +222,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#checkwindowstypeparametersforwinpeinstallonwindowsworker">
+                            <strong>Step 1.2 -</strong> Check Windows Type Parameters for WinPE Install on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
-                            <strong>Step 1.2 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                            <strong>Step 1.3 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
                         </a>
                     </p>
 
@@ -231,7 +239,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkifipaddressisinsubnetonwindowsworker">
-                            <strong>Step 1.3 -</strong> Check if IP Address is in Subnet on Windows Worker
+                            <strong>Step 1.4 -</strong> Check if IP Address is in Subnet on Windows Worker
                         </a>
                     </p>
 
@@ -239,7 +247,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
-                            <strong>Step 1.4 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
+                            <strong>Step 1.5 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
                         </a>
                     </p>
 
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
-                            <strong>Step 1.5 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
+                            <strong>Step 1.6 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
                         </a>
                     </p>
 
@@ -255,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
-                            <strong>Step 1.6 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
+                            <strong>Step 1.7 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
                         </a>
                     </p>
 
@@ -534,11 +542,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks exactly if one of these are set true:
-1. <code>isWin10Bios</code>
-2. <code>isWin10Uefi</code>
-3. <code>isWinServerBios</code>
-4. <code>isWinServerUefi</code></p>
+                                <p>Check if boot type is configured correctly.</p>
                             </p>
                         </div>
                     </div>
@@ -585,10 +589,85 @@ mstsc /admin /v:{automationworkerwindowsnode}
             <pre>
                 <code class="language-sql py-0">
 $values = &quot;
-    isWin10Bios = {isWin10Bios}
-    isWin10Uefi = {isWin10Uefi}
-    isWinServerBios = {isWinServerBios}
-    isWinServerUefi = {isWinServerUefi}
+    isBiosBoot = {isBiosBoot}
+    isUefiBoot = {isUefiBoot}
+    &quot;
+
+function printVals {
+    Write-Host &quot;${values}&quot;
+}
+
+Write-Host &quot;Checking ...&quot;
+printVals
+
+[regex]$regex = &#x27;true&#x27;
+
+$COUNT = $regex.matches(&quot;${values}&quot;).count
+
+Write-Host &quot;COUNT=${COUNT}&quot;
+
+if ( $COUNT -ne 1 ) {
+    Write-Host &quot;FAIL: You must have exactly one only have one of the parameters above set to true&quot;
+    exit 1
+}
+
+Write-Host &quot;SUCCESS: The parameters above are set correctly&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="checkwindowstypeparametersforwinpeinstallonwindowsworker">
+                            <a href="#checkwindowstypeparametersforwinpeinstallonwindowsworker">
+                                <strong>Step 1.2 -</strong> Check Windows Type Parameters for WinPE Install on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Check if Windows type is configured correctly.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$values = &quot;
+    isWindowsServer = {isWindowsServer}
+    isWindowsWorkstation = {isWindowsWorkstation}
     &quot;
 
 function printVals {
@@ -626,7 +705,7 @@ Write-Host &quot;SUCCESS: The parameters above are set correctly&quot;
                     <div class="row pt-5">
                         <h4 id="checkifgatewayipaddressisinsubnetonwindowsworker">
                             <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
-                                <strong>Step 1.2 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                                <strong>Step 1.3 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -724,7 +803,7 @@ for ($i = 0; $i -lt 4; $i++) {
                     <div class="row pt-5">
                         <h4 id="checkifipaddressisinsubnetonwindowsworker">
                             <a href="#checkifipaddressisinsubnetonwindowsworker">
-                                <strong>Step 1.3 -</strong> Check if IP Address is in Subnet on Windows Worker
+                                <strong>Step 1.4 -</strong> Check if IP Address is in Subnet on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -822,7 +901,7 @@ for ($i = 0; $i -lt 4; $i++) {
                     <div class="row pt-5">
                         <h4 id="checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
                             <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
-                                <strong>Step 1.4 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
+                                <strong>Step 1.5 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -861,15 +940,14 @@ for ($i = 0; $i -lt 4; $i++) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if (${{kickstartedBootLoaderIsUefi}}) {
+if ( ${{kickstartedBootLoaderIsUefi}} ) {
 
-    Write-Host &quot;isWin10Uefi = {isWin10Uefi}, isWinServerUefi = {isWinServerUefi}&quot;
+    Write-Host &quot;isUefiBoot = {isUefiBoot}&quot;
 
-    if ((-Not ${{isWin10Uefi}}) -And
-        (-Not ${{isWinServerUefi}}) ) {
+    if ( -Not ${{isUefiBoot}} ) {
 
         Write-Host &quot;If kickstartedBootLoaderIsUefi is set true, then
-        one of isWin10Uefi or isWinServerUefi must also be
+        one of isUefiBoot must also be
         set true&quot;
         exit 1
       }
@@ -892,7 +970,7 @@ Write-Host &quot;SUCCESS: Ok&quot;
                     <div class="row pt-5">
                         <h4 id="checkmaximumlengthofwin10hostnameonwindowsworker">
                             <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
-                                <strong>Step 1.5 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
+                                <strong>Step 1.6 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -932,7 +1010,7 @@ Write-Host &quot;SUCCESS: Ok&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
+if ( ${{isWindowsWorkstation}} ) {
 
     $HOSTNAME = &quot;{newOsNode.hostname}&quot;
     
@@ -947,7 +1025,7 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
     }
     
 } else {
-    Write-Host &quot;Not Win10, skipping.&quot;
+    Write-Host &quot;Not Windows Workstation, skipping.&quot;
 }
                 </code>
             </pre>
@@ -965,7 +1043,7 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
                     <div class="row pt-5">
                         <h4 id="checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
                             <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
-                                <strong>Step 1.6 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
+                                <strong>Step 1.7 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -1016,8 +1094,8 @@ if ( -Not ${{isWinPEKickstart}} ) {
 }
 
 if ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows10&quot; ) {
-    if ( (-Not ${{isWin10Bios}}) -And (-Not ${{isWin10Uefi}}) ) {
-        Write-Host &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
+    if ( -Not ${{isWindowsWorkstation}} ) {
+        Write-Host &quot;Please set one of &#x27;isWindowsWorkstation&#x27; to true to install Win10.&quot;
         exit 1
     }
 }
@@ -1026,10 +1104,21 @@ if (( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2016&quot; ) -Or
     ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2019&quot; ) -Or
     ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2022&quot; )) {
 
-    if ( (-Not ${{isWinServerBios}}) -And (-Not ${{isWinServerUefi}}) ) {
-        Write-Host &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server.&quot;
+    if ( -Not ${{isWindowsServer}} ) {
+        Write-Host &quot;Please set &#x27;isWindowsServer&#x27; to true to install Windows Server.&quot;
         exit 1
     }
+}
+
+# Define the UNC path to the SMB share
+$uncPath = &quot;\\{sambaServerIpAddress}\share\{windowsFolderOnSamba}&quot;
+
+# Test if the path is accessible
+if (Test-Path $uncPath) {
+    Write-Host &quot;The SMB share is accessible. Listing contents:&quot;
+    Get-ChildItem $uncPath
+} else {
+    Write-Host &quot;The SMB share is not accessible or does not exist.&quot;
 }
                 </code>
             </pre>
@@ -1101,7 +1190,7 @@ if (( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2016&quot; ) -Or
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-{newOsNode.fqn}
+{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1162,7 +1251,7 @@ called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-{newOsNode.fqn}/post_install_wim
+{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}/post_install_wim, relative to the home directory
         </code>
     </div>
 
@@ -1214,7 +1303,7 @@ called by <code>autounattend.xml</code> <code>&lt;FirstLogonCommands&gt;</code>'
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
@@ -1226,24 +1315,13 @@ $WIMFILE=&quot;post_install.wim&quot;
 
 Write-Host &quot;Creating ${WIMFILE} from directory ${SOURCE}.&quot;
 
-$scriptContent=@&quot;
-wimcapture &quot;${SOURCE}&quot; &quot;${WIMFILE}&quot; --check
-&quot;@
+dism /Capture-Image /ImageFile:$WIMFILE /CaptureDir:$SOURCE /Name:&quot;post_install&quot;
 
-# Replace CRLF with LF
-$scriptContent = $scriptContent.replace(&quot;`r`n&quot;,&quot;`n&quot;)
-
-$FILE = &quot;attune_wsl_create_post_install_wim.sh&quot;
-
-Set-Content -Path $FILE -NoNewline -Value $scriptContent
-
-wsl -d Ubuntu --user root --exec bash &quot;${FILE}&quot;
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Error &#x27;Failed to create ${BUILD_DIR}\${WIMFILE}&#x27;
+if (Test-Path -Path $WIMFILE) {
+    Write-Host &quot;WIM file created successfully at $destinationWIM&quot;
+} else {
+    Write-Host &quot;Failed to create WIM file.&quot;
 }
-      
-Remove-Item &quot;${FILE}&quot;
                 </code>
             </pre>
         </div>
@@ -1297,18 +1375,11 @@ Remove-Item &quot;${FILE}&quot;
 
     <div class="row">
         <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
+            
         </p>
         <p>
             Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
+            <strong>Windows_Unattended_config_v2.tar</strong>
             to the target node.
         </p>
         <p>
@@ -1316,7 +1387,7 @@ Remove-Item &quot;${FILE}&quot;
     </div>
     <div class="row py-1">
         <code class="language-bash">
-/c$/attuneautomationworker/build-{newOsNode.fqn}
+{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}, relative to the home directory
         </code>
     </div>
 
@@ -1368,7 +1439,7 @@ Remove-Item &quot;${FILE}&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$BUILD_WINPE_ISO_DIR=&quot;C:\attuneautomationworker\build-{newOsNode.fqn}&quot;
+$BUILD_WINPE_ISO_DIR=&quot;{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_WINPE_ISO_DIR}&quot;
 
@@ -1430,7 +1501,7 @@ if ( (Test-Path &quot;${WinPE_amd64}&quot;) ) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1533,7 +1604,7 @@ Copy-Item -Recurse -Path &quot;C:\${WinPE_amd64}\*&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1597,8 +1668,8 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
@@ -1664,7 +1735,7 @@ if ($LASTEXITCODE -ne 0) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1728,7 +1799,7 @@ Move-Item -Path &quot;.\startnet.cmd&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1788,7 +1859,7 @@ Move-Item -Path &quot;.\autounattend.xml&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 $WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
@@ -1800,7 +1871,7 @@ if ( -Not (Test-Path &quot;${DRIVERS}&quot;) ) {
   New-Item &quot;${DRIVERS}&quot; -ItemType Directory
 }
 
-$DRIVERS_DROP_IN_FOLDER=&quot;C:\attuneautomationworker\drivers-{newOsNode.fqn}&quot;
+$DRIVERS_DROP_IN_FOLDER=&quot;${ISO_BUILD}\drivers-{newOsNode.fqn}&quot;
 
 if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
     
@@ -1862,7 +1933,7 @@ if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -1932,7 +2003,7 @@ Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /discard
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
@@ -2001,21 +2072,13 @@ Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /Commit
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
-$BUILD_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
-# if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
-#     $SourceImageFile = &quot;.\winpe_staging\SOURCES\BOOT.WIM&quot;
-#     $DestinationImageFile = &quot;.\winpe_staging\SOURCES\BOOT_CLEANED.WIM&quot;
-# } elseif (${{kickstartedBootLoaderIsUefi}}) {
     $SourceImageFile = &quot;.\WinPE_amd64\media\sources\boot.wim&quot;
     $DestinationImageFile = &quot;.\WinPE_amd64\media\sources\boot_cleaned.wim&quot;
-# } else {
-#     Write-Host &quot;Unknown boot method&quot;
-#     exit 1
-# }
     
 # Generate a compressed version of BOOT.WIM called BOOT_CLEANED.WIM
 Dism /Export-Image /SourceImageFile:&quot;${SourceImageFile}&quot; `
@@ -2078,16 +2141,9 @@ Dism /Export-Image /SourceImageFile:&quot;${SourceImageFile}&quot; `
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 
-# if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
-#     $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\winpe_staging\SOURCES&quot;
-# } elseif (${{kickstartedBootLoaderIsUefi}}) {
-    $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\WinPE_amd64\media\sources&quot;
-# } else {
-#     Write-Host &quot;Unknown boot method&quot;
-#     exit 1
-# }
+$WINPE_STAGING_SOURCES_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}\WinPE_amd64\media\sources&quot;
 
 Set-Location &quot;${WINPE_STAGING_SOURCES_DIR}&quot;
 
@@ -2157,7 +2213,7 @@ dir
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-$ISO_BUILD=&quot;C:\attuneautomationworker&quot;
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 Set-Location &quot;${ISO_BUILD}&quot;
 
 $ISO=&quot;kickstart_{newOsNode.fqn}.iso&quot;
@@ -2228,7 +2284,7 @@ The directory path is changed to <code>C:\attuneautomationworker\build-{newOsNod
 call &quot;C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\DandISetEnv.bat&quot; dir
 dir
 
-cd C:\attuneautomationworker\build-{newOsNode.fqn}
+cd {automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}
 dir
 
 MakeWinPEMedia /ISO .\WinPE_amd64 ..\kickstart_{newOsNode.fqn}.iso

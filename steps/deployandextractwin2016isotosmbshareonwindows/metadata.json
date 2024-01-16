@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "5775ee0d-c20b-42b4-86d8-4008cd7f5076", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin2016isotosmbshareonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deployandextractwin2016iso"
+        }
+    ], 
+    "name": "Deploy and Extract Win2016 ISO to Smb Share on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

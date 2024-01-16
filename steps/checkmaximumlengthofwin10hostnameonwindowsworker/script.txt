@@ -1,4 +1,4 @@
-if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
+if ( ${{isWindowsWorkstation}} ) {
 
     $HOSTNAME = "{newOsNode.hostname}"
     
@@ -13,5 +13,5 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
     }
     
 } else {
-    Write-Host "Not Win10, skipping."
+    Write-Host "Not Windows Workstation, skipping."
 }

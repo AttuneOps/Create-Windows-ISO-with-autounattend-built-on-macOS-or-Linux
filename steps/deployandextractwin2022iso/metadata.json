@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win2022iso", 
+    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/share/windows2022", 
+    "enabled": true, 
+    "externalUuid4": "ca5fab2f-a15f-49af-afd3-eeb1999ac5cd", 
+    "key": "deployandextractwin2022iso", 
+    "name": " Deploy and Extract Win2022 ISO", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": true
+}

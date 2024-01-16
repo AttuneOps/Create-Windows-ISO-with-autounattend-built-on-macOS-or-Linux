@@ -4,8 +4,8 @@ if ( -Not ${{isWinPEKickstart}} ) {
 }
 
 if ( "{windowsFolderOnSamba}" -eq "windows10" ) {
-    if ( (-Not ${{isWin10Bios}}) -And (-Not ${{isWin10Uefi}}) ) {
-        Write-Host "Please set one of 'isWin10Bios' or 'isWin10Uefi' to true to install Win10."
+    if ( -Not ${{isWindowsWorkstation}} ) {
+        Write-Host "Please set one of 'isWindowsWorkstation' to true to install Win10."
         exit 1
     }
 }
@@ -14,8 +14,19 @@ if (( "{windowsFolderOnSamba}" -eq "windows2016" ) -Or
     ( "{windowsFolderOnSamba}" -eq "windows2019" ) -Or
     ( "{windowsFolderOnSamba}" -eq "windows2022" )) {
 
-    if ( (-Not ${{isWinServerBios}}) -And (-Not ${{isWinServerUefi}}) ) {
-        Write-Host "Please set one of 'isWinServerBios' or 'isWinServerUefi' to true to install Windows Server."
+    if ( -Not ${{isWindowsServer}} ) {
+        Write-Host "Please set 'isWindowsServer' to true to install Windows Server."
         exit 1
     }
+}
+
+# Define the UNC path to the SMB share
+$uncPath = "\\{sambaServerIpAddress}\share\{windowsFolderOnSamba}"
+
+# Test if the path is accessible
+if (Test-Path $uncPath) {
+    Write-Host "The SMB share is accessible. Listing contents:"
+    Get-ChildItem $uncPath
+} else {
+    Write-Host "The SMB share is not accessible or does not exist."
 }
