@@ -374,13 +374,6 @@ if (Test-Path $DIR) {
     Write-Host &quot;No build directory to remove.&quot;
 }
 
-$DIR=&quot;drivers-{newOsNode.fqn}&quot;
-if (Test-Path $DIR) {
-    Remove-Item -Recurse $DIR
-} else {
-    Write-Host &quot;No drop in drivers directory to remove.&quot;
-}
-
 # The wildcard will allow removal of 
 # - kickstart_{newOsNode.fqn}.iso
 # - drivers_{newOsNode.fqn}.iso

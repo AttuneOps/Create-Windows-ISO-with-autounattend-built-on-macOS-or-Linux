@@ -6,14 +6,6 @@ else
     echo "No build directory to remove."
 fi
 
-DIR="{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}"
-if [ -d "${DIR}" ]
-then
-    rm -rf "${DIR}" && echo "Removed ${DIR}"
-else
-    echo "No drop in drivers directory to remove."
-fi
-
 # The wildcard will allow removal of 
 # - kickstart_{newOsNode.fqn}.iso
 # - drivers_{newOsNode.fqn}.iso
