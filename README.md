@@ -308,17 +308,32 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 This Blueprint deploys the Windows 10 ISO files to the Samba Share server.
 
+### Deploy and Extract Win10 ISO to Smb Share on Windows
+
+
+### Deploy and Extract Win11 ISO to Smb Share on Windows
+
+
 ### Deploy and Extract Win2016 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows Server 2016 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2016 ISO to Smb Share on Windows
+
 
 ### Deploy and Extract Win2019 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows Server 2019 ISO files to the Samba Share server.
 
+### Deploy and Extract Win2019 ISO to Smb Share on Windows
+
+
 ### Deploy and Extract Win2022 ISO to Samba Share on Linux
 
 This Blueprint deploys the Windows Server 2022 ISO files to the Samba Share server.
+
+### Deploy and Extract Win2022 ISO to Smb Share on Windows
+
 
 ### Deploy and Mount Win10 ISO To Node for Feature Install on Windows
 
@@ -373,6 +388,8 @@ This folder works for both BIOS and UEFI boot methods.
 | Automation Worker Linux Node | Linux/Unix Node | `automationworkerlinuxnode` | The Linux automation worker node used to perform tasks to create the ISO. |
 | Automation Worker Linux User | Linux/Unix Credential | `automationworkerlinuxuser` | Non privilege user on the Automation Worker node. |
 | Automation Worker Linux User: root | Linux/Unix Credential | `automationworkerlinuxuserroot` | root user on the Linux Automation Worker node. |
+| Automation Worker Windows Base Directory | Text | `automationworkerwindowsbasedirectory` | Base directory for deploying temporary files to build the ISO on a Windows Worker.<br><br>eg. "C:/attune_auto_installer" |
+| Automation Worker Windows Base Directory Share Path | Text | `automationworkerwindowsbasedirectorysharepath` | eg. "/c$/attune_auto_installer" |
 | Automation Worker Windows Node | Windows Node | `automationworkerwindowsnode` | The Windows automation worker node used to perform tasks to create the ISO. |
 | Automation Worker Windows User: Administrator | Windows Credential | `automationworkerwindowsuseradministrator` | Administrator user on the Windows Automation Worker node. |
 | Drivers and Autounattend Drive Letter | Text | `driversandautounattenddriveletter` | The Windows drive letter containing the drivers and autounattend.xml as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
@@ -393,8 +410,8 @@ This folder works for both BIOS and UEFI boot methods.
 | Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
-| Automation Worker Windows Base Directory | Text | `automationworkerwindowsbasedirectory` | Base directory for deploying temporary files to build the ISO on a Windows Worker.<br><br>eg. "C:/attune_auto_installer" |
-| Automation Worker Windows Base Directory Share Path | Text | `automationworkerwindowsbasedirectorysharepath` | eg. "/c$/attune_auto_installer" |
+| Is Win11 BIOS | Text | `iswin11bios` |  |
+| Is Win11 UEFI | Text | `iswin11uefi` |  |
 
 
 
@@ -406,6 +423,7 @@ This folder works for both BIOS and UEFI boot methods.
 | Post Install Setup PowerShell Script | Version Controlled Files | This file is called by the "<FirstLogonCommands>" section in the autounattend.xml file.<br><br>This script is run once post installation of the WIndows operating system. |
 | Test File | Version Controlled Files | Test file for testing push files. |
 | Win10 ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows10ISO/.<br><br>Please select the English (United States) version. |
+| Win11 ISO | Large Archives | Download from https://www.microsoft.com/en-us/software-download/windows11<br><br>Please select the English (United States) version. |
 | Win2016 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2016.<br><br> |
 | Win2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |

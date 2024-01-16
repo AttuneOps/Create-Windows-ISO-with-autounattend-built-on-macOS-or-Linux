@@ -19,3 +19,14 @@ if (( "{windowsFolderOnSamba}" -eq "windows2016" ) -Or
         exit 1
     }
 }
+
+# Define the UNC path to the SMB share
+$uncPath = "\\{sambaServerIpAddress}\share\{windowsFolderOnSamba}"
+
+# Test if the path is accessible
+if (Test-Path $uncPath) {
+    Write-Host "The SMB share is accessible. Listing contents:"
+    Get-ChildItem $uncPath
+} else {
+    Write-Host "The SMB share is not accessible or does not exist."
+}

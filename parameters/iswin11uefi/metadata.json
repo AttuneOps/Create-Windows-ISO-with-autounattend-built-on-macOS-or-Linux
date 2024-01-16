@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "ff35c96e-141f-4bc6-9c23-faca8fb04d35", 
+    "key": "iswin11uefi", 
+    "name": "Is Win11 UEFI", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

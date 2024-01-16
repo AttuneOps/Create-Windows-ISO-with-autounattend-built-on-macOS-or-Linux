@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "acf19dfd-646a-48af-83a1-1306c52cd39f", 
+    "key": "iswin11bios", 
+    "name": "Is Win11 BIOS", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

@@ -1,0 +1,11 @@
+{
+    "externalUuid4": "1085640d-d872-4923-a099-707d72eac573", 
+    "fileName": "Win11_23H2_English_x64v2.iso", 
+    "formatKey": "tar", 
+    "key": "win11iso", 
+    "md5": "b036c5867361d3ca52db74b16bacd586", 
+    "name": "Win11 ISO", 
+    "remoteUri": null, 
+    "size": 6812706816, 
+    "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
+}

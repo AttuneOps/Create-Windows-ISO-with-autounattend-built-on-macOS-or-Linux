@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "archiveKey": "win11iso", 
+    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/share/windows11", 
+    "enabled": true, 
+    "externalUuid4": "f8f0f3ca-cb73-437f-b069-a24e8df2ed6d", 
+    "key": "deployandextractwin11iso", 
+    "name": " Deploy and Extract Win11 ISO", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": true
+}

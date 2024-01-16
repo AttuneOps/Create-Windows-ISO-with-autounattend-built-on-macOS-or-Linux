@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "win2016iso", 
+    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/windows_iso_data_for_winpe/windows2016", 
+    "enabled": true, 
+    "externalUuid4": "de066f6f-a5b2-4360-87a0-ab1ec63e2371", 
+    "key": "deployandextractwin2016iso", 
+    "name": " Deploy and Extract Win2016 ISO", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": true
+}

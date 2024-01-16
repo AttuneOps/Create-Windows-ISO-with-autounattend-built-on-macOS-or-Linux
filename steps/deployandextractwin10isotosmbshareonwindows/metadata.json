@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "d2ff630b-b739-471c-91ac-5fe8d22989e3", 
+    "isBlueprint": true, 
+    "key": "deployandextractwin10isotosmbshareonwindows", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "deployandextractwin10iso"
+        }
+    ], 
+    "name": "Deploy and Extract Win10 ISO to Smb Share on Windows", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
