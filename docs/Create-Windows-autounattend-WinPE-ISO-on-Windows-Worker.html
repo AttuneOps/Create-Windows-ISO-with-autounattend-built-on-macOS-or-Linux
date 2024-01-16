@@ -1094,7 +1094,7 @@ if ( -Not ${{isWinPEKickstart}} ) {
 }
 
 if ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows10&quot; ) {
-    if ( (-Not ${{isWin10Bios}}) -And (-Not ${{isWin10Uefi}}) ) {
+    if ( -Not ${{isWindowsWorkstation}} ) {
         Write-Host &quot;Please set one of &#x27;isWindowsWorkstation&#x27; to true to install Win10.&quot;
         exit 1
     }
@@ -2077,16 +2077,8 @@ $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location $BUILD_DIR
 
-# if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
-#     $SourceImageFile = &quot;.\winpe_staging\SOURCES\BOOT.WIM&quot;
-#     $DestinationImageFile = &quot;.\winpe_staging\SOURCES\BOOT_CLEANED.WIM&quot;
-# } elseif (${{kickstartedBootLoaderIsUefi}}) {
     $SourceImageFile = &quot;.\WinPE_amd64\media\sources\boot.wim&quot;
     $DestinationImageFile = &quot;.\WinPE_amd64\media\sources\boot_cleaned.wim&quot;
-# } else {
-#     Write-Host &quot;Unknown boot method&quot;
-#     exit 1
-# }
     
 # Generate a compressed version of BOOT.WIM called BOOT_CLEANED.WIM
 Dism /Export-Image /SourceImageFile:&quot;${SourceImageFile}&quot; `
@@ -2151,14 +2143,7 @@ Dism /Export-Image /SourceImageFile:&quot;${SourceImageFile}&quot; `
                 <code class="language-sql py-0">
 $ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 
-# if ( ${{isWin10Bios}} -Or ${{isWinServerBios}} ) {
-#     $WINPE_STAGING_SOURCES_DIR=&quot;$ISO_BUILD\build-{newOsNode.fqn}\winpe_staging\SOURCES&quot;
-# } elseif (${{kickstartedBootLoaderIsUefi}}) {
-    $WINPE_STAGING_SOURCES_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}\WinPE_amd64\media\sources&quot;
-# } else {
-#     Write-Host &quot;Unknown boot method&quot;
-#     exit 1
-# }
+$WINPE_STAGING_SOURCES_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}\WinPE_amd64\media\sources&quot;
 
 Set-Location &quot;${WINPE_STAGING_SOURCES_DIR}&quot;
 

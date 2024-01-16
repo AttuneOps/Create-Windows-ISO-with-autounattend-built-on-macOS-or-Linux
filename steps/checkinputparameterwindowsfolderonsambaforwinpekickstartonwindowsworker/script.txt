@@ -4,7 +4,7 @@ if ( -Not ${{isWinPEKickstart}} ) {
 }
 
 if ( "{windowsFolderOnSamba}" -eq "windows10" ) {
-    if ( (-Not ${{isWin10Bios}}) -And (-Not ${{isWin10Uefi}}) ) {
+    if ( -Not ${{isWindowsWorkstation}} ) {
         Write-Host "Please set one of 'isWindowsWorkstation' to true to install Win10."
         exit 1
     }
