@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "e1d9da23-3c9c-4a2f-ab4c-4d445820dc26", 
+    "key": "iswindowsworkstation", 
+    "name": "Is Windows Workstation", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

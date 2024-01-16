@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "10e56bae-9a80-4f51-bd81-819c0d2ebd08", 
+    "key": "isuefiboot", 
+    "name": "Is UEFI Boot", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

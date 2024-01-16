@@ -1,6 +1,6 @@
 $values = "
-    isBiosBoot = {isBiosBoot}
-    isUefiBoot = {isUefiBoot}
+    isWindowsServer = {isWindowsServer}
+    isWindowsWorkstation = {isWindowsWorkstation}
     "
 
 function printVals {

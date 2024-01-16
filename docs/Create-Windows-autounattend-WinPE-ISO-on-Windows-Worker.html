@@ -222,8 +222,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#checkwindowstypeparametersforwinpeinstallonwindowsworker">
+                            <strong>Step 1.2 -</strong> Check Windows Type Parameters for WinPE Install on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
-                            <strong>Step 1.2 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                            <strong>Step 1.3 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
                         </a>
                     </p>
 
@@ -231,7 +239,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkifipaddressisinsubnetonwindowsworker">
-                            <strong>Step 1.3 -</strong> Check if IP Address is in Subnet on Windows Worker
+                            <strong>Step 1.4 -</strong> Check if IP Address is in Subnet on Windows Worker
                         </a>
                     </p>
 
@@ -239,7 +247,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
-                            <strong>Step 1.4 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
+                            <strong>Step 1.5 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
                         </a>
                     </p>
 
@@ -247,7 +255,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
-                            <strong>Step 1.5 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
+                            <strong>Step 1.6 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
                         </a>
                     </p>
 
@@ -255,7 +263,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
-                            <strong>Step 1.6 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
+                            <strong>Step 1.7 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
                         </a>
                     </p>
 
@@ -534,11 +542,7 @@
                     <div class="row">
                         <div class="description col px-0">
                             <p>
-                                <p>Checks exactly if one of these are set true:
-1. <code>isWin10Bios</code>
-2. <code>isWin10Uefi</code>
-3. <code>isWinServerBios</code>
-4. <code>isWinServerUefi</code></p>
+                                <p>Check if boot type is configured correctly.</p>
                             </p>
                         </div>
                     </div>
@@ -585,10 +589,85 @@ mstsc /admin /v:{automationworkerwindowsnode}
             <pre>
                 <code class="language-sql py-0">
 $values = &quot;
-    isWin10Bios = {isWin10Bios}
-    isWin10Uefi = {isWin10Uefi}
-    isWinServerBios = {isWinServerBios}
-    isWinServerUefi = {isWinServerUefi}
+    isBiosBoot = {isBiosBoot}
+    isUefiBoot = {isUefiBoot}
+    &quot;
+
+function printVals {
+    Write-Host &quot;${values}&quot;
+}
+
+Write-Host &quot;Checking ...&quot;
+printVals
+
+[regex]$regex = &#x27;true&#x27;
+
+$COUNT = $regex.matches(&quot;${values}&quot;).count
+
+Write-Host &quot;COUNT=${COUNT}&quot;
+
+if ( $COUNT -ne 1 ) {
+    Write-Host &quot;FAIL: You must have exactly one only have one of the parameters above set to true&quot;
+    exit 1
+}
+
+Write-Host &quot;SUCCESS: The parameters above are set correctly&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
+                        <h4 id="checkwindowstypeparametersforwinpeinstallonwindowsworker">
+                            <a href="#checkwindowstypeparametersforwinpeinstallonwindowsworker">
+                                <strong>Step 1.2 -</strong> Check Windows Type Parameters for WinPE Install on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div class="row">
+                        <div class="description col px-0">
+                            <p>
+                                <p>Check if Windows type is configured correctly.</p>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$values = &quot;
+    isWindowsServer = {isWindowsServer}
+    isWindowsWorkstation = {isWindowsWorkstation}
     &quot;
 
 function printVals {
@@ -626,7 +705,7 @@ Write-Host &quot;SUCCESS: The parameters above are set correctly&quot;
                     <div class="row pt-5">
                         <h4 id="checkifgatewayipaddressisinsubnetonwindowsworker">
                             <a href="#checkifgatewayipaddressisinsubnetonwindowsworker">
-                                <strong>Step 1.2 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
+                                <strong>Step 1.3 -</strong> Check if Gateway IP Address is in Subnet on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -724,7 +803,7 @@ for ($i = 0; $i -lt 4; $i++) {
                     <div class="row pt-5">
                         <h4 id="checkifipaddressisinsubnetonwindowsworker">
                             <a href="#checkifipaddressisinsubnetonwindowsworker">
-                                <strong>Step 1.3 -</strong> Check if IP Address is in Subnet on Windows Worker
+                                <strong>Step 1.4 -</strong> Check if IP Address is in Subnet on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -822,7 +901,7 @@ for ($i = 0; $i -lt 4; $i++) {
                     <div class="row pt-5">
                         <h4 id="checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
                             <a href="#checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker">
-                                <strong>Step 1.4 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
+                                <strong>Step 1.5 -</strong> Check Input Parameter kickstartedBootLoaderIsUefi for WinPE Kickstart on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -861,15 +940,14 @@ for ($i = 0; $i -lt 4; $i++) {
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if (${{kickstartedBootLoaderIsUefi}}) {
+if ( ${{kickstartedBootLoaderIsUefi}} ) {
 
-    Write-Host &quot;isWin10Uefi = {isWin10Uefi}, isWinServerUefi = {isWinServerUefi}&quot;
+    Write-Host &quot;isUefiBoot = {isUefiBoot}&quot;
 
-    if ((-Not ${{isWin10Uefi}}) -And
-        (-Not ${{isWinServerUefi}}) ) {
+    if ( -Not ${{isUefiBoot}} ) {
 
         Write-Host &quot;If kickstartedBootLoaderIsUefi is set true, then
-        one of isWin10Uefi or isWinServerUefi must also be
+        one of isUefiBoot must also be
         set true&quot;
         exit 1
       }
@@ -892,7 +970,7 @@ Write-Host &quot;SUCCESS: Ok&quot;
                     <div class="row pt-5">
                         <h4 id="checkmaximumlengthofwin10hostnameonwindowsworker">
                             <a href="#checkmaximumlengthofwin10hostnameonwindowsworker">
-                                <strong>Step 1.5 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
+                                <strong>Step 1.6 -</strong> Check Maximum Length of Win10 Hostname on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -932,7 +1010,7 @@ Write-Host &quot;SUCCESS: Ok&quot;
         <div class="col px-0">
             <pre>
                 <code class="language-sql py-0">
-if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
+if ( ${{isWindowsWorkstation}} ) {
 
     $HOSTNAME = &quot;{newOsNode.hostname}&quot;
     
@@ -947,7 +1025,7 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
     }
     
 } else {
-    Write-Host &quot;Not Win10, skipping.&quot;
+    Write-Host &quot;Not Windows Workstation, skipping.&quot;
 }
                 </code>
             </pre>
@@ -965,7 +1043,7 @@ if ( ${{isWin10Bios}} -or ${{isWin10Uefi}} ) {
                     <div class="row pt-5">
                         <h4 id="checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
                             <a href="#checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker">
-                                <strong>Step 1.6 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
+                                <strong>Step 1.7 -</strong> Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -1017,7 +1095,7 @@ if ( -Not ${{isWinPEKickstart}} ) {
 
 if ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows10&quot; ) {
     if ( (-Not ${{isWin10Bios}}) -And (-Not ${{isWin10Uefi}}) ) {
-        Write-Host &quot;Please set one of &#x27;isWin10Bios&#x27; or &#x27;isWin10Uefi&#x27; to true to install Win10.&quot;
+        Write-Host &quot;Please set one of &#x27;isWindowsWorkstation&#x27; to true to install Win10.&quot;
         exit 1
     }
 }
@@ -1026,8 +1104,8 @@ if (( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2016&quot; ) -Or
     ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2019&quot; ) -Or
     ( &quot;{windowsFolderOnSamba}&quot; -eq &quot;windows2022&quot; )) {
 
-    if ( (-Not ${{isWinServerBios}}) -And (-Not ${{isWinServerUefi}}) ) {
-        Write-Host &quot;Please set one of &#x27;isWinServerBios&#x27; or &#x27;isWinServerUefi&#x27; to true to install Windows Server.&quot;
+    if ( -Not ${{isWindowsServer}} ) {
+        Write-Host &quot;Please set &#x27;isWindowsServer&#x27; to true to install Windows Server.&quot;
         exit 1
     }
 }
@@ -1297,18 +1375,11 @@ if (Test-Path -Path $WIMFILE) {
 
     <div class="row">
         <p>
-            <p>For these Windows versions:
-* WIndows Desktop 10
-* WIndows Server 2016
-* WIndows Server 2019
-* WIndows Server 2022</p>
-<p>For these boot methods:
-* BIOS
-* UEFI</p>
+            
         </p>
         <p>
             Copy the File(s)
-            <strong>Windows_Unattended_config.tar</strong>
+            <strong>Windows_Unattended_config_v2.tar</strong>
             to the target node.
         </p>
         <p>

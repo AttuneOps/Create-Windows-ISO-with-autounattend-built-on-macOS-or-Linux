@@ -12,22 +12,26 @@
         }, 
         {
             "order": 50, 
-            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
+            "stepKey": "checkwindowstypeparametersforwinpeinstallonwindowsworker"
         }, 
         {
             "order": 100, 
-            "stepKey": "checkifipaddressisinsubnetonwindowsworker"
+            "stepKey": "checkifgatewayipaddressisinsubnetonwindowsworker"
         }, 
         {
             "order": 150, 
-            "stepKey": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker"
+            "stepKey": "checkifipaddressisinsubnetonwindowsworker"
         }, 
         {
             "order": 200, 
-            "stepKey": "checkmaximumlengthofwin10hostnameonwindowsworker"
+            "stepKey": "checkinputparameterkickstartedbootloaderisuefiforwinpekickstartonwindowsworker"
         }, 
         {
             "order": 250, 
+            "stepKey": "checkmaximumlengthofwin10hostnameonwindowsworker"
+        }, 
+        {
+            "order": 300, 
             "stepKey": "checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker"
         }
     ], 
