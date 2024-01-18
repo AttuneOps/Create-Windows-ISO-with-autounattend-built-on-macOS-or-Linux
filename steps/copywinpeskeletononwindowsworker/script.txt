@@ -9,5 +9,5 @@ if ( -Not (Test-Path "${WinPE_amd64}") ) {
   New-Item "${WinPE_amd64}" -ItemType Directory
 }
 
-Copy-Item -Recurse -Path "C:\${WinPE_amd64}\*" `
+Copy-Item -Recurse -Path "${ISO_BUILD}\${WinPE_amd64}\*" `
     -Destination ".\${WinPE_amd64}\"

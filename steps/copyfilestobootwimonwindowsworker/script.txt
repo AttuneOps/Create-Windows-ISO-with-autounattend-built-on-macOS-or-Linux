@@ -1,0 +1,31 @@
+$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
+
+Set-Location "${BUILD_DIR}"
+
+$STARTNET_FILE=".\WinPE_BootImageDir\Windows\System32\startnet.cmd"
+
+Remove-Item ${STARTNET_FILE} -Force
+
+Copy-Item -Path ".\startnet.cmd" `
+    -Destination "${STARTNET_FILE}" `
+    -Verbose
+
+Copy-Item -Path ".\autounattend.xml" `
+    -Destination ".\WinPE_BootImageDir" `
+    -Verbose
+
+$LOGO_PATH=".\WinPE_BootImageDir\Windows\Attune"
+$LOGO="attune_logo.bmp"
+
+if (-not (Test-Path -Path ${LOGO_PATH})) {
+    New-Item -Path ${LOGO_PATH} -ItemType Directory
+}
+
+Copy-Item -Path ".\${LOGO}" `
+    -Destination "${LOGO_PATH}\${LOGO}" `
+    -Verbose
+
+Copy-Item -Path ".\post_install.wim" `
+    -Destination ".\WinPE_BootImageDir" `
+    -Verbose

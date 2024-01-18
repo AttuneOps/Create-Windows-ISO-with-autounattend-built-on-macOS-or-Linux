@@ -27,23 +27,35 @@
             "stepKey": "deploywindowsunattendedconfigonwindowsworker"
         }, 
         {
-            "order": 800, 
-            "stepKey": "deletebuildwinpeisowinpeamd64onwindowsworker"
-        }, 
-        {
             "order": 850, 
             "stepKey": "copywinpeskeletononwindowsworker"
         }, 
         {
             "order": 900, 
-            "stepKey": "modifywinpebootwimonwindowsworker"
+            "stepKey": "createandmountbootwimonwindowsworker"
         }, 
         {
             "order": 950, 
-            "stepKey": "deletebootwinpeisoonwindowsworker"
+            "stepKey": "copyfilestobootwimonwindowsworker"
         }, 
         {
             "order": 1000, 
+            "stepKey": "copydriversdropinfoldertobootwimonwindowsworker"
+        }, 
+        {
+            "order": 1050, 
+            "stepKey": "wimlibunmountbootwimonwindowsworker"
+        }, 
+        {
+            "order": 1100, 
+            "stepKey": "wimlibcompressbootwimonwindowsworker"
+        }, 
+        {
+            "order": 1150, 
+            "stepKey": "overwritebootwimwithbootcleanedwimonwindowsworker"
+        }, 
+        {
+            "order": 1300, 
             "stepKey": "createbootwinpeisofromwinpeamd64onwindowsworker"
         }
     ], 

@@ -4,4 +4,6 @@ dir
 cd {automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}
 dir
 
+del ..\kickstart_{newOsNode.fqn}.iso
+
 MakeWinPEMedia /ISO .\WinPE_amd64 ..\kickstart_{newOsNode.fqn}.iso

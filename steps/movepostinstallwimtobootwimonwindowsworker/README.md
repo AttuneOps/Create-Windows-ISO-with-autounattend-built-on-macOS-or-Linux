@@ -1,1 +1,0 @@
-In the `C:\attuneautomationworker\build-{newOsNode.fqn}` folder, moves `post_install.wim` to the folder `WinPE_BootImageDir`.

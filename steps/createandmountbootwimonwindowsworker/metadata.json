@@ -1,16 +1,16 @@
 {
     "actionOnStepFail": "stop", 
     "enabled": true, 
-    "externalUuid4": "6bb30d20-9570-411c-9b87-a6da6cbde610", 
+    "externalUuid4": "422ca012-31ca-4267-bfbc-8edd79641658", 
     "interpreter": 2, 
     "interpreterCommand": "", 
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
-    "key": "moveautounattendxmltobootwimonwindowsworker", 
-    "name": "Move autounattend.xml to boot.wim on Windows Worker", 
+    "key": "createandmountbootwimonwindowsworker", 
+    "name": "Create and Mount BOOT.WIM on Windows Worker", 
     "osCredKey": "automationworkerwindowsuseradministrator", 
     "serverKey": "automationworkerwindowsnode", 
     "successExitCode": 0, 
-    "timeout": 60, 
+    "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
 }

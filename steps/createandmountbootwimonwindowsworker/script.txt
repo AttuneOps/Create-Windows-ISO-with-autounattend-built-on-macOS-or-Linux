@@ -1,9 +1,14 @@
 $ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
 $BUILD_DIR="${ISO_BUILD}\build-{newOsNode.fqn}"
 
-Set-Location $BUILD_DIR
+Set-Location ${BUILD_DIR}
 
 $WinPE_amd64="WinPE_amd64"
+$WinPE_BootImageDir="WinPE_BootImageDir"
+
+if ( -Not (Test-Path "${WinPE_BootImageDir}") ) {
+  New-Item "${WinPE_BootImageDir}" -ItemType Directory
+}
 
 Dism /Mount-Image /ImageFile:".\${WinPE_amd64}\media\sources\boot.wim" `
   /Index:1 `

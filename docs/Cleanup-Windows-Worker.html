@@ -369,7 +369,7 @@ if (Test-Path $DIR) {
 $DIR=&quot;build-{newOsNode.fqn}&quot;
 
 if (Test-Path $DIR) {
-    Remove-Item -Recurse $DIR
+    Remove-Item -Recurse $DIR -Force
 } else {
     Write-Host &quot;No build directory to remove.&quot;
 }
