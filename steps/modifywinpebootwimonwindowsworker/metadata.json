@@ -24,10 +24,14 @@
         }, 
         {
             "order": 300, 
-            "stepKey": "copydriversdropinfoldertobootwimonwindowsworker"
+            "stepKey": "movelogotobootwimonwindowsworker"
         }, 
         {
             "order": 350, 
+            "stepKey": "copydriversdropinfoldertobootwimonwindowsworker"
+        }, 
+        {
+            "order": 400, 
             "stepKey": "movepostinstallwimtobootwimonwindowsworker"
         }, 
         {

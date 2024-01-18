@@ -359,8 +359,16 @@
         
 
                     <p class="text-muted pt-2">
+                        <a href="#movelogotobootwimonwindowsworker">
+                            <strong>Step 8.5 -</strong> Move logo to boot.wim on Windows Worker
+                        </a>
+                    </p>
+
+        
+
+                    <p class="text-muted pt-2">
                         <a href="#copydriversdropinfoldertobootwimonwindowsworker">
-                            <strong>Step 8.5 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
+                            <strong>Step 8.6 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -368,7 +376,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#movepostinstallwimtobootwimonwindowsworker">
-                            <strong>Step 8.6 -</strong> Move post_install.wim to boot.wim on Windows Worker
+                            <strong>Step 8.7 -</strong> Move post_install.wim to boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -376,7 +384,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#wimlibunmountbootwimonwindowsworker">
-                            <strong>Step 8.7 -</strong> wimlib Unmount boot.wim on Windows Worker
+                            <strong>Step 8.8 -</strong> wimlib Unmount boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -384,7 +392,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#wimlibcompressbootwimonwindowsworker">
-                            <strong>Step 8.8 -</strong> wimlib Compress boot.wim on Windows Worker
+                            <strong>Step 8.9 -</strong> wimlib Compress boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -392,7 +400,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
-                            <strong>Step 8.9 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                            <strong>Step 8.10 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
                         </a>
                     </p>
 
@@ -1512,7 +1520,7 @@ if ( -Not (Test-Path &quot;${WinPE_amd64}&quot;) ) {
   New-Item &quot;${WinPE_amd64}&quot; -ItemType Directory
 }
 
-Copy-Item -Recurse -Path &quot;C:\${WinPE_amd64}\*&quot; `
+Copy-Item -Recurse -Path &quot;${ISO_BUILD}\${WinPE_amd64}\*&quot; `
     -Destination &quot;.\${WinPE_amd64}\&quot;
                 </code>
             </pre>
@@ -1820,9 +1828,67 @@ Move-Item -Path &quot;.\autounattend.xml&quot; `
 
 
                     <div class="row pt-5">
+                        <h4 id="movelogotobootwimonwindowsworker">
+                            <a href="#movelogotobootwimonwindowsworker">
+                                <strong>Step 8.5 -</strong> Move logo to boot.wim on Windows Worker
+                            </a>
+                        </h4>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+
+
+    <div class="row">
+        <p>
+            Execute the following script:
+        </p>
+    </div>
+    <div class="row">
+        <div class="col px-0">
+            <pre>
+                <code class="language-sql py-0">
+$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
+$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
+$DESTINATION_PATH=&quot;.\WinPE_BootImageDir\Windows\Attune&quot;
+$FILE = &quot;attune_logo.bmp&quot;
+Set-Location &quot;${BUILD_DIR}&quot;
+
+if (-not (Test-Path -Path ${DESTINATION_PATH})) {
+    New-Item -Path ${DESTINATION_PATH} -ItemType Directory
+}
+
+Move-Item -Path &quot;.\${FILE}&quot; `
+    -Destination &quot;${DESTINATION_PATH}\${FILE}&quot;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+
+
+
+
+    
+
+
+
+                    <div class="row pt-5">
                         <h4 id="copydriversdropinfoldertobootwimonwindowsworker">
                             <a href="#copydriversdropinfoldertobootwimonwindowsworker">
-                                <strong>Step 8.5 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
+                                <strong>Step 8.6 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -1896,7 +1962,7 @@ if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
                     <div class="row pt-5">
                         <h4 id="movepostinstallwimtobootwimonwindowsworker">
                             <a href="#movepostinstallwimtobootwimonwindowsworker">
-                                <strong>Step 8.6 -</strong> Move post_install.wim to boot.wim on Windows Worker
+                                <strong>Step 8.7 -</strong> Move post_install.wim to boot.wim on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -1956,7 +2022,7 @@ Move-Item -Path &quot;.\post_install.wim&quot; `
                     <div class="row pt-5">
                         <h4 id="wimlibunmountbootwimonwindowsworker">
                             <a href="#wimlibunmountbootwimonwindowsworker">
-                                <strong>Step 8.7 -</strong> wimlib Unmount boot.wim on Windows Worker
+                                <strong>Step 8.8 -</strong> wimlib Unmount boot.wim on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -2033,7 +2099,7 @@ Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /Commit
                     <div class="row pt-5">
                         <h4 id="wimlibcompressbootwimonwindowsworker">
                             <a href="#wimlibcompressbootwimonwindowsworker">
-                                <strong>Step 8.8 -</strong> wimlib Compress boot.wim on Windows Worker
+                                <strong>Step 8.9 -</strong> wimlib Compress boot.wim on Windows Worker
                             </a>
                         </h4>
                     </div>
@@ -2103,7 +2169,7 @@ Dism /Export-Image /SourceImageFile:&quot;${SourceImageFile}&quot; `
                     <div class="row pt-5">
                         <h4 id="overwritebootwimwithbootcleanedwimonwindowsworker">
                             <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
-                                <strong>Step 8.9 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                                <strong>Step 8.10 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
                             </a>
                         </h4>
                     </div>
