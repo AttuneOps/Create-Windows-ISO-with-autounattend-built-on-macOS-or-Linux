@@ -32,11 +32,11 @@
         }, 
         {
             "order": 900, 
-            "stepKey": "mountbootwimonwindowsworker"
+            "stepKey": "createandmountbootwimonwindowsworker"
         }, 
         {
             "order": 950, 
-            "stepKey": "movestartnetcmdtobootwimonwindowsworker"
+            "stepKey": "copyfilestobootwimonwindowsworker"
         }, 
         {
             "order": 1000, 
