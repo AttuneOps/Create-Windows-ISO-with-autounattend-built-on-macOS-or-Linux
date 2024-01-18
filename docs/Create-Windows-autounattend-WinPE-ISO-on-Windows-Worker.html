@@ -303,32 +303,8 @@
         
 
                     <p class="text-muted pt-2">
-                        <a href="#deletebuildwinpeisowinpeamd64onwindowsworker">
-                            <strong>Step 6 -</strong> Delete build-winpe-iso\WinPE_amd64 on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
                         <a href="#copywinpeskeletononwindowsworker">
-                            <strong>Step 7 -</strong> Copy WinPE Skeleton on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#modifywinpebootwimonwindowsworker">
-                            <strong>Step 8 -</strong> Modify WinPE boot.wim on Windows Worker
-                        </a>
-                    </p>
-    
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#createbootwimmountfolderonwindowsworker">
-                            <strong>Step 8.1 -</strong> Create boot.wim Mount Folder on Windows Worker
+                            <strong>Step 6 -</strong> Copy WinPE Skeleton on Windows Worker
                         </a>
                     </p>
 
@@ -336,7 +312,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#mountbootwimonwindowsworker">
-                            <strong>Step 8.2 -</strong> Mount BOOT.WIM on Windows Worker
+                            <strong>Step 7 -</strong> Mount BOOT.WIM on Windows Worker
                         </a>
                     </p>
 
@@ -344,23 +320,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#movestartnetcmdtobootwimonwindowsworker">
-                            <strong>Step 8.3 -</strong> Move startnet.cmd to boot.wim on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#moveautounattendxmltobootwimonwindowsworker">
-                            <strong>Step 8.4 -</strong> Move autounattend.xml to boot.wim on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movelogotobootwimonwindowsworker">
-                            <strong>Step 8.5 -</strong> Move logo to boot.wim on Windows Worker
+                            <strong>Step 8 -</strong> Move startnet.cmd to boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -368,15 +328,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#copydriversdropinfoldertobootwimonwindowsworker">
-                            <strong>Step 8.6 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
-                        </a>
-                    </p>
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#movepostinstallwimtobootwimonwindowsworker">
-                            <strong>Step 8.7 -</strong> Move post_install.wim to boot.wim on Windows Worker
+                            <strong>Step 9 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -384,7 +336,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#wimlibunmountbootwimonwindowsworker">
-                            <strong>Step 8.8 -</strong> wimlib Unmount boot.wim on Windows Worker
+                            <strong>Step 10 -</strong> wimlib Unmount boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -392,7 +344,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#wimlibcompressbootwimonwindowsworker">
-                            <strong>Step 8.9 -</strong> wimlib Compress boot.wim on Windows Worker
+                            <strong>Step 11 -</strong> wimlib Compress boot.wim on Windows Worker
                         </a>
                     </p>
 
@@ -400,16 +352,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
-                            <strong>Step 8.10 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
-                        </a>
-                    </p>
-
-
-        
-
-                    <p class="text-muted pt-2">
-                        <a href="#deletebootwinpeisoonwindowsworker">
-                            <strong>Step 9 -</strong> Delete Boot WinPE ISO on Windows Worker
+                            <strong>Step 12 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
                         </a>
                     </p>
 
@@ -417,7 +360,7 @@
 
                     <p class="text-muted pt-2">
                         <a href="#createbootwinpeisofromwinpeamd64onwindowsworker">
-                            <strong>Step 10 -</strong> Create Boot WinPE ISO from WinPE_amd64 on Windows Worker
+                            <strong>Step 13 -</strong> Create Boot WinPE ISO from WinPE_amd64 on Windows Worker
                         </a>
                     </p>
 
@@ -1408,71 +1351,9 @@ if (Test-Path -Path $WIMFILE) {
 
 
                     <div class="row pt-5">
-                        <h3 id="deletebuildwinpeisowinpeamd64onwindowsworker">
-                            <a href="#deletebuildwinpeisowinpeamd64onwindowsworker">
-                                <strong>Step 6 -</strong> Delete build-winpe-iso\WinPE_amd64 on Windows Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the copy of the skeleton WinPE folders at <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_amd64</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$BUILD_WINPE_ISO_DIR=&quot;{automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}&quot;
-
-Set-Location &quot;${BUILD_WINPE_ISO_DIR}&quot;
-
-$WinPE_amd64 = &quot;WinPE_amd64&quot;
-
-if ( (Test-Path &quot;${WinPE_amd64}&quot;) ) {
-  Remove-Item -Path &quot;${WinPE_amd64}&quot; -Recurse
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-        
-
-
-
-                    <div class="row pt-5">
                         <h3 id="copywinpeskeletononwindowsworker">
                             <a href="#copywinpeskeletononwindowsworker">
-                                <strong>Step 7 -</strong> Copy WinPE Skeleton on Windows Worker
+                                <strong>Step 6 -</strong> Copy WinPE Skeleton on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -1536,111 +1417,11 @@ Copy-Item -Recurse -Path &quot;${ISO_BUILD}\${WinPE_amd64}\*&quot; `
 
 
                     <div class="row pt-5">
-                        <h3 id="modifywinpebootwimonwindowsworker">
-                            <a href="#modifywinpebootwimonwindowsworker">
-                                <strong>Step 8 -</strong> Modify WinPE boot.wim on Windows Worker
+                        <h3 id="mountbootwimonwindowsworker">
+                            <a href="#mountbootwimonwindowsworker">
+                                <strong>Step 7 -</strong> Mount BOOT.WIM on Windows Worker
                             </a>
                         </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Appends these files to WinPE's <code>SOURCES/BOOT.WIM</code> on Windows Worker.</p>
-<p>This will be seen at <code>X</code> drive when WinPE runs.</p>
-<ol>
-<li><code>startnet.cmd</code></li>
-<li><code>autounattend.xml</code></li>
-<li><code>post_install.wim</code></li>
-<li><code>drivers</code> folder</li>
-</ol>
-<p>Notes: for (3) after the <code>post_install.wim</code> image file is overlayed onto <code>C</code> drive, the file at <code>C:\ post_install_setup.ps1</code> will be available to the Windows installer.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-    
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="createbootwimmountfolderonwindowsworker">
-                            <a href="#createbootwimmountfolderonwindowsworker">
-                                <strong>Step 8.1 -</strong> Create boot.wim Mount Folder on Windows Worker
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Creates a directory <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir</code> for mounting <code>C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_amd64\media\sources\boot.wim</code> on Windows Worker.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
-$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
-
-Set-Location &quot;${BUILD_DIR}&quot;
-
-$WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
-
-if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
-  New-Item &quot;${WinPE_BootImageDir}&quot; -ItemType Directory
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="mountbootwimonwindowsworker">
-                            <a href="#mountbootwimonwindowsworker">
-                                <strong>Step 8.2 -</strong> Mount BOOT.WIM on Windows Worker
-                            </a>
-                        </h4>
                     </div>
 
                     <div class="row">
@@ -1679,9 +1460,14 @@ if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
 $ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
 $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
-Set-Location $BUILD_DIR
+Set-Location ${BUILD_DIR}
 
 $WinPE_amd64=&quot;WinPE_amd64&quot;
+$WinPE_BootImageDir=&quot;WinPE_BootImageDir&quot;
+
+if ( -Not (Test-Path &quot;${WinPE_BootImageDir}&quot;) ) {
+  New-Item &quot;${WinPE_BootImageDir}&quot; -ItemType Directory
+}
 
 Dism /Mount-Image /ImageFile:&quot;.\${WinPE_amd64}\media\sources\boot.wim&quot; `
   /Index:1 `
@@ -1699,16 +1485,16 @@ if ($LASTEXITCODE -ne 0) {
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="movestartnetcmdtobootwimonwindowsworker">
+                        <h3 id="movestartnetcmdtobootwimonwindowsworker">
                             <a href="#movestartnetcmdtobootwimonwindowsworker">
-                                <strong>Step 8.3 -</strong> Move startnet.cmd to boot.wim on Windows Worker
+                                <strong>Step 8 -</strong> Move startnet.cmd to boot.wim on Windows Worker
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -1748,130 +1534,32 @@ $BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
 
 Set-Location &quot;${BUILD_DIR}&quot;
 
-$DESTINATION_FILE = &quot;.\WinPE_BootImageDir\Windows\System32\startnet.cmd&quot;
+$STARTNET_FILE=&quot;.\WinPE_BootImageDir\Windows\System32\startnet.cmd&quot;
 
-Remove-Item &quot;${DESTINATION_FILE}&quot;
+Remove-Item ${STARTNET_FILE} -Force
 
-Move-Item -Path &quot;.\startnet.cmd&quot; `
-    -Destination &quot;${DESTINATION_FILE}&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
+Copy-Item -Path &quot;.\startnet.cmd&quot; `
+    -Destination &quot;${STARTNET_FILE}&quot; `
+    -Verbose
 
+Copy-Item -Path &quot;.\autounattend.xml&quot; `
+    -Destination &quot;.\WinPE_BootImageDir&quot; `
+    -Verbose
 
+$LOGO_PATH=&quot;.\WinPE_BootImageDir\Windows\Attune&quot;
+$LOGO=&quot;attune_logo.bmp&quot;
 
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="moveautounattendxmltobootwimonwindowsworker">
-                            <a href="#moveautounattendxmltobootwimonwindowsworker">
-                                <strong>Step 8.4 -</strong> Move autounattend.xml to boot.wim on Windows Worker
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>In the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder, moves <code>autounattend.xml</code> to the folder <code>WinPE_BootImageDir</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
-$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
-
-Set-Location &quot;${BUILD_DIR}&quot;
-
-Move-Item -Path &quot;.\autounattend.xml&quot; `
-    -Destination &quot;.\WinPE_BootImageDir&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="movelogotobootwimonwindowsworker">
-                            <a href="#movelogotobootwimonwindowsworker">
-                                <strong>Step 8.5 -</strong> Move logo to boot.wim on Windows Worker
-                            </a>
-                        </h4>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
-$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
-$DESTINATION_PATH=&quot;.\WinPE_BootImageDir\Windows\Attune&quot;
-$FILE = &quot;attune_logo.bmp&quot;
-Set-Location &quot;${BUILD_DIR}&quot;
-
-if (-not (Test-Path -Path ${DESTINATION_PATH})) {
-    New-Item -Path ${DESTINATION_PATH} -ItemType Directory
+if (-not (Test-Path -Path ${LOGO_PATH})) {
+    New-Item -Path ${LOGO_PATH} -ItemType Directory
 }
 
-Move-Item -Path &quot;.\${FILE}&quot; `
-    -Destination &quot;${DESTINATION_PATH}\${FILE}&quot;
+Copy-Item -Path &quot;.\${LOGO}&quot; `
+    -Destination &quot;${LOGO_PATH}\${LOGO}&quot; `
+    -Verbose
+
+Copy-Item -Path &quot;.\post_install.wim&quot; `
+    -Destination &quot;.\WinPE_BootImageDir&quot; `
+    -Verbose
                 </code>
             </pre>
         </div>
@@ -1881,16 +1569,16 @@ Move-Item -Path &quot;.\${FILE}&quot; `
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="copydriversdropinfoldertobootwimonwindowsworker">
+                        <h3 id="copydriversdropinfoldertobootwimonwindowsworker">
                             <a href="#copydriversdropinfoldertobootwimonwindowsworker">
-                                <strong>Step 8.6 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
+                                <strong>Step 9 -</strong> Copy Drivers Drop in Folder to boot.wim on Windows Worker
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -1942,7 +1630,8 @@ $DRIVERS_DROP_IN_FOLDER=&quot;${ISO_BUILD}\drivers-{newOsNode.fqn}&quot;
 if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
     
     Copy-Item -Recurse -Path &quot;${DRIVERS_DROP_IN_FOLDER}\*&quot; `
-        -Destination &quot;${DRIVERS}&quot;
+        -Destination &quot;${DRIVERS}&quot; `
+        -Verbose
 } else {
     Write-Host &quot;Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied.&quot;
 }
@@ -1955,76 +1644,16 @@ if (Test-Path &quot;${DRIVERS_DROP_IN_FOLDER}&quot;) {
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="movepostinstallwimtobootwimonwindowsworker">
-                            <a href="#movepostinstallwimtobootwimonwindowsworker">
-                                <strong>Step 8.7 -</strong> Move post_install.wim to boot.wim on Windows Worker
-                            </a>
-                        </h4>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>In the <code>C:\attuneautomationworker\build-{newOsNode.fqn}</code> folder, moves <code>post_install.wim</code> to the folder <code>WinPE_BootImageDir</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
-$BUILD_DIR=&quot;${ISO_BUILD}\build-{newOsNode.fqn}&quot;
-
-Set-Location &quot;${BUILD_DIR}&quot;
-
-Move-Item -Path &quot;.\post_install.wim&quot; `
-    -Destination &quot;.\WinPE_BootImageDir&quot;
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
-    
-
-
-
-                    <div class="row pt-5">
-                        <h4 id="wimlibunmountbootwimonwindowsworker">
+                        <h3 id="wimlibunmountbootwimonwindowsworker">
                             <a href="#wimlibunmountbootwimonwindowsworker">
-                                <strong>Step 8.8 -</strong> wimlib Unmount boot.wim on Windows Worker
+                                <strong>Step 10 -</strong> wimlib Unmount boot.wim on Windows Worker
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -2092,16 +1721,16 @@ Dism /Unmount-Image /MountDir:&quot;./WinPE_BootImageDir&quot; /Commit
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="wimlibcompressbootwimonwindowsworker">
+                        <h3 id="wimlibcompressbootwimonwindowsworker">
                             <a href="#wimlibcompressbootwimonwindowsworker">
-                                <strong>Step 8.9 -</strong> wimlib Compress boot.wim on Windows Worker
+                                <strong>Step 11 -</strong> wimlib Compress boot.wim on Windows Worker
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -2162,16 +1791,16 @@ Dism /Export-Image /SourceImageFile:&quot;${SourceImageFile}&quot; `
 
 
 
-    
+        
 
 
 
                     <div class="row pt-5">
-                        <h4 id="overwritebootwimwithbootcleanedwimonwindowsworker">
+                        <h3 id="overwritebootwimwithbootcleanedwimonwindowsworker">
                             <a href="#overwritebootwimwithbootcleanedwimonwindowsworker">
-                                <strong>Step 8.10 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
+                                <strong>Step 12 -</strong> Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker
                             </a>
-                        </h4>
+                        </h3>
                     </div>
 
                     <div class="row">
@@ -2234,67 +1863,6 @@ dir
 
 
 
-
-        
-
-
-
-                    <div class="row pt-5">
-                        <h3 id="deletebootwinpeisoonwindowsworker">
-                            <a href="#deletebootwinpeisoonwindowsworker">
-                                <strong>Step 9 -</strong> Delete Boot WinPE ISO on Windows Worker
-                            </a>
-                        </h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="description col px-0">
-                            <p>
-                                <p>Deletes the ISO at <code>C:\attuneautomationworker\kickstart_{newOsNode.fqn}.iso</code>.</p>
-                            </p>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-    
-
-
-    
-
-
-
-    <div class="row">
-        <p>
-            Execute the following script:
-        </p>
-    </div>
-    <div class="row">
-        <div class="col px-0">
-            <pre>
-                <code class="language-sql py-0">
-$ISO_BUILD=&quot;{automationWorkerWindowsBaseDirectory}&quot;
-Set-Location &quot;${ISO_BUILD}&quot;
-
-$ISO=&quot;kickstart_{newOsNode.fqn}.iso&quot;
-if (Test-Path &quot;${ISO}&quot; -PathType Leaf) {
-    Remove-Item &quot;${ISO}&quot;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-
-
-
-
-
         
 
 
@@ -2302,7 +1870,7 @@ if (Test-Path &quot;${ISO}&quot; -PathType Leaf) {
                     <div class="row pt-5">
                         <h3 id="createbootwinpeisofromwinpeamd64onwindowsworker">
                             <a href="#createbootwinpeisofromwinpeamd64onwindowsworker">
-                                <strong>Step 10 -</strong> Create Boot WinPE ISO from WinPE_amd64 on Windows Worker
+                                <strong>Step 13 -</strong> Create Boot WinPE ISO from WinPE_amd64 on Windows Worker
                             </a>
                         </h3>
                     </div>
@@ -2352,6 +1920,8 @@ dir
 
 cd {automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}
 dir
+
+del ..\kickstart_{newOsNode.fqn}.iso
 
 MakeWinPEMedia /ISO .\WinPE_amd64 ..\kickstart_{newOsNode.fqn}.iso
                 </code>

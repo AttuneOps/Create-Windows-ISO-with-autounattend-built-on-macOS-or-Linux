@@ -15,7 +15,8 @@ $DRIVERS_DROP_IN_FOLDER="${ISO_BUILD}\drivers-{newOsNode.fqn}"
 if (Test-Path "${DRIVERS_DROP_IN_FOLDER}") {
     
     Copy-Item -Recurse -Path "${DRIVERS_DROP_IN_FOLDER}\*" `
-        -Destination "${DRIVERS}"
+        -Destination "${DRIVERS}" `
+        -Verbose
 } else {
     Write-Host "Drivers drop in folder ${DRIVERS_DROP_IN_FOLDER} does not exist. No drivers copied."
 }

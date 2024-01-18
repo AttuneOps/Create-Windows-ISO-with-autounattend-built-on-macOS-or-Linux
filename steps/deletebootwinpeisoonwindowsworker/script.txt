@@ -3,5 +3,5 @@ Set-Location "${ISO_BUILD}"
 
 $ISO="kickstart_{newOsNode.fqn}.iso"
 if (Test-Path "${ISO}" -PathType Leaf) {
-    Remove-Item "${ISO}"
+    # Remove-Item "${ISO}"
 }
