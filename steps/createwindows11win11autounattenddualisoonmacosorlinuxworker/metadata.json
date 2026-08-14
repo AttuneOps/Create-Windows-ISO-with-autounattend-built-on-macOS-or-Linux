@@ -1,0 +1,48 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "ade78856-ea89-4582-979d-1c0ff3979147", 
+    "isBlueprint": true, 
+    "key": "createwindows11win11autounattenddualisoonmacosorlinuxworker", 
+    "links": [
+        {
+            "stepKey": "validatethecreatewindowsworkstationautounattendisoplanparameters"
+        }, 
+        {
+            "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "deploywin11dvdisoonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "extractwindowsisoonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "createbiosbootisoonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+        }, 
+        {
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
+        }, 
+        {
+            "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "createanswerfileisoonmacosorlinux"
+        }
+    ], 
+    "name": "Create Windows 11 (Win11) autounattend Dual ISO on macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

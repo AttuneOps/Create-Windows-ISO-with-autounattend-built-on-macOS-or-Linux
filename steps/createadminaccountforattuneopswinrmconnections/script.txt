@@ -1,0 +1,48 @@
+$accountName    = "{attuneServiceAccount.user}"
+$password = "{attuneServiceAccount.password}".Trim()
+
+if ([string]::IsNullOrWhiteSpace($password)) {
+    Write-Error "Parameter attuneServiceAccount is required."
+    exit 1
+}
+
+$securePassword = ConvertTo-SecureString $password -AsPlainText -Force
+
+$existing = Get-LocalUser -Name $accountName -ErrorAction SilentlyContinue
+if ($null -ne $existing) {
+    Write-Output "Account '$accountName' already exists. Ensuring it is enabled and in Administrators."
+    Enable-LocalUser -Name $accountName
+} else {
+    New-LocalUser `
+        -Name        $accountName `
+        -Password    $securePassword `
+        -FullName    "Attune Service Account" `
+        -Description "AttuneOps WinRM admin (ISM-0445)" `
+        -AccountNeverExpires
+    Write-Output "Local user '$accountName' created."
+}
+
+$members = Get-LocalGroupMember -Group "Administrators" -ErrorAction Stop
+$alreadyAdmin = $members | Where-Object { $_.Name -match "\\$accountName$" -or $_.Name -eq $accountName }
+
+if ($null -eq $alreadyAdmin) {
+    Add-LocalGroupMember -Group "Administrators" -Member $accountName
+    Write-Output "Account '$accountName' added to Administrators group."
+} else {
+    Write-Output "Account '$accountName' is already a member of Administrators group."
+}
+
+Set-ItemProperty `
+    -Path  "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System" `
+    -Name  "LocalAccountTokenFilterPolicy" `
+    -Value 1 `
+    -Type  DWord
+Write-Output "LocalAccountTokenFilterPolicy set -- local admin accounts have full token over network."
+
+
+$verify = Get-LocalUser -Name $accountName
+Write-Output "Account    : $($verify.Name)"
+Write-Output "Enabled    : $($verify.Enabled)"
+Write-Output "Description: $($verify.Description)"
+Write-Output ""
+Write-Output "ACTION REQUIRED: Update the Attune credential for this host to use '$accountName' before re-running the Blueprint."

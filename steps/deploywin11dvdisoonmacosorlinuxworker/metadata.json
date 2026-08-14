@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "win11iso", 
+    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "b5f4d10d-9a55-4184-8e9a-9f849e1fc026", 
+    "key": "deploywin11dvdisoonmacosorlinuxworker", 
+    "name": "Deploy Win11 DVD ISO on macOS or Linux Worker", 
+    "osCredKey": "automationworkerlinuxuser", 
+    "serverKey": "automationworkerlinuxnode", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
+    "unpack": false
+}

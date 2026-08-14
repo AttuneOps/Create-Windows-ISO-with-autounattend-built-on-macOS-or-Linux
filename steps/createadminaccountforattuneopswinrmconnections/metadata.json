@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "4dede18c-7b86-4f27-9ecd-607c95cbcaf6", 
+    "interpreter": 2, 
+    "interpreterCommand": null, 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": null, 
+    "key": "createadminaccountforattuneopswinrmconnections", 
+    "name": "Create Admin Account for AttuneOps WinRM Connections", 
+    "osCredKey": "newoswindowsuseradministrator", 
+    "serverKey": "newoswindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 60, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

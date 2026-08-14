@@ -1,0 +1,15 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "b501a8d4-a622-4798-a118-c9fbface1bf2", 
+    "isBlueprint": true, 
+    "key": "createattuneserviceaccount", 
+    "links": [
+        {
+            "stepKey": "createadminaccountforattuneopswinrmconnections"
+        }
+    ], 
+    "name": "Create Attune Service Account", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

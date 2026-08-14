@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "7f7b56c6-1428-427e-b2fe-a85037932a91", 
+    "key": "attuneserviceaccount", 
+    "name": "Attune Service Account", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.WinOsCred"
+}

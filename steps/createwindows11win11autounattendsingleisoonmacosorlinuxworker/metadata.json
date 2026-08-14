@@ -1,0 +1,54 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "52c670a8-e909-452c-b68f-baba2a473a6e", 
+    "isBlueprint": true, 
+    "key": "createwindows11win11autounattendsingleisoonmacosorlinuxworker", 
+    "links": [
+        {
+            "stepKey": "checkinputparametervaluesforwindowsworkstationautounattendisoplanonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
+        }, 
+        {
+            "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
+        }, 
+        {
+            "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
+        }, 
+        {
+            "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "deploywin11dvdisoonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "extractwindowsisoonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
+        }, 
+        {
+            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+        }, 
+        {
+            "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "createbiosbootisoonmacosorlinuxworker"
+        }, 
+        {
+            "stepKey": "createuefibootisoonmacosorlinuxworker"
+        }
+    ], 
+    "name": "Create Windows 11 (Win11) autounattend Single ISO on macOS or Linux Worker", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}
