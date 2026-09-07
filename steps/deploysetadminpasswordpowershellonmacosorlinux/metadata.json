@@ -11,17 +11,17 @@
     "makoParameters": [
         {
             "name": "newOsNode", 
-            "parameterKey": "newosnode", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
             "name": "newOsWindowsUserAdministrator", 
-            "parameterKey": "newoswindowsuseradministrator", 
+            "parameterKey": "newmachinewindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }
     ], 
     "name": "Deploy Set Admin Password PowerShell on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

@@ -6,8 +6,8 @@
     "externalUuid4": "aab26bc7-901f-43e4-8075-293dc069465d", 
     "key": "deployandextractwin2019iso", 
     "name": " Deploy and Extract Win2019 ISO", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": true
 }

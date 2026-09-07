@@ -6,8 +6,8 @@
     "externalUuid4": "95187be7-436d-46f1-bde4-bd55edd32f1f", 
     "key": "deploywin2022dvdisoonwindowsworker", 
     "name": "Deploy Win2022 DVD ISO on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

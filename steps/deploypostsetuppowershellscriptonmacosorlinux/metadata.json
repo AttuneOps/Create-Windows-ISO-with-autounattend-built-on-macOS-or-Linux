@@ -11,22 +11,22 @@
     "makoParameters": [
         {
             "name": "newOsNode", 
-            "parameterKey": "newosnode", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
             "name": "newOsNodeSubnet", 
-            "parameterKey": "newosnodesubnet", 
+            "parameterKey": "newmachinenetwork", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }, 
         {
             "name": "newOsWindowsUser", 
-            "parameterKey": "newoswindowsuseradministrator", 
+            "parameterKey": "newmachinewindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }
     ], 
     "name": "Deploy Post Setup PowerShell Script on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

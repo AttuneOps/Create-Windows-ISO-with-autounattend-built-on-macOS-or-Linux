@@ -1,4 +1,10 @@
 {
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text", 
+            "value": "Windows 10"
+        }
+    ], 
     "externalUuid4": "2781a848-1536-409d-a0fb-8bf025dd1c5d", 
     "key": "kickstartedoperatingsystemname", 
     "name": "Kickstarted Operating System Name", 

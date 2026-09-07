@@ -16,22 +16,22 @@
         }, 
         {
             "name": "targetServer", 
-            "parameterKey": "newosnode", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
             "name": "targetSubnet", 
-            "parameterKey": "newosnodesubnet", 
+            "parameterKey": "newmachinenetwork", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }, 
         {
             "name": "windowsFolderOnSamba", 
-            "parameterKey": "windowsfolderonsamba", 
+            "parameterKey": "sambaserverdirectory", 
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
     "name": "Deploy startnet.cmd on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

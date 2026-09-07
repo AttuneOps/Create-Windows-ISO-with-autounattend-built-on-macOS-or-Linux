@@ -11,12 +11,12 @@
     "makoParameters": [
         {
             "name": "newOsNode", 
-            "parameterKey": "newoswindowsnode", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.WindowsServer"
         }
     ], 
     "name": "Deploy Set DNS Search Suffix PowerShell on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

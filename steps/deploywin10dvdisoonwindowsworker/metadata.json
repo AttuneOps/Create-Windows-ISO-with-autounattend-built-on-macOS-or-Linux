@@ -6,8 +6,8 @@
     "externalUuid4": "24a0d270-3728-464d-88ef-bde47cccdc7f", 
     "key": "deploywin10dvdisoonwindowsworker", 
     "name": "Deploy Win10 DVD ISO on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

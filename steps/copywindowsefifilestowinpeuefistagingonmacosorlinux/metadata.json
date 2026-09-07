@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "copywindowsefifilestowinpeuefistagingonmacosorlinux", 
     "name": "Copy Windows EFI Files to WinPE UEFI Staging on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

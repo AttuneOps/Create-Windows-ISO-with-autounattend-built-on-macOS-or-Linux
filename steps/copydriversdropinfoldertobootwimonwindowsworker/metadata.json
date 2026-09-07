@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "copydriversdropinfoldertobootwimonwindowsworker", 
     "name": "Copy Drivers Drop in Folder to boot.wim on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 300, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

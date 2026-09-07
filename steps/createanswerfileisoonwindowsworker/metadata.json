@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "createanswerfileisoonwindowsworker", 
     "name": "Create Answer File ISO on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 1800, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

@@ -1,4 +1,10 @@
 {
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text", 
+            "value": "FALSE"
+        }
+    ], 
     "externalUuid4": "abdf7583-6030-42b5-8755-d07880588455", 
     "key": "isbiosboot", 
     "name": "Is BIOS Boot", 

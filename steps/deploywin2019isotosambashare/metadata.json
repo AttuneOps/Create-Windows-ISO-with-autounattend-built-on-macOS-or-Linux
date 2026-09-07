@@ -6,8 +6,8 @@
     "externalUuid4": "6f83324d-28ca-46be-b77c-71e69a37f789", 
     "key": "deploywin2019isotosambashare", 
     "name": " Deploy Win2019 ISO to Samba Share", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

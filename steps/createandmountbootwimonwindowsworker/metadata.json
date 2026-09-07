@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "createandmountbootwimonwindowsworker", 
     "name": "Create and Mount BOOT.WIM on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

@@ -6,8 +6,8 @@
     "externalUuid4": "f9f2c9c3-a53a-44d0-b4fa-cfcf64f7bfd6", 
     "key": "deployandextractwin10iso", 
     "name": " Deploy and Extract Win10 ISO", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": true
 }

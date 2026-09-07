@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "checkmaximumlengthofwin10hostnameonwindowsworker", 
     "name": "Check Maximum Length of Win10 Hostname on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

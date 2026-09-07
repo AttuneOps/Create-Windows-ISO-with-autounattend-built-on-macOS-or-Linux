@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "cleanupbuildfilesandisosonwindowsworker", 
     "name": "Clean Up Build Files and ISOs on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

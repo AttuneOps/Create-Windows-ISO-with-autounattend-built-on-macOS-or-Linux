@@ -1,4 +1,10 @@
 {
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text", 
+            "value": "FALSE"
+        }
+    ], 
     "externalUuid4": "6826a2b2-6a5e-4b61-9b08-89fc3509d159", 
     "key": "iswindowsserver", 
     "name": "Is Windows Server", 

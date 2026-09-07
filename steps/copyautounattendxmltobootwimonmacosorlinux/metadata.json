@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "copyautounattendxmltobootwimonmacosorlinux", 
     "name": "Copy autounattend.xml to boot.wim on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

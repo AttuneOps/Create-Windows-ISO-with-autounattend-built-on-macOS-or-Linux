@@ -6,8 +6,8 @@
     "externalUuid4": "1cccbbe2-6649-4161-b020-b2626f881797", 
     "key": "deploywin2016dvdisoonmacosorlinuxworker", 
     "name": "Deploy Win2016 DVD ISO on macOS or Linux Worker", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

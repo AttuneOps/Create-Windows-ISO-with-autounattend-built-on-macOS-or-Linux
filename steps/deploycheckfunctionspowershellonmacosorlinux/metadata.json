@@ -8,7 +8,7 @@
     "makoFileNames": [], 
     "makoParameters": [], 
     "name": "Deploy Check Functions PowerShell on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

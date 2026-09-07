@@ -1,0 +1,16 @@
+{
+    "defaultValue": [
+        {
+            "domain": "localdomain", 
+            "hostname": "localhost", 
+            "ip": "127.0.0.1", 
+            "type": "attune.parameter.default.WindowsServer", 
+            "winRmType": 12
+        }
+    ], 
+    "externalUuid4": "d96348b5-4dd3-482d-a154-1fed7ea8e465", 
+    "key": "newmachine", 
+    "name": "New Machine", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.WindowsServer"
+}

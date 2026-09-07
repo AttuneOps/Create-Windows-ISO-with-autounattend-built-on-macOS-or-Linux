@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "overwritebootwimwithbootcleanedwimonwindowsworker", 
     "name": "Overwrite BOOT.WIM with BOOT_CLEANED.WIM on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

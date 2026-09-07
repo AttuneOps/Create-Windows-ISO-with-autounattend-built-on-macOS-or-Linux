@@ -1,5 +1,5 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "archiveKey": "winpestartnetcmd", 
     "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
     "enabled": true, 
@@ -16,22 +16,22 @@
         }, 
         {
             "name": "targetServer", 
-            "parameterKey": "newosnode", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
             "name": "targetSubnet", 
-            "parameterKey": "newosnodesubnet", 
+            "parameterKey": "newmachinenetwork", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }, 
         {
             "name": "windowsFolderOnSamba", 
-            "parameterKey": "windowsfolderonsamba", 
+            "parameterKey": "sambaserverdirectory", 
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
     "name": "Deploy startnet.cmd on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

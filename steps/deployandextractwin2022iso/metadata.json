@@ -6,8 +6,8 @@
     "externalUuid4": "ca5fab2f-a15f-49af-afd3-eeb1999ac5cd", 
     "key": "deployandextractwin2022iso", 
     "name": " Deploy and Extract Win2022 ISO", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": true
 }

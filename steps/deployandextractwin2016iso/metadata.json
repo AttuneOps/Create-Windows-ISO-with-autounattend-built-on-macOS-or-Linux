@@ -6,8 +6,8 @@
     "externalUuid4": "de066f6f-a5b2-4360-87a0-ab1ec63e2371", 
     "key": "deployandextractwin2016iso", 
     "name": " Deploy and Extract Win2016 ISO", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": true
 }

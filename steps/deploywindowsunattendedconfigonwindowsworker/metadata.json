@@ -1,5 +1,5 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "archiveKey": "windowsunattendedconfigv2", 
     "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}", 
     "enabled": true, 
@@ -11,17 +11,17 @@
     "makoParameters": [
         {
             "name": "newOsNode", 
-            "parameterKey": "newosnode", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
             "name": "newOsWindowsUser", 
-            "parameterKey": "newoswindowsuseradministrator", 
+            "parameterKey": "newmachinewindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
         {
             "name": "newOsOrganisationName", 
-            "parameterKey": "newosorganisationname", 
+            "parameterKey": "newmachineorganisationname", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -51,7 +51,7 @@
         }, 
         {
             "name": "newOsWindowsTimeZone", 
-            "parameterKey": "newoswindowstimezone", 
+            "parameterKey": "newmachinetimezone", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -66,7 +66,7 @@
         }
     ], 
     "name": "Deploy Windows Unattended Config on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "checkhostname", 
     "name": "Check Hostname", 
-    "osCredKey": "newoswindowsuseradministrator", 
-    "serverKey": "newoswindowsnode", 
+    "osCredKey": "newmachinewindowsadministrator", 
+    "serverKey": "newmachine", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"
