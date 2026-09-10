@@ -1,4 +1,4 @@
-if {isWin10Uefi} || {isWinServerUefi}
+if [ "{biosOrUefi}" = "UEFI" ]
 then
 
     cd {linuxWorkerDirectory}/build-{newMachine.fqn}

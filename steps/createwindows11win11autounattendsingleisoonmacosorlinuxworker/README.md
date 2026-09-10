@@ -4,10 +4,8 @@ The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.is
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
-
-For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
+Set **BIOS or UEFI** to `BIOS` or `UEFI`.
+Set **Operating System Name** to `Windows 10`.
+Leave **Is WinPE** as `false`.
 
 This blueprint assumes the drivers drop in directory is at `{windowsWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.

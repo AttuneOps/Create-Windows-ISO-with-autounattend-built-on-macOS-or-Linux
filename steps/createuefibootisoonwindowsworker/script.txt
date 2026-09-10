@@ -4,8 +4,7 @@ $BUILD_FOLDER="build-{newMachine.fqn}"
 # This is so we place the "tmpBash.sh" outside the $BUILD_FOLDER
 Set-Location $ISO_BUILD
 
-if (${{isWin10Uefi}} -or `
-    ${{isWinServerUefi}}) {
+if ("{biosOrUefi}" -ieq "UEFI") {
 
     $scriptContent=@"
 mkisofs \

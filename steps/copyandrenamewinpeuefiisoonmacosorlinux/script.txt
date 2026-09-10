@@ -1,4 +1,4 @@
-if {isWin10Uefi} || {isWinServerUefi}
+if [ "{biosOrUefi}" = "UEFI" ]
 then
     FOLDER="{linuxWorkerDirectory}/build-{newMachine.fqn}"
     mkdir -p "${FOLDER}"

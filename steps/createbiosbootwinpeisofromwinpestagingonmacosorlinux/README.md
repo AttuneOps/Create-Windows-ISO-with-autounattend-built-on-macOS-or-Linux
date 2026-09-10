@@ -1,6 +1,3 @@
-Creates a BIOS bootable ISO at `{linuxWorkerDirectory}/{isoFilename}` from the WinPE staging directory `{linuxWorkerDirectory}/build-{newMachine.fqn}/winpe_staging`. 
+Creates a BIOS bootable WinPE ISO from the WinPE staging folder.
 
-Only applies to BIOS kickstarts so if any of these parameters are set the string `true`:
-
-1. `isWin10Bios`
-2. `isWinServerBios`
+Runs when **BIOS or UEFI** is `BIOS`.

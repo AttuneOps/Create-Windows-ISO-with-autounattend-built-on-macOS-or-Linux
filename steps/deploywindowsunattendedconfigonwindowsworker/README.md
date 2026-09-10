@@ -1,10 +1,6 @@
-Deploys the generic autounattend.xml.
+Deploys compiled `autounattend.xml`.
 
-Set one of these `true` depending on whether you want Windows Desktop 10 or Windows Server for BIOS or UEFI boot methods.
-
-1. `isWin10Bios`
-2. `isWin10Uefi`
-3. `isWinServerBios`
-4. `isWinServerUefi`
-
-Set `isWinPEKickstart` to `true` for WinPE kickstarts.
+Set **BIOS or UEFI** to `BIOS` or `UEFI`.
+Set **Operating System Name** to `Windows 10`, `Windows 11`, or a Windows Server edition.
+Set **Is WinPE** to `true` only for WinPE ISO Procedures.
+Set **Unattend Drive Letter** to `D` (Single ISO), `E` (Dual ISO), or `X` (WinPE).

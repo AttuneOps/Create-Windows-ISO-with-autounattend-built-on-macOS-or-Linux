@@ -1,72 +1,57 @@
 {
-    "actionOnStepFail": "stop", 
-    "archiveKey": "windowsunattendedconfigv2", 
-    "deployPath": "{workerDirectorySharePath}/build-{newMachine.fqn}", 
-    "enabled": true, 
-    "externalUuid4": "c1990586-dec6-4638-96b4-bd63b583413e", 
-    "key": "deploywindowsunattendedconfigonwindowsworker", 
+    "actionOnStepFail": "stop",
+    "archiveKey": "windowsunattendedconfigv2",
+    "deployPath": "{workerDirectorySharePath}/build-{newMachine.fqn}",
+    "enabled": true,
+    "externalUuid4": "c1990586-dec6-4638-96b4-bd63b583413e",
+    "key": "deploywindowsunattendedconfigonwindowsworker",
     "makoFileNames": [
         "autounattend.xml"
-    ], 
+    ],
     "makoParameters": [
         {
-            "name": "newMachine", 
-            "parameterKey": "newmachine", 
+            "name": "newMachine",
+            "parameterKey": "newmachine",
             "parameterType": "c.s.s.b.phv.Server"
-        }, 
+        },
         {
-            "name": "newWindowsAdministrator", 
-            "parameterKey": "newwindowsadministrator", 
+            "name": "newWindowsAdministrator",
+            "parameterKey": "newwindowsadministrator",
             "parameterType": "c.s.s.b.phv.WinOsCred"
-        }, 
+        },
         {
-            "name": "newMachineOrganisation", 
-            "parameterKey": "newmachineorganisation", 
+            "name": "newMachineOrganisation",
+            "parameterKey": "newmachineorganisation",
             "parameterType": "c.s.s.b.phv.Text"
-        }, 
+        },
         {
-            "name": "driversAndAutounattendDriveLetter", 
-            "parameterKey": "driversandautounattenddriveletter", 
+            "name": "unattendDriveLetter",
+            "parameterKey": "unattenddriveletter",
             "parameterType": "c.s.s.b.phv.Text"
-        }, 
+        },
         {
-            "name": "isBiosBoot", 
-            "parameterKey": "isbiosboot", 
+            "name": "biosOrUefi",
+            "parameterKey": "biosoruefi",
             "parameterType": "c.s.s.b.phv.Text"
-        }, 
+        },
         {
-            "name": "isUefiBoot", 
-            "parameterKey": "isuefiboot", 
+            "name": "operatingSystemName",
+            "parameterKey": "operatingsystemname",
             "parameterType": "c.s.s.b.phv.Text"
-        }, 
+        },
         {
-            "name": "isWindowsServer", 
-            "parameterKey": "iswindowsserver", 
+            "name": "isWinPE",
+            "parameterKey": "iswinpe",
             "parameterType": "c.s.s.b.phv.Text"
-        }, 
+        },
         {
-            "name": "isWindowsWorkstation", 
-            "parameterKey": "iswindowsworkstation", 
-            "parameterType": "c.s.s.b.phv.Text"
-        }, 
-        {
-            "name": "newMachineTimezone", 
-            "parameterKey": "newmachinetimezone", 
-            "parameterType": "c.s.s.b.phv.Text"
-        }, 
-        {
-            "name": "isWinPEKickstart", 
-            "parameterKey": "iswinpekickstart", 
-            "parameterType": "c.s.s.b.phv.Text"
-        }, 
-        {
-            "name": "postInstallSetupScriptDriveLetter", 
-            "parameterKey": "postinstallsetupscriptdriveletter", 
+            "name": "newMachineTimezone",
+            "parameterKey": "newmachinetimezone",
             "parameterType": "c.s.s.b.phv.Text"
         }
-    ], 
-    "name": "Deploy Windows Unattended Config on Windows Worker", 
-    "osCredKey": "windowsworkeradministrator", 
-    "serverKey": "windowsworker", 
+    ],
+    "name": "Deploy Windows Unattended Config on Windows Worker",
+    "osCredKey": "windowsworkeradministrator",
+    "serverKey": "windowsworker",
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

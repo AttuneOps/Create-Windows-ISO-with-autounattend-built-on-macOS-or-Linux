@@ -1,4 +1,4 @@
-if {isWin10Bios} || {isWinServerBios}
+if [ "{biosOrUefi}" = "BIOS" ]
 then
 
     cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"

@@ -1,17 +1,13 @@
-if ( ${{isWindowsWorkstation}} ) {
-
+if ("{operatingSystemName}" -notmatch "Server") {
     $HOSTNAME = "{newMachine.hostname}"
-    
     $LENGTH = $HOSTNAME.length
     $MAX_LENGTH = 15
-    
-    if ( $LENGTH -gt $MAX_LENGTH ) {
-        Write-Host "Length of hostname `"${HOSTNAME}`"  for Win10 is ${LENGTH} and can't be more than ${MAX_LENGTH}."
-        false
+    if ($LENGTH -gt $MAX_LENGTH) {
+        Write-Host "Length of hostname `"${HOSTNAME}`" for Windows workstation is ${LENGTH} and can't be more than ${MAX_LENGTH}."
+        exit 1
     } else {
-        Write-Host "Length of hostname `"${HOSTNAME}`" for Win10 is ${LENGTH} which is less than or equal to ${MAX_LENGTH}."
+        Write-Host "Length of hostname `"${HOSTNAME}`" for Windows workstation is ${LENGTH} which is less than or equal to ${MAX_LENGTH}."
     }
-    
 } else {
-    Write-Host "Not Windows Workstation, skipping."
+    Write-Host "Server hostname length is not limited to 15, skipping."
 }

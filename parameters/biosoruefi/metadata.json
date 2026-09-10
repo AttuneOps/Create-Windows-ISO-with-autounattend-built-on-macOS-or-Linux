@@ -5,5 +5,10 @@
     "showInPlan": true,
     "type": "c.s.s.b.phv.Text",
     "comment": "Boot firmware. Accepts BIOS or UEFI.",
-    "defaultValue": []
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text",
+            "value": "UEFI"
+        }
+    ]
 }

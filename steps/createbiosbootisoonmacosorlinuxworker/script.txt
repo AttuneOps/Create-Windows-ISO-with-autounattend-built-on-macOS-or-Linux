@@ -1,6 +1,6 @@
 cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
 
-if {isWin10Bios} || {isWinServerBios}
+if [ "{biosOrUefi}" = "BIOS" ]
 then
     if uname | \
         grep -iq "darwin"

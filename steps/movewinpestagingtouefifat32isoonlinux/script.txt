@@ -1,4 +1,4 @@
-if {kickstartedBootLoaderIsUefi}
+if [ "{biosOrUefi}" = "UEFI" ]
 then
 
     cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"

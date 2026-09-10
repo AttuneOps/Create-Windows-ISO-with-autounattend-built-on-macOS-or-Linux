@@ -1,0 +1,14 @@
+{
+    "externalUuid4": "0a83dada-be7d-475a-aaac-1a56a37090ff",
+    "key": "iswinpe",
+    "name": "Is WinPE",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Set true only for WinPE ISO Procedures. Leave false for Single ISO and Dual ISO.",
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text",
+            "value": "false"
+        }
+    ]
+}

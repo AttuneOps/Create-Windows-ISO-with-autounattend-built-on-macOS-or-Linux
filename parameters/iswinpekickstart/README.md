@@ -1,1 +1,0 @@
-Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts.

@@ -1,4 +1,4 @@
-if {isWin10Bios} || {isWinServerBios}
+if [ "{biosOrUefi}" = "BIOS" ]
 then
 
     DIRECTORY="{linuxWorkerDirectory}"
@@ -13,7 +13,7 @@ then
         exit 1
     fi
     
-elif {isWin10Uefi} || {isWinServerUefi}
+elif [ "{biosOrUefi}" = "UEFI" ]
 then
 
     DIRECTORY="{linuxWorkerDirectory}"

@@ -1,0 +1,14 @@
+{
+    "externalUuid4": "2781a848-1536-409d-a0fb-8bf025dd1c5d",
+    "key": "operatingsystemname",
+    "name": "Operating System Name",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Target Windows edition. Examples: Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, Windows Server 2022.",
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text",
+            "value": "Windows 10"
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-if ( ${{isWin10Uefi}} -or ${{isWinServerUefi}} ) {
+if ("{biosOrUefi}" -ieq "UEFI") {
 
     $ISO_BUILD="{windowsWorkerDirectory}"
     $BUILD_DIR="$ISO_BUILD\build-{newMachine.fqn}"
