@@ -1,1 +1,1 @@
-Filename Create ISO writes and every Controller Procedure uploads or attaches. Default: `unattended_{newMachine.fqn}.iso`.
+Filename of the ISO that Create ISO writes and that Controller Procedures upload or attach. Default `unattended_{newMachine.fqn}.iso`.

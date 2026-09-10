@@ -1,17 +1,18 @@
 {
     "defaultValue": [
         {
-            "dns1": "1.1.1.1", 
-            "dns2": "8.8.8.8", 
-            "gateway": "192.168.1.1", 
-            "netmask": "255.255.255.0", 
-            "subnet": "192.168.1.0", 
+            "dns1": "1.1.1.1",
+            "dns2": "8.8.8.8",
+            "gateway": "192.168.1.1",
+            "netmask": "255.255.255.0",
+            "subnet": "192.168.1.0",
             "type": "attune.parameter.default.Ip4Subnet"
         }
-    ], 
-    "externalUuid4": "1acfa343-dd2b-4e6a-8494-e7a46d6f595d", 
-    "key": "newmachinenetwork", 
-    "name": "New Machine Network", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.Ip4Subnet"
+    ],
+    "externalUuid4": "1acfa343-dd2b-4e6a-8494-e7a46d6f595d",
+    "key": "newmachinenetwork",
+    "name": "New Machine Network",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Ip4Subnet",
+    "comment": "IPv4 subnet for the installed OS: mask, gateway, and DNS. Used by autounattend and by WinPE `startnet.cmd` when it configures the NIC."
 }

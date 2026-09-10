@@ -1,1 +1,1 @@
-Administrator user on the Windows Automation Worker node.
+Administrator WinRM credential on the Windows Worker.

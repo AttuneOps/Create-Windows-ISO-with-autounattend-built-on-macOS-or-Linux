@@ -1,1 +1,1 @@
-The Linux automation worker node used to perform tasks to create the ISO.
+macOS or Linux host that builds ISOs and stages files for the Create ISO Procedures.

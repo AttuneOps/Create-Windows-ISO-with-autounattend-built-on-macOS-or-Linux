@@ -1,1 +1,1 @@
-Administrator on the installed Windows OS. Username is Administrator; do not store a password on the Parameter.
+Local administrator on the installed OS. Username and password are written into autounattend AutoLogon and UserAccounts.

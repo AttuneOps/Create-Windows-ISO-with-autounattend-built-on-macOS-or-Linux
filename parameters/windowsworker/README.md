@@ -1,1 +1,1 @@
-The Windows automation worker node used to perform tasks to create the ISO.
+Windows host that builds ISOs when using the Windows Worker Procedures.

@@ -1,13 +1,14 @@
 {
     "defaultValue": [
         {
-            "type": "attune.parameter.default.Text", 
+            "type": "attune.parameter.default.Text",
             "value": "c$\\attune"
         }
-    ], 
-    "externalUuid4": "520c8b94-c5ed-4652-81be-a0fbba474226", 
-    "key": "sambaserverdirectory", 
-    "name": "Samba Server Directory", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.Text"
+    ],
+    "externalUuid4": "520c8b94-c5ed-4652-81be-a0fbba474226",
+    "key": "sambaserverdirectory",
+    "name": "Samba Server Directory",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Folder on the Samba share that contains the extracted Windows media. WinPE `startnet.cmd` changes into this folder after the share is mapped. Typical values: `windows10`, `windows11`, `windows2016`, `windows2019`, `windows2022`."
 }

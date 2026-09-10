@@ -4,7 +4,7 @@
     "name": "BIOS or UEFI",
     "showInPlan": true,
     "type": "c.s.s.b.phv.Text",
-    "comment": "Boot firmware. Accepts BIOS or UEFI.",
+    "comment": "Firmware of the machine being installed. Set to `BIOS` or `UEFI`. Controls disk layout, partition IDs, product-key branch, and which ISO create path runs.",
     "defaultValue": [
         {
             "type": "attune.parameter.default.Text",

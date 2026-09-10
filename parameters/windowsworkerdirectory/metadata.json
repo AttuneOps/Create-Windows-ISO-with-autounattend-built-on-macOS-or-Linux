@@ -1,13 +1,14 @@
 {
     "defaultValue": [
         {
-            "type": "attune.parameter.default.Text", 
+            "type": "attune.parameter.default.Text",
             "value": "c:/attune"
         }
-    ], 
-    "externalUuid4": "4ca90e98-f72b-497a-82ee-eba3669b167c", 
-    "key": "windowsworkerdirectory", 
-    "name": "Windows Worker Directory", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.Text"
+    ],
+    "externalUuid4": "4ca90e98-f72b-497a-82ee-eba3669b167c",
+    "key": "windowsworkerdirectory",
+    "name": "Windows Worker Directory",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Directory on the Windows Worker for build folders, driver drops, and the finished ISO. Default `c:/attune`."
 }

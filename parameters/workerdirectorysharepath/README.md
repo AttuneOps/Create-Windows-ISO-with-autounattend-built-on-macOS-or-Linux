@@ -1,1 +1,1 @@
-Windows administrative-share form of the worker folder, used by deploy steps (for example /c$/Attune).
+Administrative-share path of the Windows Worker Directory, used by deploy steps. Example: `/c$/Attune` for `C:\Attune`.

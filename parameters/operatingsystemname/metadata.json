@@ -4,7 +4,7 @@
     "name": "Operating System Name",
     "showInPlan": true,
     "type": "c.s.s.b.phv.Text",
-    "comment": "Target Windows edition. Examples: Windows 10, Windows 11, Windows Server 2016, Windows Server 2019, Windows Server 2022.",
+    "comment": "Windows edition being installed. Use `Windows 10` or `Windows 11` for workstation, or `Windows Server 2016`, `Windows Server 2019`, or `Windows Server 2022`. After install, `systeminfo` must contain this string.",
     "defaultValue": [
         {
             "type": "attune.parameter.default.Text",

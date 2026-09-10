@@ -4,7 +4,7 @@
     "showInPlan": true,
     "name": "ISO Filename",
     "type": "c.s.s.b.phv.Text",
-    "comment": "Filename Create ISO writes and every Controller Procedure uploads or attaches.",
+    "comment": "Filename of the ISO that Create ISO writes and that Controller Procedures upload or attach. Default `unattended_{newMachine.fqn}.iso`.",
     "defaultValue": [
         {
             "type": "attune.parameter.default.Text",

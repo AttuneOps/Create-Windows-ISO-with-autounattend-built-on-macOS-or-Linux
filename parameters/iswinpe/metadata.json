@@ -4,7 +4,7 @@
     "name": "Is WinPE",
     "showInPlan": true,
     "type": "c.s.s.b.phv.Text",
-    "comment": "Set true only for WinPE ISO Procedures. Leave false for Single ISO and Dual ISO.",
+    "comment": "Whether this Job builds a WinPE installer rather than a Single or Dual ISO. Set `true` only on WinPE Procedures; leave `false` otherwise.",
     "defaultValue": [
         {
             "type": "attune.parameter.default.Text",

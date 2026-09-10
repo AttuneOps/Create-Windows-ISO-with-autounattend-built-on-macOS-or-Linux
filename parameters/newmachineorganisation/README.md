@@ -1,1 +1,1 @@
-Organisation string written into Windows autounattend.
+Organisation name written into autounattend (UserData Organisation and RegisteredOrganisation).

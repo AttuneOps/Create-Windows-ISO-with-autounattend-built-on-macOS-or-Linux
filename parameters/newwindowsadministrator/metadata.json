@@ -4,7 +4,7 @@
     "name": "New Windows Administrator",
     "showInPlan": true,
     "type": "c.s.s.b.phv.WinOsCred",
-    "comment": "Administrator on the installed Windows OS.",
+    "comment": "Local administrator on the installed OS. Username and password are written into autounattend AutoLogon and UserAccounts.",
     "defaultValue": [
         {
             "type": "attune.parameter.default.WinOsCred",

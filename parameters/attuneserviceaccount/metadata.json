@@ -1,7 +1,8 @@
 {
-    "externalUuid4": "7f7b56c6-1428-427e-b2fe-a85037932a91", 
-    "key": "attuneserviceaccount", 
-    "name": "Attune Service Account", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.WinOsCred"
+    "externalUuid4": "7f7b56c6-1428-427e-b2fe-a85037932a91",
+    "key": "attuneserviceaccount",
+    "name": "Attune Service Account",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.WinOsCred",
+    "comment": "Windows credential Attune uses for WinRM after the OS is installed. On Windows Server the password must meet complexity: 14 or more characters, with uppercase, lowercase, a digit, and a special character."
 }

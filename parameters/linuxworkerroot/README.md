@@ -1,1 +1,1 @@
-root user on the Linux Automation Worker node.
+Credential used for privileged steps on the Linux Worker (sudo to root).

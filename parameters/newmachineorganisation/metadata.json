@@ -4,5 +4,5 @@
     "name": "New Machine Organisation",
     "showInPlan": true,
     "type": "c.s.s.b.phv.Text",
-    "comment": "Organisation string written into Windows autounattend."
+    "comment": "Organisation name written into autounattend (UserData Organisation and RegisteredOrganisation)."
 }

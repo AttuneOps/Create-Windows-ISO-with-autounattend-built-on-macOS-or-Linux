@@ -1,1 +1,1 @@
-Base directory for deploying temporary files to build the ISO on a Windows Worker.
+Directory on the Windows Worker for build folders, driver drops, and the finished ISO. Default `c:/attune`.

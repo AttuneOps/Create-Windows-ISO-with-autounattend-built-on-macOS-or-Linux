@@ -1,2 +1,1 @@
-Get the full list using the PowerShell command:
-Get-TimeZone -ListAvailable
+Windows time zone ID for the installed OS, for example `E. Australia Standard Time`. List IDs with PowerShell: `Get-TimeZone -ListAvailable`.
