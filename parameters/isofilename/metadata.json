@@ -1,14 +1,13 @@
 {
-    "externalUuid4": "9de08dc6-abc3-49b6-b087-b57104a87f5c",
-    "key": "isofilename",
-    "showInPlan": true,
-    "name": "ISO Filename",
-    "type": "c.s.s.b.phv.Text",
-    "comment": "Filename of the ISO that Create ISO writes and that Controller Procedures upload or attach. Default `unattended_{newMachine.fqn}.iso`.",
     "defaultValue": [
         {
-            "type": "attune.parameter.default.Text",
-            "value": "unattended_{newMachine.fqn}.iso"
+            "type": "attune.parameter.default.Text", 
+            "value": "unattended"
         }
-    ]
+    ], 
+    "externalUuid4": "9de08dc6-abc3-49b6-b087-b57104a87f5c", 
+    "key": "isofilename", 
+    "name": "ISO Filename", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
 }
