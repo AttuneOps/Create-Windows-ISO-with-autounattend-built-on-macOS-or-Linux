@@ -1,4 +1,4 @@
-Makes a copy of the `winpe_plain_bios.iso` as `winpe.iso` in the folder `{linuxWorkerDirectory}/build-{newWindowsMachine.fqn`.
+Makes a copy of the `winpe_plain_bios.iso` as `winpe.iso` in the folder `{linuxWorkerDirectory}/build-{newMachine.fqn`.
 
 This ISO is BIOS bootable and works for:
 

@@ -1,7 +1,7 @@
-cd {linuxWorkerDirectory}/build-{newWindowsMachine.fqn}
+cd {linuxWorkerDirectory}/build-{newMachine.fqn}
 
 DRIVERS_FOLDER="drivers"
-DRIVERS_ISO_NAME="drivers_{newWindowsMachine.fqn}.iso"
+DRIVERS_ISO_NAME="drivers_{newMachine.fqn}.iso"
 
 if uname | \
     grep -iq "darwin"

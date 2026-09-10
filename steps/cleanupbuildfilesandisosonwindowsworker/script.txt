@@ -1,4 +1,4 @@
-$DIR="{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}"
+$DIR="{windowsWorkerDirectory}\build-{newMachine.fqn}"
 
 if (Test-Path $DIR) {
     Remove-Path -Recursive $DIR

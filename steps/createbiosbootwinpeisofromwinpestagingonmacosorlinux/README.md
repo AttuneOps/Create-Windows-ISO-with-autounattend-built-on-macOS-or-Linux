@@ -1,4 +1,4 @@
-Creates a BIOS bootable ISO at `{linuxWorkerDirectory}/{isoFilename}` from the WinPE staging directory `{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}/winpe_staging`. 
+Creates a BIOS bootable ISO at `{linuxWorkerDirectory}/{isoFilename}` from the WinPE staging directory `{linuxWorkerDirectory}/build-{newMachine.fqn}/winpe_staging`. 
 
 Only applies to BIOS kickstarts so if any of these parameters are set the string `true`:
 

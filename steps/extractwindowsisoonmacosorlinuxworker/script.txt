@@ -1,4 +1,4 @@
-cd {linuxWorkerDirectory}/build-{newWindowsMachine.fqn}
+cd {linuxWorkerDirectory}/build-{newMachine.fqn}
 
 # Case insensitve globbing
 shopt -s nocaseglob

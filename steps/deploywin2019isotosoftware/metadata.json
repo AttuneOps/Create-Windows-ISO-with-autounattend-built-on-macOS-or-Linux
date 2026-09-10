@@ -7,7 +7,7 @@
     "key": "deploywin2019isotosoftware", 
     "name": "Deploy Win2019 ISO to Software", 
     "osCredKey": "newwindowsadministrator", 
-    "serverKey": "newwindowsmachine", 
+    "serverKey": "newmachine", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

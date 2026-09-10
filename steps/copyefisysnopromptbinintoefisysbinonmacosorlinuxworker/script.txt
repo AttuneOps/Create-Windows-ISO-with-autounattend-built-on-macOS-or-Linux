@@ -1,7 +1,7 @@
 if {isWin10Uefi} || {isWinServerUefi}
 then
 
-    cd {linuxWorkerDirectory}/build-{newWindowsMachine.fqn}
+    cd {linuxWorkerDirectory}/build-{newMachine.fqn}
     cd efi/microsoft/boot/
     
     cp -v efisys_noprompt.bin efisys.bin

@@ -1,1 +1,1 @@
-Deletes the folder at `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}`.
+Deletes the folder at `{windowsWorkerDirectory}\build-{newMachine.fqn}`.

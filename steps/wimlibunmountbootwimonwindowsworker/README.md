@@ -1,6 +1,6 @@
-Unmounts `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}\WinPE_BootImageDir` using `Dism`.
+Unmounts `{windowsWorkerDirectory}\build-{newMachine.fqn}\WinPE_BootImageDir` using `Dism`.
 
-This will write out changes back into `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}\WinPE_amd64\sources\boot.wim` for both BIOS and  UEFI boots.
+This will write out changes back into `{windowsWorkerDirectory}\build-{newMachine.fqn}\WinPE_amd64\sources\boot.wim` for both BIOS and  UEFI boots.
 
 Make sure there is no Windows File Explorer open at the mount directory.
 
@@ -8,7 +8,7 @@ If there is the unmount will fail and you need to manually run these commands to
 
 ```
 $ISO_BUILD="{windowsWorkerDirectory}"
-$BUILD_DIR="$ISO_BUILD\build-{newWindowsMachine.fqn}"
+$BUILD_DIR="$ISO_BUILD\build-{newMachine.fqn}"
 
 Set-Location $BUILD_DIR
 

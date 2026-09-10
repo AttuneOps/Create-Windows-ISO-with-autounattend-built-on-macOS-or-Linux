@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "win10iso", 
-    "deployPath": "{workerDirectorySharePath}/build-{newWindowsMachine.fqn}", 
+    "deployPath": "{workerDirectorySharePath}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "24a0d270-3728-464d-88ef-bde47cccdc7f", 
     "key": "deploywin10dvdisoonwindowsworker", 

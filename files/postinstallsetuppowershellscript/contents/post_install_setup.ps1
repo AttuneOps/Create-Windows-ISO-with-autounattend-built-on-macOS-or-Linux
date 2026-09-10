@@ -15,14 +15,14 @@ $ksWindowsInterfaceAlias = (Get-NetAdapter).Name
 
 # Set Network IP
 New-NetIPAddress -InterfaceAlias "$ksWindowsInterfaceAlias" `
-    -IPAddress ${newWindowsMachine.ip} -PrefixLength ${netmask} `
+    -IPAddress ${newMachine.ip} -PrefixLength ${netmask} `
     -DefaultGateway ${newMachineNetwork.gateway} -Confirm:$false
 
 # Set Network Profile
 Set-DnsClientServerAddress -InterfaceAlias "$ksWindowsInterfaceAlias" `
     -ServerAddresses @(${dns})
     
-Set-DnsClientGlobalSetting -SuffixSearchList @('${newWindowsMachine.domain}')
+Set-DnsClientGlobalSetting -SuffixSearchList @('${newMachine.domain}')
 
 Set-NetConnectionProfile -InterfaceAlias "$ksWindowsInterfaceAlias" `
     -NetworkCategory Private -Confirm:$false
@@ -44,7 +44,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
 New-Item -Path WSMan:\LocalHost\Listener -Transport HTTPS -Address * `
     -CertificateThumbPrint `
     (New-SelfSignedCertificate -CertstoreLocation Cert:\LocalMachine\My `
-    -DnsName '${newWindowsMachine.hostname}' `
+    -DnsName '${newMachine.hostname}' `
     -NotAfter (get-date).AddYears(6)).Thumbprint -Force
 
 Enable-WSManCredSSP -Role Server -Force
@@ -90,7 +90,7 @@ powercfg.exe -x -hibernate-timeout-dc 0
 Set-Service WinRM -startuptype automatic
 
 # Update Hostname and Restart
-Rename-Computer -NewName '${newWindowsMachine.hostname}' -Force -Restart
+Rename-Computer -NewName '${newMachine.hostname}' -Force -Restart
 
 # For some reason on Win10 BIOS ESXi kickstarts the restart from the above line
 # Doesn't restart. So we have another line below to restart the node

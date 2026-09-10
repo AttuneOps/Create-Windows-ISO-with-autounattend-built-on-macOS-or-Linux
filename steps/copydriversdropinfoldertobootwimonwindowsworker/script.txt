@@ -1,5 +1,5 @@
 $ISO_BUILD="{windowsWorkerDirectory}"
-$BUILD_DIR="${ISO_BUILD}\build-{newWindowsMachine.fqn}"
+$BUILD_DIR="${ISO_BUILD}\build-{newMachine.fqn}"
 
 $WinPE_BootImageDir="WinPE_BootImageDir"
 
@@ -10,7 +10,7 @@ if ( -Not (Test-Path "${DRIVERS}") ) {
   New-Item "${DRIVERS}" -ItemType Directory
 }
 
-$DRIVERS_DROP_IN_FOLDER="${ISO_BUILD}\drivers-{newWindowsMachine.fqn}"
+$DRIVERS_DROP_IN_FOLDER="${ISO_BUILD}\drivers-{newMachine.fqn}"
 
 if (Test-Path "${DRIVERS_DROP_IN_FOLDER}") {
     

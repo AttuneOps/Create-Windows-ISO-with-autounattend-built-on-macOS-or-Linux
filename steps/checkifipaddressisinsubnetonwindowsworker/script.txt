@@ -1,9 +1,9 @@
-Write-Host "IP address={newWindowsMachine.ip}"
+Write-Host "IP address={newMachine.ip}"
 Write-Host "subnet={newMachineNetwork.subnet}"
 Write-Host "netmask={newMachineNetwork.netmask}"
 #Write-Host "i, IP_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX"
 
-$IP_OCTETS = "{newWindowsMachine.ip}".split('.')
+$IP_OCTETS = "{newMachine.ip}".split('.')
 $SUBNET_OCTETS = "{newMachineNetwork.subnet}".split('.')
 $NETMASK_OCTETS = "{newMachineNetwork.netmask}".split('.')
 

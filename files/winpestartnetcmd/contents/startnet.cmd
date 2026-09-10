@@ -20,7 +20,7 @@ echo Found network interface name = %windowsInterfaceAlias%
 
 netsh.exe interface ipv4 set address ^
     name="%windowsInterfaceAlias%" ^
-    static ${newWindowsMachine.ip} ^
+    static ${newMachine.ip} ^
     ${newMachineNetwork.netmask} ^
     ${newMachineNetwork.gateway}
     

@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "win11iso", 
-    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "b5f4d10d-9a55-4184-8e9a-9f849e1fc026", 
     "key": "deploywin11dvdisoonmacosorlinuxworker", 

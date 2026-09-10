@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "winpestartnetcmd", 
-    "deployPath": "{workerDirectorySharePath}/build-{newWindowsMachine.fqn}", 
+    "deployPath": "{workerDirectorySharePath}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "1e7923ce-a176-4239-b95f-d062c4938610", 
     "key": "deploystartnetcmdonwindowsworker", 
@@ -15,8 +15,8 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "newWindowsMachine", 
-            "parameterKey": "newwindowsmachine", 
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {

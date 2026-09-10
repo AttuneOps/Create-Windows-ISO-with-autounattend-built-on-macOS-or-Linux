@@ -1,4 +1,4 @@
-cd {linuxWorkerDirectory}/build-{newWindowsMachine.fqn}
+cd {linuxWorkerDirectory}/build-{newMachine.fqn}
 
 FOLDER=winpe_staging
 mkdir -p "${FOLDER}"

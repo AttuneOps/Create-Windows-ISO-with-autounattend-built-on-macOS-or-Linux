@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "winpestartnetcmd", 
-    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
     "key": "deploystartnetcmdonmacosorlinux", 
@@ -15,8 +15,8 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "newWindowsMachine", 
-            "parameterKey": "newwindowsmachine", 
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {

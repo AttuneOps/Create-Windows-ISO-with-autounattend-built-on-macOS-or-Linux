@@ -10,4 +10,4 @@ For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-This blueprint assumes the drivers drop in directory is at `{windowsWorkerDirectory}/drivers-{newWindowsMachine.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{windowsWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.

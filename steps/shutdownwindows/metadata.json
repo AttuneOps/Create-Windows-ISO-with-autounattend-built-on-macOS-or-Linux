@@ -9,7 +9,7 @@
     "key": "shutdownwindows", 
     "name": "Shutdown Windows", 
     "osCredKey": "newwindowsadministrator", 
-    "serverKey": "newwindowsmachine", 
+    "serverKey": "newmachine", 
     "successExitCode": 0, 
     "timeout": 180, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

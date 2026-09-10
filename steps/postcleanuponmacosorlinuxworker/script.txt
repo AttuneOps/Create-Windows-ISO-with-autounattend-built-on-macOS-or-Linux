@@ -1,9 +1,9 @@
 # The wildcard will allow removal of 
 # - {isoFilename}
-# - drivers_{newWindowsMachine.fqn}
-# - build_{newWindowsMachine.fqn}
+# - drivers_{newMachine.fqn}
+# - build_{newMachine.fqn}
 
-for FILE in {linuxWorkerDirectory}/*{newWindowsMachine.fqn}*
+for FILE in {linuxWorkerDirectory}/*{newMachine.fqn}*
 do
     echo "Removing ${FILE}"
     rm -frv "${FILE}"

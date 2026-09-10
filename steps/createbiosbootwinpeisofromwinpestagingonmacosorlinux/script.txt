@@ -1,4 +1,4 @@
-cd "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}"
+cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
 
 if {isWin10Bios} || {isWinServerBios} 
 then

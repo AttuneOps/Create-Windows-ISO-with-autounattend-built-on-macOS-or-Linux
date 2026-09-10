@@ -1,6 +1,6 @@
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    cd "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}"
+    cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
     
     if uname | \
         grep -iq "darwin"

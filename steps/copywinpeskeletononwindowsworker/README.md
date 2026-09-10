@@ -1,1 +1,1 @@
-Copies the skeleton WinPE folder `C:\${WinPE_amd64}` to `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}\WinPE_amd64`.
+Copies the skeleton WinPE folder `C:\${WinPE_amd64}` to `{windowsWorkerDirectory}\build-{newMachine.fqn}\WinPE_amd64`.

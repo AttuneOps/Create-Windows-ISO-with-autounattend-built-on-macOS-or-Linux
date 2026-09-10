@@ -202,7 +202,7 @@ For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-This blueprint assumes the drivers drop in directory is at `{windowsWorkerDirectory}/drivers-{newWindowsMachine.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{windowsWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows 10 (Win10) autounattend Single ISO on Windows Worker
 
@@ -249,7 +249,7 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newWindowsMachine.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker
 
@@ -274,7 +274,7 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newWindowsMachine.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2019 (Win2019) autounattend Single ISO on Windows Worker
 
@@ -299,7 +299,7 @@ For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
 
 Please set `isWinPEKickstart` to the string 'false'.
 
-This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newWindowsMachine.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 

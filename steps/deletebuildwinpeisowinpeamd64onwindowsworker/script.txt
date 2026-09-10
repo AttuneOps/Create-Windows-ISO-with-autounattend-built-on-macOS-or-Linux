@@ -1,4 +1,4 @@
-$BUILD_WINPE_ISO_DIR="{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}"
+$BUILD_WINPE_ISO_DIR="{windowsWorkerDirectory}\build-{newMachine.fqn}"
 
 Set-Location "${BUILD_WINPE_ISO_DIR}"
 

@@ -1,1 +1,1 @@
-Set-DnsClientGlobalSetting -SuffixSearchList @( "${newWindowsMachine.domain}" )
+Set-DnsClientGlobalSetting -SuffixSearchList @( "${newMachine.domain}" )

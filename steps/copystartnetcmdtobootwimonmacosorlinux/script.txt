@@ -1,4 +1,4 @@
-cd {linuxWorkerDirectory}/build-{newWindowsMachine.fqn}
+cd {linuxWorkerDirectory}/build-{newMachine.fqn}
 
 wimupdate winpe_staging/SOURCES/BOOT.WIM \
     --command="add startnet.cmd /Windows/System32/startnet.cmd"

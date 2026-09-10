@@ -1,7 +1,7 @@
 {
     "externalUuid4": "d96348b5-4dd3-482d-a154-1fed7ea8e465",
-    "key": "newwindowsmachine",
-    "name": "New Windows Machine",
+    "key": "newmachine",
+    "name": "New Machine",
     "showInPlan": true,
     "type": "c.s.s.b.phv.WindowsServer",
     "comment": "The Windows machine (or VM) being installed. FQN drives ISO and driver drop names.",

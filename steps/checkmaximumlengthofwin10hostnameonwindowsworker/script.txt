@@ -1,6 +1,6 @@
 if ( ${{isWindowsWorkstation}} ) {
 
-    $HOSTNAME = "{newWindowsMachine.hostname}"
+    $HOSTNAME = "{newMachine.hostname}"
     
     $LENGTH = $HOSTNAME.length
     $MAX_LENGTH = 15

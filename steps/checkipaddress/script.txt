@@ -1,8 +1,8 @@
 if (-Not (ipconfig | `
     findstr "IPv4 Address" | `
-    findstr "{newWindowsMachine.ip}")) {
+    findstr "{newMachine.ip}")) {
     Write-Host "Wrong IP Address."
     exit 1
 } else {
-    Write-Host "IP address {newWindowsMachine.ip} is correct."
+    Write-Host "IP address {newMachine.ip} is correct."
 }

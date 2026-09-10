@@ -1,7 +1,7 @@
 if {kickstartedBootLoaderIsUefi}
 then
 
-    cd "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}"
+    cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
     
     USER="{linuxWorkerUser.user}"
     GROUP="$(id -gn {linuxWorkerUser.user})"

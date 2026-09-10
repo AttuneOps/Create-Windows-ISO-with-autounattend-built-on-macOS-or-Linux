@@ -1,7 +1,7 @@
 if {kickstartedBootLoaderIsUefi}
 then
 
-    cd "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}"
+    cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
         
     if [[ "Darwin" == "$(uname)" ]]
     then
@@ -12,7 +12,7 @@ then
     then
 
         MOUNT_FOLDER="uefi_mount"
-        MOUNT_PATH="{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}/${MOUNT_FOLDER}"
+        MOUNT_PATH="{linuxWorkerDirectory}/build-{newMachine.fqn}/${MOUNT_FOLDER}"
 
         mkdir --parents --verbose ${MOUNT_FOLDER}
         

@@ -1,4 +1,4 @@
-Creates a UEFI bootable Windows ISO called `{isoFilename}` from the contents in folder `{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}`.
+Creates a UEFI bootable Windows ISO called `{isoFilename}` from the contents in folder `{linuxWorkerDirectory}/build-{newMachine.fqn}`.
 
 Only applies UEFI kickstarts so if any of these parameters are set the string `true`:
 

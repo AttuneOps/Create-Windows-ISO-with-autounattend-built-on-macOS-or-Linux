@@ -9,7 +9,7 @@
     "key": "testwindowsversion", 
     "name": "Test Windows Version", 
     "osCredKey": "newwindowsadministrator", 
-    "serverKey": "newwindowsmachine", 
+    "serverKey": "newmachine", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

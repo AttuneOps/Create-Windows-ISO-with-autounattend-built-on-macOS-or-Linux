@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell20enablecifs", 
-    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "3e538bfb-c299-4ebf-8294-235656d96606", 
     "key": "deployenablecifspowershellonmacosorlinux", 

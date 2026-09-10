@@ -8,7 +8,7 @@
     "defaultValue": [
         {
             "type": "attune.parameter.default.Text",
-            "value": "unattended_{newWindowsMachine.fqn}.iso"
+            "value": "unattended_{newMachine.fqn}.iso"
         }
     ]
 }

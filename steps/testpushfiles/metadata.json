@@ -7,7 +7,7 @@
     "key": "testpushfiles", 
     "name": "Test Push Files", 
     "osCredKey": "newwindowsadministrator", 
-    "serverKey": "newwindowsmachine", 
+    "serverKey": "newmachine", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": true
 }

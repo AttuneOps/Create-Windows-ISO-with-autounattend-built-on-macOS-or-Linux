@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "windowsunattendedconfig", 
-    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "ed8a4e1b-f204-40ea-b78a-90eaa23bece3", 
     "key": "deploywindowsunattendedconfigonmacosorlinux", 
@@ -10,8 +10,8 @@
     ], 
     "makoParameters": [
         {
-            "name": "newWindowsMachine", 
-            "parameterKey": "newwindowsmachine", 
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {

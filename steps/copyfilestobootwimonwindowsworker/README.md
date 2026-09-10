@@ -1,1 +1,1 @@
-In the `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}` folder, moves `startnet.cmd` to the folder `WinPE_BootImageDir/Windows/System32`.
+In the `{windowsWorkerDirectory}\build-{newMachine.fqn}` folder, moves `startnet.cmd` to the folder `WinPE_BootImageDir/Windows/System32`.

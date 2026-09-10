@@ -1,1 +1,1 @@
-Deploys Windows Desktop 10 ISO to `{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}`.
+Deploys Windows Desktop 10 ISO to `{linuxWorkerDirectory}/build-{newMachine.fqn}`.

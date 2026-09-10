@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "windowsunattendedconfigv2", 
-    "deployPath": "{workerDirectorySharePath}/build-{newWindowsMachine.fqn}", 
+    "deployPath": "{workerDirectorySharePath}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "c1990586-dec6-4638-96b4-bd63b583413e", 
     "key": "deploywindowsunattendedconfigonwindowsworker", 
@@ -10,8 +10,8 @@
     ], 
     "makoParameters": [
         {
-            "name": "newWindowsMachine", 
-            "parameterKey": "newwindowsmachine", 
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {

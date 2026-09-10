@@ -1,1 +1,1 @@
-Copies the contents of the drivers drop in folder at `{windowsWorkerDirectory}\drivers-{newWindowsMachine.fqn}` to `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}\drivers`.
+Copies the contents of the drivers drop in folder at `{windowsWorkerDirectory}\drivers-{newMachine.fqn}` to `{windowsWorkerDirectory}\build-{newMachine.fqn}\drivers`.
