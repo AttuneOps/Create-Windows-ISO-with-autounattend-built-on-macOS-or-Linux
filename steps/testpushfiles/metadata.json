@@ -6,8 +6,8 @@
     "externalUuid4": "905ddad1-7308-49e5-8945-3ef8b928e9c9", 
     "key": "testpushfiles", 
     "name": "Test Push Files", 
-    "osCredKey": "newmachinewindowsadministrator", 
-    "serverKey": "newmachine", 
+    "osCredKey": "newwindowsadministrator", 
+    "serverKey": "newwindowsmachine", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": true
 }

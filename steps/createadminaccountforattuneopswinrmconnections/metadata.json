@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": null, 
     "key": "createadminaccountforattuneopswinrmconnections", 
     "name": "Create Admin Account for AttuneOps WinRM Connections", 
-    "osCredKey": "newmachinewindowsadministrator", 
-    "serverKey": "newmachine", 
+    "osCredKey": "newwindowsadministrator", 
+    "serverKey": "newwindowsmachine", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

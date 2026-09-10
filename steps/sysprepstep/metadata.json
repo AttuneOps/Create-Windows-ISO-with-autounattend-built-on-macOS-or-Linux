@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": null, 
     "key": "sysprepstep", 
     "name": "Sysprep Step", 
-    "osCredKey": "newmachinewindowsadministrator", 
-    "serverKey": "newmachine", 
+    "osCredKey": "newwindowsadministrator", 
+    "serverKey": "newwindowsmachine", 
     "successExitCode": 0, 
     "timeout": 180, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": null, 
     "key": "disablewinrmforvmtemplate", 
     "name": "Disable WinRM for VM Template", 
-    "osCredKey": "newmachinewindowsadministrator", 
-    "serverKey": "newmachine", 
+    "osCredKey": "newwindowsadministrator", 
+    "serverKey": "newwindowsmachine", 
     "successExitCode": 0, 
     "timeout": 30, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

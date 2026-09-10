@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "testecho", 
     "name": "Test Echo", 
-    "osCredKey": "newmachinewindowsadministrator", 
-    "serverKey": "newmachine", 
+    "osCredKey": "newwindowsadministrator", 
+    "serverKey": "newwindowsmachine", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

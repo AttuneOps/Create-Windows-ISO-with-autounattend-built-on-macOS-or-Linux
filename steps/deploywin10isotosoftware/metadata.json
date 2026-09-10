@@ -6,8 +6,8 @@
     "externalUuid4": "6e65cbed-5eed-41e6-9a39-6c871b40d69d", 
     "key": "deploywin10isotosoftware", 
     "name": "Deploy Win10 ISO to Software", 
-    "osCredKey": "newmachinewindowsadministrator", 
-    "serverKey": "newmachine", 
+    "osCredKey": "newwindowsadministrator", 
+    "serverKey": "newwindowsmachine", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }
