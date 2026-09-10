@@ -1,7 +1,7 @@
 if {isWin10Bios} || {isWin10Uefi}
 then
 
-    HOSTNAME="{newOsNode.hostname}"
+    HOSTNAME="{newWindowsMachine.hostname}"
     
     LENGTH="${#HOSTNAME}"
     MAX_LENGTH="15"

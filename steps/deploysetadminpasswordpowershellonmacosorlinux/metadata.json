@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell05setadminpassword", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "d122dbb8-526b-4e7f-a609-62b1c8702316", 
     "key": "deploysetadminpasswordpowershellonmacosorlinux", 
@@ -10,13 +10,13 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newmachine", 
+            "name": "newWindowsMachine", 
+            "parameterKey": "newwindowsmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "newOsWindowsUserAdministrator", 
-            "parameterKey": "newmachinewindowsadministrator", 
+            "name": "newWindowsAdministrator", 
+            "parameterKey": "newwindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }
     ], 

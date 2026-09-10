@@ -1,1 +1,1 @@
-Deletes the folder at `C:\attuneautomationworker\build-{newOsNode.fqn}`.
+Deletes the folder at `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}`.

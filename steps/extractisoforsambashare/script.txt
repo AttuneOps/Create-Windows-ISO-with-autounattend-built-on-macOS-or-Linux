@@ -1,4 +1,4 @@
-cd "{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/{windowsFolderOnSamba}"
+cd "{linuxWorkerDirectory}/windows_iso_data_for_winpe/{sambaServerDirectory}"
 
 # Case insensitve globbing
 shopt -s nocaseglob

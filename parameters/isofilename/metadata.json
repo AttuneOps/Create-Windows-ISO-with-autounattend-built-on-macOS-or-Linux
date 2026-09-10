@@ -1,0 +1,14 @@
+{
+    "externalUuid4": "9de08dc6-abc3-49b6-b087-b57104a87f5c",
+    "key": "isofilename",
+    "showInPlan": true,
+    "name": "ISO Filename",
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Filename Create ISO writes and every Controller Procedure uploads or attaches.",
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text",
+            "value": "unattended_{newWindowsMachine.fqn}.iso"
+        }
+    ]
+}

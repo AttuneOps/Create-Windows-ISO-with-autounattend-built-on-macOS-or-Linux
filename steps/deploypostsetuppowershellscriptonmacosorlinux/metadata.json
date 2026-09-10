@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "postinstallsetuppowershellscript", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "2f7c99d3-6a08-463f-8a42-d509778486a2", 
     "key": "deploypostsetuppowershellscriptonmacosorlinux", 
@@ -10,18 +10,18 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newmachine", 
+            "name": "newWindowsMachine", 
+            "parameterKey": "newwindowsmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "newOsNodeSubnet", 
+            "name": "newMachineNetwork", 
             "parameterKey": "newmachinenetwork", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }, 
         {
-            "name": "newOsWindowsUser", 
-            "parameterKey": "newmachinewindowsadministrator", 
+            "name": "newWindowsAdministrator", 
+            "parameterKey": "newwindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }
     ], 

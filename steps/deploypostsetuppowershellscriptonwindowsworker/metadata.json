@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "postinstallsetuppowershellscript", 
-    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{workerDirectorySharePath}/build-{newWindowsMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "4cba8f5c-6200-4cd8-acb0-3cb040cb04f0", 
     "key": "deploypostsetuppowershellscriptonwindowsworker", 
@@ -10,18 +10,18 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newmachine", 
+            "name": "newWindowsMachine", 
+            "parameterKey": "newwindowsmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "newOsNodeSubnet", 
+            "name": "newMachineNetwork", 
             "parameterKey": "newmachinenetwork", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }, 
         {
-            "name": "newOsWindowsUser", 
-            "parameterKey": "newmachinewindowsadministrator", 
+            "name": "newWindowsAdministrator", 
+            "parameterKey": "newwindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }
     ], 

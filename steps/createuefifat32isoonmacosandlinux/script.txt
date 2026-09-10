@@ -1,9 +1,9 @@
 if {kickstartedBootLoaderIsUefi}
 then
 
-    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    cd "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}"
     
-    ISO="{automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso"
+    ISO="{linuxWorkerDirectory}/{isoFilename}"
     
     [ -f "${ISO}" ] && rm "${ISO}"
         

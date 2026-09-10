@@ -1,6 +1,6 @@
-ping -n 1 "{newOsNodeSubnet.gateway}"
+ping -n 1 "{newMachineNetwork.gateway}"
 
 if (-Not $?) {
-    Write-Host "Can't ping Gateway {newOsNodeSubnet.gateway}. No network"
+    Write-Host "Can't ping Gateway {newMachineNetwork.gateway}. No network"
     exit 1
 }

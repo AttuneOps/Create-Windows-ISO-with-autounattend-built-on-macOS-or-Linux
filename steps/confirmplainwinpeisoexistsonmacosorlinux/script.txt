@@ -1,7 +1,7 @@
 if {isWin10Bios} || {isWinServerBios}
 then
 
-    DIRECTORY="{automationWorkerLinuxBaseDirectory}"
+    DIRECTORY="{linuxWorkerDirectory}"
     cd "${DIRECTORY}"
     
     ISO="winpe_plain_bios.iso"
@@ -16,7 +16,7 @@ then
 elif {isWin10Uefi} || {isWinServerUefi}
 then
 
-    DIRECTORY="{automationWorkerLinuxBaseDirectory}"
+    DIRECTORY="{linuxWorkerDirectory}"
     cd "${DIRECTORY}"
     
     ISO="winpe_plain_uefi.iso"

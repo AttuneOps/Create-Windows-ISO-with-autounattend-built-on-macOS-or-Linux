@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "win11iso", 
-    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/share/windows11", 
+    "deployPath": "{workerDirectorySharePath}/share/windows11", 
     "enabled": true, 
     "externalUuid4": "f8f0f3ca-cb73-437f-b069-a24e8df2ed6d", 
     "key": "deployandextractwin11iso", 

@@ -1,6 +1,6 @@
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+cd {linuxWorkerDirectory}/build-{newWindowsMachine.fqn}
 
-DRIVERS_DROP_IN_FOLDER="{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}"
+DRIVERS_DROP_IN_FOLDER="{linuxWorkerDirectory}/drivers-{newWindowsMachine.fqn}"
 
 if [ -d "${DRIVERS_DROP_IN_FOLDER}" ]
 then

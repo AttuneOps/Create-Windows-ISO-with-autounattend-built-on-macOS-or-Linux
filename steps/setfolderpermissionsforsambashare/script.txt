@@ -1,4 +1,4 @@
-cd "{automationWorkerLinuxBaseDirectory}/windows_iso_data_for_winpe/"
-sudo chmod -R a+rx {windowsFolderOnSamba}
+cd "{linuxWorkerDirectory}/windows_iso_data_for_winpe/"
+sudo chmod -R a+rx {sambaServerDirectory}
 
 ls -lh

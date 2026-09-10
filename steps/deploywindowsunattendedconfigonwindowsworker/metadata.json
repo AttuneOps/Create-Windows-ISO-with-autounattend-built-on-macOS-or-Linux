@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "windowsunattendedconfigv2", 
-    "deployPath": "{automationWorkerWindowsBaseDirectorySharePath}/build-{newOsNode.fqn}", 
+    "deployPath": "{workerDirectorySharePath}/build-{newWindowsMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "c1990586-dec6-4638-96b4-bd63b583413e", 
     "key": "deploywindowsunattendedconfigonwindowsworker", 
@@ -10,18 +10,18 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newmachine", 
+            "name": "newWindowsMachine", 
+            "parameterKey": "newwindowsmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "newOsWindowsUser", 
-            "parameterKey": "newmachinewindowsadministrator", 
+            "name": "newWindowsAdministrator", 
+            "parameterKey": "newwindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
         {
-            "name": "newOsOrganisationName", 
-            "parameterKey": "newmachineorganisationname", 
+            "name": "newMachineOrganisation", 
+            "parameterKey": "newmachineorganisation", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -50,7 +50,7 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "newOsWindowsTimeZone", 
+            "name": "newMachineTimezone", 
             "parameterKey": "newmachinetimezone", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 

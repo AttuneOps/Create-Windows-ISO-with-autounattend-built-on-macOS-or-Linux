@@ -1,4 +1,4 @@
-Makes a copy of the `winpe_plain_uefi.iso` as `winpe.iso` in the folder `{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn`.
+Makes a copy of the `winpe_plain_uefi.iso` as `winpe.iso` in the folder `{linuxWorkerDirectory}/build-{newWindowsMachine.fqn`.
 
 This ISO is UEFI bootable and works for:
 

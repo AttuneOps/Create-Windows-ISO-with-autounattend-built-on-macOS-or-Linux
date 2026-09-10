@@ -1,13 +1,13 @@
-echo "IP address={newOsNode.ip}"
-echo "subnet={newOsNodeSubnet.subnet}"
-echo "netmask={newOsNodeSubnet.netmask}"
+echo "IP address={newWindowsMachine.ip}"
+echo "subnet={newMachineNetwork.subnet}"
+echo "netmask={newMachineNetwork.netmask}"
 #echo "i, IP_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX"
 
 for i in $(seq 1 1 4)
 do
-    IP_OCTET=$(echo "{newOsNode.ip}" | awk -F'.' "{print \$$i}")
-    SUBNET_OCTET=$(echo "{newOsNodeSubnet.subnet}" | awk -F'.' "{print \$$i}")
-    NETMASK_OCTET=$(echo "{newOsNodeSubnet.netmask}" | awk -F'.' "{print \$$i}")
+    IP_OCTET=$(echo "{newWindowsMachine.ip}" | awk -F'.' "{print \$$i}")
+    SUBNET_OCTET=$(echo "{newMachineNetwork.subnet}" | awk -F'.' "{print \$$i}")
+    NETMASK_OCTET=$(echo "{newMachineNetwork.netmask}" | awk -F'.' "{print \$$i}")
     
     OCTET_MIN=$((SUBNET_OCTET & NETMASK_OCTET))
 

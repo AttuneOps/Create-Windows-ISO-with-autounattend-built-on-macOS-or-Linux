@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "windowsunattendedconfig", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "ed8a4e1b-f204-40ea-b78a-90eaa23bece3", 
     "key": "deploywindowsunattendedconfigonmacosorlinux", 
@@ -10,18 +10,18 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newmachine", 
+            "name": "newWindowsMachine", 
+            "parameterKey": "newwindowsmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "newOsWindowsUser", 
-            "parameterKey": "newmachinewindowsadministrator", 
+            "name": "newWindowsAdministrator", 
+            "parameterKey": "newwindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }, 
         {
-            "name": "newOsOrganisationName", 
-            "parameterKey": "newmachineorganisationname", 
+            "name": "newMachineOrganisation", 
+            "parameterKey": "newmachineorganisation", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -50,7 +50,7 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "newOsWindowsTimeZone", 
+            "name": "newMachineTimezone", 
             "parameterKey": "newmachinetimezone", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 

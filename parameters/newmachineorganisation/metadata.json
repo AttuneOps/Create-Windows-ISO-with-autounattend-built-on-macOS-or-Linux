@@ -1,0 +1,8 @@
+{
+    "externalUuid4": "eedc1c05-c1ef-4922-90e8-61867214a786",
+    "key": "newmachineorganisation",
+    "name": "New Machine Organisation",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Organisation string written into Windows autounattend."
+}

@@ -7,7 +7,7 @@
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<ComputerName>${newOsNode.hostname}</ComputerName>
+			<ComputerName>${newWindowsMachine.hostname}</ComputerName>
 			<ProductKey>N2KJX-J94YW-TQVFB-DG9YT-724CC</ProductKey>
 		</component>
 %endif
@@ -89,8 +89,8 @@
 			</ImageInstall>
 			<UserData>
 				<AcceptEula>true</AcceptEula>
-				<FullName>${newOsWindowsUser.user}</FullName>
-				<Organization>${newOsOrganisationName}</Organization>
+				<FullName>${newWindowsAdministrator.user}</FullName>
+				<Organization>${newMachineOrganisation}</Organization>
 				<ProductKey>
 %if isWindowsWorkstation== 'true' and isBiosBoot == 'true':
 					
@@ -282,7 +282,7 @@
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<ComputerName>${newOsNode.hostname}</ComputerName>
+			<ComputerName>${newWindowsMachine.hostname}</ComputerName>
 			<ProductKey>W269N-WFGWX-YVC9B-4J6C9-T83GX</ProductKey>
 		</component>
 	</settings>
@@ -299,13 +299,13 @@
 				<LocalAccounts>
 					<LocalAccount wcm:action="add">
 						<Password>
-							<Value>${newOsWindowsUser.password}</Value>
+							<Value>${newWindowsAdministrator.password}</Value>
 							<PlainText>true</PlainText>
 						</Password>
 						<Description></Description>
-						<DisplayName>${newOsWindowsUser.user}</DisplayName>
+						<DisplayName>${newWindowsAdministrator.user}</DisplayName>
 						<Group>Administrators</Group>
-						<Name>${newOsWindowsUser.user}</Name>
+						<Name>${newWindowsAdministrator.user}</Name>
 					</LocalAccount>
 				</LocalAccounts>
 			</UserAccounts>
@@ -313,7 +313,7 @@
 			
 			<UserAccounts>
 				<AdministratorPassword>
-					<Value>${newOsWindowsUser.password}</Value>
+					<Value>${newWindowsAdministrator.password}</Value>
 					<PlainText>true</PlainText>
 				</AdministratorPassword>
 			</UserAccounts>
@@ -321,13 +321,13 @@
 			
 			<AutoLogon>
 				<Password>
-					<Value>${newOsWindowsUser.password}</Value>
+					<Value>${newWindowsAdministrator.password}</Value>
 					<PlainText>true</PlainText>
 				</Password>
 				<LogonCount>88</LogonCount>
 				<Enabled>true</Enabled>
 %if isWindowsWorkstation == 'true':
-				<Username>${newOsWindowsUser.user}</Username>
+				<Username>${newWindowsAdministrator.user}</Username>
 %elif isWindowsServer == 'true':
 				<Username>Administrator</Username>
 %endif
@@ -346,8 +346,8 @@
 			</OOBE>
 %endif
 			
-			<RegisteredOrganization>${newOsOrganisationName}</RegisteredOrganization>
-			<RegisteredOwner>${newOsWindowsUser.user}</RegisteredOwner>
+			<RegisteredOrganization>${newMachineOrganisation}</RegisteredOrganization>
+			<RegisteredOwner>${newWindowsAdministrator.user}</RegisteredOwner>
 			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
 			<FirstLogonCommands>
 				<!-- Enable running PowerShell scripts from file -->
@@ -377,7 +377,7 @@
 
 			
 			</FirstLogonCommands>
-			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
+			<TimeZone>${newMachineTimezone}</TimeZone>
 		</component>
 	</settings>
 %if isWindowsServer == 'true':

@@ -1,6 +1,6 @@
-$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$ISO_BUILD="{windowsWorkerDirectory}"
 
-$WINPE_STAGING_SOURCES_DIR="${ISO_BUILD}\build-{newOsNode.fqn}\WinPE_amd64\media\sources"
+$WINPE_STAGING_SOURCES_DIR="${ISO_BUILD}\build-{newWindowsMachine.fqn}\WinPE_amd64\media\sources"
 
 Set-Location "${WINPE_STAGING_SOURCES_DIR}"
 

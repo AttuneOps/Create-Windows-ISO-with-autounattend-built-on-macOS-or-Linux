@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell99reboot", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "0e7d3f30-60c3-4000-a021-b7ecddb14c7d", 
     "key": "deployrebootpowershellonmacosorlinux", 

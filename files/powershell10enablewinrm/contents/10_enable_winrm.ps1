@@ -4,7 +4,7 @@ Chk $?
 Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse
 Chk $?
 
-New-Item -Path WSMan:\LocalHost\Listener -Transport HTTPS -Address * -CertificateThumbPrint (New-SelfSignedCertificate -CertstoreLocation Cert:\LocalMachine\My -DnsName '${newOsNode.hostname}' -NotAfter (get-date).AddYears(6)).Thumbprint -Force
+New-Item -Path WSMan:\LocalHost\Listener -Transport HTTPS -Address * -CertificateThumbPrint (New-SelfSignedCertificate -CertstoreLocation Cert:\LocalMachine\My -DnsName '${newWindowsMachine.hostname}' -NotAfter (get-date).AddYears(6)).Thumbprint -Force
 Chk $?
 
 Enable-WSManCredSSP -Role Server -Force

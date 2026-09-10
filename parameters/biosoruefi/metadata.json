@@ -1,0 +1,9 @@
+{
+    "externalUuid4": "daaee77d-b2a5-45d4-9303-702424cc17a1",
+    "key": "biosoruefi",
+    "name": "BIOS or UEFI",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Boot firmware. Accepts BIOS or UEFI.",
+    "defaultValue": []
+}

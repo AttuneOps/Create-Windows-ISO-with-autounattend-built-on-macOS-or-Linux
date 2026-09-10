@@ -1,1 +1,1 @@
-Deletes the copy of the skeleton WinPE folders at `C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_amd64`.
+Deletes the copy of the skeleton WinPE folders at `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}\WinPE_amd64`.

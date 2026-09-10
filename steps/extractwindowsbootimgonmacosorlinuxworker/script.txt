@@ -1,7 +1,7 @@
 if {isWin10Bios} || {isWinServerBios}
 then
 
-    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    cd "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}"
     
     # Case insensitive globbing for the ISO filename
     shopt -s nocaseglob

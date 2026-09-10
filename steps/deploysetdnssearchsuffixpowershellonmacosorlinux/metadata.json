@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell02setdnssearchsuffix", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "69ca6e2b-10f4-40e4-9372-d6a19cfb1cef", 
     "key": "deploysetdnssearchsuffixpowershellonmacosorlinux", 
@@ -10,8 +10,8 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newmachine", 
+            "name": "newWindowsMachine", 
+            "parameterKey": "newwindowsmachine", 
             "parameterType": "c.s.s.b.phv.WindowsServer"
         }
     ], 

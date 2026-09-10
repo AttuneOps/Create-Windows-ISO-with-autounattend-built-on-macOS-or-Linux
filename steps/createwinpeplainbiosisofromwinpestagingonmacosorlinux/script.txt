@@ -1,4 +1,4 @@
-cd "{automationWorkerLinuxBaseDirectory}/build-winpe-iso"
+cd "{linuxWorkerDirectory}/build-winpe-iso"
 
 ISO_NAME="winpe_plain_bios.iso"
 
@@ -20,7 +20,7 @@ then
         -disable-deep-relocation \
         -omit-version-number \
         -V "KS_WIN" \
-        -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
+        -o "{linuxWorkerDirectory}/${ISO_NAME}" \
         winpe_bios_staging
         
 elif [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
@@ -40,7 +40,7 @@ then
         -disable-deep-relocation \
         -omit-version-number \
         -V "KS_WIN" \
-        -o "{automationWorkerLinuxBaseDirectory}/${ISO_NAME}" \
+        -o "{linuxWorkerDirectory}/${ISO_NAME}" \
         winpe_bios_staging
 
 else

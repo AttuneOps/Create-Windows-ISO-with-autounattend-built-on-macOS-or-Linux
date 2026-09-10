@@ -1,9 +1,9 @@
 call "C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools\DandISetEnv.bat" dir
 dir
 
-cd {automationWorkerWindowsBaseDirectory}\build-{newOsNode.fqn}
+cd {windowsWorkerDirectory}\build-{newWindowsMachine.fqn}
 dir
 
-del ..\kickstart_{newOsNode.fqn}.iso
+del ..\{isoFilename}
 
-MakeWinPEMedia /ISO .\WinPE_amd64 ..\kickstart_{newOsNode.fqn}.iso
+MakeWinPEMedia /ISO .\WinPE_amd64 ..\{isoFilename}

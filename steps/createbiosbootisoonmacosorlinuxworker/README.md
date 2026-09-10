@@ -1,4 +1,4 @@
-Creates a BIOS bootable Windows ISO called `kickstart_{newOsNode.fqn}.iso` from the contents in folder `{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}`.
+Creates a BIOS bootable Windows ISO called `{isoFilename}` from the contents in folder `{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}`.
 
 
 Only applies BIOS kickstarts so if any of these parameters are set the string `true`'`:

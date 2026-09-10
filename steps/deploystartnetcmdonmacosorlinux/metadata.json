@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "winpestartnetcmd", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
     "key": "deploystartnetcmdonmacosorlinux", 
@@ -15,17 +15,17 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "targetServer", 
-            "parameterKey": "newmachine", 
+            "name": "newWindowsMachine", 
+            "parameterKey": "newwindowsmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "targetSubnet", 
+            "name": "newMachineNetwork", 
             "parameterKey": "newmachinenetwork", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }, 
         {
-            "name": "windowsFolderOnSamba", 
+            "name": "sambaServerDirectory", 
             "parameterKey": "sambaserverdirectory", 
             "parameterType": "c.s.s.b.phv.Text"
         }

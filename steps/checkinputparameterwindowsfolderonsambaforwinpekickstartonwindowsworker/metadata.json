@@ -7,7 +7,7 @@
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
     "key": "checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker", 
-    "name": "Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker", 
+    "name": "Check Input Parameter sambaServerDirectory for WinPE Kickstart on Windows Worker", 
     "osCredKey": "windowsworkeradministrator", 
     "serverKey": "windowsworker", 
     "successExitCode": 0, 

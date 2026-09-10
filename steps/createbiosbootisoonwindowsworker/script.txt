@@ -1,5 +1,5 @@
-$ISO_BUILD="C:\attuneautomationworker"
-$BUILD_FOLDER="build-{newOsNode.fqn}"
+$ISO_BUILD="{windowsWorkerDirectory}"
+$BUILD_FOLDER="build-{newWindowsMachine.fqn}"
 
 # This is so we place the "attune_wsl_create_bios_boot_iso.sh" outside the $BUILD_FOLDER
 Set-Location $ISO_BUILD
@@ -22,7 +22,7 @@ mkisofs \
     -disable-deep-relocation \
     -omit-version-number \
     -V "KS_WIN" \
-    -o kickstart_{newOsNode.fqn}.iso \
+    -o {isoFilename} \
     '${BUILD_FOLDER}'
 "@
     # Replace CRLF with LF
@@ -35,7 +35,7 @@ mkisofs \
     wsl -d Ubuntu --user root --exec bash "${FILE}"
 
     if ($LASTEXITCODE -ne 0) {
-        Write-Error 'Failed to create $ISO_BUILD\kickstart_{newOsNode.fqn}.iso'
+        Write-Error 'Failed to create $ISO_BUILD\{isoFilename}'
     }
       
     Remove-Item "${FILE}"

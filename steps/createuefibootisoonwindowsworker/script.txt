@@ -1,5 +1,5 @@
-$ISO_BUILD="C:\attuneautomationworker"
-$BUILD_FOLDER="build-{newOsNode.fqn}"
+$ISO_BUILD="{windowsWorkerDirectory}"
+$BUILD_FOLDER="build-{newWindowsMachine.fqn}"
 
 # This is so we place the "tmpBash.sh" outside the $BUILD_FOLDER
 Set-Location $ISO_BUILD
@@ -25,7 +25,7 @@ mkisofs \
     -udf \
     -untranslated-filenames \
     -disable-deep-relocation \
-    -o kickstart_{newOsNode.fqn}.iso \
+    -o {isoFilename} \
     '${BUILD_FOLDER}'
 "@
 

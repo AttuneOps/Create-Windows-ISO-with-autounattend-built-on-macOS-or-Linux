@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell01checkfunction", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "23913476-6798-4153-bfd5-9f089818fa9b", 
     "key": "deploycheckfunctionspowershellonmacosorlinux", 

@@ -60,7 +60,7 @@ function Test-PasswordComplexity {
 
 try {
     $result = Test-PasswordComplexity `
-        -Password '{newOsWindowsUserAdministrator.password}'
+        -Password '{newWindowsAdministrator.password}'
 } catch {
     Write-Error "Password testing failed, you likely have a ' in the password."
 }

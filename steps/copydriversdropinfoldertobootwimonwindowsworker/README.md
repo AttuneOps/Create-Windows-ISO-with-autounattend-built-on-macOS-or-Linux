@@ -1,1 +1,1 @@
-Copy drivers from the drop in directory `C:\attuneautomationworker\drivers-{newOsNode.fqn}` into `C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_BootImageDir\drivers` on Windows Worker.
+Copy drivers from the drop in directory `{windowsWorkerDirectory}\drivers-{newWindowsMachine.fqn}` into `{windowsWorkerDirectory}\build-{newWindowsMachine.fqn}\WinPE_BootImageDir\drivers` on Windows Worker.

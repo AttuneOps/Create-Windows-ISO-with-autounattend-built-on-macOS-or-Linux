@@ -1,6 +1,6 @@
 if {isWin10Uefi} || {isWinServerUefi}
 then
-    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    cd "{linuxWorkerDirectory}/build-{newWindowsMachine.fqn}"
     
     if uname | \
         grep -iq "darwin"
@@ -26,7 +26,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {linuxWorkerDirectory}/{isoFilename} \
             .
             
     else
@@ -49,7 +49,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o {linuxWorkerDirectory}/{isoFilename} \
             .
     fi
         
