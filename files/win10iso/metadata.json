@@ -5,7 +5,7 @@
     "key": "win10iso", 
     "md5": "c2b19762870226ca467d6cbd87cd8fab", 
     "name": "Win10 ISO", 
-    "remoteUri": null, 
+    "remoteUri": "https://www.microsoft.com/en-us/software-download/windows10iso", 
     "size": 6140975104, 
     "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
 }

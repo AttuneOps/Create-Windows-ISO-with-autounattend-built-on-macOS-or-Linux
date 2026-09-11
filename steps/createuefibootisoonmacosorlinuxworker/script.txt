@@ -2,31 +2,35 @@ if [ "{biosOrUefi}" = "UEFI" ]
 then
     cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
     
-    if uname | \
-        grep -iq "darwin"
+    if uname | grep -iq "darwin"
     then
+    
         echo "is macOS"
-        export PATH="${HOME}/Parallels/homebrew/bin:$PATH"
+
+        if ! command -v xorriso >/dev/null 2>&1; then
+            echo "Error: xorriso is not installed." >&2
+            exit 1
+        fi
+
         echo "Using $(which xorriso)"
         
         xorriso -as mkisofs \
-            -allow-limited-size \
-            -iso-level 4 \
+            -iso-level 3 \
             -full-iso9660-filenames \
+            -joliet \
+            -joliet-long \
             -rock \
-            -b boot/etfsboot.com \
-            -no-emul-boot \
-            -boot-load-seg 0 \
-            -boot-load-size 8 \
-            -hide boot.catalog \
-            -eltorito-alt-boot \
-            -no-emul-boot \
-            -b efi/microsoft/boot/efisys.bin \
-            -boot-load-size 1 \
-            -udf \
+            -allow-lowercase \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {linuxWorkerDirectory}/{isoFilename} \
+            -b boot/etfsboot.com \
+            -no-emul-boot \
+            -boot-load-size 8 \
+            --boot-catalog-hide \
+            -eltorito-alt-boot \
+            --efi-boot efi/microsoft/boot/efisys.bin \
+            -no-emul-boot \
+            -o "{linuxWorkerDirectory}/{isoFilename}" \
             .
             
     else
