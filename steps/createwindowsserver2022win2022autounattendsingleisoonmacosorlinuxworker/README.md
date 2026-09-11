@@ -1,6 +1,6 @@
 Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
 
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+The ISO will be created at `{ksAttuneBaseDir}/unattended_{newMachine.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 

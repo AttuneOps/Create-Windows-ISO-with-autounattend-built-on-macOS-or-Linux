@@ -17,7 +17,7 @@ then
         mkdir --parents --verbose ${MOUNT_FOLDER}
         
         mount --verbose \
-            "../{isoFilename}" ${MOUNT_FOLDER}
+            "../unattended_{newMachine.fqn}.iso" ${MOUNT_FOLDER}
         
         cp -r --verbose winpe_staging/* "${MOUNT_FOLDER}"
         

@@ -16,7 +16,7 @@ if (Test-Path $DIR) {
 }
 
 # The wildcard will allow removal of 
-# - {isoFilename}
+# - unattended_{newMachine.fqn}.iso
 # - drivers_{newMachine.fqn}.iso
 $ISOS="*{newMachine.fqn}.iso"
 

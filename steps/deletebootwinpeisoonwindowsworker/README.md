@@ -1,1 +1,1 @@
-Deletes the ISO at `{windowsWorkerDirectory}\{isoFilename}`.
+Deletes the ISO at `{windowsWorkerDirectory}\unattended_{newMachine.fqn}.iso`.

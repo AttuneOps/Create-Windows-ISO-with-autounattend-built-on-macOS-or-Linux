@@ -21,7 +21,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o {linuxWorkerDirectory}/{isoFilename} \
+            -o {linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso \
             .
 
     else
@@ -41,7 +41,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o {linuxWorkerDirectory}/{isoFilename} \
+            -o {linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso \
             .
     fi
 

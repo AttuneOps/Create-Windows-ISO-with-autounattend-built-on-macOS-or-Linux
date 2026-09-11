@@ -24,7 +24,7 @@ mkisofs \
     -udf \
     -untranslated-filenames \
     -disable-deep-relocation \
-    -o {isoFilename} \
+    -o unattended_{newMachine.fqn}.iso \
     '${BUILD_FOLDER}'
 "@
 

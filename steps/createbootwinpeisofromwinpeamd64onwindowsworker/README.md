@@ -10,4 +10,4 @@ The directory path is changed to `{windowsWorkerDirectory}\build-{newMachine.fqn
    ```
    cd {windowsWorkerDirectory}\build-{newMachine.fqn}
    ```
-3. Run `MakeWinPEMedia` to take the modified copy of the skeleton WinPE files at `{windowsWorkerDirectory}\build-{newMachine.fqn}\WinPE_amd64` and generate the ISO at `{windowsWorkerDirectory}\{isoFilename}`.
+3. Run `MakeWinPEMedia` to take the modified copy of the skeleton WinPE files at `{windowsWorkerDirectory}\build-{newMachine.fqn}\WinPE_amd64` and generate the ISO at `{windowsWorkerDirectory}\unattended_{newMachine.fqn}.iso`.

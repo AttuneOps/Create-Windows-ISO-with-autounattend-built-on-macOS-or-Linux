@@ -30,7 +30,7 @@ then
             -eltorito-alt-boot \
             --efi-boot efi/microsoft/boot/efisys.bin \
             -no-emul-boot \
-            -o "{linuxWorkerDirectory}/{isoFilename}" \
+            -o "{linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso" \
             .
             
     else
@@ -53,7 +53,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {linuxWorkerDirectory}/{isoFilename} \
+            -o {linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso \
             .
     fi
         

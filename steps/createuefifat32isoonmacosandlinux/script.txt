@@ -3,7 +3,7 @@ then
 
     cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
     
-    ISO="{linuxWorkerDirectory}/{isoFilename}"
+    ISO="{linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso"
     
     [ -f "${ISO}" ] && rm "${ISO}"
         

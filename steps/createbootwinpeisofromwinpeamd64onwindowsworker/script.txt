@@ -4,6 +4,6 @@ dir
 cd {windowsWorkerDirectory}\build-{newMachine.fqn}
 dir
 
-del ..\{isoFilename}
+del ..\unattended_{newMachine.fqn}.iso
 
-MakeWinPEMedia /ISO .\WinPE_amd64 ..\{isoFilename}
+MakeWinPEMedia /ISO .\WinPE_amd64 ..\unattended_{newMachine.fqn}.iso

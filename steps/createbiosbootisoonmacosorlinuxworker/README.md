@@ -1,3 +1,3 @@
-Creates a BIOS bootable Windows ISO called `{isoFilename}` from `{linuxWorkerDirectory}/build-{newMachine.fqn}`.
+Creates a BIOS bootable Windows ISO called `unattended_{newMachine.fqn}.iso` from `{linuxWorkerDirectory}/build-{newMachine.fqn}`.
 
 Runs when **BIOS or UEFI** is `BIOS`.

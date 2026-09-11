@@ -2,7 +2,7 @@ cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
 
 if [ "{biosOrUefi}" = "BIOS" ]
 then
-    ISO_NAME="{isoFilename}"
+    ISO_NAME="unattended_{newMachine.fqn}.iso"
     
     if uname | \
         grep -iq "darwin"
