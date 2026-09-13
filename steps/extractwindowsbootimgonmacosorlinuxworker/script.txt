@@ -1,7 +1,7 @@
 if [ "{biosOrUefi}" = "BIOS" ]
 then
 
-    cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
+    cd "{linuxWorkerDirectory}build-{newMachine.fqn}"
     
     # Case insensitive globbing for the ISO filename
     shopt -s nocaseglob
@@ -60,6 +60,7 @@ then
 
     # Extract the boot image (8 sectors of 2048 bytes = 16 KB)
     dd if="$isoFile" of=boot.img bs=2048 count=8 skip="$lba"
+    ls -l boot.img
 
 else
     echo "Skipping for UEFI ISO creation."

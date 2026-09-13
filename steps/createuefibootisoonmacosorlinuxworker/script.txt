@@ -1,6 +1,6 @@
 if [ "{biosOrUefi}" = "UEFI" ]
 then
-    cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
+    cd "{linuxWorkerDirectory}build-{newMachine.fqn}"
     
     if uname | grep -iq "darwin"
     then
@@ -30,7 +30,7 @@ then
             -eltorito-alt-boot \
             --efi-boot efi/microsoft/boot/efisys.bin \
             -no-emul-boot \
-            -o "{linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso" \
+            -o "../unattended_{newMachine.fqn}.iso" \
             .
             
     else
@@ -53,7 +53,7 @@ then
             -udf \
             -untranslated-filenames \
             -disable-deep-relocation \
-            -o {linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso \
+            -o "../unattended_{newMachine.fqn}.iso" \
             .
     fi
         

@@ -1,14 +1,13 @@
 {
     "defaultValue": [
         {
-            "type": "attune.parameter.default.Text",
-            "value": "/tmp/attune/"
+            "type": "attune.parameter.default.Text", 
+            "value": "script-forge/"
         }
-    ],
-    "externalUuid4": "27cbd06c-9a60-48ed-b8d0-bd0d34dbe544",
-    "key": "linuxworkerdirectory",
-    "name": "Linux Worker Directory",
-    "showInPlan": false,
-    "type": "c.s.s.b.phv.Text",
-    "comment": "Directory on the Linux Worker for build folders, driver drops, and the finished ISO. Default `/tmp/attune/`. The ISO is written to `{linuxWorkerDirectory}/unattended_{newMachine.fqn}.iso`."
+    ], 
+    "externalUuid4": "27cbd06c-9a60-48ed-b8d0-bd0d34dbe544", 
+    "key": "linuxworkerdirectory", 
+    "name": "Linux Worker Directory", 
+    "showInPlan": false, 
+    "type": "c.s.s.b.phv.Text"
 }

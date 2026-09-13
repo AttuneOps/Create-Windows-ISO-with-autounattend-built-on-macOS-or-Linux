@@ -1,6 +1,6 @@
-DIR="{linuxWorkerDirectory}/build-{newMachine.fqn}"
+DIR="{linuxWorkerDirectory}build-{newMachine.fqn}"
 [[ -d ${DIR} ]] && rm -rf ${DIR} && echo "Removed ${DIR}" || \
     echo "No directory to remove."
 
-ISO="{linuxWorkerDirectory}/*{newMachine.fqn}.iso"
+ISO="{linuxWorkerDirectory}*{newMachine.fqn}.iso"
 [[ -f ${ISO} ]] && rm -fv ${ISO} || echo "No ISO to remove."

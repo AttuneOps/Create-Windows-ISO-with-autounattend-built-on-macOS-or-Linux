@@ -5,7 +5,7 @@
     "interpreter": 1, 
     "key": "extractwindowsbootimgonmacosorlinuxworker", 
     "name": "Extract Windows boot.img on macOS or Linux Worker", 
-    "osCredKey": "linuxworkerroot", 
+    "osCredKey": "linuxworkeruser", 
     "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
