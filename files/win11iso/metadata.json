@@ -5,7 +5,7 @@
     "key": "win11iso", 
     "md5": "c16460573757f216b26414d089b353a2", 
     "name": "Win11 ISO", 
-    "remoteUri": null, 
+    "remoteUri": "", 
     "size": 8471603200, 
     "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
 }

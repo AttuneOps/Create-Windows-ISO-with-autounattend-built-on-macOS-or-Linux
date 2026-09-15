@@ -1,0 +1,10 @@
+HOSTNAME="{newMachine.hostname}"
+LENGTH="${#HOSTNAME}"
+MAX_LENGTH="15"
+if [ "${LENGTH}" -gt "${MAX_LENGTH}" ]
+then
+    echo "Length of hostname ${LENGTH} for Windows Workstation can't be more than 15."
+    false
+else
+    echo "Length of hostname ${LENGTH} is less than or equal to 15."
+fi

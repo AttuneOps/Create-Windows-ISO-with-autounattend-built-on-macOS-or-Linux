@@ -7,59 +7,45 @@
     "key": "createwindows10win10autounattendsingleisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 0, 
             "stepKey": "checkinputparametervaluesforwindowsworkstationautounattendisoplanonmacosorlinuxworker"
         }, 
         {
-            "order": 50, 
-            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
+            "stepKey": "checkmaximumlengthofwindowsworkstationhostnameonmacosorlinux"
         }, 
         {
-            "order": 100, 
             "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
         }, 
         {
-            "order": 150, 
             "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
         }, 
         {
-            "order": 200, 
             "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
-            "order": 250, 
             "stepKey": "deploywin10dvdisoonmacosorlinuxworker"
         }, 
         {
-            "order": 300, 
             "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
-            "order": 350, 
             "stepKey": "extractwindowsisoonmacosorlinuxworker"
         }, 
         {
-            "order": 400, 
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 450, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsworkstationunattendedconfigonmacosorlinux"
         }, 
         {
-            "order": 500, 
             "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
         }, 
         {
-            "order": 550, 
             "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
         }, 
         {
-            "order": 600, 
             "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 650, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
         }
     ], 

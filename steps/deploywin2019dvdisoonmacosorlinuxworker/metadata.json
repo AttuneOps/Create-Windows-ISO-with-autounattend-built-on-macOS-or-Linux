@@ -1,7 +1,7 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "archiveKey": "win2019iso", 
-    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "c1d6663e-8976-4d6c-99b5-e64859048a35", 
     "key": "deploywin2019dvdisoonmacosorlinuxworker", 

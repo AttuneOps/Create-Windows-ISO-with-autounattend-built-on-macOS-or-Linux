@@ -21,34 +21,3 @@ then
 else
     echo "ISO is already extracted."
 fi
-
-# Server 2022 UDF extracts as EFI/Microsoft/Boot. Later UEFI steps use
-# efi/microsoft/boot. Rename when only the case differs; do not fail BIOS jobs.
-rename_case() {
-    parent="$1"
-    want="$2"
-    if [ -d "$parent/$want" ]; then
-        return 0
-    fi
-    actual="$(find "$parent" -mindepth 1 -maxdepth 1 -type d -iname "$want" | head -n 1)"
-    if [ -z "$actual" ]; then
-        return 1
-    fi
-    if [ "$(basename "$actual")" = "$want" ]; then
-        return 0
-    fi
-    tmp="$parent/${want}.attune_case"
-    mv "$actual" "$tmp" || return 1
-    mv "$tmp" "$parent/$want"
-}
-
-if rename_case . efi && rename_case ./efi microsoft && rename_case ./efi/microsoft boot
-then
-    echo "EFI boot directory is efi/microsoft/boot"
-    chmod -R u+w efi 2>/dev/null || true
-elif [ -d efi ] || [ -d EFI ]; then
-    echo "Warning: found an EFI folder but not efi/microsoft/boot."
-    find . -maxdepth 4 \( -iname efi -o -iname boot -o -iname 'efisys*.bin' \)
-else
-    echo "No EFI folder after extract (normal for some BIOS media)."
-fi

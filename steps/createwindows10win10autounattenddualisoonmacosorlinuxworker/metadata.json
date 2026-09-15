@@ -7,51 +7,39 @@
     "key": "createwindows10win10autounattenddualisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 250, 
             "stepKey": "validatethecreatewindowsworkstationautounattendisoplanparameters"
         }, 
         {
-            "order": 300, 
             "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
-            "order": 350, 
             "stepKey": "deploywin10dvdisoonmacosorlinuxworker"
         }, 
         {
-            "order": 400, 
             "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
-            "order": 450, 
             "stepKey": "extractwindowsisoonmacosorlinuxworker"
         }, 
         {
-            "order": 500, 
             "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
         }, 
         {
-            "order": 550, 
             "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 600, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 650, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsworkstationunattendedconfigonmacosorlinux"
         }, 
         {
-            "order": 700, 
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 750, 
             "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
         }, 
         {
-            "order": 800, 
             "stepKey": "createanswerfileisoonmacosorlinux"
         }
     ], 

@@ -31,7 +31,7 @@
             "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsworkstationunattendedconfigonmacosorlinux"
         }, 
         {
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"

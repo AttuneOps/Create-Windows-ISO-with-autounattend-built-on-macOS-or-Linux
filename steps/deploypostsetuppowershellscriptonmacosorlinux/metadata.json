@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "postinstallsetuppowershellscript", 
-    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "2f7c99d3-6a08-463f-8a42-d509778486a2", 
     "key": "deploypostsetuppowershellscriptonmacosorlinux", 

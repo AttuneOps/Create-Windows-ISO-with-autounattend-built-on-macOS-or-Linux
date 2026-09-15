@@ -1,10 +1,10 @@
 {
     "actionOnStepFail": "stop", 
-    "archiveKey": "windowsunattendedconfigv2", 
-    "deployPath": "{workerDirectorySharePath}/build-{newMachine.fqn}", 
+    "archiveKey": "windowsunattendedconfig", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
     "enabled": true, 
-    "externalUuid4": "c1990586-dec6-4638-96b4-bd63b583413e", 
-    "key": "deploywindowsunattendedconfigonwindowsworker", 
+    "externalUuid4": "f940e352-ed17-4e82-9ef4-6cafeabd6b26", 
+    "key": "deploywindowsserverunattendedconfigonmacosorlinux", 
     "makoFileNames": [
         "autounattend.xml"
     ], 
@@ -36,7 +36,7 @@
         }, 
         {
             "name": "operatingSystemName", 
-            "parameterKey": "windowsworkstation", 
+            "parameterKey": "windowsserver", 
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
@@ -50,8 +50,8 @@
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
-    "name": "Deploy Windows Unattended Config on Windows Worker", 
-    "osCredKey": "windowsworkeradministrator", 
-    "serverKey": "windowsworker", 
+    "name": "Deploy Windows Server Unattended Config on macOS or Linux", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

@@ -7,51 +7,39 @@
     "key": "createwindowsserver2019win2019autounattenddualisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 150, 
             "stepKey": "validatethecreatewindowsserverautounattendisoplanparameters"
         }, 
         {
-            "order": 200, 
             "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
-            "order": 250, 
             "stepKey": "deploywin2019dvdisoonmacosorlinuxworker"
         }, 
         {
-            "order": 300, 
             "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
-            "order": 400, 
             "stepKey": "extractwindowsisoonmacosorlinuxworker"
         }, 
         {
-            "order": 500, 
             "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
         }, 
         {
-            "order": 600, 
             "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 700, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 800, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsworkstationunattendedconfigonmacosorlinux"
         }, 
         {
-            "order": 900, 
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 1000, 
             "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
         }, 
         {
-            "order": 1100, 
             "stepKey": "createanswerfileisoonmacosorlinux"
         }
     ], 

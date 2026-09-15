@@ -1,4 +1,4 @@
-case "{operatingSystemName}" in
+case "{windowsServer}" in
     *Server*)
         echo "Ok."
         ;;

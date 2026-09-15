@@ -7,67 +7,51 @@
     "key": "createwindowsautounattendwinpeisoonmacosorlinux", 
     "links": [
         {
-            "order": 50, 
             "stepKey": "validatethecreatewindowsautounattendwinpeisoplanparameters"
         }, 
         {
-            "order": 450, 
             "stepKey": "copyandrenamewinpebiosisoonmacosorlinux"
         }, 
         {
-            "order": 500, 
             "stepKey": "copyandrenamewinpeuefiisoonmacosorlinux"
         }, 
         {
-            "order": 550, 
             "stepKey": "extractwinpeisotostagingfolderonmacosorlinux"
         }, 
         {
-            "order": 600, 
             "stepKey": "deploystartnetcmdonmacosorlinux"
         }, 
         {
-            "order": 650, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsworkstationunattendedconfigonmacosorlinux"
         }, 
         {
-            "order": 700, 
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 750, 
             "stepKey": "createpostinstallwimwindowsimageonmacosorlinux"
         }, 
         {
-            "order": 850, 
             "stepKey": "copystartnetcmdtobootwimonmacosorlinux"
         }, 
         {
-            "order": 900, 
             "stepKey": "copyautounattendxmltobootwimonmacosorlinux"
         }, 
         {
-            "order": 950, 
             "stepKey": "copypostinstallwimtobootwimonmacosorlinux"
         }, 
         {
-            "order": 1000, 
             "stepKey": "copydriversdropinfoldertobootwimonmacosorlinux"
         }, 
         {
-            "order": 1050, 
             "stepKey": "changeownershipofwinpestagingdirectoryforkickstart"
         }, 
         {
-            "order": 1100, 
             "stepKey": "createbiosbootwinpeisofromwinpestagingonmacosorlinux"
         }, 
         {
-            "order": 1150, 
             "stepKey": "createuefifat32isoonmacosandlinux"
         }, 
         {
-            "order": 1250, 
             "stepKey": "movewinpestagingtouefifat32isoonlinux"
         }
     ], 

@@ -3,7 +3,7 @@
 # - drivers_{newMachine.fqn}
 # - build_{newMachine.fqn}
 
-for FILE in {linuxWorkerDirectory}/*{newMachine.fqn}*
+for FILE in {linuxWorkerDirectory}*{newMachine.fqn}*
 do
     echo "Removing ${FILE}"
     rm -frv "${FILE}"

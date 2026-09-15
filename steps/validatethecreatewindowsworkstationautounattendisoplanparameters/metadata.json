@@ -13,7 +13,7 @@
             "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
         }, 
         {
-            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
+            "stepKey": "checkmaximumlengthofwindowsworkstationhostnameonmacosorlinux"
         }, 
         {
             "stepKey": "checkinputparametervaluesforwindowsworkstationautounattendisoplanonmacosorlinuxworker"

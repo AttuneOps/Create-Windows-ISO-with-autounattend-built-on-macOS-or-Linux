@@ -10,7 +10,7 @@
             "stepKey": "checkinputparametervaluesforwindowsworkstationautounattendisoplanonmacosorlinuxworker"
         }, 
         {
-            "stepKey": "checkmaximumlengthofwin10hostnameonmacosorlinux"
+            "stepKey": "checkmaximumlengthofwindowsworkstationhostnameonmacosorlinux"
         }, 
         {
             "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
@@ -34,7 +34,7 @@
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsworkstationunattendedconfigonmacosorlinux"
         }, 
         {
             "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
