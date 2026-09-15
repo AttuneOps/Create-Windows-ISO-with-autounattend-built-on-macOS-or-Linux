@@ -1,10 +1,50 @@
 if [ "{biosOrUefi}" = "UEFI" ]
 then
+    cd "{linuxWorkerDirectory}build-{newMachine.fqn}" || exit 1
 
-    cd {linuxWorkerDirectory}/build-{newMachine.fqn}
-    cd efi/microsoft/boot/
-    
-    cp -v efisys_noprompt.bin efisys.bin
+    # Server 2022 UDF extracts as EFI/Microsoft/Boot. Linux cd is case-sensitive.
+    rename_case() {
+        parent="$1"
+        want="$2"
+        if [ -d "$parent/$want" ]; then
+            return 0
+        fi
+        actual="$(find "$parent" -mindepth 1 -maxdepth 1 -type d -iname "$want" | head -n 1)"
+        if [ -z "$actual" ]; then
+            return 1
+        fi
+        if [ "$(basename "$actual")" = "$want" ]; then
+            return 0
+        fi
+        tmp="$parent/${want}.attune_case"
+        mv "$actual" "$tmp" || return 1
+        mv "$tmp" "$parent/$want"
+    }
+
+    if ! rename_case . efi || ! rename_case ./efi microsoft || ! rename_case ./efi/microsoft boot
+    then
+        echo "Error: efi/microsoft/boot was not found under $(pwd)." >&2
+        echo "Windows Server 2022 often extracts as EFI/Microsoft/Boot." >&2
+        ls -la >&2
+        find . -maxdepth 4 \( -iname efi -o -iname 'efisys*.bin' \) >&2
+        exit 1
+    fi
+
+    cd efi/microsoft/boot || exit 1
+
+    SRC="$(find . -maxdepth 1 -iname 'efisys_noprompt.bin' | head -n 1)"
+    DST="$(find . -maxdepth 1 -iname 'efisys.bin' | head -n 1)"
+    if [ -z "$SRC" ]; then
+        echo "Error: efisys_noprompt.bin was not found in $(pwd)." >&2
+        ls -la >&2
+        exit 1
+    fi
+    if [ -z "$DST" ]; then
+        DST=efisys.bin
+    fi
+
+    chmod u+w . "$SRC" "$DST" 2>/dev/null || true
+    cp -v "$SRC" "$DST"
 else
     echo "Skipping for BIOS ISO creation."
 fi
