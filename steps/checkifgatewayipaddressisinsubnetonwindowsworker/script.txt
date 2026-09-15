@@ -1,11 +1,11 @@
-Write-Host "gateway IP address={newOsNodeSubnet.gateway}"
-Write-Host "subnet={newOsNodeSubnet.subnet}"
-Write-Host "netmask={newOsNodeSubnet.netmask}"
+Write-Host "gateway IP address={newMachineNetwork.gateway}"
+Write-Host "subnet={newMachineNetwork.subnet}"
+Write-Host "netmask={newMachineNetwork.netmask}"
 #Write-Host "i, GATEWAY_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX"
 
-$GATEWAY_OCTETS = "{newOsNodeSubnet.gateway}".split('.')
-$SUBNET_OCTETS = "{newOsNodeSubnet.subnet}".split('.')
-$NETMASK_OCTETS = "{newOsNodeSubnet.netmask}".split('.')
+$GATEWAY_OCTETS = "{newMachineNetwork.gateway}".split('.')
+$SUBNET_OCTETS = "{newMachineNetwork.subnet}".split('.')
+$NETMASK_OCTETS = "{newMachineNetwork.netmask}".split('.')
 
 for ($i = 0; $i -lt 4; $i++) {
     $GATEWAY_OCTET = $GATEWAY_OCTETS[$i]

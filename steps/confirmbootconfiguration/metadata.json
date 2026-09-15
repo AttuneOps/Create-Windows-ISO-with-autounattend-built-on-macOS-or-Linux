@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "confirmbootconfiguration", 
     "name": "Confirm boot Configuration", 
-    "osCredKey": "newoswindowsuseradministrator", 
-    "serverKey": "newoswindowsnode", 
+    "osCredKey": "newwindowsadministrator", 
+    "serverKey": "newmachine", 
     "successExitCode": 0, 
     "timeout": 600, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

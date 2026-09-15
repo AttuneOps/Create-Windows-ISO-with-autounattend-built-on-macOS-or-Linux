@@ -1,1 +1,0 @@
-Non privilege user on the Automation Worker node.

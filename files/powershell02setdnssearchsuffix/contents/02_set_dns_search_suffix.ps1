@@ -1,1 +1,1 @@
-Set-DnsClientGlobalSetting -SuffixSearchList @( "${newOsNode.domain}" )
+Set-DnsClientGlobalSetting -SuffixSearchList @( "${newMachine.domain}" )

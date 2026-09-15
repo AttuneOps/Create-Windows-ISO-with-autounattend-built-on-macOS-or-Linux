@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell10enablewinrm", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "d4f43be0-f259-464d-8959-a81eff646222", 
     "key": "deployenablewinrmpowershellonmacosorlinux", 
@@ -10,13 +10,13 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newosnode", 
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }
     ], 
     "name": "Deploy Enable WinRM PowerShell on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

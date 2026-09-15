@@ -1,4 +1,4 @@
-$WinPE_amd64="{automationWorkerWindowsBaseDirectory}\WinPE_amd64"
+$WinPE_amd64="{windowsWorkerDirectory}\WinPE_amd64"
 
 Write-Host "Checking if the path $WinPE_amd64 exists..."
 

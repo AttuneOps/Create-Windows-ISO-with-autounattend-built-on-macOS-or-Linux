@@ -1,14 +1,14 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell20enablecifs", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "3e538bfb-c299-4ebf-8294-235656d96606", 
     "key": "deployenablecifspowershellonmacosorlinux", 
     "makoFileNames": [], 
     "makoParameters": [], 
     "name": "Deploy Enable CIFS PowerShell on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

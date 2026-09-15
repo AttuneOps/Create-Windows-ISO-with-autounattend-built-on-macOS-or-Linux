@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "extractwinpeisofromwinimgdirectoryonmacosorlinux", 
     "name": "Extract WinPE ISO from winimg Directory on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

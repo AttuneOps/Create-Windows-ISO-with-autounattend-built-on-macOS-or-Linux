@@ -1,9 +1,9 @@
 # The wildcard will allow removal of 
-# - kickstart_{newOsNode.fqn}.iso
-# - drivers_{newOsNode.fqn}
-# - build_{newOsNode.fqn}
+# - unattended_{newMachine.fqn}.iso
+# - drivers_{newMachine.fqn}
+# - build_{newMachine.fqn}
 
-for FILE in {automationWorkerLinuxBaseDirectory}/*{newOsNode.fqn}*
+for FILE in {linuxWorkerDirectory}*{newMachine.fqn}*
 do
     echo "Removing ${FILE}"
     rm -frv "${FILE}"

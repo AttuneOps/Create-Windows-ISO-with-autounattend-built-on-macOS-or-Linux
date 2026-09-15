@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "deletesetupexefrombootwimonmacosorlinux", 
     "name": "Delete setup.exe from boot.wim on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

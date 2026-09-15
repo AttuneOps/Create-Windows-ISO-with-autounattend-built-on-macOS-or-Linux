@@ -6,8 +6,8 @@
    ```
    C:\Program Files (x86)\Windows Kits\10\Assessment and Deployment Kit\Deployment Tools>
    ```
-The directory path is changed to `C:\attuneautomationworker\build-{newOsNode.fqn}`.
+The directory path is changed to `{windowsWorkerDirectory}\build-{newMachine.fqn}`.
    ```
-   cd C:\attuneautomationworker\build-{newOsNode.fqn}
+   cd {windowsWorkerDirectory}\build-{newMachine.fqn}
    ```
-3. Run `MakeWinPEMedia` to take the modified copy of the skeleton WinPE files at `C:\attuneautomationworker\build-{newOsNode.fqn}\WinPE_amd64` and generate the ISO at `C:\attuneautomationworker\kickstart_{newOsNode.fqn}.iso`.
+3. Run `MakeWinPEMedia` to take the modified copy of the skeleton WinPE files at `{windowsWorkerDirectory}\build-{newMachine.fqn}\WinPE_amd64` and generate the ISO at `{windowsWorkerDirectory}\unattended_{newMachine.fqn}.iso`.

@@ -1,0 +1,14 @@
+{
+    "externalUuid4": "0c9b899f-b1d1-4e4e-a6db-44b7e5b1815c",
+    "key": "workerdirectorysharepath",
+    "name": "Worker Directory Share Path",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Administrative-share path of the Windows Worker Directory, used by deploy steps. Example: `/c$/Attune` for `C:\\Attune`.",
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text",
+            "value": "/c$/Attune"
+        }
+    ]
+}

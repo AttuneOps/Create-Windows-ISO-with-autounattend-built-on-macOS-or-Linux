@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "wimlibcompressbootwimonwindowsworker", 
     "name": "wimlib Compress boot.wim on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 600, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

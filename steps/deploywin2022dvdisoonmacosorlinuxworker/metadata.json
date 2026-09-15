@@ -1,13 +1,13 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "archiveKey": "win2022iso", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "827b2807-3fca-408f-90ba-6e4f1f559359", 
     "key": "deploywin2022dvdisoonmacosorlinuxworker", 
     "name": "Deploy Win2022 DVD ISO on macOS or Linux Worker", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

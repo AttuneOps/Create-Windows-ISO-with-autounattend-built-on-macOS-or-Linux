@@ -1,10 +1,10 @@
 $securePassword = ConvertTo-SecureString `
-    '${newOsWindowsUserAdministrator.password}' `
+    '${newWindowsAdministrator.password}' `
     -AsPlainText `
     -Force
 Chk $?
 
 Set-LocalUser `
-    -Name "${newOsWindowsUserAdministrator.user}" `
+    -Name "${newWindowsAdministrator.user}" `
     -Password $securePassword
 Chk $?

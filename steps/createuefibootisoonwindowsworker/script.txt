@@ -1,11 +1,10 @@
-$ISO_BUILD="C:\attuneautomationworker"
-$BUILD_FOLDER="build-{newOsNode.fqn}"
+$ISO_BUILD="{windowsWorkerDirectory}"
+$BUILD_FOLDER="build-{newMachine.fqn}"
 
 # This is so we place the "tmpBash.sh" outside the $BUILD_FOLDER
 Set-Location $ISO_BUILD
 
-if (${{isWin10Uefi}} -or `
-    ${{isWinServerUefi}}) {
+if ("{biosOrUefi}" -ieq "UEFI") {
 
     $scriptContent=@"
 mkisofs \
@@ -25,7 +24,7 @@ mkisofs \
     -udf \
     -untranslated-filenames \
     -disable-deep-relocation \
-    -o kickstart_{newOsNode.fqn}.iso \
+    -o unattended_{newMachine.fqn}.iso \
     '${BUILD_FOLDER}'
 "@
 

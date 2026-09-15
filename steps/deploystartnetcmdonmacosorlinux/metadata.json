@@ -1,7 +1,7 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "archiveKey": "winpestartnetcmd", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "11e67848-8d0a-4ed4-babc-a6143e91a15f", 
     "key": "deploystartnetcmdonmacosorlinux", 
@@ -15,23 +15,23 @@
             "parameterType": "c.s.s.b.phv.Text"
         }, 
         {
-            "name": "targetServer", 
-            "parameterKey": "newosnode", 
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "targetSubnet", 
-            "parameterKey": "newosnodesubnet", 
+            "name": "newMachineNetwork", 
+            "parameterKey": "newmachinenetwork", 
             "parameterType": "c.s.s.b.phv.Ip4Subnet"
         }, 
         {
-            "name": "windowsFolderOnSamba", 
-            "parameterKey": "windowsfolderonsamba", 
+            "name": "sambaServerDirectory", 
+            "parameterKey": "sambaserverdirectory", 
             "parameterType": "c.s.s.b.phv.Text"
         }
     ], 
     "name": "Deploy startnet.cmd on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

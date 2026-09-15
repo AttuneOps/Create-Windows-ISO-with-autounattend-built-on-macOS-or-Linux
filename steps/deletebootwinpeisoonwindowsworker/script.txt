@@ -1,7 +1,7 @@
-$ISO_BUILD="{automationWorkerWindowsBaseDirectory}"
+$ISO_BUILD="{windowsWorkerDirectory}"
 Set-Location "${ISO_BUILD}"
 
-$ISO="kickstart_{newOsNode.fqn}.iso"
+$ISO="unattended_{newMachine.fqn}.iso"
 if (Test-Path "${ISO}" -PathType Leaf) {
     # Remove-Item "${ISO}"
 }

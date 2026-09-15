@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "copyefisysnopromptbinintoefisysbinonwindowsworker", 
     "name": "Copy efisys_noprompt.bin into efisys.bin on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

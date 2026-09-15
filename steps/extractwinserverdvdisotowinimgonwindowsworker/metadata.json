@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "extractwinserverdvdisotowinimgonwindowsworker", 
     "name": "Extract Win Server DVD ISO to winimg on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 120, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

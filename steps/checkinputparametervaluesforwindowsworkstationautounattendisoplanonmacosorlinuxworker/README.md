@@ -1,1 +1,1 @@
-Checks if at least one of `isWin10Bios` or `isWin10Uefi` is set tot true. 
+Checks that Operating System Name is a workstation edition (Windows 10 or Windows 11).

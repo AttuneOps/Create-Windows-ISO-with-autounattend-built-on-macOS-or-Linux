@@ -1,4 +1,4 @@
-$DIR="{automationWorkerWindowsBaseDirectory}"
+$DIR="{windowsWorkerDirectory}"
 
 if (Test-Path $DIR) {
     Set-Location "${DIR}"
@@ -7,7 +7,7 @@ if (Test-Path $DIR) {
     Test-Path '${DIR}'
 }
 
-$DIR="build-{newOsNode.fqn}"
+$DIR="build-{newMachine.fqn}"
 
 if (Test-Path $DIR) {
     Remove-Item -Recurse $DIR -Force
@@ -16,9 +16,9 @@ if (Test-Path $DIR) {
 }
 
 # The wildcard will allow removal of 
-# - kickstart_{newOsNode.fqn}.iso
-# - drivers_{newOsNode.fqn}.iso
-$ISOS="*{newOsNode.fqn}.iso"
+# - unattended_{newMachine.fqn}.iso
+# - drivers_{newMachine.fqn}.iso
+$ISOS="*{newMachine.fqn}.iso"
 
 
 if (test-Path "${ISOS}" -pathtype leaf) {

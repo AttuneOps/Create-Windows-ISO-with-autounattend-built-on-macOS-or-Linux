@@ -1,25 +1,29 @@
-if ! {isWinPEKickstart}
+if [ "{isWinPE}" != "true" ] && [ "{isWinPE}" != "TRUE" ]
 then
-    echo "Please set isWinPEKickstart as the string 'true'"
+    echo "Please set isWinPE to the string 'true'"
     exit 1
 fi
 
-if [ {windowsFolderOnSamba} == "windows10" ]
+if [ "{sambaServerDirectory}" = "windows10" ]
 then
-    if ! {isWin10Bios} && ! {isWin10Uefi}
-    then
-        echo "Please set one of 'isWin10Bios' or 'isWin10Uefi' to true to install Win10."
-        exit 1
-    fi
+    case "{operatingSystemName}" in
+        *Server*)
+            echo "Samba folder windows10 requires Operating System Name Windows 10 or Windows 11."
+            exit 1
+            ;;
+    esac
 fi
 
-if [ {windowsFolderOnSamba} == "windows2016" ] ||
-    [ {windowsFolderOnSamba} == "windows2019" ] ||
-    [ {windowsFolderOnSamba} == "windows2022" ]
+if [ "{sambaServerDirectory}" = "windows2016" ] ||
+    [ "{sambaServerDirectory}" = "windows2019" ] ||
+    [ "{sambaServerDirectory}" = "windows2022" ]
 then
-    if ! {isWinServerBios} && ! {isWinServerUefi}
-    then
-        echo "Please set one of 'isWinServerBios' or 'isWinServerUefi' to true to install Windows Server."
-        exit 1
-    fi
+    case "{operatingSystemName}" in
+        *Server*)
+            ;;
+        *)
+            echo "Samba Server folder requires Operating System Name to contain Server."
+            exit 1
+            ;;
+    esac
 fi

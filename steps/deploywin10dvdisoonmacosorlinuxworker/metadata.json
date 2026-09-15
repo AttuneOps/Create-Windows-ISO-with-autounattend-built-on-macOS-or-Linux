@@ -1,13 +1,13 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "archiveKey": "win10iso", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}", 
+    "deployPath": "{linuxWorkerDirectory}build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "68afedf7-0d10-4a4c-b22f-5ecf578ce3a3", 
     "key": "deploywin10dvdisoonmacosorlinuxworker", 
     "name": "Deploy Win10 DVD ISO on macOS or Linux Worker", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

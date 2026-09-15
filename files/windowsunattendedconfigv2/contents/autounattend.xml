@@ -2,22 +2,22 @@
 <unattend
 	xmlns="urn:schemas-microsoft-com:unattend">
 	<settings pass="windowsPE">
-%if isWindowsServer == 'true' and isUefiBoot == 'true':
-		
+%if 'Server' in operatingSystemName and biosOrUefi.upper() == 'UEFI':
+
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<ComputerName>${newOsNode.hostname}</ComputerName>
+			<ComputerName>${newMachine.hostname}</ComputerName>
 			<ProductKey>N2KJX-J94YW-TQVFB-DG9YT-724CC</ProductKey>
 		</component>
 %endif
-		
+
 		<component name="Microsoft-Windows-PnpCustomizationsWinPE" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<DriverPaths>
 				<PathAndCredentials wcm:keyValue="1" wcm:action="add">
-					<Path>${driversAndAutounattendDriveLetter}:\drivers</Path>
+					<Path>${unattendDriveLetter}:\drivers</Path>
 					<Credentials></Credentials>
 				</PathAndCredentials>
 			</DriverPaths>
@@ -39,8 +39,8 @@
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<ImageInstall>
 				<OSImage>
-%if isWindowsServer == 'true':
-					
+%if 'Server' in operatingSystemName:
+
 					<InstallFrom>
 						<MetaData wcm:action="add">
 							<Key>/IMAGE/INDEX</Key>
@@ -48,23 +48,23 @@
 						</MetaData>
 					</InstallFrom>
 %endif
-					
+
 					<InstallTo>
 						<DiskID>0</DiskID>
-%if isBiosBoot == 'true':
-						
+%if biosOrUefi.upper() == 'BIOS':
+
 						<PartitionID>2</PartitionID>
-%elif isUefiBoot == 'true':
-						
+%elif biosOrUefi.upper() == 'UEFI':
+
 						<PartitionID>4</PartitionID>
 %endif
-					
+
 					</InstallTo>
 					<InstallToAvailablePartition>false</InstallToAvailablePartition>
 				</OSImage>
 
-%if isWinPEKickstart == 'true':
-				
+%if isWinPE.lower() == 'true':
+
 				<!-- Custom WIM file -->
 				<DataImage wcm:action="add">
 					<InstallFrom>
@@ -72,38 +72,38 @@
 					</InstallFrom>
 					<InstallTo>
 						<DiskID>0</DiskID>
-  %if isBiosBoot == 'true':
-						
+  %if biosOrUefi.upper() == 'BIOS':
+
 						<PartitionID>2</PartitionID>
-  %elif isUefiBoot == 'true':
-						
+  %elif biosOrUefi.upper() == 'UEFI':
+
 						<PartitionID>4</PartitionID>
   %endif
-					
+
 					</InstallTo>
 					<Order>1</Order>
 				</DataImage>
 %endif
 
-			
+
 			</ImageInstall>
 			<UserData>
 				<AcceptEula>true</AcceptEula>
-				<FullName>${newOsWindowsUser.user}</FullName>
-				<Organization>${newOsOrganisationName}</Organization>
+				<FullName>${newWindowsAdministrator.user}</FullName>
+				<Organization>${newMachineOrganisation}</Organization>
 				<ProductKey>
-%if isWindowsWorkstation== 'true' and isBiosBoot == 'true':
-					
+%if 'Server' not in operatingSystemName and biosOrUefi.upper() == 'BIOS':
+
 					<Key>W269N-WFGWX-YVC9B-4J6C9-T83GX</Key>
-%elif isWindowsWorkstation == 'true' and isUefiBoot == 'true':
-          
+%elif 'Server' not in operatingSystemName and biosOrUefi.upper() == 'UEFI':
+
 					<Key>VK7JG-NPHTM-C97JM-9MPGT-3V66T</Key>
 %endif
-				
+
 				</ProductKey>
 			</UserData>
 
-%if isWindowsWorkstation== 'true':
+%if 'Server' not in operatingSystemName:
 
 			<RunSynchronous>
 				<RunSynchronousCommand wcm:action="add">
@@ -134,8 +134,8 @@
 
 %endif
 
-%if isBiosBoot == 'true':
-			
+%if biosOrUefi.upper() == 'BIOS':
+
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
@@ -172,8 +172,8 @@
 					</ModifyPartitions>
 				</Disk>
 			</DiskConfiguration>
-%elif isUefiBoot == 'true':
-			
+%elif biosOrUefi.upper() == 'UEFI':
+
 			<DiskConfiguration>
 				<Disk wcm:action="add">
 					<DiskID>0</DiskID>
@@ -238,12 +238,12 @@
 			</DiskConfiguration>
 %endif
 
-		
+
 		</component>
 	</settings>
 
-%if isWindowsWorkstation == 'true':
-	
+%if 'Server' not in operatingSystemName:
+
 	<settings pass="offlineServicing">
 		<component name="Microsoft-Windows-LUA-Settings" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
@@ -282,58 +282,58 @@
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-			<ComputerName>${newOsNode.hostname}</ComputerName>
+			<ComputerName>${newMachine.hostname}</ComputerName>
 			<ProductKey>W269N-WFGWX-YVC9B-4J6C9-T83GX</ProductKey>
 		</component>
 	</settings>
 %endif
 
-	
+
 	<settings pass="oobeSystem">
 		<component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"
 			xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-%if isWindowsWorkstation == 'true':
-			
+%if 'Server' not in operatingSystemName:
+
 			<UserAccounts>
 				<LocalAccounts>
 					<LocalAccount wcm:action="add">
 						<Password>
-							<Value>${newOsWindowsUser.password}</Value>
+							<Value>${newWindowsAdministrator.password}</Value>
 							<PlainText>true</PlainText>
 						</Password>
 						<Description></Description>
-						<DisplayName>${newOsWindowsUser.user}</DisplayName>
+						<DisplayName>${newWindowsAdministrator.user}</DisplayName>
 						<Group>Administrators</Group>
-						<Name>${newOsWindowsUser.user}</Name>
+						<Name>${newWindowsAdministrator.user}</Name>
 					</LocalAccount>
 				</LocalAccounts>
 			</UserAccounts>
-%elif isWindowsServer == 'true':
-			
+%elif 'Server' in operatingSystemName:
+
 			<UserAccounts>
 				<AdministratorPassword>
-					<Value>${newOsWindowsUser.password}</Value>
+					<Value>${newWindowsAdministrator.password}</Value>
 					<PlainText>true</PlainText>
 				</AdministratorPassword>
 			</UserAccounts>
 %endif
-			
+
 			<AutoLogon>
 				<Password>
-					<Value>${newOsWindowsUser.password}</Value>
+					<Value>${newWindowsAdministrator.password}</Value>
 					<PlainText>true</PlainText>
 				</Password>
 				<LogonCount>88</LogonCount>
 				<Enabled>true</Enabled>
-%if isWindowsWorkstation == 'true':
-				<Username>${newOsWindowsUser.user}</Username>
-%elif isWindowsServer == 'true':
+%if 'Server' not in operatingSystemName:
+				<Username>${newWindowsAdministrator.user}</Username>
+%elif 'Server' in operatingSystemName:
 				<Username>Administrator</Username>
 %endif
 			</AutoLogon>
-%if isWindowsWorkstation == 'true':
-			
+%if 'Server' not in operatingSystemName:
+
 			<OOBE>
 				<HideEULAPage>true</HideEULAPage>
 				<HideOEMRegistrationScreen>true</HideOEMRegistrationScreen>
@@ -345,9 +345,9 @@
 				<ProtectYourPC>3</ProtectYourPC>
 			</OOBE>
 %endif
-			
-			<RegisteredOrganization>${newOsOrganisationName}</RegisteredOrganization>
-			<RegisteredOwner>${newOsWindowsUser.user}</RegisteredOwner>
+
+			<RegisteredOrganization>${newMachineOrganisation}</RegisteredOrganization>
+			<RegisteredOwner>${newWindowsAdministrator.user}</RegisteredOwner>
 			<DisableAutoDaylightTimeSet>false</DisableAutoDaylightTimeSet>
 			<FirstLogonCommands>
 				<!-- Enable running PowerShell scripts from file -->
@@ -361,27 +361,31 @@
 				<SynchronousCommand wcm:action="add">
 					<Order>2</Order>
 					<RequiresUserInput>false</RequiresUserInput>
-					<CommandLine>PowerShell -File "${postInstallSetupScriptDriveLetter}:\post_install_setup.ps1"</CommandLine>
+%if isWinPE.lower() == 'true':
+					<CommandLine>PowerShell -File "C:\post_install_setup.ps1"</CommandLine>
+%else:
+					<CommandLine>PowerShell -File "${unattendDriveLetter}:\post_install_setup.ps1"</CommandLine>
+%endif
 					<Description>Run Script</Description>
 				</SynchronousCommand>
 
-%if isWinPEKickstart == 'true':
-				
+%if isWinPE.lower() == 'true':
+
 				<SynchronousCommand wcm:action="add">
 					<Order>3</Order>
 					<RequiresUserInput>false</RequiresUserInput>
-					<CommandLine>PowerShell -Command "Remove-Item ${postInstallSetupScriptDriveLetter}:\post_install_setup.ps1"</CommandLine>
+					<CommandLine>PowerShell -Command "Remove-Item C:\post_install_setup.ps1"</CommandLine>
 					<Description>Setup WinRM</Description>
 				</SynchronousCommand>
 %endif
 
-			
+
 			</FirstLogonCommands>
-			<TimeZone>${newOsWindowsTimeZone}</TimeZone>
+			<TimeZone>${newMachineTimezone}</TimeZone>
 		</component>
 	</settings>
-%if isWindowsServer == 'true':
-	
+%if 'Server' in operatingSystemName:
+
 	<cpi:offlineImage cpi:source="wim:c:/users/documents/win_images/win2016/sources/install.wim#Windows Server 2016 SERVERSTANDARD"
 		xmlns:cpi="urn:schemas-microsoft-com:cpi" />
 %endif

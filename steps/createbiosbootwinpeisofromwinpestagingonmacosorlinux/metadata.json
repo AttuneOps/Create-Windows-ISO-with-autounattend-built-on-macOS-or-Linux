@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "createbiosbootwinpeisofromwinpestagingonmacosorlinux", 
     "name": "Create BIOS Boot WinPE ISO from winpe_staging on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

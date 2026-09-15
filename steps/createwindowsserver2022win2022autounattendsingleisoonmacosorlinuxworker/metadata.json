@@ -7,55 +7,42 @@
     "key": "createwindowsserver2022win2022autounattendsingleisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 0, 
             "stepKey": "checkinputparametervaluesforwindowsserverautounattendisoplanonmacosorlinuxworker"
         }, 
         {
-            "order": 50, 
             "stepKey": "checkifipaddressisinsubnetonmacosorlinux"
         }, 
         {
-            "order": 100, 
             "stepKey": "checkifgatewayipaddressisinsubnetonmacosorlinux"
         }, 
         {
-            "order": 150, 
             "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
-            "order": 200, 
             "stepKey": "deploywin2022dvdisoonmacosorlinuxworker"
         }, 
         {
-            "order": 300, 
             "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
-            "order": 400, 
             "stepKey": "extractwindowsisoonmacosorlinuxworker"
         }, 
         {
-            "order": 500, 
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 600, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsserverunattendedconfigonmacosorlinux"
         }, 
         {
-            "order": 700, 
             "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
         }, 
         {
-            "order": 800, 
             "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
         }, 
         {
-            "order": 900, 
             "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 1000, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
         }
     ], 

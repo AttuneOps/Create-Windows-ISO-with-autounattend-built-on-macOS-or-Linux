@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "unmountwinpeuefimountonmacosorlinux", 
     "name": "Unmount WinPE UEFI Mount on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuserroot", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkerroot", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

@@ -1,7 +1,0 @@
-{
-    "externalUuid4": "e3438956-892f-47ce-ad31-fd07ecd410d6", 
-    "key": "iswinserverbios", 
-    "name": "Is Win Server BIOS", 
-    "showInPlan": true, 
-    "type": "c.s.s.b.phv.Text"
-}

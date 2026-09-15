@@ -1,7 +1,5 @@
-if ((-Not ${{isWin10Bios}}) -and `
-    (-Not ${{isWin10Uefi}})) {
-
-    Write-Host "Please set one of 'isWin10Bios' or 'isWin10Uefi' to true to install Win10."
+if ("{operatingSystemName}" -match "Server" -or [string]::IsNullOrWhiteSpace("{operatingSystemName}")) {
+    Write-Host "Please set Operating System Name to Windows 10 or Windows 11."
     exit 1
 } else {
     Write-Host "Ok."

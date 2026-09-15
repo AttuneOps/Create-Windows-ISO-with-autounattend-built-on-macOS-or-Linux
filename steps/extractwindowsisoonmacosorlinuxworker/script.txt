@@ -1,4 +1,10 @@
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+cd {linuxWorkerDirectory}build-{newMachine.fqn}
+
+if ! command -v 7z >/dev/null 2>&1
+then
+    echo "Error: 7z is not installed." >&2
+    exit 1
+fi
 
 # Case insensitve globbing
 shopt -s nocaseglob

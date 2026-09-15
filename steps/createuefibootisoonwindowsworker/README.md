@@ -1,7 +1,3 @@
-Creates a UEFI bootable Windows ISO called `kickstart_{newOsNode.fqn}.iso` from the contents in folder `C:\attuneautomationworker\build-{newOsNode.fqn}`.
+Creates a UEFI bootable Windows ISO called `unattended_{newMachine.fqn}.iso` from `{windowsWorkerDirectory}/build-{newMachine.fqn}`.
 
-
-Only applies to UEFI kickstarts so if any of these parameters are set the string 'true':
-
-1. `isWin10Uefi`
-2. `isWinServerUefi`
+Runs when **BIOS or UEFI** is `UEFI`.

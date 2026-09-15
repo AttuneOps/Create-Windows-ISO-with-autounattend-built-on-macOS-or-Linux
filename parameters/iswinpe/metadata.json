@@ -1,0 +1,14 @@
+{
+    "externalUuid4": "0a83dada-be7d-475a-aaac-1a56a37090ff",
+    "key": "iswinpe",
+    "name": "Is WinPE",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Whether this Job builds a WinPE installer rather than a Single or Dual ISO. Set `true` only on WinPE Procedures; leave `false` otherwise.",
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text",
+            "value": "false"
+        }
+    ]
+}

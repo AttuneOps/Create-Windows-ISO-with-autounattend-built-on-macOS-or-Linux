@@ -5,8 +5,8 @@
     "interpreter": 1, 
     "key": "copypostinstallwimtobootwimonmacosorlinux", 
     "name": "Copy post_install.wim to boot.wim on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

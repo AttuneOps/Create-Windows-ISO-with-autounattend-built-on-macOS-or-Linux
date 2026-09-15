@@ -1,0 +1,57 @@
+{
+    "actionOnStepFail": "stop", 
+    "archiveKey": "windowsunattendedconfig", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}", 
+    "enabled": true, 
+    "externalUuid4": "f940e352-ed17-4e82-9ef4-6cafeabd6b26", 
+    "key": "deploywindowsserverunattendedconfigonmacosorlinux", 
+    "makoFileNames": [
+        "autounattend.xml"
+    ], 
+    "makoParameters": [
+        {
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
+            "parameterType": "c.s.s.b.phv.Server"
+        }, 
+        {
+            "name": "newWindowsAdministrator", 
+            "parameterKey": "newwindowsadministrator", 
+            "parameterType": "c.s.s.b.phv.WinOsCred"
+        }, 
+        {
+            "name": "newMachineOrganisation", 
+            "parameterKey": "newmachineorganisation", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "unattendDriveLetter", 
+            "parameterKey": "unattenddriveletter", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "biosOrUefi", 
+            "parameterKey": "biosoruefi", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "operatingSystemName", 
+            "parameterKey": "windowsserver", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "isWinPE", 
+            "parameterKey": "iswinpe", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }, 
+        {
+            "name": "newMachineTimezone", 
+            "parameterKey": "newmachinetimezone", 
+            "parameterType": "c.s.s.b.phv.Text"
+        }
+    ], 
+    "name": "Deploy Windows Server Unattended Config on macOS or Linux", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
+    "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
+}

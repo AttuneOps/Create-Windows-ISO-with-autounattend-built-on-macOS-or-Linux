@@ -1,7 +1,7 @@
-if {kickstartedBootLoaderIsUefi}
+if [ "{biosOrUefi}" = "UEFI" ]
 then
 
-    cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    cd "{linuxWorkerDirectory}/build-{newMachine.fqn}"
         
     if [[ "Darwin" == "$(uname)" ]]
     then
@@ -12,12 +12,12 @@ then
     then
 
         MOUNT_FOLDER="uefi_mount"
-        MOUNT_PATH="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/${MOUNT_FOLDER}"
+        MOUNT_PATH="{linuxWorkerDirectory}/build-{newMachine.fqn}/${MOUNT_FOLDER}"
 
         mkdir --parents --verbose ${MOUNT_FOLDER}
         
         mount --verbose \
-            "../kickstart_{newOsNode.fqn}.iso" ${MOUNT_FOLDER}
+            "../unattended_{newMachine.fqn}.iso" ${MOUNT_FOLDER}
         
         cp -r --verbose winpe_staging/* "${MOUNT_FOLDER}"
         

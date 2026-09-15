@@ -7,51 +7,39 @@
     "key": "createwindowsserver2016win2016autounattenddualisoonmacosorlinuxworker", 
     "links": [
         {
-            "order": 200, 
             "stepKey": "validatethecreatewindowsserverautounattendisoplanparameters"
         }, 
         {
-            "order": 250, 
             "stepKey": "cleanupbuildfilesandisosonmacosorlinuxworker"
         }, 
         {
-            "order": 300, 
             "stepKey": "deploywin2016dvdisoonmacosorlinuxworker"
         }, 
         {
-            "order": 350, 
             "stepKey": "extractwindowsbootimgonmacosorlinuxworker"
         }, 
         {
-            "order": 400, 
             "stepKey": "extractwindowsisoonmacosorlinuxworker"
         }, 
         {
-            "order": 450, 
             "stepKey": "copyefisysnopromptbinintoefisysbinonmacosorlinuxworker"
         }, 
         {
-            "order": 500, 
             "stepKey": "createbiosbootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 600, 
             "stepKey": "createuefibootisoonmacosorlinuxworker"
         }, 
         {
-            "order": 700, 
-            "stepKey": "deploywindowsunattendedconfigonmacosorlinux"
+            "stepKey": "deploywindowsworkstationunattendedconfigonmacosorlinux"
         }, 
         {
-            "order": 800, 
             "stepKey": "deploypostsetuppowershellscriptonmacosorlinux"
         }, 
         {
-            "order": 900, 
             "stepKey": "copydriversdropinfolderonmacosorlinuxworker"
         }, 
         {
-            "order": 1000, 
             "stepKey": "createanswerfileisoonmacosorlinux"
         }
     ], 

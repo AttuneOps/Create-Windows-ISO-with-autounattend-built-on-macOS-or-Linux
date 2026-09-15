@@ -1,23 +1,17 @@
-function printVals() {
-    echo "
-    isWin10Bios = {isWin10Bios}
-    isWin10Uefi = {isWin10Uefi}
-    isWinServerBios = {isWinServerBios}
-    isWinServerUefi = {isWinServerUefi}
-    "
-}
+BOOT="$(echo "{biosOrUefi}" | tr "[:lower:]" "[:upper:]")"
+echo "biosOrUefi = {biosOrUefi}"
+echo "operatingSystemName = {operatingSystemName}"
 
-echo "Checking ..."
-printVals
-
-COUNT=$(printVals | grep -c "true" || true)
-
-echo "COUNT=${COUNT}"
-
-if [ $COUNT -ne 1 ]
+if [ "$BOOT" != "BIOS" ] && [ "$BOOT" != "UEFI" ]
 then
-    echo "FAIL: You must have exactly one only have one of the parameters above set to true" >&2
+    echo "FAIL: BIOS or UEFI must be BIOS or UEFI" >&2
     false
 fi
 
-echo "SUCCESS: The parameters above are set correctly" 
+if [ -z "{operatingSystemName}" ]
+then
+    echo "FAIL: Operating System Name must be set" >&2
+    false
+fi
+
+echo "SUCCESS: The parameters above are set correctly"

@@ -1,12 +1,12 @@
 {
-    "actionOnStepFail": null, 
+    "actionOnStepFail": "stop", 
     "enabled": true, 
     "externalUuid4": "1f6885b0-3297-4837-ae5d-3eb51bd5ef6a", 
     "interpreter": 1, 
     "key": "checkinputparametervaluesforwindowsserverautounattendisoplanonmacosorlinuxworker", 
     "name": "Check Input Parameter Values for Windows Server autounattend ISO Plan on macOS or Linux Worker", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "successExitCode": 0, 
     "type": "com.servertribe.attune.tuples.StepSshTuple"
 }

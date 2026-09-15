@@ -1,0 +1,1 @@
+Folder on the Samba share that contains the extracted Windows media. WinPE `startnet.cmd` changes into this folder after the share is mapped. Typical values: `windows10`, `windows11`, `windows2016`, `windows2019`, `windows2022`.

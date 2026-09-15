@@ -1,7 +1,7 @@
 {
     "actionOnStepFail": "stop", 
     "archiveKey": "powershell05setadminpassword", 
-    "deployPath": "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}/post_install_wim", 
+    "deployPath": "{linuxWorkerDirectory}/build-{newMachine.fqn}/post_install_wim", 
     "enabled": true, 
     "externalUuid4": "d122dbb8-526b-4e7f-a609-62b1c8702316", 
     "key": "deploysetadminpasswordpowershellonmacosorlinux", 
@@ -10,18 +10,18 @@
     ], 
     "makoParameters": [
         {
-            "name": "newOsNode", 
-            "parameterKey": "newosnode", 
+            "name": "newMachine", 
+            "parameterKey": "newmachine", 
             "parameterType": "c.s.s.b.phv.Server"
         }, 
         {
-            "name": "newOsWindowsUserAdministrator", 
-            "parameterKey": "newoswindowsuseradministrator", 
+            "name": "newWindowsAdministrator", 
+            "parameterKey": "newwindowsadministrator", 
             "parameterType": "c.s.s.b.phv.WinOsCred"
         }
     ], 
     "name": "Deploy Set Admin Password PowerShell on macOS or Linux", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileCompiledTuple"
 }

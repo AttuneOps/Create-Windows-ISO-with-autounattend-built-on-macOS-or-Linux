@@ -1,6 +1,6 @@
-if {isWin10Uefi} || {isWinServerUefi}
+if [ "{biosOrUefi}" = "UEFI" ]
 then
-    FOLDER="{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+    FOLDER="{linuxWorkerDirectory}/build-{newMachine.fqn}"
     mkdir -p "${FOLDER}"
     cd "${FOLDER}"
     cp -v "../winpe_plain_uefi.iso" "winpe.iso"

@@ -1,1 +1,1 @@
-Checks if at least one of `isWinServerBios` or `isWinServerUefi` is set tot true.
+Checks that Operating System Name is a Windows Server edition.

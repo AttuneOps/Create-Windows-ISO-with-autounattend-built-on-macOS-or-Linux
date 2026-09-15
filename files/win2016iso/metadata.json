@@ -5,7 +5,7 @@
     "key": "win2016iso", 
     "md5": "70721288bbcdfe3239d8f8c0fae55f1f", 
     "name": "Win2016 ISO", 
-    "remoteUri": null, 
+    "remoteUri": "https://go.microsoft.com/fwlink/p/?LinkID=2195174&clcid=0x409&culture=en-us&country=US", 
     "size": 6972221440, 
     "type": "com.servertribe.attune.tuples.FileArchiveLargeTuple"
 }

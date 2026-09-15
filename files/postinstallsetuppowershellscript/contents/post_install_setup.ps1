@@ -4,25 +4,25 @@
 
 <%
 import struct, socket
-packedIP = socket.inet_aton(newOsNodeSubnet.netmask)
+packedIP = socket.inet_aton(newMachineNetwork.netmask)
 netmask = struct.unpack("!L", packedIP)[0]
 netmask = bin(netmask).count('1')
 
-dns = ','.join([ "'%s'" % i for i in (newOsNodeSubnet.dns1, newOsNodeSubnet.dns2) if i])
+dns = ','.join([ "'%s'" % i for i in (newMachineNetwork.dns1, newMachineNetwork.dns2) if i])
 %>
 
 $ksWindowsInterfaceAlias = (Get-NetAdapter).Name
 
 # Set Network IP
 New-NetIPAddress -InterfaceAlias "$ksWindowsInterfaceAlias" `
-    -IPAddress ${newOsNode.ip} -PrefixLength ${netmask} `
-    -DefaultGateway ${newOsNodeSubnet.gateway} -Confirm:$false
+    -IPAddress ${newMachine.ip} -PrefixLength ${netmask} `
+    -DefaultGateway ${newMachineNetwork.gateway} -Confirm:$false
 
 # Set Network Profile
 Set-DnsClientServerAddress -InterfaceAlias "$ksWindowsInterfaceAlias" `
     -ServerAddresses @(${dns})
     
-Set-DnsClientGlobalSetting -SuffixSearchList @('${newOsNode.domain}')
+Set-DnsClientGlobalSetting -SuffixSearchList @('${newMachine.domain}')
 
 Set-NetConnectionProfile -InterfaceAlias "$ksWindowsInterfaceAlias" `
     -NetworkCategory Private -Confirm:$false
@@ -44,7 +44,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
 New-Item -Path WSMan:\LocalHost\Listener -Transport HTTPS -Address * `
     -CertificateThumbPrint `
     (New-SelfSignedCertificate -CertstoreLocation Cert:\LocalMachine\My `
-    -DnsName '${newOsNode.hostname}' `
+    -DnsName '${newMachine.hostname}' `
     -NotAfter (get-date).AddYears(6)).Thumbprint -Force
 
 Enable-WSManCredSSP -Role Server -Force
@@ -63,8 +63,8 @@ reg add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" `
     /v AutoLogonCount /t REG_DWORD /d 0 /f
 
 # Rename the Administrator account if that is required
-%if newOsWindowsUser.user != 'Administrator':
-    Rename-LocalUser -Name 'Administrator' -NewName '${newOsWindowsUser.user}'
+%if newWindowsAdministrator.user != 'Administrator':
+    Rename-LocalUser -Name 'Administrator' -NewName '${newWindowsAdministrator.user}'
 %endif
 
 # Control Panel View
@@ -74,7 +74,7 @@ reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Co
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel" /v AllItemsIconView /t REG_DWORD /d 1 /f
 
 # Password Never Expires
-cmd /C wmic useraccount where name="${newOsWindowsUser.user}" set PasswordExpires=false
+cmd /C wmic useraccount where name="${newWindowsAdministrator.user}" set PasswordExpires=false
 
 # Disable Sleep and Hibernation
 powercfg.exe -x -monitor-timeout-ac 0
@@ -90,7 +90,7 @@ powercfg.exe -x -hibernate-timeout-dc 0
 Set-Service WinRM -startuptype automatic
 
 # Update Hostname and Restart
-Rename-Computer -NewName '${newOsNode.hostname}' -Force -Restart
+Rename-Computer -NewName '${newMachine.hostname}' -Force -Restart
 
 # For some reason on Win10 BIOS ESXi kickstarts the restart from the above line
 # Doesn't restart. So we have another line below to restart the node

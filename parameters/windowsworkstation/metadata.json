@@ -1,0 +1,13 @@
+{
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text", 
+            "value": "Window Workstation"
+        }
+    ], 
+    "externalUuid4": "2781a848-1536-409d-a0fb-8bf025dd1c5d", 
+    "key": "windowsworkstation", 
+    "name": "Windows Workstation", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

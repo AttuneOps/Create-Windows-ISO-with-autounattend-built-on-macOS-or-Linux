@@ -7,9 +7,9 @@
     "interpreterScriptExt": null, 
     "interpreterScriptSyntax": "", 
     "key": "checkinputparameterwindowsfolderonsambaforwinpekickstartonwindowsworker", 
-    "name": "Check Input Parameter windowsFolderOnSamba for WinPE Kickstart on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "name": "Check Input Parameter sambaServerDirectory for WinPE Kickstart on Windows Worker", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

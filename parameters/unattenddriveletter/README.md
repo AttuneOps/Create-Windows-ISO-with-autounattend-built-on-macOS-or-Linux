@@ -1,0 +1,1 @@
+Drive letter Windows Setup sees for `autounattend.xml` and `drivers`. `D` for Single ISO, `E` for Dual ISO, `X` for WinPE. The post-install script uses this letter except on WinPE, where it runs from `C:`.

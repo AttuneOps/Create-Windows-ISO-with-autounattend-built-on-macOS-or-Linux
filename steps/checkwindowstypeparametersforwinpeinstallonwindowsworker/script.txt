@@ -1,24 +1,8 @@
-$values = "
-    isWindowsServer = {isWindowsServer}
-    isWindowsWorkstation = {isWindowsWorkstation}
-    "
+Write-Host "operatingSystemName = {operatingSystemName}"
 
-function printVals {
-    Write-Host "${values}"
-}
-
-Write-Host "Checking ..."
-printVals
-
-[regex]$regex = 'true'
-
-$COUNT = $regex.matches("${values}").count
-
-Write-Host "COUNT=${COUNT}"
-
-if ( $COUNT -ne 1 ) {
-    Write-Host "FAIL: You must have exactly one only have one of the parameters above set to true"
+if ([string]::IsNullOrWhiteSpace("{operatingSystemName}")) {
+    Write-Host "FAIL: Operating System Name must be set"
     exit 1
 }
 
-Write-Host "SUCCESS: The parameters above are set correctly" 
+Write-Host "SUCCESS: The parameters above are set correctly"

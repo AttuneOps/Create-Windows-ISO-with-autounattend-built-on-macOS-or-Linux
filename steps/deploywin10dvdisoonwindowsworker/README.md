@@ -1,1 +1,1 @@
-Deploys Windows Desktop 10 ISO to `/c$/attuneautomationworker/build-{newOsNode.fqn}`.
+Deploys Windows Desktop 10 ISO to `{workerDirectorySharePath}/build-{newMachine.fqn}`.

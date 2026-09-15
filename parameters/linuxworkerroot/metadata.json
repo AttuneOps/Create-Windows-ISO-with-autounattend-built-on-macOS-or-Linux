@@ -1,0 +1,15 @@
+{
+    "defaultValue": [
+        {
+            "sudoTo": "root",
+            "type": "attune.parameter.default.LinOsCred",
+            "user": null
+        }
+    ],
+    "externalUuid4": "71f580dc-0702-4d38-8012-b8f0d166008a",
+    "key": "linuxworkerroot",
+    "name": "Linux Worker root",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.LinOsCred",
+    "comment": "Credential used for privileged steps on the Linux Worker (sudo to root)."
+}

@@ -8,8 +8,8 @@
     "interpreterScriptSyntax": "", 
     "key": "checkwindowsandboottypeparametersforwinpekickstartonwindowsworker", 
     "name": "Check Windows and Boot Type Parameters for WinPE Kickstart on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "successExitCode": 0, 
     "timeout": 60, 
     "type": "com.servertribe.attune.tuples.StepWinRmTuple"

@@ -1,6 +1,6 @@
-cd "{automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}"
+cd "{linuxWorkerDirectory}build-{newMachine.fqn}"
 
-if {isWin10Bios} || {isWinServerBios}
+if [ "{biosOrUefi}" = "BIOS" ]
 then
     if uname | \
         grep -iq "darwin"
@@ -10,19 +10,31 @@ then
         echo "Using $(which xorriso)"
 
         xorriso -as mkisofs \
+            --norock \
+            -graft-points \
             -b boot.img \
             -no-emul-boot \
+            -boot-load-size 8 \
             -c BOOT.CAT \
             -iso-level 3 \
+            -J \
             -joliet-long \
             -relaxed-filenames \
-            -J \
             -full-iso9660-filenames \
             -disable-deep-relocation \
             -omit-version-number \
+            -omit-period \
+            -m bootmgr \
             -V "KS_WIN" \
-            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o "../unattended_{newMachine.fqn}.iso" \
+            BOOTMGR=./bootmgr \
             .
+
+        xorriso -indev "../unattended_{newMachine.fqn}.iso" -report_el_torito plain
+
+        xorriso -indev "../unattended_{newMachine.fqn}.iso" -ls /
+
+        xorriso -read_fs ecma119 -indev "../unattended_win03.localdomain.iso" -ls /
 
     else
         echo "not macOS"
@@ -41,7 +53,7 @@ then
             -disable-deep-relocation \
             -omit-version-number \
             -V "KS_WIN" \
-            -o {automationWorkerLinuxBaseDirectory}/kickstart_{newOsNode.fqn}.iso \
+            -o "../unattended_{newMachine.fqn}.iso" \
             .
     fi
 

@@ -1,6 +1,6 @@
-cd {automationWorkerLinuxBaseDirectory}/build-{newOsNode.fqn}
+cd {linuxWorkerDirectory}build-{newMachine.fqn}
 
-DRIVERS_DROP_IN_FOLDER="{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}"
+DRIVERS_DROP_IN_FOLDER="{linuxWorkerDirectory}drivers-{newMachine.fqn}"
 DESTINATION_DRIVERS_FOLDER="drivers"
 
 mkdir -v "${DESTINATION_DRIVERS_FOLDER}"

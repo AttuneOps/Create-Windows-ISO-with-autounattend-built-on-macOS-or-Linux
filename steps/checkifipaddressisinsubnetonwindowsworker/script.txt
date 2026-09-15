@@ -1,11 +1,11 @@
-Write-Host "IP address={newOsNode.ip}"
-Write-Host "subnet={newOsNodeSubnet.subnet}"
-Write-Host "netmask={newOsNodeSubnet.netmask}"
+Write-Host "IP address={newMachine.ip}"
+Write-Host "subnet={newMachineNetwork.subnet}"
+Write-Host "netmask={newMachineNetwork.netmask}"
 #Write-Host "i, IP_OCTET, SUBNET_OCTET, NETMASK_OCTET, WILDCARD_MASK, OCTET_MIN, OCTET_MAX"
 
-$IP_OCTETS = "{newOsNode.ip}".split('.')
-$SUBNET_OCTETS = "{newOsNodeSubnet.subnet}".split('.')
-$NETMASK_OCTETS = "{newOsNodeSubnet.netmask}".split('.')
+$IP_OCTETS = "{newMachine.ip}".split('.')
+$SUBNET_OCTETS = "{newMachineNetwork.subnet}".split('.')
+$NETMASK_OCTETS = "{newMachineNetwork.netmask}".split('.')
 
 for ($i = 0; $i -lt 4; $i++) {
     $IP_OCTET = $IP_OCTETS[$i]

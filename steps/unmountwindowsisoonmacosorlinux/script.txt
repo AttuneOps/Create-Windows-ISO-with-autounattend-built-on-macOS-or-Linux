@@ -1,4 +1,4 @@
-MOUNT_PATH="{automationWorkerLinuxBaseDirectory}/build-winpe-iso/winimg"
+MOUNT_PATH="{linuxWorkerDirectory}/build-winpe-iso/winimg"
 
 if [[ -f /etc/redhat-release ]] || [[ -f /etc/lsb-release ]] || [[ -f /etc/debian_version ]]
 then

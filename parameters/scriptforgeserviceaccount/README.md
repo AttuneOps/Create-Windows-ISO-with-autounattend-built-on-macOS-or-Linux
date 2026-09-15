@@ -1,0 +1,1 @@
+Windows credential Attune uses for WinRM after the OS is installed. On Windows Server the password must meet complexity: 14 or more characters, with uppercase, lowercase, a digit, and a special character.

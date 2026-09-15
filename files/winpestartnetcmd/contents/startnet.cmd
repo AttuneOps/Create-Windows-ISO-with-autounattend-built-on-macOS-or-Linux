@@ -20,13 +20,13 @@ echo Found network interface name = %windowsInterfaceAlias%
 
 netsh.exe interface ipv4 set address ^
     name="%windowsInterfaceAlias%" ^
-    static ${targetServer.ip} ^
-    ${targetSubnet.netmask} ^
-    ${targetSubnet.gateway}
+    static ${newMachine.ip} ^
+    ${newMachineNetwork.netmask} ^
+    ${newMachineNetwork.gateway}
     
 netsh.exe interface ipv4 add dnsservers ^
     name="%windowsInterfaceAlias%" ^
-    address=${targetSubnet.dns1} ^
+    address=${newMachineNetwork.dns1} ^
     index=1
 
 wpeutil WaitForNetwork
@@ -60,6 +60,6 @@ if errorlevel 1 (
 
 Z:
 
-cd ${windowsFolderOnSamba}
+cd ${sambaServerDirectory}
 
 setup

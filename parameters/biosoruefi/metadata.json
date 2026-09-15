@@ -1,0 +1,14 @@
+{
+    "externalUuid4": "daaee77d-b2a5-45d4-9303-702424cc17a1",
+    "key": "biosoruefi",
+    "name": "BIOS or UEFI",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.Text",
+    "comment": "Firmware of the machine being installed. Set to `BIOS` or `UEFI`. Controls disk layout, partition IDs, product-key branch, and which ISO create path runs.",
+    "defaultValue": [
+        {
+            "type": "attune.parameter.default.Text",
+            "value": "UEFI"
+        }
+    ]
+}

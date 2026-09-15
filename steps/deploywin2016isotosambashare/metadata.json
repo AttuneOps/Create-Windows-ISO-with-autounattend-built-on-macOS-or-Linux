@@ -6,8 +6,8 @@
     "externalUuid4": "35427f87-db66-4c32-89c9-be453929d2c5", 
     "key": "deploywin2016isotosambashare", 
     "name": " Deploy Win2016 ISO to Samba Share", 
-    "osCredKey": "automationworkerlinuxuser", 
-    "serverKey": "automationworkerlinuxnode", 
+    "osCredKey": "linuxworkeruser", 
+    "serverKey": "linuxworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }

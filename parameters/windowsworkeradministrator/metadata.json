@@ -1,0 +1,15 @@
+{
+    "defaultValue": [
+        {
+            "domain": null,
+            "type": "attune.parameter.default.WinOsCred",
+            "user": "Administrator"
+        }
+    ],
+    "externalUuid4": "467707ca-e020-4cba-8bd6-e3f0abdc1bee",
+    "key": "windowsworkeradministrator",
+    "name": "Windows Worker Administrator",
+    "showInPlan": true,
+    "type": "c.s.s.b.phv.WinOsCred",
+    "comment": "Administrator WinRM credential on the Windows Worker."
+}

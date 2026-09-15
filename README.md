@@ -192,17 +192,15 @@ This Project contains the following Blueprints.
 
 Creates a single Windows Desktop 10 ISO with `autounattend.xml` for unattended installation.
 
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+The ISO will be created at `{ksAttuneBaseDir}/unattended_{newMachine.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWin10Bios` to the string 'true'.
+Set **BIOS or UEFI** to `BIOS` or `UEFI`.
+Set **Operating System Name** to `Windows 10`.
+Leave **Is WinPE** as `false`.
 
-For UEFI kickstarts please set `isWin10Uefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerWindowsBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{windowsWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows 10 (Win10) autounattend Single ISO on Windows Worker
 
@@ -239,17 +237,15 @@ A single WinPE ISO is created.
 
 Creates a single Windows Server 2016 ISO with `autounattend.xml` for unattended installation.
 
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+The ISO will be created at `{ksAttuneBaseDir}/unattended_{newMachine.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+Set **BIOS or UEFI** to `BIOS` or `UEFI`.
+Set **Operating System Name** to the matching Windows Server edition.
+Leave **Is WinPE** as `false`.
 
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerLinuxBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2016 (Win2016) autounattend Single ISO on Windows Worker
 
@@ -264,17 +260,15 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerLin
 
 Creates a single Windows Server 2019 ISO with `autounattend.xml` for unattended installation.
 
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+The ISO will be created at `{ksAttuneBaseDir}/unattended_{newMachine.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+Set **BIOS or UEFI** to `BIOS` or `UEFI`.
+Set **Operating System Name** to the matching Windows Server edition.
+Leave **Is WinPE** as `false`.
 
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2019 (Win2019) autounattend Single ISO on Windows Worker
 
@@ -289,17 +283,15 @@ This blueprint assumes the drivers drop in directory is at `{automationWorkerBas
 
 Creates a single Windows Server 2022 ISO with `autounattend.xml` for unattended installation.
 
-The ISO will be created at `{ksAttuneBaseDir}/kickstart_{kickstartedNode.fqn}.iso`.
+The ISO will be created at `{ksAttuneBaseDir}/unattended_{newMachine.fqn}.iso`.
 
 For both BIOS and UEFI kickstarts.
 
-For BIOS kickstarts please set `isWinServerBios` to the string 'true'.
+Set **BIOS or UEFI** to `BIOS` or `UEFI`.
+Set **Operating System Name** to the matching Windows Server edition.
+Leave **Is WinPE** as `false`.
 
-For UEFI kickstarts please set `isWinServerUefi` to the string 'true'.
-
-Please set `isWinPEKickstart` to the string 'false'.
-
-This blueprint assumes the drivers drop in directory is at `{automationWorkerBaseDirectory}/drivers-{newOsNode.fqn}` and has the correct drivers dropped in.
+This blueprint assumes the drivers drop in directory is at `{linuxWorkerDirectory}/drivers-{newMachine.fqn}` and has the correct drivers dropped in.
 
 ### Create Windows Server 2022 (Win2022) autounattend Single ISO on Windows Worker
 
@@ -392,28 +384,18 @@ This folder works for both BIOS and UEFI boot methods.
 | Automation Worker Windows Base Directory Share Path | Text | `automationworkerwindowsbasedirectorysharepath` | eg. "/c$/attune_auto_installer" |
 | Automation Worker Windows Node | Windows Node | `automationworkerwindowsnode` | The Windows automation worker node used to perform tasks to create the ISO. |
 | Automation Worker Windows User: Administrator | Windows Credential | `automationworkerwindowsuseradministrator` | Administrator user on the Windows Automation Worker node. |
-| Drivers and Autounattend Drive Letter | Text | `driversandautounattenddriveletter` | The Windows drive letter containing the drivers and autounattend.xml as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
-| Is BIOS Boot | Text | `isbiosboot` |  |
-| Is UEFI Boot | Text | `isuefiboot` |  |
-| Is Win10 BIOS | Text | `iswin10bios` |  |
-| Is Win10 UEFI | Text | `iswin10uefi` |  |
-| Is Win11 BIOS | Text | `iswin11bios` |  |
-| Is Win11 UEFI | Text | `iswin11uefi` |  |
-| Is Windows Server | Text | `iswindowsserver` |  |
-| Is Windows Workstation | Text | `iswindowsworkstation` |  |
-| Is WinPE Kickstart | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
-| Is Win Server BIOS | Text | `iswinserverbios` |  |
-| Is Win Server UEFI | Text | `iswinserveruefi` |  |
-| Kickstarted Boot Loader is BIOS | Text | `kickstartedbootloaderisbios` |  |
-| Kickstarted Boot Loader is UEFI | Text | `kickstartedbootloaderisuefi` |  |
-| Kickstarted Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
+| BIOS or UEFI | Text | `biosOrUefi` | `BIOS` or `UEFI`. |
+| Unattend Drive Letter | Text | `driversandautounattenddriveletter` | The Windows drive letter containing the drivers and autounattend.xml as a single letter.<br><br>This will be different for each install method.<br>D for "Single ISO"<br>E for "Dual ISO"<br>X for "WinPE ISO" |
+| Is WinPE | Text | `iswinpekickstart` | Set TRUE for WinPE kickstarts and FALSE for Single ISO and Dual ISO kickstarts. |
+| Operating System Name | Text | `kickstartedoperatingsystemname` | Set as:<br>"Windows 10",<br>"Windows Server 2016",<br>"Windows Server 2019",<br>"Windows Server 2022" |
 | New OS Node | Basic Node | `newosnode` | The New OS to be built. |
 | New OS Node Subnet | Network IPv4 Subnet | `newosnodesubnet` | Subnet used by the new operating system to be built. |
 | New OS Organisation Name | Text | `newosorganisationname` | Organisation name for the new operating system being created. |
 | New OS Windows Node | Windows Node | `newoswindowsnode` |  |
 | New OS Windows TimeZone | Text | `newoswindowstimezone` | Get the full list using the PowerShell command:<br>Get-TimeZone -ListAvailable |
 | New OS Windows User: Administrator | Windows Credential | `newoswindowsuseradministrator` | administrator user on the New OS to be built. |
-| Post Install Setup Script Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
+| BIOS or UEFI | Text | `biosOrUefi` | `BIOS` or `UEFI`. |
+| Unattend Drive Letter | Text | `postinstallsetupscriptdriveletter` | The Windows drive letter containing the Post Install PowerShell setup script post_install_setup.ps1 as a single letter as seen by the Windows installer.<br><br>This will be different for each install method.<br><br>D for "Single ISO"<br>E for "Dual ISO"<br>C for "WinPE ISO" |
 | Samba Server IP Address | Text | `sambaserveripaddress` |  |
 | Windows Folder On Samba | Text | `windowsfolderonsamba` | The Windows folder on the Samba server. This parameter is used by startnet.cmd and can take these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
 
@@ -432,7 +414,7 @@ This folder works for both BIOS and UEFI boot methods.
 | Win2019 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019. |
 | Win2022 ISO | Large Archives | Download from https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022. |
 | Windows Unattended config | Version Controlled Files | For these Windows versions:<br>* WIndows Desktop 10<br>* WIndows Server 2016<br>* WIndows Server 2019<br>* WIndows Server 2022<br><br>For these boot methods:<br>* BIOS<br>* UEFI |
-| WinPE startnet.cmd | Version Controlled Files | The startnet.cmd is run by WinPE. This script:<br>1. Installs drivers from "attune_drivers".<br>2. Sets the IP address.<br>3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.<br>4. Runs Windows setup.exe.<br><br>The Mako parameter "windowsFolderOnSamba" can have these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
+| WinPE startnet.cmd | Version Controlled Files | The startnet.cmd is run by WinPE. This script:<br>1. Installs drivers from "attune_drivers".<br>2. Sets the IP address.<br>3. Mounts the Samba server that hosts the extracted Windows ISOs as the "Z" drive.<br>4. Runs Windows setup.exe.<br><br>The Mako parameter "sambaServerDirectory" can have these values:<br><br>- windows10<br>- windows2016<br>- windows2019<br>- windows2022 |
 | Windows Unattended config v2 | Version Controlled Files |  |
 
 

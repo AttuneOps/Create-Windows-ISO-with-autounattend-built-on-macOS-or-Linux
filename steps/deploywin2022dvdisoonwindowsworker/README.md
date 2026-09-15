@@ -1,1 +1,1 @@
-Deploys Windows Server 2022 ISO to `/c$/attuneautomationworker/build-winpe-iso`.
+Deploys Windows Server 2022 ISO to `{workerDirectorySharePath}/build-winpe-iso`.

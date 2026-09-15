@@ -1,13 +1,13 @@
 {
     "actionOnStepFail": null, 
     "archiveKey": "win2016iso", 
-    "deployPath": "/c$/attuneautomationworker/build-{newOsNode.fqn}", 
+    "deployPath": "{workerDirectorySharePath}/build-{newMachine.fqn}", 
     "enabled": true, 
     "externalUuid4": "96c63f6d-3a2f-47ca-a2d2-c49dfe2c7979", 
     "key": "deploywin2016dvdisoonwindowsworker", 
     "name": "Deploy Win2016 DVD ISO on Windows Worker", 
-    "osCredKey": "automationworkerwindowsuseradministrator", 
-    "serverKey": "automationworkerwindowsnode", 
+    "osCredKey": "windowsworkeradministrator", 
+    "serverKey": "windowsworker", 
     "type": "com.servertribe.attune.tuples.StepPushDesignFileTuple", 
     "unpack": false
 }
